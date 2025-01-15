@@ -1,0 +1,34 @@
+<map id="lcd_send_data1" name="lcd_send_data1">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,118,108"/>
+<area shape="rect" id="Node000002" href="$lcd__test_8c.html#a9517e250ec0069100705bffe60aabc8b" title=" " alt="" coords="398,56,595,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,89,382,73,383,79,118,94"/>
+<area shape="rect" id="Node000008" href="$lcd__test_8c.html#a64963ba0f6ae8d08260c4d6775a3d667" title=" " alt="" coords="166,107,350,133"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="119,99,151,103,150,109,118,105"/>
+<area shape="rect" id="Node000003" href="$lcd__init_8c.html#a0543bbde4de0576ea0a80e73bac80a4e" title="Sets the data/cmd line to receive the data nased on the modes." alt="" coords="647,5,796,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="559,53,644,33,645,39,560,58"/>
+<area shape="rect" id="Node000006" href="$spi__init_8c.html#adfb6e366f578e76ce29bbee1b0f1d295" title=" " alt="" coords="643,56,800,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="595,67,628,67,628,72,595,72"/>
+<area shape="rect" id="Node000004" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="851,5,989,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="796,16,836,16,836,21,796,21"/>
+<area shape="rect" id="Node000005" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="1040,81,1119,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="965,30,993,42,1046,71,1043,75,991,46,963,35"/>
+<area shape="rect" id="Node000007" href="$spi__init_8c.html#ad1975fd8330425459b0ea85c1c5afb05" title=" " alt="" coords="866,56,974,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="800,67,851,67,851,72,800,72"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="974,75,1025,83,1024,89,974,80"/>
+<area shape="rect" id="Node000009" href="$lcd__test_8c.html#abde3423c3f78225320e49ef889c4af66" title=" " alt="" coords="418,107,576,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="350,117,402,117,402,123,350,123"/>
+<area shape="rect" id="Node000014" href="$lcd__test_8c.html#a1340f440667b2902f20776fc1368f368" title=" " alt="" coords="415,157,578,184"/>
+<area shape="poly" id="edge16_Node000008_Node000014" title=" " alt="" coords="325,131,416,151,415,156,324,137"/>
+<area shape="rect" id="Node000010" href="$lcd__test_8c.html#a8ecb2e575e4c3c7c8aa4876f4b138959" title=" " alt="" coords="644,107,799,133"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="576,117,628,117,628,123,576,123"/>
+<area shape="rect" id="Node000012" href="$lcd__test_8c.html#a61b7e76afd6689b4f1e781a5fef96dd0" title=" " alt="" coords="657,157,786,184"/>
+<area shape="poly" id="edge13_Node000009_Node000012" title=" " alt="" coords="560,131,645,151,644,156,559,137"/>
+<area shape="rect" id="Node000011" href="$lcd__test_8c.html#a15acecf21987ddea18a03be325379251" title=" " alt="" coords="848,107,992,133"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="800,117,832,117,832,123,800,123"/>
+<area shape="poly" id="edge12_Node000011_Node000005" title=" " alt="" coords="992,106,1024,101,1025,106,993,111"/>
+<area shape="rect" id="Node000013" href="$lcd__test_8c.html#aa86d805bddf5571bdc7d76b082391d7a" title=" " alt="" coords="863,157,977,184"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="786,168,848,168,848,173,786,173"/>
+<area shape="poly" id="edge15_Node000013_Node000005" title=" " alt="" coords="963,154,991,143,1043,114,1046,119,993,148,965,159"/>
+<area shape="poly" id="edge17_Node000014_Node000010" title=" " alt="" coords="559,154,644,135,645,140,560,159"/>
+<area shape="poly" id="edge18_Node000014_Node000012" title=" " alt="" coords="579,168,641,168,641,173,579,173"/>
+</map>

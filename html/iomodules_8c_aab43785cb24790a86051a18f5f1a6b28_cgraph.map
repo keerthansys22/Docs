@@ -1,0 +1,7 @@
+<map id="GetIoModuleServiceData" name="GetIoModuleServiceData">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,169,57"/>
+<area shape="rect" id="Node000002" href="$shmd__source_8c.html#ac935872527ba12b3034abfb5ca7df126" title="Unlocks a spinlock." alt="" coords="222,5,312,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,30,206,25,206,30,170,35"/>
+<area shape="rect" id="Node000003" href="$shmd__source_8c.html#aefe4253bf48461410550618b2dd56c7a" title="Locks a spinlock with a timeout." alt="" coords="217,56,317,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,53,202,58,201,63,169,58"/>
+</map>

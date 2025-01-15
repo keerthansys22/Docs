@@ -1,0 +1,124 @@
+<map id="disp_mod_about_screen" name="disp_mod_about_screen">
+<area shape="rect" id="Node000001" title="Function to display about screen." alt="" coords="5,1047,168,1073"/>
+<area shape="rect" id="Node000002" href="$about__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="216,996,374,1023"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,1043,222,1024,223,1029,145,1049"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="270,1047,320,1073"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,1057,255,1057,255,1063,168,1063"/>
+<area shape="rect" id="Node000033" href="$common__screen__calls_8c.html#ac0ab6412f9e02f687f88279e0fe204e0" title="function to set the background color" alt="" coords="221,1097,369,1124"/>
+<area shape="poly" id="edge72_Node000001_Node000033" title=" " alt="" coords="145,1071,223,1091,222,1096,144,1077"/>
+<area shape="rect" id="Node000004" href="$default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="422,1021,516,1048"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="320,1054,406,1041,407,1046,320,1059"/>
+<area shape="rect" id="Node000071" href="$hw__init_8c.html#afe6c733d4bb6ed63271e16052a6bb71e" title="function that initializes the hardware" alt="" coords="610,1300,677,1327"/>
+<area shape="poly" id="edge43_Node000003_Node000071" title=" " alt="" coords="321,1062,348,1070,375,1083,435,1126,474,1168,512,1211,566,1261,607,1289,604,1294,563,1265,508,1215,470,1171,431,1130,373,1088,346,1075,319,1068"/>
+<area shape="rect" id="Node000087" href="$lvgl__init_8c.html#a51a0d8444720631af4e4ccd140a6a038" title="Function to initialize lvgl drivers." alt="" coords="438,1072,501,1099"/>
+<area shape="poly" id="edge57_Node000003_Node000087" title=" " alt="" coords="320,1061,423,1076,422,1081,320,1066"/>
+<area shape="rect" id="Node000088" href="$self__test_8c.html#afa6dcc66b21477fb9074d352884a00ce" title="Power&#45;On self&#45;test to test the peripherals." alt="" coords="608,160,679,187"/>
+<area shape="poly" id="edge58_Node000003_Node000088" title=" " alt="" coords="319,1056,347,1049,372,1033,410,988,441,945,463,903,480,861,491,820,499,779,505,695,506,609,510,516,526,416,541,362,562,306,591,247,622,198,626,201,596,250,567,308,546,364,531,417,516,517,511,609,510,695,504,779,497,821,485,863,468,905,445,948,415,991,376,1037,349,1053,321,1061"/>
+<area shape="rect" id="Node000005" href="$keypress_8c.html#a0e2570f6181cb5105b1549a1bf5bec3e" title="Function to check the keypress value." alt="" coords="590,743,697,769"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="477,1019,623,782,628,784,481,1022"/>
+<area shape="rect" id="Node000008" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="1158,768,1238,795"/>
+<area shape="poly" id="edge36_Node000004_Node000008" title=" " alt="" coords="500,1046,518,1058,532,1073,541,1086,550,1098,565,1108,617,1124,684,1135,762,1141,845,1141,927,1135,1002,1123,1064,1104,1089,1092,1109,1078,1135,1049,1155,1015,1171,979,1181,941,1193,868,1195,810,1200,811,1198,868,1187,942,1176,981,1160,1018,1139,1052,1112,1082,1092,1096,1066,1109,1003,1128,927,1140,845,1146,762,1146,684,1140,616,1129,563,1113,546,1102,537,1089,528,1076,515,1062,498,1051"/>
+<area shape="rect" id="Node000024" href="$default__task_8c.html#a2e8abf8d014dfaa310d350898e7034d1" title="function for error handler" alt="" coords="595,971,692,997"/>
+<area shape="poly" id="edge30_Node000004_Node000024" title=" " alt="" coords="516,1018,580,1000,582,1005,518,1024"/>
+<area shape="rect" id="Node000025" href="$default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="611,1021,676,1048"/>
+<area shape="poly" id="edge31_Node000004_Node000025" title=" " alt="" coords="517,1032,596,1032,596,1037,517,1037"/>
+<area shape="rect" id="Node000066" href="$default__task_8c.html#aa8739748537db71d12f20b7bc8a7e517" title="function that calls lvgl state machine" alt="" coords="578,1072,709,1099"/>
+<area shape="poly" id="edge35_Node000004_Node000066" title=" " alt="" coords="518,1046,582,1065,580,1070,516,1051"/>
+<area shape="rect" id="Node000067" href="$dv__fault__csv_8c.html#a082a8eea3d34f52a3711258709ba8bf4" title="Function that reads the fault data from CSV file &amp; stores the same in the structure." alt="" coords="582,1224,705,1251"/>
+<area shape="poly" id="edge37_Node000004_Node000067" title=" " alt="" coords="505,1046,518,1058,532,1079,538,1099,541,1138,545,1174,552,1192,566,1210,571,1214,568,1218,562,1214,547,1195,540,1175,536,1138,533,1100,527,1081,514,1062,501,1050"/>
+<area shape="rect" id="Node000068" href="$dv__warning__csv_8c.html#a35d15dccad6b2b0b8ed17d3792845d34" title="Function that reads the warning data from CSV file &amp; stores the same in the structure." alt="" coords="572,1173,715,1200"/>
+<area shape="poly" id="edge39_Node000004_Node000068" title=" " alt="" coords="503,1046,518,1058,535,1084,542,1107,549,1130,566,1153,581,1164,578,1168,562,1157,544,1132,537,1109,530,1086,514,1062,500,1051"/>
+<area shape="rect" id="Node000069" href="$isem__fault__csv_8c.html#ab5d81f8e1b18c63bed5b0177a064cc98" title="Function that reads the ISEM fault data from CSV file &amp; stores the same in the structure." alt="" coords="969,388,1107,415"/>
+<area shape="poly" id="edge40_Node000004_Node000069" title=" " alt="" coords="481,1019,498,996,514,968,528,927,536,890,539,825,542,759,548,722,562,679,599,571,631,485,653,448,681,413,719,380,769,348,808,332,842,329,877,336,919,348,934,355,944,363,967,379,968,380,966,384,965,384,941,367,931,359,917,353,876,341,842,335,810,337,772,353,723,384,685,417,657,451,636,487,604,573,567,681,554,723,547,760,544,825,541,891,533,928,519,970,503,999,485,1022"/>
+<area shape="rect" id="Node000070" href="$isem__warning__csv_8c.html#a7932b011c244674d11ad64117304349c" title="Function that reads the isem_warning data from CSV file &amp; stores the same in the structure." alt="" coords="564,692,723,719"/>
+<area shape="poly" id="edge42_Node000004_Node000070" title=" " alt="" coords="468,1021,471,967,484,889,496,847,512,804,534,764,562,729,566,726,569,730,566,733,539,767,517,806,501,848,489,891,476,968,473,1021"/>
+<area shape="rect" id="Node000006" href="$default__task_8c.html#a8aa473f8ae9a91df4bc9ea700983c72d" title="function that calls delay in milliseconds" alt="" coords="806,1021,883,1048"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="651,769,664,813,688,874,724,941,747,973,772,1001,793,1015,790,1019,769,1005,743,976,720,944,684,877,659,814,646,771"/>
+<area shape="rect" id="Node000007" href="$led__indication_8c.html#ad74ca2bc74dbc174faa45b56bffd80a3" title="force mode led on and off" alt="" coords="994,579,1082,605"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="696,743,721,729,732,716,738,703,743,676,749,649,756,636,769,623,793,608,819,597,875,584,930,580,978,581,978,587,930,585,876,589,821,602,796,613,772,627,760,639,754,651,748,677,743,705,736,719,724,733,698,748"/>
+<area shape="rect" id="Node000009" href="$keypress_8c.html#ad2ca4a6f6768dd5047f972cd300fedd1" title="function that reads the keypress value" alt="" coords="978,655,1098,681"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="696,742,721,729,736,710,743,690,751,670,769,652,796,641,824,634,881,630,936,636,984,647,983,652,935,641,881,635,824,639,797,646,772,657,755,673,748,692,741,712,724,733,698,747"/>
+<area shape="rect" id="Node000010" href="$lvgl__gui_8c.html#aa3ef1744ca7e52c293c49ccef26798e8" title="Function to reset the inactivity timer after 30sec." alt="" coords="801,464,888,491"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="696,745,721,729,739,701,747,673,748,645,744,617,741,589,741,560,749,531,769,501,785,488,789,492,773,505,754,533,747,561,746,589,750,617,753,645,752,674,744,703,725,733,699,750"/>
+<area shape="rect" id="Node000011" href="$led__indication_8c.html#aa12978a98c9fe6b20159924437d05a02" title="module status error led on and off" alt="" coords="985,717,1092,744"/>
+<area shape="poly" id="edge11_Node000005_Node000011" title=" " alt="" coords="697,750,969,732,969,738,697,755"/>
+<area shape="rect" id="Node000012" href="$led__indication_8c.html#a44ad8296a5c7a422553c37343a8976bb" title="module status normal led on and off" alt="" coords="978,768,1098,795"/>
+<area shape="poly" id="edge13_Node000005_Node000012" title=" " alt="" coords="697,757,963,774,963,779,697,762"/>
+<area shape="rect" id="Node000013" href="$keypress_8c.html#a4456c0194a45c65f825950c8d477e420" title="Function to start timer for longpress." alt="" coords="771,515,918,541"/>
+<area shape="poly" id="edge15_Node000005_Node000013" title=" " alt="" coords="696,745,721,729,736,708,743,688,745,646,746,603,754,581,769,558,781,548,784,552,773,562,758,583,752,604,750,646,749,689,741,711,724,733,699,749"/>
+<area shape="rect" id="Node000015" href="$keypress_8c.html#a9b5b2b00a81a3ea6535ef5417e1cc919" title="Function to stop timer for longpress." alt="" coords="772,667,917,693"/>
+<area shape="poly" id="edge17_Node000005_Node000015" title=" " alt="" coords="689,740,722,728,797,697,799,702,724,733,691,745"/>
+<area shape="rect" id="Node000016" href="$led__indication_8c.html#adc61cdd3e4de573ae782f11145cce478" title="turn on and off VA normal_voltage_status" alt="" coords="977,819,1099,845"/>
+<area shape="poly" id="edge18_Node000005_Node000016" title=" " alt="" coords="698,764,963,815,962,820,697,769"/>
+<area shape="rect" id="Node000017" href="$led__indication_8c.html#a4d60adf402eb59461321aae03b64bcfa" title="turn on and off the va_uv_ov_status" alt="" coords="981,869,1095,896"/>
+<area shape="poly" id="edge20_Node000005_Node000017" title=" " alt="" coords="673,768,719,789,772,811,873,842,966,865,965,870,871,847,770,816,716,794,671,772"/>
+<area shape="rect" id="Node000018" href="$led__indication_8c.html#ae7a89a609e58d5f3705652452aeb41f3" title="VB under_voltage and over voltage." alt="" coords="977,920,1099,947"/>
+<area shape="poly" id="edge22_Node000005_Node000018" title=" " alt="" coords="659,768,706,813,738,838,772,859,819,880,869,897,962,919,961,925,867,902,817,885,769,864,735,842,703,817,656,772"/>
+<area shape="rect" id="Node000019" href="$led__indication_8c.html#a81b6e68a54d24ad563676709e690c180" title="turn on and off VB under_voltage and over voltage led" alt="" coords="981,971,1095,997"/>
+<area shape="poly" id="edge24_Node000005_Node000019" title=" " alt="" coords="654,769,671,799,697,839,731,880,772,915,819,940,870,957,920,969,966,976,965,982,919,974,868,962,817,945,769,920,727,884,692,842,666,802,649,771"/>
+<area shape="rect" id="Node000020" href="$_v_a___r_e_a_d_i_n_g_8c.html#a5add596635d3ed5280839035668beb9e" title="Monitor the voltage va." alt="" coords="771,413,918,440"/>
+<area shape="poly" id="edge26_Node000005_Node000020" title=" " alt="" coords="696,745,710,738,721,729,743,694,751,660,750,626,744,592,739,558,738,522,746,487,769,450,771,448,775,452,773,454,751,489,743,523,744,557,750,591,755,626,756,661,747,696,725,732,713,743,698,750"/>
+<area shape="rect" id="Node000022" href="$_v_b___r_e_a_d_i_n_g_8c.html#a78a9f3e64c22adb46b340dbc22c80038" title="Monitor the voltage va." alt="" coords="771,363,918,389"/>
+<area shape="poly" id="edge29_Node000005_Node000022" title=" " alt="" coords="696,745,710,739,721,729,736,708,746,688,755,647,752,607,745,567,737,526,734,485,743,443,753,421,769,400,771,398,775,401,773,403,758,424,748,445,740,485,742,526,750,566,758,607,760,648,751,690,740,711,725,733,712,743,698,750"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1065,604,1089,620,1112,641,1156,698,1186,753,1181,755,1151,701,1108,645,1086,624,1062,608"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="1071,680,1112,703,1174,755,1171,759,1109,708,1068,684"/>
+<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="1084,742,1144,762,1142,767,1082,747"/>
+<area shape="poly" id="edge14_Node000012_Node000008" title=" " alt="" coords="1099,779,1143,779,1143,784,1099,784"/>
+<area shape="rect" id="Node000014" href="$keypress_8c.html#aad8b6cba38bcb5fda540f1aa65b55611" title="Function to increment the counter value when long keypressed." alt="" coords="999,515,1077,541"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="918,525,984,525,984,531,918,531"/>
+<area shape="poly" id="edge19_Node000016_Node000008" title=" " alt="" coords="1082,816,1142,796,1144,801,1084,821"/>
+<area shape="poly" id="edge21_Node000017_Node000008" title=" " alt="" coords="1085,866,1109,855,1143,830,1172,804,1176,808,1147,835,1112,860,1088,871"/>
+<area shape="poly" id="edge23_Node000018_Node000008" title=" " alt="" coords="1089,917,1109,906,1132,884,1153,858,1182,808,1187,810,1157,861,1136,887,1112,910,1092,922"/>
+<area shape="poly" id="edge25_Node000019_Node000008" title=" " alt="" coords="1092,968,1109,957,1138,922,1161,882,1177,843,1188,809,1193,810,1182,845,1166,885,1143,925,1112,961,1095,972"/>
+<area shape="rect" id="Node000021" href="$_v_a___r_e_a_d_i_n_g_8c.html#ad717bb7defb491b31f12604df8059a81" title="ADC reading voltage VA." alt="" coords="969,447,1107,473"/>
+<area shape="poly" id="edge27_Node000020_Node000021" title=" " alt="" coords="919,437,954,443,953,448,918,442"/>
+<area shape="poly" id="edge28_Node000021_Node000008" title=" " alt="" coords="1075,472,1095,484,1112,501,1133,532,1150,565,1175,635,1190,701,1197,752,1192,753,1185,702,1170,637,1146,567,1129,535,1108,504,1091,488,1072,476"/>
+<area shape="poly" id="edge32_Node000025_Node000006" title=" " alt="" coords="676,1032,790,1032,790,1037,676,1037"/>
+<area shape="rect" id="Node000026" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="813,1072,876,1099"/>
+<area shape="poly" id="edge33_Node000025_Node000026" title=" " alt="" coords="677,1040,799,1071,797,1076,676,1045"/>
+<area shape="poly" id="edge34_Node000026_Node000008" title=" " alt="" coords="876,1082,926,1078,988,1067,1052,1044,1082,1028,1109,1007,1128,986,1145,961,1169,907,1184,853,1191,809,1197,810,1189,854,1174,908,1150,964,1133,989,1112,1011,1085,1032,1054,1049,989,1072,927,1084,877,1088"/>
+<area shape="poly" id="edge38_Node000067_Node000008" title=" " alt="" coords="704,1222,770,1209,847,1202,948,1195,1044,1181,1082,1169,1109,1153,1126,1128,1141,1091,1166,994,1182,890,1191,810,1197,810,1187,891,1171,995,1146,1093,1130,1131,1112,1157,1084,1174,1045,1186,948,1200,848,1207,771,1215,705,1227"/>
+<area shape="poly" id="edge41_Node000069_Node000008" title=" " alt="" coords="1086,413,1112,433,1139,472,1160,515,1175,559,1186,605,1198,689,1200,752,1195,752,1192,689,1181,606,1170,561,1155,517,1134,475,1108,437,1083,417"/>
+<area shape="rect" id="Node000072" href="$gpio__init_8c.html#afdbe206b3c49f019757ab09b3cf52b9c" title="Function to perform LCD functionality." alt="" coords="810,1427,879,1453"/>
+<area shape="poly" id="edge44_Node000071_Node000072" title=" " alt="" coords="661,1325,708,1368,772,1412,796,1424,794,1428,769,1417,704,1372,657,1329"/>
+<area shape="rect" id="Node000075" href="$indication_8c.html#a1d2dc498d175d05fffd382a06f1159de" title="Function that initializes all the LEDs." alt="" coords="779,1325,910,1352"/>
+<area shape="poly" id="edge49_Node000071_Node000075" title=" " alt="" coords="678,1315,764,1326,763,1331,677,1320"/>
+<area shape="rect" id="Node000076" href="$lcd__init_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Function to perform LCD functionality." alt="" coords="813,1224,876,1251"/>
+<area shape="poly" id="edge51_Node000071_Node000076" title=" " alt="" coords="677,1297,770,1260,798,1250,799,1255,772,1265,679,1302"/>
+<area shape="rect" id="Node000084" href="$monitoring_8c.html#a10776d8d16b9acac9aec87e1b6f99e8a" title=" " alt="" coords="776,1376,913,1403"/>
+<area shape="poly" id="edge53_Node000071_Node000084" title=" " alt="" coords="679,1325,772,1362,789,1368,787,1373,770,1367,677,1330"/>
+<area shape="rect" id="Node000085" href="$spi__init_8c.html#ae909944aa85ae98323073c628be541aa" title=" " alt="" coords="813,1275,876,1301"/>
+<area shape="poly" id="edge55_Node000071_Node000085" title=" " alt="" coords="677,1307,798,1291,798,1296,678,1312"/>
+<area shape="rect" id="Node000073" href="$gpio__init_8c.html#a8ddfcc1edc1807598865aced2e871313" title="configure the gpio pins" alt="" coords="967,1477,1110,1504"/>
+<area shape="poly" id="edge45_Node000072_Node000073" title=" " alt="" coords="880,1446,970,1470,969,1476,879,1452"/>
+<area shape="rect" id="Node000074" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="970,1427,1107,1453"/>
+<area shape="poly" id="edge47_Node000072_Node000074" title=" " alt="" coords="879,1437,954,1437,954,1443,879,1443"/>
+<area shape="poly" id="edge46_Node000073_Node000008" title=" " alt="" coords="1095,1475,1108,1464,1123,1441,1135,1411,1156,1335,1172,1243,1182,1142,1193,947,1194,810,1200,810,1198,947,1188,1143,1177,1244,1162,1336,1140,1413,1127,1444,1112,1467,1099,1479"/>
+<area shape="poly" id="edge48_Node000074_Node000008" title=" " alt="" coords="1086,1424,1108,1406,1121,1385,1132,1358,1151,1289,1166,1205,1177,1114,1190,937,1194,810,1199,811,1195,937,1182,1115,1171,1206,1156,1290,1137,1360,1126,1388,1112,1410,1090,1428"/>
+<area shape="poly" id="edge50_Node000075_Node000008" title=" " alt="" coords="911,1350,960,1354,1013,1352,1064,1339,1088,1327,1108,1311,1121,1296,1133,1275,1152,1219,1167,1150,1178,1073,1190,921,1194,810,1199,810,1195,921,1183,1073,1172,1150,1157,1220,1138,1277,1126,1299,1112,1315,1090,1332,1066,1344,1014,1357,960,1360,910,1355"/>
+<area shape="rect" id="Node000077" href="$lcd__init_8c.html#a18e43791216d53f52c3bca5d8b3bf60c" title="Initialization of the LCD ST7291_chip." alt="" coords="994,1224,1083,1251"/>
+<area shape="poly" id="edge52_Node000076_Node000077" title=" " alt="" coords="876,1235,978,1235,978,1240,876,1240"/>
+<area shape="poly" id="edge54_Node000084_Node000008" title=" " alt="" coords="913,1401,962,1405,1014,1402,1065,1388,1088,1377,1108,1361,1122,1344,1135,1320,1155,1258,1170,1182,1181,1098,1192,931,1194,810,1200,810,1197,931,1186,1098,1176,1183,1160,1260,1140,1322,1127,1346,1112,1365,1091,1381,1067,1393,1015,1407,962,1410,913,1406"/>
+<area shape="rect" id="Node000086" href="$spi__init_8c.html#ae58a0f067d31d19d3233434cba5c6139" title=" " alt="" coords="979,1275,1097,1301"/>
+<area shape="poly" id="edge56_Node000085_Node000086" title=" " alt="" coords="876,1285,963,1285,963,1291,876,1291"/>
+<area shape="poly" id="edge71_Node000088_Node000008" title=" " alt="" coords="659,157,707,124,737,107,770,95,846,81,947,73,998,74,1045,79,1084,90,1112,106,1122,120,1130,143,1146,210,1171,401,1188,606,1198,752,1192,753,1183,606,1165,401,1140,211,1125,144,1117,123,1109,110,1082,94,1044,84,998,79,947,78,847,86,771,100,739,112,709,128,663,162"/>
+<area shape="rect" id="Node000089" href="$ddr__test_8c.html#a0474633aa7e989fea85a47f103ea70ce" title="Test and verify the DDR memory." alt="" coords="798,261,891,288"/>
+<area shape="poly" id="edge59_Node000088_Node000089" title=" " alt="" coords="666,185,714,215,772,247,785,253,783,258,769,252,711,220,664,190"/>
+<area shape="rect" id="Node000090" href="$external__adc__test_8c.html#adec54fe2681f570d972be8fc93a06400" title="Function to test the External ADC." alt="" coords="797,109,892,136"/>
+<area shape="poly" id="edge61_Node000088_Node000090" title=" " alt="" coords="678,162,781,136,782,141,680,167"/>
+<area shape="rect" id="Node000092" href="$indication_8c.html#ab74f2a3ded48c6ef69bb9007b3a75fa5" title="Test to check the I2C read and write functionality." alt="" coords="778,8,911,35"/>
+<area shape="poly" id="edge65_Node000088_Node000092" title=" " alt="" coords="654,158,702,107,734,78,769,51,790,39,793,44,772,56,737,82,705,111,658,161"/>
+<area shape="rect" id="Node000093" href="$internal__adc__test_8c.html#a544c9c668c5f7c00c7bf460701cc832a" title="Test to check the Internal ADC." alt="" coords="799,160,890,187"/>
+<area shape="poly" id="edge67_Node000088_Node000093" title=" " alt="" coords="679,171,783,171,783,176,679,176"/>
+<area shape="rect" id="Node000095" href="$lcd__init_8c.html#ac15199a45dee6b739fbcfcc1f509e0b5" title="Function to perform the lCD test." alt="" coords="799,211,890,237"/>
+<area shape="poly" id="edge70_Node000088_Node000095" title=" " alt="" coords="680,179,784,206,783,211,678,185"/>
+<area shape="poly" id="edge60_Node000089_Node000008" title=" " alt="" coords="886,286,1023,336,1112,374,1130,404,1146,447,1170,554,1187,666,1197,752,1191,753,1182,667,1165,555,1140,448,1125,406,1109,378,1021,341,884,291"/>
+<area shape="poly" id="edge64_Node000090_Node000008" title=" " alt="" coords="892,109,943,102,1002,102,1032,107,1061,115,1088,128,1112,146,1128,166,1142,193,1164,262,1180,346,1190,439,1199,622,1200,752,1195,752,1194,622,1185,440,1174,347,1159,263,1137,195,1124,169,1108,150,1085,132,1059,120,1031,112,1002,108,943,108,893,114"/>
+<area shape="rect" id="Node000091" href="$external__adc__test_8c.html#a83e318d326e7f103978ba924020b873e" title="To read the voltage of the VA measured using external adc." alt="" coords="966,160,1110,203"/>
+<area shape="poly" id="edge62_Node000090_Node000091" title=" " alt="" coords="892,134,952,153,951,158,890,139"/>
+<area shape="poly" id="edge63_Node000091_Node000008" title=" " alt="" coords="1094,201,1112,220,1134,264,1151,326,1165,401,1177,481,1191,638,1198,752,1193,753,1186,639,1171,482,1160,401,1146,328,1129,266,1108,223,1090,205"/>
+<area shape="poly" id="edge66_Node000092_Node000008" title=" " alt="" coords="911,6,960,3,1014,6,1067,21,1091,34,1112,52,1122,67,1131,92,1147,165,1160,263,1172,374,1189,596,1198,753,1193,753,1184,597,1167,374,1155,263,1141,166,1126,93,1117,69,1108,55,1088,39,1065,26,1013,12,960,8,911,12"/>
+<area shape="poly" id="edge68_Node000093_Node000008" title=" " alt="" coords="887,185,1112,263,1134,303,1152,359,1167,426,1178,500,1192,645,1198,752,1193,753,1187,646,1172,501,1161,427,1147,360,1130,305,1109,267,885,190"/>
+<area shape="rect" id="Node000094" href="$internal__adc__test_8c.html#acabe5c2e4711c98ec1ffd0782284c275" title="To read the value of voltage from internal ADC." alt="" coords="980,277,1097,304"/>
+<area shape="poly" id="edge69_Node000093_Node000094" title=" " alt="" coords="892,182,920,197,936,212,945,227,953,242,968,257,985,268,982,272,964,261,949,245,940,230,931,215,916,201,889,187"/>
+</map>

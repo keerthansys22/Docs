@@ -1,0 +1,7 @@
+<map id="disp_mod_config_screen" name="disp_mod_config_screen">
+<area shape="rect" id="Node000001" title="Function to display config screen." alt="" coords="5,31,170,57"/>
+<area shape="rect" id="Node000002" href="$config__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="218,5,376,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,31,202,27,202,33,170,37"/>
+<area shape="rect" id="Node000003" href="$common__screen__calls_8c.html#ac0ab6412f9e02f687f88279e0fe204e0" title="function to set the background color" alt="" coords="223,56,371,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,51,207,56,207,61,170,57"/>
+</map>

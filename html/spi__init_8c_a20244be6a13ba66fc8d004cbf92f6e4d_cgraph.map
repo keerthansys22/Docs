@@ -1,0 +1,14 @@
+<map id="LCD_SPI_DATAWRITE" name="LCD_SPI_DATAWRITE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,162,57"/>
+<area shape="rect" id="Node000002" href="$lcd__init_8c.html#a0543bbde4de0576ea0a80e73bac80a4e" title="Sets the data/cmd line to receive the data nased on the modes." alt="" coords="210,5,358,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,31,194,27,195,33,162,37"/>
+<area shape="rect" id="Node000005" href="$spi__init_8c.html#a049cd8c34e247abfa2b43cbfac2ca3fb" title=" " alt="" coords="223,56,345,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="162,51,208,57,207,62,161,57"/>
+<area shape="rect" id="Node000003" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="406,5,543,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="358,16,390,16,390,21,358,21"/>
+<area shape="rect" id="Node000004" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="591,31,671,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="544,27,576,32,575,38,543,32"/>
+<area shape="rect" id="Node000006" href="$spi__init_8c.html#ad1975fd8330425459b0ea85c1c5afb05" title=" " alt="" coords="421,56,528,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="345,67,406,67,406,72,345,72"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="528,58,576,50,576,55,529,63"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Src/Initializations/Indication/indication.c" name="Src/Initializations/Indication/indication.c">
+<area shape="rect" id="Node000001" title="Source that initializes and self&#45;test the indication i2c&#45;1." alt="" coords="60,5,211,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,66,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,51,65,88,61,84,108,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,96,182,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,49,138,80,133,80,133,49"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="205,96,266,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,47,210,84,206,88,160,51"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="disp_mod_pin_screen" name="disp_mod_pin_screen">
+<area shape="rect" id="Node000001" title="Function to display pin screen." alt="" coords="5,56,153,83"/>
+<area shape="rect" id="Node000002" href="$common__screen__calls_8c.html#a2cf24a7fb496a80ca43515bb265f1ae1" title="function to create the pin labels" alt="" coords="201,5,359,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,53,209,34,210,39,136,58"/>
+<area shape="rect" id="Node000003" href="$common__screen__calls_8c.html#ac0ab6412f9e02f687f88279e0fe204e0" title="function to set the background color" alt="" coords="206,56,354,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,67,190,67,190,72,153,72"/>
+<area shape="rect" id="Node000004" href="$status__screen_8c.html#a9d9732ee883427a96c71ce5b6e1b217d" title="function to stop the flashing timer" alt="" coords="213,107,347,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,81,210,100,209,105,134,86"/>
+</map>

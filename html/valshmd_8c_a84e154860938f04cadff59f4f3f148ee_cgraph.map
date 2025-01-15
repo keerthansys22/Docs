@@ -1,0 +1,11 @@
+<map id="GetPressureZoneCount" name="GetPressureZoneCount">
+<area shape="rect" id="Node000001" title=":This API fetches the count of pressure zones discovered." alt="" coords="5,43,162,69"/>
+<area shape="rect" id="Node000002" href="$shmd__source_8c.html#a17d0175269cb841c6a825bb555e69b79" title="Unlocks the spinlock for a specified pressure zone in acyclic mode." alt="" coords="223,5,368,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,43,207,36,208,41,162,48"/>
+<area shape="rect" id="Node000004" href="$shmd__source_8c.html#a392d0ecc0948ae2e321c74c157a504b1" title="Locks the spinlock for a specified pressure zone in acyclic mode." alt="" coords="210,72,381,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,64,195,69,194,74,162,69"/>
+<area shape="rect" id="Node000003" href="$shmd__source_8c.html#ac935872527ba12b3034abfb5ca7df126" title="Unlocks a spinlock." alt="" coords="434,13,524,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,24,419,24,419,29,368,29"/>
+<area shape="rect" id="Node000005" href="$shmd__source_8c.html#aefe4253bf48461410550618b2dd56c7a" title="Locks a spinlock with a timeout." alt="" coords="429,72,529,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="381,83,413,83,413,88,381,88"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="volatge_vb_monitoring" name="volatge_vb_monitoring">
+<area shape="rect" id="Node000001" title="Monitor the voltage va." alt="" coords="5,5,153,32"/>
+<area shape="rect" id="Node000002" href="$_v_b___r_e_a_d_i_n_g_8c.html#ada6b35c285ff8c328758e516803edf80" title="ADC reading voltage VB." alt="" coords="201,5,311,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,16,185,16,185,21,153,21"/>
+</map>

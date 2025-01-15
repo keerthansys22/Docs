@@ -1,0 +1,5 @@
+<map id="disp_pin_correct_details" name="disp_pin_correct_details">
+<area shape="rect" id="Node000001" title="Function to print &quot;PIN MATCHED&quot;." alt="" coords="5,5,167,32"/>
+<area shape="rect" id="Node000002" href="$common__screen__calls_8c.html#a2cf24a7fb496a80ca43515bb265f1ae1" title="function to create the pin labels" alt="" coords="215,5,373,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,16,199,16,199,21,167,21"/>
+</map>

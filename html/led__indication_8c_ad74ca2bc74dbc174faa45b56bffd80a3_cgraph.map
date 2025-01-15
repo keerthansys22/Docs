@@ -1,0 +1,5 @@
+<map id="force_mode" name="force_mode">
+<area shape="rect" id="Node000001" title="force mode led on and off" alt="" coords="5,5,94,32"/>
+<area shape="rect" id="Node000002" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="142,5,221,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,16,126,16,126,21,94,21"/>
+</map>

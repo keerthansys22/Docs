@@ -1,0 +1,11 @@
+<map id="GetPressureZoneModuleslist" name="GetPressureZoneModuleslist">
+<area shape="rect" id="Node000001" title="Retrieves the list of devices connected to a specific pressure zone." alt="" coords="5,43,194,69"/>
+<area shape="rect" id="Node000002" href="$shmd__source_8c.html#a17d0175269cb841c6a825bb555e69b79" title="Unlocks the spinlock for a specified pressure zone in acyclic mode." alt="" coords="255,5,400,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,41,239,35,240,41,194,47"/>
+<area shape="rect" id="Node000004" href="$shmd__source_8c.html#a392d0ecc0948ae2e321c74c157a504b1" title="Locks the spinlock for a specified pressure zone in acyclic mode." alt="" coords="242,72,413,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="194,65,227,70,226,75,193,71"/>
+<area shape="rect" id="Node000003" href="$shmd__source_8c.html#ac935872527ba12b3034abfb5ca7df126" title="Unlocks a spinlock." alt="" coords="466,13,556,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,24,451,24,451,29,400,29"/>
+<area shape="rect" id="Node000005" href="$shmd__source_8c.html#aefe4253bf48461410550618b2dd56c7a" title="Locks a spinlock with a timeout." alt="" coords="461,72,561,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="413,83,445,83,445,88,413,88"/>
+</map>

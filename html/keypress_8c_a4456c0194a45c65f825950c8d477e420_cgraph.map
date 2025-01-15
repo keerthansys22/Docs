@@ -1,0 +1,5 @@
+<map id="start_longpress_timer" name="start_longpress_timer">
+<area shape="rect" id="Node000001" title="Function to start timer for longpress." alt="" coords="5,5,152,32"/>
+<area shape="rect" id="Node000002" href="$keypress_8c.html#aad8b6cba38bcb5fda540f1aa65b55611" title="Function to increment the counter value when long keypressed." alt="" coords="200,5,278,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,16,184,16,184,21,152,21"/>
+</map>

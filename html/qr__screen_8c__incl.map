@@ -1,0 +1,5 @@
+<map id="Src/GUI/Screens/qr_screen.c" name="Src/GUI/Screens/qr_screen.c">
+<area shape="rect" id="Node000001" title="Source that displays QR screen." alt="" coords="5,5,140,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="26,96,119,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,49,75,80,70,80,70,49"/>
+</map>

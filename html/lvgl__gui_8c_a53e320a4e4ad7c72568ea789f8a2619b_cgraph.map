@@ -1,0 +1,17 @@
+<map id="callback" name="callback">
+<area shape="rect" id="Node000001" title="Function that calls after inactivity occured &#45; First screen." alt="" coords="5,132,75,159"/>
+<area shape="rect" id="Node000002" href="$status__screen_8c.html#a42f6042066b23dfcad9e12665a8fb996" title="function to create the status screen" alt="" coords="123,107,289,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,137,107,132,108,138,76,143"/>
+<area shape="rect" id="Node000008" href="$lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="165,157,247,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="76,148,150,159,149,165,75,153"/>
+<area shape="rect" id="Node000003" href="$status__screen_8c.html#a4f6a30dc66c4eb48d9ce877149b302e8" title="create animations for normal and warning status" alt="" coords="360,5,462,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="227,104,276,74,336,42,350,35,352,40,338,46,278,78,229,108"/>
+<area shape="rect" id="Node000004" href="$common__screen__calls_8c.html#ac0ab6412f9e02f687f88279e0fe204e0" title="function to set the background color" alt="" coords="337,56,485,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="262,103,339,84,340,90,264,109"/>
+<area shape="rect" id="Node000005" href="$common__screen__calls_8c.html#adcc2034261addcb1e1ed1272af6e421d" title="function to create the labels" alt="" coords="339,107,483,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="290,117,323,117,323,123,290,123"/>
+<area shape="rect" id="Node000006" href="$common__screen__calls_8c.html#aacff09f925b6d1af3bd78743926dfb3e" title="function to create the QR" alt="" coords="347,157,475,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="264,131,340,150,339,156,262,137"/>
+<area shape="rect" id="Node000007" href="$status__screen_8c.html#a9d9732ee883427a96c71ce5b6e1b217d" title="function to stop the flashing timer" alt="" coords="345,208,478,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="266,131,290,143,306,156,315,169,324,181,339,194,347,199,344,203,335,198,320,185,311,172,302,160,288,148,264,136"/>
+</map>

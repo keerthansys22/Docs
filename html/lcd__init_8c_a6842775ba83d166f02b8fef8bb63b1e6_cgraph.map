@@ -1,0 +1,25 @@
+<map id="lcd_init" name="lcd_init">
+<area shape="rect" id="Node000001" title="Function to perform LCD functionality." alt="" coords="5,56,68,83"/>
+<area shape="rect" id="Node000002" href="$lcd__init_8c.html#a18e43791216d53f52c3bca5d8b3bf60c" title="Initialization of the LCD ST7291_chip." alt="" coords="116,56,205,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,67,100,67,100,72,68,72"/>
+<area shape="rect" id="Node000003" href="$lcd__init_8c.html#a4e054c44735fef87ab7359d8f6c37683" title="LCD reset." alt="" coords="492,5,571,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,53,253,41,372,25,476,18,477,23,373,31,253,47,206,58"/>
+<area shape="rect" id="Node000006" href="$spi__init_8c.html#af4441b8eab01e69f1b6222fee0f962ef" title=" " alt="" coords="256,56,407,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="205,67,240,67,240,72,205,72"/>
+<area shape="rect" id="Node000010" href="$spi__init_8c.html#a20244be6a13ba66fc8d004cbf92f6e4d" title=" " alt="" coords="253,107,409,133"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="206,80,270,99,269,104,205,85"/>
+<area shape="rect" id="Node000004" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="654,56,791,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="572,26,655,49,654,54,570,31"/>
+<area shape="rect" id="Node000005" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="839,81,918,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="792,78,824,83,823,88,791,83"/>
+<area shape="rect" id="Node000007" href="$lcd__init_8c.html#a0543bbde4de0576ea0a80e73bac80a4e" title="Sets the data/cmd line to receive the data nased on the modes." alt="" coords="457,56,606,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="407,67,442,67,442,72,407,72"/>
+<area shape="rect" id="Node000008" href="$spi__init_8c.html#a049cd8c34e247abfa2b43cbfac2ca3fb" title=" " alt="" coords="470,107,593,133"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="388,81,462,100,460,105,386,86"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="606,67,638,67,638,72,606,72"/>
+<area shape="rect" id="Node000009" href="$spi__init_8c.html#ad1975fd8330425459b0ea85c1c5afb05" title=" " alt="" coords="669,107,776,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="593,117,654,117,654,123,593,123"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="776,109,823,101,824,106,777,114"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="386,103,460,84,462,90,388,109"/>
+<area shape="poly" id="edge13_Node000010_Node000008" title=" " alt="" coords="409,117,455,117,455,123,409,123"/>
+</map>

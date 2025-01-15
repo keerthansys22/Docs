@@ -1,0 +1,20 @@
+<map id="ST7291_setScreenColor" name="ST7291_setScreenColor">
+<area shape="rect" id="Node000001" title="function to fill the screen color" alt="" coords="5,31,167,57"/>
+<area shape="rect" id="Node000002" href="$spi__init_8c.html#af4441b8eab01e69f1b6222fee0f962ef" title=" " alt="" coords="217,5,369,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,31,201,27,202,32,167,37"/>
+<area shape="rect" id="Node000008" href="$spi__init_8c.html#a20244be6a13ba66fc8d004cbf92f6e4d" title=" " alt="" coords="215,56,371,83"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="167,51,199,55,199,61,167,57"/>
+<area shape="rect" id="Node000003" href="$lcd__init_8c.html#a0543bbde4de0576ea0a80e73bac80a4e" title="Sets the data/cmd line to receive the data nased on the modes." alt="" coords="419,5,567,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,16,404,16,404,21,369,21"/>
+<area shape="rect" id="Node000006" href="$spi__init_8c.html#a049cd8c34e247abfa2b43cbfac2ca3fb" title=" " alt="" coords="432,56,554,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="349,30,423,49,422,54,348,35"/>
+<area shape="rect" id="Node000004" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="615,5,753,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="568,16,600,16,600,21,568,21"/>
+<area shape="rect" id="Node000005" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="801,31,880,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="754,27,786,32,785,38,753,32"/>
+<area shape="rect" id="Node000007" href="$spi__init_8c.html#ad1975fd8330425459b0ea85c1c5afb05" title=" " alt="" coords="630,56,738,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="555,67,615,67,615,72,555,72"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="738,58,785,50,786,55,739,63"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="348,53,422,34,423,39,349,58"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="371,67,417,67,417,72,371,72"/>
+</map>

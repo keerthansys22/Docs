@@ -1,0 +1,20 @@
+<map id="ST7291_setScreenColor1" name="ST7291_setScreenColor1">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,174,57"/>
+<area shape="rect" id="Node000002" href="$lcd__test_8c.html#abde3423c3f78225320e49ef889c4af66" title=" " alt="" coords="224,5,383,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,31,208,27,209,33,175,37"/>
+<area shape="rect" id="Node000008" href="$lcd__test_8c.html#a1340f440667b2902f20776fc1368f368" title=" " alt="" coords="222,56,385,83"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="175,51,207,55,206,60,174,57"/>
+<area shape="rect" id="Node000003" href="$lcd__test_8c.html#a8ecb2e575e4c3c7c8aa4876f4b138959" title=" " alt="" coords="433,5,588,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,16,417,16,417,21,383,21"/>
+<area shape="rect" id="Node000006" href="$lcd__test_8c.html#a61b7e76afd6689b4f1e781a5fef96dd0" title=" " alt="" coords="446,56,575,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="362,30,439,49,438,54,360,35"/>
+<area shape="rect" id="Node000004" href="$lcd__test_8c.html#a15acecf21987ddea18a03be325379251" title=" " alt="" coords="636,5,781,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="589,16,621,16,621,21,589,21"/>
+<area shape="rect" id="Node000005" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="829,31,908,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="781,28,814,33,813,38,781,33"/>
+<area shape="rect" id="Node000007" href="$lcd__test_8c.html#aa86d805bddf5571bdc7d76b082391d7a" title=" " alt="" coords="651,56,766,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="576,67,636,67,636,72,576,72"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="766,58,813,50,814,55,767,63"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="360,53,438,34,439,39,362,58"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="386,67,430,67,430,72,386,72"/>
+</map>

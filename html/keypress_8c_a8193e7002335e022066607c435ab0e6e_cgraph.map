@@ -1,0 +1,5 @@
+<map id="firmware_update" name="firmware_update">
+<area shape="rect" id="Node000001" title="firmware_update led on and off" alt="" coords="5,5,121,32"/>
+<area shape="rect" id="Node000002" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="169,5,248,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,16,153,16,153,21,121,21"/>
+</map>

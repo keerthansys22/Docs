@@ -1,0 +1,32 @@
+<map id="lcd_refreshbuf1" name="lcd_refreshbuf1">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,114,83"/>
+<area shape="rect" id="Node000002" href="$lcd__init_8c.html#a0543bbde4de0576ea0a80e73bac80a4e" title="Sets the data/cmd line to receive the data nased on the modes." alt="" coords="180,5,328,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,53,185,34,186,39,114,58"/>
+<area shape="rect" id="Node000005" href="$lcd__test_8c.html#aa730ee2b803b0cd046df46fbacf55006" title=" " alt="" coords="172,56,336,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="114,67,157,67,157,72,114,72"/>
+<area shape="rect" id="Node000007" href="$lcd__test_8c.html#a64963ba0f6ae8d08260c4d6775a3d667" title=" " alt="" coords="162,107,346,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="114,81,186,100,185,105,113,86"/>
+<area shape="rect" id="Node000003" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="812,5,950,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="329,16,796,16,796,21,329,21"/>
+<area shape="rect" id="Node000004" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="1001,81,1080,108"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="915,30,954,48,1001,72,999,76,952,53,913,35"/>
+<area shape="rect" id="Node000006" href="$spi__init_8c.html#ad1975fd8330425459b0ea85c1c5afb05" title=" " alt="" coords="629,56,737,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="336,67,614,67,614,72,336,72"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="737,70,985,88,985,93,737,76"/>
+<area shape="rect" id="Node000008" href="$lcd__test_8c.html#abde3423c3f78225320e49ef889c4af66" title=" " alt="" coords="397,107,555,133"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="346,117,381,117,381,123,346,123"/>
+<area shape="rect" id="Node000013" href="$lcd__test_8c.html#a1340f440667b2902f20776fc1368f368" title=" " alt="" coords="394,157,557,184"/>
+<area shape="poly" id="edge15_Node000007_Node000013" title=" " alt="" coords="316,131,400,151,399,156,315,137"/>
+<area shape="rect" id="Node000009" href="$lcd__test_8c.html#a8ecb2e575e4c3c7c8aa4876f4b138959" title=" " alt="" coords="605,107,761,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="555,117,590,117,590,123,555,123"/>
+<area shape="rect" id="Node000011" href="$lcd__test_8c.html#a61b7e76afd6689b4f1e781a5fef96dd0" title=" " alt="" coords="618,157,748,184"/>
+<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="534,131,611,150,610,156,533,137"/>
+<area shape="rect" id="Node000010" href="$lcd__test_8c.html#a15acecf21987ddea18a03be325379251" title=" " alt="" coords="809,107,953,133"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="761,117,793,117,793,123,761,123"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="953,106,985,101,986,106,954,111"/>
+<area shape="rect" id="Node000012" href="$lcd__test_8c.html#aa86d805bddf5571bdc7d76b082391d7a" title=" " alt="" coords="824,157,938,184"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="748,168,808,168,808,173,748,173"/>
+<area shape="poly" id="edge14_Node000012_Node000004" title=" " alt="" coords="924,154,952,143,1004,114,1007,119,954,148,926,159"/>
+<area shape="poly" id="edge16_Node000013_Node000009" title=" " alt="" coords="533,154,610,135,611,140,534,159"/>
+<area shape="poly" id="edge17_Node000013_Node000011" title=" " alt="" coords="558,168,603,168,603,173,558,173"/>
+</map>
