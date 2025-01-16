@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['back_5flabel_5fabout_0',['back_label_about',['../about__screen_8c.html#aef346b4edbe463b1f6eb71b0193683b9',1,'about_screen.c']]],
-  ['back_5flabel_5fmodule_1',['back_label_module',['../module__screen_8c.html#af75d44c0559a3ee5bd192affe42b61fa',1,'module_screen.c']]],
-  ['back_5ftitle_5fconfig_2',['back_title_config',['../config__screen_8c.html#aa151211f1d5a331a1dc9a8bff870c259',1,'config_screen.c']]],
-  ['back_5ftitle_5fmac_3',['back_title_mac',['../mac__screen_8c.html#aa47aa67d8d0a2d010e29592527f376e1',1,'mac_screen.c']]],
-  ['bg_5fcolor_4',['bg_color',['../common__screen__calls_8c.html#af6bbe65dafca6d698a744d3a1e0d2c20',1,'common_screen_calls.c']]],
-  ['bits_5',['bits',['../structspi__flash___data_xfer.html#a46a6da6b1936191571fd30b2a749f38c',1,'spi_flash_DataXfer']]],
-  ['board_5fid_6',['board_id',['../structshmd__struct.html#aa143da6d318612d6a12d9708e86fd58f',1,'shmd_struct::board_id'],['../data__processing_8c.html#af84994521a95b5a427974ea0c6287c06',1,'board_id:&#160;discovery.c'],['../discovery_8c.html#af84994521a95b5a427974ea0c6287c06',1,'board_id:&#160;discovery.c']]]
+  ['clear_5findex_0',['clear_index',['../lvgl__gui_8c.html#a6a714473ebc0db426e0e75b20b07af0c',1,'lvgl_gui.c']]],
+  ['client1_5fmq_1',['client1_mq',['../default__task_8c.html#a6a99844fa0f40acacd58db6e832415c2',1,'default_task.c']]],
+  ['client_5fmsg_5fstruct_2',['client_msg_struct',['../lvgl__gui_8c.html#a6aa62441c7ec07ef1135ee06e84221ec',1,'lvgl_gui.c']]],
+  ['colours_3',['colours',['../lcd__init_8c.html#a810b845887b60187bd887573eaf75c2c',1,'lcd_init.c']]],
+  ['colours1_4',['colours1',['../lcd__test_8c.html#a6d836b394b9ec1fdf22267977309b655',1,'lcd_test.c']]],
+  ['coming_5ftitle_5',['coming_title',['../config__screen_8c.html#acefaab976cd297cf995a3f7d624eb3bd',1,'config_screen.c']]],
+  ['common_5ffault_5fflag_6',['common_fault_flag',['../keypress_8c.html#ac2aeb63b8fa0bce5022c97f8858062da',1,'keypress.c']]],
+  ['config_5findex_7',['config_index',['../lvgl__gui_8c.html#abc2ec52db269f87c1cbb39ffe462a113',1,'lvgl_gui.c']]],
+  ['cur_5fdisp_5fscr_5findex_8',['cur_disp_scr_index',['../lvgl__gui_8c.html#a49952e1fb0d52f6ef2f6fd0f381ab1b5',1,'cur_disp_scr_index:&#160;lvgl_gui.c'],['../keypress_8c.html#a49952e1fb0d52f6ef2f6fd0f381ab1b5',1,'cur_disp_scr_index:&#160;lvgl_gui.c']]],
+  ['cur_5fkey_5findex_9',['cur_key_index',['../lvgl__gui_8c.html#aee5b5ea2cbc7ed868b688502d35956b6',1,'lvgl_gui.c']]]
 ];

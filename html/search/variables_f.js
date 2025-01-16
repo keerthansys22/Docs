@@ -1,29 +1,4 @@
 var searchData=
 [
-  ['panel4_5ftitle_0',['panel4_title',['../menu__screen_8c.html#a6a33696ab565814986ea70d2093022ff',1,'menu_screen.c']]],
-  ['panel4_5ftitle1_1',['panel4_title1',['../menu__screen_8c.html#a49eb1271335e21ac1e4a0974afafe682',1,'menu_screen.c']]],
-  ['panel4_5ftitle2_2',['panel4_title2',['../menu__screen_8c.html#aaa9775c07017376c3661fbe78756162b',1,'menu_screen.c']]],
-  ['panel4_5ftitle3_3',['panel4_title3',['../menu__screen_8c.html#a7f19127eee2895d32375e39339991947',1,'menu_screen.c']]],
-  ['parameter_5fid_4',['parameter_id',['../structshmd__struct.html#a73b38aba5f7ac1395c76e00a78ffe157',1,'shmd_struct']]],
-  ['params_5',['params',['../message__queue_8c.html#a710fbe74c739a27f1aa179aeeca5e9b0',1,'message_queue.c']]],
-  ['part_5flabel_6',['part_label',['../module__screen_8c.html#ad85ee643d84fc46eb57f364fb1fa7b62',1,'module_screen.c']]],
-  ['part_5fnumber_7',['part_number',['../structmodule__screen.html#a00e24881e06f572a78f96d230ad347c2',1,'module_screen']]],
-  ['part_5fval_5flabel_8',['part_val_label',['../module__screen_8c.html#a0219abe0f25db99de2aad5b1d881650c',1,'module_screen.c']]],
-  ['pin0_5flabel_9',['pin0_label',['../pin__screen_8c.html#a5b5c41c36b4429aa34d258105d117b91',1,'pin_screen.c']]],
-  ['pin1_5flabel_10',['pin1_label',['../pin__screen_8c.html#a675e92d056d55cebcf8f9727f3e52208',1,'pin_screen.c']]],
-  ['pin2_5flabel_11',['pin2_label',['../pin__screen_8c.html#abceedf2c67709a2590ae3f672c93e7d6',1,'pin_screen.c']]],
-  ['pin3_5flabel_12',['pin3_label',['../pin__screen_8c.html#abeebe1219410c9bd188f777a726a4bb7',1,'pin_screen.c']]],
-  ['pin_5fbuf_13',['pin_buf',['../lvgl__gui_8c.html#a76c6a3773046abf39bbf0d0412f7b766',1,'lvgl_gui.c']]],
-  ['pin_5fcorr_5flabel_14',['pin_corr_label',['../pin__screen_8c.html#ae7f85d1824e526589001c7e1f5c2a4d8',1,'pin_screen.c']]],
-  ['pin_5findex_15',['pin_index',['../lvgl__gui_8c.html#a8836d9906db6ed44e3ee6d25dd6a432a',1,'lvgl_gui.c']]],
-  ['pin_5flabel_16',['pin_label',['../pin__screen_8c.html#ac42cfedc99840143b38f53cd14bb8a82',1,'pin_screen.c']]],
-  ['pin_5ftemp_17',['pin_temp',['../lvgl__gui_8c.html#aefecb4cb3383b6f66d9fedfa71eb2d8a',1,'lvgl_gui.c']]],
-  ['pinval_18',['pinval',['../lvgl__gui_8c.html#a3d1f75f96404712ad376472bd45b8d9d',1,'lvgl_gui.c']]],
-  ['pressure_5fzone_5fcount_5fbuf_19',['pressure_zone_count_buf',['../data__processing_8c.html#a3f341cd8a329f6401470a9bcaa57c207',1,'pressure_zone_count_buf:&#160;data_processing.c'],['../discovery_8c.html#a3f341cd8a329f6401470a9bcaa57c207',1,'pressure_zone_count_buf:&#160;discovery.c']]],
-  ['pressure_5fzone_5fcounts_20',['pressure_zone_counts',['../data__processing_8c.html#a8d871ea0bdd0817738c61c721d032de1',1,'data_processing.c']]],
-  ['pressurezonecount_21',['PressureZoneCount',['../shmd__source_8c.html#aa9c55a1f9582050e6cb0b06258c79522',1,'PressureZoneCount:&#160;shmd_source.c'],['../valshmd_8c.html#aa9c55a1f9582050e6cb0b06258c79522',1,'PressureZoneCount:&#160;shmd_source.c']]],
-  ['prxdiscover_5finstance_5fptr_22',['prxdiscover_instance_ptr',['../pzzone__acyclic__shmd_8c.html#abedd6be3984e6113983ab44e7670cad2',1,'pzzone_acyclic_shmd.c']]],
-  ['prz_5finstance_5fptr_23',['prz_instance_ptr',['../shmd__source_8c.html#a8e8872203f8a29fa0e15a3ec0f9c3f5d',1,'prz_instance_ptr:&#160;shmd_source.c'],['../diagvalve_8c.html#afccf8c35bc8972ca065f98ba132dcbcc',1,'prz_instance_ptr:&#160;shmd_source.c'],['../isemdiag_8c.html#afccf8c35bc8972ca065f98ba132dcbcc',1,'prz_instance_ptr:&#160;shmd_source.c'],['../propvalve_8c.html#afccf8c35bc8972ca065f98ba132dcbcc',1,'prz_instance_ptr:&#160;shmd_source.c'],['../pzzone__acyclic__shmd_8c.html#afccf8c35bc8972ca065f98ba132dcbcc',1,'prz_instance_ptr:&#160;shmd_source.c'],['../pzzone__cyclic__shmd_8c.html#afccf8c35bc8972ca065f98ba132dcbcc',1,'prz_instance_ptr:&#160;shmd_source.c']]],
-  ['pzid_24',['pzid',['../structshmd__struct.html#a45f2b34cea95bb2cb93d2d392dee3616',1,'shmd_struct']]],
-  ['pzzonemodulesdiscoveryinfo_25',['PzzoneModulesDiscoveryinfo',['../shmd__source_8c.html#a1ae24f338aa95ff078ae5e5723db2d99',1,'PzzoneModulesDiscoveryinfo:&#160;shmd_source.c'],['../valshmd_8c.html#a1ae24f338aa95ff078ae5e5723db2d99',1,'PzzoneModulesDiscoveryinfo:&#160;shmd_source.c']]]
+  ['qr_0',['qr',['../common__screen__calls_8c.html#afdb49a0d2609b091797e99e18fb0cb96',1,'common_screen_calls.c']]]
 ];

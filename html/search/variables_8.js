@@ -1,6 +1,26 @@
 var searchData=
 [
-  ['hard_5flabel_0',['hard_label',['../module__screen_8c.html#a9194598c3b6bbd8feb5028796f00d8ae',1,'module_screen.c']]],
-  ['hard_5frev_1',['hard_rev',['../structmodule__screen.html#a38bf20679db844d68a15990381edf754',1,'module_screen']]],
-  ['hard_5fval_5flabel_2',['hard_val_label',['../module__screen_8c.html#a488ab067bfb6fe50a0bb4d04e0402325',1,'module_screen.c']]]
+  ['i2c_5fva_5fled_5ffile_0',['i2c_va_led_file',['../indication_8c.html#a41b2ae55793685136cd8f87b0ff4b669',1,'i2c_va_led_file:&#160;indication.c'],['../monitoring_8c.html#a41b2ae55793685136cd8f87b0ff4b669',1,'i2c_va_led_file:&#160;indication.c'],['../keypress_8c.html#a41b2ae55793685136cd8f87b0ff4b669',1,'i2c_va_led_file:&#160;indication.c'],['../external__adc__test_8c.html#a41b2ae55793685136cd8f87b0ff4b669',1,'i2c_va_led_file:&#160;indication.c'],['../_v_a___r_e_a_d_i_n_g_8c.html#a41b2ae55793685136cd8f87b0ff4b669',1,'i2c_va_led_file:&#160;indication.c']]],
+  ['i2cmsg_1',['i2cmsg',['../indication_8c.html#a26546fa59bb9d376eee575657dab9fe1',1,'i2cmsg:&#160;indication.c'],['../monitoring_8c.html#a26546fa59bb9d376eee575657dab9fe1',1,'i2cmsg:&#160;indication.c'],['../keypress_8c.html#a26546fa59bb9d376eee575657dab9fe1',1,'i2cmsg:&#160;indication.c'],['../led__indication_8c.html#a26546fa59bb9d376eee575657dab9fe1',1,'i2cmsg:&#160;indication.c'],['../external__adc__test_8c.html#a26546fa59bb9d376eee575657dab9fe1',1,'i2cmsg:&#160;indication.c'],['../_v_a___r_e_a_d_i_n_g_8c.html#a26546fa59bb9d376eee575657dab9fe1',1,'i2cmsg:&#160;indication.c']]],
+  ['inter_5fprop_5fcount_2',['inter_prop_count',['../data__processing_8c.html#a306f1bbb85e369d0869ae58578220042',1,'data_processing.c']]],
+  ['io_5fcount_3',['io_count',['../data__processing_8c.html#ae79be649f973e3dc7851553f6035eb99',1,'data_processing.c']]],
+  ['io_5fcount_5fbuf_4',['io_count_buf',['../data__processing_8c.html#ac432fd913081bb3f627d04307db44fa3',1,'io_count_buf:&#160;discovery.c'],['../discovery_8c.html#ac432fd913081bb3f627d04307db44fa3',1,'io_count_buf:&#160;discovery.c']]],
+  ['io_5fmodule_5fstatus_5',['io_module_status',['../lvgl__gui_8c.html#ae7c5d32eae51185384a9e54254b9e0f6',1,'lvgl_gui.c']]],
+  ['ip1_5ftitle_6',['ip1_title',['../config__screen_8c.html#aeeee522cb98f5bc17581471b164e7c43',1,'config_screen.c']]],
+  ['ip1_5fvalue_7',['ip1_value',['../config__screen_8c.html#a06f83689868f529fbe40a5aadf4cd9f7',1,'config_screen.c']]],
+  ['ip1_5fvalue1_8',['ip1_value1',['../config__screen_8c.html#a6ed9e2340cb10e462365cc3967df5a7c',1,'config_screen.c']]],
+  ['ip1_5fvalue2_9',['ip1_value2',['../config__screen_8c.html#a3afe082aa21b7915fb17bf5389fa82eb',1,'config_screen.c']]],
+  ['ip1_5fvalue3_10',['ip1_value3',['../config__screen_8c.html#a572b36846803aef9c6e2e22d1b40bf32',1,'config_screen.c']]],
+  ['ip2_5ftitle_11',['ip2_title',['../config__screen_8c.html#a2e1c6abf493c71414e9255434e39e1fd',1,'config_screen.c']]],
+  ['ip2_5fvalue_12',['ip2_value',['../config__screen_8c.html#aaf4fb2a6cfeb4487f4f574b4641a74a2',1,'config_screen.c']]],
+  ['ip2_5fvalue1_13',['ip2_value1',['../config__screen_8c.html#a6855d55e87dcddbcfd35d6c80b4a8e69',1,'config_screen.c']]],
+  ['ip2_5fvalue2_14',['ip2_value2',['../config__screen_8c.html#afd394101df35b22cb8060c830e76c8cc',1,'config_screen.c']]],
+  ['ip2_5fvalue3_15',['ip2_value3',['../config__screen_8c.html#ab928b48c31c71648ffbfecd91096c833',1,'config_screen.c']]],
+  ['ip_5fbuf1_16',['ip_buf1',['../lvgl__gui_8c.html#a688b9f32cd181edb753620a8117bef1c',1,'lvgl_gui.c']]],
+  ['ip_5fbuf2_17',['ip_buf2',['../lvgl__gui_8c.html#a234eb967321f3645e5cc5633c18db915',1,'lvgl_gui.c']]],
+  ['isem_5fdiag_5fcount_18',['isem_diag_count',['../data__processing_8c.html#a3f2e3b0055b7bd6ecfef1540062aa4bf',1,'data_processing.c']]],
+  ['isem_5ffault_5fcsv_5fvalue_19',['isem_fault_csv_value',['../isem__diag__fault__csv_8c.html#a3ac9bbaa8e60426f3dd023239a7363aa',1,'isem_diag_fault_csv.c']]],
+  ['isem_5ffault_5ffile_5fexist_20',['isem_fault_file_exist',['../isem__diag__fault__csv_8c.html#a7e584b938f275afa863e70cd6fdf96b5',1,'isem_diag_fault_csv.c']]],
+  ['isem_5fwarning_5fcsv_5fvalue_21',['isem_warning_csv_value',['../isem__diag__warning__csv_8c.html#a4b34591b3c7ce4a72ae500751937b9f4',1,'isem_diag_warning_csv.c']]],
+  ['isem_5fwarning_5ffile_5fnot_5fexist_22',['isem_warning_file_not_exist',['../isem__diag__warning__csv_8c.html#a2a491c8922b82cf66c8ca809d0b049d7',1,'isem_diag_warning_csv.c']]]
 ];

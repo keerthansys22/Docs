@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['electronic_5fvolatge_5fvb_0',['electronic_volatge_vb',['../keypress_8c.html#a30361367918c2c90e7ed4377b17ed1aa',1,'keypress.c']]],
-  ['errbuf_1',['errbuf',['../lcd__init_8c.html#aab3d3051ab911f66e9afd7745d5ebbb5',1,'lcd_init.c']]],
-  ['errbuf1_2',['errbuf1',['../lcd__test_8c.html#a4445a059d08a2bea6984adbec9b8d1c3',1,'lcd_test.c']]],
-  ['error_5fflag_3',['error_flag',['../keypress_8c.html#abc22a72d751fd7b9edfd17ce47da5651',1,'keypress.c']]],
-  ['error_5fflag1_4',['error_flag1',['../keypress_8c.html#ab92856dc804a6f00ff3bef84b9f35640',1,'keypress.c']]],
-  ['error_5fhandler_5',['error_handler',['../default__task_8c.html#a2e8abf8d014dfaa310d350898e7034d1',1,'default_task.c']]],
-  ['error_5fscreen_2ec_6',['error_screen.c',['../error__screen_8c.html',1,'']]],
-  ['event_5fclose_7',['event_close',['../mq__src_8c.html#a4e0ff1413655bcdded1d2351a7e30f69',1,'mq_src.c']]],
-  ['event_5fcreate_8',['event_create',['../mq__src_8c.html#a66d6657d37fd6a8918cd969fb311e035',1,'mq_src.c']]],
-  ['export_5fpath_9',['EXPORT_PATH',['../lcd__test_8c.html#a627f4c6e2b3a40a122f4303affea486b',1,'lcd_test.c']]],
-  ['extern_5fprop_5fcount_10',['extern_prop_count',['../data__processing_8c.html#a55f337861669522f7a6bef03a8f4d83c',1,'data_processing.c']]],
-  ['external_5fadc_11',['external_adc',['../external__adc__test_8c.html#adec54fe2681f570d972be8fc93a06400',1,'external_adc_test.c']]],
-  ['external_5fadc_5freading_5fvoltage_12',['external_adc_reading_voltage',['../external__adc__test_8c.html#a83e318d326e7f103978ba924020b873e',1,'external_adc_test.c']]],
-  ['external_5fadc_5ftest_2ec_13',['external_adc_test.c',['../external__adc__test_8c.html',1,'']]]
+  ['fault_5fcsv_5fvalue_0',['fault_csv_value',['../dv__fault__csv_8c.html#a65eb192130f260606eb757f6dda24f56',1,'dv_fault_csv.c']]],
+  ['fault_5ffile_5fnot_5fexist_1',['fault_file_not_exist',['../dv__fault__csv_8c.html#a380a0996399f42e4954d1701185a3484',1,'dv_fault_csv.c']]],
+  ['fd_2',['fd',['../structspi__flash___data_xfer.html#a6f8059414f0228f0256115e024eeed4b',1,'spi_flash_DataXfer']]],
+  ['features_20strong_3',['&lt;strong&gt;Key Features&lt;/strong&gt;',['../index.html#step1',1,'']]],
+  ['fetch_5fpressure_5fzone_5fdetails_4',['fetch_pressure_zone_details',['../discovery_8c.html#a2e5d3607b1b18046dc40e5ca4a5da25b',1,'discovery.c']]],
+  ['fg_5fcolor_5',['fg_color',['../common__screen__calls_8c.html#aa40cc747bee992b8d0c4c80f76dbfec3',1,'common_screen_calls.c']]],
+  ['firm_5flabel_6',['firm_label',['../module__screen_8c.html#a514c8c632912f8e99195d5fbf9a7acec',1,'module_screen.c']]],
+  ['firm_5frev_7',['firm_rev',['../structmodule__screen.html#acd56eb6ecb123e95699da1f1f5410ed3',1,'module_screen']]],
+  ['firm_5fval_5flabel_8',['firm_val_label',['../module__screen_8c.html#a384568a17b52028e2b87dd36acc16fd2',1,'module_screen.c']]],
+  ['firmware_5fupdate_9',['firmware_update',['../keypress_8c.html#a8193e7002335e022066607c435ab0e6e',1,'firmware_update(int i2cFile2, uint16_t fault_bit):&#160;led_indication.c'],['../led__indication_8c.html#a8193e7002335e022066607c435ab0e6e',1,'firmware_update(int i2cFile2, uint16_t fault_bit):&#160;led_indication.c']]],
+  ['flagip1_10',['flagip1',['../lvgl__gui_8c.html#a00597a3ca3f53197be9f64b8cd9d0f33',1,'lvgl_gui.c']]],
+  ['flagip2_11',['flagip2',['../lvgl__gui_8c.html#a67c81252751ddbbbe8ca785d6c974dbe',1,'lvgl_gui.c']]],
+  ['flash_5fon_12',['flash_on',['../pin__screen_8c.html#acf4df21b18b924052d66abac113599bb',1,'flash_on:&#160;status_screen.c'],['../qr__screen_8c.html#acf4df21b18b924052d66abac113599bb',1,'flash_on:&#160;status_screen.c'],['../status__screen_8c.html#acf4df21b18b924052d66abac113599bb',1,'flash_on:&#160;status_screen.c']]],
+  ['force_5fmode_13',['force_mode',['../keypress_8c.html#ad74ca2bc74dbc174faa45b56bffd80a3',1,'force_mode(int i2cFile2, uint16_t fault_bit):&#160;led_indication.c'],['../led__indication_8c.html#ad74ca2bc74dbc174faa45b56bffd80a3',1,'force_mode(int i2cFile2, uint16_t fault_bit):&#160;led_indication.c']]],
+  ['force_5fmode_5fflag_14',['force_mode_flag',['../keypress_8c.html#a23318aa85f90dcf9df1a82f1032e2267',1,'keypress.c']]],
+  ['full_15',['full',['../structlv__color__t.html#a93411271ae74abcd8382013f056c2a71',1,'lv_color_t::full'],['../structlv__color__t.html#aa8cc29818fac4b27d138dcd358833afb',1,'lv_color_t::full']]]
 ];

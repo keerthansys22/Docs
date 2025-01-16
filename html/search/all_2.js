@@ -1,16 +1,11 @@
 var searchData=
 [
-  ['about_5findex_0',['about_index',['../lvgl__gui_8c.html#ae8dc2bce272a2e5fcd8b50959867d76f',1,'lvgl_gui.c']]],
-  ['about_5fpressure_5fstyle_1',['about_pressure_style',['../lvgl__gui_8c.html#af8b44a1caa9ee3eb51fe8bc60a9bc648',1,'about_pressure_style():&#160;pressure_zone_screen.c'],['../pressure__zone__screen_8c.html#af8b44a1caa9ee3eb51fe8bc60a9bc648',1,'about_pressure_style():&#160;pressure_zone_screen.c']]],
-  ['about_5fpz_5fdetails_5fstyle_2',['about_pz_details_style',['../lvgl__gui_8c.html#ae7c1c61db41fc3dedfa298ba573ece07',1,'about_pz_details_style():&#160;pz_details_screen.c'],['../pz__details__screen_8c.html#ae7c1c61db41fc3dedfa298ba573ece07',1,'about_pz_details_style():&#160;pz_details_screen.c']]],
-  ['about_5fscreen_2ec_3',['about_screen.c',['../about__screen_8c.html',1,'']]],
-  ['about_5fstyle_4',['about_style',['../lvgl__gui_8c.html#af5e8d31030626c402468d235638eadb3',1,'about_style():&#160;about_screen.c'],['../about__screen_8c.html#af5e8d31030626c402468d235638eadb3',1,'about_style():&#160;about_screen.c']]],
-  ['acquire_5fvalues_5',['acquire_values',['../default__task_8c.html#a0e2570f6181cb5105b1549a1bf5bec3e',1,'acquire_values(void *arg):&#160;keypress.c'],['../keypress_8c.html#a0e2570f6181cb5105b1549a1bf5bec3e',1,'acquire_values(void *arg):&#160;keypress.c']]],
-  ['adc_5freading_5fvoltage_6',['adc_reading_voltage',['../_v_a___r_e_a_d_i_n_g_8c.html#ad717bb7defb491b31f12604df8059a81',1,'VA_READING.c']]],
-  ['anainput_5fout_2ec_7',['anainput_out.c',['../anainput__out_8c.html',1,'']]],
-  ['analogue_5finput_2ec_8',['analogue_input.c',['../analogue__input_8c.html',1,'']]],
-  ['analogue_5foutput_2ec_9',['analogue_output.c',['../analogue__output_8c.html',1,'']]],
-  ['application_10',['Arrow3 Linux application',['../index.html',1,'']]],
-  ['arrow3_20linux_20application_11',['Arrow3 Linux application',['../index.html',1,'']]],
-  ['auxiliary_5fvoltage_5fva_12',['auxiliary_voltage_va',['../keypress_8c.html#ae8843b552cf35ef910bb55477a00b715',1,'keypress.c']]]
+  ['back_5flabel_5fabout_0',['back_label_about',['../about__screen_8c.html#aef346b4edbe463b1f6eb71b0193683b9',1,'about_screen.c']]],
+  ['back_5flabel_5fmodule_1',['back_label_module',['../module__screen_8c.html#af75d44c0559a3ee5bd192affe42b61fa',1,'module_screen.c']]],
+  ['back_5ftitle_5fconfig_2',['back_title_config',['../config__screen_8c.html#aa151211f1d5a331a1dc9a8bff870c259',1,'config_screen.c']]],
+  ['back_5ftitle_5fmac_3',['back_title_mac',['../mac__screen_8c.html#aa47aa67d8d0a2d010e29592527f376e1',1,'mac_screen.c']]],
+  ['bg_5fcolor_4',['bg_color',['../common__screen__calls_8c.html#af6bbe65dafca6d698a744d3a1e0d2c20',1,'common_screen_calls.c']]],
+  ['bits_5',['bits',['../structspi__flash___data_xfer.html#a46a6da6b1936191571fd30b2a749f38c',1,'spi_flash_DataXfer']]],
+  ['board_5fid_6',['board_id',['../data__processing_8c.html#af84994521a95b5a427974ea0c6287c06',1,'board_id:&#160;discovery.c'],['../discovery_8c.html#af84994521a95b5a427974ea0c6287c06',1,'board_id:&#160;discovery.c']]],
+  ['bytes_5fper_5fpixel_7',['BYTES_PER_PIXEL',['../lvgl__init_8c.html#ae138b2e443649ca9546c99e80957faac',1,'lvgl_init.c']]]
 ];

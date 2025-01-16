@@ -1,26 +1,10 @@
 var searchData=
 [
-  ['screen_5fstatus_5fvalue_0',['screen_status_value',['../data__processing_8c.html#a25f15d44dc5d06dc872e7e479f80d805',1,'screen_status_value:&#160;lvgl_gui.c'],['../lvgl__gui_8c.html#a25f15d44dc5d06dc872e7e479f80d805',1,'screen_status_value:&#160;lvgl_gui.c']]],
-  ['select_5fflag_1',['select_flag',['../lvgl__gui_8c.html#ab3a6cbf2ad755aee82ccdc388355f2be',1,'lvgl_gui.c']]],
-  ['server_5fcommunication_5ferror_2',['server_communication_error',['../data__processing_8c.html#a3dde7dea69d0fff891d7efdd1aa53df3',1,'data_processing.c']]],
-  ['server_5ferrstatus_3',['server_errstatus',['../data__processing_8c.html#a6bfd000ab265cf33e2e045107358dd49',1,'data_processing.c']]],
-  ['server_5fmq_4',['server_mq',['../default__task_8c.html#a7c873617880a0fc7a7694bbfa46f2ef2',1,'server_mq:&#160;default_task.c'],['../message__queue_8c.html#a7c873617880a0fc7a7694bbfa46f2ef2',1,'server_mq:&#160;default_task.c']]],
-  ['shared_5fmem_5fread_5fevent_5ffd_5',['SHARED_MEM_READ_EVENT_FD',['../default__task_8c.html#ae7f8550b946df8c47b252e8722a37e66',1,'SHARED_MEM_READ_EVENT_FD:&#160;default_task.c'],['../shared__mem_8c.html#ae7f8550b946df8c47b252e8722a37e66',1,'SHARED_MEM_READ_EVENT_FD:&#160;default_task.c']]],
-  ['shared_5fmem_5fwrite_5fevent_5ffd_6',['SHARED_MEM_WRITE_EVENT_FD',['../default__task_8c.html#a6e754c5a451a614774c53a4a97387a85',1,'SHARED_MEM_WRITE_EVENT_FD:&#160;default_task.c'],['../shared__mem_8c.html#a6e754c5a451a614774c53a4a97387a85',1,'SHARED_MEM_WRITE_EVENT_FD:&#160;shared_mem.c']]],
-  ['shared_5fmemory_5fflag_7',['shared_memory_flag',['../message__queue_8c.html#ad884849bbb2bceeaa48aa3528aab3cff',1,'message_queue.c']]],
-  ['shinit_8',['shinit',['../default__task_8c.html#a4d711cae8941464e6d02e47c892f1301',1,'default_task.c']]],
-  ['shmid_9',['shmid',['../shmd__source_8c.html#ac8807d215d2ee6d9779d76aeb1147430',1,'shmd_source.c']]],
-  ['size_10',['size',['../structshmd__struct.html#ae5dc6ffcd9b7605c7787791e40cc6bb0',1,'shmd_struct']]],
-  ['speed_11',['speed',['../structspi__flash___data_xfer.html#a220859a8b5da0232739a11cbe7f79fc5',1,'spi_flash_DataXfer']]],
-  ['spinit_12',['spinit',['../default__task_8c.html#acfcd3f267927406b7d02c9ae6b645985',1,'default_task.c']]],
-  ['start_5fflag_13',['start_flag',['../data__processing_8c.html#af26731ad2b39b91b386db80610dccab5',1,'start_flag:&#160;discovery.c'],['../discovery_8c.html#af26731ad2b39b91b386db80610dccab5',1,'start_flag:&#160;discovery.c']]],
-  ['station_5fchnlnum_14',['station_chnlnum',['../structshmd__struct.html#adbbfacd6e2df6e410597fb2efd50f000',1,'shmd_struct']]],
-  ['station_5fnum_5fidentify_15',['station_num_identify',['../data__processing_8c.html#a43f723732975574603295a749dba1102',1,'data_processing.c']]],
-  ['status_5fvalue_16',['status_value',['../lvgl__gui_8c.html#ad9adfdfa5d789a974eba0e0f771b50a5',1,'lvgl_gui.c']]],
-  ['sts_5fidval_17',['sts_idval',['../structstatus__screen.html#aef19d326f1cc8ae1321d889344643f41',1,'status_screen']]],
-  ['sts_5fmsg_5fval_18',['sts_msg_val',['../structstatus__screen.html#a0efd038b212fc63b6aca351c562c6640',1,'status_screen']]],
-  ['sts_5fqr_5fcode_5fdata_19',['sts_qr_code_data',['../structstatus__screen.html#afed876ad0b33e76708b992d098cce317',1,'status_screen']]],
-  ['sts_5fstatus_5fdesc_20',['sts_status_desc',['../structstatus__screen.html#a9fcef01bfabcaf33c856eb9fd666322d',1,'status_screen']]],
-  ['sts_5fstatus_5fval_21',['sts_status_val',['../structstatus__screen.html#a12f4879710cc3f9df54c09131dc0bf25',1,'status_screen']]],
-  ['sts_5fsugg_5fdesc_22',['sts_sugg_desc',['../structstatus__screen.html#aff6c623709ea4f07be7fd42dfff84cd8',1,'status_screen']]]
+  ['thread_5facquire_0',['thread_acquire',['../default__task_8c.html#a5d3f042bc74db494e10c9eebd7208734',1,'default_task.c']]],
+  ['timer_1',['timer',['../lvgl__gui_8c.html#ad5554d1fe5a08cd896918dee210cd4a1',1,'lvgl_gui.c']]],
+  ['timerrr_2',['timerrr',['../keypress_8c.html#a276b928d8adfdf93c6cf6ff94c912176',1,'keypress.c']]],
+  ['tle_5fcount_3',['tle_count',['../data__processing_8c.html#a769acfe6413c70d163f06555254d212a',1,'data_processing.c']]],
+  ['total_5fno_5fof_5fmodules_4',['total_no_of_modules',['../data__processing_8c.html#a02cac62d4a1f068264ed558ec9240f0b',1,'total_no_of_modules:&#160;data_processing.c'],['../lvgl__gui_8c.html#a66d5f12db994684737f50a8dd4198dd8',1,'total_no_of_modules:&#160;data_processing.c']]],
+  ['txbuff_5',['Txbuff',['../structspi__flash___data_xfer.html#ab42ddfc467c1313d70f1dacb4e42b818',1,'spi_flash_DataXfer']]],
+  ['txlength_6',['Txlength',['../structspi__flash___data_xfer.html#a7565efc6120fc4e35e847f0d5d567ee2',1,'spi_flash_DataXfer']]]
 ];
