@@ -1,9 +1,0 @@
-<map id="data_receiving_thread_func" name="data_receiving_thread_func">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,183,83"/>
-<area shape="rect" id="Node000002" href="$message__queue_8c.html#a65baae4c89eacd1ffbdce18fc74950e4" title=" " alt="" coords="271,5,372,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,53,255,31,256,36,158,58"/>
-<area shape="rect" id="Node000003" href="$message__queue_8c.html#a8215376d0719d878c4f2c6de7d85fbc4" title=" " alt="" coords="270,56,373,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,67,255,67,255,72,183,72"/>
-<area shape="rect" id="Node000004" href="$message__queue_8c.html#a28a1378a1d74206066dfc96e1f204c85" title=" " alt="" coords="231,107,412,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,81,244,100,243,105,157,86"/>
-</map>

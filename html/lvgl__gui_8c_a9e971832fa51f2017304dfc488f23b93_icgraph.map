@@ -1,0 +1,53 @@
+<map id="disp_mod_status_screen" name="disp_mod_status_screen">
+<area shape="rect" id="Node000001" title="function to create the status screen" alt="" coords="1103,76,1269,103"/>
+<area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#a53e320a4e4ad7c72568ea789f8a2619b" title="Function that calls after inactivity occured &#45; First screen." alt="" coords="986,76,1055,103"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1088,92,1056,92,1056,87,1088,87"/>
+<area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="699,240,806,267"/>
+<area shape="poly" id="edge31_Node000001_Node000004" title=" " alt="" coords="1135,111,792,242,790,237,1133,106"/>
+<area shape="rect" id="Node000005" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="588,5,651,32"/>
+<area shape="poly" id="edge32_Node000001_Node000005" title=" " alt="" coords="1104,75,1055,67,823,39,651,24,652,18,824,33,1055,61,1105,70"/>
+<area shape="rect" id="Node000003" href="$lvgl__gui_8c.html#aaedac22c55880495505bf375e0e132c1" title="Function to start the inactivity timer." alt="" coords="854,76,938,103"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="970,92,938,92,938,87,970,87"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="875,117,768,241,764,238,871,113"/>
+<area shape="poly" id="edge30_Node000003_Node000005" title=" " alt="" coords="839,80,698,45,651,31,652,26,700,40,840,74"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="738,227,703,146,678,98,649,52,633,34,637,30,653,49,682,95,707,144,743,225"/>
+<area shape="rect" id="Node000006" href="$default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="475,5,540,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="572,21,540,21,540,16,572,16"/>
+<area shape="rect" id="Node000007" href="$default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="333,56,427,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="462,40,417,58,415,53,460,35"/>
+<area shape="rect" id="Node000008" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="236,309,285,336"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="368,98,270,310,266,308,364,96"/>
+<area shape="rect" id="Node000009" href="$diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="23,125,170,168"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="249,295,227,238,209,208,186,182,169,170,172,166,189,178,213,205,231,235,254,293"/>
+<area shape="rect" id="Node000010" href="$ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="26,192,167,235"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="238,299,215,273,186,249,166,238,168,233,189,244,218,269,242,295"/>
+<area shape="rect" id="Node000011" href="$io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="5,259,188,301"/>
+<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="220,315,180,304,181,299,221,310"/>
+<area shape="rect" id="Node000012" href="$pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="10,325,183,368"/>
+<area shape="poly" id="edge14_Node000008_Node000012" title=" " alt="" coords="220,331,184,337,183,331,220,326"/>
+<area shape="rect" id="Node000013" href="$pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="5,392,188,435"/>
+<area shape="poly" id="edge16_Node000008_Node000013" title=" " alt="" coords="235,349,189,382,165,394,163,389,186,378,232,344"/>
+<area shape="rect" id="Node000014" href="$about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="15,459,178,485"/>
+<area shape="poly" id="edge18_Node000008_Node000014" title=" " alt="" coords="252,352,229,402,211,427,189,449,169,460,167,456,186,445,207,424,224,399,247,350"/>
+<area shape="rect" id="Node000015" href="$about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="10,509,183,552"/>
+<area shape="poly" id="edge20_Node000008_Node000015" title=" " alt="" coords="257,352,249,385,236,425,217,464,190,499,174,511,171,507,186,495,212,462,231,423,244,384,252,351"/>
+<area shape="rect" id="Node000016" href="$clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="10,576,183,619"/>
+<area shape="poly" id="edge22_Node000008_Node000016" title=" " alt="" coords="261,352,257,398,246,454,225,513,209,541,190,566,175,578,172,573,186,562,205,538,220,511,241,453,252,397,256,351"/>
+<area shape="rect" id="Node000017" href="$about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="20,643,173,685"/>
+<area shape="poly" id="edge24_Node000008_Node000017" title=" " alt="" coords="258,352,235,502,215,580,203,611,190,632,175,645,172,641,186,629,198,608,210,578,230,501,253,351"/>
+<area shape="rect" id="Node000018" href="$mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="19,17,174,44"/>
+<area shape="poly" id="edge26_Node000008_Node000018" title=" " alt="" coords="257,294,254,245,243,183,222,120,206,91,186,65,160,47,163,42,190,61,210,88,227,118,248,182,259,244,262,293"/>
+<area shape="rect" id="Node000019" href="$module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="10,75,183,101"/>
+<area shape="poly" id="edge28_Node000008_Node000019" title=" " alt="" coords="255,295,249,254,238,206,217,157,203,135,186,115,170,104,173,100,189,111,207,132,222,155,243,204,255,253,260,294"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="186,155,279,164,379,168,509,168,573,175,635,194,689,216,729,237,727,242,686,221,633,199,572,181,509,173,379,173,278,169,185,161"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="183,214,379,219,509,219,610,226,699,240,698,245,610,231,509,224,379,224,183,220"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="203,273,379,269,509,269,610,265,698,257,699,262,610,271,509,275,379,275,204,278"/>
+<area shape="poly" id="edge15_Node000012_Node000004" title=" " alt="" coords="199,358,287,367,379,371,509,371,544,367,578,359,643,330,697,295,735,265,738,269,700,299,646,334,580,364,545,373,509,376,379,376,286,372,199,364"/>
+<area shape="poly" id="edge17_Node000013_Node000004" title=" " alt="" coords="204,417,379,421,509,421,548,416,586,403,621,383,653,359,706,307,739,266,744,269,710,311,656,363,624,387,588,408,549,422,509,427,379,427,203,422"/>
+<area shape="poly" id="edge19_Node000014_Node000004" title=" " alt="" coords="193,471,379,472,509,472,553,468,585,456,615,436,649,406,682,371,709,332,743,266,748,268,714,334,686,374,653,410,618,440,588,461,554,473,509,477,379,477,193,476"/>
+<area shape="poly" id="edge21_Node000015_Node000004" title=" " alt="" coords="198,526,379,524,509,524,553,521,586,510,616,490,649,459,670,436,688,410,716,355,735,304,746,266,751,268,740,305,721,357,692,413,674,439,653,463,619,494,589,515,554,526,509,529,379,529,198,531"/>
+<area shape="poly" id="edge23_Node000016_Node000004" title=" " alt="" coords="198,588,379,583,509,583,553,579,587,568,617,547,649,514,673,484,693,450,722,378,739,313,747,267,752,268,744,314,727,380,697,452,677,487,653,518,620,551,590,572,555,584,509,588,379,588,198,594"/>
+<area shape="poly" id="edge25_Node000017_Node000004" title=" " alt="" coords="188,656,379,649,509,649,554,645,588,632,618,608,649,573,676,534,697,491,714,446,727,402,742,322,748,267,753,268,748,322,732,403,719,448,702,493,680,537,653,576,621,612,591,636,556,650,509,655,379,655,188,661"/>
+<area shape="poly" id="edge27_Node000018_Node000004" title=" " alt="" coords="190,22,292,24,413,38,476,52,538,71,598,98,653,131,683,157,709,187,745,238,741,241,705,190,679,161,649,135,595,102,537,76,475,57,413,43,292,29,190,27"/>
+<area shape="poly" id="edge29_Node000019_Node000004" title=" " alt="" coords="193,102,283,112,379,117,509,117,546,121,582,131,617,146,649,165,703,204,740,238,736,242,700,209,646,169,614,151,580,136,545,126,509,123,379,123,282,118,192,107"/>
+</map>

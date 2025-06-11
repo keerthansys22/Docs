@@ -1,0 +1,20 @@
+<map id="process_diag_valve_status_info" name="process_diag_valve_status_info">
+<area shape="rect" id="Node000001" title="Process diagnostic valve status information across pressure zones." alt="" coords="5,149,138,192"/>
+<area shape="rect" id="Node000002" href="$diag__valve__status__info_8c.html#a0f33a057d237123db3425ba08ebb47e3" title="Function that processes the diag valve modules status information." alt="" coords="186,120,335,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,155,174,148,175,153,138,160"/>
+<area shape="rect" id="Node000005" href="$_diag_valve_api_8c.html#ac3ec6ff63d65bb052cd01cb6eafd6634" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="383,208,554,235"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="138,176,368,206,367,211,138,182"/>
+<area shape="rect" id="Node000003" href="$diag__valve__status__info_8c.html#a9ee8455a4c41c2efd1719fe6fed51053" title=" " alt="" coords="407,5,531,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,118,321,80,382,42,396,35,398,40,384,46,324,85,278,122"/>
+<area shape="rect" id="Node000004" href="$diag__valve__status__info_8c.html#a181386d8ac3c39a998bc8b82730dc58c" title=" " alt="" coords="393,56,544,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="304,117,382,92,405,85,407,90,384,97,306,122"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="286,145,331,169,384,194,402,200,400,205,382,198,329,174,284,150"/>
+<area shape="rect" id="Node000008" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="429,107,508,133"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="335,126,414,121,414,126,336,131"/>
+<area shape="rect" id="Node000009" href="$lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="428,157,510,184"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="336,144,413,158,412,163,335,149"/>
+<area shape="rect" id="Node000006" href="$_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="602,171,797,213"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="555,208,587,204,587,209,555,213"/>
+<area shape="rect" id="Node000007" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="619,237,780,264"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="555,230,604,236,603,241,555,235"/>
+</map>

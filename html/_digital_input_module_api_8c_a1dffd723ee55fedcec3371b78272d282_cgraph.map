@@ -1,0 +1,7 @@
+<map id="setDigitalInputModuleServiceParam" name="setDigitalInputModuleServiceParam">
+<area shape="rect" id="Node000001" title="Sets the service parameter data for a specified DI module." alt="" coords="5,35,193,77"/>
+<area shape="rect" id="Node000002" href="$_io_modules_8c.html#aab64cdfe20fa84db4be92c96380d60a2" title=": This is to get the address of the service data instance" alt="" coords="241,5,411,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,41,225,37,225,42,193,47"/>
+<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="244,72,408,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,65,229,70,228,75,192,71"/>
+</map>

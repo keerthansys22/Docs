@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['read_5fadc_5fvalue_0',['read_adc_value',['../_v_b___r_e_a_d_i_n_g_8c.html#ada6b35c285ff8c328758e516803edf80',1,'VB_READING.c']]],
-  ['read_5fadc_5fvalue1_1',['read_adc_value1',['../internal__adc__test_8c.html#acabe5c2e4711c98ec1ffd0782284c275',1,'internal_adc_test.c']]],
-  ['read_5fdv_5ffault_5fcsv_2',['read_dv_fault_csv',['../dv__fault__csv_8c.html#a082a8eea3d34f52a3711258709ba8bf4',1,'read_dv_fault_csv():&#160;dv_fault_csv.c'],['../default__task_8c.html#a082a8eea3d34f52a3711258709ba8bf4',1,'read_dv_fault_csv():&#160;dv_fault_csv.c']]],
-  ['read_5fdv_5fwarning_5fcsv_3',['read_dv_warning_csv',['../dv__warning__csv_8c.html#a35d15dccad6b2b0b8ed17d3792845d34',1,'read_dv_warning_csv():&#160;dv_warning_csv.c'],['../default__task_8c.html#a35d15dccad6b2b0b8ed17d3792845d34',1,'read_dv_warning_csv():&#160;dv_warning_csv.c']]],
-  ['read_5fisem_5ffault_5fcsv_4',['read_isem_fault_csv',['../isem__diag__fault__csv_8c.html#ab5d81f8e1b18c63bed5b0177a064cc98',1,'read_isem_fault_csv():&#160;isem_diag_fault_csv.c'],['../default__task_8c.html#ab5d81f8e1b18c63bed5b0177a064cc98',1,'read_isem_fault_csv():&#160;isem_diag_fault_csv.c']]],
-  ['read_5fisem_5fwarning_5fcsv_5',['read_isem_warning_csv',['../isem__diag__warning__csv_8c.html#a7932b011c244674d11ad64117304349c',1,'read_isem_warning_csv():&#160;isem_diag_warning_csv.c'],['../default__task_8c.html#a7932b011c244674d11ad64117304349c',1,'read_isem_warning_csv():&#160;isem_diag_warning_csv.c']]],
-  ['reset_5ftimer_6',['reset_timer',['../lvgl__gui_8c.html#aa3ef1744ca7e52c293c49ccef26798e8',1,'reset_timer():&#160;lvgl_gui.c'],['../keypress_8c.html#aa3ef1744ca7e52c293c49ccef26798e8',1,'reset_timer():&#160;lvgl_gui.c']]]
+  ['pin_5fstyle_0',['pin_style',['../lvgl__gui_8c.html#a276ba619847bf50daf2dc4cea6272df5',1,'pin_style():&#160;pin_screen.c'],['../pin__screen_8c.html#a276ba619847bf50daf2dc4cea6272df5',1,'pin_style():&#160;pin_screen.c']]],
+  ['poweron_5fselftest_1',['poweron_selftest',['../main_8c.html#a2b69d74572d29a70ecb8148fdb6b9f69',1,'poweron_selftest(void):&#160;power_on_self_test.c'],['../power__on__self__test_8c.html#a2b69d74572d29a70ecb8148fdb6b9f69',1,'poweron_selftest(void):&#160;power_on_self_test.c']]],
+  ['print_5fmac_5faddress_5fdetails_2',['print_mac_address_details',['../mac__address_8c.html#a2331b87d91c5f979969c5e27ad928661',1,'mac_address.c']]],
+  ['process_5fdiag_5fvalve_5fstatus_5finfo_3',['process_diag_valve_status_info',['../valves__modules__status__info_8c.html#ab161d09da45c6c42b5a903700818aa9b',1,'valves_modules_status_info.c']]],
+  ['process_5fisem_5fstatus_5finfo_4',['process_isem_status_info',['../valves__modules__status__info_8c.html#aa0f3dfc9666e2ed3508827b4b9a1d98a',1,'valves_modules_status_info.c']]]
 ];

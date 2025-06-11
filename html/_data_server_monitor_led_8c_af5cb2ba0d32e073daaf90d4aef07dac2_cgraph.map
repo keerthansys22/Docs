@@ -1,0 +1,33 @@
+<map id="monitorNetworkStatusLed" name="monitorNetworkStatusLed">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,233,176,260"/>
+<area shape="rect" id="Node000002" href="$_data_server_monitor_led_8c.html#a63035d42da12201cdaa1082ec0fcbea5" title=" " alt="" coords="262,5,367,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,232,112,196,139,147,176,94,222,49,247,34,250,39,225,53,180,98,143,150,116,198,100,234"/>
+<area shape="rect" id="Node000003" href="$_data_server_led_indication_8c.html#af352e029b1015e3dea14361b83d76445" title=" " alt="" coords="468,208,599,235"/>
+<area shape="poly" id="edge19_Node000001_Node000003" title=" " alt="" coords="96,231,114,200,141,161,178,122,199,105,223,92,272,74,314,68,356,74,406,92,441,112,472,139,518,193,513,197,469,143,438,117,404,97,355,80,314,73,273,79,225,97,202,110,181,126,145,164,118,203,101,234"/>
+<area shape="rect" id="Node000004" href="$_data_server_monitor_led_8c.html#ad91ea9caab13cbfe57e3952a1b2cf9db" title=" " alt="" coords="269,107,360,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="104,231,154,188,187,164,222,143,253,131,255,136,225,148,190,168,157,192,108,235"/>
+<area shape="rect" id="Node000005" href="$_data_server_monitor_led_8c.html#add0a974d654d10a6480310ec47a7c988" title=" " alt="" coords="269,157,360,184"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="125,230,223,193,253,184,255,189,225,199,127,235"/>
+<area shape="rect" id="Node000006" href="$_data_server_monitor_led_8c.html#a052c861ff7758d0f6be0fc147b035aa1" title=" " alt="" coords="250,208,379,235"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="176,234,234,228,235,233,176,240"/>
+<area shape="rect" id="Node000007" href="$_data_server_monitor_led_8c.html#a4689958847da4eb04b01ee65eb3f2613" title=" " alt="" coords="266,259,363,285"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="176,254,251,262,251,268,176,259"/>
+<area shape="rect" id="Node000008" href="$_data_server_monitor_led_8c.html#a553733e5f16326a3049e63307c4bcb49" title=" " alt="" coords="259,309,370,336"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="127,258,225,295,247,302,245,307,223,300,125,263"/>
+<area shape="rect" id="Node000009" href="$_data_server_monitor_led_8c.html#a8632f23360c4570305609236cae8f4d8" title=" " alt="" coords="266,360,363,387"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="108,259,157,301,190,325,225,346,252,357,250,361,222,350,187,330,154,306,104,263"/>
+<area shape="rect" id="Node000010" href="$_data_server_monitor_led_8c.html#ac453a3ae986d391e5a7c2e9c595ab332" title=" " alt="" coords="246,411,383,437"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="102,259,149,325,184,364,225,396,235,402,232,406,222,401,180,367,144,328,98,262"/>
+<area shape="rect" id="Node000011" href="$_main_bus_node_8c.html#aa5cb7c14e289bfee846b352ceed0a08a" title=": This is to retriev the ethercat run and error status" alt="" coords="224,461,405,488"/>
+<area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="99,259,115,297,142,348,178,402,201,426,225,447,232,452,230,456,222,451,197,430,174,405,137,351,110,299,94,261"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,29,407,48,444,83,477,122,521,193,517,196,472,125,440,86,403,53,366,34"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="361,128,406,143,457,169,502,197,499,201,455,174,404,148,359,133"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="361,178,459,201,458,207,359,184"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="380,219,452,219,452,224,380,224"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="363,258,457,236,459,241,364,263"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="369,307,404,295,455,269,499,241,502,246,457,274,406,300,371,312"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="362,362,404,346,436,323,466,296,511,245,515,249,469,300,439,327,406,350,364,367"/>
+<area shape="poly" id="edge16_Node000010_Node000003" title=" " alt="" coords="382,408,403,396,442,363,474,322,499,282,517,248,522,250,504,285,478,326,446,366,407,401,384,413"/>
+<area shape="rect" id="Node000012" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="453,461,614,488"/>
+<area shape="poly" id="edge18_Node000011_Node000012" title=" " alt="" coords="405,472,437,472,437,477,405,477"/>
+</map>

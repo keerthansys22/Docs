@@ -1,0 +1,5 @@
+<map id="ST7291_setScreenColor" name="ST7291_setScreenColor">
+<area shape="rect" id="Node000001" title="function to fill the screen color" alt="" coords="209,5,370,32"/>
+<area shape="rect" id="Node000002" href="$lcd__init_8c.html#a80262b4fad757ccd0e8a02b55f58801b" title="Function to fill the screen colour pixel by pixel." alt="" coords="5,5,161,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,21,161,21,161,16,193,16"/>
+</map>

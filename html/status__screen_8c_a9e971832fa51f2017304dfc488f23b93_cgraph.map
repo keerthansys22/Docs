@@ -1,0 +1,9 @@
+<map id="disp_mod_status_screen" name="disp_mod_status_screen">
+<area shape="rect" id="Node000001" title="function to create the status screen" alt="" coords="5,56,172,83"/>
+<area shape="rect" id="Node000002" href="$common__screen__calls_8c.html#adcc2034261addcb1e1ed1272af6e421d" title="function to create the labels" alt="" coords="220,5,364,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,53,220,34,221,39,146,58"/>
+<area shape="rect" id="Node000003" href="$common__screen__calls_8c.html#aacff09f925b6d1af3bd78743926dfb3e" title="function to create the QR" alt="" coords="228,56,356,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,67,212,67,212,72,172,72"/>
+<area shape="rect" id="Node000004" href="$status__screen_8c.html#a9d9732ee883427a96c71ce5b6e1b217d" title="function to stop the flashing timer" alt="" coords="225,107,359,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,81,221,100,220,105,145,86"/>
+</map>

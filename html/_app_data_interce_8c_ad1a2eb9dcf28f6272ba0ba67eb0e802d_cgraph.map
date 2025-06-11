@@ -1,0 +1,21 @@
+<map id="getDiscoveryDetails" name="getDiscoveryDetails">
+<area shape="rect" id="Node000001" title="Retrieve the discovery details of the modules." alt="" coords="5,107,141,133"/>
+<area shape="rect" id="Node000002" href="$_app_data_init_8c.html#ac92a673771db92e7156490091aef7135" title=" " alt="" coords="231,81,269,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,108,215,97,215,102,142,113"/>
+<area shape="rect" id="Node000009" href="$_app_data_interce_8c.html#a510fa21187d2bc7234c063942d17a85f" title=" " alt="" coords="189,132,311,159"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="142,127,174,132,173,137,141,132"/>
+<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#a61b02bc2681a98a6e228d723dd625641" title=" " alt="" coords="403,81,476,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,92,387,92,387,97,269,97"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#a08e380e7af7b0eeafeff03a254731015" title=" " alt="" coords="568,31,701,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="476,83,565,59,566,64,477,88"/>
+<area shape="rect" id="Node000007" href="$_app_data_init_8c.html#abd03986677f9e517f5559c36490951ed" title=" " alt="" coords="580,81,689,108"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="477,92,564,92,564,97,477,97"/>
+<area shape="rect" id="Node000008" href="$_app_data_init_8c.html#a58b73e2d9979a6b0af8f0bd6d599f44b" title=" " alt="" coords="589,132,680,159"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="477,101,574,127,573,132,476,107"/>
+<area shape="rect" id="Node000005" href="$_app_data_init_8c.html#ac71aba88cc1fd0e3f88a29995e6ea594" title=" " alt="" coords="749,5,872,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="701,32,732,27,733,32,702,37"/>
+<area shape="rect" id="Node000006" href="$_app_data_init_8c.html#a98d90b2a428c793a4ec9a748a7276736" title=" " alt="" coords="756,56,865,83"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="702,51,741,57,740,62,701,56"/>
+<area shape="rect" id="Node000010" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="359,132,520,159"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="311,143,343,143,343,148,311,148"/>
+</map>

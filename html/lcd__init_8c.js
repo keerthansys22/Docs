@@ -1,6 +1,7 @@
 var lcd__init_8c =
 [
     [ "lv_color_t", "structlv__color__t.html", "structlv__color__t" ],
+    [ "DRAW_BUFFER_NUM_LINESS", "lcd__init_8c.html#a4e88ae31ea2ceef8a909bf5a41931b8b", null ],
     [ "LCD_AMBER", "lcd__init_8c.html#a796c66d860ebc83d78b45f2ab697e428", null ],
     [ "LCD_BLACK", "lcd__init_8c.html#a89194c8cf2691afa77b4f81ad1cde821", null ],
     [ "LCD_BLUE", "lcd__init_8c.html#ae08bdcd40ed17c40c7ff537b31ae6c20", null ],
@@ -13,6 +14,8 @@ var lcd__init_8c =
     [ "LCD_WHITE", "lcd__init_8c.html#a34f95804d4bfa75ef2ab12cc2b65a65c", null ],
     [ "MAX_BUFFER_SIZE", "lcd__init_8c.html#ad4d796b98c583d49e83adabd74a63bf6", null ],
     [ "MAX_CHUCK_SIZE", "lcd__init_8c.html#a0797bafdef30c8f6d8a634b29e73b5af", null ],
+    [ "MY_DISP_HOR_RESS", "lcd__init_8c.html#a3fae95557dba09431f64cc2c370aa64d", null ],
+    [ "MY_DISP_VER_RESS", "lcd__init_8c.html#a69c306e7e1cae1e8842f62c0b0067434", null ],
     [ "ST7291_CASET", "lcd__init_8c.html#a7f77a08673908c58312a842f92ad8577", null ],
     [ "ST7291_COLMOD", "lcd__init_8c.html#a04c0812e507fef41e832a0f6a4ffdb9c", null ],
     [ "ST7291_DISPOFF", "lcd__init_8c.html#addad02007c67369bda7ddc289df2a7e4", null ],
@@ -41,7 +44,6 @@ var lcd__init_8c =
     [ "ST7735_SCREEN_WIDTH", "lcd__init_8c.html#ac3329e12db8417821839a31b3d8a2e60", null ],
     [ "GPIO_pin_SetValue", "lcd__init_8c.html#a992606101a6d77644f3a2be4afc99324", null ],
     [ "lcd_init", "lcd__init_8c.html#a6842775ba83d166f02b8fef8bb63b1e6", null ],
-    [ "lcd_init_test", "lcd__init_8c.html#ac15199a45dee6b739fbcfcc1f509e0b5", null ],
     [ "lcd_refresh", "lcd__init_8c.html#aad7f10e222fef42f9ca5d002a3e6d436", null ],
     [ "lcd_refreshbuf", "lcd__init_8c.html#a95df70df16fe9bcb0ab0c6c8388b6dc3", null ],
     [ "LCD_RST", "lcd__init_8c.html#a4e054c44735fef87ab7359d8f6c37683", null ],

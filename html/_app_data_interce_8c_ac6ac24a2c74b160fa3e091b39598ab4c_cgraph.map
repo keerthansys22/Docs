@@ -1,0 +1,9 @@
+<map id="getIodevicePartNumber" name="getIodevicePartNumber">
+<area shape="rect" id="Node000001" title="This api is to get the IO device part number." alt="" coords="5,43,160,69"/>
+<area shape="rect" id="Node000002" href="$_digital_input_module_api_8c.html#a046c1082307d620d997ebfbda57d5143" title="Retrieves the service parameter data for a specified IO module." alt="" coords="208,35,395,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,53,192,53,192,59,160,59"/>
+<area shape="rect" id="Node000003" href="$_io_modules_8c.html#aab64cdfe20fa84db4be92c96380d60a2" title=": This is to get the address of the service data instance" alt="" coords="443,5,613,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,41,427,37,428,42,395,47"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="448,72,609,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="395,65,432,70,432,76,395,71"/>
+</map>

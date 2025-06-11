@@ -1,0 +1,5 @@
+<map id="status_qr_creation" name="status_qr_creation">
+<area shape="rect" id="Node000001" title="function to create the QR" alt="" coords="220,5,348,32"/>
+<area shape="rect" id="Node000002" href="$status__screen_8c.html#a9e971832fa51f2017304dfc488f23b93" title="function to create the status screen" alt="" coords="5,5,172,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,21,172,21,172,16,204,16"/>
+</map>

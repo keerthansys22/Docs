@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['oct1_5fval1_0',['oct1_val1',['../config__screen_8c.html#a03f5443cbefd191326411d74eb4588f3',1,'config_screen.c']]],
-  ['oct1_5fval2_1',['oct1_val2',['../config__screen_8c.html#ae8beda753f7f2fd62a249ba8316fa69b',1,'config_screen.c']]],
-  ['oct1_5fval3_2',['oct1_val3',['../config__screen_8c.html#aafe8a758f775737f2e55de6c1aadb025',1,'config_screen.c']]],
-  ['oct2_5fval1_3',['oct2_val1',['../config__screen_8c.html#a25cd58d40e4edbd8f242009cb51ab0ea',1,'config_screen.c']]],
-  ['oct2_5fval2_4',['oct2_val2',['../config__screen_8c.html#a3d03226eafbcff8bbfa5106f84057513',1,'config_screen.c']]],
-  ['oct2_5fval3_5',['oct2_val3',['../config__screen_8c.html#af8db8accfd4bc7511d75d92ba7d064f3',1,'config_screen.c']]],
-  ['octet1_6',['octet1',['../lvgl__gui_8c.html#a30fe57633e1e0a4d54c17eafd2cb92aa',1,'lvgl_gui.c']]],
-  ['octet2_7',['octet2',['../lvgl__gui_8c.html#a2a4166abc42c90a7cee7efc0c4e9c6cb',1,'lvgl_gui.c']]],
-  ['operation_8',['operation',['../data__processing_8c.html#a97d486d6926f9137837e1d8ecf0bbfdd',1,'operation:&#160;discovery.c'],['../discovery_8c.html#a97d486d6926f9137837e1d8ecf0bbfdd',1,'operation:&#160;discovery.c']]],
-  ['operations_20strong_20_3a_9',['Operations strong :',['../index.html#step2',1,'&lt;strong&gt;Read Operations&lt;/strong&gt;:'],['../index.html#step3',1,'&lt;strong&gt;Write Operations&lt;/strong&gt;:']]],
-  ['output_10',['OUTPUT',['../lcd__test_8c.html#a61a3c9a18380aafb6e430e79bf596557',1,'lcd_test.c']]],
-  ['overview_11',['Overview',['../index.html#install_sec',1,'']]]
+  ['n_0',['N',['../diag__valve__status__info_8c.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'diag_valve_status_info.c']]],
+  ['n_1',['n',['../diag__valve__status__info_8c.html#a76f11d9a0a47b94f72c2d0e77fb32240',1,'diag_valve_status_info.c']]],
+  ['no_5fof_5fmodules_2',['no_of_modules',['../lvgl__gui_8c.html#af3bbfc1d6de3f05c342931ea836e13ce',1,'lvgl_gui.c']]],
+  ['no_5fwarning_3',['NO_WARNING',['../lvgl__gui_8c.html#a3a3ba28870fa5090dd72c845f17e7365a1424dd9f64c2024fa852f0dfddd3d80e',1,'lvgl_gui.c']]],
+  ['normal_5findex_4',['normal_index',['../diag__valve__status__info_8c.html#a7efd42e524042cb435c007b138a90d28',1,'normal_index:&#160;valves_modules_status_info.c'],['../valves__modules__status__info_8c.html#a817f4ff27b6d78d7007cb9682fce68fe',1,'normal_index:&#160;valves_modules_status_info.c'],['../lvgl__gui_8c.html#a817f4ff27b6d78d7007cb9682fce68fe',1,'normal_index:&#160;lvgl_gui.c']]],
+  ['normal_5flist_5',['normal_list',['../diag__valve__status__info_8c.html#ab0bca095890a1fb58c691bea6aae554a',1,'normal_list:&#160;lvgl_gui.c'],['../mbn__status__info_8c.html#ab0bca095890a1fb58c691bea6aae554a',1,'normal_list:&#160;lvgl_gui.c'],['../valves__modules__status__info_8c.html#ab0bca095890a1fb58c691bea6aae554a',1,'normal_list:&#160;lvgl_gui.c'],['../lvgl__gui_8c.html#ab0bca095890a1fb58c691bea6aae554a',1,'normal_list:&#160;lvgl_gui.c']]],
+  ['num_5fiterations_6',['NUM_ITERATIONS',['../_app_data_init_8c.html#ab3be0641eb76161a48ed528e6eea2ac3',1,'AppDataInit.c']]]
 ];

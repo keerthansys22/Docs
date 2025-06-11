@@ -1,0 +1,7 @@
+<map id="getAIDeviceHandler" name="getAIDeviceHandler">
+<area shape="rect" id="Node000001" title="Retrieve the device handlers for AI (Analog Input) modules." alt="" coords="5,31,139,57"/>
+<area shape="rect" id="Node000002" href="$_data_server_shdm_8c.html#ac935872527ba12b3034abfb5ca7df126" title="Unlocks a spinlock." alt="" coords="192,5,282,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,31,176,25,177,31,140,36"/>
+<area shape="rect" id="Node000003" href="$_data_server_shdm_8c.html#aefe4253bf48461410550618b2dd56c7a" title="Locks a spinlock with a timeout." alt="" coords="187,56,287,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,52,171,57,171,62,139,57"/>
+</map>

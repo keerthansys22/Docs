@@ -1,0 +1,5 @@
+<map id="mac_address_details" name="mac_address_details">
+<area shape="rect" id="Node000001" title="function that access the MAC details" alt="" coords="5,5,150,32"/>
+<area shape="rect" id="Node000002" href="$_main_bus_node_8c.html#a729fd2c0212cb2a3bc4a2e1a7f3ebc3f" title="Retrieves the acyclic data or service parameter of the MBN node." alt="" coords="198,5,346,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,16,182,16,182,21,150,21"/>
+</map>

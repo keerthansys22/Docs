@@ -1,0 +1,7 @@
+<map id="pressurezone_unlock_acyclic" name="pressurezone_unlock_acyclic">
+<area shape="rect" id="Node000001" title="Unlocks the spinlock for a specified pressure zone in acyclic mode." alt="" coords="251,23,395,65"/>
+<area shape="rect" id="Node000002" href="$_app_data_interce_8c.html#a1e2f6c4a4bb6d582138731cf1efba9a7" title="This API retrieves the details of the device present in pressure&#45;zone." alt="" coords="5,5,203,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,37,203,33,204,27,235,31"/>
+<area shape="rect" id="Node000003" href="$_app_data_interce_8c.html#aa4be4619dded3d3128f0fea4bfc7ee56" title="This API retrieves the details of the device present in prop&#45;zone." alt="" coords="18,56,190,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,57,191,62,190,57,235,51"/>
+</map>

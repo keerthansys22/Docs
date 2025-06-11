@@ -1,0 +1,5 @@
+<map id="ddr_memory" name="ddr_memory">
+<area shape="rect" id="Node000001" title="Test and verify the DDR memory." alt="" coords="124,5,217,32"/>
+<area shape="rect" id="Node000002" href="$self__test_8c.html#afa6dcc66b21477fb9074d352884a00ce" title="Power&#45;On self&#45;test to test the peripherals." alt="" coords="5,5,76,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,21,76,21,76,16,108,16"/>
+</map>

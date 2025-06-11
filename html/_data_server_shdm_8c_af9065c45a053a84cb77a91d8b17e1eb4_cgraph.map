@@ -1,0 +1,5 @@
+<map id="pressurezonelock_cyclic" name="pressurezonelock_cyclic">
+<area shape="rect" id="Node000001" title="Locks the spinlock for a specified pressure zone in acyclic mode." alt="" coords="5,5,170,32"/>
+<area shape="rect" id="Node000002" href="$_data_server_shdm_8c.html#aefe4253bf48461410550618b2dd56c7a" title="Locks a spinlock with a timeout." alt="" coords="218,5,318,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,16,202,16,202,21,170,21"/>
+</map>

@@ -1,7 +1,5 @@
 <map id="disp_mod_upgrade_screen" name="disp_mod_upgrade_screen">
-<area shape="rect" id="Node000001" title="Function to display upgrade screen inside config screen." alt="" coords="5,31,182,57"/>
+<area shape="rect" id="Node000001" title="Function to display upgrade screen inside config screen." alt="" coords="5,5,182,32"/>
 <area shape="rect" id="Node000002" href="$config__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="230,5,388,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,31,214,27,214,32,182,36"/>
-<area shape="rect" id="Node000003" href="$common__screen__calls_8c.html#ac0ab6412f9e02f687f88279e0fe204e0" title="function to set the background color" alt="" coords="235,56,383,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,52,219,56,219,61,182,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,16,214,16,214,21,182,21"/>
 </map>

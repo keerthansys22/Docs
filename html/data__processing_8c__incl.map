@@ -1,7 +1,7 @@
-<map id="Src/Data_processing/data_processing.c" name="Src/Data_processing/data_processing.c">
-<area shape="rect" id="Node000001" title="Source that processes the all the data server data." alt="" coords="35,5,177,48"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,98,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,50,71,85,66,82,90,47"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="122,96,200,123"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,47,146,82,142,85,118,50"/>
+<map id="Data_processing/data_processing.c" name="Data_processing/data_processing.c">
+<area shape="rect" id="Node000001" title="Source that processes the all the data server data." alt="" coords="50,5,197,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,104,98,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,50,73,93,69,90,105,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="122,96,269,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,47,171,82,167,86,138,50"/>
 </map>

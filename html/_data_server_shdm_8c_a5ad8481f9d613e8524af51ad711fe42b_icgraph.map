@@ -1,0 +1,5 @@
+<map id="dataserver_sharedmemory_init" name="dataserver_sharedmemory_init">
+<area shape="rect" id="Node000001" title="Initializes shared memory for the data server." alt="" coords="189,5,386,32"/>
+<area shape="rect" id="Node000002" href="$_app_data_interce_8c.html#ad1a2eb9dcf28f6272ba0ba67eb0e802d" title="Retrieve the discovery details of the modules." alt="" coords="5,5,141,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,21,141,21,141,16,173,16"/>
+</map>

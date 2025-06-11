@@ -1,0 +1,11 @@
+<map id="calculate_ex_pz_count" name="calculate_ex_pz_count">
+<area shape="rect" id="Node000001" title="function that calculates the maximum external pressure zone count for about screen" alt="" coords="5,31,160,57"/>
+<area shape="rect" id="Node000002" href="$_app_data_interce_8c.html#aa97f8415a0ba0596ba9e90c156378a95" title="Retrieves the position of a specified device." alt="" coords="235,5,359,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,32,219,25,219,30,161,38"/>
+<area shape="rect" id="Node000003" href="$_app_data_interce_8c.html#ad9b02c253eb339a52cfef89977d11b91" title="Retrieves the identification info of the External prop." alt="" coords="208,56,386,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,50,193,54,192,60,160,56"/>
+<area shape="rect" id="Node000004" href="$_external_prop_8c.html#acf4b478db18710fcdd7868a9aa4e3ec7" title=" " alt="" coords="434,31,645,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="386,57,418,54,419,59,387,63"/>
+<area shape="rect" id="Node000005" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="459,81,620,108"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="387,76,444,82,443,87,386,81"/>
+</map>

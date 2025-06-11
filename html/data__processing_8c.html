@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arrow3_MBN_APP: Data_processing/data_processing.c File Reference</title>
+<title>Arrow3-MBN-APP: Data_processing/data_processing.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Arrow3_MBN_APP
+   <div id="projectname">Arrow3-MBN-APP
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -111,86 +111,159 @@ $(function(){initNavTree('data__processing_8c.html',''); initResizable(true); })
 
 <p>Source that processes the all the data server data.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &quot;AppGlobal.h&quot;</code><br />
+<code>#include &quot;../Header/API_Header/AppDataInterface.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for data_processing.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c__incl.png" border="0" usemap="#a_data__processing_2data__processing_8c" alt=""/></div>
+<map name="a_data__processing_2data__processing_8c" id="a_data__processing_2data__processing_8c">
+<area shape="rect" title="Source that processes the all the data server data." alt="" coords="50,5,197,48"/>
+<area shape="rect" title=" " alt="" coords="5,104,98,131"/>
+<area shape="poly" title=" " alt="" coords="109,50,73,93,69,90,105,47"/>
+<area shape="rect" title=" " alt="" coords="122,96,269,139"/>
+<area shape="poly" title=" " alt="" coords="142,47,171,82,167,86,138,50"/>
+</map>
+</div>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad83f92efbda6e1a6d8173c9104fc9b8e" id="r_ad83f92efbda6e1a6d8173c9104fc9b8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad83f92efbda6e1a6d8173c9104fc9b8e">mbn_status_info</a> (int <a class="el" href="#a30a83e24f02c9bdc26b7a55feaf42553">module_num_status</a>)</td></tr>
-<tr class="memdesc:ad83f92efbda6e1a6d8173c9104fc9b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">function that determines the MBN status information  <br /></td></tr>
-<tr class="separator:ad83f92efbda6e1a6d8173c9104fc9b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1df829ecb2d0be6172d428db9cb7da7f" id="r_a1df829ecb2d0be6172d428db9cb7da7f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1df829ecb2d0be6172d428db9cb7da7f">shmd_mbn_parameter_rdwr</a> (uint8_t parameter_id, uint8_t *val, uint8_t rdwr)</td></tr>
-<tr class="separator:a1df829ecb2d0be6172d428db9cb7da7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78eafab7a287553f6b8d5e3ac097973b" id="r_a78eafab7a287553f6b8d5e3ac097973b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78eafab7a287553f6b8d5e3ac097973b">set_get_dio_parameter</a> (uint8_t instance, uint8_t chnlnumber, uint8_t parameter_id, uint8_t *val, uint8_t rdwr)</td></tr>
-<tr class="separator:a78eafab7a287553f6b8d5e3ac097973b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e597b4852ad375bf6d19f4cf06c4cc7" id="r_a1e597b4852ad375bf6d19f4cf06c4cc7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e597b4852ad375bf6d19f4cf06c4cc7">pressurezone_parameter_access</a> (uint8_t pzid, uint8_t instance_id, uint8_t station_num, uint8_t parameter_id, uint8_t size, void *_buf, uint8_t rdwr)</td></tr>
-<tr class="separator:a1e597b4852ad375bf6d19f4cf06c4cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e091ca4ad4a808848bae50150d6bef" id="r_a33e091ca4ad4a808848bae50150d6bef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33e091ca4ad4a808848bae50150d6bef">mbn_status_info</a> ()</td></tr>
+<tr class="memdesc:a33e091ca4ad4a808848bae50150d6bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">function that determines the MBN status information  <br /></td></tr>
+<tr class="separator:a33e091ca4ad4a808848bae50150d6bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a434de6524abf0902881fe890323c1186" id="r_a434de6524abf0902881fe890323c1186"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a434de6524abf0902881fe890323c1186">mac_address_details</a> ()</td></tr>
 <tr class="memdesc:a434de6524abf0902881fe890323c1186"><td class="mdescLeft">&#160;</td><td class="mdescRight">function that access the MAC details  <br /></td></tr>
 <tr class="separator:a434de6524abf0902881fe890323c1186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20c3cefbb0187f193f7b2b327e82342f" id="r_a20c3cefbb0187f193f7b2b327e82342f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20c3cefbb0187f193f7b2b327e82342f">start_discovery</a> ()</td></tr>
 <tr class="memdesc:a20c3cefbb0187f193f7b2b327e82342f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that processes the discovery details.  <br /></td></tr>
 <tr class="separator:a20c3cefbb0187f193f7b2b327e82342f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7a36b8bb70d9893cace0922cf0e25af" id="r_ac7a36b8bb70d9893cace0922cf0e25af"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7a36b8bb70d9893cace0922cf0e25af">data_processing_func</a> (void *args)</td></tr>
-<tr class="memdesc:ac7a36b8bb70d9893cace0922cf0e25af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that processes all the IO-modules and valves data.  <br /></td></tr>
-<tr class="separator:ac7a36b8bb70d9893cace0922cf0e25af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc2a01db214bea71598ff4c8dba79574" id="r_afc2a01db214bea71598ff4c8dba79574"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc2a01db214bea71598ff4c8dba79574">copy_members</a> ()</td></tr>
+<tr class="separator:afc2a01db214bea71598ff4c8dba79574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfca9bae7bdfdd358ced96390fb1f696" id="r_adfca9bae7bdfdd358ced96390fb1f696"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfca9bae7bdfdd358ced96390fb1f696">fetch_mbn_identification_parameters</a> ()</td></tr>
+<tr class="memdesc:adfca9bae7bdfdd358ced96390fb1f696"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that fetches the MBN identification parameters.  <br /></td></tr>
+<tr class="separator:adfca9bae7bdfdd358ced96390fb1f696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e9b0f25faad61167968870d14001d3b" id="r_a3e9b0f25faad61167968870d14001d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e9b0f25faad61167968870d14001d3b">fetch_io_identification_parameters</a> ()</td></tr>
+<tr class="memdesc:a3e9b0f25faad61167968870d14001d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that fetches the IO_module identification parameters.  <br /></td></tr>
+<tr class="separator:a3e9b0f25faad61167968870d14001d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4306bff4d6d753d0caba597124ddbe3" id="r_ac4306bff4d6d753d0caba597124ddbe3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4306bff4d6d753d0caba597124ddbe3">fetch_pz_identification_parameters</a> ()</td></tr>
+<tr class="memdesc:ac4306bff4d6d753d0caba597124ddbe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that fetches the PZ identification parameters.  <br /></td></tr>
+<tr class="separator:ac4306bff4d6d753d0caba597124ddbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0c03d78e4b434d9f855c01973071b1" id="r_aac0c03d78e4b434d9f855c01973071b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac0c03d78e4b434d9f855c01973071b1">fetch_propzone_identification_parameters</a> ()</td></tr>
+<tr class="memdesc:aac0c03d78e4b434d9f855c01973071b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that fetches the PropZone identification parameters.  <br /></td></tr>
+<tr class="separator:aac0c03d78e4b434d9f855c01973071b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3671d63082904cd553ff0e84c91b088e" id="r_a3671d63082904cd553ff0e84c91b088e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3671d63082904cd553ff0e84c91b088e">valves_modules_status_info</a> ()</td></tr>
+<tr class="memdesc:a3671d63082904cd553ff0e84c91b088e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that processes the valves modules status information.  <br /></td></tr>
+<tr class="separator:a3671d63082904cd553ff0e84c91b088e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122b34d4ba9a92a2a595cee1b937537e" id="r_a122b34d4ba9a92a2a595cee1b937537e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a122b34d4ba9a92a2a595cee1b937537e">data_processing_func</a> (void *arg)</td></tr>
+<tr class="memdesc:a122b34d4ba9a92a2a595cee1b937537e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that processes all the IO-modules and valves real-time data.  <br /></td></tr>
+<tr class="separator:a122b34d4ba9a92a2a595cee1b937537e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ae79be649f973e3dc7851553f6035eb99" id="r_ae79be649f973e3dc7851553f6035eb99"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae79be649f973e3dc7851553f6035eb99">io_count</a> = 0</td></tr>
-<tr class="separator:ae79be649f973e3dc7851553f6035eb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f2e3b0055b7bd6ecfef1540062aa4bf" id="r_a3f2e3b0055b7bd6ecfef1540062aa4bf"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f2e3b0055b7bd6ecfef1540062aa4bf">isem_diag_count</a> = 0</td></tr>
-<tr class="separator:a3f2e3b0055b7bd6ecfef1540062aa4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a306f1bbb85e369d0869ae58578220042" id="r_a306f1bbb85e369d0869ae58578220042"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a306f1bbb85e369d0869ae58578220042">inter_prop_count</a> = 0</td></tr>
-<tr class="separator:a306f1bbb85e369d0869ae58578220042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f337861669522f7a6bef03a8f4d83c" id="r_a55f337861669522f7a6bef03a8f4d83c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55f337861669522f7a6bef03a8f4d83c">extern_prop_count</a> = 0</td></tr>
-<tr class="separator:a55f337861669522f7a6bef03a8f4d83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a769acfe6413c70d163f06555254d212a" id="r_a769acfe6413c70d163f06555254d212a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a769acfe6413c70d163f06555254d212a">tle_count</a> = 0</td></tr>
-<tr class="separator:a769acfe6413c70d163f06555254d212a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5ac5a40550d5ec5f1a434ed508a7458" id="r_ab5ac5a40550d5ec5f1a434ed508a7458"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5ac5a40550d5ec5f1a434ed508a7458">diag_valve_count</a> = 0</td></tr>
-<tr class="separator:ab5ac5a40550d5ec5f1a434ed508a7458"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26f6f85b8b034729a75c3d99cc01b320" id="r_a26f6f85b8b034729a75c3d99cc01b320"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f6f85b8b034729a75c3d99cc01b320">no_of_stations_count</a> = 0</td></tr>
-<tr class="separator:a26f6f85b8b034729a75c3d99cc01b320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b1e5548d5511ae6004ab69314501e5a" id="r_a5b1e5548d5511ae6004ab69314501e5a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b1e5548d5511ae6004ab69314501e5a">mbn_count</a> = 1</td></tr>
-<tr class="separator:a5b1e5548d5511ae6004ab69314501e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bfd000ab265cf33e2e045107358dd49" id="r_a6bfd000ab265cf33e2e045107358dd49"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bfd000ab265cf33e2e045107358dd49">server_errstatus</a> = 0</td></tr>
-<tr class="separator:a6bfd000ab265cf33e2e045107358dd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dde7dea69d0fff891d7efdd1aa53df3" id="r_a3dde7dea69d0fff891d7efdd1aa53df3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dde7dea69d0fff891d7efdd1aa53df3">server_communication_error</a> = 0</td></tr>
-<tr class="separator:a3dde7dea69d0fff891d7efdd1aa53df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67240a774ba2c4a24e869e083ffb231a" id="r_a67240a774ba2c4a24e869e083ffb231a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67240a774ba2c4a24e869e083ffb231a">module_num_identify_io</a> = 0</td></tr>
-<tr class="separator:a67240a774ba2c4a24e869e083ffb231a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02cac62d4a1f068264ed558ec9240f0b" id="r_a02cac62d4a1f068264ed558ec9240f0b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02cac62d4a1f068264ed558ec9240f0b">total_no_of_modules</a> = 0</td></tr>
-<tr class="separator:a02cac62d4a1f068264ed558ec9240f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43f723732975574603295a749dba1102" id="r_a43f723732975574603295a749dba1102"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43f723732975574603295a749dba1102">station_num_identify</a> = 1</td></tr>
-<tr class="separator:a43f723732975574603295a749dba1102"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d9d66d32a86cb36482476475ed2e1a5" id="r_a5d9d66d32a86cb36482476475ed2e1a5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d9d66d32a86cb36482476475ed2e1a5">module_num_identify_valves</a> = 0</td></tr>
-<tr class="separator:a5d9d66d32a86cb36482476475ed2e1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30a83e24f02c9bdc26b7a55feaf42553" id="r_a30a83e24f02c9bdc26b7a55feaf42553"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30a83e24f02c9bdc26b7a55feaf42553">module_num_status</a> = 0</td></tr>
-<tr class="separator:a30a83e24f02c9bdc26b7a55feaf42553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac432fd913081bb3f627d04307db44fa3" id="r_ac432fd913081bb3f627d04307db44fa3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac432fd913081bb3f627d04307db44fa3">io_count_buf</a></td></tr>
-<tr class="separator:ac432fd913081bb3f627d04307db44fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f341cd8a329f6401470a9bcaa57c207" id="r_a3f341cd8a329f6401470a9bcaa57c207"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f341cd8a329f6401470a9bcaa57c207">pressure_zone_count_buf</a></td></tr>
-<tr class="separator:a3f341cd8a329f6401470a9bcaa57c207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af84994521a95b5a427974ea0c6287c06" id="r_af84994521a95b5a427974ea0c6287c06"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af84994521a95b5a427974ea0c6287c06">board_id</a> [9]</td></tr>
-<tr class="separator:af84994521a95b5a427974ea0c6287c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9e4e4df58b986043267fdef963014cb" id="r_ae9e4e4df58b986043267fdef963014cb"><td class="memItemLeft" align="right" valign="top">discover_pressure_zone_struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9e4e4df58b986043267fdef963014cb">discover_pz_details</a> [MAX_PRESSURE_ZONE]</td></tr>
-<tr class="separator:ae9e4e4df58b986043267fdef963014cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17fa0c3fc5622a8216dae026b9852672" id="r_a17fa0c3fc5622a8216dae026b9852672"><td class="memItemLeft" align="right" valign="top">module_screen_mbn_io&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17fa0c3fc5622a8216dae026b9852672">module_details</a> [10]</td></tr>
-<tr class="separator:a17fa0c3fc5622a8216dae026b9852672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae65d55235357bf3e4256281b6caf46d3" id="r_ae65d55235357bf3e4256281b6caf46d3"><td class="memItemLeft" align="right" valign="top">module_screen_valves&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae65d55235357bf3e4256281b6caf46d3">module_valves_details</a> [20]</td></tr>
-<tr class="separator:ae65d55235357bf3e4256281b6caf46d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25f15d44dc5d06dc872e7e479f80d805" id="r_a25f15d44dc5d06dc872e7e479f80d805"><td class="memItemLeft" align="right" valign="top">status_screen_struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25f15d44dc5d06dc872e7e479f80d805">screen_status_value</a> [20]</td></tr>
-<tr class="separator:a25f15d44dc5d06dc872e7e479f80d805"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af26731ad2b39b91b386db80610dccab5" id="r_af26731ad2b39b91b386db80610dccab5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af26731ad2b39b91b386db80610dccab5">start_flag</a></td></tr>
-<tr class="separator:af26731ad2b39b91b386db80610dccab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97d486d6926f9137837e1d8ecf0bbfdd" id="r_a97d486d6926f9137837e1d8ecf0bbfdd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97d486d6926f9137837e1d8ecf0bbfdd">operation</a></td></tr>
-<tr class="separator:a97d486d6926f9137837e1d8ecf0bbfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d871ea0bdd0817738c61c721d032de1" id="r_a8d871ea0bdd0817738c61c721d032de1"><td class="memItemLeft" align="right" valign="top">PressureZoneCounts&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d871ea0bdd0817738c61c721d032de1">pressure_zone_counts</a> [MAX_PRESSURE_ZONE+1]</td></tr>
-<tr class="separator:a8d871ea0bdd0817738c61c721d032de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa82d815e011dc2986b6dfc9e2ddfbfaa" id="r_aa82d815e011dc2986b6dfc9e2ddfbfaa"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa82d815e011dc2986b6dfc9e2ddfbfaa">g_start_flag</a></td></tr>
+<tr class="separator:aa82d815e011dc2986b6dfc9e2ddfbfaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecc928609def218c15f7c59447eb5a32" id="r_aecc928609def218c15f7c59447eb5a32"><td class="memItemLeft" align="right" valign="top">s_discovery_details&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecc928609def218c15f7c59447eb5a32">discover_details</a></td></tr>
+<tr class="separator:aecc928609def218c15f7c59447eb5a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a302e4e8f28350675e1eb62a4e1481d8c" id="r_a302e4e8f28350675e1eb62a4e1481d8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a302e4e8f28350675e1eb62a4e1481d8c">all_modules_normal</a> = true</td></tr>
+<tr class="separator:a302e4e8f28350675e1eb62a4e1481d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a48a03cca514f9b8f3f4f3efde71476" id="r_a5a48a03cca514f9b8f3f4f3efde71476"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a48a03cca514f9b8f3f4f3efde71476">g_status_index</a> = 0</td></tr>
+<tr class="separator:a5a48a03cca514f9b8f3f4f3efde71476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e4047823c653df7bd5f560cd4fa460" id="r_a27e4047823c653df7bd5f560cd4fa460"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27e4047823c653df7bd5f560cd4fa460">g_total_no_of_status_screens</a> = 0</td></tr>
+<tr class="separator:a27e4047823c653df7bd5f560cd4fa460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Source that processes the all the data server data. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac7a36b8bb70d9893cace0922cf0e25af" name="ac7a36b8bb70d9893cace0922cf0e25af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7a36b8bb70d9893cace0922cf0e25af">&#9670;&#160;</a></span>data_processing_func()</h2>
+<a id="afc2a01db214bea71598ff4c8dba79574" name="afc2a01db214bea71598ff4c8dba79574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2a01db214bea71598ff4c8dba79574">&#9670;&#160;</a></span>copy_members()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void copy_members </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_afc2a01db214bea71598ff4c8dba79574_cgraph.png" border="0" usemap="#adata__processing_8c_afc2a01db214bea71598ff4c8dba79574_cgraph" alt=""/></div>
+<map name="adata__processing_8c_afc2a01db214bea71598ff4c8dba79574_cgraph" id="adata__processing_8c_afc2a01db214bea71598ff4c8dba79574_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" href="lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="164,5,246,32"/>
+<area shape="poly" title=" " alt="" coords="116,16,148,16,148,21,116,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_afc2a01db214bea71598ff4c8dba79574_icgraph.png" border="0" usemap="#adata__processing_8c_afc2a01db214bea71598ff4c8dba79574_icgraph" alt=""/></div>
+<map name="adata__processing_8c_afc2a01db214bea71598ff4c8dba79574_icgraph" id="adata__processing_8c_afc2a01db214bea71598ff4c8dba79574_icgraph">
+<area shape="rect" title=" " alt="" coords="1050,544,1160,571"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="poly" title=" " alt="" coords="1034,560,1002,560,1002,555,1034,555"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a122b34d4ba9a92a2a595cee1b937537e" name="a122b34d4ba9a92a2a595cee1b937537e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122b34d4ba9a92a2a595cee1b937537e">&#9670;&#160;</a></span>data_processing_func()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,38 +271,609 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void * data_processing_func </td>
           <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function that processes all the IO-modules and valves data. </p>
+<p>Function that processes all the IO-modules and valves real-time data. </p>
 <dl class="section return"><dt>Returns</dt><dd>API_SUCCESS_test </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="data__processing_8c_ac7a36b8bb70d9893cace0922cf0e25af_cgraph.png" border="0" usemap="#adata__processing_8c_ac7a36b8bb70d9893cace0922cf0e25af_cgraph" alt=""/></div>
-<map name="adata__processing_8c_ac7a36b8bb70d9893cace0922cf0e25af_cgraph" id="adata__processing_8c_ac7a36b8bb70d9893cace0922cf0e25af_cgraph">
-<area shape="rect" title="Function that processes all the IO&#45;modules and valves data." alt="" coords="5,93,153,120"/>
-<area shape="rect" href="mac__address_8c.html#a434de6524abf0902881fe890323c1186" title="function that access the MAC details" alt="" coords="219,5,364,32"/>
-<area shape="poly" title=" " alt="" coords="102,90,147,66,200,42,219,35,221,40,202,46,149,71,105,95"/>
-<area shape="rect" href="data__processing_8c.html#a1e597b4852ad375bf6d19f4cf06c4cc7" title=" " alt="" coords="209,56,374,99"/>
-<area shape="poly" title=" " alt="" coords="153,94,194,88,194,93,153,99"/>
-<area shape="rect" href="data__processing_8c.html#a1df829ecb2d0be6172d428db9cb7da7f" title=" " alt="" coords="201,123,382,149"/>
-<area shape="poly" title=" " alt="" coords="153,114,185,119,184,124,153,119"/>
-<area shape="rect" href="discovery_8c.html#a20c3cefbb0187f193f7b2b327e82342f" title="Function that processes the discovery details." alt="" coords="237,173,346,200"/>
-<area shape="poly" title=" " alt="" coords="109,118,202,159,223,166,222,171,200,164,106,123"/>
-<area shape="rect" href="discovery_8c.html#a2e5d3607b1b18046dc40e5ca4a5da25b" title="Function that fetches all the individual pressure zone details." alt="" coords="430,81,571,124"/>
-<area shape="poly" title=" " alt="" coords="345,171,381,159,429,134,438,129,440,134,431,138,383,164,347,176"/>
-<area shape="rect" href="discovery_8c.html#ad5f5114762fdf8bc816e3e844003686c" title=" " alt="" coords="436,148,566,175"/>
-<area shape="poly" title=" " alt="" coords="346,177,419,168,420,174,346,183"/>
-<area shape="rect" href="discovery_8c.html#a9bef804ce4a0cb8146b8f267f01fd9d0" title=" " alt="" coords="441,199,561,225"/>
-<area shape="poly" title=" " alt="" coords="346,191,425,200,425,206,346,196"/>
-<area shape="rect" href="discovery_8c.html#af2962e5ff7dc2372b23f2554342a11d4" title=" " alt="" coords="451,249,550,276"/>
-<area shape="poly" title=" " alt="" coords="331,198,431,235,448,241,446,246,429,240,329,203"/>
-<area shape="rect" href="discovery_8c.html#a0a5fd36f53eb14609d34246f8a5b6677" title=" " alt="" coords="619,81,766,124"/>
-<area shape="poly" title=" " alt="" coords="572,100,604,100,604,105,572,105"/>
+<div class="center"><img src="data__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_cgraph.png" border="0" usemap="#adata__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_cgraph" alt=""/></div>
+<map name="adata__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_cgraph" id="adata__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_cgraph">
+<area shape="rect" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="5,456,153,483"/>
+<area shape="rect" href="lvgl__gui_8c.html#afc2a01db214bea71598ff4c8dba79574" title=" " alt="" coords="240,52,350,79"/>
+<area shape="poly" title=" " alt="" coords="80,455,91,400,113,318,148,224,171,178,199,136,225,107,255,85,258,89,229,111,203,139,176,181,153,226,118,319,96,401,85,456"/>
+<area shape="rect" href="module__details__processing_8c.html#a3e9b0f25faad61167968870d14001d3b" title="Function that fetches the IO_module identification parameters." alt="" coords="222,149,368,192"/>
+<area shape="poly" title=" " alt="" coords="87,454,199,288,264,202,268,206,203,291,91,457"/>
+<area shape="rect" href="module__details__processing_8c.html#adfca9bae7bdfdd358ced96390fb1f696" title="Function that fetches the MBN identification parameters." alt="" coords="215,477,375,520"/>
+<area shape="poly" title=" " alt="" coords="153,477,200,483,199,488,153,482"/>
+<area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="734,655,814,681"/>
+<area shape="poly" title=" " alt="" coords="106,481,202,530,317,579,438,615,513,631,590,644,719,661,719,666,589,650,512,637,436,620,316,584,200,534,104,486"/>
+<area shape="rect" href="module__details__processing_8c.html#aac0c03d78e4b434d9f855c01973071b1" title="Function that fetches the PropZone identification parameters." alt="" coords="201,301,389,344"/>
+<area shape="poly" title=" " alt="" coords="92,453,138,411,199,364,226,349,229,354,202,369,141,415,96,457"/>
+<area shape="rect" href="module__details__processing_8c.html#ac4306bff4d6d753d0caba597124ddbe3" title="Function that fetches the PZ identification parameters." alt="" coords="454,360,603,403"/>
+<area shape="poly" title=" " alt="" coords="104,453,148,431,200,412,261,398,324,389,438,380,439,385,324,394,262,404,201,417,150,436,106,458"/>
+<area shape="rect" href="mac__address_8c.html#a434de6524abf0902881fe890323c1186" title="function that access the MAC details" alt="" coords="223,427,367,453"/>
+<area shape="poly" title=" " alt="" coords="153,457,207,449,208,455,153,462"/>
+<area shape="rect" href="mbn__status__info_8c.html#a33e091ca4ad4a808848bae50150d6bef" title="function that determines the MBN status information" alt="" coords="237,959,353,985"/>
+<area shape="poly" title=" " alt="" coords="85,483,97,575,122,715,138,788,157,854,179,909,203,945,224,959,221,964,199,949,174,911,152,856,133,789,116,716,92,576,79,484"/>
+<area shape="rect" href="discovery_8c.html#a20c3cefbb0187f193f7b2b327e82342f" title="Function that processes the discovery details." alt="" coords="241,908,349,935"/>
+<area shape="poly" title=" " alt="" coords="89,482,283,893,278,895,84,484"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#a3671d63082904cd553ff0e84c91b088e" title="Function that processes the valves modules status information." alt="" coords="204,1363,386,1389"/>
+<area shape="poly" title=" " alt="" coords="86,483,203,997,289,1347,284,1348,198,998,81,484"/>
+<area shape="rect" href="lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="488,5,570,32"/>
+<area shape="poly" title=" " alt="" coords="350,52,471,27,472,32,351,57"/>
+<area shape="rect" href="_app_data_interce_8c.html#a74ddf7a39feee23540341c6521dc6000" title="Retrieves the identification info of the requested analog module." alt="" coords="676,161,872,188"/>
+<area shape="poly" title=" " alt="" coords="368,169,660,171,660,176,368,174"/>
+<area shape="rect" href="_app_data_interce_8c.html#aa97f8415a0ba0596ba9e90c156378a95" title="Retrieves the position of a specified device." alt="" coords="467,208,591,235"/>
+<area shape="poly" title=" " alt="" coords="369,184,452,202,451,207,367,189"/>
+<area shape="rect" href="_app_data_interce_8c.html#aab42112e209d3e8af95f537bd7f0dfef" title="Retrieves the Digital Module Identification Info." alt="" coords="678,44,870,71"/>
+<area shape="poly" title=" " alt="" coords="327,146,377,117,436,92,493,77,552,67,662,56,662,62,552,72,494,83,438,97,379,122,329,151"/>
+<area shape="rect" href="_app_data_interce_8c.html#ac6ac24a2c74b160fa3e091b39598ab4c" title="This api is to get the IO device part number." alt="" coords="452,107,606,133"/>
+<area shape="poly" title=" " alt="" coords="367,152,449,135,450,140,369,158"/>
+<area shape="rect" href="_io_modules_8c.html#aab64cdfe20fa84db4be92c96380d60a2" title=": This is to get the address of the service data instance" alt="" coords="940,95,1111,137"/>
+<area shape="poly" title=" " alt="" coords="834,158,924,137,925,142,835,163"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="945,263,1106,289"/>
+<area shape="poly" title=" " alt="" coords="844,186,881,198,939,224,990,252,988,257,937,229,879,202,843,191"/>
+<area shape="poly" title=" " alt="" coords="835,69,925,90,924,95,834,74"/>
+<area shape="poly" title=" " alt="" coords="859,69,881,80,899,96,909,111,930,148,1006,249,1002,252,925,151,905,114,895,99,878,85,856,74"/>
+<area shape="rect" href="_digital_input_module_api_8c.html#a046c1082307d620d997ebfbda57d5143" title="Retrieves the service parameter data for a specified IO module." alt="" coords="680,95,868,137"/>
+<area shape="poly" title=" " alt="" coords="606,116,665,115,665,120,606,121"/>
+<area shape="poly" title=" " alt="" coords="868,113,924,113,924,119,868,119"/>
+<area shape="poly" title=" " alt="" coords="857,135,881,147,917,171,951,198,1004,249,1000,253,947,202,914,175,878,152,854,140"/>
+<area shape="rect" href="_main_bus_node_8c.html#ae6ec7a987944307ed8a841f85d0c6f1d" title="Retrieves the identification info of the Main Bus node." alt="" coords="438,477,620,504"/>
+<area shape="poly" title=" " alt="" coords="375,493,422,492,422,497,375,499"/>
+<area shape="poly" title=" " alt="" coords="376,508,513,533,577,548,622,564,637,574,647,585,670,607,732,645,729,649,667,611,643,588,634,578,619,569,575,553,512,538,375,513"/>
+<area shape="rect" href="_app_data_interce_8c.html#a46e2d1acaec3ced3fc4301e7c7d42fb2" title="This api is to get the External Prop Valve Part number." alt="" coords="437,309,620,336"/>
+<area shape="poly" title=" " alt="" coords="390,320,422,320,422,325,390,325"/>
+<area shape="rect" href="_app_data_interce_8c.html#ad9b02c253eb339a52cfef89977d11b91" title="Retrieves the identification info of the External prop." alt="" coords="440,259,618,285"/>
+<area shape="poly" title=" " alt="" coords="389,300,448,287,449,292,390,305"/>
+<area shape="poly" title=" " alt="" coords="618,270,929,273,929,278,618,275"/>
+<area shape="rect" href="_external_prop_8c.html#acf4b478db18710fcdd7868a9aa4e3ec7" title=" " alt="" coords="668,212,880,239"/>
+<area shape="poly" title=" " alt="" coords="602,256,685,240,686,245,603,261"/>
+<area shape="rect" href="_app_data_interce_8c.html#ac71ff25182fc836e00281aa2b64038c5" title="Retrieves the identification info of the diagnostic valve." alt="" coords="680,465,868,492"/>
+<area shape="poly" title=" " alt="" coords="585,401,622,419,645,436,670,451,687,458,685,463,667,456,642,440,619,424,583,406"/>
+<area shape="rect" href="_app_data_interce_8c.html#a42fce8bf6559b335d1d32c6f8d043e54" title="This api is to get the Internal Prop Valve Part number." alt="" coords="682,313,866,340"/>
+<area shape="poly" title=" " alt="" coords="603,362,696,341,697,346,604,367"/>
+<area shape="rect" href="_app_data_interce_8c.html#ac638b98825de1fdd9a55f36b77297f55" title="Retrieves the identification info of the Internal Prop ." alt="" coords="688,516,860,543"/>
+<area shape="poly" title=" " alt="" coords="595,401,622,419,639,441,646,463,653,483,670,502,676,506,673,511,667,506,649,486,641,465,634,444,618,423,592,405"/>
+<area shape="rect" href="_app_data_interce_8c.html#a41267b33c0c393b95c0460209f09b02b" title="Retrieves the identification info of the ISEM DIAG valve." alt="" coords="681,415,867,441"/>
+<area shape="poly" title=" " alt="" coords="604,393,685,409,684,414,603,398"/>
+<area shape="rect" href="_app_data_interce_8c.html#abb1f7159217e65e903f6658d812ccded" title="This api is to get the IO device part number." alt="" coords="693,364,855,391"/>
+<area shape="poly" title=" " alt="" coords="603,377,677,376,677,382,604,383"/>
+<area shape="poly" title=" " alt="" coords="855,462,878,451,921,417,957,377,986,336,1007,302,1012,304,991,339,961,380,924,421,881,456,857,467"/>
+<area shape="rect" href="_pressure_zone_8c.html#afa3d041d8597ff5b49a58ec5e13f2ea4" title=" " alt="" coords="928,457,1123,500"/>
+<area shape="poly" title=" " alt="" coords="869,476,912,476,912,481,869,481"/>
+<area shape="poly" title=" " alt="" coords="858,513,878,502,901,473,936,419,1006,302,1011,304,941,421,905,477,881,506,860,518"/>
+<area shape="poly" title=" " alt="" coords="843,513,912,499,913,504,844,518"/>
+<area shape="poly" title=" " alt="" coords="851,412,878,400,915,378,948,351,1001,299,1004,303,952,355,918,382,881,405,853,417"/>
+<area shape="poly" title=" " alt="" coords="844,439,913,453,912,459,843,445"/>
+<area shape="rect" href="_main_bus_node_8c.html#a729fd2c0212cb2a3bc4a2e1a7f3ebc3f" title="Retrieves the acyclic data or service parameter of the MBN node." alt="" coords="700,571,848,597"/>
+<area shape="poly" title=" " alt="" coords="367,424,426,420,492,422,560,435,592,447,622,463,634,473,641,485,648,508,654,531,660,542,670,553,687,563,684,568,667,557,656,545,649,533,643,509,636,487,630,477,619,468,590,452,558,440,492,427,426,425,368,430"/>
+<area shape="poly" title=" " alt="" coords="303,906,353,839,392,800,436,767,484,744,525,734,567,728,620,716,719,684,720,689,621,721,568,733,526,739,486,749,438,772,395,804,357,843,307,909"/>
+<area shape="rect" href="discovery_8c.html#af14569278f4c7b310cd060593a7e65eb" title="Function that fetches all the individual pressure zone handler details." alt="" coords="458,1288,599,1331"/>
+<area shape="poly" title=" " alt="" coords="351,923,372,931,391,945,407,966,418,987,427,1028,425,1070,417,1110,409,1151,407,1191,415,1233,425,1253,439,1274,447,1282,443,1286,435,1278,420,1256,410,1234,401,1192,404,1150,412,1109,420,1069,422,1029,413,989,402,969,387,949,370,935,349,928"/>
+<area shape="rect" href="discovery_8c.html#a3b848e11cbd331e215031a342401a683" title="Function that fetches all the individual property zone details." alt="" coords="448,680,609,707"/>
+<area shape="poly" title=" " alt="" coords="300,907,318,870,348,821,387,769,435,723,456,711,459,716,439,727,391,773,352,824,323,873,305,909"/>
+<area shape="rect" href="mac__address_8c.html#a06b108195d85b99abb936fe244fe064d" title=" " alt="" coords="475,579,583,605"/>
+<area shape="poly" title=" " alt="" coords="299,907,348,802,388,733,435,666,463,637,493,613,497,617,467,641,439,670,392,736,353,805,304,909"/>
+<area shape="rect" href="_app_data_interce_8c.html#abf8b757f9f7ffdab556fac4e2820deb9" title="Retrieve the device handlers for AI (Analog Input) modules." alt="" coords="462,832,595,859"/>
+<area shape="poly" title=" " alt="" coords="332,905,436,868,460,861,462,866,438,873,333,910"/>
+<area shape="rect" href="_app_data_interce_8c.html#a89e43b764a633d86b33b7e8fe437f256" title="Retrieve the device handlers for AIO (Analog Input Output) modules." alt="" coords="457,883,600,909"/>
+<area shape="poly" title=" " alt="" coords="349,913,441,903,442,908,349,918"/>
+<area shape="rect" href="_app_data_interce_8c.html#a523d5536043e2248772f5b5c0c3448ce" title="Retrieve the device handlers for AO (Analog Output) modules." alt="" coords="459,933,599,960"/>
+<area shape="poly" title=" " alt="" coords="349,924,443,935,443,940,349,930"/>
+<area shape="rect" href="_app_data_interce_8c.html#aeba633b8bfe717f26b91e9035f01b7f1" title="Retrieve the device handlers for DI (Digital Input) modules." alt="" coords="462,984,595,1011"/>
+<area shape="poly" title=" " alt="" coords="350,931,390,944,438,970,457,976,455,981,436,974,388,949,349,936"/>
+<area shape="rect" href="_app_data_interce_8c.html#a3fa80841f585da80163ab056466b213d" title="Retrieve the device handlers for DIO (Digital input output) modules." alt="" coords="457,1035,600,1061"/>
+<area shape="poly" title=" " alt="" coords="350,926,371,933,391,945,408,964,416,984,423,1003,439,1021,446,1025,443,1030,435,1025,418,1005,411,986,403,967,387,949,369,938,348,931"/>
+<area shape="rect" href="_app_data_interce_8c.html#ad1a2eb9dcf28f6272ba0ba67eb0e802d" title="Retrieve the discovery details of the modules." alt="" coords="461,1085,596,1112"/>
+<area shape="poly" title=" " alt="" coords="350,924,372,932,391,945,404,961,412,977,416,1010,420,1041,426,1056,439,1071,449,1079,445,1083,435,1075,422,1059,414,1043,410,1010,406,979,400,963,387,949,369,937,349,929"/>
+<area shape="rect" href="_app_data_interce_8c.html#a9cc23bdb3b5e1b67530bbcbbef48e339" title="Retrieve the device handlers for DO (Digital output) modules." alt="" coords="459,1136,599,1163"/>
+<area shape="poly" title=" " alt="" coords="350,924,372,931,391,945,408,967,415,990,416,1035,416,1080,423,1101,439,1122,447,1129,443,1133,435,1126,418,1103,411,1080,410,1035,410,991,403,970,387,949,369,936,348,929"/>
+<area shape="rect" href="_app_data_interce_8c.html#a1f7998cf4936f312918dcb757d2344dc" title="Retrieve the External Prop handlers." alt="" coords="450,1187,608,1213"/>
+<area shape="poly" title=" " alt="" coords="351,923,372,931,391,945,411,974,419,1003,419,1032,416,1061,412,1089,412,1117,420,1145,439,1173,441,1175,438,1179,435,1176,415,1147,407,1118,407,1089,410,1060,414,1032,414,1004,406,976,387,949,370,936,349,928"/>
+<area shape="rect" href="_app_data_interce_8c.html#ad2985c903d0633288a5f3922334a6bd9" title="Retrieve the pressure zone handlers." alt="" coords="447,1237,610,1264"/>
+<area shape="poly" title=" " alt="" coords="350,923,372,931,391,945,414,980,423,1016,422,1051,416,1086,410,1121,409,1155,417,1189,439,1224,441,1226,437,1230,435,1227,412,1191,403,1156,404,1120,410,1085,416,1051,418,1017,409,983,387,948,370,935,348,928"/>
+<area shape="rect" href="discovery_8c.html#a4b65e82368bb41640facc3743c8e3671" title="Helper function to retrieve and copy handlers." alt="" coords="446,781,612,808"/>
+<area shape="poly" title=" " alt="" coords="310,905,363,863,398,839,436,818,451,811,453,816,438,822,401,843,366,867,313,910"/>
+<area shape="poly" title=" " alt="" coords="598,1290,618,1274,635,1242,654,1182,698,1012,765,696,770,697,703,1013,660,1183,640,1244,622,1278,601,1294"/>
+<area shape="rect" href="_app_data_interce_8c.html#aece12e0108637e90d7f9695bc5d8caeb" title="Retrieve the device handlers for Diag Valve ." alt="" coords="704,1245,844,1272"/>
+<area shape="poly" title=" " alt="" coords="599,1292,690,1273,691,1278,600,1297"/>
+<area shape="rect" href="_app_data_interce_8c.html#a5602d1d731ab6db4c1f868ef03e01b51" title="Retrieve the device handlers for Internal Prop ." alt="" coords="698,1296,850,1323"/>
+<area shape="poly" title=" " alt="" coords="600,1307,682,1307,682,1312,600,1312"/>
+<area shape="rect" href="_app_data_interce_8c.html#abf7ee8a86a9a734763668b9475436291" title="Retrieve the device handlers for ISEM Diag module." alt="" coords="705,1347,843,1373"/>
+<area shape="poly" title=" " alt="" coords="600,1321,691,1340,690,1346,599,1326"/>
+<area shape="rect" href="_app_data_interce_8c.html#a0a0d54861042d4ff550ea56a0dd816de" title="Retrieves the device count from the specified pressure zone." alt="" coords="678,1397,870,1440"/>
+<area shape="poly" title=" " alt="" coords="599,1329,622,1340,636,1352,646,1362,656,1373,670,1383,679,1388,677,1393,667,1388,652,1377,642,1366,633,1355,619,1345,597,1334"/>
+<area shape="rect" href="_app_data_interce_8c.html#a8a191d56670ac7df40f394881b28344f" title="Retrieve the device handlers for Standard Valve ." alt="" coords="691,1195,857,1221"/>
+<area shape="poly" title=" " alt="" coords="597,1285,619,1274,633,1263,642,1252,652,1242,667,1231,681,1225,683,1229,670,1236,655,1246,646,1256,636,1267,622,1278,599,1290"/>
+<area shape="poly" title=" " alt="" coords="610,682,719,671,719,676,610,688"/>
+<area shape="poly" title=" " alt="" coords="575,603,720,649,719,654,574,608"/>
+<area shape="poly" title=" " alt="" coords="583,588,684,584,684,590,583,593"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#ab161d09da45c6c42b5a903700818aa9b" title="Process diagnostic valve status information across pressure zones." alt="" coords="463,1355,595,1397"/>
+<area shape="poly" title=" " alt="" coords="386,1373,447,1373,447,1379,386,1379"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#aa0f3dfc9666e2ed3508827b4b9a1d98a" title="Process ISEM status information across pressure zones." alt="" coords="443,1421,615,1448"/>
+<area shape="poly" title=" " alt="" coords="352,1387,458,1414,457,1420,350,1392"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_icgraph.png" border="0" usemap="#adata__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_icgraph" alt=""/></div>
+<map name="adata__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_icgraph" id="adata__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_icgraph">
+<area shape="rect" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3e9b0f25faad61167968870d14001d3b" name="a3e9b0f25faad61167968870d14001d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e9b0f25faad61167968870d14001d3b">&#9670;&#160;</a></span>fetch_io_identification_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fetch_io_identification_parameters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that fetches the IO_module identification parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a3e9b0f25faad61167968870d14001d3b_cgraph.png" border="0" usemap="#adata__processing_8c_a3e9b0f25faad61167968870d14001d3b_cgraph" alt=""/></div>
+<map name="adata__processing_8c_a3e9b0f25faad61167968870d14001d3b_cgraph" id="adata__processing_8c_a3e9b0f25faad61167968870d14001d3b_cgraph">
+<area shape="rect" title="Function that fetches the IO_module identification parameters." alt="" coords="5,73,151,116"/>
+<area shape="rect" href="_app_data_interce_8c.html#a74ddf7a39feee23540341c6521dc6000" title="Retrieves the identification info of the requested analog module." alt="" coords="401,5,597,32"/>
+<area shape="poly" title=" " alt="" coords="150,73,198,63,385,31,386,37,199,68,152,79"/>
+<area shape="rect" href="_app_data_interce_8c.html#aa97f8415a0ba0596ba9e90c156378a95" title="Retrieves the position of a specified device." alt="" coords="214,157,338,184"/>
+<area shape="poly" title=" " alt="" coords="129,114,200,143,218,149,216,154,198,148,127,119"/>
+<area shape="rect" href="_app_data_interce_8c.html#aab42112e209d3e8af95f537bd7f0dfef" title="Retrieves the Digital Module Identification Info." alt="" coords="403,56,595,83"/>
+<area shape="poly" title=" " alt="" coords="151,88,387,73,388,79,151,93"/>
+<area shape="rect" href="_app_data_interce_8c.html#ac6ac24a2c74b160fa3e091b39598ab4c" title="This api is to get the IO device part number." alt="" coords="199,107,353,133"/>
+<area shape="poly" title=" " alt="" coords="151,101,184,105,183,111,151,107"/>
+<area shape="rect" href="_io_modules_8c.html#aab64cdfe20fa84db4be92c96380d60a2" title=": This is to get the address of the service data instance" alt="" coords="645,23,816,65"/>
+<area shape="poly" title=" " alt="" coords="598,27,630,30,629,36,597,32"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="650,89,811,116"/>
+<area shape="poly" title=" " alt="" coords="568,30,599,42,623,58,647,75,661,81,659,86,644,80,620,63,596,46,566,35"/>
+<area shape="poly" title=" " alt="" coords="595,56,629,52,630,58,596,61"/>
+<area shape="poly" title=" " alt="" coords="596,81,635,86,634,91,595,86"/>
+<area shape="rect" href="_digital_input_module_api_8c.html#a046c1082307d620d997ebfbda57d5143" title="Retrieves the service parameter data for a specified IO module." alt="" coords="406,107,593,149"/>
+<area shape="poly" title=" " alt="" coords="353,120,390,121,390,127,353,125"/>
+<area shape="poly" title=" " alt="" coords="564,104,596,92,658,69,660,74,598,97,566,109"/>
+<area shape="poly" title=" " alt="" coords="593,115,634,111,634,116,593,120"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a3e9b0f25faad61167968870d14001d3b_icgraph.png" border="0" usemap="#adata__processing_8c_a3e9b0f25faad61167968870d14001d3b_icgraph" alt=""/></div>
+<map name="adata__processing_8c_a3e9b0f25faad61167968870d14001d3b_icgraph" id="adata__processing_8c_a3e9b0f25faad61167968870d14001d3b_icgraph">
+<area shape="rect" title="Function that fetches the IO_module identification parameters." alt="" coords="1050,536,1195,579"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="poly" title=" " alt="" coords="1034,560,1002,560,1002,555,1034,555"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adfca9bae7bdfdd358ced96390fb1f696" name="adfca9bae7bdfdd358ced96390fb1f696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfca9bae7bdfdd358ced96390fb1f696">&#9670;&#160;</a></span>fetch_mbn_identification_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fetch_mbn_identification_parameters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that fetches the MBN identification parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_cgraph.png" border="0" usemap="#adata__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_cgraph" alt=""/></div>
+<map name="adata__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_cgraph" id="adata__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_cgraph">
+<area shape="rect" title="Function that fetches the MBN identification parameters." alt="" coords="5,23,166,65"/>
+<area shape="rect" href="_main_bus_node_8c.html#ae6ec7a987944307ed8a841f85d0c6f1d" title="Retrieves the identification info of the Main Bus node." alt="" coords="214,5,396,32"/>
+<area shape="poly" title=" " alt="" coords="166,32,198,28,198,34,167,37"/>
+<area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="265,56,345,83"/>
+<area shape="poly" title=" " alt="" coords="167,51,250,60,250,66,166,56"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_icgraph.png" border="0" usemap="#adata__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_icgraph" alt=""/></div>
+<map name="adata__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_icgraph" id="adata__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_icgraph">
+<area shape="rect" title="Function that fetches the MBN identification parameters." alt="" coords="1050,536,1210,579"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="poly" title=" " alt="" coords="1034,560,1002,560,1002,555,1034,555"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aac0c03d78e4b434d9f855c01973071b1" name="aac0c03d78e4b434d9f855c01973071b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac0c03d78e4b434d9f855c01973071b1">&#9670;&#160;</a></span>fetch_propzone_identification_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fetch_propzone_identification_parameters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that fetches the PropZone identification parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_aac0c03d78e4b434d9f855c01973071b1_cgraph.png" border="0" usemap="#adata__processing_8c_aac0c03d78e4b434d9f855c01973071b1_cgraph" alt=""/></div>
+<map name="adata__processing_8c_aac0c03d78e4b434d9f855c01973071b1_cgraph" id="adata__processing_8c_aac0c03d78e4b434d9f855c01973071b1_cgraph">
+<area shape="rect" title="Function that fetches the PropZone identification parameters." alt="" coords="5,23,194,65"/>
+<area shape="rect" href="_app_data_interce_8c.html#a46e2d1acaec3ced3fc4301e7c7d42fb2" title="This api is to get the External Prop Valve Part number." alt="" coords="242,5,425,32"/>
+<area shape="poly" title=" " alt="" coords="194,31,226,28,227,33,194,36"/>
+<area shape="rect" href="_app_data_interce_8c.html#ad9b02c253eb339a52cfef89977d11b91" title="Retrieves the identification info of the External prop." alt="" coords="244,56,423,83"/>
+<area shape="poly" title=" " alt="" coords="194,52,229,55,228,61,194,57"/>
+<area shape="rect" href="_external_prop_8c.html#acf4b478db18710fcdd7868a9aa4e3ec7" title=" " alt="" coords="473,31,684,57"/>
+<area shape="poly" title=" " alt="" coords="423,57,457,54,458,59,423,63"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="498,81,659,108"/>
+<area shape="poly" title=" " alt="" coords="423,76,483,82,482,87,423,81"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_aac0c03d78e4b434d9f855c01973071b1_icgraph.png" border="0" usemap="#adata__processing_8c_aac0c03d78e4b434d9f855c01973071b1_icgraph" alt=""/></div>
+<map name="adata__processing_8c_aac0c03d78e4b434d9f855c01973071b1_icgraph" id="adata__processing_8c_aac0c03d78e4b434d9f855c01973071b1_icgraph">
+<area shape="rect" title="Function that fetches the PropZone identification parameters." alt="" coords="1050,536,1238,579"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="poly" title=" " alt="" coords="1034,560,1002,560,1002,555,1034,555"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac4306bff4d6d753d0caba597124ddbe3" name="ac4306bff4d6d753d0caba597124ddbe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4306bff4d6d753d0caba597124ddbe3">&#9670;&#160;</a></span>fetch_pz_identification_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fetch_pz_identification_parameters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that fetches the PZ identification parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_cgraph.png" border="0" usemap="#adata__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_cgraph" alt=""/></div>
+<map name="adata__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_cgraph" id="adata__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_cgraph">
+<area shape="rect" title="Function that fetches the PZ identification parameters." alt="" coords="5,99,155,141"/>
+<area shape="rect" href="_app_data_interce_8c.html#ac71ff25182fc836e00281aa2b64038c5" title="Retrieves the identification info of the diagnostic valve." alt="" coords="203,5,391,32"/>
+<area shape="poly" title=" " alt="" coords="109,96,152,68,202,42,219,35,221,40,204,46,155,72,112,100"/>
+<area shape="rect" href="_app_data_interce_8c.html#a42fce8bf6559b335d1d32c6f8d043e54" title="This api is to get the Internal Prop Valve Part number." alt="" coords="205,157,389,184"/>
+<area shape="poly" title=" " alt="" coords="156,135,223,151,221,156,154,140"/>
+<area shape="rect" href="_app_data_interce_8c.html#ac638b98825de1fdd9a55f36b77297f55" title="Retrieves the identification info of the Internal Prop ." alt="" coords="211,56,383,83"/>
+<area shape="poly" title=" " alt="" coords="154,100,221,84,223,89,156,105"/>
+<area shape="rect" href="_app_data_interce_8c.html#a41267b33c0c393b95c0460209f09b02b" title="Retrieves the identification info of the ISEM DIAG valve." alt="" coords="204,107,390,133"/>
+<area shape="poly" title=" " alt="" coords="155,117,189,117,189,123,155,123"/>
+<area shape="rect" href="_app_data_interce_8c.html#abb1f7159217e65e903f6658d812ccded" title="This api is to get the IO device part number." alt="" coords="216,208,378,235"/>
+<area shape="poly" title=" " alt="" coords="112,140,155,168,204,194,221,200,219,205,202,198,152,172,109,144"/>
+<area shape="rect" href="_pressure_zone_8c.html#afa3d041d8597ff5b49a58ec5e13f2ea4" title=" " alt="" coords="439,19,634,61"/>
+<area shape="poly" title=" " alt="" coords="392,24,424,27,423,33,391,30"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="456,85,617,112"/>
+<area shape="poly" title=" " alt="" coords="360,30,392,42,416,56,440,71,458,78,456,83,438,76,414,61,390,46,358,35"/>
+<area shape="poly" title=" " alt="" coords="383,56,423,51,424,56,384,61"/>
+<area shape="poly" title=" " alt="" coords="384,77,441,84,440,90,383,83"/>
+<area shape="poly" title=" " alt="" coords="354,104,390,92,438,71,455,64,457,69,440,76,392,97,355,109"/>
+<area shape="poly" title=" " alt="" coords="390,109,440,105,441,110,390,114"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_icgraph.png" border="0" usemap="#adata__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_icgraph" alt=""/></div>
+<map name="adata__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_icgraph" id="adata__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_icgraph">
+<area shape="rect" title="Function that fetches the PZ identification parameters." alt="" coords="1050,536,1199,579"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="poly" title=" " alt="" coords="1034,560,1002,560,1002,555,1034,555"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
 </map>
 </div>
 
@@ -265,11 +909,77 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a434de6524abf0902881fe890323c1186_cgraph.png" border="0" usemap="#adata__processing_8c_a434de6524abf0902881fe890323c1186_cgraph" alt=""/></div>
+<map name="adata__processing_8c_a434de6524abf0902881fe890323c1186_cgraph" id="adata__processing_8c_a434de6524abf0902881fe890323c1186_cgraph">
+<area shape="rect" title="function that access the MAC details" alt="" coords="5,5,150,32"/>
+<area shape="rect" href="_main_bus_node_8c.html#a729fd2c0212cb2a3bc4a2e1a7f3ebc3f" title="Retrieves the acyclic data or service parameter of the MBN node." alt="" coords="198,5,346,32"/>
+<area shape="poly" title=" " alt="" coords="150,16,182,16,182,21,150,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a434de6524abf0902881fe890323c1186_icgraph.png" border="0" usemap="#adata__processing_8c_a434de6524abf0902881fe890323c1186_icgraph" alt=""/></div>
+<map name="adata__processing_8c_a434de6524abf0902881fe890323c1186_icgraph" id="adata__processing_8c_a434de6524abf0902881fe890323c1186_icgraph">
+<area shape="rect" title="function that access the MAC details" alt="" coords="1094,441,1238,468"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="898,384,1046,411"/>
+<area shape="poly" title=" " alt="" coords="1103,439,1019,414,1021,409,1104,434"/>
+<area shape="rect" href="mac__screen_8c.html#a1c7289e9f8ca482aa0d0ba0c1af96da0" title=" " alt="" coords="712,531,850,557"/>
+<area shape="poly" title=" " alt="" coords="1091,475,842,533,841,528,1089,470"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="734,368,828,395"/>
+<area shape="poly" title=" " alt="" coords="883,393,829,388,829,383,883,387"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="718,384,665,384,665,379,718,379"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,93,549,136"/>
+<area shape="poly" title=" " alt="" coords="634,353,630,309,619,255,598,199,583,173,565,150,548,137,551,133,569,146,587,170,603,196,624,253,635,308,640,353"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,160,546,203"/>
+<area shape="poly" title=" " alt="" coords="630,353,622,322,609,285,590,248,565,217,545,203,548,198,568,213,595,246,614,283,627,320,636,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,227,567,269"/>
+<area shape="poly" title=" " alt="" coords="622,356,598,318,565,283,547,272,550,268,568,279,603,315,627,353"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,293,562,336"/>
+<area shape="poly" title=" " alt="" coords="600,366,566,350,537,339,539,334,568,346,602,361"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,360,567,403"/>
+<area shape="poly" title=" " alt="" coords="599,384,567,384,567,379,599,379"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,427,557,453"/>
+<area shape="poly" title=" " alt="" coords="602,402,568,417,532,429,531,424,566,412,600,398"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,477,562,520"/>
+<area shape="poly" title=" " alt="" coords="623,409,599,439,568,467,548,479,545,475,565,463,595,436,619,406"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,544,562,587"/>
+<area shape="poly" title=" " alt="" coords="634,410,612,472,593,505,568,534,552,546,549,541,565,530,589,502,607,470,629,409"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,611,552,653"/>
+<area shape="poly" title=" " alt="" coords="639,411,633,452,621,503,601,555,586,579,569,601,554,612,551,608,565,597,582,576,596,552,616,501,628,451,634,410"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,677,553,704"/>
+<area shape="poly" title=" " alt="" coords="637,411,613,549,594,620,582,648,569,667,553,679,550,675,565,663,577,645,589,618,608,548,632,410"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,43,562,69"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,288,609,207,590,132,578,103,565,83,550,72,553,68,569,80,582,100,595,130,614,206,629,287,637,352"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,335,336,361"/>
+<area shape="poly" title=" " alt="" coords="390,146,386,150,365,172,348,196,319,249,300,298,290,335,285,333,295,297,314,247,343,193,361,168,383,146,387,142"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,205,181,232"/>
+<area shape="poly" title=" " alt="" coords="255,326,163,234,166,231,259,322"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,180,70,207"/>
+<area shape="poly" title=" " alt="" coords="102,211,70,203,71,198,103,205"/>
+<area shape="poly" title=" " alt="" coords="53,166,88,119,140,65,171,41,206,21,242,8,281,3,477,3,512,6,544,16,575,31,603,50,652,100,693,160,726,222,751,281,779,367,774,368,746,283,721,224,689,162,648,104,599,54,572,35,542,21,511,11,477,8,282,8,244,13,208,26,174,45,144,69,92,122,57,169"/>
+<area shape="poly" title=" " alt="" coords="393,212,386,217,355,246,328,279,293,336,289,333,324,275,351,242,383,213,390,208"/>
+<area shape="poly" title=" " alt="" coords="397,278,386,284,341,310,304,336,301,332,338,306,383,279,394,274"/>
+<area shape="poly" title=" " alt="" coords="374,335,337,341,336,336,373,330"/>
+<area shape="poly" title=" " alt="" coords="369,366,337,360,337,355,369,360"/>
+<area shape="poly" title=" " alt="" coords="399,424,383,417,337,391,300,364,303,360,340,386,386,412,401,419"/>
+<area shape="poly" title=" " alt="" coords="389,472,383,467,353,442,327,414,290,364,295,360,331,410,356,438,386,463,392,467"/>
+<area shape="poly" title=" " alt="" coords="387,537,382,534,345,491,316,442,297,397,285,363,290,361,302,395,321,440,349,488,386,530,390,533"/>
+<area shape="poly" title=" " alt="" coords="386,603,382,601,358,572,337,539,308,470,291,407,283,362,288,361,296,406,313,469,342,537,362,569,386,597,389,600"/>
+<area shape="poly" title=" " alt="" coords="386,671,382,667,352,631,328,589,311,545,298,500,285,418,281,362,287,362,290,417,303,499,316,543,333,587,356,628,386,663,390,667"/>
+<area shape="poly" title=" " alt="" coords="390,80,386,83,360,113,339,146,322,182,309,219,294,287,288,335,282,334,288,286,304,218,317,180,334,144,356,109,382,79,387,76"/>
+<area shape="poly" title=" " alt="" coords="748,568,668,618,568,668,535,679,533,674,566,663,665,613,746,564"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="ad83f92efbda6e1a6d8173c9104fc9b8e" name="ad83f92efbda6e1a6d8173c9104fc9b8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad83f92efbda6e1a6d8173c9104fc9b8e">&#9670;&#160;</a></span>mbn_status_info()</h2>
+<a id="a33e091ca4ad4a808848bae50150d6bef" name="a33e091ca4ad4a808848bae50150d6bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33e091ca4ad4a808848bae50150d6bef">&#9670;&#160;</a></span>mbn_status_info()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +990,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">int mbn_status_info </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>module_num_status</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -298,138 +1008,59 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a33e091ca4ad4a808848bae50150d6bef_icgraph.png" border="0" usemap="#adata__processing_8c_a33e091ca4ad4a808848bae50150d6bef_icgraph" alt=""/></div>
+<map name="adata__processing_8c_a33e091ca4ad4a808848bae50150d6bef_icgraph" id="adata__processing_8c_a33e091ca4ad4a808848bae50150d6bef_icgraph">
+<area shape="rect" title="function that determines the MBN status information" alt="" coords="1050,544,1166,571"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="poly" title=" " alt="" coords="1034,560,1002,560,1002,555,1034,555"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
+</map>
 </div>
-</div>
-<a id="a1e597b4852ad375bf6d19f4cf06c4cc7" name="a1e597b4852ad375bf6d19f4cf06c4cc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e597b4852ad375bf6d19f4cf06c4cc7">&#9670;&#160;</a></span>pressurezone_parameter_access()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t pressurezone_parameter_access </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pzid</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>instance_id</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>station_num</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>parameter_id</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>_buf</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>rdwr</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a78eafab7a287553f6b8d5e3ac097973b" name="a78eafab7a287553f6b8d5e3ac097973b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78eafab7a287553f6b8d5e3ac097973b">&#9670;&#160;</a></span>set_get_dio_parameter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t set_get_dio_parameter </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>instance</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>chnlnumber</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>parameter_id</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>rdwr</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1df829ecb2d0be6172d428db9cb7da7f" name="a1df829ecb2d0be6172d428db9cb7da7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1df829ecb2d0be6172d428db9cb7da7f">&#9670;&#160;</a></span>shmd_mbn_parameter_rdwr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t shmd_mbn_parameter_rdwr </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>parameter_id</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>rdwr</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -463,25 +1094,273 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="data__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_cgraph.png" border="0" usemap="#adata__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_cgraph" alt=""/></div>
 <map name="adata__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_cgraph" id="adata__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_cgraph">
-<area shape="rect" title="Function that processes the discovery details." alt="" coords="5,97,114,124"/>
-<area shape="rect" href="discovery_8c.html#a2e5d3607b1b18046dc40e5ca4a5da25b" title="Function that fetches all the individual pressure zone details." alt="" coords="162,5,303,48"/>
-<area shape="poly" title=" " alt="" coords="87,94,160,58,170,53,173,58,163,62,89,99"/>
-<area shape="rect" href="discovery_8c.html#ad5f5114762fdf8bc816e3e844003686c" title=" " alt="" coords="167,72,298,99"/>
-<area shape="poly" title=" " alt="" coords="114,100,152,94,153,100,115,105"/>
-<area shape="rect" href="discovery_8c.html#a9bef804ce4a0cb8146b8f267f01fd9d0" title=" " alt="" coords="172,123,293,149"/>
-<area shape="poly" title=" " alt="" coords="115,116,157,122,157,128,114,121"/>
-<area shape="rect" href="discovery_8c.html#af2962e5ff7dc2372b23f2554342a11d4" title=" " alt="" coords="183,173,282,200"/>
-<area shape="poly" title=" " alt="" coords="88,122,163,159,177,165,175,170,161,164,85,127"/>
-<area shape="rect" href="discovery_8c.html#a0a5fd36f53eb14609d34246f8a5b6677" title=" " alt="" coords="351,5,497,48"/>
-<area shape="poly" title=" " alt="" coords="304,24,336,24,336,29,304,29"/>
+<area shape="rect" title="Function that processes the discovery details." alt="" coords="5,553,114,580"/>
+<area shape="rect" href="discovery_8c.html#af14569278f4c7b310cd060593a7e65eb" title="Function that fetches all the individual pressure zone handler details." alt="" coords="174,183,316,225"/>
+<area shape="poly" title=" " alt="" coords="60,553,69,503,87,429,116,347,136,306,160,268,194,233,197,237,164,271,141,308,121,349,92,431,74,504,65,553"/>
+<area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="443,325,522,352"/>
+<area shape="poly" title=" " alt="" coords="59,553,64,505,78,437,91,402,109,367,131,336,160,311,181,302,210,298,281,300,359,311,428,324,427,329,358,316,280,306,210,304,183,308,163,316,135,340,113,370,96,404,84,439,69,505,64,553"/>
+<area shape="rect" href="discovery_8c.html#a3b848e11cbd331e215031a342401a683" title="Function that fetches all the individual property zone details." alt="" coords="164,325,326,352"/>
+<area shape="poly" title=" " alt="" coords="61,552,71,515,90,464,119,409,138,384,160,362,165,358,169,362,163,366,142,388,124,412,95,466,76,516,66,554"/>
+<area shape="rect" href="mac__address_8c.html#a06b108195d85b99abb936fe244fe064d" title=" " alt="" coords="191,376,299,403"/>
+<area shape="poly" title=" " alt="" coords="64,552,97,485,125,446,160,413,175,404,178,408,163,417,129,450,102,488,68,554"/>
+<area shape="rect" href="_app_data_interce_8c.html#abf8b757f9f7ffdab556fac4e2820deb9" title="Retrieve the device handlers for AI (Analog Input) modules." alt="" coords="178,427,312,453"/>
+<area shape="poly" title=" " alt="" coords="69,551,106,508,132,484,160,463,171,457,173,462,163,468,135,488,110,512,73,554"/>
+<area shape="rect" href="_app_data_interce_8c.html#a89e43b764a633d86b33b7e8fe437f256" title="Retrieve the device handlers for AIO (Analog Input Output) modules." alt="" coords="173,477,317,504"/>
+<area shape="poly" title=" " alt="" coords="84,550,161,514,179,507,180,512,163,518,87,555"/>
+<area shape="rect" href="_app_data_interce_8c.html#a523d5536043e2248772f5b5c0c3448ce" title="Retrieve the device handlers for AO (Analog Output) modules." alt="" coords="175,528,315,555"/>
+<area shape="poly" title=" " alt="" coords="114,557,159,550,159,556,115,562"/>
+<area shape="rect" href="_app_data_interce_8c.html#aeba633b8bfe717f26b91e9035f01b7f1" title="Retrieve the device handlers for DI (Digital Input) modules." alt="" coords="178,579,312,605"/>
+<area shape="poly" title=" " alt="" coords="115,571,163,578,163,583,114,577"/>
+<area shape="rect" href="_app_data_interce_8c.html#a3fa80841f585da80163ab056466b213d" title="Retrieve the device handlers for DIO (Digital input output) modules." alt="" coords="173,629,317,656"/>
+<area shape="poly" title=" " alt="" coords="87,578,163,615,180,621,179,626,161,620,84,583"/>
+<area shape="rect" href="_app_data_interce_8c.html#ad1a2eb9dcf28f6272ba0ba67eb0e802d" title="Retrieve the discovery details of the modules." alt="" coords="177,680,313,707"/>
+<area shape="poly" title=" " alt="" coords="73,579,110,622,135,645,163,666,173,671,171,676,160,670,132,649,106,625,69,582"/>
+<area shape="rect" href="_app_data_interce_8c.html#a9cc23bdb3b5e1b67530bbcbbef48e339" title="Retrieve the device handlers for DO (Digital output) modules." alt="" coords="175,731,315,757"/>
+<area shape="poly" title=" " alt="" coords="68,579,102,645,129,684,163,717,170,721,167,725,160,721,125,687,97,648,64,582"/>
+<area shape="rect" href="_app_data_interce_8c.html#a1f7998cf4936f312918dcb757d2344dc" title="Retrieve the External Prop handlers." alt="" coords="166,781,324,808"/>
+<area shape="poly" title=" " alt="" coords="66,580,76,617,95,668,124,721,142,746,163,767,169,771,165,776,160,771,138,749,119,724,90,670,71,619,61,581"/>
+<area shape="rect" href="_app_data_interce_8c.html#ad2985c903d0633288a5f3922334a6bd9" title="Retrieve the pressure zone handlers." alt="" coords="163,832,327,859"/>
+<area shape="poly" title=" " alt="" coords="65,580,72,626,89,690,118,759,139,790,164,818,168,822,164,826,160,822,134,794,113,761,84,691,67,627,60,581"/>
+<area shape="rect" href="discovery_8c.html#a4b65e82368bb41640facc3743c8e3671" title="Helper function to retrieve and copy handlers." alt="" coords="162,883,328,909"/>
+<area shape="poly" title=" " alt="" coords="64,580,68,634,83,711,95,754,112,795,135,834,164,869,167,872,164,876,160,873,131,838,108,798,90,755,77,712,63,634,59,581"/>
+<area shape="rect" href="_app_data_interce_8c.html#aece12e0108637e90d7f9695bc5d8caeb" title="Retrieve the device handlers for Diag Valve ." alt="" coords="413,5,553,32"/>
+<area shape="poly" title=" " alt="" coords="255,181,301,112,335,74,375,42,397,31,399,36,377,46,338,77,305,115,260,184"/>
+<area shape="rect" href="_app_data_interce_8c.html#a5602d1d731ab6db4c1f868ef03e01b51" title="Retrieve the device handlers for Internal Prop ." alt="" coords="407,56,559,83"/>
+<area shape="poly" title=" " alt="" coords="264,180,312,135,342,112,375,92,391,85,393,90,377,97,345,116,315,139,268,184"/>
+<area shape="rect" href="_app_data_interce_8c.html#abf7ee8a86a9a734763668b9475436291" title="Retrieve the device handlers for ISEM Diag module." alt="" coords="414,107,551,133"/>
+<area shape="poly" title=" " alt="" coords="288,180,375,143,399,135,401,140,377,148,290,185"/>
+<area shape="rect" href="_app_data_interce_8c.html#a0a0d54861042d4ff550ea56a0dd816de" title="Retrieves the device count from the specified pressure zone." alt="" coords="387,157,578,200"/>
+<area shape="poly" title=" " alt="" coords="316,194,371,188,372,193,316,199"/>
+<area shape="rect" href="_app_data_interce_8c.html#a8a191d56670ac7df40f394881b28344f" title="Retrieve the device handlers for Standard Valve ." alt="" coords="400,224,566,251"/>
+<area shape="poly" title=" " alt="" coords="316,211,384,221,384,226,316,217"/>
+<area shape="poly" title=" " alt="" coords="276,224,330,267,352,291,377,311,402,322,429,329,427,334,401,327,375,316,349,295,326,271,273,228"/>
+<area shape="rect" href="discovery_8c.html#a9fb9bb9f432567d6ac9d3084230d13d0" title="Helper function to retrieve and copy handlers with arguments." alt="" coords="376,275,589,301"/>
+<area shape="poly" title=" " alt="" coords="290,223,377,260,401,268,399,273,375,265,288,228"/>
+<area shape="poly" title=" " alt="" coords="326,336,428,336,428,341,326,341"/>
+<area shape="poly" title=" " alt="" coords="299,375,427,348,428,353,300,380"/>
+<area shape="rect" href="_main_bus_node_8c.html#a729fd2c0212cb2a3bc4a2e1a7f3ebc3f" title="Retrieves the acyclic data or service parameter of the MBN node." alt="" coords="409,376,557,403"/>
+<area shape="poly" title=" " alt="" coords="300,387,393,387,393,392,300,392"/>
+<area shape="rect" href="_app_data_init_8c.html#ac92a673771db92e7156490091aef7135" title=" " alt="" coords="463,655,502,681"/>
+<area shape="poly" title=" " alt="" coords="313,683,448,669,448,674,313,689"/>
+<area shape="rect" href="_app_data_interce_8c.html#a510fa21187d2bc7234c063942d17a85f" title=" " alt="" coords="422,705,544,732"/>
+<area shape="poly" title=" " alt="" coords="313,698,406,708,405,713,313,703"/>
+<area shape="rect" href="_app_data_init_8c.html#a61b02bc2681a98a6e228d723dd625641" title=" " alt="" coords="681,655,755,681"/>
+<area shape="poly" title=" " alt="" coords="502,665,666,665,666,671,502,671"/>
+<area shape="rect" href="_app_data_init_8c.html#a08e380e7af7b0eeafeff03a254731015" title=" " alt="" coords="847,604,979,631"/>
+<area shape="poly" title=" " alt="" coords="754,656,843,633,844,638,756,661"/>
+<area shape="rect" href="_app_data_init_8c.html#abd03986677f9e517f5559c36490951ed" title=" " alt="" coords="858,655,968,681"/>
+<area shape="poly" title=" " alt="" coords="755,665,843,665,843,671,755,671"/>
+<area shape="rect" href="_app_data_init_8c.html#a58b73e2d9979a6b0af8f0bd6d599f44b" title=" " alt="" coords="867,705,959,732"/>
+<area shape="poly" title=" " alt="" coords="756,675,853,700,851,706,754,680"/>
+<area shape="rect" href="_app_data_init_8c.html#ac71aba88cc1fd0e3f88a29995e6ea594" title=" " alt="" coords="1027,579,1150,605"/>
+<area shape="poly" title=" " alt="" coords="979,605,1011,601,1012,606,980,610"/>
+<area shape="rect" href="_app_data_init_8c.html#a98d90b2a428c793a4ec9a748a7276736" title=" " alt="" coords="1035,629,1143,656"/>
+<area shape="poly" title=" " alt="" coords="980,624,1020,630,1019,635,979,630"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="637,705,799,732"/>
+<area shape="poly" title=" " alt="" coords="544,716,622,716,622,721,544,721"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_icgraph.png" border="0" usemap="#adata__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_icgraph" alt=""/></div>
+<map name="adata__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_icgraph" id="adata__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_icgraph">
+<area shape="rect" title="Function that processes the discovery details." alt="" coords="1050,544,1158,571"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="poly" title=" " alt="" coords="1034,560,1002,560,1002,555,1034,555"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3671d63082904cd553ff0e84c91b088e" name="a3671d63082904cd553ff0e84c91b088e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3671d63082904cd553ff0e84c91b088e">&#9670;&#160;</a></span>valves_modules_status_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void valves_modules_status_info </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that processes the valves modules status information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a3671d63082904cd553ff0e84c91b088e_cgraph.png" border="0" usemap="#adata__processing_8c_a3671d63082904cd553ff0e84c91b088e_cgraph" alt=""/></div>
+<map name="adata__processing_8c_a3671d63082904cd553ff0e84c91b088e_cgraph" id="adata__processing_8c_a3671d63082904cd553ff0e84c91b088e_cgraph">
+<area shape="rect" title="Function that processes the valves modules status information." alt="" coords="5,183,187,209"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#ab161d09da45c6c42b5a903700818aa9b" title="Process diagnostic valve status information across pressure zones." alt="" coords="255,99,387,141"/>
+<area shape="poly" title=" " alt="" coords="137,180,241,144,242,149,139,185"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#aa0f3dfc9666e2ed3508827b4b9a1d98a" title="Process ISEM status information across pressure zones." alt="" coords="235,259,407,285"/>
+<area shape="poly" title=" " alt="" coords="139,207,265,251,263,256,137,212"/>
+<area shape="rect" href="diag__valve__status__info_8c.html#a0f33a057d237123db3425ba08ebb47e3" title="Function that processes the diag valve modules status information." alt="" coords="455,107,604,133"/>
+<area shape="poly" title=" " alt="" coords="387,117,439,117,439,123,387,123"/>
+<area shape="rect" href="_diag_valve_api_8c.html#ac3ec6ff63d65bb052cd01cb6eafd6634" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="652,5,824,32"/>
+<area shape="poly" title=" " alt="" coords="387,101,665,34,666,39,388,107"/>
+<area shape="rect" href="diag__valve__status__info_8c.html#a9ee8455a4c41c2efd1719fe6fed51053" title=" " alt="" coords="676,56,800,83"/>
+<area shape="poly" title=" " alt="" coords="587,103,665,84,666,89,588,109"/>
+<area shape="rect" href="diag__valve__status__info_8c.html#a181386d8ac3c39a998bc8b82730dc58c" title=" " alt="" coords="662,107,814,133"/>
+<area shape="poly" title=" " alt="" coords="605,117,647,117,647,123,605,123"/>
+<area shape="poly" title=" " alt="" coords="548,104,594,73,651,42,667,35,669,40,653,46,596,78,551,108"/>
+<area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="698,157,778,184"/>
+<area shape="poly" title=" " alt="" coords="588,131,684,155,682,160,587,137"/>
+<area shape="rect" href="lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="697,208,779,235"/>
+<area shape="poly" title=" " alt="" coords="551,132,596,162,653,194,683,205,681,210,651,198,594,167,548,136"/>
+<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="872,76,1066,119"/>
+<area shape="poly" title=" " alt="" coords="788,30,825,41,898,68,896,73,823,47,787,35"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="888,220,1050,247"/>
+<area shape="poly" title=" " alt="" coords="806,30,825,42,844,63,853,83,861,105,874,129,909,171,943,207,939,211,905,175,869,132,856,107,848,85,840,66,822,46,803,35"/>
+<area shape="rect" href="_isem_diag_valve_api_8c.html#ad9a986ad54e6f23b84d77e8c751e07f6" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="654,376,822,403"/>
+<area shape="poly" title=" " alt="" coords="372,283,674,369,673,374,371,288"/>
+<area shape="rect" href="isem__status__info_8c.html#ac556b861a63a472eab6b590aac6be953" title="Function that processes the isem modules status information." alt="" coords="470,259,589,285"/>
+<area shape="poly" title=" " alt="" coords="407,269,455,269,455,275,407,275"/>
+<area shape="poly" title=" " alt="" coords="806,373,822,362,837,344,845,326,851,290,854,252,859,230,869,207,899,164,931,128,935,132,903,167,874,209,864,232,859,252,856,291,850,328,841,347,825,366,809,378"/>
+<area shape="poly" title=" " alt="" coords="797,373,822,362,859,338,892,310,945,256,948,260,896,314,862,342,825,366,799,378"/>
+<area shape="poly" title=" " alt="" coords="548,256,594,225,651,194,682,182,684,187,653,198,596,230,551,260"/>
+<area shape="poly" title=" " alt="" coords="587,255,681,232,683,237,588,261"/>
+<area shape="poly" title=" " alt="" coords="547,284,593,322,654,362,667,368,665,373,651,366,590,326,544,288"/>
+<area shape="rect" href="isem__status__info_8c.html#ad3e3ba582ba271dd10563b919da8f94f" title=" " alt="" coords="658,259,818,285"/>
+<area shape="poly" title=" " alt="" coords="590,269,643,269,643,275,590,275"/>
+<area shape="rect" href="isem__status__info_8c.html#afa0da081e452bcba9fe88e18aee251fc" title=" " alt="" coords="676,309,800,352"/>
+<area shape="poly" title=" " alt="" coords="580,283,661,306,660,312,579,288"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="data__processing_8c_a3671d63082904cd553ff0e84c91b088e_icgraph.png" border="0" usemap="#adata__processing_8c_a3671d63082904cd553ff0e84c91b088e_icgraph" alt=""/></div>
+<map name="adata__processing_8c_a3671d63082904cd553ff0e84c91b088e_icgraph" id="adata__processing_8c_a3671d63082904cd553ff0e84c91b088e_icgraph">
+<area shape="rect" title="Function that processes the valves modules status information." alt="" coords="1050,544,1231,571"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="854,544,1002,571"/>
+<area shape="poly" title=" " alt="" coords="1034,560,1002,560,1002,555,1034,555"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,368,664,395"/>
+<area shape="poly" title=" " alt="" coords="738,533,648,397,652,394,743,530"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,5,549,48"/>
+<area shape="poly" title=" " alt="" coords="632,353,624,284,610,197,590,115,578,83,565,62,548,48,551,44,569,58,583,81,595,114,615,196,629,283,638,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,72,546,115"/>
+<area shape="poly" title=" " alt="" coords="635,353,632,305,621,245,600,183,584,154,565,129,545,114,548,109,569,125,589,151,605,181,627,244,637,304,641,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,139,567,181"/>
+<area shape="poly" title=" " alt="" coords="632,353,625,317,612,275,593,232,565,195,550,184,554,180,569,191,597,230,617,273,630,316,637,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,205,562,248"/>
+<area shape="poly" title=" " alt="" coords="626,355,602,307,585,283,565,262,548,251,551,246,568,258,589,280,607,304,630,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,272,567,315"/>
+<area shape="poly" title=" " alt="" coords="610,360,565,329,541,318,544,313,568,324,613,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,339,557,365"/>
+<area shape="poly" title=" " alt="" coords="599,377,553,369,554,363,600,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,389,562,432"/>
+<area shape="poly" title=" " alt="" coords="600,391,563,398,562,392,599,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,456,562,499"/>
+<area shape="poly" title=" " alt="" coords="616,408,594,428,568,446,546,458,543,453,565,442,591,424,613,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,523,552,565"/>
+<area shape="poly" title=" " alt="" coords="632,411,608,462,590,489,568,513,552,524,548,520,565,509,586,486,603,459,627,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,589,553,616"/>
+<area shape="poly" title=" " alt="" coords="638,410,632,448,620,494,599,540,568,579,551,591,548,587,565,575,595,537,615,492,627,447,633,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,640,562,667"/>
+<area shape="poly" title=" " alt="" coords="641,410,638,458,627,517,605,577,589,605,568,630,553,642,549,637,565,626,585,602,601,575,622,515,632,457,636,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,368,336,395"/>
+<area shape="poly" title=" " alt="" coords="391,57,386,62,357,99,334,141,317,186,305,231,291,312,287,368,282,367,286,312,299,229,312,184,330,139,353,96,382,58,387,53"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,441,181,468"/>
+<area shape="poly" title=" " alt="" coords="245,405,177,443,174,438,243,400"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,544,70,571"/>
+<area shape="poly" title=" " alt="" coords="124,481,55,545,52,541,121,477"/>
+<area shape="poly" title=" " alt="" coords="63,580,100,617,152,656,182,674,214,688,247,698,281,701,477,701,519,697,561,686,600,669,637,649,700,605,742,569,746,573,704,609,640,653,603,674,562,691,520,702,477,707,281,707,246,703,212,693,180,679,149,661,97,621,59,584"/>
+<area shape="poly" title=" " alt="" coords="394,122,386,129,362,157,342,189,312,259,296,323,288,368,283,367,290,322,307,257,337,187,357,154,382,125,390,118"/>
+<area shape="poly" title=" " alt="" coords="390,192,386,195,349,238,321,287,301,334,290,368,285,367,296,332,316,285,344,235,382,191,387,188"/>
+<area shape="poly" title=" " alt="" coords="392,258,386,262,356,288,330,318,294,369,290,366,326,314,352,284,383,258,389,254"/>
+<area shape="poly" title=" " alt="" coords="398,323,385,329,308,370,306,365,383,324,396,319"/>
+<area shape="poly" title=" " alt="" coords="379,369,337,376,337,371,379,364"/>
+<area shape="poly" title=" " alt="" coords="373,398,336,392,337,387,374,393"/>
+<area shape="poly" title=" " alt="" coords="395,452,383,446,339,422,302,398,305,393,342,417,386,442,397,447"/>
+<area shape="poly" title=" " alt="" coords="389,517,383,513,351,484,324,452,289,397,293,394,329,449,355,481,386,509,392,513"/>
+<area shape="poly" title=" " alt="" coords="388,584,383,579,361,558,342,534,314,482,295,433,284,396,290,394,300,431,318,480,347,531,365,555,386,575,391,579"/>
+<area shape="poly" title=" " alt="" coords="387,634,383,630,357,603,336,571,307,503,290,440,283,395,288,394,295,439,312,502,341,569,361,599,386,626,391,630"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="af84994521a95b5a427974ea0c6287c06" name="af84994521a95b5a427974ea0c6287c06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af84994521a95b5a427974ea0c6287c06">&#9670;&#160;</a></span>board_id</h2>
+<a id="a302e4e8f28350675e1eb62a4e1481d8c" name="a302e4e8f28350675e1eb62a4e1481d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a302e4e8f28350675e1eb62a4e1481d8c">&#9670;&#160;</a></span>all_modules_normal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool all_modules_normal = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aecc928609def218c15f7c59447eb5a32" name="aecc928609def218c15f7c59447eb5a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecc928609def218c15f7c59447eb5a32">&#9670;&#160;</a></span>discover_details</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -490,7 +1369,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t board_id[9]</td>
+          <td class="memname">s_discovery_details discover_details</td>
         </tr>
       </table>
   </td>
@@ -502,22 +1381,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ab5ac5a40550d5ec5f1a434ed508a7458" name="ab5ac5a40550d5ec5f1a434ed508a7458"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5ac5a40550d5ec5f1a434ed508a7458">&#9670;&#160;</a></span>diag_valve_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t diag_valve_count = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae9e4e4df58b986043267fdef963014cb" name="ae9e4e4df58b986043267fdef963014cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9e4e4df58b986043267fdef963014cb">&#9670;&#160;</a></span>discover_pz_details</h2>
+<a id="aa82d815e011dc2986b6dfc9e2ddfbfaa" name="aa82d815e011dc2986b6dfc9e2ddfbfaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa82d815e011dc2986b6dfc9e2ddfbfaa">&#9670;&#160;</a></span>g_start_flag</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,7 +1391,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">discover_pressure_zone_struct discover_pz_details[MAX_PRESSURE_ZONE]</td>
+          <td class="memname">uint8_t g_start_flag</td>
         </tr>
       </table>
   </td>
@@ -538,356 +1403,28 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a55f337861669522f7a6bef03a8f4d83c" name="a55f337861669522f7a6bef03a8f4d83c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55f337861669522f7a6bef03a8f4d83c">&#9670;&#160;</a></span>extern_prop_count</h2>
+<a id="a5a48a03cca514f9b8f3f4f3efde71476" name="a5a48a03cca514f9b8f3f4f3efde71476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a48a03cca514f9b8f3f4f3efde71476">&#9670;&#160;</a></span>g_status_index</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t extern_prop_count = 0</td>
+          <td class="memname">uint8_t g_status_index = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a306f1bbb85e369d0869ae58578220042" name="a306f1bbb85e369d0869ae58578220042"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a306f1bbb85e369d0869ae58578220042">&#9670;&#160;</a></span>inter_prop_count</h2>
+<a id="a27e4047823c653df7bd5f560cd4fa460" name="a27e4047823c653df7bd5f560cd4fa460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e4047823c653df7bd5f560cd4fa460">&#9670;&#160;</a></span>g_total_no_of_status_screens</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t inter_prop_count = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae79be649f973e3dc7851553f6035eb99" name="ae79be649f973e3dc7851553f6035eb99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae79be649f973e3dc7851553f6035eb99">&#9670;&#160;</a></span>io_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t io_count = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac432fd913081bb3f627d04307db44fa3" name="ac432fd913081bb3f627d04307db44fa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac432fd913081bb3f627d04307db44fa3">&#9670;&#160;</a></span>io_count_buf</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t io_count_buf</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3f2e3b0055b7bd6ecfef1540062aa4bf" name="a3f2e3b0055b7bd6ecfef1540062aa4bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f2e3b0055b7bd6ecfef1540062aa4bf">&#9670;&#160;</a></span>isem_diag_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t isem_diag_count = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5b1e5548d5511ae6004ab69314501e5a" name="a5b1e5548d5511ae6004ab69314501e5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b1e5548d5511ae6004ab69314501e5a">&#9670;&#160;</a></span>mbn_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t mbn_count = 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a17fa0c3fc5622a8216dae026b9852672" name="a17fa0c3fc5622a8216dae026b9852672"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17fa0c3fc5622a8216dae026b9852672">&#9670;&#160;</a></span>module_details</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">module_screen_mbn_io module_details[10]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a67240a774ba2c4a24e869e083ffb231a" name="a67240a774ba2c4a24e869e083ffb231a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67240a774ba2c4a24e869e083ffb231a">&#9670;&#160;</a></span>module_num_identify_io</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t module_num_identify_io = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5d9d66d32a86cb36482476475ed2e1a5" name="a5d9d66d32a86cb36482476475ed2e1a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d9d66d32a86cb36482476475ed2e1a5">&#9670;&#160;</a></span>module_num_identify_valves</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t module_num_identify_valves = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a30a83e24f02c9bdc26b7a55feaf42553" name="a30a83e24f02c9bdc26b7a55feaf42553"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30a83e24f02c9bdc26b7a55feaf42553">&#9670;&#160;</a></span>module_num_status</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t module_num_status = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae65d55235357bf3e4256281b6caf46d3" name="ae65d55235357bf3e4256281b6caf46d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae65d55235357bf3e4256281b6caf46d3">&#9670;&#160;</a></span>module_valves_details</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">module_screen_valves module_valves_details[20]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a26f6f85b8b034729a75c3d99cc01b320" name="a26f6f85b8b034729a75c3d99cc01b320"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26f6f85b8b034729a75c3d99cc01b320">&#9670;&#160;</a></span>no_of_stations_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t no_of_stations_count = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a97d486d6926f9137837e1d8ecf0bbfdd" name="a97d486d6926f9137837e1d8ecf0bbfdd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97d486d6926f9137837e1d8ecf0bbfdd">&#9670;&#160;</a></span>operation</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t operation</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3f341cd8a329f6401470a9bcaa57c207" name="a3f341cd8a329f6401470a9bcaa57c207"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f341cd8a329f6401470a9bcaa57c207">&#9670;&#160;</a></span>pressure_zone_count_buf</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t pressure_zone_count_buf</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8d871ea0bdd0817738c61c721d032de1" name="a8d871ea0bdd0817738c61c721d032de1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d871ea0bdd0817738c61c721d032de1">&#9670;&#160;</a></span>pressure_zone_counts</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">PressureZoneCounts pressure_zone_counts[MAX_PRESSURE_ZONE+1]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a25f15d44dc5d06dc872e7e479f80d805" name="a25f15d44dc5d06dc872e7e479f80d805"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25f15d44dc5d06dc872e7e479f80d805">&#9670;&#160;</a></span>screen_status_value</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">status_screen_struct screen_status_value[20]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3dde7dea69d0fff891d7efdd1aa53df3" name="a3dde7dea69d0fff891d7efdd1aa53df3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dde7dea69d0fff891d7efdd1aa53df3">&#9670;&#160;</a></span>server_communication_error</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t server_communication_error = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6bfd000ab265cf33e2e045107358dd49" name="a6bfd000ab265cf33e2e045107358dd49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bfd000ab265cf33e2e045107358dd49">&#9670;&#160;</a></span>server_errstatus</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t server_errstatus = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af26731ad2b39b91b386db80610dccab5" name="af26731ad2b39b91b386db80610dccab5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af26731ad2b39b91b386db80610dccab5">&#9670;&#160;</a></span>start_flag</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t start_flag</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a43f723732975574603295a749dba1102" name="a43f723732975574603295a749dba1102"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43f723732975574603295a749dba1102">&#9670;&#160;</a></span>station_num_identify</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t station_num_identify = 1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a769acfe6413c70d163f06555254d212a" name="a769acfe6413c70d163f06555254d212a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a769acfe6413c70d163f06555254d212a">&#9670;&#160;</a></span>tle_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t tle_count = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a02cac62d4a1f068264ed558ec9240f0b" name="a02cac62d4a1f068264ed558ec9240f0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02cac62d4a1f068264ed558ec9240f0b">&#9670;&#160;</a></span>total_no_of_modules</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t total_no_of_modules = 0</td>
+          <td class="memname">uint8_t g_total_no_of_status_screens = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">

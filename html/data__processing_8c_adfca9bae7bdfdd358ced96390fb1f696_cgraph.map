@@ -1,0 +1,7 @@
+<map id="fetch_mbn_identification_parameters" name="fetch_mbn_identification_parameters">
+<area shape="rect" id="Node000001" title="Function that fetches the MBN identification parameters." alt="" coords="5,23,166,65"/>
+<area shape="rect" id="Node000002" href="$_main_bus_node_8c.html#ae6ec7a987944307ed8a841f85d0c6f1d" title="Retrieves the identification info of the Main Bus node." alt="" coords="214,5,396,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,32,198,28,198,34,167,37"/>
+<area shape="rect" id="Node000003" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="265,56,345,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,51,250,60,250,66,166,56"/>
+</map>

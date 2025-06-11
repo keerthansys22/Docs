@@ -1,5 +1,7 @@
-<map id="Src/GUI/lvgl_gui.c" name="Src/GUI/lvgl_gui.c">
-<area shape="rect" id="Node000001" title="source that handles the screen and key press logic" alt="" coords="5,5,130,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="21,80,114,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,33,70,64,65,64,65,33"/>
+<map id="GUI/lvgl_gui.c" name="GUI/lvgl_gui.c">
+<area shape="rect" id="Node000001" title="source that handles the screen and key press logic" alt="" coords="73,5,174,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,88,98,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,34,74,79,70,75,110,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="122,80,269,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,31,169,67,165,70,133,34"/>
 </map>

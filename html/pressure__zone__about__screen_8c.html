@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arrow3_MBN_APP: GUI/Screens/pressure_zone_about_screen.c File Reference</title>
+<title>Arrow3-MBN-APP: GUI/Screens/pressure_zone_about_screen.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Arrow3_MBN_APP
+   <div id="projectname">Arrow3-MBN-APP
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -103,14 +103,26 @@ $(function(){initNavTree('pressure__zone__about__screen_8c.html',''); initResiza
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">pressure_zone_about_screen.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Source that displays pressure zone's number screens.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &quot;AppGlobal.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for pressure_zone_about_screen.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="pressure__zone__about__screen_8c__incl.png" border="0" usemap="#a_g_u_i_2_screens_2pressure__zone__about__screen_8c" alt=""/></div>
+<map name="a_g_u_i_2_screens_2pressure__zone__about__screen_8c" id="a_g_u_i_2_screens_2pressure__zone__about__screen_8c">
+<area shape="rect" title="Source that displays pressure zone&#39;s number screens." alt="" coords="5,5,158,48"/>
+<area shape="rect" title=" " alt="" coords="35,96,128,123"/>
+<area shape="poly" title=" " alt="" coords="84,49,84,80,79,80,79,49"/>
+</map>
+</div>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a14482d2a1dc4debf9dc529fb2a0365d5" id="r_a14482d2a1dc4debf9dc529fb2a0365d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14482d2a1dc4debf9dc529fb2a0365d5">disp_mod_about_pressure_zone_screen</a> (int pz_index)</td></tr>
@@ -121,6 +133,11 @@ Functions</h2></td></tr>
 <tr class="separator:af8b44a1caa9ee3eb51fe8bc60a9bc648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a171bd087fd88267f8df70214d756df4a" id="r_a171bd087fd88267f8df70214d756df4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a171bd087fd88267f8df70214d756df4a">common_label_creation</a> (lv_obj_t *screen_name, char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</td></tr>
 <tr class="separator:a171bd087fd88267f8df70214d756df4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a62f8595dd2eff7e86ca67248836986ec" id="r_a62f8595dd2eff7e86ca67248836986ec"><td class="memItemLeft" align="right" valign="top">s_about_pz_count&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62f8595dd2eff7e86ca67248836986ec">s_about_pz_count_name</a> [MACRO_MAX_PRESSURE_ZONE]</td></tr>
+<tr class="separator:a62f8595dd2eff7e86ca67248836986ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Source that displays pressure zone's number screens. </p>
@@ -147,6 +164,57 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="pressure__zone__about__screen_8c_af8b44a1caa9ee3eb51fe8bc60a9bc648_icgraph.png" border="0" usemap="#apressure__zone__about__screen_8c_af8b44a1caa9ee3eb51fe8bc60a9bc648_icgraph" alt=""/></div>
+<map name="apressure__zone__about__screen_8c_af8b44a1caa9ee3eb51fe8bc60a9bc648_icgraph" id="apressure__zone__about__screen_8c_af8b44a1caa9ee3eb51fe8bc60a9bc648_icgraph">
+<area shape="rect" title="Function to initialize about pressure screen style." alt="" coords="854,544,1000,571"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="743,544,806,571"/>
+<area shape="poly" title=" " alt="" coords="839,560,807,560,807,555,839,555"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="631,477,695,504"/>
+<area shape="poly" title=" " alt="" coords="737,538,685,507,688,502,739,533"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="488,404,583,431"/>
+<area shape="poly" title=" " alt="" coords="624,472,559,434,562,429,627,467"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="391,368,440,395"/>
+<area shape="poly" title=" " alt="" coords="474,401,440,391,441,386,475,396"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="178,5,326,48"/>
+<area shape="poly" title=" " alt="" coords="409,353,400,284,386,197,366,115,354,83,341,62,324,48,328,44,345,58,359,81,371,114,391,196,406,283,414,352"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="181,72,323,115"/>
+<area shape="poly" title=" " alt="" coords="412,353,408,305,398,245,376,183,361,154,341,129,321,114,325,109,345,125,365,151,381,181,403,244,414,304,417,352"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="161,139,343,181"/>
+<area shape="poly" title=" " alt="" coords="408,353,401,317,389,275,369,232,341,195,327,184,330,180,345,191,374,230,394,273,406,316,414,352"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="165,205,339,248"/>
+<area shape="poly" title=" " alt="" coords="402,355,378,307,362,283,341,262,324,251,327,246,345,258,366,280,383,304,407,352"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="161,272,343,315"/>
+<area shape="poly" title=" " alt="" coords="386,360,342,329,318,318,320,313,344,324,389,356"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="171,339,333,365"/>
+<area shape="poly" title=" " alt="" coords="375,377,329,369,330,363,376,372"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="165,389,339,432"/>
+<area shape="poly" title=" " alt="" coords="376,391,339,398,338,392,375,386"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="166,456,338,499"/>
+<area shape="poly" title=" " alt="" coords="393,408,370,428,344,446,322,458,319,453,342,442,367,424,389,404"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="176,523,328,565"/>
+<area shape="poly" title=" " alt="" coords="408,411,384,462,367,489,345,513,328,524,325,520,341,509,363,486,380,459,403,408"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="174,589,330,616"/>
+<area shape="poly" title=" " alt="" coords="415,410,408,448,396,494,376,540,345,579,328,591,325,587,341,575,371,537,391,492,403,447,409,409"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="166,640,338,667"/>
+<area shape="poly" title=" " alt="" coords="417,410,414,458,403,517,382,577,365,605,345,630,329,642,326,637,341,626,361,602,377,575,398,515,409,457,412,410"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="5,368,113,395"/>
+<area shape="poly" title=" " alt="" coords="167,57,163,62,134,99,111,141,94,186,81,231,67,312,63,368,58,367,62,312,76,229,88,184,106,139,129,96,159,58,164,53"/>
+<area shape="poly" title=" " alt="" coords="63,410,68,468,82,541,95,579,112,616,134,649,162,677,194,698,223,710,250,715,278,715,339,707,414,701,537,701,574,697,609,686,643,669,674,649,726,605,760,569,764,573,730,609,677,653,645,674,611,691,575,702,537,707,414,707,340,713,278,720,250,720,221,715,191,702,159,681,130,652,107,618,90,581,77,542,62,468,58,410"/>
+<area shape="poly" title=" " alt="" coords="170,122,163,129,138,157,118,189,89,259,72,323,64,368,59,367,67,322,84,257,113,187,134,154,159,125,167,118"/>
+<area shape="poly" title=" " alt="" coords="166,192,163,195,125,238,97,287,78,334,67,368,61,367,73,332,92,285,121,235,159,191,163,188"/>
+<area shape="poly" title=" " alt="" coords="168,258,162,262,132,288,106,318,70,369,66,366,102,314,128,284,159,258,166,254"/>
+<area shape="poly" title=" " alt="" coords="175,323,162,329,85,370,82,365,160,324,172,319"/>
+<area shape="poly" title=" " alt="" coords="156,369,114,376,113,371,155,364"/>
+<area shape="poly" title=" " alt="" coords="149,398,112,392,113,387,150,393"/>
+<area shape="poly" title=" " alt="" coords="171,452,159,446,115,422,79,398,81,393,118,417,162,442,174,447"/>
+<area shape="poly" title=" " alt="" coords="165,517,159,513,128,484,101,452,65,397,70,394,105,449,131,481,162,509,168,513"/>
+<area shape="poly" title=" " alt="" coords="165,584,159,579,137,558,119,534,90,482,71,433,61,396,66,394,76,431,95,480,123,531,141,555,162,575,168,579"/>
+<area shape="poly" title=" " alt="" coords="164,634,159,630,134,603,113,571,83,503,66,440,59,395,64,394,72,439,88,502,117,569,138,599,162,626,167,630"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -196,6 +264,57 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="pressure__zone__about__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph.png" border="0" usemap="#apressure__zone__about__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph" alt=""/></div>
+<map name="apressure__zone__about__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph" id="apressure__zone__about__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph">
+<area shape="rect" title=" " alt="" coords="1076,343,1234,369"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="854,335,1028,377"/>
+<area shape="poly" title=" " alt="" coords="1060,359,1028,359,1028,353,1060,353"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="699,292,806,319"/>
+<area shape="poly" title=" " alt="" coords="844,333,804,322,806,317,845,327"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="588,267,651,293"/>
+<area shape="poly" title=" " alt="" coords="683,295,651,289,652,283,684,290"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="475,267,540,293"/>
+<area shape="poly" title=" " alt="" coords="572,283,540,283,540,277,572,277"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="333,267,427,293"/>
+<area shape="poly" title=" " alt="" coords="460,283,428,283,428,277,460,277"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="236,267,285,293"/>
+<area shape="poly" title=" " alt="" coords="317,283,285,283,285,277,317,277"/>
+<area shape="poly" title=" " alt="" coords="294,300,335,325,387,351,445,371,476,377,506,379,621,379,743,374,854,364,854,369,743,379,621,384,506,384,475,382,444,376,384,355,332,330,291,304"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="23,173,170,216"/>
+<area shape="poly" title=" " alt="" coords="230,259,186,230,162,219,165,214,189,226,233,255"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="26,240,167,283"/>
+<area shape="poly" title=" " alt="" coords="220,278,167,272,168,267,220,273"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="5,307,188,349"/>
+<area shape="poly" title=" " alt="" coords="222,294,172,309,171,303,220,289"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="5,373,188,416"/>
+<area shape="poly" title=" " alt="" coords="243,308,220,337,189,364,169,375,166,370,186,359,216,333,239,305"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="15,440,178,467"/>
+<area shape="poly" title=" " alt="" coords="255,309,233,370,214,402,189,430,171,442,168,437,186,426,210,399,229,368,250,307"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="10,492,183,535"/>
+<area shape="poly" title=" " alt="" coords="259,309,252,347,240,392,220,439,190,481,173,494,170,489,186,477,215,437,235,391,247,346,254,308"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="10,560,183,603"/>
+<area shape="poly" title=" " alt="" coords="262,309,259,359,249,423,227,489,211,520,190,549,174,562,171,558,186,545,206,518,222,487,244,421,254,359,257,309"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="20,5,173,48"/>
+<area shape="poly" title=" " alt="" coords="255,252,249,210,238,159,217,107,203,83,186,62,172,50,175,46,190,58,207,80,222,105,243,158,255,209,260,251"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="19,72,174,99"/>
+<area shape="poly" title=" " alt="" coords="252,252,245,220,232,182,213,145,186,113,169,101,172,97,189,109,217,142,237,180,250,218,257,251"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="10,123,183,149"/>
+<area shape="poly" title=" " alt="" coords="247,253,224,207,207,183,186,163,166,152,169,148,189,159,211,180,228,204,252,251"/>
+<area shape="poly" title=" " alt="" coords="186,184,279,179,379,176,509,176,546,180,581,189,616,203,648,221,702,258,739,290,736,294,699,262,645,225,613,208,580,194,545,185,509,181,379,181,279,184,186,190"/>
+<area shape="poly" title=" " alt="" coords="182,244,277,232,379,227,509,227,582,232,652,252,694,270,730,289,727,294,692,275,650,257,581,237,509,232,379,232,277,237,183,249"/>
+<area shape="poly" title=" " alt="" coords="204,327,379,328,509,328,610,322,698,311,699,317,610,328,509,333,379,333,204,332"/>
+<area shape="poly" title=" " alt="" coords="203,413,289,424,379,429,509,429,545,426,580,416,613,402,645,385,699,348,736,317,739,321,702,352,648,390,616,407,581,421,546,431,509,435,379,435,288,430,202,418"/>
+<area shape="poly" title=" " alt="" coords="193,466,283,476,379,480,509,480,552,476,584,465,614,446,649,419,678,394,704,366,740,318,745,321,708,370,682,398,653,423,617,450,586,470,553,481,509,485,379,485,283,481,193,471"/>
+<area shape="poly" title=" " alt="" coords="199,521,287,528,379,531,509,531,552,527,585,516,615,497,649,467,683,430,711,388,744,318,749,320,715,391,687,433,653,471,618,501,588,521,554,532,509,536,379,536,286,533,199,527"/>
+<area shape="poly" title=" " alt="" coords="198,580,379,581,509,581,553,578,586,568,616,549,649,519,670,495,689,468,717,410,736,357,746,318,751,320,741,359,722,413,693,471,675,499,653,523,619,554,588,573,554,584,509,587,379,587,198,585"/>
+<area shape="poly" title=" " alt="" coords="188,24,379,24,509,24,555,29,590,44,620,69,653,104,690,152,719,206,738,255,750,291,745,292,733,257,714,208,686,155,649,107,616,73,587,49,554,34,509,29,379,29,188,29"/>
+<area shape="poly" title=" " alt="" coords="190,79,379,75,509,75,554,79,588,93,618,116,653,147,686,184,713,224,748,290,743,293,709,227,682,187,649,151,615,120,585,98,553,84,509,80,379,80,190,84"/>
+<area shape="poly" title=" " alt="" coords="198,129,379,125,509,125,550,131,589,145,625,166,658,192,711,247,744,290,740,293,707,250,654,196,622,171,587,150,549,136,509,131,379,131,198,134"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -226,130 +345,192 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="pressure__zone__about__screen_8c_a14482d2a1dc4debf9dc529fb2a0365d5_cgraph.png" border="0" usemap="#apressure__zone__about__screen_8c_a14482d2a1dc4debf9dc529fb2a0365d5_cgraph" alt=""/></div>
 <map name="apressure__zone__about__screen_8c_a14482d2a1dc4debf9dc529fb2a0365d5_cgraph" id="apressure__zone__about__screen_8c_a14482d2a1dc4debf9dc529fb2a0365d5_cgraph">
-<area shape="rect" title="function to create the pressure zone&#39;s number screen" alt="" coords="5,1039,179,1081"/>
-<area shape="rect" href="pressure__zone__about__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="227,996,385,1023"/>
-<area shape="poly" title=" " alt="" coords="179,1037,231,1024,233,1029,180,1042"/>
-<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="281,1047,331,1073"/>
-<area shape="poly" title=" " alt="" coords="179,1057,266,1057,266,1063,179,1063"/>
-<area shape="rect" href="common__screen__calls_8c.html#ac0ab6412f9e02f687f88279e0fe204e0" title="function to set the background color" alt="" coords="232,1097,380,1124"/>
-<area shape="poly" title=" " alt="" coords="180,1078,233,1091,231,1096,179,1083"/>
-<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="433,1021,527,1048"/>
-<area shape="poly" title=" " alt="" coords="331,1054,417,1041,418,1046,331,1059"/>
-<area shape="rect" href="hw__init_8c.html#afe6c733d4bb6ed63271e16052a6bb71e" title="function that initializes the hardware" alt="" coords="621,1300,688,1327"/>
-<area shape="poly" title=" " alt="" coords="332,1062,359,1070,386,1083,446,1126,485,1168,523,1211,577,1261,618,1289,615,1294,574,1265,519,1215,481,1171,442,1130,384,1088,357,1075,330,1068"/>
-<area shape="rect" href="lvgl__init_8c.html#a51a0d8444720631af4e4ccd140a6a038" title="Function to initialize lvgl drivers." alt="" coords="449,1072,512,1099"/>
-<area shape="poly" title=" " alt="" coords="331,1061,434,1076,433,1081,331,1066"/>
-<area shape="rect" href="self__test_8c.html#afa6dcc66b21477fb9074d352884a00ce" title="Power&#45;On self&#45;test to test the peripherals." alt="" coords="619,160,690,187"/>
-<area shape="poly" title=" " alt="" coords="330,1056,358,1049,383,1033,421,988,452,945,474,903,491,861,502,820,510,779,516,695,517,609,521,516,537,416,552,362,573,306,602,247,633,198,637,201,607,250,578,308,557,364,542,417,527,517,522,609,521,695,515,779,508,821,496,863,479,905,456,948,426,991,387,1037,360,1053,332,1061"/>
-<area shape="rect" href="keypress_8c.html#a0e2570f6181cb5105b1549a1bf5bec3e" title="Function to check the keypress value." alt="" coords="601,743,708,769"/>
-<area shape="poly" title=" " alt="" coords="488,1019,634,782,639,784,492,1022"/>
-<area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="1169,768,1249,795"/>
-<area shape="poly" title=" " alt="" coords="511,1046,529,1058,543,1073,552,1086,561,1098,576,1108,628,1124,695,1135,773,1141,856,1141,938,1135,1013,1123,1075,1104,1100,1092,1120,1078,1146,1049,1166,1015,1182,979,1192,941,1204,868,1206,810,1211,811,1209,868,1198,942,1187,981,1171,1018,1150,1052,1123,1082,1103,1096,1077,1109,1014,1128,938,1140,856,1146,773,1146,695,1140,627,1129,574,1113,557,1102,548,1089,539,1076,526,1062,509,1051"/>
-<area shape="rect" href="default__task_8c.html#a2e8abf8d014dfaa310d350898e7034d1" title="function for error handler" alt="" coords="606,971,703,997"/>
-<area shape="poly" title=" " alt="" coords="527,1018,591,1000,593,1005,529,1024"/>
-<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="622,1021,687,1048"/>
-<area shape="poly" title=" " alt="" coords="528,1032,607,1032,607,1037,528,1037"/>
-<area shape="rect" href="default__task_8c.html#aa8739748537db71d12f20b7bc8a7e517" title="function that calls lvgl state machine" alt="" coords="589,1072,720,1099"/>
-<area shape="poly" title=" " alt="" coords="529,1046,593,1065,591,1070,527,1051"/>
-<area shape="rect" href="dv__fault__csv_8c.html#a082a8eea3d34f52a3711258709ba8bf4" title="Function that reads the fault data from CSV file &amp; stores the same in the structure." alt="" coords="593,1224,716,1251"/>
-<area shape="poly" title=" " alt="" coords="516,1046,529,1058,543,1079,549,1099,552,1138,556,1174,563,1192,577,1210,582,1214,579,1218,573,1214,558,1195,551,1175,547,1138,544,1100,538,1081,525,1062,512,1050"/>
-<area shape="rect" href="dv__warning__csv_8c.html#a35d15dccad6b2b0b8ed17d3792845d34" title="Function that reads the warning data from CSV file &amp; stores the same in the structure." alt="" coords="583,1173,726,1200"/>
-<area shape="poly" title=" " alt="" coords="514,1046,529,1058,546,1084,553,1107,560,1130,577,1153,592,1164,589,1168,573,1157,555,1132,548,1109,541,1086,525,1062,511,1051"/>
-<area shape="rect" href="isem__diag__fault__csv_8c.html#ab5d81f8e1b18c63bed5b0177a064cc98" title="Function that reads the ISEM diag fault data from CSV file &amp; stores the same in the structure." alt="" coords="980,388,1118,415"/>
-<area shape="poly" title=" " alt="" coords="492,1019,509,996,525,968,539,927,547,890,550,825,553,759,559,722,573,679,610,571,642,485,664,448,692,413,730,380,780,348,819,332,853,329,888,336,930,348,945,355,955,363,978,379,979,380,977,384,976,384,952,367,942,359,928,353,887,341,853,335,821,337,783,353,734,384,696,417,668,451,647,487,615,573,578,681,565,723,558,760,555,825,552,891,544,928,530,970,514,999,496,1022"/>
-<area shape="rect" href="isem__diag__warning__csv_8c.html#a7932b011c244674d11ad64117304349c" title="Function that reads the isem_diag_warning data from CSV file &amp; stores the same in the structure." alt="" coords="575,692,734,719"/>
-<area shape="poly" title=" " alt="" coords="479,1021,482,967,495,889,507,847,523,804,545,764,573,729,577,726,580,730,577,733,550,767,528,806,512,848,500,891,487,968,484,1021"/>
-<area shape="rect" href="default__task_8c.html#a8aa473f8ae9a91df4bc9ea700983c72d" title="function that calls delay in milliseconds" alt="" coords="817,1021,894,1048"/>
-<area shape="poly" title=" " alt="" coords="662,769,675,813,699,874,735,941,758,973,783,1001,804,1015,801,1019,780,1005,754,976,731,944,695,877,670,814,657,771"/>
-<area shape="rect" href="led__indication_8c.html#ad74ca2bc74dbc174faa45b56bffd80a3" title="force mode led on and off" alt="" coords="1005,579,1093,605"/>
-<area shape="poly" title=" " alt="" coords="707,743,732,729,743,716,749,703,754,676,760,649,767,636,780,623,804,608,830,597,886,584,941,580,989,581,989,587,941,585,887,589,832,602,807,613,783,627,771,639,765,651,759,677,754,705,747,719,735,733,709,748"/>
-<area shape="rect" href="keypress_8c.html#ad2ca4a6f6768dd5047f972cd300fedd1" title="function that reads the keypress value" alt="" coords="989,655,1109,681"/>
-<area shape="poly" title=" " alt="" coords="707,742,732,729,747,710,754,690,762,670,780,652,807,641,835,634,892,630,947,636,995,647,994,652,946,641,892,635,835,639,808,646,783,657,766,673,759,692,752,712,735,733,709,747"/>
-<area shape="rect" href="lvgl__gui_8c.html#aa3ef1744ca7e52c293c49ccef26798e8" title="Function to reset the inactivity timer after 30sec." alt="" coords="812,464,899,491"/>
-<area shape="poly" title=" " alt="" coords="707,745,732,729,750,701,758,673,759,645,755,617,752,589,752,560,760,531,780,501,796,488,800,492,784,505,765,533,758,561,757,589,761,617,764,645,763,674,755,703,736,733,710,750"/>
-<area shape="rect" href="led__indication_8c.html#aa12978a98c9fe6b20159924437d05a02" title="module status error led on and off" alt="" coords="996,717,1103,744"/>
-<area shape="poly" title=" " alt="" coords="708,750,980,732,980,738,708,755"/>
-<area shape="rect" href="led__indication_8c.html#a44ad8296a5c7a422553c37343a8976bb" title="module status normal led on and off" alt="" coords="989,768,1109,795"/>
-<area shape="poly" title=" " alt="" coords="708,757,974,774,974,779,708,762"/>
-<area shape="rect" href="keypress_8c.html#a4456c0194a45c65f825950c8d477e420" title="Function to start timer for longpress." alt="" coords="782,515,929,541"/>
-<area shape="poly" title=" " alt="" coords="707,745,732,729,747,708,754,688,756,646,757,603,765,581,780,558,792,548,795,552,784,562,769,583,763,604,761,646,760,689,752,711,735,733,710,749"/>
-<area shape="rect" href="keypress_8c.html#a9b5b2b00a81a3ea6535ef5417e1cc919" title="Function to stop timer for longpress." alt="" coords="783,667,928,693"/>
-<area shape="poly" title=" " alt="" coords="700,740,733,728,808,697,810,702,735,733,702,745"/>
-<area shape="rect" href="led__indication_8c.html#adc61cdd3e4de573ae782f11145cce478" title="turn on and off VA normal_voltage_status" alt="" coords="988,819,1110,845"/>
-<area shape="poly" title=" " alt="" coords="709,764,974,815,973,820,708,769"/>
-<area shape="rect" href="led__indication_8c.html#a4d60adf402eb59461321aae03b64bcfa" title="turn on and off the va_uv_ov_status" alt="" coords="992,869,1106,896"/>
-<area shape="poly" title=" " alt="" coords="684,768,730,789,783,811,884,842,977,865,976,870,882,847,781,816,727,794,682,772"/>
-<area shape="rect" href="led__indication_8c.html#ae7a89a609e58d5f3705652452aeb41f3" title="VB under_voltage and over voltage." alt="" coords="988,920,1110,947"/>
-<area shape="poly" title=" " alt="" coords="670,768,717,813,749,838,783,859,830,880,880,897,973,919,972,925,878,902,828,885,780,864,746,842,714,817,667,772"/>
-<area shape="rect" href="led__indication_8c.html#a81b6e68a54d24ad563676709e690c180" title="turn on and off VB under_voltage and over voltage led" alt="" coords="992,971,1106,997"/>
-<area shape="poly" title=" " alt="" coords="665,769,682,799,708,839,742,880,783,915,830,940,881,957,931,969,977,976,976,982,930,974,879,962,828,945,780,920,738,884,703,842,677,802,660,771"/>
-<area shape="rect" href="_v_a___r_e_a_d_i_n_g_8c.html#a5add596635d3ed5280839035668beb9e" title="Monitor the voltage va." alt="" coords="782,413,929,440"/>
-<area shape="poly" title=" " alt="" coords="707,745,721,738,732,729,754,694,762,660,761,626,755,592,750,558,749,522,757,487,780,450,782,448,786,452,784,454,762,489,754,523,755,557,761,591,766,626,767,661,758,696,736,732,724,743,709,750"/>
-<area shape="rect" href="_v_b___r_e_a_d_i_n_g_8c.html#a78a9f3e64c22adb46b340dbc22c80038" title="Monitor the voltage va." alt="" coords="782,363,929,389"/>
-<area shape="poly" title=" " alt="" coords="707,745,721,739,732,729,747,708,757,688,766,647,763,607,756,567,748,526,745,485,754,443,764,421,780,400,782,398,786,401,784,403,769,424,759,445,751,485,753,526,761,566,769,607,771,648,762,690,751,711,736,733,723,743,709,750"/>
-<area shape="poly" title=" " alt="" coords="1076,604,1100,620,1123,641,1167,698,1197,753,1192,755,1162,701,1119,645,1097,624,1073,608"/>
-<area shape="poly" title=" " alt="" coords="1082,680,1123,703,1185,755,1182,759,1120,708,1079,684"/>
-<area shape="poly" title=" " alt="" coords="1095,742,1155,762,1153,767,1093,747"/>
-<area shape="poly" title=" " alt="" coords="1110,779,1154,779,1154,784,1110,784"/>
-<area shape="rect" href="keypress_8c.html#aad8b6cba38bcb5fda540f1aa65b55611" title="Function to increment the counter value when long keypressed." alt="" coords="1010,515,1088,541"/>
-<area shape="poly" title=" " alt="" coords="929,525,995,525,995,531,929,531"/>
-<area shape="poly" title=" " alt="" coords="1093,816,1153,796,1155,801,1095,821"/>
-<area shape="poly" title=" " alt="" coords="1096,866,1120,855,1154,830,1183,804,1187,808,1158,835,1123,860,1099,871"/>
-<area shape="poly" title=" " alt="" coords="1100,917,1120,906,1143,884,1164,858,1193,808,1198,810,1168,861,1147,887,1123,910,1103,922"/>
-<area shape="poly" title=" " alt="" coords="1103,968,1120,957,1149,922,1172,882,1188,843,1199,809,1204,810,1193,845,1177,885,1154,925,1123,961,1106,972"/>
-<area shape="rect" href="_v_a___r_e_a_d_i_n_g_8c.html#ad717bb7defb491b31f12604df8059a81" title="ADC reading voltage VA." alt="" coords="980,447,1118,473"/>
-<area shape="poly" title=" " alt="" coords="930,437,965,443,964,448,929,442"/>
-<area shape="poly" title=" " alt="" coords="1086,472,1106,484,1123,501,1144,532,1161,565,1186,635,1201,701,1208,752,1203,753,1196,702,1181,637,1157,567,1140,535,1119,504,1102,488,1083,476"/>
-<area shape="poly" title=" " alt="" coords="687,1032,801,1032,801,1037,687,1037"/>
-<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="824,1072,887,1099"/>
-<area shape="poly" title=" " alt="" coords="688,1040,810,1071,808,1076,687,1045"/>
-<area shape="poly" title=" " alt="" coords="887,1082,937,1078,999,1067,1063,1044,1093,1028,1120,1007,1139,986,1156,961,1180,907,1195,853,1202,809,1208,810,1200,854,1185,908,1161,964,1144,989,1123,1011,1096,1032,1065,1049,1000,1072,938,1084,888,1088"/>
-<area shape="poly" title=" " alt="" coords="715,1222,781,1209,858,1202,959,1195,1055,1181,1093,1169,1120,1153,1137,1128,1152,1091,1177,994,1193,890,1202,810,1208,810,1198,891,1182,995,1157,1093,1141,1131,1123,1157,1095,1174,1056,1186,959,1200,859,1207,782,1215,716,1227"/>
-<area shape="poly" title=" " alt="" coords="1097,413,1123,433,1150,472,1171,515,1186,559,1197,605,1209,689,1211,752,1206,752,1203,689,1192,606,1181,561,1166,517,1145,475,1119,437,1094,417"/>
-<area shape="rect" href="gpio__init_8c.html#afdbe206b3c49f019757ab09b3cf52b9c" title="Function to perform LCD functionality." alt="" coords="821,1427,890,1453"/>
-<area shape="poly" title=" " alt="" coords="672,1325,719,1368,783,1412,807,1424,805,1428,780,1417,715,1372,668,1329"/>
-<area shape="rect" href="indication_8c.html#a1d2dc498d175d05fffd382a06f1159de" title="Function that initializes all the LEDs." alt="" coords="790,1325,921,1352"/>
-<area shape="poly" title=" " alt="" coords="689,1315,775,1326,774,1331,688,1320"/>
-<area shape="rect" href="lcd__init_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Function to perform LCD functionality." alt="" coords="824,1224,887,1251"/>
-<area shape="poly" title=" " alt="" coords="688,1297,781,1260,809,1250,810,1255,783,1265,690,1302"/>
-<area shape="rect" href="monitoring_8c.html#a10776d8d16b9acac9aec87e1b6f99e8a" title=" " alt="" coords="787,1376,924,1403"/>
-<area shape="poly" title=" " alt="" coords="690,1325,783,1362,800,1368,798,1373,781,1367,688,1330"/>
-<area shape="rect" href="spi__init_8c.html#ae909944aa85ae98323073c628be541aa" title=" " alt="" coords="824,1275,887,1301"/>
-<area shape="poly" title=" " alt="" coords="688,1307,809,1291,809,1296,689,1312"/>
-<area shape="rect" href="gpio__init_8c.html#a8ddfcc1edc1807598865aced2e871313" title="configure the gpio pins" alt="" coords="978,1477,1121,1504"/>
-<area shape="poly" title=" " alt="" coords="891,1446,981,1470,980,1476,890,1452"/>
-<area shape="rect" href="gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="981,1427,1118,1453"/>
-<area shape="poly" title=" " alt="" coords="890,1437,965,1437,965,1443,890,1443"/>
-<area shape="poly" title=" " alt="" coords="1106,1475,1119,1464,1134,1441,1146,1411,1167,1335,1183,1243,1193,1142,1204,947,1205,810,1211,810,1209,947,1199,1143,1188,1244,1173,1336,1151,1413,1138,1444,1123,1467,1110,1479"/>
-<area shape="poly" title=" " alt="" coords="1097,1424,1119,1406,1132,1385,1143,1358,1162,1289,1177,1205,1188,1114,1201,937,1205,810,1210,811,1206,937,1193,1115,1182,1206,1167,1290,1148,1360,1137,1388,1123,1410,1101,1428"/>
-<area shape="poly" title=" " alt="" coords="922,1350,971,1354,1024,1352,1075,1339,1099,1327,1119,1311,1132,1296,1144,1275,1163,1219,1178,1150,1189,1073,1201,921,1205,810,1210,810,1206,921,1194,1073,1183,1150,1168,1220,1149,1277,1137,1299,1123,1315,1101,1332,1077,1344,1025,1357,971,1360,921,1355"/>
-<area shape="rect" href="lcd__init_8c.html#a18e43791216d53f52c3bca5d8b3bf60c" title="Initialization of the LCD ST7291_chip." alt="" coords="1005,1224,1094,1251"/>
-<area shape="poly" title=" " alt="" coords="887,1235,989,1235,989,1240,887,1240"/>
-<area shape="poly" title=" " alt="" coords="924,1401,973,1405,1025,1402,1076,1388,1099,1377,1119,1361,1133,1344,1146,1320,1166,1258,1181,1182,1192,1098,1203,931,1205,810,1211,810,1208,931,1197,1098,1187,1183,1171,1260,1151,1322,1138,1346,1123,1365,1102,1381,1078,1393,1026,1407,973,1410,924,1406"/>
-<area shape="rect" href="spi__init_8c.html#ae58a0f067d31d19d3233434cba5c6139" title=" " alt="" coords="990,1275,1108,1301"/>
-<area shape="poly" title=" " alt="" coords="887,1285,974,1285,974,1291,887,1291"/>
-<area shape="poly" title=" " alt="" coords="670,157,718,124,748,107,781,95,857,81,958,73,1009,74,1056,79,1095,90,1123,106,1133,120,1141,143,1157,210,1182,401,1199,606,1209,752,1203,753,1194,606,1176,401,1151,211,1136,144,1128,123,1120,110,1093,94,1055,84,1009,79,958,78,858,86,782,100,750,112,720,128,674,162"/>
-<area shape="rect" href="ddr__test_8c.html#a0474633aa7e989fea85a47f103ea70ce" title="Test and verify the DDR memory." alt="" coords="809,261,902,288"/>
-<area shape="poly" title=" " alt="" coords="677,185,725,215,783,247,796,253,794,258,780,252,722,220,675,190"/>
-<area shape="rect" href="external__adc__test_8c.html#adec54fe2681f570d972be8fc93a06400" title="Function to test the External ADC." alt="" coords="808,109,903,136"/>
-<area shape="poly" title=" " alt="" coords="689,162,792,136,793,141,691,167"/>
-<area shape="rect" href="indication_8c.html#ab74f2a3ded48c6ef69bb9007b3a75fa5" title="Test to check the I2C read and write functionality." alt="" coords="789,8,922,35"/>
-<area shape="poly" title=" " alt="" coords="665,158,713,107,745,78,780,51,801,39,804,44,783,56,748,82,716,111,669,161"/>
-<area shape="rect" href="internal__adc__test_8c.html#a544c9c668c5f7c00c7bf460701cc832a" title="Test to check the Internal ADC." alt="" coords="810,160,901,187"/>
-<area shape="poly" title=" " alt="" coords="690,171,794,171,794,176,690,176"/>
-<area shape="rect" href="lcd__init_8c.html#ac15199a45dee6b739fbcfcc1f509e0b5" title="Function to perform the lCD test." alt="" coords="810,211,901,237"/>
-<area shape="poly" title=" " alt="" coords="691,179,795,206,794,211,689,185"/>
-<area shape="poly" title=" " alt="" coords="897,286,1034,336,1123,374,1141,404,1157,447,1181,554,1198,666,1208,752,1202,753,1193,667,1176,555,1151,448,1136,406,1120,378,1032,341,895,291"/>
-<area shape="poly" title=" " alt="" coords="903,109,954,102,1013,102,1043,107,1072,115,1099,128,1123,146,1139,166,1153,193,1175,262,1191,346,1201,439,1210,622,1211,752,1206,752,1205,622,1196,440,1185,347,1170,263,1148,195,1135,169,1119,150,1096,132,1070,120,1042,112,1013,108,954,108,904,114"/>
-<area shape="rect" href="external__adc__test_8c.html#a83e318d326e7f103978ba924020b873e" title="To read the voltage of the VA measured using external adc." alt="" coords="977,160,1121,203"/>
-<area shape="poly" title=" " alt="" coords="903,134,963,153,962,158,901,139"/>
-<area shape="poly" title=" " alt="" coords="1105,201,1123,220,1145,264,1162,326,1176,401,1188,481,1202,638,1209,752,1204,753,1197,639,1182,482,1171,401,1157,328,1140,266,1119,223,1101,205"/>
-<area shape="poly" title=" " alt="" coords="922,6,971,3,1025,6,1078,21,1102,34,1123,52,1133,67,1142,92,1158,165,1171,263,1183,374,1200,596,1209,753,1204,753,1195,597,1178,374,1166,263,1152,166,1137,93,1128,69,1119,55,1099,39,1076,26,1024,12,971,8,922,12"/>
-<area shape="poly" title=" " alt="" coords="898,185,1123,263,1145,303,1163,359,1178,426,1189,500,1203,645,1209,752,1204,753,1198,646,1183,501,1172,427,1158,360,1141,305,1120,267,896,190"/>
-<area shape="rect" href="internal__adc__test_8c.html#acabe5c2e4711c98ec1ffd0782284c275" title="To read the value of voltage from internal ADC." alt="" coords="991,277,1108,304"/>
-<area shape="poly" title=" " alt="" coords="903,182,931,197,947,212,956,227,964,242,979,257,996,268,993,272,975,261,960,245,951,230,942,215,927,201,900,187"/>
+<area shape="rect" title="function to create the pressure zone&#39;s number screen" alt="" coords="5,1308,179,1351"/>
+<area shape="rect" href="pressure__zone__about__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="227,1291,385,1317"/>
+<area shape="poly" title=" " alt="" coords="179,1316,211,1313,212,1318,180,1322"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="281,1341,331,1368"/>
+<area shape="poly" title=" " alt="" coords="180,1337,266,1347,265,1353,179,1342"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="445,613,539,640"/>
+<area shape="poly" title=" " alt="" coords="330,1351,359,1344,372,1337,383,1328,398,1305,412,1274,436,1196,454,1101,467,998,483,796,488,656,493,656,488,797,473,998,459,1102,441,1197,417,1276,403,1307,387,1331,375,1342,360,1349,331,1356"/>
+<area shape="rect" href="hw__init_8c.html#afe6c733d4bb6ed63271e16052a6bb71e" title="function that initializes the hardware" alt="" coords="459,1291,526,1317"/>
+<area shape="poly" title=" " alt="" coords="330,1346,443,1315,444,1320,332,1351"/>
+<area shape="rect" href="main_8c.html#a9d344487764723c8e590ebaf5341f683" title=" " alt="" coords="447,1341,538,1368"/>
+<area shape="poly" title=" " alt="" coords="331,1352,431,1352,431,1357,331,1357"/>
+<area shape="rect" href="lvgl__init_8c.html#a51a0d8444720631af4e4ccd140a6a038" title="Function to initialize lvgl drivers." alt="" coords="461,1392,524,1419"/>
+<area shape="poly" title=" " alt="" coords="332,1359,446,1390,445,1395,330,1364"/>
+<area shape="rect" href="power__on__self__test_8c.html#a2b69d74572d29a70ecb8148fdb6b9f69" title=" " alt="" coords="433,1468,551,1495"/>
+<area shape="poly" title=" " alt="" coords="329,1366,460,1457,457,1461,326,1371"/>
+<area shape="rect" href="data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="605,1043,752,1069"/>
+<area shape="poly" title=" " alt="" coords="502,639,668,1027,663,1029,497,642"/>
+<area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="1103,740,1182,767"/>
+<area shape="poly" title=" " alt="" coords="540,624,629,627,747,636,880,655,947,669,1012,687,1062,707,1107,730,1104,734,1060,712,1010,692,946,674,879,660,746,642,628,632,540,629"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="646,512,711,539"/>
+<area shape="poly" title=" " alt="" coords="508,611,547,580,598,548,631,535,633,540,601,553,550,584,511,615"/>
+<area shape="rect" href="default__task_8c.html#aa8739748537db71d12f20b7bc8a7e517" title="function that calls lvgl state machine" alt="" coords="613,411,744,437"/>
+<area shape="poly" title=" " alt="" coords="496,612,531,538,561,493,598,454,615,442,618,447,601,458,565,497,536,541,501,614"/>
+<area shape="rect" href="_data_server_monitor_led_8c.html#a93bd9d13cecd64903edf61230489ef5a" title=" " alt="" coords="622,233,735,260"/>
+<area shape="poly" title=" " alt="" coords="497,612,597,397,660,273,665,275,602,400,502,614"/>
+<area shape="rect" href="dv__fault__csv_8c.html#a082a8eea3d34f52a3711258709ba8bf4" title="Function that reads the fault data from CSV file &amp; stores the same in the structure." alt="" coords="617,664,740,691"/>
+<area shape="poly" title=" " alt="" coords="541,637,613,657,612,662,539,642"/>
+<area shape="rect" href="dv__warning__csv_8c.html#a35d15dccad6b2b0b8ed17d3792845d34" title="Function that reads the warning data from CSV file &amp; stores the same in the structure." alt="" coords="607,563,750,589"/>
+<area shape="poly" title=" " alt="" coords="539,611,612,591,613,596,541,616"/>
+<area shape="rect" href="isem__diag__fault__csv_8c.html#ab5d81f8e1b18c63bed5b0177a064cc98" title="Function that reads the ISEM diag fault data from CSV file &amp; stores the same in the structure." alt="" coords="609,715,748,741"/>
+<area shape="poly" title=" " alt="" coords="511,638,550,669,601,700,614,706,612,711,598,705,547,673,508,643"/>
+<area shape="rect" href="isem__diag__warning__csv_8c.html#a7932b011c244674d11ad64117304349c" title="Function that reads the isem_diag_warning data from CSV file &amp; stores the same in the structure." alt="" coords="599,765,758,792"/>
+<area shape="poly" title=" " alt="" coords="503,639,541,693,569,724,601,751,609,756,606,761,598,756,565,728,537,697,499,642"/>
+<area shape="rect" href="default__task_8c.html#ab368f87de3400ba49df2d23eb83868de" title="function that calls the screen pop up" alt="" coords="838,461,979,488"/>
+<area shape="poly" title=" " alt="" coords="498,611,534,554,563,523,598,498,654,476,712,465,770,461,823,462,823,467,771,466,713,470,655,481,601,502,567,527,539,558,502,614"/>
+<area shape="rect" href="lvgl__gui_8c.html#afc2a01db214bea71598ff4c8dba79574" title=" " alt="" coords="853,917,964,944"/>
+<area shape="poly" title=" " alt="" coords="691,1040,739,997,770,974,805,954,837,941,839,946,807,958,773,978,742,1002,695,1044"/>
+<area shape="rect" href="module__details__processing_8c.html#a3e9b0f25faad61167968870d14001d3b" title="Function that fetches the IO_module identification parameters." alt="" coords="836,968,981,1011"/>
+<area shape="poly" title=" " alt="" coords="727,1039,820,1012,822,1017,728,1045"/>
+<area shape="rect" href="module__details__processing_8c.html#adfca9bae7bdfdd358ced96390fb1f696" title="Function that fetches the MBN identification parameters." alt="" coords="828,1320,989,1363"/>
+<area shape="poly" title=" " alt="" coords="688,1069,749,1200,784,1269,808,1306,816,1313,813,1317,804,1310,779,1272,744,1202,684,1071"/>
+<area shape="poly" title=" " alt="" coords="682,1041,697,1004,722,953,758,899,780,874,804,852,856,826,931,801,1087,762,1088,767,933,806,858,831,807,857,783,878,762,902,727,956,702,1006,687,1043"/>
+<area shape="rect" href="module__details__processing_8c.html#aac0c03d78e4b434d9f855c01973071b1" title="Function that fetches the PropZone identification parameters." alt="" coords="814,1035,1003,1077"/>
+<area shape="poly" title=" " alt="" coords="752,1053,799,1053,799,1059,752,1059"/>
+<area shape="rect" href="module__details__processing_8c.html#ac4306bff4d6d753d0caba597124ddbe3" title="Function that fetches the PZ identification parameters." alt="" coords="834,1101,983,1144"/>
+<area shape="poly" title=" " alt="" coords="728,1067,819,1094,818,1099,727,1073"/>
+<area shape="rect" href="mac__address_8c.html#a434de6524abf0902881fe890323c1186" title="function that access the MAC details" alt="" coords="836,1168,981,1195"/>
+<area shape="poly" title=" " alt="" coords="695,1068,742,1110,773,1134,807,1154,822,1160,820,1165,804,1158,770,1138,739,1115,691,1072"/>
+<area shape="rect" href="mbn__status__info_8c.html#a33e091ca4ad4a808848bae50150d6bef" title="function that determines the MBN status information" alt="" coords="850,1219,967,1245"/>
+<area shape="poly" title=" " alt="" coords="689,1068,733,1134,767,1172,807,1204,836,1218,834,1223,804,1209,763,1176,729,1138,685,1071"/>
+<area shape="rect" href="discovery_8c.html#a20c3cefbb0187f193f7b2b327e82342f" title="Function that processes the discovery details." alt="" coords="854,1269,963,1296"/>
+<area shape="poly" title=" " alt="" coords="687,1069,701,1106,726,1157,761,1210,783,1234,807,1255,840,1271,838,1276,804,1260,779,1238,757,1214,722,1160,696,1109,682,1071"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#a3671d63082904cd553ff0e84c91b088e" title="Function that processes the valves modules status information." alt="" coords="818,867,999,893"/>
+<area shape="poly" title=" " alt="" coords="685,1041,729,974,763,936,804,903,814,897,817,902,807,908,767,940,733,978,689,1044"/>
+<area shape="poly" title=" " alt="" coords="987,1322,1009,1306,1034,1266,1057,1206,1077,1133,1095,1053,1121,896,1135,782,1140,782,1126,896,1100,1054,1083,1134,1062,1208,1039,1268,1013,1310,990,1327"/>
+<area shape="poly" title=" " alt="" coords="962,1277,988,1270,1009,1255,1033,1220,1056,1167,1075,1101,1093,1029,1119,887,1135,782,1140,782,1125,888,1098,1031,1081,1103,1061,1169,1038,1222,1013,1259,990,1275,964,1283"/>
+<area shape="rect" href="default__task_8c.html#a8aa473f8ae9a91df4bc9ea700983c72d" title="function that calls delay in milliseconds" alt="" coords="870,512,947,539"/>
+<area shape="poly" title=" " alt="" coords="711,523,854,523,854,528,711,528"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="877,563,940,589"/>
+<area shape="poly" title=" " alt="" coords="712,530,862,563,861,568,710,535"/>
+<area shape="poly" title=" " alt="" coords="941,579,976,589,1012,606,1048,633,1080,665,1126,725,1122,729,1076,669,1044,637,1010,610,975,594,940,584"/>
+<area shape="rect" href="status__screen_8c.html#a9e971832fa51f2017304dfc488f23b93" title="function to create the status screen" alt="" coords="1059,461,1225,488"/>
+<area shape="poly" title=" " alt="" coords="940,570,975,563,1010,548,1024,537,1033,524,1042,511,1057,498,1068,492,1070,497,1061,502,1046,514,1037,527,1028,540,1012,553,976,568,941,575"/>
+<area shape="rect" href="lvgl__gui_8c.html#aa3a14562de0d1c12332a88b8f0a77c27" title=" " alt="" coords="1093,512,1192,539"/>
+<area shape="poly" title=" " alt="" coords="940,567,1077,537,1078,542,941,572"/>
+<area shape="rect" href="lvgl__gui_8c.html#a744f1cd07a566814b870a1c9c929abe5" title=" " alt="" coords="1079,563,1205,589"/>
+<area shape="poly" title=" " alt="" coords="940,573,1064,573,1064,579,940,579"/>
+<area shape="rect" href="_data_server_fetch_8c.html#a355ba4c5f111a60750fb52a4ddb7773b" title=": Gets the IO Modules status (warning or faults)" alt="" coords="852,56,965,83"/>
+<area shape="poly" title=" " alt="" coords="685,231,729,164,763,125,804,92,836,78,838,83,807,97,767,129,733,168,689,234"/>
+<area shape="rect" href="_data_server_fetch_8c.html#ae01aad6066b3904dfbb903803dca64ca" title=" " alt="" coords="806,107,1011,133"/>
+<area shape="poly" title=" " alt="" coords="691,231,738,188,770,163,804,143,819,136,821,141,807,148,773,168,742,192,695,235"/>
+<area shape="rect" href="_data_server_fetch_8c.html#a20a4ac1b64ad62bac504668394ddee31" title=" " alt="" coords="816,157,1001,184"/>
+<area shape="poly" title=" " alt="" coords="718,230,805,200,847,187,848,192,807,205,720,235"/>
+<area shape="rect" href="_data_server_led_indication_8c.html#af352e029b1015e3dea14361b83d76445" title=" " alt="" coords="1077,107,1208,133"/>
+<area shape="poly" title=" " alt="" coords="735,242,863,229,937,214,1010,194,1063,169,1109,140,1112,145,1066,173,1012,198,939,220,864,234,736,247"/>
+<area shape="rect" href="_data_server_monitor_led_8c.html#af5cb2ba0d32e073daaf90d4aef07dac2" title=" " alt="" coords="823,5,994,32"/>
+<area shape="poly" title=" " alt="" coords="682,232,696,194,721,142,757,88,779,63,804,42,812,37,815,41,807,46,783,67,761,91,726,145,701,196,687,234"/>
+<area shape="rect" href="_main_bus_node_8c.html#a5f69684ec78d8ed0c94ae6e81080cde9" title=" " alt="" coords="834,259,983,285"/>
+<area shape="poly" title=" " alt="" coords="736,250,818,259,818,265,735,256"/>
+<area shape="rect" href="_main_bus_node_8c.html#a7160f3fbd59e634e42b954e101b5e3e4" title=" " alt="" coords="834,309,983,336"/>
+<area shape="poly" title=" " alt="" coords="712,258,807,295,832,302,830,307,805,300,710,263"/>
+<area shape="rect" href="_data_server_monitor_led_8c.html#a2413b7289e27122d76c2b44d98a56918" title=" " alt="" coords="835,360,982,387"/>
+<area shape="poly" title=" " alt="" coords="695,258,742,302,773,325,807,346,821,352,819,357,804,350,770,330,738,306,691,262"/>
+<area shape="rect" href="_data_server_monitor_led_8c.html#af78e2e405fb1dfada593994ec787e570" title=" " alt="" coords="835,411,982,437"/>
+<area shape="poly" title=" " alt="" coords="689,259,733,326,767,364,807,396,822,404,819,409,804,401,763,368,729,329,685,262"/>
+<area shape="poly" title=" " alt="" coords="978,30,1012,42,1065,68,1110,95,1107,100,1062,72,1010,46,976,35"/>
+<area shape="poly" title=" " alt="" coords="740,681,866,697,1011,720,1088,737,1087,742,1011,725,865,702,740,686"/>
+<area shape="poly" title=" " alt="" coords="748,729,1087,748,1087,753,748,734"/>
+<area shape="poly" title=" " alt="" coords="758,772,1086,754,1087,759,758,777"/>
+<area shape="poly" title=" " alt="" coords="980,481,1013,498,1034,521,1044,545,1050,570,1061,600,1128,725,1124,728,1057,602,1045,572,1038,547,1029,524,1009,502,978,486"/>
+<area shape="poly" title=" " alt="" coords="979,472,1044,472,1044,477,979,477"/>
+<area shape="poly" title=" " alt="" coords="974,486,1078,509,1077,514,973,491"/>
+<area shape="poly" title=" " alt="" coords="980,484,1012,498,1028,510,1037,524,1046,536,1061,548,1070,554,1068,559,1057,553,1042,540,1033,527,1024,514,1010,502,978,489"/>
+<area shape="rect" href="gpio__init_8c.html#afdbe206b3c49f019757ab09b3cf52b9c" title="Function to perform LCD functionality." alt="" coords="644,1240,713,1267"/>
+<area shape="poly" title=" " alt="" coords="526,1292,628,1264,630,1269,527,1298"/>
+<area shape="rect" href="lcd__init_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Function to perform LCD functionality." alt="" coords="647,1291,710,1317"/>
+<area shape="poly" title=" " alt="" coords="526,1301,632,1301,632,1307,526,1307"/>
+<area shape="rect" href="spi__init_8c.html#ae909944aa85ae98323073c628be541aa" title=" " alt="" coords="647,1341,710,1368"/>
+<area shape="poly" title=" " alt="" coords="527,1310,633,1340,632,1345,526,1316"/>
+<area shape="rect" href="gpio__init_8c.html#a8ddfcc1edc1807598865aced2e871313" title="configure the gpio pins" alt="" coords="837,1387,980,1413"/>
+<area shape="poly" title=" " alt="" coords="715,1256,738,1263,759,1277,771,1289,778,1302,784,1326,790,1350,797,1362,807,1373,824,1383,821,1387,804,1377,792,1365,785,1352,779,1328,773,1304,766,1292,756,1281,736,1268,713,1261"/>
+<area shape="poly" title=" " alt="" coords="979,1391,996,1383,1009,1373,1024,1353,1038,1328,1063,1260,1083,1178,1101,1087,1124,909,1136,782,1141,783,1130,910,1106,1088,1089,1179,1068,1262,1043,1330,1028,1356,1013,1377,998,1388,982,1396"/>
+<area shape="rect" href="power__on__self__test_8c.html#a7e4bd03d5000eaba98f7880b37979086" title=" " alt="" coords="617,1544,740,1571"/>
+<area shape="poly" title=" " alt="" coords="521,1493,600,1530,618,1536,616,1541,598,1534,519,1498"/>
+<area shape="rect" href="power__on__self__test_8c.html#a3aac4e89479292ddefe58923976b3103" title=" " alt="" coords="616,1595,741,1621"/>
+<area shape="poly" title=" " alt="" coords="506,1493,545,1536,572,1560,601,1580,611,1586,608,1590,598,1585,568,1564,542,1540,502,1497"/>
+<area shape="rect" href="power__on__self__test_8c.html#a99fb93fc053acbdeac28adb7dd9998dc" title=" " alt="" coords="618,1392,739,1419"/>
+<area shape="poly" title=" " alt="" coords="519,1465,598,1428,616,1422,618,1426,600,1433,521,1470"/>
+<area shape="rect" href="power__on__self__test_8c.html#ac15199a45dee6b739fbcfcc1f509e0b5" title=" " alt="" coords="633,1443,724,1469"/>
+<area shape="poly" title=" " alt="" coords="551,1471,617,1462,618,1467,552,1476"/>
+<area shape="rect" href="power__on__self__test_8c.html#a0928c556839f0083145f58540674e7a3" title=" " alt="" coords="645,1493,712,1520"/>
+<area shape="poly" title=" " alt="" coords="552,1487,630,1497,629,1503,551,1492"/>
 </map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="pressure__zone__about__screen_8c_a14482d2a1dc4debf9dc529fb2a0365d5_icgraph.png" border="0" usemap="#apressure__zone__about__screen_8c_a14482d2a1dc4debf9dc529fb2a0365d5_icgraph" alt=""/></div>
+<map name="apressure__zone__about__screen_8c_a14482d2a1dc4debf9dc529fb2a0365d5_icgraph" id="apressure__zone__about__screen_8c_a14482d2a1dc4debf9dc529fb2a0365d5_icgraph">
+<area shape="rect" title="function to create the pressure zone&#39;s number screen" alt="" coords="854,335,1028,377"/>
+<area shape="rect" href="lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="699,292,806,319"/>
+<area shape="poly" title=" " alt="" coords="844,333,804,322,806,317,845,327"/>
+<area shape="rect" href="lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="588,267,651,293"/>
+<area shape="poly" title=" " alt="" coords="683,295,651,289,652,283,684,290"/>
+<area shape="rect" href="default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="475,267,540,293"/>
+<area shape="poly" title=" " alt="" coords="572,283,540,283,540,277,572,277"/>
+<area shape="rect" href="default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="333,267,427,293"/>
+<area shape="poly" title=" " alt="" coords="460,283,428,283,428,277,460,277"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="236,267,285,293"/>
+<area shape="poly" title=" " alt="" coords="317,283,285,283,285,277,317,277"/>
+<area shape="poly" title=" " alt="" coords="294,300,335,325,387,351,445,371,476,377,506,379,621,379,743,374,854,364,854,369,743,379,621,384,506,384,475,382,444,376,384,355,332,330,291,304"/>
+<area shape="rect" href="diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="23,173,170,216"/>
+<area shape="poly" title=" " alt="" coords="230,259,186,230,162,219,165,214,189,226,233,255"/>
+<area shape="rect" href="ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="26,240,167,283"/>
+<area shape="poly" title=" " alt="" coords="220,278,167,272,168,267,220,273"/>
+<area shape="rect" href="io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="5,307,188,349"/>
+<area shape="poly" title=" " alt="" coords="222,294,172,309,171,303,220,289"/>
+<area shape="rect" href="pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="5,373,188,416"/>
+<area shape="poly" title=" " alt="" coords="243,308,220,337,189,364,169,375,166,370,186,359,216,333,239,305"/>
+<area shape="rect" href="about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="15,440,178,467"/>
+<area shape="poly" title=" " alt="" coords="255,309,233,370,214,402,189,430,171,442,168,437,186,426,210,399,229,368,250,307"/>
+<area shape="rect" href="about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="10,492,183,535"/>
+<area shape="poly" title=" " alt="" coords="259,309,252,347,240,392,220,439,190,481,173,494,170,489,186,477,215,437,235,391,247,346,254,308"/>
+<area shape="rect" href="clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="10,560,183,603"/>
+<area shape="poly" title=" " alt="" coords="262,309,259,359,249,423,227,489,211,520,190,549,174,562,171,558,186,545,206,518,222,487,244,421,254,359,257,309"/>
+<area shape="rect" href="about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="20,5,173,48"/>
+<area shape="poly" title=" " alt="" coords="255,252,249,210,238,159,217,107,203,83,186,62,172,50,175,46,190,58,207,80,222,105,243,158,255,209,260,251"/>
+<area shape="rect" href="mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="19,72,174,99"/>
+<area shape="poly" title=" " alt="" coords="252,252,245,220,232,182,213,145,186,113,169,101,172,97,189,109,217,142,237,180,250,218,257,251"/>
+<area shape="rect" href="module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="10,123,183,149"/>
+<area shape="poly" title=" " alt="" coords="247,253,224,207,207,183,186,163,166,152,169,148,189,159,211,180,228,204,252,251"/>
+<area shape="poly" title=" " alt="" coords="186,184,279,179,379,176,509,176,546,180,581,189,616,203,648,221,702,258,739,290,736,294,699,262,645,225,613,208,580,194,545,185,509,181,379,181,279,184,186,190"/>
+<area shape="poly" title=" " alt="" coords="182,244,277,232,379,227,509,227,582,232,652,252,694,270,730,289,727,294,692,275,650,257,581,237,509,232,379,232,277,237,183,249"/>
+<area shape="poly" title=" " alt="" coords="204,327,379,328,509,328,610,322,698,311,699,317,610,328,509,333,379,333,204,332"/>
+<area shape="poly" title=" " alt="" coords="203,413,289,424,379,429,509,429,545,426,580,416,613,402,645,385,699,348,736,317,739,321,702,352,648,390,616,407,581,421,546,431,509,435,379,435,288,430,202,418"/>
+<area shape="poly" title=" " alt="" coords="193,466,283,476,379,480,509,480,552,476,584,465,614,446,649,419,678,394,704,366,740,318,745,321,708,370,682,398,653,423,617,450,586,470,553,481,509,485,379,485,283,481,193,471"/>
+<area shape="poly" title=" " alt="" coords="199,521,287,528,379,531,509,531,552,527,585,516,615,497,649,467,683,430,711,388,744,318,749,320,715,391,687,433,653,471,618,501,588,521,554,532,509,536,379,536,286,533,199,527"/>
+<area shape="poly" title=" " alt="" coords="198,580,379,581,509,581,553,578,586,568,616,549,649,519,670,495,689,468,717,410,736,357,746,318,751,320,741,359,722,413,693,471,675,499,653,523,619,554,588,573,554,584,509,587,379,587,198,585"/>
+<area shape="poly" title=" " alt="" coords="188,24,379,24,509,24,555,29,590,44,620,69,653,104,690,152,719,206,738,255,750,291,745,292,733,257,714,208,686,155,649,107,616,73,587,49,554,34,509,29,379,29,188,29"/>
+<area shape="poly" title=" " alt="" coords="190,79,379,75,509,75,554,79,588,93,618,116,653,147,686,184,713,224,748,290,743,293,709,227,682,187,649,151,615,120,585,98,553,84,509,80,379,80,190,84"/>
+<area shape="poly" title=" " alt="" coords="198,129,379,125,509,125,550,131,589,145,625,166,658,192,711,247,744,290,740,293,707,250,654,196,622,171,587,150,549,136,509,131,379,131,198,134"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a62f8595dd2eff7e86ca67248836986ec" name="a62f8595dd2eff7e86ca67248836986ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62f8595dd2eff7e86ca67248836986ec">&#9670;&#160;</a></span>s_about_pz_count_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">s_about_pz_count s_about_pz_count_name[MACRO_MAX_PRESSURE_ZONE]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

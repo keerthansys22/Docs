@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Arrow3_MBN_APP", "index.html", [
+  [ "Arrow3-MBN-APP", "index.html", [
     [ "Arrow3 Linux application", "index.html", "index" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -39,8 +39,10 @@ var NAVTREE =
       [ "Globals", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", "globals_func" ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Variables", "globals_vars.html", "globals_vars" ],
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", "globals_defs" ]
       ] ]
     ] ]
   ] ]
@@ -48,9 +50,12 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_v_a___r_e_a_d_i_n_g_8c.html",
-"index.html#step2",
-"lvgl__gui_8c.html#a728d39583ca6e83a2a487f0639c4231e"
+"_analog_input_module_api_8c.html",
+"_app_data_interce_8c.html#a9cc23bdb3b5e1b67530bbcbbef48e339",
+"_external_prop_8c.html#ae512dcee3f48f317872617e5f4559b19",
+"diag__valve__status__info_8c.html#a76f11d9a0a47b94f72c2d0e77fb32240",
+"isem__status__info_8c.html#ade31b093a3128d447667c83314429e03",
+"main_8c.html#a51a0d8444720631af4e4ccd140a6a038"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

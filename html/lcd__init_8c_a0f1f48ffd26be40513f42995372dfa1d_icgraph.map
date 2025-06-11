@@ -1,0 +1,5 @@
+<map id="LCD_SPI_BUFFDATAWRITE" name="LCD_SPI_BUFFDATAWRITE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="159,5,349,32"/>
+<area shape="rect" id="Node000002" href="$lcd__init_8c.html#ae55992fae61ed8e00b3bbc6cff04ef17" title="Send data pixelwise." alt="" coords="5,5,111,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,21,111,21,111,16,143,16"/>
+</map>

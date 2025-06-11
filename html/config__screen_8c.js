@@ -7,7 +7,6 @@ var config__screen_8c =
     [ "disp_mod_upgrade_screen", "config__screen_8c.html#a9730ce850a975e6a1cf4712cace1ad88", null ],
     [ "Incrementip1", "config__screen_8c.html#a9f6c0d8474482ff0da5f49dfaf92e113", null ],
     [ "Incrementip2", "config__screen_8c.html#a0bb5911360ef0cddb25e395831649d96", null ],
-    [ "set_background_color", "config__screen_8c.html#ac0ab6412f9e02f687f88279e0fe204e0", null ],
     [ "back_title_config", "config__screen_8c.html#aa151211f1d5a331a1dc9a8bff870c259", null ],
     [ "coming_title", "config__screen_8c.html#acefaab976cd297cf995a3f7d624eb3bd", null ],
     [ "ip1_title", "config__screen_8c.html#aeeee522cb98f5bc17581471b164e7c43", null ],

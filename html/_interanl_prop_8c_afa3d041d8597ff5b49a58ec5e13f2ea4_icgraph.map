@@ -1,0 +1,7 @@
+<map id="getPresssureZoneServiceDataAddress" name="getPresssureZoneServiceDataAddress">
+<area shape="rect" id="Node000001" title=" " alt="" coords="263,23,458,65"/>
+<area shape="rect" id="Node000002" href="$_interanl_prop_8c.html#a239628366d4a00b3223ff6913a59777b" title="Retrieves the service parameter of the Internal Prop." alt="" coords="5,5,215,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,35,215,32,215,27,247,30"/>
+<area shape="rect" id="Node000003" href="$_interanl_prop_8c.html#ae4131779e2db61d50791c2b8c6e5e2c1" title="Sets the service parameter data for a specified Internal Prop." alt="" coords="5,56,215,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,58,215,61,215,56,247,53"/>
+</map>

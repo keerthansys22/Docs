@@ -1,0 +1,5 @@
+<map id="blinking_green" name="blinking_green">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,110,32"/>
+<area shape="rect" id="Node000002" href="$_data_server_led_indication_8c.html#af352e029b1015e3dea14361b83d76445" title=" " alt="" coords="158,5,289,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,16,142,16,142,21,110,21"/>
+</map>

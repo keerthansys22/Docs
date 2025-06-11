@@ -1,0 +1,21 @@
+<map id="fetch_io_identification_parameters" name="fetch_io_identification_parameters">
+<area shape="rect" id="Node000001" title="Function that fetches the IO_module identification parameters." alt="" coords="5,73,151,116"/>
+<area shape="rect" id="Node000002" href="$_app_data_interce_8c.html#a74ddf7a39feee23540341c6521dc6000" title="Retrieves the identification info of the requested analog module." alt="" coords="401,5,597,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,73,198,63,385,31,386,37,199,68,152,79"/>
+<area shape="rect" id="Node000005" href="$_app_data_interce_8c.html#aa97f8415a0ba0596ba9e90c156378a95" title="Retrieves the position of a specified device." alt="" coords="214,157,338,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="129,114,200,143,218,149,216,154,198,148,127,119"/>
+<area shape="rect" id="Node000006" href="$_app_data_interce_8c.html#aab42112e209d3e8af95f537bd7f0dfef" title="Retrieves the Digital Module Identification Info." alt="" coords="403,56,595,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="151,88,387,73,388,79,151,93"/>
+<area shape="rect" id="Node000007" href="$_app_data_interce_8c.html#ac6ac24a2c74b160fa3e091b39598ab4c" title="This api is to get the IO device part number." alt="" coords="199,107,353,133"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="151,101,184,105,183,111,151,107"/>
+<area shape="rect" id="Node000003" href="$_io_modules_8c.html#aab64cdfe20fa84db4be92c96380d60a2" title=": This is to get the address of the service data instance" alt="" coords="645,23,816,65"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="598,27,630,30,629,36,597,32"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="650,89,811,116"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="568,30,599,42,623,58,647,75,661,81,659,86,644,80,620,63,596,46,566,35"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="595,56,629,52,630,58,596,61"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="596,81,635,86,634,91,595,86"/>
+<area shape="rect" id="Node000008" href="$_digital_input_module_api_8c.html#a046c1082307d620d997ebfbda57d5143" title="Retrieves the service parameter data for a specified IO module." alt="" coords="406,107,593,149"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="353,120,390,121,390,127,353,125"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="564,104,596,92,658,69,660,74,598,97,566,109"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="593,115,634,111,634,116,593,120"/>
+</map>

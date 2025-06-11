@@ -1,0 +1,99 @@
+<map id="spin_unlock" name="spin_unlock">
+<area shape="rect" id="Node000001" title="Unlocks a spinlock." alt="" coords="1666,713,1756,740"/>
+<area shape="rect" id="Node000002" href="$_app_data_interce_8c.html#abf8b757f9f7ffdab556fac4e2820deb9" title="Retrieve the device handlers for AI (Analog Input) modules." alt="" coords="1238,435,1371,461"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1706,698,1700,648,1686,586,1674,555,1659,525,1640,498,1616,475,1588,458,1558,446,1494,432,1429,431,1372,437,1371,432,1429,426,1494,427,1560,441,1591,453,1619,471,1644,495,1664,522,1679,553,1691,585,1706,647,1711,697"/>
+<area shape="rect" id="Node000021" href="$_app_data_interce_8c.html#a89e43b764a633d86b33b7e8fe437f256" title="Retrieve the device handlers for AIO (Analog Input Output) modules." alt="" coords="1463,485,1606,512"/>
+<area shape="poly" id="edge31_Node000001_Node000021" title=" " alt="" coords="1701,699,1690,661,1673,617,1648,572,1616,533,1587,515,1590,510,1619,529,1653,569,1678,615,1695,660,1706,697"/>
+<area shape="rect" id="Node000022" href="$_app_data_interce_8c.html#a523d5536043e2248772f5b5c0c3448ce" title="Retrieve the device handlers for AO (Analog Output) modules." alt="" coords="1235,536,1375,563"/>
+<area shape="poly" id="edge33_Node000001_Node000022" title=" " alt="" coords="1697,700,1667,643,1644,615,1616,592,1588,577,1557,565,1494,550,1431,545,1375,545,1375,540,1431,539,1494,545,1559,560,1590,572,1619,587,1648,611,1671,640,1702,698"/>
+<area shape="rect" id="Node000023" href="$_app_data_interce_8c.html#aece12e0108637e90d7f9695bc5d8caeb" title="Retrieve the device handlers for Diag Valve ." alt="" coords="1464,891,1605,917"/>
+<area shape="poly" id="edge35_Node000001_Node000023" title=" " alt="" coords="1702,756,1672,819,1648,852,1619,881,1599,892,1597,888,1616,877,1644,849,1667,816,1697,753"/>
+<area shape="rect" id="Node000025" href="$_app_data_interce_8c.html#aeba633b8bfe717f26b91e9035f01b7f1" title="Retrieve the device handlers for DI (Digital Input) modules." alt="" coords="1238,587,1371,613"/>
+<area shape="poly" id="edge38_Node000001_Node000025" title=" " alt="" coords="1692,702,1660,662,1640,643,1616,628,1555,606,1490,595,1427,592,1372,594,1372,589,1427,587,1490,590,1556,601,1619,623,1643,638,1664,658,1696,698"/>
+<area shape="rect" id="Node000026" href="$_app_data_interce_8c.html#a3fa80841f585da80163ab056466b213d" title="Retrieve the device handlers for DIO (Digital input output) modules." alt="" coords="1233,649,1376,676"/>
+<area shape="poly" id="edge40_Node000001_Node000026" title=" " alt="" coords="1650,720,1376,677,1377,671,1650,715"/>
+<area shape="rect" id="Node000027" href="$_app_data_interce_8c.html#ad1a2eb9dcf28f6272ba0ba67eb0e802d" title="Retrieve the discovery details of the modules." alt="" coords="1467,637,1602,664"/>
+<area shape="poly" id="edge42_Node000001_Node000027" title=" " alt="" coords="1667,709,1617,685,1572,667,1574,662,1619,680,1669,704"/>
+<area shape="rect" id="Node000028" href="$_app_data_interce_8c.html#a9cc23bdb3b5e1b67530bbcbbef48e339" title="Retrieve the device handlers for DO (Digital output) modules." alt="" coords="1235,725,1375,752"/>
+<area shape="poly" id="edge43_Node000001_Node000028" title=" " alt="" coords="1650,731,1375,739,1375,734,1650,726"/>
+<area shape="rect" id="Node000029" href="$_app_data_interce_8c.html#abf7ee8a86a9a734763668b9475436291" title="Retrieve the device handlers for ISEM Diag module." alt="" coords="1466,992,1603,1019"/>
+<area shape="poly" id="edge45_Node000001_Node000029" title=" " alt="" coords="1710,756,1703,805,1687,865,1660,928,1642,956,1619,982,1603,994,1600,989,1616,978,1638,953,1656,925,1682,863,1697,803,1705,755"/>
+<area shape="rect" id="Node000030" href="$_app_data_interce_8c.html#a1b65dccef5e16451b2ff09b40f8f28ca" title="Retrieve the Main Bus Handler." alt="" coords="1464,789,1605,816"/>
+<area shape="poly" id="edge47_Node000001_Node000030" title=" " alt="" coords="1669,750,1619,773,1574,791,1572,786,1617,768,1667,745"/>
+<area shape="rect" id="Node000031" href="$_app_data_interce_8c.html#ad2985c903d0633288a5f3922334a6bd9" title="Retrieve the pressure zone handlers." alt="" coords="1223,333,1386,360"/>
+<area shape="poly" id="edge48_Node000001_Node000031" title=" " alt="" coords="1703,698,1692,624,1673,531,1647,444,1632,411,1616,390,1591,372,1564,358,1504,341,1443,336,1387,337,1387,332,1444,330,1505,336,1566,353,1594,367,1620,386,1637,409,1652,442,1678,530,1697,623,1708,697"/>
+<area shape="rect" id="Node000032" href="$_app_data_interce_8c.html#a1494b701ad1f38d2e24a3ebf56e01d1c" title="Retrieve the device handlers for Prop Station." alt="" coords="1459,840,1610,867"/>
+<area shape="poly" id="edge50_Node000001_Node000032" title=" " alt="" coords="1694,755,1662,794,1619,830,1596,842,1593,837,1616,826,1658,790,1690,751"/>
+<area shape="rect" id="Node000033" href="$_app_data_interce_8c.html#a369ab3179fdb4507ada875d02b12fa30" title="Retrieve the Prop zone handlers." alt="" coords="1236,384,1374,411"/>
+<area shape="poly" id="edge52_Node000001_Node000033" title=" " alt="" coords="1707,698,1704,641,1692,568,1680,531,1664,495,1643,462,1616,434,1589,416,1560,402,1496,387,1432,384,1375,388,1374,382,1432,378,1497,382,1562,397,1592,411,1619,430,1647,459,1669,492,1685,529,1697,567,1710,640,1713,697"/>
+<area shape="rect" id="Node000034" href="$_app_data_interce_8c.html#a8a191d56670ac7df40f394881b28344f" title="Retrieve the device handlers for Standard Valve ." alt="" coords="1451,941,1618,968"/>
+<area shape="poly" id="edge54_Node000001_Node000034" title=" " alt="" coords="1707,756,1697,795,1680,842,1655,890,1619,931,1601,943,1598,939,1616,927,1650,887,1675,840,1692,793,1702,754"/>
+<area shape="rect" id="Node000035" href="$_data_server_shdm_8c.html#a17d0175269cb841c6a825bb555e69b79" title="Unlocks the spinlock for a specified pressure zone in acyclic mode." alt="" coords="1462,1043,1607,1085"/>
+<area shape="poly" id="edge56_Node000001_Node000035" title=" " alt="" coords="1711,756,1706,813,1692,886,1680,925,1665,963,1645,1000,1620,1033,1606,1044,1603,1040,1616,1029,1640,997,1660,961,1675,923,1687,885,1701,812,1706,755"/>
+<area shape="rect" id="Node000038" href="$_data_server_shdm_8c.html#a8fd7678e8e7983e57a7bc24ba1be3fa3" title="Unlocks the spinlock for a specified pressure zone in cyclic mode." alt="" coords="1462,1109,1607,1152"/>
+<area shape="poly" id="edge59_Node000001_Node000038" title=" " alt="" coords="1713,756,1712,824,1700,915,1688,964,1672,1012,1649,1058,1620,1099,1606,1111,1603,1107,1616,1096,1645,1055,1667,1010,1683,962,1695,914,1706,823,1708,756"/>
+<area shape="rect" id="Node000003" href="$discovery_8c.html#a20c3cefbb0187f193f7b2b327e82342f" title="Function that processes the discovery details." alt="" coords="1050,536,1158,563"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1238,469,1207,482,1161,510,1124,538,1120,533,1158,506,1205,478,1236,464"/>
+<area shape="rect" id="Node000004" href="$data__processing_8c.html#a122b34d4ba9a92a2a595cee1b937537e" title="Function that processes all the IO&#45;modules and valves data." alt="" coords="854,536,1002,563"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1034,552,1002,552,1002,547,1034,547"/>
+<area shape="rect" id="Node000005" href="$default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,536,806,563"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="839,552,807,552,807,547,839,547"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="615,348,664,375"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="739,525,647,377,652,374,744,522"/>
+<area shape="rect" id="Node000007" href="$diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="402,107,549,149"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="633,333,626,295,614,250,594,204,565,163,548,150,551,146,569,159,599,201,619,248,632,294,638,332"/>
+<area shape="rect" id="Node000011" href="$ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="405,173,546,216"/>
+<area shape="poly" id="edge11_Node000006_Node000011" title=" " alt="" coords="627,334,604,281,587,254,565,230,545,217,548,212,568,226,591,251,609,279,632,332"/>
+<area shape="rect" id="Node000012" href="$io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="384,240,567,283"/>
+<area shape="poly" id="edge13_Node000006_Node000012" title=" " alt="" coords="614,338,591,317,565,297,544,286,546,281,568,292,595,312,618,334"/>
+<area shape="rect" id="Node000013" href="$pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="389,307,562,349"/>
+<area shape="poly" id="edge15_Node000006_Node000013" title=" " alt="" coords="599,356,562,348,563,343,600,351"/>
+<area shape="rect" id="Node000014" href="$pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="384,373,567,416"/>
+<area shape="poly" id="edge17_Node000006_Node000014" title=" " alt="" coords="600,372,568,379,567,373,599,367"/>
+<area shape="rect" id="Node000015" href="$about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="394,440,557,467"/>
+<area shape="poly" id="edge19_Node000006_Node000015" title=" " alt="" coords="618,388,596,411,568,430,542,442,540,437,565,426,592,406,615,385"/>
+<area shape="rect" id="Node000016" href="$about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="389,491,562,533"/>
+<area shape="poly" id="edge21_Node000006_Node000016" title=" " alt="" coords="630,390,606,436,589,460,568,481,551,492,548,488,565,477,585,457,601,433,625,388"/>
+<area shape="rect" id="Node000017" href="$clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="389,557,562,600"/>
+<area shape="poly" id="edge23_Node000006_Node000017" title=" " alt="" coords="637,390,630,426,617,467,597,510,569,547,554,559,550,555,565,543,592,507,612,466,625,424,632,389"/>
+<area shape="rect" id="Node000018" href="$about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="399,624,552,667"/>
+<area shape="poly" id="edge25_Node000006_Node000018" title=" " alt="" coords="641,390,637,438,626,497,605,559,589,588,569,614,554,626,550,622,565,610,584,585,600,557,621,496,632,437,635,390"/>
+<area shape="rect" id="Node000019" href="$mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="398,5,553,32"/>
+<area shape="poly" id="edge27_Node000006_Node000019" title=" " alt="" coords="633,333,624,264,611,178,591,98,578,67,565,46,550,35,553,30,569,42,583,64,596,96,616,177,630,264,638,332"/>
+<area shape="rect" id="Node000020" href="$module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="389,56,562,83"/>
+<area shape="poly" id="edge29_Node000006_Node000020" title=" " alt="" coords="636,332,634,282,625,218,615,185,603,153,586,123,565,97,549,85,553,81,569,93,591,120,608,151,621,183,630,217,639,281,642,332"/>
+<area shape="rect" id="Node000008" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="229,348,336,375"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="390,160,386,163,365,185,348,209,319,262,300,312,290,348,285,347,295,310,314,260,343,206,361,181,383,159,387,156"/>
+<area shape="rect" id="Node000009" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="function that waits for key press events &amp; calls handle_display function" alt="" coords="118,425,181,452"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="246,385,176,427,173,422,243,381"/>
+<area shape="rect" id="Node000010" href="$default__task_8c.html#aeb711d7c4d19d757a09595d237dfdcdd" title="function that calls the LVGL GUI screens (entry point to display screens)" alt="" coords="5,536,70,563"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="126,465,54,538,50,534,122,461"/>
+<area shape="poly" id="edge10_Node000010_Node000005" title=" " alt="" coords="61,572,99,611,151,653,181,672,213,687,247,698,281,701,477,701,520,697,562,685,602,667,639,645,702,599,743,561,746,565,705,603,642,650,604,672,563,690,521,702,477,707,281,707,245,703,211,692,178,677,147,658,95,615,57,576"/>
+<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="393,225,386,230,355,259,328,292,293,349,289,346,324,289,351,255,383,226,390,221"/>
+<area shape="poly" id="edge14_Node000012_Node000008" title=" " alt="" coords="397,292,386,297,341,324,304,350,301,345,338,319,383,292,394,287"/>
+<area shape="poly" id="edge16_Node000013_Node000008" title=" " alt="" coords="374,348,337,355,336,350,373,343"/>
+<area shape="poly" id="edge18_Node000014_Node000008" title=" " alt="" coords="369,379,337,373,337,368,369,374"/>
+<area shape="poly" id="edge20_Node000015_Node000008" title=" " alt="" coords="399,437,383,430,337,404,300,377,303,373,340,400,386,426,401,432"/>
+<area shape="poly" id="edge22_Node000016_Node000008" title=" " alt="" coords="389,485,383,481,353,456,327,427,290,377,295,374,331,424,356,452,386,477,392,481"/>
+<area shape="poly" id="edge24_Node000017_Node000008" title=" " alt="" coords="387,551,382,547,345,505,316,456,297,410,285,376,290,374,302,408,321,453,349,501,386,543,390,546"/>
+<area shape="poly" id="edge26_Node000018_Node000008" title=" " alt="" coords="386,617,382,614,358,585,337,553,308,484,291,420,283,375,288,374,296,419,313,482,342,550,362,582,386,610,389,613"/>
+<area shape="poly" id="edge28_Node000019_Node000008" title=" " alt="" coords="390,43,386,46,356,82,333,123,316,166,303,211,290,292,287,348,281,347,285,291,298,210,311,165,328,120,352,79,382,42,386,39"/>
+<area shape="poly" id="edge30_Node000020_Node000008" title=" " alt="" coords="390,93,386,97,360,126,339,160,322,196,309,233,294,301,288,348,282,348,288,300,304,231,317,194,334,157,356,123,382,93,387,89"/>
+<area shape="poly" id="edge32_Node000021_Node000003" title=" " alt="" coords="1448,504,1333,511,1206,527,1154,538,1153,533,1206,521,1332,506,1447,499"/>
+<area shape="poly" id="edge34_Node000022_Node000003" title=" " alt="" coords="1219,552,1159,552,1159,547,1219,547"/>
+<area shape="rect" id="Node000024" href="$discovery_8c.html#af14569278f4c7b310cd060593a7e65eb" title="Function that fetches all the individual pressure zone handler details." alt="" coords="1234,883,1375,925"/>
+<area shape="poly" id="edge36_Node000023_Node000024" title=" " alt="" coords="1449,907,1376,907,1376,901,1449,901"/>
+<area shape="poly" id="edge37_Node000024_Node000003" title=" " alt="" coords="1275,872,1240,822,1204,765,1146,651,1108,564,1113,562,1150,648,1208,763,1244,819,1280,869"/>
+<area shape="poly" id="edge39_Node000025_Node000003" title=" " alt="" coords="1233,585,1158,566,1159,560,1235,580"/>
+<area shape="poly" id="edge41_Node000026_Node000003" title=" " alt="" coords="1244,646,1205,628,1157,596,1119,565,1122,561,1160,592,1207,623,1247,641"/>
+<area shape="poly" id="edge44_Node000028_Node000003" title=" " alt="" coords="1252,721,1228,707,1204,690,1173,658,1146,623,1110,565,1115,562,1150,620,1177,655,1208,686,1230,702,1255,716"/>
+<area shape="poly" id="edge46_Node000029_Node000024" title=" " alt="" coords="1467,989,1450,982,1393,956,1342,928,1345,924,1395,951,1452,978,1469,984"/>
+<area shape="poly" id="edge49_Node000031_Node000003" title=" " alt="" coords="1214,370,1208,374,1188,392,1170,413,1142,459,1123,503,1111,537,1106,535,1118,501,1137,457,1166,410,1184,388,1204,370,1211,365"/>
+<area shape="poly" id="edge51_Node000032_Node000024" title=" " alt="" coords="1456,873,1376,891,1375,886,1455,868"/>
+<area shape="poly" id="edge53_Node000033_Node000003" title=" " alt="" coords="1222,417,1207,425,1176,451,1149,482,1114,537,1110,534,1145,479,1172,447,1205,420,1220,412"/>
+<area shape="poly" id="edge55_Node000034_Node000024" title=" " alt="" coords="1455,940,1375,922,1376,917,1456,935"/>
+<area shape="rect" id="Node000036" href="$_app_data_interce_8c.html#a1e2f6c4a4bb6d582138731cf1efba9a7" title="This API retrieves the details of the device present in pressure&#45;zone." alt="" coords="1206,1076,1403,1103"/>
+<area shape="poly" id="edge57_Node000035_Node000036" title=" " alt="" coords="1447,1076,1404,1081,1403,1076,1447,1071"/>
+<area shape="rect" id="Node000037" href="$_app_data_interce_8c.html#aa4be4619dded3d3128f0fea4bfc7ee56" title="This API retrieves the details of the device present in prop&#45;zone." alt="" coords="1219,1025,1391,1052"/>
+<area shape="poly" id="edge58_Node000035_Node000037" title=" " alt="" coords="1447,1057,1391,1051,1392,1046,1447,1052"/>
+</map>

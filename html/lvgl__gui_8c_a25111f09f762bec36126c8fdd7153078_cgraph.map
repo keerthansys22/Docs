@@ -1,0 +1,9 @@
+<map id="calculate_pz_details_count" name="calculate_pz_details_count">
+<area shape="rect" id="Node000001" title="function that calculates the maximum pressure zone details count for about screen" alt="" coords="5,35,145,77"/>
+<area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#aef0a948d4f7fc3c2dde9ed03e836523c" title=" " alt="" coords="193,5,343,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,43,177,38,177,43,145,48"/>
+<area shape="rect" id="Node000004" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="228,72,308,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,64,214,74,213,80,145,69"/>
+<area shape="rect" id="Node000003" href="$_app_data_interce_8c.html#aa97f8415a0ba0596ba9e90c156378a95" title="Retrieves the position of a specified device." alt="" coords="391,13,515,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,24,375,24,375,29,343,29"/>
+</map>

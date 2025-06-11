@@ -1,0 +1,7 @@
+<map id="readSharedMemoryData" name="readSharedMemoryData">
+<area shape="rect" id="Node000001" title=" " alt="" coords="263,31,424,57"/>
+<area shape="rect" id="Node000002" href="$_interanl_prop_8c.html#ac3a26ed9ef1348d5a405f8c3b8504eca" title="Retrieves diagnostic process data for a specified Internal Prop." alt="" coords="32,5,188,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,36,188,30,188,24,248,31"/>
+<area shape="rect" id="Node000003" href="$_interanl_prop_8c.html#a239628366d4a00b3223ff6913a59777b" title="Retrieves the service parameter of the Internal Prop." alt="" coords="5,56,215,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,57,216,61,215,55,247,52"/>
+</map>

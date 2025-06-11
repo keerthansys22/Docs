@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['max_5fbuf_0',['MAX_BUF',['../internal__adc__test_8c.html#a2491303d0fe260aaba8f46717cda66cc',1,'MAX_BUF:&#160;internal_adc_test.c'],['../_v_b___r_e_a_d_i_n_g_8c.html#a2491303d0fe260aaba8f46717cda66cc',1,'MAX_BUF:&#160;VB_READING.c']]],
-  ['max_5fbuffer_5fsize_1',['MAX_BUFFER_SIZE',['../lcd__init_8c.html#ad4d796b98c583d49e83adabd74a63bf6',1,'MAX_BUFFER_SIZE:&#160;lcd_init.c'],['../lcd__test_8c.html#ad4d796b98c583d49e83adabd74a63bf6',1,'MAX_BUFFER_SIZE:&#160;lcd_test.c']]],
-  ['max_5fchuck_5fsize_2',['MAX_CHUCK_SIZE',['../lcd__init_8c.html#a0797bafdef30c8f6d8a634b29e73b5af',1,'MAX_CHUCK_SIZE:&#160;lcd_init.c'],['../lcd__test_8c.html#a0797bafdef30c8f6d8a634b29e73b5af',1,'MAX_CHUCK_SIZE:&#160;lcd_test.c']]],
-  ['max_5fline_5flength_3',['MAX_LINE_LENGTH',['../ddr__test_8c.html#af0f2173e3b202ddf5756531b4471dcb2',1,'ddr_test.c']]]
+  ['lcd_5famber_0',['LCD_AMBER',['../lcd__init_8c.html#a796c66d860ebc83d78b45f2ab697e428',1,'lcd_init.c']]],
+  ['lcd_5fblack_1',['LCD_BLACK',['../lcd__init_8c.html#a89194c8cf2691afa77b4f81ad1cde821',1,'lcd_init.c']]],
+  ['lcd_5fblue_2',['LCD_BLUE',['../lcd__init_8c.html#ae08bdcd40ed17c40c7ff537b31ae6c20',1,'lcd_init.c']]],
+  ['lcd_5fdatacmd_5fgpio_3',['LCD_DATACMD_GPIO',['../lcd__init_8c.html#a6be38b43a4b733e18a5a22fade479555',1,'lcd_init.c']]],
+  ['lcd_5fgreen_4',['LCD_GREEN',['../lcd__init_8c.html#a93c7d21d563437550a6873fe0cfe3c0b',1,'lcd_init.c']]],
+  ['lcd_5fio_5fcontrol_5fpin_5',['LCD_IO_CONTROL_PIN',['../lcd__init_8c.html#a52d5f135e53ac9a6240ff3086d57f8b9',1,'lcd_init.c']]],
+  ['lcd_5fred_6',['LCD_RED',['../lcd__init_8c.html#aa32f6c50fe89cc11c61d8571acabaca7',1,'lcd_init.c']]],
+  ['lcd_5frst_5fgpio_7',['LCD_RST_GPIO',['../lcd__init_8c.html#addda83d3c22042f740b41d54de0e3ea0',1,'lcd_init.c']]],
+  ['lcd_5fspics_5fgpio_8',['LCD_SPICS_GPIO',['../lcd__init_8c.html#aba19350e46c7bc94e268c3b6354462a9',1,'lcd_init.c']]],
+  ['lcd_5fwhite_9',['LCD_WHITE',['../lcd__init_8c.html#a34f95804d4bfa75ef2ab12cc2b65a65c',1,'lcd_init.c']]]
 ];

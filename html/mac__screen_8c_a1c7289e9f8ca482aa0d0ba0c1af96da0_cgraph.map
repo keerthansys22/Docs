@@ -1,0 +1,9 @@
+<map id="update_mac_screen" name="update_mac_screen">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,144,57"/>
+<area shape="rect" id="Node000002" href="$mac__address_8c.html#ac756ee3e7675bde8bf3372559a8206e5" title=" " alt="" coords="192,5,355,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,33,176,28,177,34,144,38"/>
+<area shape="rect" id="Node000003" href="$mac__address_8c.html#a434de6524abf0902881fe890323c1186" title="function that access the MAC details" alt="" coords="201,56,346,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,50,186,56,185,61,144,55"/>
+<area shape="rect" id="Node000004" href="$_main_bus_node_8c.html#a729fd2c0212cb2a3bc4a2e1a7f3ebc3f" title="Retrieves the acyclic data or service parameter of the MBN node." alt="" coords="403,56,551,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="346,67,387,67,387,72,346,72"/>
+</map>

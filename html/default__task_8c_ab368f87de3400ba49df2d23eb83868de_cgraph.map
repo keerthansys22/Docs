@@ -1,0 +1,11 @@
+<map id="screen_pop_up_func" name="screen_pop_up_func">
+<area shape="rect" id="Node000001" title="function that calls the screen pop up" alt="" coords="5,81,146,108"/>
+<area shape="rect" id="Node000002" href="$status__screen_8c.html#a9e971832fa51f2017304dfc488f23b93" title="function to create the status screen" alt="" coords="194,5,360,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,78,193,42,212,35,214,40,195,46,107,83"/>
+<area shape="rect" id="Node000003" href="$lvgl__gui_8c.html#aa3a14562de0d1c12332a88b8f0a77c27" title=" " alt="" coords="227,56,327,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,83,212,75,213,80,147,88"/>
+<area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#a744f1cd07a566814b870a1c9c929abe5" title=" " alt="" coords="214,107,340,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="147,101,199,108,198,113,146,106"/>
+<area shape="rect" id="Node000005" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="237,157,317,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="107,106,195,143,223,153,222,158,193,148,105,111"/>
+</map>

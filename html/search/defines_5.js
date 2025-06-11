@@ -1,14 +1,9 @@
 var searchData=
 [
-  ['lcd_5famber_0',['LCD_AMBER',['../lcd__init_8c.html#a796c66d860ebc83d78b45f2ab697e428',1,'LCD_AMBER:&#160;lcd_init.c'],['../lcd__test_8c.html#a796c66d860ebc83d78b45f2ab697e428',1,'LCD_AMBER:&#160;lcd_test.c']]],
-  ['lcd_5fblack_1',['LCD_BLACK',['../lcd__init_8c.html#a89194c8cf2691afa77b4f81ad1cde821',1,'LCD_BLACK:&#160;lcd_init.c'],['../lcd__test_8c.html#a89194c8cf2691afa77b4f81ad1cde821',1,'LCD_BLACK:&#160;lcd_test.c']]],
-  ['lcd_5fblue_2',['LCD_BLUE',['../lcd__init_8c.html#ae08bdcd40ed17c40c7ff537b31ae6c20',1,'LCD_BLUE:&#160;lcd_init.c'],['../lcd__test_8c.html#ae08bdcd40ed17c40c7ff537b31ae6c20',1,'LCD_BLUE:&#160;lcd_test.c']]],
-  ['lcd_5fdatacmd_5fgpio_3',['LCD_DATACMD_GPIO',['../lcd__init_8c.html#a6be38b43a4b733e18a5a22fade479555',1,'LCD_DATACMD_GPIO:&#160;lcd_init.c'],['../lcd__test_8c.html#a6be38b43a4b733e18a5a22fade479555',1,'LCD_DATACMD_GPIO:&#160;lcd_test.c']]],
-  ['lcd_5fgreen_4',['LCD_GREEN',['../lcd__init_8c.html#a93c7d21d563437550a6873fe0cfe3c0b',1,'LCD_GREEN:&#160;lcd_init.c'],['../lcd__test_8c.html#a93c7d21d563437550a6873fe0cfe3c0b',1,'LCD_GREEN:&#160;lcd_test.c']]],
-  ['lcd_5fio_5fcontrol_5fpin_5',['LCD_IO_CONTROL_PIN',['../lcd__init_8c.html#a52d5f135e53ac9a6240ff3086d57f8b9',1,'LCD_IO_CONTROL_PIN:&#160;lcd_init.c'],['../lcd__test_8c.html#a52d5f135e53ac9a6240ff3086d57f8b9',1,'LCD_IO_CONTROL_PIN:&#160;lcd_test.c']]],
-  ['lcd_5fred_6',['LCD_RED',['../lcd__init_8c.html#aa32f6c50fe89cc11c61d8571acabaca7',1,'LCD_RED:&#160;lcd_init.c'],['../lcd__test_8c.html#aa32f6c50fe89cc11c61d8571acabaca7',1,'LCD_RED:&#160;lcd_test.c']]],
-  ['lcd_5frst_5fgpio_7',['LCD_RST_GPIO',['../lcd__init_8c.html#addda83d3c22042f740b41d54de0e3ea0',1,'LCD_RST_GPIO:&#160;lcd_init.c'],['../lcd__test_8c.html#addda83d3c22042f740b41d54de0e3ea0',1,'LCD_RST_GPIO:&#160;lcd_test.c']]],
-  ['lcd_5fspics_5fgpio_8',['LCD_SPICS_GPIO',['../lcd__init_8c.html#aba19350e46c7bc94e268c3b6354462a9',1,'LCD_SPICS_GPIO:&#160;lcd_init.c'],['../lcd__test_8c.html#aba19350e46c7bc94e268c3b6354462a9',1,'LCD_SPICS_GPIO:&#160;lcd_test.c']]],
-  ['lcd_5fwhite_9',['LCD_WHITE',['../lcd__init_8c.html#a34f95804d4bfa75ef2ab12cc2b65a65c',1,'LCD_WHITE:&#160;lcd_init.c'],['../lcd__test_8c.html#a34f95804d4bfa75ef2ab12cc2b65a65c',1,'LCD_WHITE:&#160;lcd_test.c']]],
-  ['low_5fval_10',['LOW_VAL',['../lcd__test_8c.html#a8e20edb9c6b10b1e7a3eac4ac2334a82',1,'lcd_test.c']]]
+  ['i2c_5f1_5faddr1_0',['I2C_1_ADDR1',['../indication_8c.html#aa6bcdac5119906d2c99dc8331533d28f',1,'indication.c']]],
+  ['i2c_5f1_5faddr2_1',['I2C_1_ADDR2',['../indication_8c.html#a594860e1ee49b3c8b145bda07bb0f3e4',1,'indication.c']]],
+  ['i2c_5faddr1_2',['I2C_ADDR1',['../io__expander__test_8c.html#af6a483a5aa909af5a5d6d5f39d42f2ed',1,'io_expander_test.c']]],
+  ['i2c_5faddr2_3',['I2C_ADDR2',['../io__expander__test_8c.html#ac9f74bc977277a4e14fe0d8bd4a42857',1,'io_expander_test.c']]],
+  ['i2c_5faddr_5fex_4',['I2C_ADDR_EX',['../external__adc__test_8c.html#a82628cba864d51e71cc788b230aeba91',1,'external_adc_test.c']]],
+  ['i2c_5fdevice_5',['I2C_DEVICE',['../indication_8c.html#a8a6c12d0194007da86226886cfce89b4',1,'I2C_DEVICE:&#160;indication.c'],['../external__adc__test_8c.html#a8a6c12d0194007da86226886cfce89b4',1,'I2C_DEVICE:&#160;external_adc_test.c'],['../io__expander__test_8c.html#a8a6c12d0194007da86226886cfce89b4',1,'I2C_DEVICE:&#160;io_expander_test.c']]]
 ];

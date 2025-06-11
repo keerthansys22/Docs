@@ -1,19 +1,13 @@
 <map id="start_timer" name="start_timer">
-<area shape="rect" id="Node000001" title="Function to start the inactivity timer." alt="" coords="5,132,89,159"/>
-<area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#a53e320a4e4ad7c72568ea789f8a2619b" title="Function that calls after inactivity occured &#45; First screen." alt="" coords="137,132,206,159"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,143,121,143,121,148,89,148"/>
-<area shape="rect" id="Node000003" href="$status__screen_8c.html#a42f6042066b23dfcad9e12665a8fb996" title="function to create the status screen" alt="" coords="254,107,420,133"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,137,238,132,239,138,207,143"/>
-<area shape="rect" id="Node000009" href="$lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="296,157,378,184"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="207,148,281,159,280,165,206,153"/>
-<area shape="rect" id="Node000004" href="$status__screen_8c.html#a4f6a30dc66c4eb48d9ce877149b302e8" title="create animations for normal and warning status" alt="" coords="491,5,594,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="358,104,407,74,467,42,482,35,484,40,469,46,410,78,361,108"/>
-<area shape="rect" id="Node000005" href="$common__screen__calls_8c.html#ac0ab6412f9e02f687f88279e0fe204e0" title="function to set the background color" alt="" coords="468,56,617,83"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="394,103,470,84,471,90,395,109"/>
-<area shape="rect" id="Node000006" href="$common__screen__calls_8c.html#adcc2034261addcb1e1ed1272af6e421d" title="function to create the labels" alt="" coords="470,107,615,133"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="421,117,455,117,455,123,421,123"/>
-<area shape="rect" id="Node000007" href="$common__screen__calls_8c.html#aacff09f925b6d1af3bd78743926dfb3e" title="function to create the QR" alt="" coords="478,157,607,184"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="395,131,471,150,470,156,394,137"/>
-<area shape="rect" id="Node000008" href="$status__screen_8c.html#a9d9732ee883427a96c71ce5b6e1b217d" title="function to stop the flashing timer" alt="" coords="476,208,609,235"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="398,131,422,143,437,156,447,169,456,181,470,194,478,199,476,203,467,198,452,185,442,172,433,160,419,148,395,136"/>
+<area shape="rect" id="Node000001" title="Function to start the inactivity timer." alt="" coords="5,81,89,108"/>
+<area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#a53e320a4e4ad7c72568ea789f8a2619b" title="Function that calls after inactivity occured &#45; First screen." alt="" coords="137,81,206,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,92,121,92,121,97,89,97"/>
+<area shape="rect" id="Node000003" href="$status__screen_8c.html#a9e971832fa51f2017304dfc488f23b93" title="function to create the status screen" alt="" coords="254,5,420,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,78,253,42,268,35,270,40,255,46,193,83"/>
+<area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#aa3a14562de0d1c12332a88b8f0a77c27" title=" " alt="" coords="288,56,387,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="206,87,272,77,273,82,207,92"/>
+<area shape="rect" id="Node000005" href="$lvgl__gui_8c.html#a744f1cd07a566814b870a1c9c929abe5" title=" " alt="" coords="274,107,400,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="207,97,259,105,259,111,206,103"/>
+<area shape="rect" id="Node000006" href="$lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="296,157,378,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="193,106,255,143,282,153,280,158,253,148,191,111"/>
 </map>

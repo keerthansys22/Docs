@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mac_5fscreen_0',['mac_screen',['../structmac__screen.html',1,'']]],
-  ['module_5fscreen_1',['module_screen',['../structmodule__screen.html',1,'']]]
+  ['local_5fbuf_0',['local_buf',['../structlocal__buf.html',1,'']]],
+  ['lv_5fcolor_5ft_1',['lv_color_t',['../structlv__color__t.html',1,'']]]
 ];

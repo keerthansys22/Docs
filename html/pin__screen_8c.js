@@ -6,7 +6,6 @@ var pin__screen_8c =
     [ "disp_pin_correct_details", "pin__screen_8c.html#a77e1cab537aa02532d02c2791b94a8ee", null ],
     [ "Incrementpin1", "pin__screen_8c.html#a0fbaa1131eaf5dc6f3a04c15120def13", null ],
     [ "pin_style", "pin__screen_8c.html#a276ba619847bf50daf2dc4cea6272df5", null ],
-    [ "set_background_color", "pin__screen_8c.html#ac0ab6412f9e02f687f88279e0fe204e0", null ],
     [ "stop_flashing_timer", "pin__screen_8c.html#a9d9732ee883427a96c71ce5b6e1b217d", null ],
     [ "flash_on", "pin__screen_8c.html#acf4df21b18b924052d66abac113599bb", null ],
     [ "label1_pin", "pin__screen_8c.html#a160edf462cc4fa3ea86112207715380b", null ],

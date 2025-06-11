@@ -1,0 +1,7 @@
+<map id="getPropZoneProcessDataAddress" name="getPropZoneProcessDataAddress">
+<area shape="rect" id="Node000001" title=" " alt="" coords="242,31,459,57"/>
+<area shape="rect" id="Node000002" href="$_external_prop_8c.html#af263134ac7b206af9ff2919a93f18ed3" title="Retrieves process data for a specified External Prop." alt="" coords="19,5,180,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,34,180,29,181,24,227,29"/>
+<area shape="rect" id="Node000003" href="$_external_prop_8c.html#ad6a8d0d15c15fd2492fd230c7568def6" title="Sets the PDO (Process Data Output) for a specified External Prop." alt="" coords="5,56,194,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,59,194,62,194,57,226,54"/>
+</map>

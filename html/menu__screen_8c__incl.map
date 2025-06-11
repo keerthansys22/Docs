@@ -1,5 +1,5 @@
-<map id="Src/GUI/Screens/menu_screen.c" name="Src/GUI/Screens/menu_screen.c">
-<area shape="rect" id="Node000001" title="Source that displays menu screen." alt="" coords="5,5,161,48"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="37,96,129,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,49,86,80,80,80,80,49"/>
+<map id="GUI/Screens/menu_screen.c" name="GUI/Screens/menu_screen.c">
+<area shape="rect" id="Node000001" title="Source that displays menu screen." alt="" coords="5,5,194,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="53,80,146,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,33,102,64,97,64,97,33"/>
 </map>

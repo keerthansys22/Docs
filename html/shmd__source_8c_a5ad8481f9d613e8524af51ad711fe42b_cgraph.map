@@ -1,5 +1,0 @@
-<map id="dataserver_sharedmemory_init" name="dataserver_sharedmemory_init">
-<area shape="rect" id="Node000001" title="Initializes the shared memory." alt="" coords="5,5,203,32"/>
-<area shape="rect" id="Node000002" href="$shmd__source_8c.html#ad92f6402ce8096f7aa93f44a643c8b05" title="Initializes a spinlock." alt="" coords="251,5,344,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,16,235,16,235,21,203,21"/>
-</map>

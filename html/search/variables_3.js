@@ -1,13 +1,20 @@
 var searchData=
 [
   ['data_5fprocessing_5fthread_0',['data_processing_thread',['../default__task_8c.html#a38b20330a68d9e059f37c2d125995478',1,'default_task.c']]],
-  ['data_5freceiving_5fevent_5ffd_1',['DATA_RECEIVING_EVENT_FD',['../default__task_8c.html#a9e851765a6ce76c3e183b1ba76284d4b',1,'default_task.c']]],
-  ['data_5freceiving_5fthread_2',['data_receiving_thread',['../default__task_8c.html#a44753821e82d9fac9ca7b954e0f9b505',1,'default_task.c']]],
-  ['data_5fsending_5fevent_5ffd_3',['DATA_SENDING_EVENT_FD',['../default__task_8c.html#aea17f0628a94d8554554f18dea069aac',1,'default_task.c']]],
-  ['data_5fsending_5fthread_4',['data_sending_thread',['../default__task_8c.html#aa7e0200af6882e89f54350c9675a8fae',1,'default_task.c']]],
-  ['delay_5',['delay',['../structspi__flash___data_xfer.html#a70fbd315df33bf9039e036725b569e7f',1,'spi_flash_DataXfer']]],
-  ['diag_5fvalve_5fcount_6',['diag_valve_count',['../data__processing_8c.html#ab5ac5a40550d5ec5f1a434ed508a7458',1,'data_processing.c']]],
-  ['discover_5fpz_5fdetails_7',['discover_pz_details',['../data__processing_8c.html#ae9e4e4df58b986043267fdef963014cb',1,'discover_pz_details:&#160;discovery.c'],['../discovery_8c.html#ae9e4e4df58b986043267fdef963014cb',1,'discover_pz_details:&#160;discovery.c']]],
-  ['disp_8',['disp',['../lvgl__init_8c.html#a647e5f267167a38dcd0e6fe55dfcfc61',1,'lvgl_init.c']]],
-  ['down_5fflag_9',['down_flag',['../lvgl__gui_8c.html#a728d39583ca6e83a2a487f0639c4231e',1,'lvgl_gui.c']]]
+  ['ddr_5ffd_1',['ddr_fd',['../power__on__self__test_8c.html#a4f42738677250af5e8b5ef1196684a90',1,'power_on_self_test.c']]],
+  ['delay_2',['delay',['../structspi__flash___data_xfer.html#a70fbd315df33bf9039e036725b569e7f',1,'spi_flash_DataXfer']]],
+  ['device_5fposition_3',['device_position',['../structsample.html#a637f79bd563df5abfcf808c70728f457',1,'sample']]],
+  ['device_5ftype_4',['device_type',['../structsample.html#ab9c960832b7e834e6657e0c6ab4c3d8a',1,'sample']]],
+  ['di_5fhandlers_5',['di_handlers',['../_data_server_fetch_8c.html#acb71097bdde0eeb8f371374d3a7e14ed',1,'di_handlers:&#160;discovery.c'],['../discovery_8c.html#acb71097bdde0eeb8f371374d3a7e14ed',1,'di_handlers:&#160;discovery.c'],['../module__details__processing_8c.html#acb71097bdde0eeb8f371374d3a7e14ed',1,'di_handlers:&#160;discovery.c'],['../lvgl__gui_8c.html#acb71097bdde0eeb8f371374d3a7e14ed',1,'di_handlers:&#160;discovery.c']]],
+  ['diag_5fhandlers_6',['diag_handlers',['../_data_server_fetch_8c.html#a674bdb8ef9a107fc2ac0646e0909a4ec',1,'diag_handlers:&#160;discovery.c'],['../discovery_8c.html#a674bdb8ef9a107fc2ac0646e0909a4ec',1,'diag_handlers:&#160;discovery.c'],['../module__details__processing_8c.html#aa75499d0a62f43079c1e194f965b1a3d',1,'diag_handlers:&#160;discovery.c'],['../valves__modules__status__info_8c.html#a674bdb8ef9a107fc2ac0646e0909a4ec',1,'diag_handlers:&#160;discovery.c'],['../lvgl__gui_8c.html#aa75499d0a62f43079c1e194f965b1a3d',1,'diag_handlers:&#160;discovery.c']]],
+  ['diag_5fmodule_5finfo_7',['diag_module_info',['../module__details__processing_8c.html#a5c1f7b9aa2924d9827ee28c651a1715d',1,'module_details_processing.c']]],
+  ['diag_5fpresent_8',['diag_present',['../valves__modules__status__info_8c.html#a086543ca17e695c954a70626ac508a5d',1,'diag_present:&#160;valves_modules_status_info.c'],['../lvgl__gui_8c.html#a086543ca17e695c954a70626ac508a5d',1,'diag_present:&#160;lvgl_gui.c']]],
+  ['diag_5fvalve_5fdevice_5ftypes_9',['diag_valve_device_types',['../diag__valve__status__info_8c.html#a8283ddbfd893cd3bacd252a03eb89fcf',1,'diag_valve_device_types:&#160;module_details_processing.c'],['../module__details__processing_8c.html#a8283ddbfd893cd3bacd252a03eb89fcf',1,'diag_valve_device_types:&#160;module_details_processing.c']]],
+  ['diagvalve_5fprocessdata_10',['diagvalve_processdata',['../diag__valve__status__info_8c.html#a413c7c2e76c6e616ae42f8779dc9e19c',1,'diag_valve_status_info.c']]],
+  ['dio_5fhandlers_11',['dio_handlers',['../_data_server_fetch_8c.html#a469ccdb9274911410aa03d305dda5343',1,'dio_handlers:&#160;discovery.c'],['../discovery_8c.html#a469ccdb9274911410aa03d305dda5343',1,'dio_handlers:&#160;discovery.c'],['../module__details__processing_8c.html#a469ccdb9274911410aa03d305dda5343',1,'dio_handlers:&#160;discovery.c'],['../lvgl__gui_8c.html#a469ccdb9274911410aa03d305dda5343',1,'dio_handlers:&#160;discovery.c']]],
+  ['discover_5fdetails_12',['discover_details',['../_data_server_fetch_8c.html#aecc928609def218c15f7c59447eb5a32',1,'discover_details:&#160;discovery.c'],['../data__processing_8c.html#aecc928609def218c15f7c59447eb5a32',1,'discover_details:&#160;discovery.c'],['../discovery_8c.html#aecc928609def218c15f7c59447eb5a32',1,'discover_details:&#160;discovery.c'],['../module__details__processing_8c.html#aecc928609def218c15f7c59447eb5a32',1,'discover_details:&#160;discovery.c'],['../valves__modules__status__info_8c.html#aecc928609def218c15f7c59447eb5a32',1,'discover_details:&#160;discovery.c'],['../lvgl__gui_8c.html#aecc928609def218c15f7c59447eb5a32',1,'discover_details:&#160;discovery.c']]],
+  ['disp_13',['disp',['../lvgl__init_8c.html#a647e5f267167a38dcd0e6fe55dfcfc61',1,'lvgl_init.c']]],
+  ['dma_5fbuf_5ffd_14',['dma_buf_fd',['../structlocal__buf.html#af58874517424bd8ff3f1ad693e6d062a',1,'local_buf']]],
+  ['dma_5fheap_5ffd_15',['dma_heap_fd',['../_app_data_init_8c.html#a557db9b79c0309f594ae169b6c9e6471',1,'AppDataInit.c']]],
+  ['do_5fhandlers_16',['do_handlers',['../_data_server_fetch_8c.html#a92e023a01eb6cda34cb71ffb24aac30d',1,'do_handlers:&#160;discovery.c'],['../discovery_8c.html#a92e023a01eb6cda34cb71ffb24aac30d',1,'do_handlers:&#160;discovery.c'],['../module__details__processing_8c.html#a92e023a01eb6cda34cb71ffb24aac30d',1,'do_handlers:&#160;discovery.c'],['../lvgl__gui_8c.html#a92e023a01eb6cda34cb71ffb24aac30d',1,'do_handlers:&#160;discovery.c']]]
 ];

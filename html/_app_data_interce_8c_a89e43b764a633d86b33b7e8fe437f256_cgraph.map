@@ -1,0 +1,7 @@
+<map id="getAIODeviceHandler" name="getAIODeviceHandler">
+<area shape="rect" id="Node000001" title="Retrieve the device handlers for AIO (Analog Input Output) modules." alt="" coords="5,31,149,57"/>
+<area shape="rect" id="Node000002" href="$_data_server_shdm_8c.html#ac935872527ba12b3034abfb5ca7df126" title="Unlocks a spinlock." alt="" coords="202,5,292,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,31,186,25,186,30,150,36"/>
+<area shape="rect" id="Node000003" href="$_data_server_shdm_8c.html#aefe4253bf48461410550618b2dd56c7a" title="Locks a spinlock with a timeout." alt="" coords="197,56,297,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,52,182,57,181,62,149,57"/>
+</map>
