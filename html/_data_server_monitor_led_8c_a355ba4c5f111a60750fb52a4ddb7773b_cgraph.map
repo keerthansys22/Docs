@@ -1,5 +1,5 @@
 <map id="getIoModStatus" name="getIoModStatus">
-<area shape="rect" id="Node000001" title=": Gets the IO Modules status (warning or faults)" alt="" coords="5,132,118,159"/>
+<area shape="rect" id="Node000001" title="Gets the IO Modules status (warning or faults)" alt="" coords="5,132,118,159"/>
 <area shape="rect" id="Node000002" href="$_analog_input_module_api_8c.html#ac7a9214762e7a34eed85a0a46e3a021c" title="Retrieves the process data for a specified AI module." alt="" coords="171,5,339,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,130,109,87,135,62,164,42,176,36,178,41,167,46,138,67,113,90,75,133"/>
 <area shape="rect" id="Node000005" href="$_analog_input_output_api_8c.html#a1f8ab9854c2deaffad41501aa7eca426" title="Retrieves the process data for a specified AIO module." alt="" coords="166,56,344,83"/>

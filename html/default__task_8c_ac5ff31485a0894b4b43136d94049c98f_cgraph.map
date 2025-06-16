@@ -1,10 +1,10 @@
 <map id="monitorLedTask" name="monitorLedTask">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,972,119,999"/>
-<area shape="rect" id="Node000002" href="$_data_server_fetch_8c.html#a355ba4c5f111a60750fb52a4ddb7773b" title=": Gets the IO Modules status (warning or faults)" alt="" coords="213,157,326,184"/>
+<area shape="rect" id="Node000002" href="$_data_server_fetch_8c.html#a355ba4c5f111a60750fb52a4ddb7773b" title="Gets the IO Modules status (warning or faults)" alt="" coords="213,157,326,184"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,971,102,798,164,539,257,198,263,199,169,541,108,799,69,972"/>
-<area shape="rect" id="Node000011" href="$_data_server_fetch_8c.html#ae01aad6066b3904dfbb903803dca64ca" title=" " alt="" coords="167,552,372,579"/>
+<area shape="rect" id="Node000011" href="$_data_server_fetch_8c.html#ae01aad6066b3904dfbb903803dca64ca" title="This function is to check the force state enabled or no." alt="" coords="167,552,372,579"/>
 <area shape="poly" id="edge20_Node000001_Node000011" title=" " alt="" coords="65,971,103,870,164,731,208,653,248,590,252,593,212,656,169,733,108,872,70,973"/>
-<area shape="rect" id="Node000019" href="$_data_server_fetch_8c.html#a20a4ac1b64ad62bac504668394ddee31" title=" " alt="" coords="177,744,362,771"/>
+<area shape="rect" id="Node000019" href="$_data_server_fetch_8c.html#a20a4ac1b64ad62bac504668394ddee31" title="fetches the valves error status" alt="" coords="177,744,362,771"/>
 <area shape="poly" id="edge39_Node000001_Node000019" title=" " alt="" coords="64,971,75,934,95,885,124,833,143,809,165,787,184,775,186,780,168,791,147,812,129,836,100,887,80,936,69,972"/>
 <area shape="rect" id="Node000022" href="$_data_server_led_indication_8c.html#af352e029b1015e3dea14361b83d76445" title=" " alt="" coords="715,1023,846,1049"/>
 <area shape="poly" id="edge43_Node000001_Node000022" title=" " alt="" coords="80,969,169,910,235,874,310,841,390,814,474,801,516,800,557,805,598,815,637,831,663,848,686,868,725,916,753,966,772,1007,767,1009,748,968,720,919,682,872,659,852,634,836,596,820,556,810,516,805,474,806,392,820,312,846,237,879,172,915,83,974"/>

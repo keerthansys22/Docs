@@ -1,5 +1,5 @@
 <map id="getValveModulesErrorStatus" name="getValveModulesErrorStatus">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,43,191,69"/>
+<area shape="rect" id="Node000001" title="fetches the valves error status" alt="" coords="5,43,191,69"/>
 <area shape="rect" id="Node000002" href="$_pressure_zone_8c.html#aec053f33602e9220ef123f812ab5bc82" title="Get the process data for a specific pressure zone." alt="" coords="239,43,433,69"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,53,223,53,223,59,191,59"/>
 <area shape="rect" id="Node000003" href="$_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="481,5,675,48"/>

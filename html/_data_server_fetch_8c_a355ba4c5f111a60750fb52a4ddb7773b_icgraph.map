@@ -1,5 +1,5 @@
 <map id="getIoModStatus" name="getIoModStatus">
-<area shape="rect" id="Node000001" title=": Gets the IO Modules status (warning or faults)" alt="" coords="1016,544,1128,571"/>
+<area shape="rect" id="Node000001" title="Gets the IO Modules status (warning or faults)" alt="" coords="1016,544,1128,571"/>
 <area shape="rect" id="Node000002" href="$_data_server_monitor_led_8c.html#a93bd9d13cecd64903edf61230489ef5a" title=" " alt="" coords="854,544,968,571"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1000,560,968,560,968,555,1000,555"/>
 <area shape="rect" id="Node000003" href="$default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="default function to create threads and events" alt="" coords="712,544,806,571"/>

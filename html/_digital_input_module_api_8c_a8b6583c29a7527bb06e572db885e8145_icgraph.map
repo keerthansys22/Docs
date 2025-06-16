@@ -1,6 +1,6 @@
 <map id="getDIModuleProcessData" name="getDIModuleProcessData">
 <area shape="rect" id="Node000001" title="Retrieves the process data for a specified DI module." alt="" coords="1176,544,1344,571"/>
-<area shape="rect" id="Node000002" href="$_data_server_fetch_8c.html#a355ba4c5f111a60750fb52a4ddb7773b" title=": Gets the IO Modules status (warning or faults)" alt="" coords="1016,544,1128,571"/>
+<area shape="rect" id="Node000002" href="$_data_server_fetch_8c.html#a355ba4c5f111a60750fb52a4ddb7773b" title="Gets the IO Modules status (warning or faults)" alt="" coords="1016,544,1128,571"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1161,560,1128,560,1128,555,1161,555"/>
 <area shape="rect" id="Node000003" href="$_data_server_monitor_led_8c.html#a93bd9d13cecd64903edf61230489ef5a" title=" " alt="" coords="854,544,968,571"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1000,560,968,560,968,555,1000,555"/>

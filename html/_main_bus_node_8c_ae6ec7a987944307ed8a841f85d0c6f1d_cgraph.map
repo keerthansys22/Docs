@@ -1,0 +1,5 @@
+<map id="getMainBusIdentificationInfo" name="getMainBusIdentificationInfo">
+<area shape="rect" id="Node000001" title="Retrieves the identification info of the Main Bus node." alt="" coords="5,5,188,32"/>
+<area shape="rect" id="Node000002" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="236,5,397,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,16,220,16,220,21,188,21"/>
+</map>
