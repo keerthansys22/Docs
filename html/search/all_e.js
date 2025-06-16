@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['n_0',['N',['../diag__valve__status__info_8c.html#a7722c8ecbb62d99aee7ce68b1752f337',1,'diag_valve_status_info.c']]],
-  ['n_1',['n',['../diag__valve__status__info_8c.html#a76f11d9a0a47b94f72c2d0e77fb32240',1,'diag_valve_status_info.c']]],
-  ['no_5fof_5fmodules_2',['no_of_modules',['../lvgl__gui_8c.html#af3bbfc1d6de3f05c342931ea836e13ce',1,'lvgl_gui.c']]],
-  ['no_5fwarning_3',['NO_WARNING',['../lvgl__gui_8c.html#a3a3ba28870fa5090dd72c845f17e7365a1424dd9f64c2024fa852f0dfddd3d80e',1,'lvgl_gui.c']]],
-  ['normal_5findex_4',['normal_index',['../diag__valve__status__info_8c.html#a7efd42e524042cb435c007b138a90d28',1,'normal_index:&#160;valves_modules_status_info.c'],['../valves__modules__status__info_8c.html#a817f4ff27b6d78d7007cb9682fce68fe',1,'normal_index:&#160;valves_modules_status_info.c'],['../lvgl__gui_8c.html#a817f4ff27b6d78d7007cb9682fce68fe',1,'normal_index:&#160;lvgl_gui.c']]],
-  ['normal_5flist_5',['normal_list',['../diag__valve__status__info_8c.html#ab0bca095890a1fb58c691bea6aae554a',1,'normal_list:&#160;lvgl_gui.c'],['../mbn__status__info_8c.html#ab0bca095890a1fb58c691bea6aae554a',1,'normal_list:&#160;lvgl_gui.c'],['../valves__modules__status__info_8c.html#ab0bca095890a1fb58c691bea6aae554a',1,'normal_list:&#160;lvgl_gui.c'],['../lvgl__gui_8c.html#ab0bca095890a1fb58c691bea6aae554a',1,'normal_list:&#160;lvgl_gui.c']]],
-  ['num_5fiterations_6',['NUM_ITERATIONS',['../_app_data_init_8c.html#ab3be0641eb76161a48ed528e6eea2ac3',1,'AppDataInit.c']]]
+  ['keerthangs_5fcelstream_5fcom_20documents_20linux_5fcore_2020_201_20docx_20d_20w48ba3bef893a4520b4c96850e6687d14_20csf_201_20web_201_20e_209iroz5_20link_20a_0',['&lt;strong&gt;Sequence Diagram&lt;/strong&gt; - &lt;a href=&quot;https://celstream-my.sharepoint.com/:w:/r/personal/keerthangs_celstream_com/Documents/Linux_core%20(1).docx?d=w48ba3bef893a4520b4c96850e6687d14&amp;csf=1&amp;web=1&amp;e=9IROZ5&quot; &gt;link&lt;/a&gt;',['../index.html#step5',1,'']]],
+  ['key_20features_20strong_1',['&lt;strong&gt;Key Features&lt;/strong&gt;',['../index.html#step1',1,'']]],
+  ['keypress_5fcheck_2',['KeyPress_check',['../_data_server_monitor_led_8c.html#a57f9e71624bc8b3bef967a3c66814f0a',1,'DataServerMonitorLed.c']]],
+  ['kk_3',['kk',['../default__task_8c.html#a31a385606433007d26a8e1c8a3df221f',1,'default_task.c']]]
 ];

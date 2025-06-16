@@ -1,9 +1,27 @@
 var searchData=
 [
-  ['update_5fmac_5fscreen_0',['update_mac_screen',['../mac__screen_8c.html#a1c7289e9f8ca482aa0d0ba0c1af96da0',1,'mac_screen.c']]],
-  ['updatecpswportconfiguartion_1',['updateCpswPortConfiguartion',['../_main_bus_node_8c.html#a2acf746b21e600f86d117df8e8107e2b',1,'MainBusNode.c']]],
-  ['updatembnvavolatge_2',['updateMBNVaVolatge',['../_main_bus_node_8c.html#a5f69684ec78d8ed0c94ae6e81080cde9',1,'MainBusNode.c']]],
-  ['updatembnvbvolatge_3',['updateMBNVbVolatge',['../_main_bus_node_8c.html#a7160f3fbd59e634e42b954e101b5e3e4',1,'MainBusNode.c']]],
-  ['upgrade_5findex_4',['upgrade_index',['../lvgl__gui_8c.html#a2a9e882327ae7a22148096d9fe042068',1,'lvgl_gui.c']]],
-  ['upgrade_5ftitle_5',['upgrade_title',['../config__screen_8c.html#af31f7a5b615478ae835b6b73f265c952',1,'config_screen.c']]]
+  ['r_20personal_20keerthangs_5fcelstream_5fcom_20documents_20linux_5fcore_2020_201_20docx_20d_20w48ba3bef893a4520b4c96850e6687d14_20csf_201_20web_201_20e_209iroz5_20link_20a_0',['&lt;strong&gt;Sequence Diagram&lt;/strong&gt; - &lt;a href=&quot;https://celstream-my.sharepoint.com/:w:/r/personal/keerthangs_celstream_com/Documents/Linux_core%20(1).docx?d=w48ba3bef893a4520b4c96850e6687d14&amp;csf=1&amp;web=1&amp;e=9IROZ5&quot; &gt;link&lt;/a&gt;',['../index.html#step5',1,'']]],
+  ['read_20operations_20strong_20_3a_1',['&lt;strong&gt;Read Operations&lt;/strong&gt;:',['../index.html#step2',1,'']]],
+  ['read_5fadc_5fvalue1_2',['read_adc_value1',['../internal__adc__test_8c.html#acabe5c2e4711c98ec1ffd0782284c275',1,'internal_adc_test.c']]],
+  ['read_5fdv_5ffault_5fcsv_3',['read_dv_fault_csv',['../dv__fault__csv_8c.html#a082a8eea3d34f52a3711258709ba8bf4',1,'read_dv_fault_csv():&#160;dv_fault_csv.c'],['../default__task_8c.html#a082a8eea3d34f52a3711258709ba8bf4',1,'read_dv_fault_csv():&#160;dv_fault_csv.c']]],
+  ['read_5fdv_5fwarning_5fcsv_4',['read_dv_warning_csv',['../dv__warning__csv_8c.html#a35d15dccad6b2b0b8ed17d3792845d34',1,'read_dv_warning_csv():&#160;dv_warning_csv.c'],['../default__task_8c.html#a35d15dccad6b2b0b8ed17d3792845d34',1,'read_dv_warning_csv():&#160;dv_warning_csv.c']]],
+  ['read_5fisem_5ffault_5fcsv_5',['read_isem_fault_csv',['../isem__diag__fault__csv_8c.html#ab5d81f8e1b18c63bed5b0177a064cc98',1,'read_isem_fault_csv():&#160;isem_diag_fault_csv.c'],['../default__task_8c.html#ab5d81f8e1b18c63bed5b0177a064cc98',1,'read_isem_fault_csv():&#160;isem_diag_fault_csv.c']]],
+  ['read_5fisem_5fwarning_5fcsv_6',['read_isem_warning_csv',['../isem__diag__warning__csv_8c.html#a7932b011c244674d11ad64117304349c',1,'read_isem_warning_csv():&#160;isem_diag_warning_csv.c'],['../default__task_8c.html#a7932b011c244674d11ad64117304349c',1,'read_isem_warning_csv():&#160;isem_diag_warning_csv.c']]],
+  ['readdiscoverydata_7',['readDiscoveryData',['../_app_data_init_8c.html#a2c891988aba3928991563510a0a143d8',1,'AppDataInit.c']]],
+  ['readdiscoveryinfo_8',['readDiscoveryInfo',['../_app_data_interce_8c.html#a510fa21187d2bc7234c063942d17a85f',1,'AppDataInterce.c']]],
+  ['readsharedmemorydata_9',['readSharedMemoryData',['../_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_app_data_interce_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_analog_input_module_api_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_analog_input_output_api_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_digital_output_module_api_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_main_bus_node_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_diag_valve_api_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_external_prop_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_internal_prop_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c'],['../_isem_diag_valve_api_8c.html#ae512dcee3f48f317872617e5f4559b19',1,'readSharedMemoryData(struct local_buf *g_shmd_buf, void *data, uint32_t size):&#160;AppDataInit.c']]],
+  ['readsharedmemorydata1_10',['readSharedMemoryData1',['../_app_data_init_8c.html#ab626ee9878bdad1df5d26d5e215c1c7e',1,'AppDataInit.c']]],
+  ['remote_5fendpt_11',['REMOTE_ENDPT',['../_app_data_init_8c.html#a7be6ced5220d75bbaca18fa0bc90ac87',1,'AppDataInit.c']]],
+  ['res_12',['res',['../lvgl__gui_8c.html#aac31eb68bff694554a182bd796b2f1c5',1,'lvgl_gui.c']]],
+  ['reset_5fdiag_5fstatus_13',['reset_diag_status',['../diag__valve__status__info_8c.html#aac575266636a7dcae8ddc521c7405ded',1,'diag_valve_status_info.c']]],
+  ['reset_5fisem_5fstatus_14',['reset_isem_status',['../isem__status__info_8c.html#a9a3806a48e474cbce90adb9c92ad4ae9',1,'isem_status_info.c']]],
+  ['reset_5ftimer_15',['reset_timer',['../lvgl__gui_8c.html#aa3ef1744ca7e52c293c49ccef26798e8',1,'reset_timer():&#160;lvgl_gui.c'],['../_data_server_monitor_led_8c.html#aa3ef1744ca7e52c293c49ccef26798e8',1,'reset_timer():&#160;lvgl_gui.c']]],
+  ['responsibilities_20strong_20_3a_16',['&lt;strong&gt;Threads and Responsibilities&lt;/strong&gt;:',['../index.html#step4',1,'']]],
+  ['ret_17',['ret',['../_data_server_monitor_led_8c.html#a6baa346e44f4c2158d2be4f9b77b8203',1,'DataServerMonitorLed.c']]],
+  ['retrieveandcopyhandlers_18',['retrieveAndCopyHandlers',['../discovery_8c.html#a4b65e82368bb41640facc3743c8e3671',1,'discovery.c']]],
+  ['retrieveandcopyhandlerswitharg_19',['retrieveAndCopyHandlersWithArg',['../discovery_8c.html#a9fb9bb9f432567d6ac9d3084230d13d0',1,'discovery.c']]],
+  ['rpmsgipcdeinit_20',['rpmsgIpcDeinit',['../_app_data_init_8c.html#a9e36d95079f670e69afb0e57a74c1bbd',1,'AppDataInit.c']]],
+  ['rpmsgipcinit_21',['rpmsgIpcInit',['../_app_data_init_8c.html#a58b73e2d9979a6b0af8f0bd6d599f44b',1,'AppDataInit.c']]],
+  ['rxbuff_22',['Rxbuff',['../structspi__flash___data_xfer.html#a8b69031180adaa80a298602dd1eafe38',1,'spi_flash_DataXfer']]],
+  ['rxlength_23',['Rxlength',['../structspi__flash___data_xfer.html#a944c7b43f60ca8f2d49c1c3950b7143f',1,'spi_flash_DataXfer']]]
 ];
