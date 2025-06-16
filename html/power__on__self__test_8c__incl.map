@@ -1,5 +1,5 @@
 <map id="Self_Tests/power_on_self_test.c" name="Self_Tests/power_on_self_test.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="773,5,914,48"/>
+<area shape="rect" id="Node000001" title="Source that contains the self test and voltage monitring files." alt="" coords="773,5,914,48"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,104,66,131"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="773,34,413,56,219,75,139,86,79,99,73,100,72,95,78,93,138,81,218,70,412,51,772,28"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="90,104,154,131"/>
