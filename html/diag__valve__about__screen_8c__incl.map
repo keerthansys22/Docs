@@ -1,5 +1,5 @@
 <map id="GUI/Screens/diag_valve_about_screen.c" name="GUI/Screens/diag_valve_about_screen.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="45,5,202,48"/>
+<area shape="rect" id="Node000001" title="Source that displays the diagnostic valves about screen." alt="" coords="45,5,202,48"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,104,98,131"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,50,73,93,69,90,105,47"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="122,96,269,139"/>

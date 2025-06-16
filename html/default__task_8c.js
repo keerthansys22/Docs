@@ -21,6 +21,8 @@ var default__task_8c =
     [ "G_KEY_PRESSED_EVENT", "default__task_8c.html#aa388bbbd2af08b7f83c6e55667c86270", null ],
     [ "G_POP_EVENT", "default__task_8c.html#aaa8fd3258b0349c782441c209b83cf5c", null ],
     [ "g_status_value", "default__task_8c.html#a1e3892d738339a39bc0c717706a4048f", null ],
+    [ "gg", "default__task_8c.html#a90a840dc2cad65d1e73a074141fdacf4", null ],
+    [ "kk", "default__task_8c.html#a31a385606433007d26a8e1c8a3df221f", null ],
     [ "lvgl_run_thread", "default__task_8c.html#a5a66127f8adbbe580bd4ce3b5f19d992", null ],
     [ "lvgl_state_thread", "default__task_8c.html#aed88a87080777229ab77e1af0285690f", null ],
     [ "mutex", "default__task_8c.html#a4acff8232e4aec9cd5c6dc200ac55ef3", null ],

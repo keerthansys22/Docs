@@ -1,8 +1,8 @@
 var searchData=
 [
   ['indication_2ec_0',['indication.c',['../indication_8c.html',1,'']]],
-  ['interanlprop_2ec_1',['InteranlProp.c',['../_interanl_prop_8c.html',1,'']]],
-  ['internal_5fadc_5ftest_2ec_2',['internal_adc_test.c',['../internal__adc__test_8c.html',1,'']]],
+  ['internal_5fadc_5ftest_2ec_1',['internal_adc_test.c',['../internal__adc__test_8c.html',1,'']]],
+  ['internalprop_2ec_2',['InternalProp.c',['../_internal_prop_8c.html',1,'']]],
   ['io_5fexpander_5ftest_2ec_3',['io_expander_test.c',['../io__expander__test_8c.html',1,'']]],
   ['io_5fmodules_5fabout_5fscreen_2ec_4',['io_modules_about_screen.c',['../io__modules__about__screen_8c.html',1,'']]],
   ['io_5fmodules_5fstatus_5finfo_2ec_5',['io_modules_status_info.c',['../io__modules__status__info_8c.html',1,'']]],

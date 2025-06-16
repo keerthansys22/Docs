@@ -14,5 +14,6 @@ var searchData=
   ['config_5fstyle_11',['config_style',['../lvgl__gui_8c.html#a98c37bf58f04cc93e36ff7902151475e',1,'config_style():&#160;config_screen.c'],['../config__screen_8c.html#a98c37bf58f04cc93e36ff7902151475e',1,'config_style():&#160;config_screen.c']]],
   ['config_5fupgrade_5fstyle_12',['config_upgrade_style',['../lvgl__gui_8c.html#a951a5e11d0f3bb0dd553cc7a6abaa9f3',1,'config_upgrade_style():&#160;config_screen.c'],['../config__screen_8c.html#a951a5e11d0f3bb0dd553cc7a6abaa9f3',1,'config_upgrade_style():&#160;config_screen.c']]],
   ['configure_5fgpio_5fpins_13',['configure_GPIO_pins',['../gpio__init_8c.html#a8ddfcc1edc1807598865aced2e871313',1,'gpio_init.c']]],
-  ['copy_5fmembers_14',['copy_members',['../data__processing_8c.html#afc2a01db214bea71598ff4c8dba79574',1,'copy_members():&#160;lvgl_gui.c'],['../lvgl__gui_8c.html#afc2a01db214bea71598ff4c8dba79574',1,'copy_members():&#160;lvgl_gui.c']]]
+  ['convert_5fip_5fto_5farray_14',['convert_ip_to_array',['../lvgl__gui_8c.html#a3b83c6cea003cb78dcf9bc2712fc9db0',1,'lvgl_gui.c']]],
+  ['copy_5fmembers_15',['copy_members',['../data__processing_8c.html#afc2a01db214bea71598ff4c8dba79574',1,'copy_members():&#160;lvgl_gui.c'],['../lvgl__gui_8c.html#afc2a01db214bea71598ff4c8dba79574',1,'copy_members():&#160;lvgl_gui.c']]]
 ];

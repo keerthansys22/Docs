@@ -122,7 +122,7 @@ Introduction</h1>
 </ul>
 <h1><a class="anchor" id="install_sec"></a>
 Overview</h1>
-<p>The LCD GUI application operates on a Linux core, communicating with a data server through shared memory for data exchange. The application includes four threads, each dedicated to specific tasks to ensure modularity, scalability, and performance. </p>
+<p>The LCD GUI application operates on a Linux core, communicating with a data server for data exchange. The application includes five threads, each dedicated to specific tasks to ensure modularity, scalability, and performance. </p>
 <h2><a class="anchor" id="step1"></a>
 <b>Key Features</b></h2>
 <h2><a class="anchor" id="step2"></a>
@@ -139,6 +139,30 @@ Overview</h1>
 <b>Write Operations</b>:</h2>
 <ul>
 <li>Send user-entered IP configuration details to the data server. </li>
+</ul>
+<h2><a class="anchor" id="step4"></a>
+<b>Threads and Responsibilities</b>:</h2>
+<ul>
+<li>Thread 1: LVGL State Machine<ul>
+<li>Manages the lifecycle and states of the LVGL GUI framework.</li>
+</ul>
+</li>
+<li>Thread 2: LVGL GUI<ul>
+<li>Handles GUI rendering and user interface interactions on the display.</li>
+</ul>
+</li>
+<li>Thread 3: Data processing polling<ul>
+<li>Continuously polls the status details for all the modules in a hierarchy.</li>
+</ul>
+</li>
+<li>Thread 4: Poll for Screen Alerts<ul>
+<li>Continuously polls for any screen pop-ups indicating warning or fault statuses.</li>
+</ul>
+</li>
+<li>Thread 5: Keypress Check<ul>
+<li>Monitors keypress events for navigation and user actions. </li>
+</ul>
+</li>
 </ul>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>

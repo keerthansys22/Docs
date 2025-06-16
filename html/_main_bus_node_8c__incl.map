@@ -1,5 +1,5 @@
 <map id="API_Source/MainBusNodeApiSource/MainBusNode.c" name="API_Source/MainBusNodeApiSource/MainBusNode.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="216,5,410,48"/>
+<area shape="rect" id="Node000001" title="This file contains the source code of the main bus API." alt="" coords="216,5,410,48"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,104,66,131"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,51,156,72,79,99,75,100,73,95,77,93,155,67,229,46"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="90,104,154,131"/>

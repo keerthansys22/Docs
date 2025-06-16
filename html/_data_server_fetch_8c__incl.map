@@ -1,5 +1,5 @@
 <map id="API_Source/DataServerFetch.c" name="API_Source/DataServerFetch.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="467,5,668,32"/>
+<area shape="rect" id="Node000001" title="Source that fetches the module values from server to enable led monitoring." alt="" coords="467,5,668,32"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,88,66,115"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,26,382,32,284,42,180,59,79,83,73,84,72,79,77,77,179,53,283,37,382,26,466,20"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="90,88,157,115"/>

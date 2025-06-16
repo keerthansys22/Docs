@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arrow3-MBN-APP: API_Source/ValveModulesApiSource/IsemDiagValveApi.c File Reference</title>
+<title>Arrow3-MBN-APP: API_Source/ValveModulesApiSource/InternalProp.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('_isem_diag_valve_api_8c.html',''); initResizable(true); });
+$(function(){initNavTree('_internal_prop_8c.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -105,36 +105,33 @@ $(function(){initNavTree('_isem_diag_valve_api_8c.html',''); initResizable(true)
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">IsemDiagValveApi.c File Reference</div></div>
+  <div class="headertitle"><div class="title">InternalProp.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This source file contains the api source related to ISEM diag paramter access(cyclic and acyclic data)  
+<p>This source file contains the API source related to Internal Prop.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;ti_rpmsg_char.h&quot;</code><br />
-<code>#include &quot;../Header/API_Header/pzmapping.h&quot;</code><br />
 <code>#include &quot;../Header/API_Header/AppDataInterface.h&quot;</code><br />
+<code>#include &quot;../Header/API_Header/pzmapping.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for IsemDiagValveApi.c:</div>
+Include dependency graph for InternalProp.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="_isem_diag_valve_api_8c__incl.png" border="0" usemap="#a_a_p_i___source_2_valve_modules_api_source_2_isem_diag_valve_api_8c" alt=""/></div>
-<map name="a_a_p_i___source_2_valve_modules_api_source_2_isem_diag_valve_api_8c" id="a_a_p_i___source_2_valve_modules_api_source_2_isem_diag_valve_api_8c">
-<area shape="rect" title="This source file contains the api source related to ISEM diag paramter access(cyclic and acyclic data..." alt="" coords="170,5,363,48"/>
+<div class="center"><img src="_internal_prop_8c__incl.png" border="0" usemap="#a_a_p_i___source_2_valve_modules_api_source_2_internal_prop_8c" alt=""/></div>
+<map name="a_a_p_i___source_2_valve_modules_api_source_2_internal_prop_8c" id="a_a_p_i___source_2_valve_modules_api_source_2_internal_prop_8c">
+<area shape="rect" title="This source file contains the API source related to Internal Prop." alt="" coords="114,5,307,48"/>
 <area shape="rect" title=" " alt="" coords="5,104,66,131"/>
-<area shape="poly" title=" " alt="" coords="206,51,79,98,76,100,74,95,77,94,204,46"/>
+<area shape="poly" title=" " alt="" coords="170,51,75,99,73,94,168,46"/>
 <area shape="rect" title=" " alt="" coords="90,104,154,131"/>
-<area shape="poly" title=" " alt="" coords="234,51,157,98,154,93,231,46"/>
+<area shape="poly" title=" " alt="" coords="192,50,147,95,143,91,188,47"/>
 <area shape="rect" title=" " alt="" coords="178,104,242,131"/>
-<area shape="poly" title=" " alt="" coords="255,50,228,92,224,89,251,47"/>
-<area shape="rect" title=" " alt="" coords="266,104,381,131"/>
-<area shape="poly" title=" " alt="" coords="282,47,309,89,305,92,277,50"/>
-<area shape="rect" title=" " alt="" coords="405,96,552,139"/>
-<area shape="poly" title=" " alt="" coords="317,46,415,87,413,92,315,51"/>
-<area shape="rect" title=" " alt="" coords="577,96,724,139"/>
-<area shape="poly" title=" " alt="" coords="357,46,562,93,561,98,356,51"/>
+<area shape="poly" title=" " alt="" coords="213,48,213,88,208,88,208,48"/>
+<area shape="rect" title=" " alt="" coords="266,96,413,139"/>
+<area shape="poly" title=" " alt="" coords="242,46,298,85,295,89,239,51"/>
+<area shape="rect" title=" " alt="" coords="438,96,585,139"/>
+<area shape="poly" title=" " alt="" coords="282,46,427,89,425,94,280,51"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -148,85 +145,80 @@ Functions</h2></td></tr>
 <tr class="separator:afffe0a8cc543604a9a4c31b71fe442bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa3d041d8597ff5b49a58ec5e13f2ea4" id="r_afa3d041d8597ff5b49a58ec5e13f2ea4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa3d041d8597ff5b49a58ec5e13f2ea4">getPresssureZoneServiceDataAddress</a> (uint16_t pz_handler)</td></tr>
 <tr class="separator:afa3d041d8597ff5b49a58ec5e13f2ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9a986ad54e6f23b84d77e8c751e07f6" id="r_ad9a986ad54e6f23b84d77e8c751e07f6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9a986ad54e6f23b84d77e8c751e07f6">getIsemDiagProcessData</a> (uint16_t pressurezone_handler, uint16_t isem_diag_handler, isemdiag_processinfo *processdata)</td></tr>
-<tr class="memdesc:ad9a986ad54e6f23b84d77e8c751e07f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves diagnostic process data for a specified ISEM diagnostic handler.  <br /></td></tr>
-<tr class="separator:ad9a986ad54e6f23b84d77e8c751e07f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39ea1b5335a46c699174c72c567afc72" id="r_a39ea1b5335a46c699174c72c567afc72"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39ea1b5335a46c699174c72c567afc72">setIsemDiagWarningEventBit</a> (uint16_t pressurezone_handler, uint16_t isem_diag_handler, uint32_t *warningeventbit_val)</td></tr>
-<tr class="memdesc:a39ea1b5335a46c699174c72c567afc72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the warning event bit for a specified ISEM DIAG .  <br /></td></tr>
-<tr class="separator:a39ea1b5335a46c699174c72c567afc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a5bb8ffbfc03e38824abcef42af94dd" id="r_a0a5bb8ffbfc03e38824abcef42af94dd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a5bb8ffbfc03e38824abcef42af94dd">setIsemDiagFaultEventBit</a> (uint16_t pressurezone_handler, uint16_t isem_diag_handler, uint32_t *faulteventbit_val)</td></tr>
-<tr class="memdesc:a0a5bb8ffbfc03e38824abcef42af94dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the fault event bit for a specified ISEM DIAG .  <br /></td></tr>
-<tr class="separator:a0a5bb8ffbfc03e38824abcef42af94dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefdc77137ece593758cb5f6a41069a10" id="r_aefdc77137ece593758cb5f6a41069a10"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefdc77137ece593758cb5f6a41069a10">getIsemDiagServiceParameterData</a> (uint16_t pressurezone_handler, uint16_t isem_diag_handler, uint16_t parameter_name, void *data)</td></tr>
-<tr class="memdesc:aefdc77137ece593758cb5f6a41069a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the service parameter data of the ISEM Diagnostic module.  <br /></td></tr>
-<tr class="separator:aefdc77137ece593758cb5f6a41069a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c91b5cbb77ae331210cac9f7da1744e" id="r_a2c91b5cbb77ae331210cac9f7da1744e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c91b5cbb77ae331210cac9f7da1744e">setIsemDiagServiceParameterData</a> (uint16_t pressurezone_handler, uint16_t isem_diag_handler, uint16_t parameter_name, void *data)</td></tr>
-<tr class="memdesc:a2c91b5cbb77ae331210cac9f7da1744e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the service parameter data for a specified ISEM DIAG .  <br /></td></tr>
-<tr class="separator:a2c91b5cbb77ae331210cac9f7da1744e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a26ed9ef1348d5a405f8c3b8504eca" id="r_ac3a26ed9ef1348d5a405f8c3b8504eca"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3a26ed9ef1348d5a405f8c3b8504eca">getIntPropProcessData</a> (uint16_t pressurezone_handler, uint16_t intprop_handler, propvalve_processinfo *intrprop_processdata)</td></tr>
+<tr class="memdesc:ac3a26ed9ef1348d5a405f8c3b8504eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves diagnostic process data for a specified Internal Prop.  <br /></td></tr>
+<tr class="separator:ac3a26ed9ef1348d5a405f8c3b8504eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e91b922fdf4e1fc5956117e751d4cb" id="r_a77e91b922fdf4e1fc5956117e751d4cb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77e91b922fdf4e1fc5956117e751d4cb">setIntPropSetPointPressure</a> (uint16_t pressurezone_handler, uint16_t intprop_handler, void *data)</td></tr>
+<tr class="memdesc:a77e91b922fdf4e1fc5956117e751d4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the PDO (Process Data Output) for a specific Internal Prop within a pressure zone.  <br /></td></tr>
+<tr class="separator:a77e91b922fdf4e1fc5956117e751d4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a239628366d4a00b3223ff6913a59777b" id="r_a239628366d4a00b3223ff6913a59777b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a239628366d4a00b3223ff6913a59777b">getIntPropServiceParameterData</a> (uint16_t pressurezone_handler, uint16_t intprop_handler, uint16_t parameter_name, void *data)</td></tr>
+<tr class="memdesc:a239628366d4a00b3223ff6913a59777b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the service parameter of the Internal Prop.  <br /></td></tr>
+<tr class="separator:a239628366d4a00b3223ff6913a59777b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4131779e2db61d50791c2b8c6e5e2c1" id="r_ae4131779e2db61d50791c2b8c6e5e2c1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4131779e2db61d50791c2b8c6e5e2c1">setIntPropServiceParameterData</a> (uint16_t pressurezone_handler, uint16_t intprop_handler, uint16_t parameter_name, void *data)</td></tr>
+<tr class="memdesc:ae4131779e2db61d50791c2b8c6e5e2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the service parameter data for a specified Internal Prop.  <br /></td></tr>
+<tr class="separator:ae4131779e2db61d50791c2b8c6e5e2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ad9088d5017838792bd64e604162503df" id="r_ad9088d5017838792bd64e604162503df"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structlocal__buf.html">local_buf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9088d5017838792bd64e604162503df">gbuf</a></td></tr>
 <tr class="separator:ad9088d5017838792bd64e604162503df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a274502dbc1ca0716301973df9a2ebb62" id="r_a274502dbc1ca0716301973df9a2ebb62"><td class="memItemLeft" align="right" valign="top">rpmsg_char_dev_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274502dbc1ca0716301973df9a2ebb62">g_remote_rpmsg</a></td></tr>
-<tr class="separator:a274502dbc1ca0716301973df9a2ebb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This source file contains the api source related to ISEM diag paramter access(cyclic and acyclic data) </p>
+<div class="textblock"><p>This source file contains the API source related to Internal Prop. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ad9a986ad54e6f23b84d77e8c751e07f6" name="ad9a986ad54e6f23b84d77e8c751e07f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9a986ad54e6f23b84d77e8c751e07f6">&#9670;&#160;</a></span>getIsemDiagProcessData()</h2>
+<a id="ac3a26ed9ef1348d5a405f8c3b8504eca" name="ac3a26ed9ef1348d5a405f8c3b8504eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3a26ed9ef1348d5a405f8c3b8504eca">&#9670;&#160;</a></span>getIntPropProcessData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t getIsemDiagProcessData </td>
+          <td class="memname">uint8_t getIntPropProcessData </td>
           <td>(</td>
           <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>pressurezone_handler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>isem_diag_handler</em></span>, </td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>intprop_handler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">isemdiag_processinfo *</td>          <td class="paramname"><span class="paramname"><em>processdata</em></span>&#160;)</td>
+          <td class="paramtype">propvalve_processinfo *</td>          <td class="paramname"><span class="paramname"><em>intrprop_processdata</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves diagnostic process data for a specified ISEM diagnostic handler. </p>
-<p>This function fetches the diagnostic process data associated with a given ISEM diagnostic handler within a specified pressure zone.</p>
+<p>Retrieves diagnostic process data for a specified Internal Prop. </p>
+<p>This function fetches the diagnostic process data associated with a given proportional station handler within a specified pressure zone.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pressurezone_handler</td><td>The handler for the pressure zone. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">isem_diag_handler</td><td>The handler for the ISEM diagnostic module. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">processdata</td><td>Pointer to a structure where the retrieved process data will be stored.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intprop_handler</td><td>The handler for the Internal Prop. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">propstation_processdata</td><td>Pointer to a structure where the retrieved process data will be stored.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t Returns 0 on success, or an error code on failure. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t Returns RET_OK on success, or an error code on failure. Refer to e_error_code for possible error codes. </dd></dl>
 
 </div>
 </div>
-<a id="aefdc77137ece593758cb5f6a41069a10" name="aefdc77137ece593758cb5f6a41069a10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefdc77137ece593758cb5f6a41069a10">&#9670;&#160;</a></span>getIsemDiagServiceParameterData()</h2>
+<a id="a239628366d4a00b3223ff6913a59777b" name="a239628366d4a00b3223ff6913a59777b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a239628366d4a00b3223ff6913a59777b">&#9670;&#160;</a></span>getIntPropServiceParameterData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t getIsemDiagServiceParameterData </td>
+          <td class="memname">uint8_t getIntPropServiceParameterData </td>
           <td>(</td>
           <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>pressurezone_handler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>isem_diag_handler</em></span>, </td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>intprop_handler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -241,18 +233,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the service parameter data of the ISEM Diagnostic module. </p>
-<p>This function fetches a specific service parameter of the ISEM Diagnostic module within the specified pressure zone.</p>
+<p>Retrieves the service parameter of the Internal Prop. </p>
+<p>This function fetches a specific service parameter of the proportional station within the specified pressure zone.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pressurezone_handler</td><td>The handler for the pressure zone. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">handler</td><td>The handler for the ISEM diagnostic module. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">parameter_name</td><td>The name (ID) of the parameter to be retrieved. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intprop_handler</td><td>The handler for the Internal Prop. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parameter_name</td><td>The name (ID) of the parameter to be retrieved. Refer to Valve_FeatureParamId for valid parameter names. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Pointer to the memory where the retrieved parameter value will be stored.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t ReturnsRET_OK on success, or an RET_ERROR on failure. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t Returns RET_OK on success, or an error code on failure. Refer to e_error_code for possible error codes. </dd></dl>
 
 </div>
 </div>
@@ -340,58 +332,21 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0a5bb8ffbfc03e38824abcef42af94dd" name="a0a5bb8ffbfc03e38824abcef42af94dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a5bb8ffbfc03e38824abcef42af94dd">&#9670;&#160;</a></span>setIsemDiagFaultEventBit()</h2>
+<a id="ae4131779e2db61d50791c2b8c6e5e2c1" name="ae4131779e2db61d50791c2b8c6e5e2c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4131779e2db61d50791c2b8c6e5e2c1">&#9670;&#160;</a></span>setIntPropServiceParameterData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t setIsemDiagFaultEventBit </td>
+          <td class="memname">uint8_t setIntPropServiceParameterData </td>
           <td>(</td>
           <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>pressurezone_handler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>isem_diag_handler</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>faulteventbit_val</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the fault event bit for a specified ISEM DIAG . </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pressurezone_handler</td><td>The handler for the pressure zone. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">isem_diag_handler</td><td>The handler for the ISEM diagnostic module.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">faulteventbit_val</td><td>Pointer to the buffer containing the data to be set.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns an error code indicating the status of the operation. Refer to <code>error_code_t</code> for possible error codes. </dd></dl>
-
-</div>
-</div>
-<a id="a2c91b5cbb77ae331210cac9f7da1744e" name="a2c91b5cbb77ae331210cac9f7da1744e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c91b5cbb77ae331210cac9f7da1744e">&#9670;&#160;</a></span>setIsemDiagServiceParameterData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t setIsemDiagServiceParameterData </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>pressurezone_handler</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>isem_diag_handler</em></span>, </td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>intprop_handler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -406,11 +361,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the service parameter data for a specified ISEM DIAG . </p>
+<p>Sets the service parameter data for a specified Internal Prop. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pressurezone_handler</td><td>The handler for the pressure zone. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">handler</td><td>The handler for the ISEM diagnostic module. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pressurezone_handler</td><td>The handler for the preesure zone. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intprop_handler</td><td>The handler for the Internal Prop. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">parameter_name</td><td>The name of the parameter to set. Refer to the enumeration <code>Valve_FeatureParamId</code>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Pointer to the buffer containing the data to be set.</td></tr>
   </table>
@@ -420,40 +375,50 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a39ea1b5335a46c699174c72c567afc72" name="a39ea1b5335a46c699174c72c567afc72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39ea1b5335a46c699174c72c567afc72">&#9670;&#160;</a></span>setIsemDiagWarningEventBit()</h2>
+<a id="a77e91b922fdf4e1fc5956117e751d4cb" name="a77e91b922fdf4e1fc5956117e751d4cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e91b922fdf4e1fc5956117e751d4cb">&#9670;&#160;</a></span>setIntPropSetPointPressure()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t setIsemDiagWarningEventBit </td>
+          <td class="memname">uint8_t setIntPropSetPointPressure </td>
           <td>(</td>
           <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>pressurezone_handler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>isem_diag_handler</em></span>, </td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>intprop_handler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>warningeventbit_val</em></span>&#160;)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the warning event bit for a specified ISEM DIAG . </p>
+<p>Sets the PDO (Process Data Output) for a specific Internal Prop within a pressure zone. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pressurezone_handler</td><td>The handler for the pressure zone. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">isem_diag_handler</td><td>The handler for the ISEM diagnostic module.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">warningeventbit_val</td><td>Pointer to the buffer containing the data to be set.</td></tr>
+    <tr><td class="paramname">pressurezone_handler</td><td>Handler for the pressure zone. </td></tr>
+    <tr><td class="paramname">intprop_handler</td><td>Handler for the Internal Prop within the zone. </td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the data to be written. The data should match the expected format for the PDO.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns an error code indicating the status of the operation. Refer to <code>error_code_t</code> for possible error codes. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>RET_OK on success, RET_ERROR on failure.</dd></dl>
+<p>Sets the Set Point Pressure for a specific Internal Prop in a pressure zone.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pressurezone_handler</td><td>Handler representing the pressure zone. </td></tr>
+    <tr><td class="paramname">intprop_handler</td><td>Handler representing the Internal Prop within the pressure zone. </td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the value to be set as Set Point Pressure. The pointer must reference a valid 16-bit unsigned integer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>RET_OK on success, RET_ERROR on failure. </dd></dl>
 
 </div>
 </div>
@@ -497,28 +462,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a274502dbc1ca0716301973df9a2ebb62" name="a274502dbc1ca0716301973df9a2ebb62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a274502dbc1ca0716301973df9a2ebb62">&#9670;&#160;</a></span>g_remote_rpmsg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rpmsg_char_dev_t* g_remote_rpmsg</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ad9088d5017838792bd64e604162503df" name="ad9088d5017838792bd64e604162503df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9088d5017838792bd64e604162503df">&#9670;&#160;</a></span>gbuf</h2>
 
@@ -546,7 +489,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_f88917e51c99d9ccb2d83ab7fb34b76d.html">API_Source</a></li><li class="navelem"><a class="el" href="dir_363f705307bec4a2b8395360e9d7a766.html">ValveModulesApiSource</a></li><li class="navelem"><a class="el" href="_isem_diag_valve_api_8c.html">IsemDiagValveApi.c</a></li>
+    <li class="navelem"><a class="el" href="dir_f88917e51c99d9ccb2d83ab7fb34b76d.html">API_Source</a></li><li class="navelem"><a class="el" href="dir_363f705307bec4a2b8395360e9d7a766.html">ValveModulesApiSource</a></li><li class="navelem"><a class="el" href="_internal_prop_8c.html">InternalProp.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

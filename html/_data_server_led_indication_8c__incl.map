@@ -1,5 +1,5 @@
 <map id="API_Source/DataServerLedIndication.c" name="API_Source/DataServerLedIndication.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="348,5,526,48"/>
+<area shape="rect" id="Node000001" title="Source that turns on the led on/off." alt="" coords="348,5,526,48"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,104,66,131"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="348,41,218,62,147,78,78,99,73,100,71,95,76,93,146,73,217,57,347,36"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="89,104,153,131"/>
