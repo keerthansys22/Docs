@@ -1,0 +1,248 @@
+\doxysection{Initializations/\+Hardware\+\_\+\+Initializations/spi\+\_\+init.c File Reference}
+\hypertarget{spi__init_8c}{}\label{spi__init_8c}\index{Initializations/Hardware\_Initializations/spi\_init.c@{Initializations/Hardware\_Initializations/spi\_init.c}}
+
+
+Source that initializes the SPI interface.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+Include dependency graph for spi\+\_\+init.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{spi__init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structspi__flash___data_xfer}{spi\+\_\+flash\+\_\+\+Data\+Xfer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{spi__init_8c_a454d8b312d295352b852af40dba72c51}{SPI\+\_\+\+MAX\+\_\+\+BUFFER\+\_\+\+SIZE}}~4096
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{spi__init_8c_ae909944aa85ae98323073c628be541aa}{spi\+\_\+init}} (void)
+\item 
+int \mbox{\hyperlink{spi__init_8c_ae58a0f067d31d19d3233434cba5c6139}{spi\+\_\+interface\+\_\+init}} (void)
+\item 
+int \mbox{\hyperlink{spi__init_8c_a049cd8c34e247abfa2b43cbfac2ca3fb}{LCD\+\_\+\+SPI\+\_\+\+WRITE}} (uint8\+\_\+t data)
+\item 
+int \mbox{\hyperlink{spi__init_8c_ad1975fd8330425459b0ea85c1c5afb05}{SPI\+\_\+\+Exchange}} (struct \mbox{\hyperlink{structspi__flash___data_xfer}{spi\+\_\+flash\+\_\+\+Data\+Xfer}} \texorpdfstring{$\ast$}{*}spixfer)
+\item 
+int \mbox{\hyperlink{spi__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d}{LCD\+\_\+\+SPI\+\_\+\+DATAWRITE}} (uint8\+\_\+t data)
+\item 
+int \mbox{\hyperlink{spi__init_8c_af4441b8eab01e69f1b6222fee0f962ef}{LCD\+\_\+\+SPI\+\_\+\+CMDWRITE}} (uint8\+\_\+t cmd)
+\item 
+int \mbox{\hyperlink{spi__init_8c_a0f1f48ffd26be40513f42995372dfa1d}{LCD\+\_\+\+SPI\+\_\+\+BUFFDATAWRITE}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t datalen)
+\item 
+int \mbox{\hyperlink{spi__init_8c_adfb6e366f578e76ce29bbee1b0f1d295}{LCD\+\_\+\+SPI\+\_\+\+BUFFWRITE}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t datalen)
+\item 
+int \mbox{\hyperlink{spi__init_8c_a0543bbde4de0576ea0a80e73bac80a4e}{LCD\+\_\+\+SET\+\_\+\+DATACMD}} (char mode)
+\begin{DoxyCompactList}\small\item\em Sets the data/cmd line to receive the data nased on the modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that initializes the SPI interface. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{spi__init_8c_a454d8b312d295352b852af40dba72c51}\index{spi\_init.c@{spi\_init.c}!SPI\_MAX\_BUFFER\_SIZE@{SPI\_MAX\_BUFFER\_SIZE}}
+\index{SPI\_MAX\_BUFFER\_SIZE@{SPI\_MAX\_BUFFER\_SIZE}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_MAX\_BUFFER\_SIZE}{SPI\_MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \label{spi__init_8c_a454d8b312d295352b852af40dba72c51} 
+\#define SPI\+\_\+\+MAX\+\_\+\+BUFFER\+\_\+\+SIZE~4096}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{spi__init_8c_a0543bbde4de0576ea0a80e73bac80a4e}\index{spi\_init.c@{spi\_init.c}!LCD\_SET\_DATACMD@{LCD\_SET\_DATACMD}}
+\index{LCD\_SET\_DATACMD@{LCD\_SET\_DATACMD}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SET\_DATACMD()}{LCD\_SET\_DATACMD()}}
+{\footnotesize\ttfamily \label{spi__init_8c_a0543bbde4de0576ea0a80e73bac80a4e} 
+int LCD\+\_\+\+SET\+\_\+\+DATACMD (\begin{DoxyParamCaption}\item[{char}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Sets the data/cmd line to receive the data nased on the modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & \mbox{[}0-\/ command\mbox{]}, \mbox{[}1-\/ data\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESSS\+\_\+test on success or AP\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_a0543bbde4de0576ea0a80e73bac80a4e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_a0543bbde4de0576ea0a80e73bac80a4e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{spi__init_8c_a0f1f48ffd26be40513f42995372dfa1d}\index{spi\_init.c@{spi\_init.c}!LCD\_SPI\_BUFFDATAWRITE@{LCD\_SPI\_BUFFDATAWRITE}}
+\index{LCD\_SPI\_BUFFDATAWRITE@{LCD\_SPI\_BUFFDATAWRITE}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_BUFFDATAWRITE()}{LCD\_SPI\_BUFFDATAWRITE()}}
+{\footnotesize\ttfamily \label{spi__init_8c_a0f1f48ffd26be40513f42995372dfa1d} 
+int LCD\+\_\+\+SPI\+\_\+\+BUFFDATAWRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{datalen}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_a0f1f48ffd26be40513f42995372dfa1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{spi__init_8c_a0f1f48ffd26be40513f42995372dfa1d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{spi__init_8c_adfb6e366f578e76ce29bbee1b0f1d295}\index{spi\_init.c@{spi\_init.c}!LCD\_SPI\_BUFFWRITE@{LCD\_SPI\_BUFFWRITE}}
+\index{LCD\_SPI\_BUFFWRITE@{LCD\_SPI\_BUFFWRITE}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_BUFFWRITE()}{LCD\_SPI\_BUFFWRITE()}}
+{\footnotesize\ttfamily \label{spi__init_8c_adfb6e366f578e76ce29bbee1b0f1d295} 
+int LCD\+\_\+\+SPI\+\_\+\+BUFFWRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{datalen}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_adfb6e366f578e76ce29bbee1b0f1d295_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_adfb6e366f578e76ce29bbee1b0f1d295_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{spi__init_8c_af4441b8eab01e69f1b6222fee0f962ef}\index{spi\_init.c@{spi\_init.c}!LCD\_SPI\_CMDWRITE@{LCD\_SPI\_CMDWRITE}}
+\index{LCD\_SPI\_CMDWRITE@{LCD\_SPI\_CMDWRITE}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_CMDWRITE()}{LCD\_SPI\_CMDWRITE()}}
+{\footnotesize\ttfamily \label{spi__init_8c_af4441b8eab01e69f1b6222fee0f962ef} 
+int LCD\+\_\+\+SPI\+\_\+\+CMDWRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_af4441b8eab01e69f1b6222fee0f962ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_af4441b8eab01e69f1b6222fee0f962ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{spi__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d}\index{spi\_init.c@{spi\_init.c}!LCD\_SPI\_DATAWRITE@{LCD\_SPI\_DATAWRITE}}
+\index{LCD\_SPI\_DATAWRITE@{LCD\_SPI\_DATAWRITE}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_DATAWRITE()}{LCD\_SPI\_DATAWRITE()}}
+{\footnotesize\ttfamily \label{spi__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d} 
+int LCD\+\_\+\+SPI\+\_\+\+DATAWRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{spi__init_8c_a049cd8c34e247abfa2b43cbfac2ca3fb}\index{spi\_init.c@{spi\_init.c}!LCD\_SPI\_WRITE@{LCD\_SPI\_WRITE}}
+\index{LCD\_SPI\_WRITE@{LCD\_SPI\_WRITE}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_WRITE()}{LCD\_SPI\_WRITE()}}
+{\footnotesize\ttfamily \label{spi__init_8c_a049cd8c34e247abfa2b43cbfac2ca3fb} 
+int LCD\+\_\+\+SPI\+\_\+\+WRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_a049cd8c34e247abfa2b43cbfac2ca3fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_a049cd8c34e247abfa2b43cbfac2ca3fb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{spi__init_8c_ad1975fd8330425459b0ea85c1c5afb05}\index{spi\_init.c@{spi\_init.c}!SPI\_Exchange@{SPI\_Exchange}}
+\index{SPI\_Exchange@{SPI\_Exchange}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{SPI\_Exchange()}{SPI\_Exchange()}}
+{\footnotesize\ttfamily \label{spi__init_8c_ad1975fd8330425459b0ea85c1c5afb05} 
+int SPI\+\_\+\+Exchange (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structspi__flash___data_xfer}{spi\+\_\+flash\+\_\+\+Data\+Xfer}} \texorpdfstring{$\ast$}{*}}]{spixfer}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{spi__init_8c_ad1975fd8330425459b0ea85c1c5afb05_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_ad1975fd8330425459b0ea85c1c5afb05_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{spi__init_8c_ae909944aa85ae98323073c628be541aa}\index{spi\_init.c@{spi\_init.c}!spi\_init@{spi\_init}}
+\index{spi\_init@{spi\_init}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{spi\_init()}{spi\_init()}}
+{\footnotesize\ttfamily \label{spi__init_8c_ae909944aa85ae98323073c628be541aa} 
+void spi\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{spi__init_8c_ae909944aa85ae98323073c628be541aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_ae909944aa85ae98323073c628be541aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{spi__init_8c_ae58a0f067d31d19d3233434cba5c6139}\index{spi\_init.c@{spi\_init.c}!spi\_interface\_init@{spi\_interface\_init}}
+\index{spi\_interface\_init@{spi\_interface\_init}!spi\_init.c@{spi\_init.c}}
+\doxysubsubsection{\texorpdfstring{spi\_interface\_init()}{spi\_interface\_init()}}
+{\footnotesize\ttfamily \label{spi__init_8c_ae58a0f067d31d19d3233434cba5c6139} 
+int spi\+\_\+interface\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spi__init_8c_ae58a0f067d31d19d3233434cba5c6139_icgraph}
+\end{center}
+\end{figure}

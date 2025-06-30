@@ -1,0 +1,110 @@
+\doxysection{GUI/lvgl\+\_\+init.c File Reference}
+\hypertarget{lvgl__init_8c}{}\label{lvgl__init_8c}\index{GUI/lvgl\_init.c@{GUI/lvgl\_init.c}}
+
+
+Source that initializes lvgl drivers.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for lvgl\+\_\+init.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{lvgl__init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lvgl__init_8c_a1bc242c30202597de90d690f92f95691}{ACTUAL\+\_\+\+DISP\+\_\+\+BUF\+\_\+2}}~disp\+\_\+buf2
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lvgl__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17}{lcd\+\_\+send\+\_\+data}} (uint16\+\_\+t x\+\_\+start, uint16\+\_\+t y\+\_\+start, uint16\+\_\+t x\+\_\+end, uint16\+\_\+t y\+\_\+end, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Send data pixelwise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lvgl__init_8c_a51a0d8444720631af4e4ccd140a6a038}{lvgl\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Function to initialize lvgl drivers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+lv\+\_\+display\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lvgl__init_8c_a647e5f267167a38dcd0e6fe55dfcfc61}{disp}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that initializes lvgl drivers. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{lvgl__init_8c_a1bc242c30202597de90d690f92f95691}\index{lvgl\_init.c@{lvgl\_init.c}!ACTUAL\_DISP\_BUF\_2@{ACTUAL\_DISP\_BUF\_2}}
+\index{ACTUAL\_DISP\_BUF\_2@{ACTUAL\_DISP\_BUF\_2}!lvgl\_init.c@{lvgl\_init.c}}
+\doxysubsubsection{\texorpdfstring{ACTUAL\_DISP\_BUF\_2}{ACTUAL\_DISP\_BUF\_2}}
+{\footnotesize\ttfamily \label{lvgl__init_8c_a1bc242c30202597de90d690f92f95691} 
+\#define ACTUAL\+\_\+\+DISP\+\_\+\+BUF\+\_\+2~disp\+\_\+buf2}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lvgl__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17}\index{lvgl\_init.c@{lvgl\_init.c}!lcd\_send\_data@{lcd\_send\_data}}
+\index{lcd\_send\_data@{lcd\_send\_data}!lvgl\_init.c@{lvgl\_init.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_data()}{lcd\_send\_data()}}
+{\footnotesize\ttfamily \label{lvgl__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17} 
+void lcd\+\_\+send\+\_\+data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+start}{, }\item[{uint16\+\_\+t}]{y\+\_\+start}{, }\item[{uint16\+\_\+t}]{x\+\_\+end}{, }\item[{uint16\+\_\+t}]{y\+\_\+end}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Send data pixelwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+start} & starting address of x axis \\
+\hline
+{\em y\+\_\+start} & starting address of y axis \\
+\hline
+{\em x\+\_\+end} & ending address of the x axis \\
+\hline
+{\em y\+\_\+end} & ending address of the y axis \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}p} & pixel \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lvgl__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lvgl__init_8c_a51a0d8444720631af4e4ccd140a6a038}\index{lvgl\_init.c@{lvgl\_init.c}!lvgl\_init@{lvgl\_init}}
+\index{lvgl\_init@{lvgl\_init}!lvgl\_init.c@{lvgl\_init.c}}
+\doxysubsubsection{\texorpdfstring{lvgl\_init()}{lvgl\_init()}}
+{\footnotesize\ttfamily \label{lvgl__init_8c_a51a0d8444720631af4e4ccd140a6a038} 
+void lvgl\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize lvgl drivers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lvgl__init_8c_a51a0d8444720631af4e4ccd140a6a038_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{lvgl__init_8c_a647e5f267167a38dcd0e6fe55dfcfc61}\index{lvgl\_init.c@{lvgl\_init.c}!disp@{disp}}
+\index{disp@{disp}!lvgl\_init.c@{lvgl\_init.c}}
+\doxysubsubsection{\texorpdfstring{disp}{disp}}
+{\footnotesize\ttfamily \label{lvgl__init_8c_a647e5f267167a38dcd0e6fe55dfcfc61} 
+lv\+\_\+display\+\_\+t\texorpdfstring{$\ast$}{*} disp}
+

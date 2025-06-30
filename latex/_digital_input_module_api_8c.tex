@@ -1,0 +1,507 @@
+\doxysection{API\+\_\+\+Source/\+Io\+Modules\+Api\+Source.c/\+Digital\+Input\+Module\+Api.c File Reference}
+\hypertarget{_digital_input_module_api_8c}{}\label{_digital_input_module_api_8c}\index{API\_Source/IoModulesApiSource.c/DigitalInputModuleApi.c@{API\_Source/IoModulesApiSource.c/DigitalInputModuleApi.c}}
+
+
+This file contains the source code of the digital input module API.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for Digital\+Input\+Module\+Api.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}}~0x00000000
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 0)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_aa4c97391cc2f8f5ac3ff8b7cd8ff9e28}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+TYPE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 0)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a67c38473318baba49f84fa5ca164b6b9}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VENDOR\+\_\+\+ID\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 4)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_ab995b2400bb2e3958a28bc80ce87e9da}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 8)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a413589a195ccc1b04c72d71495ae011a}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VENDOR\+\_\+\+NAME\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 12)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a9e7cf9c7da7b4a0ad97887be7377a820}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 28)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_abaa1786ba58e5735ca88b8ddbceb492f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VARIANT\+\_\+\+ID\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 44)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a8626af8573852a32ad235309948dca20}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+HW\+\_\+\+REV\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 60)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a15b3bab54d0a5bfdbfa179af9757b024}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SERIAL\+\_\+\+NO\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 76)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a06887c43b0599a4f94a6dbf905687188}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SW\+\_\+\+PART\+\_\+\+NO\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 92)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_ab09bc14bf75d6c376d95feb281140031}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SW\+\_\+\+REV\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 108)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a980c5068d846efad59e25fcbbdf4bdcb}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+DEBOUNCE\+\_\+\+DUR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 124)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a4f20d97a47bb5b085ef0d8651621ba57}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+HOLD\+\_\+\+DUR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 132)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_af1cbf4aff88d2f48ce8db503baeea800}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+LOGIC\+\_\+\+INVERT\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 140)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_abb36a97cd5934423aa66bb8b757a8f64}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 141)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_aefc7712e76d4e6fb16524c5a90612150}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+STATE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 142)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a22aaa426400147ea1447977511ffdcd5}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+INT\+\_\+\+BOTH\+\_\+\+EDGES\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 143)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a02b1bd9a3cf7609c1e45bb9fd979bd31}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+INT\+\_\+\+RISING\+\_\+\+EDGES\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 144)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a546079956990dd8299ad24898d0cdb6d}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+INT\+\_\+\+FALLING\+\_\+\+EDGES\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 145)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a3892ddf342caa35f0502a8a03fcadaec}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+INPUT\+\_\+\+TYPE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 146)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a029f1e7a8ec43a780ca77a28affcb1da}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 148)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a0a5aaa53bab6735b6c508697e8b2d894}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 149)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_ac4175c019212abbc4242bab9865d8485}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+REC\+\_\+\+DIAG\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 150)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a89fbc31069a3c04cefa120ba22bb09bc}{DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+ERR\+\_\+\+STATUS\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 151)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a14d2092ceb8a869000ef1a34f4795361}{DI\+\_\+\+MOD\+\_\+\+VA\+\_\+\+VB\+\_\+\+VOLTAGE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 159)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_ad408e2363a548557d8ecf50449241a9a}{DI\+\_\+\+MOD\+\_\+\+POST\+\_\+\+ERR\+\_\+\+STATUS\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 167)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_aeb38cff29164767da79824a513ac096a}{DI\+\_\+\+MOD\+\_\+\+OPERATION\+\_\+\+TIME\+\_\+\+HR\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 171)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a0ecac8ab542bf1c8aecf8a6da5d3fcaf}{DI\+\_\+\+MOD\+\_\+\+OPERATION\+\_\+\+TIME\+\_\+\+MIN\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 175)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a54172bf05ba1a2dfe4a62d8858e58e93}{DI\+\_\+\+MOD\+\_\+\+MIN\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 177)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a5e46506a63e3acaa902ef59e449e0002}{DI\+\_\+\+MOD\+\_\+\+MAX\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 179)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a99dd2dabbb2d0dd634f8977c497e65c4}{DI\+\_\+\+MOD\+\_\+\+MEASURED\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 181)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a228d3c04a42e926b1bda89261f8b493f}{DI\+\_\+\+MOD\+\_\+\+AUX\+\_\+\+SUPPLY\+\_\+\+OVR\+\_\+\+VOLT\+\_\+\+REC\+\_\+\+EN\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 183)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a545ed3b7fd70bc6f9a67a65960c861fd}{DI\+\_\+\+MOD\+\_\+\+AUX\+\_\+\+SUPPLY\+\_\+\+UND\+\_\+\+VOLT\+\_\+\+REC\+\_\+\+EN\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 184)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a7b18c0f856d335be21b742eac3dc1d90}{DI\+\_\+\+MOD\+\_\+\+MEMORY\+\_\+\+LIFE\+\_\+\+CYCLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 185)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a6ce17cc157ea48eb270873937db6ebbc}{DI\+\_\+\+MOD\+\_\+\+MODULE\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 189)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a64ec4970f1ed4eab9598ec26e1386322}{DI\+\_\+\+MOD\+\_\+\+CHANNELS\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 190)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a34017bee853c488516e31694a9ecc8b5}{DI\+\_\+\+MOD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+NO\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 191)
+\item 
+\#define \mbox{\hyperlink{_digital_input_module_api_8c_a150e91d59ab64774d0efa612b9ef38e7}{DI\+\_\+\+MOD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+DATE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 207)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_digital_input_module_api_8c_aab64cdfe20fa84db4be92c96380d60a2}{get\+IOService\+Data\+Instance\+Address}} (uint16\+\_\+t handler)
+\begin{DoxyCompactList}\small\item\em \+: This is to get the address of the service data instance \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_digital_input_module_api_8c_a91f3bb33371373e3e9b48b2290355551}{get\+IOProcess\+Data\+Instance\+Address}} (uint16\+\_\+t handler)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_digital_input_module_api_8c_a8b6583c29a7527bb06e572db885e8145}{get\+DIModule\+Process\+Data}} (uint16\+\_\+t di\+\_\+device\+\_\+handler, dimodule\+\_\+processinfo \texorpdfstring{$\ast$}{*}dimod\+\_\+processdata)
+\begin{DoxyCompactList}\small\item\em Retrieves the process data for a specified DI module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_digital_input_module_api_8c_a046c1082307d620d997ebfbda57d5143}{get\+Digital\+Input\+Module\+Service\+Param}} (uint16\+\_\+t digitalinput\+\_\+handler, uint16\+\_\+t parameter\+\_\+name, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Retrieves the service parameter data for a specified IO module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_digital_input_module_api_8c_a1dffd723ee55fedcec3371b78272d282}{set\+Digital\+Input\+Module\+Service\+Param}} (uint16\+\_\+t digitalinput\+\_\+handler, uint16\+\_\+t parameter\+\_\+name, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Sets the service parameter data for a specified DI module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \mbox{\hyperlink{_digital_input_module_api_8c_ad9088d5017838792bd64e604162503df}{gbuf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the source code of the digital input module API. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_digital_input_module_api_8c_a228d3c04a42e926b1bda89261f8b493f}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_AUX\_SUPPLY\_OVR\_VOLT\_REC\_EN\_ADDR@{DI\_MOD\_AUX\_SUPPLY\_OVR\_VOLT\_REC\_EN\_ADDR}}
+\index{DI\_MOD\_AUX\_SUPPLY\_OVR\_VOLT\_REC\_EN\_ADDR@{DI\_MOD\_AUX\_SUPPLY\_OVR\_VOLT\_REC\_EN\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_AUX\_SUPPLY\_OVR\_VOLT\_REC\_EN\_ADDR}{DI\_MOD\_AUX\_SUPPLY\_OVR\_VOLT\_REC\_EN\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a228d3c04a42e926b1bda89261f8b493f} 
+\#define DI\+\_\+\+MOD\+\_\+\+AUX\+\_\+\+SUPPLY\+\_\+\+OVR\+\_\+\+VOLT\+\_\+\+REC\+\_\+\+EN\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 183)}
+
+\Hypertarget{_digital_input_module_api_8c_a545ed3b7fd70bc6f9a67a65960c861fd}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_AUX\_SUPPLY\_UND\_VOLT\_REC\_EN\_ADDR@{DI\_MOD\_AUX\_SUPPLY\_UND\_VOLT\_REC\_EN\_ADDR}}
+\index{DI\_MOD\_AUX\_SUPPLY\_UND\_VOLT\_REC\_EN\_ADDR@{DI\_MOD\_AUX\_SUPPLY\_UND\_VOLT\_REC\_EN\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_AUX\_SUPPLY\_UND\_VOLT\_REC\_EN\_ADDR}{DI\_MOD\_AUX\_SUPPLY\_UND\_VOLT\_REC\_EN\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a545ed3b7fd70bc6f9a67a65960c861fd} 
+\#define DI\+\_\+\+MOD\+\_\+\+AUX\+\_\+\+SUPPLY\+\_\+\+UND\+\_\+\+VOLT\+\_\+\+REC\+\_\+\+EN\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 184)}
+
+\Hypertarget{_digital_input_module_api_8c_a64ec4970f1ed4eab9598ec26e1386322}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_CHANNELS\_ENABLE\_ADDR@{DI\_MOD\_CHANNELS\_ENABLE\_ADDR}}
+\index{DI\_MOD\_CHANNELS\_ENABLE\_ADDR@{DI\_MOD\_CHANNELS\_ENABLE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_CHANNELS\_ENABLE\_ADDR}{DI\_MOD\_CHANNELS\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a64ec4970f1ed4eab9598ec26e1386322} 
+\#define DI\+\_\+\+MOD\+\_\+\+CHANNELS\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 190)}
+
+\Hypertarget{_digital_input_module_api_8c_a980c5068d846efad59e25fcbbdf4bdcb}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_DEBOUNCE\_DUR\_ADDR@{DI\_MOD\_DI\_DEBOUNCE\_DUR\_ADDR}}
+\index{DI\_MOD\_DI\_DEBOUNCE\_DUR\_ADDR@{DI\_MOD\_DI\_DEBOUNCE\_DUR\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_DEBOUNCE\_DUR\_ADDR}{DI\_MOD\_DI\_DEBOUNCE\_DUR\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a980c5068d846efad59e25fcbbdf4bdcb} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+DEBOUNCE\+\_\+\+DUR\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 124)}
+
+\Hypertarget{_digital_input_module_api_8c_a89fbc31069a3c04cefa120ba22bb09bc}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_ERR\_STATUS\_ADDR@{DI\_MOD\_DI\_ERR\_STATUS\_ADDR}}
+\index{DI\_MOD\_DI\_ERR\_STATUS\_ADDR@{DI\_MOD\_DI\_ERR\_STATUS\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_ERR\_STATUS\_ADDR}{DI\_MOD\_DI\_ERR\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a89fbc31069a3c04cefa120ba22bb09bc} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+ERR\+\_\+\+STATUS\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 151)}
+
+\Hypertarget{_digital_input_module_api_8c_abb36a97cd5934423aa66bb8b757a8f64}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_FORCE\_MODE\_ENABLE\_ADDR@{DI\_MOD\_DI\_FORCE\_MODE\_ENABLE\_ADDR}}
+\index{DI\_MOD\_DI\_FORCE\_MODE\_ENABLE\_ADDR@{DI\_MOD\_DI\_FORCE\_MODE\_ENABLE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_FORCE\_MODE\_ENABLE\_ADDR}{DI\_MOD\_DI\_FORCE\_MODE\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_abb36a97cd5934423aa66bb8b757a8f64} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 141)}
+
+\Hypertarget{_digital_input_module_api_8c_aefc7712e76d4e6fb16524c5a90612150}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_FORCE\_MODE\_STATE\_ADDR@{DI\_MOD\_DI\_FORCE\_MODE\_STATE\_ADDR}}
+\index{DI\_MOD\_DI\_FORCE\_MODE\_STATE\_ADDR@{DI\_MOD\_DI\_FORCE\_MODE\_STATE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_FORCE\_MODE\_STATE\_ADDR}{DI\_MOD\_DI\_FORCE\_MODE\_STATE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_aefc7712e76d4e6fb16524c5a90612150} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+STATE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 142)}
+
+\Hypertarget{_digital_input_module_api_8c_a4f20d97a47bb5b085ef0d8651621ba57}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_HOLD\_DUR\_ADDR@{DI\_MOD\_DI\_HOLD\_DUR\_ADDR}}
+\index{DI\_MOD\_DI\_HOLD\_DUR\_ADDR@{DI\_MOD\_DI\_HOLD\_DUR\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_HOLD\_DUR\_ADDR}{DI\_MOD\_DI\_HOLD\_DUR\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a4f20d97a47bb5b085ef0d8651621ba57} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+HOLD\+\_\+\+DUR\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 132)}
+
+\Hypertarget{_digital_input_module_api_8c_a3892ddf342caa35f0502a8a03fcadaec}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_INPUT\_TYPE\_ADDR@{DI\_MOD\_DI\_INPUT\_TYPE\_ADDR}}
+\index{DI\_MOD\_DI\_INPUT\_TYPE\_ADDR@{DI\_MOD\_DI\_INPUT\_TYPE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_INPUT\_TYPE\_ADDR}{DI\_MOD\_DI\_INPUT\_TYPE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a3892ddf342caa35f0502a8a03fcadaec} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+INPUT\+\_\+\+TYPE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 146)}
+
+\Hypertarget{_digital_input_module_api_8c_a22aaa426400147ea1447977511ffdcd5}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_INT\_BOTH\_EDGES\_ADDR@{DI\_MOD\_DI\_INT\_BOTH\_EDGES\_ADDR}}
+\index{DI\_MOD\_DI\_INT\_BOTH\_EDGES\_ADDR@{DI\_MOD\_DI\_INT\_BOTH\_EDGES\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_INT\_BOTH\_EDGES\_ADDR}{DI\_MOD\_DI\_INT\_BOTH\_EDGES\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a22aaa426400147ea1447977511ffdcd5} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+INT\+\_\+\+BOTH\+\_\+\+EDGES\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 143)}
+
+\Hypertarget{_digital_input_module_api_8c_a546079956990dd8299ad24898d0cdb6d}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_INT\_FALLING\_EDGES\_ADDR@{DI\_MOD\_DI\_INT\_FALLING\_EDGES\_ADDR}}
+\index{DI\_MOD\_DI\_INT\_FALLING\_EDGES\_ADDR@{DI\_MOD\_DI\_INT\_FALLING\_EDGES\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_INT\_FALLING\_EDGES\_ADDR}{DI\_MOD\_DI\_INT\_FALLING\_EDGES\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a546079956990dd8299ad24898d0cdb6d} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+INT\+\_\+\+FALLING\+\_\+\+EDGES\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 145)}
+
+\Hypertarget{_digital_input_module_api_8c_a02b1bd9a3cf7609c1e45bb9fd979bd31}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_INT\_RISING\_EDGES\_ADDR@{DI\_MOD\_DI\_INT\_RISING\_EDGES\_ADDR}}
+\index{DI\_MOD\_DI\_INT\_RISING\_EDGES\_ADDR@{DI\_MOD\_DI\_INT\_RISING\_EDGES\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_INT\_RISING\_EDGES\_ADDR}{DI\_MOD\_DI\_INT\_RISING\_EDGES\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a02b1bd9a3cf7609c1e45bb9fd979bd31} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+INT\+\_\+\+RISING\+\_\+\+EDGES\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 144)}
+
+\Hypertarget{_digital_input_module_api_8c_af1cbf4aff88d2f48ce8db503baeea800}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_LOGIC\_INVERT\_ADDR@{DI\_MOD\_DI\_LOGIC\_INVERT\_ADDR}}
+\index{DI\_MOD\_DI\_LOGIC\_INVERT\_ADDR@{DI\_MOD\_DI\_LOGIC\_INVERT\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_LOGIC\_INVERT\_ADDR}{DI\_MOD\_DI\_LOGIC\_INVERT\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_af1cbf4aff88d2f48ce8db503baeea800} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+LOGIC\+\_\+\+INVERT\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 140)}
+
+\Hypertarget{_digital_input_module_api_8c_a029f1e7a8ec43a780ca77a28affcb1da}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_SENSOR\_SUPPLY\_ENABLE\_ADDR@{DI\_MOD\_DI\_SENSOR\_SUPPLY\_ENABLE\_ADDR}}
+\index{DI\_MOD\_DI\_SENSOR\_SUPPLY\_ENABLE\_ADDR@{DI\_MOD\_DI\_SENSOR\_SUPPLY\_ENABLE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_SENSOR\_SUPPLY\_ENABLE\_ADDR}{DI\_MOD\_DI\_SENSOR\_SUPPLY\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a029f1e7a8ec43a780ca77a28affcb1da} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 148)}
+
+\Hypertarget{_digital_input_module_api_8c_a0a5aaa53bab6735b6c508697e8b2d894}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR@{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}}
+\index{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR@{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a0a5aaa53bab6735b6c508697e8b2d894} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 149)}
+
+\Hypertarget{_digital_input_module_api_8c_ac4175c019212abbc4242bab9865d8485}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_REC\_DIAG\_ADDR@{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_REC\_DIAG\_ADDR}}
+\index{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_REC\_DIAG\_ADDR@{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_REC\_DIAG\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_REC\_DIAG\_ADDR}{DI\_MOD\_DI\_SENSOR\_SUPPLY\_SHORT\_CKT\_REC\_DIAG\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_ac4175c019212abbc4242bab9865d8485} 
+\#define DI\+\_\+\+MOD\+\_\+\+DI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+REC\+\_\+\+DIAG\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 150)}
+
+\Hypertarget{_digital_input_module_api_8c_a150e91d59ab64774d0efa612b9ef38e7}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_EDS\_VERSION\_DATE\_ADDR@{DI\_MOD\_EDS\_VERSION\_DATE\_ADDR}}
+\index{DI\_MOD\_EDS\_VERSION\_DATE\_ADDR@{DI\_MOD\_EDS\_VERSION\_DATE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_EDS\_VERSION\_DATE\_ADDR}{DI\_MOD\_EDS\_VERSION\_DATE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a150e91d59ab64774d0efa612b9ef38e7} 
+\#define DI\+\_\+\+MOD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+DATE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 207)}
+
+\Hypertarget{_digital_input_module_api_8c_a34017bee853c488516e31694a9ecc8b5}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_EDS\_VERSION\_NO\_ADDR@{DI\_MOD\_EDS\_VERSION\_NO\_ADDR}}
+\index{DI\_MOD\_EDS\_VERSION\_NO\_ADDR@{DI\_MOD\_EDS\_VERSION\_NO\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_EDS\_VERSION\_NO\_ADDR}{DI\_MOD\_EDS\_VERSION\_NO\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a34017bee853c488516e31694a9ecc8b5} 
+\#define DI\+\_\+\+MOD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+NO\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 191)}
+
+\Hypertarget{_digital_input_module_api_8c_ab995b2400bb2e3958a28bc80ce87e9da}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_DEVICE\_ID\_ADDR@{DI\_MOD\_IDENT\_DEVICE\_ID\_ADDR}}
+\index{DI\_MOD\_IDENT\_DEVICE\_ID\_ADDR@{DI\_MOD\_IDENT\_DEVICE\_ID\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_DEVICE\_ID\_ADDR}{DI\_MOD\_IDENT\_DEVICE\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_ab995b2400bb2e3958a28bc80ce87e9da} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 8)}
+
+\Hypertarget{_digital_input_module_api_8c_a9e7cf9c7da7b4a0ad97887be7377a820}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_DEVICE\_NAME\_ADDR@{DI\_MOD\_IDENT\_DEVICE\_NAME\_ADDR}}
+\index{DI\_MOD\_IDENT\_DEVICE\_NAME\_ADDR@{DI\_MOD\_IDENT\_DEVICE\_NAME\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_DEVICE\_NAME\_ADDR}{DI\_MOD\_IDENT\_DEVICE\_NAME\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a9e7cf9c7da7b4a0ad97887be7377a820} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 28)}
+
+\Hypertarget{_digital_input_module_api_8c_aa4c97391cc2f8f5ac3ff8b7cd8ff9e28}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR@{DI\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR}}
+\index{DI\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR@{DI\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR}{DI\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_aa4c97391cc2f8f5ac3ff8b7cd8ff9e28} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+TYPE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 0)}
+
+\Hypertarget{_digital_input_module_api_8c_a8626af8573852a32ad235309948dca20}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_HW\_REV\_ADDR@{DI\_MOD\_IDENT\_HW\_REV\_ADDR}}
+\index{DI\_MOD\_IDENT\_HW\_REV\_ADDR@{DI\_MOD\_IDENT\_HW\_REV\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_HW\_REV\_ADDR}{DI\_MOD\_IDENT\_HW\_REV\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a8626af8573852a32ad235309948dca20} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+HW\+\_\+\+REV\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 60)}
+
+\Hypertarget{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_INFO\_ADDR@{DI\_MOD\_IDENT\_INFO\_ADDR}}
+\index{DI\_MOD\_IDENT\_INFO\_ADDR@{DI\_MOD\_IDENT\_INFO\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_INFO\_ADDR}{DI\_MOD\_IDENT\_INFO\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 0)}
+
+\Hypertarget{_digital_input_module_api_8c_a15b3bab54d0a5bfdbfa179af9757b024}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_SERIAL\_NO\_ADDR@{DI\_MOD\_IDENT\_SERIAL\_NO\_ADDR}}
+\index{DI\_MOD\_IDENT\_SERIAL\_NO\_ADDR@{DI\_MOD\_IDENT\_SERIAL\_NO\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_SERIAL\_NO\_ADDR}{DI\_MOD\_IDENT\_SERIAL\_NO\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a15b3bab54d0a5bfdbfa179af9757b024} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SERIAL\+\_\+\+NO\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 76)}
+
+\Hypertarget{_digital_input_module_api_8c_a06887c43b0599a4f94a6dbf905687188}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_SW\_PART\_NO\_ADDR@{DI\_MOD\_IDENT\_SW\_PART\_NO\_ADDR}}
+\index{DI\_MOD\_IDENT\_SW\_PART\_NO\_ADDR@{DI\_MOD\_IDENT\_SW\_PART\_NO\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_SW\_PART\_NO\_ADDR}{DI\_MOD\_IDENT\_SW\_PART\_NO\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a06887c43b0599a4f94a6dbf905687188} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SW\+\_\+\+PART\+\_\+\+NO\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 92)}
+
+\Hypertarget{_digital_input_module_api_8c_ab09bc14bf75d6c376d95feb281140031}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_SW\_REV\_ADDR@{DI\_MOD\_IDENT\_SW\_REV\_ADDR}}
+\index{DI\_MOD\_IDENT\_SW\_REV\_ADDR@{DI\_MOD\_IDENT\_SW\_REV\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_SW\_REV\_ADDR}{DI\_MOD\_IDENT\_SW\_REV\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_ab09bc14bf75d6c376d95feb281140031} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SW\+\_\+\+REV\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 108)}
+
+\Hypertarget{_digital_input_module_api_8c_abaa1786ba58e5735ca88b8ddbceb492f}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_VARIANT\_ID\_ADDR@{DI\_MOD\_IDENT\_VARIANT\_ID\_ADDR}}
+\index{DI\_MOD\_IDENT\_VARIANT\_ID\_ADDR@{DI\_MOD\_IDENT\_VARIANT\_ID\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_VARIANT\_ID\_ADDR}{DI\_MOD\_IDENT\_VARIANT\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_abaa1786ba58e5735ca88b8ddbceb492f} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VARIANT\+\_\+\+ID\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 44)}
+
+\Hypertarget{_digital_input_module_api_8c_a67c38473318baba49f84fa5ca164b6b9}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_VENDOR\_ID\_ADDR@{DI\_MOD\_IDENT\_VENDOR\_ID\_ADDR}}
+\index{DI\_MOD\_IDENT\_VENDOR\_ID\_ADDR@{DI\_MOD\_IDENT\_VENDOR\_ID\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_VENDOR\_ID\_ADDR}{DI\_MOD\_IDENT\_VENDOR\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a67c38473318baba49f84fa5ca164b6b9} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VENDOR\+\_\+\+ID\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 4)}
+
+\Hypertarget{_digital_input_module_api_8c_a413589a195ccc1b04c72d71495ae011a}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_IDENT\_VENDOR\_NAME\_ADDR@{DI\_MOD\_IDENT\_VENDOR\_NAME\_ADDR}}
+\index{DI\_MOD\_IDENT\_VENDOR\_NAME\_ADDR@{DI\_MOD\_IDENT\_VENDOR\_NAME\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_IDENT\_VENDOR\_NAME\_ADDR}{DI\_MOD\_IDENT\_VENDOR\_NAME\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a413589a195ccc1b04c72d71495ae011a} 
+\#define DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VENDOR\+\_\+\+NAME\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ab5154e481a95b65275b4235531d8b93f}{DI\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 12)}
+
+\Hypertarget{_digital_input_module_api_8c_a5e46506a63e3acaa902ef59e449e0002}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_MAX\_TEMPERATURE\_ADDR@{DI\_MOD\_MAX\_TEMPERATURE\_ADDR}}
+\index{DI\_MOD\_MAX\_TEMPERATURE\_ADDR@{DI\_MOD\_MAX\_TEMPERATURE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_MAX\_TEMPERATURE\_ADDR}{DI\_MOD\_MAX\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a5e46506a63e3acaa902ef59e449e0002} 
+\#define DI\+\_\+\+MOD\+\_\+\+MAX\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 179)}
+
+\Hypertarget{_digital_input_module_api_8c_a99dd2dabbb2d0dd634f8977c497e65c4}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_MEASURED\_TEMPERATURE\_ADDR@{DI\_MOD\_MEASURED\_TEMPERATURE\_ADDR}}
+\index{DI\_MOD\_MEASURED\_TEMPERATURE\_ADDR@{DI\_MOD\_MEASURED\_TEMPERATURE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_MEASURED\_TEMPERATURE\_ADDR}{DI\_MOD\_MEASURED\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a99dd2dabbb2d0dd634f8977c497e65c4} 
+\#define DI\+\_\+\+MOD\+\_\+\+MEASURED\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 181)}
+
+\Hypertarget{_digital_input_module_api_8c_a7b18c0f856d335be21b742eac3dc1d90}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_MEMORY\_LIFE\_CYCLE\_ADDR@{DI\_MOD\_MEMORY\_LIFE\_CYCLE\_ADDR}}
+\index{DI\_MOD\_MEMORY\_LIFE\_CYCLE\_ADDR@{DI\_MOD\_MEMORY\_LIFE\_CYCLE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_MEMORY\_LIFE\_CYCLE\_ADDR}{DI\_MOD\_MEMORY\_LIFE\_CYCLE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a7b18c0f856d335be21b742eac3dc1d90} 
+\#define DI\+\_\+\+MOD\+\_\+\+MEMORY\+\_\+\+LIFE\+\_\+\+CYCLE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 185)}
+
+\Hypertarget{_digital_input_module_api_8c_a54172bf05ba1a2dfe4a62d8858e58e93}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_MIN\_TEMPERATURE\_ADDR@{DI\_MOD\_MIN\_TEMPERATURE\_ADDR}}
+\index{DI\_MOD\_MIN\_TEMPERATURE\_ADDR@{DI\_MOD\_MIN\_TEMPERATURE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_MIN\_TEMPERATURE\_ADDR}{DI\_MOD\_MIN\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a54172bf05ba1a2dfe4a62d8858e58e93} 
+\#define DI\+\_\+\+MOD\+\_\+\+MIN\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 177)}
+
+\Hypertarget{_digital_input_module_api_8c_a6ce17cc157ea48eb270873937db6ebbc}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_MODULE\_ENABLE\_ADDR@{DI\_MOD\_MODULE\_ENABLE\_ADDR}}
+\index{DI\_MOD\_MODULE\_ENABLE\_ADDR@{DI\_MOD\_MODULE\_ENABLE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_MODULE\_ENABLE\_ADDR}{DI\_MOD\_MODULE\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a6ce17cc157ea48eb270873937db6ebbc} 
+\#define DI\+\_\+\+MOD\+\_\+\+MODULE\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 189)}
+
+\Hypertarget{_digital_input_module_api_8c_aeb38cff29164767da79824a513ac096a}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_OPERATION\_TIME\_HR\_ADDR@{DI\_MOD\_OPERATION\_TIME\_HR\_ADDR}}
+\index{DI\_MOD\_OPERATION\_TIME\_HR\_ADDR@{DI\_MOD\_OPERATION\_TIME\_HR\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_OPERATION\_TIME\_HR\_ADDR}{DI\_MOD\_OPERATION\_TIME\_HR\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_aeb38cff29164767da79824a513ac096a} 
+\#define DI\+\_\+\+MOD\+\_\+\+OPERATION\+\_\+\+TIME\+\_\+\+HR\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 171)}
+
+\Hypertarget{_digital_input_module_api_8c_a0ecac8ab542bf1c8aecf8a6da5d3fcaf}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_OPERATION\_TIME\_MIN\_ADDR@{DI\_MOD\_OPERATION\_TIME\_MIN\_ADDR}}
+\index{DI\_MOD\_OPERATION\_TIME\_MIN\_ADDR@{DI\_MOD\_OPERATION\_TIME\_MIN\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_OPERATION\_TIME\_MIN\_ADDR}{DI\_MOD\_OPERATION\_TIME\_MIN\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a0ecac8ab542bf1c8aecf8a6da5d3fcaf} 
+\#define DI\+\_\+\+MOD\+\_\+\+OPERATION\+\_\+\+TIME\+\_\+\+MIN\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 175)}
+
+\Hypertarget{_digital_input_module_api_8c_ad408e2363a548557d8ecf50449241a9a}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_POST\_ERR\_STATUS\_ADDR@{DI\_MOD\_POST\_ERR\_STATUS\_ADDR}}
+\index{DI\_MOD\_POST\_ERR\_STATUS\_ADDR@{DI\_MOD\_POST\_ERR\_STATUS\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_POST\_ERR\_STATUS\_ADDR}{DI\_MOD\_POST\_ERR\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_ad408e2363a548557d8ecf50449241a9a} 
+\#define DI\+\_\+\+MOD\+\_\+\+POST\+\_\+\+ERR\+\_\+\+STATUS\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 167)}
+
+\Hypertarget{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_SERVICE\_DATA\_ADDR@{DI\_MOD\_SERVICE\_DATA\_ADDR}}
+\index{DI\_MOD\_SERVICE\_DATA\_ADDR@{DI\_MOD\_SERVICE\_DATA\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_SERVICE\_DATA\_ADDR}{DI\_MOD\_SERVICE\_DATA\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509} 
+\#define DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR~0x00000000}
+
+\Hypertarget{_digital_input_module_api_8c_a14d2092ceb8a869000ef1a34f4795361}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!DI\_MOD\_VA\_VB\_VOLTAGE\_ADDR@{DI\_MOD\_VA\_VB\_VOLTAGE\_ADDR}}
+\index{DI\_MOD\_VA\_VB\_VOLTAGE\_ADDR@{DI\_MOD\_VA\_VB\_VOLTAGE\_ADDR}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{DI\_MOD\_VA\_VB\_VOLTAGE\_ADDR}{DI\_MOD\_VA\_VB\_VOLTAGE\_ADDR}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a14d2092ceb8a869000ef1a34f4795361} 
+\#define DI\+\_\+\+MOD\+\_\+\+VA\+\_\+\+VB\+\_\+\+VOLTAGE\+\_\+\+ADDR~(\mbox{\hyperlink{_digital_input_module_api_8c_ad44be01645ef056192d7ec4c960e1509}{DI\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 159)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_digital_input_module_api_8c_a046c1082307d620d997ebfbda57d5143}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!getDigitalInputModuleServiceParam@{getDigitalInputModuleServiceParam}}
+\index{getDigitalInputModuleServiceParam@{getDigitalInputModuleServiceParam}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{getDigitalInputModuleServiceParam()}{getDigitalInputModuleServiceParam()}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a046c1082307d620d997ebfbda57d5143} 
+uint8\+\_\+t get\+Digital\+Input\+Module\+Service\+Param (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{digitalinput\+\_\+handler}{, }\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the service parameter data for a specified IO module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em digitalinput\+\_\+handler} & The handler for the IO device. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The name of the parameter to retrieve. \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & Pointer to the buffer where the retrieved data will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an error code indicating the status of the operation. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c_a046c1082307d620d997ebfbda57d5143_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c_a046c1082307d620d997ebfbda57d5143_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_digital_input_module_api_8c_a8b6583c29a7527bb06e572db885e8145}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!getDIModuleProcessData@{getDIModuleProcessData}}
+\index{getDIModuleProcessData@{getDIModuleProcessData}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{getDIModuleProcessData()}{getDIModuleProcessData()}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a8b6583c29a7527bb06e572db885e8145} 
+uint8\+\_\+t get\+DIModule\+Process\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{di\+\_\+device\+\_\+handler}{, }\item[{dimodule\+\_\+processinfo \texorpdfstring{$\ast$}{*}}]{dimod\+\_\+processdata}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the process data for a specified DI module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em di\+\_\+device\+\_\+handler} & The handler for the DI device. \\
+\hline
+\mbox{\texttt{ out}}  & {\em dimod\+\_\+processdata} & Pointer to the {\ttfamily dimodule\+\_\+processinfo} structure to store process data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an error code indicating the status of the operation. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c_a8b6583c29a7527bb06e572db885e8145_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c_a8b6583c29a7527bb06e572db885e8145_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_digital_input_module_api_8c_a91f3bb33371373e3e9b48b2290355551}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!getIOProcessDataInstanceAddress@{getIOProcessDataInstanceAddress}}
+\index{getIOProcessDataInstanceAddress@{getIOProcessDataInstanceAddress}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{getIOProcessDataInstanceAddress()}{getIOProcessDataInstanceAddress()}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a91f3bb33371373e3e9b48b2290355551} 
+uint32\+\_\+t get\+IOProcess\+Data\+Instance\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{handler}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+@breif \+: This is to get the address of of the process data instance Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c_a91f3bb33371373e3e9b48b2290355551_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_digital_input_module_api_8c_aab64cdfe20fa84db4be92c96380d60a2}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!getIOServiceDataInstanceAddress@{getIOServiceDataInstanceAddress}}
+\index{getIOServiceDataInstanceAddress@{getIOServiceDataInstanceAddress}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{getIOServiceDataInstanceAddress()}{getIOServiceDataInstanceAddress()}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_aab64cdfe20fa84db4be92c96380d60a2} 
+uint32\+\_\+t get\+IOService\+Data\+Instance\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{handler}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+\+: This is to get the address of the service data instance 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_digital_input_module_api_8c_a1dffd723ee55fedcec3371b78272d282}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!setDigitalInputModuleServiceParam@{setDigitalInputModuleServiceParam}}
+\index{setDigitalInputModuleServiceParam@{setDigitalInputModuleServiceParam}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{setDigitalInputModuleServiceParam()}{setDigitalInputModuleServiceParam()}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_a1dffd723ee55fedcec3371b78272d282} 
+uint8\+\_\+t set\+Digital\+Input\+Module\+Service\+Param (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{digitalinput\+\_\+handler}{, }\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Sets the service parameter data for a specified DI module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em digitalinput\+\_\+handler} & The handler for the DI device. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The name of the parameter to set. Refer to the enumeration {\ttfamily e\+\_\+io\+\_\+servicedata\+\_\+parameter\+\_\+name}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the buffer containing the data to be set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an error code indicating the status of the operation. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c_a1dffd723ee55fedcec3371b78272d282_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_digital_input_module_api_8c_a1dffd723ee55fedcec3371b78272d282_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_digital_input_module_api_8c_ad9088d5017838792bd64e604162503df}\index{DigitalInputModuleApi.c@{DigitalInputModuleApi.c}!gbuf@{gbuf}}
+\index{gbuf@{gbuf}!DigitalInputModuleApi.c@{DigitalInputModuleApi.c}}
+\doxysubsubsection{\texorpdfstring{gbuf}{gbuf}}
+{\footnotesize\ttfamily \label{_digital_input_module_api_8c_ad9088d5017838792bd64e604162503df} 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} gbuf\hspace{0.3cm}{\ttfamily [extern]}}
+

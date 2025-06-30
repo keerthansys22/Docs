@@ -1,0 +1,554 @@
+\doxysection{default\+\_\+task.\+c File Reference}
+\hypertarget{default__task_8c}{}\label{default__task_8c}\index{default\_task.c@{default\_task.c}}
+
+
+source file that creates all the threads  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+Include dependency graph for default\+\_\+task.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{default__task_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{default__task_8c_a122b34d4ba9a92a2a595cee1b937537e}{data\+\_\+processing\+\_\+func}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Function that processes all the IO-\/modules and valves real-\/time data. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{default__task_8c_ac5ff31485a0894b4b43136d94049c98f}{monitor\+Led\+Task}} (void \texorpdfstring{$\ast$}{*}arg)
+\item 
+void \mbox{\hyperlink{default__task_8c_ae180d7c2955f762dead3989385de847c}{lvgl\+\_\+gui}} (void)
+\begin{DoxyCompactList}\small\item\em function that waits for key press events \& calls handle\+\_\+display function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{default__task_8c_a082a8eea3d34f52a3711258709ba8bf4}{read\+\_\+dv\+\_\+fault\+\_\+csv}} ()
+\begin{DoxyCompactList}\small\item\em Function that reads the fault data from CSV file \& stores the same in the structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{default__task_8c_a35d15dccad6b2b0b8ed17d3792845d34}{read\+\_\+dv\+\_\+warning\+\_\+csv}} ()
+\begin{DoxyCompactList}\small\item\em Function that reads the warning data from CSV file \& stores the same in the structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{default__task_8c_a7932b011c244674d11ad64117304349c}{read\+\_\+isem\+\_\+warning\+\_\+csv}} ()
+\begin{DoxyCompactList}\small\item\em Function that reads the isem\+\_\+diag\+\_\+warning data from CSV file \& stores the same in the structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{default__task_8c_ab5d81f8e1b18c63bed5b0177a064cc98}{read\+\_\+isem\+\_\+fault\+\_\+csv}} ()
+\begin{DoxyCompactList}\small\item\em Function that reads the ISEM diag fault data from CSV file \& stores the same in the structure. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{default__task_8c_a744f1cd07a566814b870a1c9c929abe5}{get\+Module\+Number}} (int index)
+\item 
+int \mbox{\hyperlink{default__task_8c_aa3a14562de0d1c12332a88b8f0a77c27}{getindexvalue}} (int index)
+\item 
+void \mbox{\hyperlink{default__task_8c_a9e971832fa51f2017304dfc488f23b93}{disp\+\_\+mod\+\_\+status\+\_\+screen}} (int status\+\_\+value, int indx)
+\begin{DoxyCompactList}\small\item\em function to create the status screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{default__task_8c_af1be5ef90c04df6c7fcfaaffd2548f36}{my\+\_\+perror}} (const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+s)
+\begin{DoxyCompactList}\small\item\em function that displays the initializations error \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{default__task_8c_a8aa473f8ae9a91df4bc9ea700983c72d}{delay\+\_\+ms}} (int ms)
+\begin{DoxyCompactList}\small\item\em function that calls delay in milliseconds \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{default__task_8c_aa8739748537db71d12f20b7bc8a7e517}{lvgl\+\_\+state\+\_\+machine}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em function that calls lvgl state machine \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{default__task_8c_aeb711d7c4d19d757a09595d237dfdcdd}{lvgl\+\_\+run}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em function that calls the LVGL GUI screens (entry point to display screens) \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{default__task_8c_ab368f87de3400ba49df2d23eb83868de}{screen\+\_\+pop\+\_\+up\+\_\+func}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em function that calls the screen pop up \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{default__task_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3}{default\+\_\+main}} (void)
+\begin{DoxyCompactList}\small\item\em default function to create threads and events \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{default__task_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}}
+\item 
+int \mbox{\hyperlink{default__task_8c_aa388bbbd2af08b7f83c6e55667c86270}{G\+\_\+\+KEY\+\_\+\+PRESSED\+\_\+\+EVENT}}
+\item 
+int \mbox{\hyperlink{default__task_8c_aaa8fd3258b0349c782441c209b83cf5c}{G\+\_\+\+POP\+\_\+\+EVENT}}
+\item 
+pthread\+\_\+t \mbox{\hyperlink{default__task_8c_a38b20330a68d9e059f37c2d125995478}{data\+\_\+processing\+\_\+thread}}
+\item 
+pthread\+\_\+t \mbox{\hyperlink{default__task_8c_a06fda7de76b4b4fac8b20bb08a2ad1ce}{screen\+\_\+pop\+\_\+up\+\_\+thread}}
+\item 
+pthread\+\_\+t \mbox{\hyperlink{default__task_8c_a5d3f042bc74db494e10c9eebd7208734}{thread\+\_\+acquire}}
+\item 
+pthread\+\_\+t \mbox{\hyperlink{default__task_8c_aed88a87080777229ab77e1af0285690f}{lvgl\+\_\+state\+\_\+thread}}
+\item 
+pthread\+\_\+t \mbox{\hyperlink{default__task_8c_a5a66127f8adbbe580bd4ce3b5f19d992}{lvgl\+\_\+run\+\_\+thread}}
+\item 
+pthread\+\_\+t \mbox{\hyperlink{default__task_8c_a9fbaded7afa706fa64a75084f7097644}{thread\+\_\+led}}
+\item 
+int \mbox{\hyperlink{default__task_8c_a1e3892d738339a39bc0c717706a4048f}{g\+\_\+status\+\_\+value}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{default__task_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5}{cur\+\_\+disp\+\_\+scr\+\_\+index}}
+\item 
+int \mbox{\hyperlink{default__task_8c_a90a840dc2cad65d1e73a074141fdacf4}{gg}}
+\item 
+int \mbox{\hyperlink{default__task_8c_a31a385606433007d26a8e1c8a3df221f}{kk}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+source file that creates all the threads 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{default__task_8c_a122b34d4ba9a92a2a595cee1b937537e}\index{default\_task.c@{default\_task.c}!data\_processing\_func@{data\_processing\_func}}
+\index{data\_processing\_func@{data\_processing\_func}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{data\_processing\_func()}{data\_processing\_func()}}
+{\footnotesize\ttfamily \label{default__task_8c_a122b34d4ba9a92a2a595cee1b937537e} 
+void \texorpdfstring{$\ast$}{*} data\+\_\+processing\+\_\+func (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that processes all the IO-\/modules and valves real-\/time data. 
+
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESS\+\_\+test 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_a122b34d4ba9a92a2a595cee1b937537e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_a122b34d4ba9a92a2a595cee1b937537e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3}\index{default\_task.c@{default\_task.c}!default\_main@{default\_main}}
+\index{default\_main@{default\_main}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{default\_main()}{default\_main()}}
+{\footnotesize\ttfamily \label{default__task_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3} 
+void default\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+default function to create threads and events 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{default__task_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_a8aa473f8ae9a91df4bc9ea700983c72d}\index{default\_task.c@{default\_task.c}!delay\_ms@{delay\_ms}}
+\index{delay\_ms@{delay\_ms}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{delay\_ms()}{delay\_ms()}}
+{\footnotesize\ttfamily \label{default__task_8c_a8aa473f8ae9a91df4bc9ea700983c72d} 
+void delay\+\_\+ms (\begin{DoxyParamCaption}\item[{int}]{ms}{}\end{DoxyParamCaption})}
+
+
+
+function that calls delay in milliseconds 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ms} & -\/ millisecond value \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_a8aa473f8ae9a91df4bc9ea700983c72d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_a9e971832fa51f2017304dfc488f23b93}\index{default\_task.c@{default\_task.c}!disp\_mod\_status\_screen@{disp\_mod\_status\_screen}}
+\index{disp\_mod\_status\_screen@{disp\_mod\_status\_screen}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_status\_screen()}{disp\_mod\_status\_screen()}}
+{\footnotesize\ttfamily \label{default__task_8c_a9e971832fa51f2017304dfc488f23b93} 
+void disp\+\_\+mod\+\_\+status\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{status\+\_\+value}{, }\item[{int}]{indx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function to create the status screen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\+\_\+value} & -\/ (0 -\/ normal, 1 -\/ warning, 2 -\/ fault) \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_a9e971832fa51f2017304dfc488f23b93_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_aa3a14562de0d1c12332a88b8f0a77c27}\index{default\_task.c@{default\_task.c}!getindexvalue@{getindexvalue}}
+\index{getindexvalue@{getindexvalue}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{getindexvalue()}{getindexvalue()}}
+{\footnotesize\ttfamily \label{default__task_8c_aa3a14562de0d1c12332a88b8f0a77c27} 
+int getindexvalue (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_aa3a14562de0d1c12332a88b8f0a77c27_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_a744f1cd07a566814b870a1c9c929abe5}\index{default\_task.c@{default\_task.c}!getModuleNumber@{getModuleNumber}}
+\index{getModuleNumber@{getModuleNumber}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{getModuleNumber()}{getModuleNumber()}}
+{\footnotesize\ttfamily \label{default__task_8c_a744f1cd07a566814b870a1c9c929abe5} 
+int get\+Module\+Number (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_a744f1cd07a566814b870a1c9c929abe5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_ae180d7c2955f762dead3989385de847c}\index{default\_task.c@{default\_task.c}!lvgl\_gui@{lvgl\_gui}}
+\index{lvgl\_gui@{lvgl\_gui}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{lvgl\_gui()}{lvgl\_gui()}}
+{\footnotesize\ttfamily \label{default__task_8c_ae180d7c2955f762dead3989385de847c} 
+void lvgl\+\_\+gui (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function that waits for key press events \& calls handle\+\_\+display function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{default__task_8c_ae180d7c2955f762dead3989385de847c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_ae180d7c2955f762dead3989385de847c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_aeb711d7c4d19d757a09595d237dfdcdd}\index{default\_task.c@{default\_task.c}!lvgl\_run@{lvgl\_run}}
+\index{lvgl\_run@{lvgl\_run}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{lvgl\_run()}{lvgl\_run()}}
+{\footnotesize\ttfamily \label{default__task_8c_aeb711d7c4d19d757a09595d237dfdcdd} 
+void \texorpdfstring{$\ast$}{*} lvgl\+\_\+run (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+function that calls the LVGL GUI screens (entry point to display screens) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{default__task_8c_aeb711d7c4d19d757a09595d237dfdcdd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_aeb711d7c4d19d757a09595d237dfdcdd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_aa8739748537db71d12f20b7bc8a7e517}\index{default\_task.c@{default\_task.c}!lvgl\_state\_machine@{lvgl\_state\_machine}}
+\index{lvgl\_state\_machine@{lvgl\_state\_machine}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{lvgl\_state\_machine()}{lvgl\_state\_machine()}}
+{\footnotesize\ttfamily \label{default__task_8c_aa8739748537db71d12f20b7bc8a7e517} 
+void \texorpdfstring{$\ast$}{*} lvgl\+\_\+state\+\_\+machine (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+function that calls lvgl state machine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_aa8739748537db71d12f20b7bc8a7e517_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_ac5ff31485a0894b4b43136d94049c98f}\index{default\_task.c@{default\_task.c}!monitorLedTask@{monitorLedTask}}
+\index{monitorLedTask@{monitorLedTask}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{monitorLedTask()}{monitorLedTask()}}
+{\footnotesize\ttfamily \label{default__task_8c_ac5ff31485a0894b4b43136d94049c98f} 
+void \texorpdfstring{$\ast$}{*} monitor\+Led\+Task (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_ac5ff31485a0894b4b43136d94049c98f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_ac5ff31485a0894b4b43136d94049c98f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_af1be5ef90c04df6c7fcfaaffd2548f36}\index{default\_task.c@{default\_task.c}!my\_perror@{my\_perror}}
+\index{my\_perror@{my\_perror}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{my\_perror()}{my\_perror()}}
+{\footnotesize\ttfamily \label{default__task_8c_af1be5ef90c04df6c7fcfaaffd2548f36} 
+void my\+\_\+perror (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+s}{}\end{DoxyParamCaption})}
+
+
+
+function that displays the initializations error 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ string message \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_af1be5ef90c04df6c7fcfaaffd2548f36_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_a082a8eea3d34f52a3711258709ba8bf4}\index{default\_task.c@{default\_task.c}!read\_dv\_fault\_csv@{read\_dv\_fault\_csv}}
+\index{read\_dv\_fault\_csv@{read\_dv\_fault\_csv}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{read\_dv\_fault\_csv()}{read\_dv\_fault\_csv()}}
+{\footnotesize\ttfamily \label{default__task_8c_a082a8eea3d34f52a3711258709ba8bf4} 
+void read\+\_\+dv\+\_\+fault\+\_\+csv (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that reads the fault data from CSV file \& stores the same in the structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{default__task_8c_a082a8eea3d34f52a3711258709ba8bf4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_a082a8eea3d34f52a3711258709ba8bf4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_a35d15dccad6b2b0b8ed17d3792845d34}\index{default\_task.c@{default\_task.c}!read\_dv\_warning\_csv@{read\_dv\_warning\_csv}}
+\index{read\_dv\_warning\_csv@{read\_dv\_warning\_csv}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{read\_dv\_warning\_csv()}{read\_dv\_warning\_csv()}}
+{\footnotesize\ttfamily \label{default__task_8c_a35d15dccad6b2b0b8ed17d3792845d34} 
+void read\+\_\+dv\+\_\+warning\+\_\+csv (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that reads the warning data from CSV file \& stores the same in the structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_a35d15dccad6b2b0b8ed17d3792845d34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_ab5d81f8e1b18c63bed5b0177a064cc98}\index{default\_task.c@{default\_task.c}!read\_isem\_fault\_csv@{read\_isem\_fault\_csv}}
+\index{read\_isem\_fault\_csv@{read\_isem\_fault\_csv}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{read\_isem\_fault\_csv()}{read\_isem\_fault\_csv()}}
+{\footnotesize\ttfamily \label{default__task_8c_ab5d81f8e1b18c63bed5b0177a064cc98} 
+void read\+\_\+isem\+\_\+fault\+\_\+csv (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that reads the ISEM diag fault data from CSV file \& stores the same in the structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{default__task_8c_ab5d81f8e1b18c63bed5b0177a064cc98_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_ab5d81f8e1b18c63bed5b0177a064cc98_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_a7932b011c244674d11ad64117304349c}\index{default\_task.c@{default\_task.c}!read\_isem\_warning\_csv@{read\_isem\_warning\_csv}}
+\index{read\_isem\_warning\_csv@{read\_isem\_warning\_csv}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{read\_isem\_warning\_csv()}{read\_isem\_warning\_csv()}}
+{\footnotesize\ttfamily \label{default__task_8c_a7932b011c244674d11ad64117304349c} 
+void read\+\_\+isem\+\_\+warning\+\_\+csv (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that reads the isem\+\_\+diag\+\_\+warning data from CSV file \& stores the same in the structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{default__task_8c_a7932b011c244674d11ad64117304349c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_a7932b011c244674d11ad64117304349c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{default__task_8c_ab368f87de3400ba49df2d23eb83868de}\index{default\_task.c@{default\_task.c}!screen\_pop\_up\_func@{screen\_pop\_up\_func}}
+\index{screen\_pop\_up\_func@{screen\_pop\_up\_func}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{screen\_pop\_up\_func()}{screen\_pop\_up\_func()}}
+{\footnotesize\ttfamily \label{default__task_8c_ab368f87de3400ba49df2d23eb83868de} 
+void \texorpdfstring{$\ast$}{*} screen\+\_\+pop\+\_\+up\+\_\+func (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+function that calls the screen pop up 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{default__task_8c_ab368f87de3400ba49df2d23eb83868de_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{default__task_8c_ab368f87de3400ba49df2d23eb83868de_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{default__task_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5}\index{default\_task.c@{default\_task.c}!cur\_disp\_scr\_index@{cur\_disp\_scr\_index}}
+\index{cur\_disp\_scr\_index@{cur\_disp\_scr\_index}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{cur\_disp\_scr\_index}{cur\_disp\_scr\_index}}
+{\footnotesize\ttfamily \label{default__task_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5} 
+uint8\+\_\+t cur\+\_\+disp\+\_\+scr\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{default__task_8c_a38b20330a68d9e059f37c2d125995478}\index{default\_task.c@{default\_task.c}!data\_processing\_thread@{data\_processing\_thread}}
+\index{data\_processing\_thread@{data\_processing\_thread}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{data\_processing\_thread}{data\_processing\_thread}}
+{\footnotesize\ttfamily \label{default__task_8c_a38b20330a68d9e059f37c2d125995478} 
+pthread\+\_\+t data\+\_\+processing\+\_\+thread}
+
+\Hypertarget{default__task_8c_aa388bbbd2af08b7f83c6e55667c86270}\index{default\_task.c@{default\_task.c}!G\_KEY\_PRESSED\_EVENT@{G\_KEY\_PRESSED\_EVENT}}
+\index{G\_KEY\_PRESSED\_EVENT@{G\_KEY\_PRESSED\_EVENT}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{G\_KEY\_PRESSED\_EVENT}{G\_KEY\_PRESSED\_EVENT}}
+{\footnotesize\ttfamily \label{default__task_8c_aa388bbbd2af08b7f83c6e55667c86270} 
+int G\+\_\+\+KEY\+\_\+\+PRESSED\+\_\+\+EVENT}
+
+\Hypertarget{default__task_8c_aaa8fd3258b0349c782441c209b83cf5c}\index{default\_task.c@{default\_task.c}!G\_POP\_EVENT@{G\_POP\_EVENT}}
+\index{G\_POP\_EVENT@{G\_POP\_EVENT}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{G\_POP\_EVENT}{G\_POP\_EVENT}}
+{\footnotesize\ttfamily \label{default__task_8c_aaa8fd3258b0349c782441c209b83cf5c} 
+int G\+\_\+\+POP\+\_\+\+EVENT}
+
+\Hypertarget{default__task_8c_a1e3892d738339a39bc0c717706a4048f}\index{default\_task.c@{default\_task.c}!g\_status\_value@{g\_status\_value}}
+\index{g\_status\_value@{g\_status\_value}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{g\_status\_value}{g\_status\_value}}
+{\footnotesize\ttfamily \label{default__task_8c_a1e3892d738339a39bc0c717706a4048f} 
+int g\+\_\+status\+\_\+value\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{default__task_8c_a90a840dc2cad65d1e73a074141fdacf4}\index{default\_task.c@{default\_task.c}!gg@{gg}}
+\index{gg@{gg}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{gg}{gg}}
+{\footnotesize\ttfamily \label{default__task_8c_a90a840dc2cad65d1e73a074141fdacf4} 
+int gg}
+
+\Hypertarget{default__task_8c_a31a385606433007d26a8e1c8a3df221f}\index{default\_task.c@{default\_task.c}!kk@{kk}}
+\index{kk@{kk}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{kk}{kk}}
+{\footnotesize\ttfamily \label{default__task_8c_a31a385606433007d26a8e1c8a3df221f} 
+int kk}
+
+\Hypertarget{default__task_8c_a5a66127f8adbbe580bd4ce3b5f19d992}\index{default\_task.c@{default\_task.c}!lvgl\_run\_thread@{lvgl\_run\_thread}}
+\index{lvgl\_run\_thread@{lvgl\_run\_thread}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{lvgl\_run\_thread}{lvgl\_run\_thread}}
+{\footnotesize\ttfamily \label{default__task_8c_a5a66127f8adbbe580bd4ce3b5f19d992} 
+pthread\+\_\+t lvgl\+\_\+run\+\_\+thread}
+
+\Hypertarget{default__task_8c_aed88a87080777229ab77e1af0285690f}\index{default\_task.c@{default\_task.c}!lvgl\_state\_thread@{lvgl\_state\_thread}}
+\index{lvgl\_state\_thread@{lvgl\_state\_thread}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{lvgl\_state\_thread}{lvgl\_state\_thread}}
+{\footnotesize\ttfamily \label{default__task_8c_aed88a87080777229ab77e1af0285690f} 
+pthread\+\_\+t lvgl\+\_\+state\+\_\+thread}
+
+\Hypertarget{default__task_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}\index{default\_task.c@{default\_task.c}!mutex@{mutex}}
+\index{mutex@{mutex}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily \label{default__task_8c_a4acff8232e4aec9cd5c6dc200ac55ef3} 
+pthread\+\_\+mutex\+\_\+t mutex}
+
+\Hypertarget{default__task_8c_a06fda7de76b4b4fac8b20bb08a2ad1ce}\index{default\_task.c@{default\_task.c}!screen\_pop\_up\_thread@{screen\_pop\_up\_thread}}
+\index{screen\_pop\_up\_thread@{screen\_pop\_up\_thread}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{screen\_pop\_up\_thread}{screen\_pop\_up\_thread}}
+{\footnotesize\ttfamily \label{default__task_8c_a06fda7de76b4b4fac8b20bb08a2ad1ce} 
+pthread\+\_\+t screen\+\_\+pop\+\_\+up\+\_\+thread}
+
+\Hypertarget{default__task_8c_a5d3f042bc74db494e10c9eebd7208734}\index{default\_task.c@{default\_task.c}!thread\_acquire@{thread\_acquire}}
+\index{thread\_acquire@{thread\_acquire}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{thread\_acquire}{thread\_acquire}}
+{\footnotesize\ttfamily \label{default__task_8c_a5d3f042bc74db494e10c9eebd7208734} 
+pthread\+\_\+t thread\+\_\+acquire}
+
+\Hypertarget{default__task_8c_a9fbaded7afa706fa64a75084f7097644}\index{default\_task.c@{default\_task.c}!thread\_led@{thread\_led}}
+\index{thread\_led@{thread\_led}!default\_task.c@{default\_task.c}}
+\doxysubsubsection{\texorpdfstring{thread\_led}{thread\_led}}
+{\footnotesize\ttfamily \label{default__task_8c_a9fbaded7afa706fa64a75084f7097644} 
+pthread\+\_\+t thread\+\_\+led}
+

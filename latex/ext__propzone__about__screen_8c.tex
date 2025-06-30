@@ -1,0 +1,110 @@
+\doxysection{GUI/\+Screens/ext\+\_\+propzone\+\_\+about\+\_\+screen.c File Reference}
+\hypertarget{ext__propzone__about__screen_8c}{}\label{ext__propzone__about__screen_8c}\index{GUI/Screens/ext\_propzone\_about\_screen.c@{GUI/Screens/ext\_propzone\_about\_screen.c}}
+
+
+Source that displays the external pressure zone (i.\+e external prop valve) about screen.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+Include dependency graph for ext\+\_\+propzone\+\_\+about\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{ext__propzone__about__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ext__propzone__about__screen_8c_a3cfe7f0125aec66284276c8cd03033a2}{disp\+\_\+mod\+\_\+about\+\_\+ext\+\_\+pz\+\_\+screen}} (int ext\+\_\+pz\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Function to display prop\+\_\+zone count screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ext__propzone__about__screen_8c_a59c45c0650fb5281d58ea033435ef1d2}{about\+\_\+ext\+\_\+pz\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize about pressure screen style. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ext__propzone__about__screen_8c_a171bd087fd88267f8df70214d756df4a}{common\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+s\+\_\+about\+\_\+prop\+\_\+count \mbox{\hyperlink{ext__propzone__about__screen_8c_a0df9c8e827d1cd0324d461423d1da692}{s\+\_\+about\+\_\+prop\+\_\+count\+\_\+name}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+ZONE\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays the external pressure zone (i.\+e external prop valve) about screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ext__propzone__about__screen_8c_a59c45c0650fb5281d58ea033435ef1d2}\index{ext\_propzone\_about\_screen.c@{ext\_propzone\_about\_screen.c}!about\_ext\_pz\_style@{about\_ext\_pz\_style}}
+\index{about\_ext\_pz\_style@{about\_ext\_pz\_style}!ext\_propzone\_about\_screen.c@{ext\_propzone\_about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{about\_ext\_pz\_style()}{about\_ext\_pz\_style()}}
+{\footnotesize\ttfamily \label{ext__propzone__about__screen_8c_a59c45c0650fb5281d58ea033435ef1d2} 
+void about\+\_\+ext\+\_\+pz\+\_\+style (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize about pressure screen style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ext__propzone__about__screen_8c_a59c45c0650fb5281d58ea033435ef1d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ext__propzone__about__screen_8c_a171bd087fd88267f8df70214d756df4a}\index{ext\_propzone\_about\_screen.c@{ext\_propzone\_about\_screen.c}!common\_label\_creation@{common\_label\_creation}}
+\index{common\_label\_creation@{common\_label\_creation}!ext\_propzone\_about\_screen.c@{ext\_propzone\_about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{common\_label\_creation()}{common\_label\_creation()}}
+{\footnotesize\ttfamily \label{ext__propzone__about__screen_8c_a171bd087fd88267f8df70214d756df4a} 
+void common\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ext__propzone__about__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{ext__propzone__about__screen_8c_a3cfe7f0125aec66284276c8cd03033a2}\index{ext\_propzone\_about\_screen.c@{ext\_propzone\_about\_screen.c}!disp\_mod\_about\_ext\_pz\_screen@{disp\_mod\_about\_ext\_pz\_screen}}
+\index{disp\_mod\_about\_ext\_pz\_screen@{disp\_mod\_about\_ext\_pz\_screen}!ext\_propzone\_about\_screen.c@{ext\_propzone\_about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_about\_ext\_pz\_screen()}{disp\_mod\_about\_ext\_pz\_screen()}}
+{\footnotesize\ttfamily \label{ext__propzone__about__screen_8c_a3cfe7f0125aec66284276c8cd03033a2} 
+void disp\+\_\+mod\+\_\+about\+\_\+ext\+\_\+pz\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{ext\+\_\+pz\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Function to display prop\+\_\+zone count screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ext\+\_\+pz\+\_\+index} & -\/ cursor \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ext__propzone__about__screen_8c_a3cfe7f0125aec66284276c8cd03033a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ext__propzone__about__screen_8c_a3cfe7f0125aec66284276c8cd03033a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ext__propzone__about__screen_8c_a0df9c8e827d1cd0324d461423d1da692}\index{ext\_propzone\_about\_screen.c@{ext\_propzone\_about\_screen.c}!s\_about\_prop\_count\_name@{s\_about\_prop\_count\_name}}
+\index{s\_about\_prop\_count\_name@{s\_about\_prop\_count\_name}!ext\_propzone\_about\_screen.c@{ext\_propzone\_about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{s\_about\_prop\_count\_name}{s\_about\_prop\_count\_name}}
+{\footnotesize\ttfamily \label{ext__propzone__about__screen_8c_a0df9c8e827d1cd0324d461423d1da692} 
+s\+\_\+about\+\_\+prop\+\_\+count s\+\_\+about\+\_\+prop\+\_\+count\+\_\+name\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+ZONE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_hw__init_8c" xml:lang="en-US">
+<title>Initializations/Hardware_Initializations/hw_init.c File Reference</title>
+<indexterm><primary>Initializations/Hardware_Initializations/hw_init.c</primary></indexterm>
+<para>
+
+<para>Source that initializes the hardware components. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?></programlisting>Include dependency graph for hw_init.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_hw__init_8c_1afdbe206b3c49f019757ab09b3cf52b9c">gpio_init</link> (void)</para>
+
+<para>Function to perform LCD functionality. </para>
+</listitem>
+            <listitem><para>void <link linkend="_hw__init_8c_1ae909944aa85ae98323073c628be541aa">spi_init</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_hw__init_8c_1a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</link> (void)</para>
+
+<para>Function to perform LCD functionality. </para>
+</listitem>
+            <listitem><para>void <link linkend="_hw__init_8c_1afe6c733d4bb6ed63271e16052a6bb71e">HW_Init</link> ()</para>
+
+<para>function that initializes the hardware </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that initializes the hardware components. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_hw__init_8c_1afdbe206b3c49f019757ab09b3cf52b9c"/><section>
+    <title>gpio_init()</title>
+<indexterm><primary>gpio_init</primary><secondary>hw_init.c</secondary></indexterm>
+<indexterm><primary>hw_init.c</primary><secondary>gpio_init</secondary></indexterm>
+<para><computeroutput>void gpio_init (void )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function to perform LCD functionality. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>NULL</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c_afdbe206b3c49f019757ab09b3cf52b9c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c_afdbe206b3c49f019757ab09b3cf52b9c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_hw__init_8c_1afe6c733d4bb6ed63271e16052a6bb71e"/><section>
+    <title>HW_Init()</title>
+<indexterm><primary>HW_Init</primary><secondary>hw_init.c</secondary></indexterm>
+<indexterm><primary>hw_init.c</primary><secondary>HW_Init</secondary></indexterm>
+<para><computeroutput>void HW_Init ( )</computeroutput></para><para>
+
+<para>function that initializes the hardware </para>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c_afe6c733d4bb6ed63271e16052a6bb71e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c_afe6c733d4bb6ed63271e16052a6bb71e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_hw__init_8c_1a6842775ba83d166f02b8fef8bb63b1e6"/><section>
+    <title>lcd_init()</title>
+<indexterm><primary>lcd_init</primary><secondary>hw_init.c</secondary></indexterm>
+<indexterm><primary>hw_init.c</primary><secondary>lcd_init</secondary></indexterm>
+<para><computeroutput>void lcd_init (void )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function to perform LCD functionality. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>NULL</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESSS_test on success or API_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c_a6842775ba83d166f02b8fef8bb63b1e6_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c_a6842775ba83d166f02b8fef8bb63b1e6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_hw__init_8c_1ae909944aa85ae98323073c628be541aa"/><section>
+    <title>spi_init()</title>
+<indexterm><primary>spi_init</primary><secondary>hw_init.c</secondary></indexterm>
+<indexterm><primary>hw_init.c</primary><secondary>spi_init</secondary></indexterm>
+<para><computeroutput>void spi_init (void )<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c_ae909944aa85ae98323073c628be541aa_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="hw__init_8c_ae909944aa85ae98323073c628be541aa_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

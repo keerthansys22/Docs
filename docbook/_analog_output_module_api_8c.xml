@@ -1,0 +1,698 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__analog_output_module_api_8c" xml:lang="en-US">
+<title>API_Source/IoModulesApiSource.c/AnalogOutputModuleApi.c File Reference</title>
+<indexterm><primary>API_Source/IoModulesApiSource.c/AnalogOutputModuleApi.c</primary></indexterm>
+<para>
+
+<para>This file contains the source code of the analog output module API. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for AnalogOutputModuleApi.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link>&#160;&#160;&#160;0x00000000</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a84ff09aee95bdc0d4c2779d03a517cac">AO_MOD_IDENT_DEVICE_TYPE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1acef206a5db6db70f0bbb2e43db4b1bda">AO_MOD_IDENT_VENDOR_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 4)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1af2db62bbb0a9a744e45ba4a932ac4737">AO_MOD_IDENT_DEVICE_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 8)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a29fca5727a68db8177c9aaab5d1aa051">AO_MOD_IDENT_VENDOR_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 12)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1aef85d9ea0b13456d8afba4c78ffe0948">AO_MOD_IDENT_DEVICE_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 28)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a582f8fb0f19acc5b28d7d9711bd1d0f7">AO_MOD_IDENT_VARIANT_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 44)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a2d38eeac6112eda357278b72afb96237">AO_MOD_IDENT_HW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 60)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a03ca3c1419e28dbf5004f34008bac256">AO_MOD_IDENT_SERIAL_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 76)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a787699ec23d504d62c4240d12b7119b7">AO_MOD_IDENT_SW_PART_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 92)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1aa7cff41a162cab789d1b037389fb6163">AO_MOD_IDENT_SW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 108)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a8cb539d05c6837dfebf713a97efd5ef6">AO_MOD_ACTR_SUPPLY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 124)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1ad24f923477e7dff1034fb44ba3a775e3">AO_MOD_ACTR_SUPPLY_SHORT_CKT_DIAG_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 125)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a3de5ef2046da8a8057dc96b5329cc5bd">AO_MOD_SHORT_CKT_DIAG_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 126)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a903a0a13143154cbe94b2fe470f3b4f1">AO_MOD_OPEN_CKT_DIAG_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 127)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a2cbaebbe6c34c5a3cb0ea156329dd65b">AO_MOD_UPPER_LIMIT_MONITOR_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 128)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1af6f3dd376e5683a16334a5f22b985ada">AO_MOD_LOWER_LIMIT_MONITOR_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 129)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1ae658c375fc42f013703d976fddfb57e8">AO_MOD_DAC_VOTCUR_OP_RANGE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 130)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1af83d48a2b2e3a96869f95fd628a219b9">AO_MOD_FORCE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 131)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a2ed76ff39994b9bba23b07e22e0b50b4">AO_MOD_FORCE_MODE_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 132)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a25204c91b14e45caad769ee5be6b06d3">AO_MOD_IDLE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 140)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a9662ed3b328d1ec24b648caae7de1876">AO_MOD_IDLE_MODE_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 141)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a75f0d56e3eeb774c9fffbd21b944bcc4">AO_MOD_MODULE_IDLE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 149)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1ad8c9e50f7aab322efded2dce46d33d6a">AO_MOD_BUS_FAULT_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 150)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1ac5680e7b8e7291a5589b1d59a84588c4">AO_MOD_BUS_FAULT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 151)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a758f54799623793aee1d84aa7e67d270">AO_MOD_SHORT_CKT_RECOVERY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 159)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a3cf5b3064ee20aef67472ad97fa0fd89">AO_MOD_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 160)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1ac0cd3966bd1d425304f5c25fd12607e8">AO_MOD_CHANNEL_RANGE_MODE</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 161)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a562e0e58254f95033f9236e87382b62e">AO_MOD_UPPER_LIMIT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 162)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1aed6df9fbf5f1882a3bd0b4b5dbcb9faf">AO_MOD_LOWER_LIMIT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 170)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a3a941222690670bea8bc7a8d68fdc6ef">AO_MOD_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 178)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a48dcd103458d1c766173afd6cf4d213a">AO_MOD_VA_VB_VOLTAGE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 182)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a22d4a0b8a75821c4a727f2ec9c8614f0">AO_MOD_POST_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 190)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1aefccf1d96c85f922599df88972f55b47">AO_MOD_OPERATION_TIME_HR_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 194)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a556bc5e40fb25f187cec1d63cd792f4a">AO_MOD_OPERATION_TIME_MIN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 198)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1af9281e9b9231ba2801fc1860e8634c5f">AO_MOD_MIN_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 200)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a4cb9cbcf3c746fdb09cb1f22d6f3d982">AO_MOD_MAX_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 202)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a0c3e01e58460d8fa3cf059af59efbc76">AO_MOD_MEASURED_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 204)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a69c5df6fee390dd6116cfb4c4301667a">AO_MOD_MEMORY_LIFE_CYCLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 206)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a9265437a6ee5e6ff4c7f5fb097926127">AO_MOD_DATASEND_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 210)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a588627ee09bfa2ad0cd200120c01f32d">AO_MOD_DATAPOINT_COUNT_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 211)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1aa7e0a1f3a074404e375d5bef4a4e2271">AO_MOD_DATAPOINT_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 212)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a54088252646725defb7f2786b273049c">AO_MOD_SCAN_INTERVAL</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 213)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1aaae13c07ecf8a01212e67094d9b75dd0">AO_MOD_MODULE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 214)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a561445942e8aa4970429592ba5bde64d">AO_MOD_CHANNELS_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 215)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a5a24b36639240cec9043496df0be487b">AO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 216)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1aa2025d29082fe98e752091d714ae704e">AO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 217)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1acebc92bdc1150a1fc1375485330514e1">AO_MOD_EDS_VERSION_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 218)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_output_module_api_8c_1a438ef9710e4bd428ce510d7eb098f1f0">AO_MOD_EDS_VERSION_DATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 234)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="__analog_output_module_api_8c_1aab64cdfe20fa84db4be92c96380d60a2">getIOServiceDataInstanceAddress</link> (uint16_t handler)</para>
+
+<para>: This is to get the address of the service data instance </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__analog_output_module_api_8c_1a91f3bb33371373e3e9b48b2290355551">getIOProcessDataInstanceAddress</link> (uint16_t handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_output_module_api_8c_1a3b00370f3a8bc5ca0b85d10379d1550e">getAOModuleProcessData</link> (uint16_t ao_device_handler, aomodule_processinfo *aomod_processdata)</para>
+
+<para>Retrieves the process data for a specified AO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_output_module_api_8c_1a225a359981b73383fe1810b37467283d">setAOModuleProcessData</link> (uint16_t ao_device_handler, int16_t data, uint8_t channle_number)</para>
+
+<para>Sets the analog output status for a specified AO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_output_module_api_8c_1a2b5385207248a4e6b107803a0d4b350a">getAnalogOutputModuleServiceParam</link> (uint16_t analog_output_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter data for a specified AO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_output_module_api_8c_1a9f4beeefd13735079c96473b454b3270">setAnalogOutputModuleServiceParam</link> (uint16_t analog_output_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified DO module. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__analog_output_module_api_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file contains the source code of the analog output module API. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__analog_output_module_api_8c_1a8cb539d05c6837dfebf713a97efd5ef6"/><section>
+    <title>AO_MOD_ACTR_SUPPLY_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_ACTR_SUPPLY_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_ACTR_SUPPLY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_ACTR_SUPPLY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 124)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1ad24f923477e7dff1034fb44ba3a775e3"/><section>
+    <title>AO_MOD_ACTR_SUPPLY_SHORT_CKT_DIAG_EN_ADDR</title>
+<indexterm><primary>AO_MOD_ACTR_SUPPLY_SHORT_CKT_DIAG_EN_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_ACTR_SUPPLY_SHORT_CKT_DIAG_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_ACTR_SUPPLY_SHORT_CKT_DIAG_EN_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 125)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a3cf5b3064ee20aef67472ad97fa0fd89"/><section>
+    <title>AO_MOD_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</title>
+<indexterm><primary>AO_MOD_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 160)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a5a24b36639240cec9043496df0be487b"/><section>
+    <title>AO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</title>
+<indexterm><primary>AO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 216)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1aa2025d29082fe98e752091d714ae704e"/><section>
+    <title>AO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</title>
+<indexterm><primary>AO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 217)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1ad8c9e50f7aab322efded2dce46d33d6a"/><section>
+    <title>AO_MOD_BUS_FAULT_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_BUS_FAULT_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_BUS_FAULT_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_BUS_FAULT_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 150)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1ac5680e7b8e7291a5589b1d59a84588c4"/><section>
+    <title>AO_MOD_BUS_FAULT_VALUE_ADDR</title>
+<indexterm><primary>AO_MOD_BUS_FAULT_VALUE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_BUS_FAULT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_BUS_FAULT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 151)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1ac0cd3966bd1d425304f5c25fd12607e8"/><section>
+    <title>AO_MOD_CHANNEL_RANGE_MODE</title>
+<indexterm><primary>AO_MOD_CHANNEL_RANGE_MODE</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_CHANNEL_RANGE_MODE</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_CHANNEL_RANGE_MODE&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 161)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a561445942e8aa4970429592ba5bde64d"/><section>
+    <title>AO_MOD_CHANNELS_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_CHANNELS_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_CHANNELS_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_CHANNELS_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 215)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1ae658c375fc42f013703d976fddfb57e8"/><section>
+    <title>AO_MOD_DAC_VOTCUR_OP_RANGE_ADDR</title>
+<indexterm><primary>AO_MOD_DAC_VOTCUR_OP_RANGE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_DAC_VOTCUR_OP_RANGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_DAC_VOTCUR_OP_RANGE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 130)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a588627ee09bfa2ad0cd200120c01f32d"/><section>
+    <title>AO_MOD_DATAPOINT_COUNT_ADDR</title>
+<indexterm><primary>AO_MOD_DATAPOINT_COUNT_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_DATAPOINT_COUNT_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_DATAPOINT_COUNT_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 211)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1aa7e0a1f3a074404e375d5bef4a4e2271"/><section>
+    <title>AO_MOD_DATAPOINT_INTERVAL_ADDR</title>
+<indexterm><primary>AO_MOD_DATAPOINT_INTERVAL_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_DATAPOINT_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_DATAPOINT_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 212)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a9265437a6ee5e6ff4c7f5fb097926127"/><section>
+    <title>AO_MOD_DATASEND_INTERVAL_ADDR</title>
+<indexterm><primary>AO_MOD_DATASEND_INTERVAL_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_DATASEND_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_DATASEND_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 210)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a438ef9710e4bd428ce510d7eb098f1f0"/><section>
+    <title>AO_MOD_EDS_VERSION_DATE_ADDR</title>
+<indexterm><primary>AO_MOD_EDS_VERSION_DATE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_EDS_VERSION_DATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_EDS_VERSION_DATE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 234)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1acebc92bdc1150a1fc1375485330514e1"/><section>
+    <title>AO_MOD_EDS_VERSION_NO_ADDR</title>
+<indexterm><primary>AO_MOD_EDS_VERSION_NO_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_EDS_VERSION_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_EDS_VERSION_NO_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 218)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a3a941222690670bea8bc7a8d68fdc6ef"/><section>
+    <title>AO_MOD_ERR_STATUS_ADDR</title>
+<indexterm><primary>AO_MOD_ERR_STATUS_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 178)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1af83d48a2b2e3a96869f95fd628a219b9"/><section>
+    <title>AO_MOD_FORCE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_FORCE_MODE_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_FORCE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_FORCE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 131)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a2ed76ff39994b9bba23b07e22e0b50b4"/><section>
+    <title>AO_MOD_FORCE_MODE_VALUE_ADDR</title>
+<indexterm><primary>AO_MOD_FORCE_MODE_VALUE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_FORCE_MODE_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_FORCE_MODE_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 132)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1af2db62bbb0a9a744e45ba4a932ac4737"/><section>
+    <title>AO_MOD_IDENT_DEVICE_ID_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_DEVICE_ID_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_DEVICE_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_DEVICE_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 8)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1aef85d9ea0b13456d8afba4c78ffe0948"/><section>
+    <title>AO_MOD_IDENT_DEVICE_NAME_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_DEVICE_NAME_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_DEVICE_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_DEVICE_NAME_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 28)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a84ff09aee95bdc0d4c2779d03a517cac"/><section>
+    <title>AO_MOD_IDENT_DEVICE_TYPE_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_DEVICE_TYPE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_DEVICE_TYPE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_DEVICE_TYPE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a2d38eeac6112eda357278b72afb96237"/><section>
+    <title>AO_MOD_IDENT_HW_REV_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_HW_REV_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_HW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_HW_REV_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 60)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e"/><section>
+    <title>AO_MOD_IDENT_INFO_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_INFO_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_INFO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_INFO_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a03ca3c1419e28dbf5004f34008bac256"/><section>
+    <title>AO_MOD_IDENT_SERIAL_NO_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_SERIAL_NO_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_SERIAL_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_SERIAL_NO_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 76)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a787699ec23d504d62c4240d12b7119b7"/><section>
+    <title>AO_MOD_IDENT_SW_PART_NO_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_SW_PART_NO_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_SW_PART_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_SW_PART_NO_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 92)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1aa7cff41a162cab789d1b037389fb6163"/><section>
+    <title>AO_MOD_IDENT_SW_REV_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_SW_REV_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_SW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_SW_REV_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 108)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a582f8fb0f19acc5b28d7d9711bd1d0f7"/><section>
+    <title>AO_MOD_IDENT_VARIANT_ID_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_VARIANT_ID_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_VARIANT_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_VARIANT_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 44)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1acef206a5db6db70f0bbb2e43db4b1bda"/><section>
+    <title>AO_MOD_IDENT_VENDOR_ID_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_VENDOR_ID_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_VENDOR_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_VENDOR_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 4)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a29fca5727a68db8177c9aaab5d1aa051"/><section>
+    <title>AO_MOD_IDENT_VENDOR_NAME_ADDR</title>
+<indexterm><primary>AO_MOD_IDENT_VENDOR_NAME_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDENT_VENDOR_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDENT_VENDOR_NAME_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1af2aa124302cbb6727c87eca07fc7c30e">AO_MOD_IDENT_INFO_ADDR</link> + 12)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a25204c91b14e45caad769ee5be6b06d3"/><section>
+    <title>AO_MOD_IDLE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_IDLE_MODE_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDLE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDLE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 140)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a9662ed3b328d1ec24b648caae7de1876"/><section>
+    <title>AO_MOD_IDLE_MODE_VALUE_ADDR</title>
+<indexterm><primary>AO_MOD_IDLE_MODE_VALUE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_IDLE_MODE_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_IDLE_MODE_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 141)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1af6f3dd376e5683a16334a5f22b985ada"/><section>
+    <title>AO_MOD_LOWER_LIMIT_MONITOR_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_LOWER_LIMIT_MONITOR_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_LOWER_LIMIT_MONITOR_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_LOWER_LIMIT_MONITOR_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 129)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1aed6df9fbf5f1882a3bd0b4b5dbcb9faf"/><section>
+    <title>AO_MOD_LOWER_LIMIT_VALUE_ADDR</title>
+<indexterm><primary>AO_MOD_LOWER_LIMIT_VALUE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_LOWER_LIMIT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_LOWER_LIMIT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 170)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a4cb9cbcf3c746fdb09cb1f22d6f3d982"/><section>
+    <title>AO_MOD_MAX_TEMPERATURE_ADDR</title>
+<indexterm><primary>AO_MOD_MAX_TEMPERATURE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_MAX_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_MAX_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 202)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a0c3e01e58460d8fa3cf059af59efbc76"/><section>
+    <title>AO_MOD_MEASURED_TEMPERATURE_ADDR</title>
+<indexterm><primary>AO_MOD_MEASURED_TEMPERATURE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_MEASURED_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_MEASURED_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 204)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a69c5df6fee390dd6116cfb4c4301667a"/><section>
+    <title>AO_MOD_MEMORY_LIFE_CYCLE_ADDR</title>
+<indexterm><primary>AO_MOD_MEMORY_LIFE_CYCLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_MEMORY_LIFE_CYCLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_MEMORY_LIFE_CYCLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 206)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1af9281e9b9231ba2801fc1860e8634c5f"/><section>
+    <title>AO_MOD_MIN_TEMPERATURE_ADDR</title>
+<indexterm><primary>AO_MOD_MIN_TEMPERATURE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_MIN_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_MIN_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 200)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1aaae13c07ecf8a01212e67094d9b75dd0"/><section>
+    <title>AO_MOD_MODULE_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_MODULE_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_MODULE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_MODULE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 214)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a75f0d56e3eeb774c9fffbd21b944bcc4"/><section>
+    <title>AO_MOD_MODULE_IDLE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_MODULE_IDLE_MODE_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_MODULE_IDLE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_MODULE_IDLE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 149)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a903a0a13143154cbe94b2fe470f3b4f1"/><section>
+    <title>AO_MOD_OPEN_CKT_DIAG_EN_ADDR</title>
+<indexterm><primary>AO_MOD_OPEN_CKT_DIAG_EN_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_OPEN_CKT_DIAG_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_OPEN_CKT_DIAG_EN_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 127)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1aefccf1d96c85f922599df88972f55b47"/><section>
+    <title>AO_MOD_OPERATION_TIME_HR_ADDR</title>
+<indexterm><primary>AO_MOD_OPERATION_TIME_HR_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_OPERATION_TIME_HR_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_OPERATION_TIME_HR_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 194)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a556bc5e40fb25f187cec1d63cd792f4a"/><section>
+    <title>AO_MOD_OPERATION_TIME_MIN_ADDR</title>
+<indexterm><primary>AO_MOD_OPERATION_TIME_MIN_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_OPERATION_TIME_MIN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_OPERATION_TIME_MIN_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 198)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a22d4a0b8a75821c4a727f2ec9c8614f0"/><section>
+    <title>AO_MOD_POST_ERR_STATUS_ADDR</title>
+<indexterm><primary>AO_MOD_POST_ERR_STATUS_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_POST_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_POST_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 190)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a54088252646725defb7f2786b273049c"/><section>
+    <title>AO_MOD_SCAN_INTERVAL</title>
+<indexterm><primary>AO_MOD_SCAN_INTERVAL</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_SCAN_INTERVAL</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_SCAN_INTERVAL&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 213)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db"/><section>
+    <title>AO_MOD_SERVICE_DATA_ADDR</title>
+<indexterm><primary>AO_MOD_SERVICE_DATA_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_SERVICE_DATA_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_SERVICE_DATA_ADDR&#160;&#160;&#160;0x00000000</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a3de5ef2046da8a8057dc96b5329cc5bd"/><section>
+    <title>AO_MOD_SHORT_CKT_DIAG_EN_ADDR</title>
+<indexterm><primary>AO_MOD_SHORT_CKT_DIAG_EN_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_SHORT_CKT_DIAG_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_SHORT_CKT_DIAG_EN_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 126)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a758f54799623793aee1d84aa7e67d270"/><section>
+    <title>AO_MOD_SHORT_CKT_RECOVERY_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_SHORT_CKT_RECOVERY_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_SHORT_CKT_RECOVERY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_SHORT_CKT_RECOVERY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 159)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a2cbaebbe6c34c5a3cb0ea156329dd65b"/><section>
+    <title>AO_MOD_UPPER_LIMIT_MONITOR_ENABLE_ADDR</title>
+<indexterm><primary>AO_MOD_UPPER_LIMIT_MONITOR_ENABLE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_UPPER_LIMIT_MONITOR_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_UPPER_LIMIT_MONITOR_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 128)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a562e0e58254f95033f9236e87382b62e"/><section>
+    <title>AO_MOD_UPPER_LIMIT_VALUE_ADDR</title>
+<indexterm><primary>AO_MOD_UPPER_LIMIT_VALUE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_UPPER_LIMIT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_UPPER_LIMIT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 162)</computeroutput></para></section>
+<anchor xml:id="__analog_output_module_api_8c_1a48dcd103458d1c766173afd6cf4d213a"/><section>
+    <title>AO_MOD_VA_VB_VOLTAGE_ADDR</title>
+<indexterm><primary>AO_MOD_VA_VB_VOLTAGE_ADDR</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>AO_MOD_VA_VB_VOLTAGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AO_MOD_VA_VB_VOLTAGE_ADDR&#160;&#160;&#160;(<link linkend="__analog_output_module_api_8c_1ad466afc2c89f6014cc9084311193b4db">AO_MOD_SERVICE_DATA_ADDR</link> + 182)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__analog_output_module_api_8c_1a2b5385207248a4e6b107803a0d4b350a"/><section>
+    <title>getAnalogOutputModuleServiceParam()</title>
+<indexterm><primary>getAnalogOutputModuleServiceParam</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>getAnalogOutputModuleServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t getAnalogOutputModuleServiceParam (uint16_t analog_output_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter data for a specified AO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>analog_output_handler</entry><entry>
+<para>The handler for the AO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to retrieve. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the buffer where the retrieved data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_a2b5385207248a4e6b107803a0d4b350a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_a2b5385207248a4e6b107803a0d4b350a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_output_module_api_8c_1a3b00370f3a8bc5ca0b85d10379d1550e"/><section>
+    <title>getAOModuleProcessData()</title>
+<indexterm><primary>getAOModuleProcessData</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>getAOModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getAOModuleProcessData (uint16_t ao_device_handler, aomodule_processinfo * aomod_processdata)</computeroutput></para><para>
+
+<para>Retrieves the process data for a specified AO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>ao_device_handler</entry><entry>
+<para>The handler for the AO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>aomod_processdata</entry><entry>
+<para>Pointer to the <computeroutput>aomodule_processinfo</computeroutput> structure to store process data.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_a3b00370f3a8bc5ca0b85d10379d1550e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_a3b00370f3a8bc5ca0b85d10379d1550e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_output_module_api_8c_1a91f3bb33371373e3e9b48b2290355551"/><section>
+    <title>getIOProcessDataInstanceAddress()</title>
+<indexterm><primary>getIOProcessDataInstanceAddress</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>getIOProcessDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOProcessDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para>
+<para>@breif : This is to get the address of of the process data instance </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_a91f3bb33371373e3e9b48b2290355551_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_output_module_api_8c_1aab64cdfe20fa84db4be92c96380d60a2"/><section>
+    <title>getIOServiceDataInstanceAddress()</title>
+<indexterm><primary>getIOServiceDataInstanceAddress</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>getIOServiceDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOServiceDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>: This is to get the address of the service data instance </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_output_module_api_8c_1a9f4beeefd13735079c96473b454b3270"/><section>
+    <title>setAnalogOutputModuleServiceParam()</title>
+<indexterm><primary>setAnalogOutputModuleServiceParam</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>setAnalogOutputModuleServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t setAnalogOutputModuleServiceParam (uint16_t analog_output_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified DO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>analog_output_handler</entry><entry>
+<para>The handler for the DO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. //Refer to the enumeration <computeroutput>e_io_servicedata_parameter_name</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_a9f4beeefd13735079c96473b454b3270_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_a9f4beeefd13735079c96473b454b3270_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_output_module_api_8c_1a225a359981b73383fe1810b37467283d"/><section>
+    <title>setAOModuleProcessData()</title>
+<indexterm><primary>setAOModuleProcessData</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>setAOModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t setAOModuleProcessData (uint16_t ao_device_handler, int16_t data, uint8_t channle_number)</computeroutput></para><para>
+
+<para>Sets the analog output status for a specified AO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>ao_device_handler</entry><entry>
+<para>The handler for the AO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Value of the data to be set</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_output_module_api_8c_a225a359981b73383fe1810b37467283d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__analog_output_module_api_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>AnalogOutputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogOutputModuleApi.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

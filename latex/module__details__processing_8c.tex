@@ -1,0 +1,389 @@
+\doxysection{Data\+\_\+processing/module\+\_\+details\+\_\+processing.c File Reference}
+\hypertarget{module__details__processing_8c}{}\label{module__details__processing_8c}\index{Data\_processing/module\_details\_processing.c@{Data\_processing/module\_details\_processing.c}}
+
+
+Source that processes the MBN status information.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for module\+\_\+details\+\_\+processing.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{module__details__processing_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{module__details__processing_8c_adfca9bae7bdfdd358ced96390fb1f696}{fetch\+\_\+mbn\+\_\+identification\+\_\+parameters}} ()
+\begin{DoxyCompactList}\small\item\em Function that fetches the MBN identification parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{module__details__processing_8c_a3e9b0f25faad61167968870d14001d3b}{fetch\+\_\+io\+\_\+identification\+\_\+parameters}} ()
+\begin{DoxyCompactList}\small\item\em Function that fetches the IO\+\_\+module identification parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{module__details__processing_8c_ac4306bff4d6d753d0caba597124ddbe3}{fetch\+\_\+pz\+\_\+identification\+\_\+parameters}} ()
+\begin{DoxyCompactList}\small\item\em Function that fetches the PZ identification parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{module__details__processing_8c_aac0c03d78e4b434d9f855c01973071b1}{fetch\+\_\+propzone\+\_\+identification\+\_\+parameters}} ()
+\begin{DoxyCompactList}\small\item\em Function that fetches the Prop\+Zone identification parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+mbn\+\_\+identification\+\_\+info\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a5e513538eebc0523aa0dd56964ae2de9}{mbn\+\_\+module\+\_\+info}}
+\item 
+s\+\_\+io\+\_\+identification\+\_\+info \mbox{\hyperlink{module__details__processing_8c_a350ae9e33a3016b3334d36d41513c9dc}{io\+\_\+module\+\_\+info}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+MODULES\mbox{]}
+\item 
+isemdiagidentificationinfo \mbox{\hyperlink{module__details__processing_8c_afe1cbe48c5f14cbc8409273db880f69e}{isem\+\_\+diag\+\_\+module\+\_\+info}} \mbox{[}MAX\+\_\+\+ISEM\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}
+\item 
+diagvalveidentificationinfo \mbox{\hyperlink{module__details__processing_8c_a5c1f7b9aa2924d9827ee28c651a1715d}{diag\+\_\+module\+\_\+info}} \mbox{[}MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE\mbox{]}
+\item 
+propidentificationinfo \mbox{\hyperlink{module__details__processing_8c_adf465f1e5563b110346cadfa4796c76f}{prop\+\_\+station\+\_\+module\+\_\+info}} \mbox{[}MAX\+\_\+\+PROP\+\_\+\+STATION\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}
+\item 
+propidentificationinfo \mbox{\hyperlink{module__details__processing_8c_aef9f062d491a6ef917ee55a497b9233b}{prop\+\_\+zone\+\_\+module\+\_\+info}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+ZONE\mbox{]}
+\item 
+Module\+Details \mbox{\hyperlink{module__details__processing_8c_a8779a863e7d67f1e3e6e0315e137fba4}{modulesdetails}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}
+\item 
+PZone\+Details \mbox{\hyperlink{module__details__processing_8c_a7f5f23f78cf76bec56ebefff8cea7196}{pzonemodulesdetails}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a6ee6cb3fb906eec58c30fefafa737e34}{g\+\_\+module\+\_\+details\+\_\+count}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{module__details__processing_8c_ae928c14f046dfa456e971341fdfab7c3}{g\+\_\+pzone\+\_\+details\+\_\+count}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a8283ddbfd893cd3bacd252a03eb89fcf}{diag\+\_\+valve\+\_\+device\+\_\+types}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE\mbox{]}
+\item 
+s\+\_\+discovery\+\_\+details \mbox{\hyperlink{module__details__processing_8c_aecc928609def218c15f7c59447eb5a32}{discover\+\_\+details}}
+\item 
+s\+\_\+prszone\+\_\+device\+\_\+count\+\_\+details \mbox{\hyperlink{module__details__processing_8c_a639ca1471160314ce61d52506c2a8d0d}{pz\+\_\+count\+\_\+details}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_acb71097bdde0eeb8f371374d3a7e14ed}{di\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a92e023a01eb6cda34cb71ffb24aac30d}{do\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a469ccdb9274911410aa03d305dda5343}{dio\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a1b52b26f5eaa915de63b353f7186b998}{ai\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_aa42415ce458bf3e4b6111071869ee688}{ao\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a02fd0c072e2bbeb279db2b5a5e77879b}{aio\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a8f6252caf33f738fd9f6e6c46db45eb8}{pz\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PZ\+\_\+\+HANDLERS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_aa99741c64ccbcc97a4d63b9364f74eac}{prop\+\_\+zone\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+ZONE\+\_\+\+HANDLERS\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a8805f3ed6a9cc57f5be8d3493520d689}{isemdiag\+\_\+handlers}} \mbox{[}MAX\+\_\+\+ISEM\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_aa75499d0a62f43079c1e194f965b1a3d}{diag\+\_\+handlers}} \mbox{[}MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a8dcd1736f88832ad3a48bcc2d94ba37a}{prop\+\_\+station\+\_\+handlers}} \mbox{[}MAX\+\_\+\+PROP\+\_\+\+STATION\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{module__details__processing_8c_a99853c346c63e9d4b6d00633a57cbe9c}{g\+\_\+total\+\_\+digital\+\_\+count}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{module__details__processing_8c_ad02cee25b80418d1bfe5049c4acc3725}{g\+\_\+total\+\_\+analog\+\_\+count}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_ae44ef9829ac44f5b2bb7abdefce34479}{g\+\_\+isemdiag\+\_\+count}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{module__details__processing_8c_ae824f62265a6998b6bcd6d92e5af8bd4}{g\+\_\+diagvalve\+\_\+count}}
+\item 
+int \mbox{\hyperlink{module__details__processing_8c_ae9ddf52b205881f5c387d7a7f8940af6}{prop\+\_\+station\+\_\+indices}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{-\/1, -\/1, -\/1, -\/1, -\/1\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that processes the MBN status information. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{module__details__processing_8c_a3e9b0f25faad61167968870d14001d3b}\index{module\_details\_processing.c@{module\_details\_processing.c}!fetch\_io\_identification\_parameters@{fetch\_io\_identification\_parameters}}
+\index{fetch\_io\_identification\_parameters@{fetch\_io\_identification\_parameters}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{fetch\_io\_identification\_parameters()}{fetch\_io\_identification\_parameters()}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a3e9b0f25faad61167968870d14001d3b} 
+void fetch\+\_\+io\+\_\+identification\+\_\+parameters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function that fetches the IO\+\_\+module identification parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__details__processing_8c_a3e9b0f25faad61167968870d14001d3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__details__processing_8c_a3e9b0f25faad61167968870d14001d3b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{module__details__processing_8c_adfca9bae7bdfdd358ced96390fb1f696}\index{module\_details\_processing.c@{module\_details\_processing.c}!fetch\_mbn\_identification\_parameters@{fetch\_mbn\_identification\_parameters}}
+\index{fetch\_mbn\_identification\_parameters@{fetch\_mbn\_identification\_parameters}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{fetch\_mbn\_identification\_parameters()}{fetch\_mbn\_identification\_parameters()}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_adfca9bae7bdfdd358ced96390fb1f696} 
+void fetch\+\_\+mbn\+\_\+identification\+\_\+parameters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function that fetches the MBN identification parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__details__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__details__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{module__details__processing_8c_aac0c03d78e4b434d9f855c01973071b1}\index{module\_details\_processing.c@{module\_details\_processing.c}!fetch\_propzone\_identification\_parameters@{fetch\_propzone\_identification\_parameters}}
+\index{fetch\_propzone\_identification\_parameters@{fetch\_propzone\_identification\_parameters}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{fetch\_propzone\_identification\_parameters()}{fetch\_propzone\_identification\_parameters()}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_aac0c03d78e4b434d9f855c01973071b1} 
+void fetch\+\_\+propzone\+\_\+identification\+\_\+parameters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function that fetches the Prop\+Zone identification parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__details__processing_8c_aac0c03d78e4b434d9f855c01973071b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__details__processing_8c_aac0c03d78e4b434d9f855c01973071b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{module__details__processing_8c_ac4306bff4d6d753d0caba597124ddbe3}\index{module\_details\_processing.c@{module\_details\_processing.c}!fetch\_pz\_identification\_parameters@{fetch\_pz\_identification\_parameters}}
+\index{fetch\_pz\_identification\_parameters@{fetch\_pz\_identification\_parameters}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{fetch\_pz\_identification\_parameters()}{fetch\_pz\_identification\_parameters()}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_ac4306bff4d6d753d0caba597124ddbe3} 
+void fetch\+\_\+pz\+\_\+identification\+\_\+parameters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function that fetches the PZ identification parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__details__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__details__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{module__details__processing_8c_a1b52b26f5eaa915de63b353f7186b998}\index{module\_details\_processing.c@{module\_details\_processing.c}!ai\_handlers@{ai\_handlers}}
+\index{ai\_handlers@{ai\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{ai\_handlers}{ai\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a1b52b26f5eaa915de63b353f7186b998} 
+uint16\+\_\+t ai\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_a02fd0c072e2bbeb279db2b5a5e77879b}\index{module\_details\_processing.c@{module\_details\_processing.c}!aio\_handlers@{aio\_handlers}}
+\index{aio\_handlers@{aio\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{aio\_handlers}{aio\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a02fd0c072e2bbeb279db2b5a5e77879b} 
+uint16\+\_\+t aio\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_aa42415ce458bf3e4b6111071869ee688}\index{module\_details\_processing.c@{module\_details\_processing.c}!ao\_handlers@{ao\_handlers}}
+\index{ao\_handlers@{ao\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{ao\_handlers}{ao\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_aa42415ce458bf3e4b6111071869ee688} 
+uint16\+\_\+t ao\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_acb71097bdde0eeb8f371374d3a7e14ed}\index{module\_details\_processing.c@{module\_details\_processing.c}!di\_handlers@{di\_handlers}}
+\index{di\_handlers@{di\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{di\_handlers}{di\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_acb71097bdde0eeb8f371374d3a7e14ed} 
+uint16\+\_\+t di\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_aa75499d0a62f43079c1e194f965b1a3d}\index{module\_details\_processing.c@{module\_details\_processing.c}!diag\_handlers@{diag\_handlers}}
+\index{diag\_handlers@{diag\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{diag\_handlers}{diag\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_aa75499d0a62f43079c1e194f965b1a3d} 
+uint16\+\_\+t diag\+\_\+handlers\mbox{[}MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_a5c1f7b9aa2924d9827ee28c651a1715d}\index{module\_details\_processing.c@{module\_details\_processing.c}!diag\_module\_info@{diag\_module\_info}}
+\index{diag\_module\_info@{diag\_module\_info}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{diag\_module\_info}{diag\_module\_info}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a5c1f7b9aa2924d9827ee28c651a1715d} 
+diagvalveidentificationinfo diag\+\_\+module\+\_\+info\mbox{[}MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE\mbox{]}}
+
+\Hypertarget{module__details__processing_8c_a8283ddbfd893cd3bacd252a03eb89fcf}\index{module\_details\_processing.c@{module\_details\_processing.c}!diag\_valve\_device\_types@{diag\_valve\_device\_types}}
+\index{diag\_valve\_device\_types@{diag\_valve\_device\_types}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{diag\_valve\_device\_types}{diag\_valve\_device\_types}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a8283ddbfd893cd3bacd252a03eb89fcf} 
+uint32\+\_\+t diag\+\_\+valve\+\_\+device\+\_\+types\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE\mbox{]}}
+
+\Hypertarget{module__details__processing_8c_a469ccdb9274911410aa03d305dda5343}\index{module\_details\_processing.c@{module\_details\_processing.c}!dio\_handlers@{dio\_handlers}}
+\index{dio\_handlers@{dio\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{dio\_handlers}{dio\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a469ccdb9274911410aa03d305dda5343} 
+uint16\+\_\+t dio\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_aecc928609def218c15f7c59447eb5a32}\index{module\_details\_processing.c@{module\_details\_processing.c}!discover\_details@{discover\_details}}
+\index{discover\_details@{discover\_details}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{discover\_details}{discover\_details}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_aecc928609def218c15f7c59447eb5a32} 
+s\+\_\+discovery\+\_\+details discover\+\_\+details\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_a92e023a01eb6cda34cb71ffb24aac30d}\index{module\_details\_processing.c@{module\_details\_processing.c}!do\_handlers@{do\_handlers}}
+\index{do\_handlers@{do\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{do\_handlers}{do\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a92e023a01eb6cda34cb71ffb24aac30d} 
+uint16\+\_\+t do\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_ae824f62265a6998b6bcd6d92e5af8bd4}\index{module\_details\_processing.c@{module\_details\_processing.c}!g\_diagvalve\_count@{g\_diagvalve\_count}}
+\index{g\_diagvalve\_count@{g\_diagvalve\_count}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{g\_diagvalve\_count}{g\_diagvalve\_count}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_ae824f62265a6998b6bcd6d92e5af8bd4} 
+uint16\+\_\+t g\+\_\+diagvalve\+\_\+count}
+
+\Hypertarget{module__details__processing_8c_ae44ef9829ac44f5b2bb7abdefce34479}\index{module\_details\_processing.c@{module\_details\_processing.c}!g\_isemdiag\_count@{g\_isemdiag\_count}}
+\index{g\_isemdiag\_count@{g\_isemdiag\_count}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{g\_isemdiag\_count}{g\_isemdiag\_count}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_ae44ef9829ac44f5b2bb7abdefce34479} 
+uint16\+\_\+t g\+\_\+isemdiag\+\_\+count\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_a6ee6cb3fb906eec58c30fefafa737e34}\index{module\_details\_processing.c@{module\_details\_processing.c}!g\_module\_details\_count@{g\_module\_details\_count}}
+\index{g\_module\_details\_count@{g\_module\_details\_count}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{g\_module\_details\_count}{g\_module\_details\_count}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a6ee6cb3fb906eec58c30fefafa737e34} 
+uint8\+\_\+t g\+\_\+module\+\_\+details\+\_\+count = 0}
+
+\Hypertarget{module__details__processing_8c_ae928c14f046dfa456e971341fdfab7c3}\index{module\_details\_processing.c@{module\_details\_processing.c}!g\_pzone\_details\_count@{g\_pzone\_details\_count}}
+\index{g\_pzone\_details\_count@{g\_pzone\_details\_count}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{g\_pzone\_details\_count}{g\_pzone\_details\_count}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_ae928c14f046dfa456e971341fdfab7c3} 
+uint8\+\_\+t g\+\_\+pzone\+\_\+details\+\_\+count = 0}
+
+\Hypertarget{module__details__processing_8c_ad02cee25b80418d1bfe5049c4acc3725}\index{module\_details\_processing.c@{module\_details\_processing.c}!g\_total\_analog\_count@{g\_total\_analog\_count}}
+\index{g\_total\_analog\_count@{g\_total\_analog\_count}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{g\_total\_analog\_count}{g\_total\_analog\_count}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_ad02cee25b80418d1bfe5049c4acc3725} 
+uint8\+\_\+t g\+\_\+total\+\_\+analog\+\_\+count}
+
+\Hypertarget{module__details__processing_8c_a99853c346c63e9d4b6d00633a57cbe9c}\index{module\_details\_processing.c@{module\_details\_processing.c}!g\_total\_digital\_count@{g\_total\_digital\_count}}
+\index{g\_total\_digital\_count@{g\_total\_digital\_count}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{g\_total\_digital\_count}{g\_total\_digital\_count}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a99853c346c63e9d4b6d00633a57cbe9c} 
+uint8\+\_\+t g\+\_\+total\+\_\+digital\+\_\+count\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_a350ae9e33a3016b3334d36d41513c9dc}\index{module\_details\_processing.c@{module\_details\_processing.c}!io\_module\_info@{io\_module\_info}}
+\index{io\_module\_info@{io\_module\_info}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{io\_module\_info}{io\_module\_info}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a350ae9e33a3016b3334d36d41513c9dc} 
+s\+\_\+io\+\_\+identification\+\_\+info io\+\_\+module\+\_\+info\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+MODULES\mbox{]}}
+
+\Hypertarget{module__details__processing_8c_afe1cbe48c5f14cbc8409273db880f69e}\index{module\_details\_processing.c@{module\_details\_processing.c}!isem\_diag\_module\_info@{isem\_diag\_module\_info}}
+\index{isem\_diag\_module\_info@{isem\_diag\_module\_info}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{isem\_diag\_module\_info}{isem\_diag\_module\_info}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_afe1cbe48c5f14cbc8409273db880f69e} 
+isemdiagidentificationinfo isem\+\_\+diag\+\_\+module\+\_\+info\mbox{[}MAX\+\_\+\+ISEM\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}}
+
+\Hypertarget{module__details__processing_8c_a8805f3ed6a9cc57f5be8d3493520d689}\index{module\_details\_processing.c@{module\_details\_processing.c}!isemdiag\_handlers@{isemdiag\_handlers}}
+\index{isemdiag\_handlers@{isemdiag\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{isemdiag\_handlers}{isemdiag\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a8805f3ed6a9cc57f5be8d3493520d689} 
+uint16\+\_\+t isemdiag\+\_\+handlers\mbox{[}MAX\+\_\+\+ISEM\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_a5e513538eebc0523aa0dd56964ae2de9}\index{module\_details\_processing.c@{module\_details\_processing.c}!mbn\_module\_info@{mbn\_module\_info}}
+\index{mbn\_module\_info@{mbn\_module\_info}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{mbn\_module\_info}{mbn\_module\_info}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a5e513538eebc0523aa0dd56964ae2de9} 
+mbn\+\_\+identification\+\_\+info\+\_\+t mbn\+\_\+module\+\_\+info}
+
+\Hypertarget{module__details__processing_8c_a8779a863e7d67f1e3e6e0315e137fba4}\index{module\_details\_processing.c@{module\_details\_processing.c}!modulesdetails@{modulesdetails}}
+\index{modulesdetails@{modulesdetails}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{modulesdetails}{modulesdetails}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a8779a863e7d67f1e3e6e0315e137fba4} 
+Module\+Details modulesdetails\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}}
+
+\Hypertarget{module__details__processing_8c_a8dcd1736f88832ad3a48bcc2d94ba37a}\index{module\_details\_processing.c@{module\_details\_processing.c}!prop\_station\_handlers@{prop\_station\_handlers}}
+\index{prop\_station\_handlers@{prop\_station\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{prop\_station\_handlers}{prop\_station\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a8dcd1736f88832ad3a48bcc2d94ba37a} 
+uint16\+\_\+t prop\+\_\+station\+\_\+handlers\mbox{[}MAX\+\_\+\+PROP\+\_\+\+STATION\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_ae9ddf52b205881f5c387d7a7f8940af6}\index{module\_details\_processing.c@{module\_details\_processing.c}!prop\_station\_indices@{prop\_station\_indices}}
+\index{prop\_station\_indices@{prop\_station\_indices}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{prop\_station\_indices}{prop\_station\_indices}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_ae9ddf52b205881f5c387d7a7f8940af6} 
+int prop\+\_\+station\+\_\+indices\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{-\/1, -\/1, -\/1, -\/1, -\/1\}}
+
+\Hypertarget{module__details__processing_8c_adf465f1e5563b110346cadfa4796c76f}\index{module\_details\_processing.c@{module\_details\_processing.c}!prop\_station\_module\_info@{prop\_station\_module\_info}}
+\index{prop\_station\_module\_info@{prop\_station\_module\_info}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{prop\_station\_module\_info}{prop\_station\_module\_info}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_adf465f1e5563b110346cadfa4796c76f} 
+propidentificationinfo prop\+\_\+station\+\_\+module\+\_\+info\mbox{[}MAX\+\_\+\+PROP\+\_\+\+STATION\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}}
+
+\Hypertarget{module__details__processing_8c_aa99741c64ccbcc97a4d63b9364f74eac}\index{module\_details\_processing.c@{module\_details\_processing.c}!prop\_zone\_handlers@{prop\_zone\_handlers}}
+\index{prop\_zone\_handlers@{prop\_zone\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{prop\_zone\_handlers}{prop\_zone\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_aa99741c64ccbcc97a4d63b9364f74eac} 
+uint16\+\_\+t prop\+\_\+zone\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+ZONE\+\_\+\+HANDLERS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_aef9f062d491a6ef917ee55a497b9233b}\index{module\_details\_processing.c@{module\_details\_processing.c}!prop\_zone\_module\_info@{prop\_zone\_module\_info}}
+\index{prop\_zone\_module\_info@{prop\_zone\_module\_info}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{prop\_zone\_module\_info}{prop\_zone\_module\_info}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_aef9f062d491a6ef917ee55a497b9233b} 
+propidentificationinfo prop\+\_\+zone\+\_\+module\+\_\+info\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+ZONE\mbox{]}}
+
+\Hypertarget{module__details__processing_8c_a639ca1471160314ce61d52506c2a8d0d}\index{module\_details\_processing.c@{module\_details\_processing.c}!pz\_count\_details@{pz\_count\_details}}
+\index{pz\_count\_details@{pz\_count\_details}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{pz\_count\_details}{pz\_count\_details}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a639ca1471160314ce61d52506c2a8d0d} 
+s\+\_\+prszone\+\_\+device\+\_\+count\+\_\+details pz\+\_\+count\+\_\+details\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_a8f6252caf33f738fd9f6e6c46db45eb8}\index{module\_details\_processing.c@{module\_details\_processing.c}!pz\_handlers@{pz\_handlers}}
+\index{pz\_handlers@{pz\_handlers}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{pz\_handlers}{pz\_handlers}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a8f6252caf33f738fd9f6e6c46db45eb8} 
+uint16\+\_\+t pz\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PZ\+\_\+\+HANDLERS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__details__processing_8c_a7f5f23f78cf76bec56ebefff8cea7196}\index{module\_details\_processing.c@{module\_details\_processing.c}!pzonemodulesdetails@{pzonemodulesdetails}}
+\index{pzonemodulesdetails@{pzonemodulesdetails}!module\_details\_processing.c@{module\_details\_processing.c}}
+\doxysubsubsection{\texorpdfstring{pzonemodulesdetails}{pzonemodulesdetails}}
+{\footnotesize\ttfamily \label{module__details__processing_8c_a7f5f23f78cf76bec56ebefff8cea7196} 
+PZone\+Details pzonemodulesdetails\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}}
+

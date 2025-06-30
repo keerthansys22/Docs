@@ -1,0 +1,134 @@
+\doxysection{GUI/\+Screens/menu\+\_\+screen.c File Reference}
+\hypertarget{menu__screen_8c}{}\label{menu__screen_8c}\index{GUI/Screens/menu\_screen.c@{GUI/Screens/menu\_screen.c}}
+
+
+Source that displays menu screen.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for menu\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{menu__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu__screen_8c_af5070c63da045701c1e5e00384a01680}{menu\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize menu screen styles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__screen_8c_a08de97a32dc97712a77e711afebafca3}{disp\+\_\+mod\+\_\+menu\+\_\+screen}} (int \mbox{\hyperlink{lvgl__gui_8c_a4a73346f34aa035bd18ffec354e317be}{menu\+\_\+index}})
+\begin{DoxyCompactList}\small\item\em Function to display menu screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__screen_8c_a171bd087fd88267f8df70214d756df4a}{common\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{menu__screen_8c_a6a33696ab565814986ea70d2093022ff}{panel4\+\_\+title}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{menu__screen_8c_a49eb1271335e21ac1e4a0974afafe682}{panel4\+\_\+title1}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{menu__screen_8c_aaa9775c07017376c3661fbe78756162b}{panel4\+\_\+title2}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{menu__screen_8c_a7f19127eee2895d32375e39339991947}{panel4\+\_\+title3}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays menu screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu__screen_8c_a171bd087fd88267f8df70214d756df4a}\index{menu\_screen.c@{menu\_screen.c}!common\_label\_creation@{common\_label\_creation}}
+\index{common\_label\_creation@{common\_label\_creation}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{common\_label\_creation()}{common\_label\_creation()}}
+{\footnotesize\ttfamily \label{menu__screen_8c_a171bd087fd88267f8df70214d756df4a} 
+void common\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu__screen_8c_a08de97a32dc97712a77e711afebafca3}\index{menu\_screen.c@{menu\_screen.c}!disp\_mod\_menu\_screen@{disp\_mod\_menu\_screen}}
+\index{disp\_mod\_menu\_screen@{disp\_mod\_menu\_screen}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_menu\_screen()}{disp\_mod\_menu\_screen()}}
+{\footnotesize\ttfamily \label{menu__screen_8c_a08de97a32dc97712a77e711afebafca3} 
+void disp\+\_\+mod\+\_\+menu\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{menu\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Function to display menu screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+index} & \+: represents line number in the menu screen \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu__screen_8c_a08de97a32dc97712a77e711afebafca3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu__screen_8c_a08de97a32dc97712a77e711afebafca3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu__screen_8c_af5070c63da045701c1e5e00384a01680}\index{menu\_screen.c@{menu\_screen.c}!menu\_style@{menu\_style}}
+\index{menu\_style@{menu\_style}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{menu\_style()}{menu\_style()}}
+{\footnotesize\ttfamily \label{menu__screen_8c_af5070c63da045701c1e5e00384a01680} 
+void menu\+\_\+style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize menu screen styles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu__screen_8c_af5070c63da045701c1e5e00384a01680_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{menu__screen_8c_a6a33696ab565814986ea70d2093022ff}\index{menu\_screen.c@{menu\_screen.c}!panel4\_title@{panel4\_title}}
+\index{panel4\_title@{panel4\_title}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{panel4\_title}{panel4\_title}}
+{\footnotesize\ttfamily \label{menu__screen_8c_a6a33696ab565814986ea70d2093022ff} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} panel4\+\_\+title}
+
+\Hypertarget{menu__screen_8c_a49eb1271335e21ac1e4a0974afafe682}\index{menu\_screen.c@{menu\_screen.c}!panel4\_title1@{panel4\_title1}}
+\index{panel4\_title1@{panel4\_title1}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{panel4\_title1}{panel4\_title1}}
+{\footnotesize\ttfamily \label{menu__screen_8c_a49eb1271335e21ac1e4a0974afafe682} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} panel4\+\_\+title1}
+
+\Hypertarget{menu__screen_8c_aaa9775c07017376c3661fbe78756162b}\index{menu\_screen.c@{menu\_screen.c}!panel4\_title2@{panel4\_title2}}
+\index{panel4\_title2@{panel4\_title2}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{panel4\_title2}{panel4\_title2}}
+{\footnotesize\ttfamily \label{menu__screen_8c_aaa9775c07017376c3661fbe78756162b} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} panel4\+\_\+title2}
+
+\Hypertarget{menu__screen_8c_a7f19127eee2895d32375e39339991947}\index{menu\_screen.c@{menu\_screen.c}!panel4\_title3@{panel4\_title3}}
+\index{panel4\_title3@{panel4\_title3}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{panel4\_title3}{panel4\_title3}}
+{\footnotesize\ttfamily \label{menu__screen_8c_a7f19127eee2895d32375e39339991947} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} panel4\+\_\+title3}
+

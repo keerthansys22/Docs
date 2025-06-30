@@ -10,9 +10,9 @@
 <area shape="poly" id="edge43_Node000001_Node000022" title=" " alt="" coords="80,969,169,910,235,874,310,841,390,814,474,801,516,800,557,805,598,815,637,831,663,848,686,868,725,916,753,966,772,1007,767,1009,748,968,720,919,682,872,659,852,634,836,596,820,556,810,516,805,474,806,392,820,312,846,237,879,172,915,83,974"/>
 <area shape="rect" id="Node000023" href="$_data_server_monitor_led_8c.html#af5cb2ba0d32e073daaf90d4aef07dac2" title=" " alt="" coords="184,972,355,999"/>
 <area shape="poly" id="edge44_Node000001_Node000023" title=" " alt="" coords="119,983,169,983,169,988,119,988"/>
-<area shape="rect" id="Node000033" href="$_main_bus_node_8c.html#a5f69684ec78d8ed0c94ae6e81080cde9" title=" " alt="" coords="195,1073,344,1100"/>
+<area shape="rect" id="Node000033" href="$_main_bus_node_8c.html#a5f69684ec78d8ed0c94ae6e81080cde9" title="This is to update the Voltage VA." alt="" coords="195,1073,344,1100"/>
 <area shape="poly" id="edge64_Node000001_Node000033" title=" " alt="" coords="80,997,118,1028,168,1059,183,1065,181,1070,165,1064,115,1033,77,1001"/>
-<area shape="rect" id="Node000035" href="$_main_bus_node_8c.html#a7160f3fbd59e634e42b954e101b5e3e4" title=" " alt="" coords="195,1023,344,1049"/>
+<area shape="rect" id="Node000035" href="$_main_bus_node_8c.html#a7160f3fbd59e634e42b954e101b5e3e4" title="This is to update the Voltage VB." alt="" coords="195,1023,344,1049"/>
 <area shape="poly" id="edge66_Node000001_Node000035" title=" " alt="" coords="120,997,198,1016,197,1021,119,1002"/>
 <area shape="rect" id="Node000036" href="$_data_server_monitor_led_8c.html#a2413b7289e27122d76c2b44d98a56918" title=" " alt="" coords="196,1124,343,1151"/>
 <area shape="poly" id="edge68_Node000001_Node000036" title=" " alt="" coords="73,998,109,1053,136,1084,168,1110,183,1117,180,1122,165,1114,132,1088,105,1056,68,1001"/>
@@ -91,7 +91,7 @@
 <area shape="poly" id="edge57_Node000023_Node000030" title=" " alt="" coords="355,991,464,1002,463,1007,355,996"/>
 <area shape="rect" id="Node000031" href="$_data_server_monitor_led_8c.html#ac453a3ae986d391e5a7c2e9c595ab332" title=" " alt="" coords="460,1048,596,1075"/>
 <area shape="poly" id="edge59_Node000023_Node000031" title=" " alt="" coords="337,997,373,1008,397,1021,421,1034,446,1042,444,1047,419,1038,395,1026,371,1013,335,1002"/>
-<area shape="rect" id="Node000032" href="$_main_bus_node_8c.html#aa5cb7c14e289bfee846b352ceed0a08a" title=": This is to retriev the ethercat run and error status" alt="" coords="437,376,618,403"/>
+<area shape="rect" id="Node000032" href="$_main_bus_node_8c.html#a3d2f2d898a7cbe4309e16954248f0e7e" title="Retrieves the EtherCAT run and error status from shared memory." alt="" coords="437,376,618,403"/>
 <area shape="poly" id="edge61_Node000023_Node000032" title=" " alt="" coords="277,970,322,892,348,839,369,782,376,746,379,700,382,592,384,537,390,486,401,444,418,413,422,409,426,412,422,416,406,446,395,487,390,537,387,592,385,701,381,747,375,783,353,841,327,895,282,973"/>
 <area shape="poly" id="edge46_Node000024_Node000022" title=" " alt="" coords="580,1148,634,1128,697,1093,748,1057,751,1061,699,1098,636,1133,581,1153"/>
 <area shape="poly" id="edge48_Node000025_Node000022" title=" " alt="" coords="572,1206,604,1199,634,1186,673,1158,708,1124,760,1060,764,1064,712,1128,677,1162,637,1190,605,1204,574,1211"/>

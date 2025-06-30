@@ -1,0 +1,816 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_default__task_8c" xml:lang="en-US">
+<title>default_task.c File Reference</title>
+<indexterm><primary>default_task.c</primary></indexterm>
+<para>
+
+<para>source file that creates all the threads </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?></programlisting>Include dependency graph for default_task.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void * <link linkend="_default__task_8c_1a122b34d4ba9a92a2a595cee1b937537e">data_processing_func</link> (void *arg)</para>
+
+<para>Function that processes all the IO-modules and valves real-time data. </para>
+</listitem>
+            <listitem><para>void * <link linkend="_default__task_8c_1ac5ff31485a0894b4b43136d94049c98f">monitorLedTask</link> (void *arg)</para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1ae180d7c2955f762dead3989385de847c">lvgl_gui</link> (void)</para>
+
+<para>function that waits for key press events &amp; calls handle_display function </para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1a082a8eea3d34f52a3711258709ba8bf4">read_dv_fault_csv</link> ()</para>
+
+<para>Function that reads the fault data from CSV file &amp; stores the same in the structure. </para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1a35d15dccad6b2b0b8ed17d3792845d34">read_dv_warning_csv</link> ()</para>
+
+<para>Function that reads the warning data from CSV file &amp; stores the same in the structure. </para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1a7932b011c244674d11ad64117304349c">read_isem_warning_csv</link> ()</para>
+
+<para>Function that reads the isem_diag_warning data from CSV file &amp; stores the same in the structure. </para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1ab5d81f8e1b18c63bed5b0177a064cc98">read_isem_fault_csv</link> ()</para>
+
+<para>Function that reads the ISEM diag fault data from CSV file &amp; stores the same in the structure. </para>
+</listitem>
+            <listitem><para>int <link linkend="_default__task_8c_1a744f1cd07a566814b870a1c9c929abe5">getModuleNumber</link> (int index)</para>
+</listitem>
+            <listitem><para>int <link linkend="_default__task_8c_1aa3a14562de0d1c12332a88b8f0a77c27">getindexvalue</link> (int index)</para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1a9e971832fa51f2017304dfc488f23b93">disp_mod_status_screen</link> (int status_value, int indx)</para>
+
+<para>function to create the status screen </para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1af1be5ef90c04df6c7fcfaaffd2548f36">my_perror</link> (const char *__s)</para>
+
+<para>function that displays the initializations error </para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1a8aa473f8ae9a91df4bc9ea700983c72d">delay_ms</link> (int ms)</para>
+
+<para>function that calls delay in milliseconds </para>
+</listitem>
+            <listitem><para>void * <link linkend="_default__task_8c_1aa8739748537db71d12f20b7bc8a7e517">lvgl_state_machine</link> (void *arg)</para>
+
+<para>function that calls lvgl state machine </para>
+</listitem>
+            <listitem><para>void * <link linkend="_default__task_8c_1aeb711d7c4d19d757a09595d237dfdcdd">lvgl_run</link> (void *arg)</para>
+
+<para>function that calls the LVGL GUI screens (entry point to display screens) </para>
+</listitem>
+            <listitem><para>void * <link linkend="_default__task_8c_1ab368f87de3400ba49df2d23eb83868de">screen_pop_up_func</link> (void *arg)</para>
+
+<para>function that calls the screen pop up </para>
+</listitem>
+            <listitem><para>void <link linkend="_default__task_8c_1aac61f6b36d93b0c3a0fd8cc41cbfbdc3">default_main</link> (void)</para>
+
+<para>default function to create threads and events </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>pthread_mutex_t <link linkend="_default__task_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3">mutex</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_default__task_8c_1aa388bbbd2af08b7f83c6e55667c86270">G_KEY_PRESSED_EVENT</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_default__task_8c_1aaa8fd3258b0349c782441c209b83cf5c">G_POP_EVENT</link></para>
+</listitem>
+            <listitem><para>pthread_t <link linkend="_default__task_8c_1a38b20330a68d9e059f37c2d125995478">data_processing_thread</link></para>
+</listitem>
+            <listitem><para>pthread_t <link linkend="_default__task_8c_1a06fda7de76b4b4fac8b20bb08a2ad1ce">screen_pop_up_thread</link></para>
+</listitem>
+            <listitem><para>pthread_t <link linkend="_default__task_8c_1a5d3f042bc74db494e10c9eebd7208734">thread_acquire</link></para>
+</listitem>
+            <listitem><para>pthread_t <link linkend="_default__task_8c_1aed88a87080777229ab77e1af0285690f">lvgl_state_thread</link></para>
+</listitem>
+            <listitem><para>pthread_t <link linkend="_default__task_8c_1a5a66127f8adbbe580bd4ce3b5f19d992">lvgl_run_thread</link></para>
+</listitem>
+            <listitem><para>pthread_t <link linkend="_default__task_8c_1a9fbaded7afa706fa64a75084f7097644">thread_led</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_default__task_8c_1a1e3892d738339a39bc0c717706a4048f">g_status_value</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_default__task_8c_1a49952e1fb0d52f6ef2f6fd0f381ab1b5">cur_disp_scr_index</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_default__task_8c_1a90a840dc2cad65d1e73a074141fdacf4">gg</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_default__task_8c_1a31a385606433007d26a8e1c8a3df221f">kk</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>source file that creates all the threads </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_default__task_8c_1a122b34d4ba9a92a2a595cee1b937537e"/><section>
+    <title>data_processing_func()</title>
+<indexterm><primary>data_processing_func</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>data_processing_func</secondary></indexterm>
+<para><computeroutput>void * data_processing_func (void * arg)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that processes all the IO-modules and valves real-time data. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a122b34d4ba9a92a2a595cee1b937537e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a122b34d4ba9a92a2a595cee1b937537e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1aac61f6b36d93b0c3a0fd8cc41cbfbdc3"/><section>
+    <title>default_main()</title>
+<indexterm><primary>default_main</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>default_main</secondary></indexterm>
+<para><computeroutput>void default_main (void )</computeroutput></para><para>
+
+<para>default function to create threads and events </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1a8aa473f8ae9a91df4bc9ea700983c72d"/><section>
+    <title>delay_ms()</title>
+<indexterm><primary>delay_ms</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>delay_ms</secondary></indexterm>
+<para><computeroutput>void delay_ms (int ms)</computeroutput></para><para>
+
+<para>function that calls delay in milliseconds </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ms</entry><entry>
+<para>- millisecond value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a8aa473f8ae9a91df4bc9ea700983c72d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1a9e971832fa51f2017304dfc488f23b93"/><section>
+    <title>disp_mod_status_screen()</title>
+<indexterm><primary>disp_mod_status_screen</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>disp_mod_status_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_status_screen (int status_value, int indx)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>function to create the status screen </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>status_value</entry><entry>
+<para>- (0 - normal, 1 - warning, 2 - fault) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a9e971832fa51f2017304dfc488f23b93_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1aa3a14562de0d1c12332a88b8f0a77c27"/><section>
+    <title>getindexvalue()</title>
+<indexterm><primary>getindexvalue</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>getindexvalue</secondary></indexterm>
+<para><computeroutput>int getindexvalue (int index)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_aa3a14562de0d1c12332a88b8f0a77c27_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1a744f1cd07a566814b870a1c9c929abe5"/><section>
+    <title>getModuleNumber()</title>
+<indexterm><primary>getModuleNumber</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>getModuleNumber</secondary></indexterm>
+<para><computeroutput>int getModuleNumber (int index)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a744f1cd07a566814b870a1c9c929abe5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1ae180d7c2955f762dead3989385de847c"/><section>
+    <title>lvgl_gui()</title>
+<indexterm><primary>lvgl_gui</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>lvgl_gui</secondary></indexterm>
+<para><computeroutput>void lvgl_gui (void )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>function that waits for key press events &amp; calls handle_display function </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_ae180d7c2955f762dead3989385de847c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_ae180d7c2955f762dead3989385de847c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1aeb711d7c4d19d757a09595d237dfdcdd"/><section>
+    <title>lvgl_run()</title>
+<indexterm><primary>lvgl_run</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>lvgl_run</secondary></indexterm>
+<para><computeroutput>void * lvgl_run (void * arg)</computeroutput></para><para>
+
+<para>function that calls the LVGL GUI screens (entry point to display screens) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_aeb711d7c4d19d757a09595d237dfdcdd_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_aeb711d7c4d19d757a09595d237dfdcdd_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1aa8739748537db71d12f20b7bc8a7e517"/><section>
+    <title>lvgl_state_machine()</title>
+<indexterm><primary>lvgl_state_machine</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>lvgl_state_machine</secondary></indexterm>
+<para><computeroutput>void * lvgl_state_machine (void * arg)</computeroutput></para><para>
+
+<para>function that calls lvgl state machine </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_aa8739748537db71d12f20b7bc8a7e517_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1ac5ff31485a0894b4b43136d94049c98f"/><section>
+    <title>monitorLedTask()</title>
+<indexterm><primary>monitorLedTask</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>monitorLedTask</secondary></indexterm>
+<para><computeroutput>void * monitorLedTask (void * arg)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_ac5ff31485a0894b4b43136d94049c98f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_ac5ff31485a0894b4b43136d94049c98f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1af1be5ef90c04df6c7fcfaaffd2548f36"/><section>
+    <title>my_perror()</title>
+<indexterm><primary>my_perror</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>my_perror</secondary></indexterm>
+<para><computeroutput>void my_perror (const char * __s)</computeroutput></para><para>
+
+<para>function that displays the initializations error </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para>- string message </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_af1be5ef90c04df6c7fcfaaffd2548f36_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1a082a8eea3d34f52a3711258709ba8bf4"/><section>
+    <title>read_dv_fault_csv()</title>
+<indexterm><primary>read_dv_fault_csv</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>read_dv_fault_csv</secondary></indexterm>
+<para><computeroutput>void read_dv_fault_csv ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that reads the fault data from CSV file &amp; stores the same in the structure. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a082a8eea3d34f52a3711258709ba8bf4_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a082a8eea3d34f52a3711258709ba8bf4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1a35d15dccad6b2b0b8ed17d3792845d34"/><section>
+    <title>read_dv_warning_csv()</title>
+<indexterm><primary>read_dv_warning_csv</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>read_dv_warning_csv</secondary></indexterm>
+<para><computeroutput>void read_dv_warning_csv ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that reads the warning data from CSV file &amp; stores the same in the structure. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a35d15dccad6b2b0b8ed17d3792845d34_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1ab5d81f8e1b18c63bed5b0177a064cc98"/><section>
+    <title>read_isem_fault_csv()</title>
+<indexterm><primary>read_isem_fault_csv</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>read_isem_fault_csv</secondary></indexterm>
+<para><computeroutput>void read_isem_fault_csv ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that reads the ISEM diag fault data from CSV file &amp; stores the same in the structure. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_ab5d81f8e1b18c63bed5b0177a064cc98_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_ab5d81f8e1b18c63bed5b0177a064cc98_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1a7932b011c244674d11ad64117304349c"/><section>
+    <title>read_isem_warning_csv()</title>
+<indexterm><primary>read_isem_warning_csv</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>read_isem_warning_csv</secondary></indexterm>
+<para><computeroutput>void read_isem_warning_csv ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that reads the isem_diag_warning data from CSV file &amp; stores the same in the structure. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a7932b011c244674d11ad64117304349c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_a7932b011c244674d11ad64117304349c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_default__task_8c_1ab368f87de3400ba49df2d23eb83868de"/><section>
+    <title>screen_pop_up_func()</title>
+<indexterm><primary>screen_pop_up_func</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>screen_pop_up_func</secondary></indexterm>
+<para><computeroutput>void * screen_pop_up_func (void * arg)</computeroutput></para><para>
+
+<para>function that calls the screen pop up </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_ab368f87de3400ba49df2d23eb83868de_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="default__task_8c_ab368f87de3400ba49df2d23eb83868de_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_default__task_8c_1a49952e1fb0d52f6ef2f6fd0f381ab1b5"/><section>
+    <title>cur_disp_scr_index</title>
+<indexterm><primary>cur_disp_scr_index</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>cur_disp_scr_index</secondary></indexterm>
+<para><computeroutput>uint8_t cur_disp_scr_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a38b20330a68d9e059f37c2d125995478"/><section>
+    <title>data_processing_thread</title>
+<indexterm><primary>data_processing_thread</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>data_processing_thread</secondary></indexterm>
+<para><computeroutput>pthread_t data_processing_thread</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1aa388bbbd2af08b7f83c6e55667c86270"/><section>
+    <title>G_KEY_PRESSED_EVENT</title>
+<indexterm><primary>G_KEY_PRESSED_EVENT</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>G_KEY_PRESSED_EVENT</secondary></indexterm>
+<para><computeroutput>int G_KEY_PRESSED_EVENT</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1aaa8fd3258b0349c782441c209b83cf5c"/><section>
+    <title>G_POP_EVENT</title>
+<indexterm><primary>G_POP_EVENT</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>G_POP_EVENT</secondary></indexterm>
+<para><computeroutput>int G_POP_EVENT</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a1e3892d738339a39bc0c717706a4048f"/><section>
+    <title>g_status_value</title>
+<indexterm><primary>g_status_value</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>g_status_value</secondary></indexterm>
+<para><computeroutput>int g_status_value<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a90a840dc2cad65d1e73a074141fdacf4"/><section>
+    <title>gg</title>
+<indexterm><primary>gg</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>gg</secondary></indexterm>
+<para><computeroutput>int gg</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a31a385606433007d26a8e1c8a3df221f"/><section>
+    <title>kk</title>
+<indexterm><primary>kk</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>kk</secondary></indexterm>
+<para><computeroutput>int kk</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a5a66127f8adbbe580bd4ce3b5f19d992"/><section>
+    <title>lvgl_run_thread</title>
+<indexterm><primary>lvgl_run_thread</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>lvgl_run_thread</secondary></indexterm>
+<para><computeroutput>pthread_t lvgl_run_thread</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1aed88a87080777229ab77e1af0285690f"/><section>
+    <title>lvgl_state_thread</title>
+<indexterm><primary>lvgl_state_thread</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>lvgl_state_thread</secondary></indexterm>
+<para><computeroutput>pthread_t lvgl_state_thread</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3"/><section>
+    <title>mutex</title>
+<indexterm><primary>mutex</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>mutex</secondary></indexterm>
+<para><computeroutput>pthread_mutex_t mutex</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a06fda7de76b4b4fac8b20bb08a2ad1ce"/><section>
+    <title>screen_pop_up_thread</title>
+<indexterm><primary>screen_pop_up_thread</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>screen_pop_up_thread</secondary></indexterm>
+<para><computeroutput>pthread_t screen_pop_up_thread</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a5d3f042bc74db494e10c9eebd7208734"/><section>
+    <title>thread_acquire</title>
+<indexterm><primary>thread_acquire</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>thread_acquire</secondary></indexterm>
+<para><computeroutput>pthread_t thread_acquire</computeroutput></para></section>
+<anchor xml:id="_default__task_8c_1a9fbaded7afa706fa64a75084f7097644"/><section>
+    <title>thread_led</title>
+<indexterm><primary>thread_led</primary><secondary>default_task.c</secondary></indexterm>
+<indexterm><primary>default_task.c</primary><secondary>thread_led</secondary></indexterm>
+<para><computeroutput>pthread_t thread_led</computeroutput></para></section>
+</section>
+</section>

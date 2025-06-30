@@ -1,0 +1,289 @@
+\doxysection{GUI/\+Screens/status\+\_\+screen.c File Reference}
+\hypertarget{status__screen_8c}{}\label{status__screen_8c}\index{GUI/Screens/status\_screen.c@{GUI/Screens/status\_screen.c}}
+
+
+Source that displays status screen.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for status\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{status__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{status__screen_8c_a9e971832fa51f2017304dfc488f23b93}{disp\+\_\+mod\+\_\+status\+\_\+screen}} (int status\+\_\+value, int indx)
+\begin{DoxyCompactList}\small\item\em function to create the status screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{status__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d}{stop\+\_\+flashing\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em function to stop the flashing timer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{status__screen_8c_adcc2034261addcb1e1ed1272af6e421d}{status\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, const char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, lv\+\_\+coord\+\_\+t w, lv\+\_\+coord\+\_\+t h, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\begin{DoxyCompactList}\small\item\em function to create the labels \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{status__screen_8c_aacff09f925b6d1af3bd78743926dfb3e}{status\+\_\+qr\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, lv\+\_\+coord\+\_\+t size, char \texorpdfstring{$\ast$}{*}text)
+\begin{DoxyCompactList}\small\item\em function to create the QR \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{status__screen_8c_a4f6a30dc66c4eb48d9ce877149b302e8}{set\+\_\+animation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}label)
+\begin{DoxyCompactList}\small\item\em create animations for normal and warning status \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{status__screen_8c_a05e26f94ed962040b81fad16870a99d7}{set\+\_\+animation\+\_\+fault}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}label)
+\begin{DoxyCompactList}\small\item\em create animations for fault status \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+status\+\_\+screen\+\_\+struct \mbox{\hyperlink{status__screen_8c_a01a09ef94e00ab546916776847cc4dc1}{screen\+\_\+status\+\_\+value}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{status__screen_8c_a27e4047823c653df7bd5f560cd4fa460}{g\+\_\+total\+\_\+no\+\_\+of\+\_\+status\+\_\+screens}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_a659c2822fbcf0630ce20c397c108be6d}{label1}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_af49d663f415abf955b2efbe3f53a4c31}{label2}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_a914f48210428226902e114735b225766}{label3}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_aba55cf84319de41c3ab63e89fcd64bdb}{label4}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_a719f94200ba7b54c0f6eeaa77ffb3c18}{label5}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_ac0cbf06f8355bdf1ab95d6fea7a52eb9}{label6}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_aaf0259e2b24d760482d7c0ef9cda4f2a}{label7}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_a1e4d3ce2e258c1af70da182d911a3cba}{label8}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{status__screen_8c_af185586be2ec40d1479b8616e18c5456}{war\+\_\+icn}}
+\item 
+int \mbox{\hyperlink{status__screen_8c_acf4df21b18b924052d66abac113599bb}{flash\+\_\+on}} = 0
+\item 
+status\+\_\+screen \mbox{\hyperlink{status__screen_8c_aa70753c1475c299a99fbf946dceb9c1e}{m\+\_\+status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays status screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{status__screen_8c_a9e971832fa51f2017304dfc488f23b93}\index{status\_screen.c@{status\_screen.c}!disp\_mod\_status\_screen@{disp\_mod\_status\_screen}}
+\index{disp\_mod\_status\_screen@{disp\_mod\_status\_screen}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_status\_screen()}{disp\_mod\_status\_screen()}}
+{\footnotesize\ttfamily \label{status__screen_8c_a9e971832fa51f2017304dfc488f23b93} 
+void disp\+\_\+mod\+\_\+status\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{status\+\_\+value}{, }\item[{int}]{indx}{}\end{DoxyParamCaption})}
+
+
+
+function to create the status screen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\+\_\+value} & -\/ (0 -\/ normal, 1 -\/ warning, 2 -\/ fault) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{status__screen_8c_a9e971832fa51f2017304dfc488f23b93_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{status__screen_8c_a9e971832fa51f2017304dfc488f23b93_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{status__screen_8c_a4f6a30dc66c4eb48d9ce877149b302e8}\index{status\_screen.c@{status\_screen.c}!set\_animation@{set\_animation}}
+\index{set\_animation@{set\_animation}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{set\_animation()}{set\_animation()}}
+{\footnotesize\ttfamily \label{status__screen_8c_a4f6a30dc66c4eb48d9ce877149b302e8} 
+void set\+\_\+animation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{label}{}\end{DoxyParamCaption})}
+
+
+
+create animations for normal and warning status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & -\/ label name for animations to occur \\
+\hline
+\end{DoxyParams}
+\Hypertarget{status__screen_8c_a05e26f94ed962040b81fad16870a99d7}\index{status\_screen.c@{status\_screen.c}!set\_animation\_fault@{set\_animation\_fault}}
+\index{set\_animation\_fault@{set\_animation\_fault}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{set\_animation\_fault()}{set\_animation\_fault()}}
+{\footnotesize\ttfamily \label{status__screen_8c_a05e26f94ed962040b81fad16870a99d7} 
+void set\+\_\+animation\+\_\+fault (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{label}{}\end{DoxyParamCaption})}
+
+
+
+create animations for fault status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & -\/ label name for animations to occur \\
+\hline
+\end{DoxyParams}
+\Hypertarget{status__screen_8c_adcc2034261addcb1e1ed1272af6e421d}\index{status\_screen.c@{status\_screen.c}!status\_label\_creation@{status\_label\_creation}}
+\index{status\_label\_creation@{status\_label\_creation}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{status\_label\_creation()}{status\_label\_creation()}}
+{\footnotesize\ttfamily \label{status__screen_8c_adcc2034261addcb1e1ed1272af6e421d} 
+void status\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{lv\+\_\+coord\+\_\+t}]{w}{, }\item[{lv\+\_\+coord\+\_\+t}]{h}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function to create the labels 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen\+\_\+name} & -\/ screen name \\
+\hline
+{\em text} & -\/ text to be displayed on the screen \\
+\hline
+{\em x} & -\/ x axis alignment of the label \\
+\hline
+{\em y} & -\/ y axis alignment of the label \\
+\hline
+{\em w} & -\/ width of the label \\
+\hline
+{\em h} & -\/ height of the label \\
+\hline
+{\em font\+\_\+name} & -\/ font name (Monospace821 BT) \\
+\hline
+{\em font\+\_\+color} & -\/ font color (white or black) \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{status__screen_8c_adcc2034261addcb1e1ed1272af6e421d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{status__screen_8c_aacff09f925b6d1af3bd78743926dfb3e}\index{status\_screen.c@{status\_screen.c}!status\_qr\_creation@{status\_qr\_creation}}
+\index{status\_qr\_creation@{status\_qr\_creation}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{status\_qr\_creation()}{status\_qr\_creation()}}
+{\footnotesize\ttfamily \label{status__screen_8c_aacff09f925b6d1af3bd78743926dfb3e} 
+void status\+\_\+qr\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{lv\+\_\+coord\+\_\+t}]{size}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function to create the QR 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen\+\_\+name} & -\/ screen name \\
+\hline
+{\em text} & -\/ text to be displayed on QR code \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{status__screen_8c_aacff09f925b6d1af3bd78743926dfb3e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{status__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d}\index{status\_screen.c@{status\_screen.c}!stop\_flashing\_timer@{stop\_flashing\_timer}}
+\index{stop\_flashing\_timer@{stop\_flashing\_timer}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{stop\_flashing\_timer()}{stop\_flashing\_timer()}}
+{\footnotesize\ttfamily \label{status__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d} 
+void stop\+\_\+flashing\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+function to stop the flashing timer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{status__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{status__screen_8c_acf4df21b18b924052d66abac113599bb}\index{status\_screen.c@{status\_screen.c}!flash\_on@{flash\_on}}
+\index{flash\_on@{flash\_on}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{flash\_on}{flash\_on}}
+{\footnotesize\ttfamily \label{status__screen_8c_acf4df21b18b924052d66abac113599bb} 
+int flash\+\_\+on = 0}
+
+\Hypertarget{status__screen_8c_a27e4047823c653df7bd5f560cd4fa460}\index{status\_screen.c@{status\_screen.c}!g\_total\_no\_of\_status\_screens@{g\_total\_no\_of\_status\_screens}}
+\index{g\_total\_no\_of\_status\_screens@{g\_total\_no\_of\_status\_screens}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{g\_total\_no\_of\_status\_screens}{g\_total\_no\_of\_status\_screens}}
+{\footnotesize\ttfamily \label{status__screen_8c_a27e4047823c653df7bd5f560cd4fa460} 
+uint8\+\_\+t g\+\_\+total\+\_\+no\+\_\+of\+\_\+status\+\_\+screens\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{status__screen_8c_a659c2822fbcf0630ce20c397c108be6d}\index{status\_screen.c@{status\_screen.c}!label1@{label1}}
+\index{label1@{label1}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label1}{label1}}
+{\footnotesize\ttfamily \label{status__screen_8c_a659c2822fbcf0630ce20c397c108be6d} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label1}
+
+\Hypertarget{status__screen_8c_af49d663f415abf955b2efbe3f53a4c31}\index{status\_screen.c@{status\_screen.c}!label2@{label2}}
+\index{label2@{label2}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label2}{label2}}
+{\footnotesize\ttfamily \label{status__screen_8c_af49d663f415abf955b2efbe3f53a4c31} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label2}
+
+\Hypertarget{status__screen_8c_a914f48210428226902e114735b225766}\index{status\_screen.c@{status\_screen.c}!label3@{label3}}
+\index{label3@{label3}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label3}{label3}}
+{\footnotesize\ttfamily \label{status__screen_8c_a914f48210428226902e114735b225766} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label3}
+
+\Hypertarget{status__screen_8c_aba55cf84319de41c3ab63e89fcd64bdb}\index{status\_screen.c@{status\_screen.c}!label4@{label4}}
+\index{label4@{label4}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label4}{label4}}
+{\footnotesize\ttfamily \label{status__screen_8c_aba55cf84319de41c3ab63e89fcd64bdb} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label4}
+
+\Hypertarget{status__screen_8c_a719f94200ba7b54c0f6eeaa77ffb3c18}\index{status\_screen.c@{status\_screen.c}!label5@{label5}}
+\index{label5@{label5}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label5}{label5}}
+{\footnotesize\ttfamily \label{status__screen_8c_a719f94200ba7b54c0f6eeaa77ffb3c18} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label5}
+
+\Hypertarget{status__screen_8c_ac0cbf06f8355bdf1ab95d6fea7a52eb9}\index{status\_screen.c@{status\_screen.c}!label6@{label6}}
+\index{label6@{label6}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label6}{label6}}
+{\footnotesize\ttfamily \label{status__screen_8c_ac0cbf06f8355bdf1ab95d6fea7a52eb9} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label6}
+
+\Hypertarget{status__screen_8c_aaf0259e2b24d760482d7c0ef9cda4f2a}\index{status\_screen.c@{status\_screen.c}!label7@{label7}}
+\index{label7@{label7}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label7}{label7}}
+{\footnotesize\ttfamily \label{status__screen_8c_aaf0259e2b24d760482d7c0ef9cda4f2a} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label7}
+
+\Hypertarget{status__screen_8c_a1e4d3ce2e258c1af70da182d911a3cba}\index{status\_screen.c@{status\_screen.c}!label8@{label8}}
+\index{label8@{label8}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label8}{label8}}
+{\footnotesize\ttfamily \label{status__screen_8c_a1e4d3ce2e258c1af70da182d911a3cba} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label8}
+
+\Hypertarget{status__screen_8c_aa70753c1475c299a99fbf946dceb9c1e}\index{status\_screen.c@{status\_screen.c}!m\_status@{m\_status}}
+\index{m\_status@{m\_status}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{m\_status}{m\_status}}
+{\footnotesize\ttfamily \label{status__screen_8c_aa70753c1475c299a99fbf946dceb9c1e} 
+status\+\_\+screen m\+\_\+status}
+
+\Hypertarget{status__screen_8c_a01a09ef94e00ab546916776847cc4dc1}\index{status\_screen.c@{status\_screen.c}!screen\_status\_value@{screen\_status\_value}}
+\index{screen\_status\_value@{screen\_status\_value}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{screen\_status\_value}{screen\_status\_value}}
+{\footnotesize\ttfamily \label{status__screen_8c_a01a09ef94e00ab546916776847cc4dc1} 
+status\+\_\+screen\+\_\+struct screen\+\_\+status\+\_\+value\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{status__screen_8c_af185586be2ec40d1479b8616e18c5456}\index{status\_screen.c@{status\_screen.c}!war\_icn@{war\_icn}}
+\index{war\_icn@{war\_icn}!status\_screen.c@{status\_screen.c}}
+\doxysubsubsection{\texorpdfstring{war\_icn}{war\_icn}}
+{\footnotesize\ttfamily \label{status__screen_8c_af185586be2ec40d1479b8616e18c5456} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} war\+\_\+icn}
+

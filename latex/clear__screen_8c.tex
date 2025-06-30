@@ -1,0 +1,167 @@
+\doxysection{GUI/\+Screens/clear\+\_\+screen.c File Reference}
+\hypertarget{clear__screen_8c}{}\label{clear__screen_8c}\index{GUI/Screens/clear\_screen.c@{GUI/Screens/clear\_screen.c}}
+
+
+Source that displays clear message screen.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+Include dependency graph for clear\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{clear__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{clear__screen_8c_a3b4352c1ad04b1d4d81c761997e7d647}{clear\+\_\+screen\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em function to initialize clear screen style \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{clear__screen_8c_a89e2ac3802227b44df4c97947a11fe80}{disp\+\_\+mod\+\_\+clear\+\_\+message\+\_\+screen}} (int index)
+\begin{DoxyCompactList}\small\item\em function to create clear messages screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{clear__screen_8c_a1f94c8d6ef6d3ea70af29820e397e377}{disp\+\_\+mod\+\_\+clear\+\_\+single\+\_\+msgbox\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em function to create clear single message box \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{clear__screen_8c_a553ebe05dedd1513b9c083be1a4d568e}{disp\+\_\+mod\+\_\+clear\+\_\+all\+\_\+msgbox\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em function to create clear all message box \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{clear__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1}{common\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, const char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\begin{DoxyCompactList}\small\item\em function to create the pin labels \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays clear message screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{clear__screen_8c_a3b4352c1ad04b1d4d81c761997e7d647}\index{clear\_screen.c@{clear\_screen.c}!clear\_screen\_style@{clear\_screen\_style}}
+\index{clear\_screen\_style@{clear\_screen\_style}!clear\_screen.c@{clear\_screen.c}}
+\doxysubsubsection{\texorpdfstring{clear\_screen\_style()}{clear\_screen\_style()}}
+{\footnotesize\ttfamily \label{clear__screen_8c_a3b4352c1ad04b1d4d81c761997e7d647} 
+void clear\+\_\+screen\+\_\+style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+function to initialize clear screen style 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clear__screen_8c_a3b4352c1ad04b1d4d81c761997e7d647_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{clear__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1}\index{clear\_screen.c@{clear\_screen.c}!common\_label\_creation@{common\_label\_creation}}
+\index{common\_label\_creation@{common\_label\_creation}!clear\_screen.c@{clear\_screen.c}}
+\doxysubsubsection{\texorpdfstring{common\_label\_creation()}{common\_label\_creation()}}
+{\footnotesize\ttfamily \label{clear__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1} 
+void common\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function to create the pin labels 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen\+\_\+name} & -\/ screen name \\
+\hline
+{\em text} & -\/ text to be displayed on the screen \\
+\hline
+{\em x} & -\/ x axis alignment of the label \\
+\hline
+{\em y} & -\/ y axis alignment of the label \\
+\hline
+{\em w} & -\/ width of the label \\
+\hline
+{\em h} & -\/ height of the label \\
+\hline
+{\em font\+\_\+name} & -\/ font name (Monospace821 BT) \\
+\hline
+{\em font\+\_\+color} & -\/ font color (white or black) \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clear__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{clear__screen_8c_a553ebe05dedd1513b9c083be1a4d568e}\index{clear\_screen.c@{clear\_screen.c}!disp\_mod\_clear\_all\_msgbox\_screen@{disp\_mod\_clear\_all\_msgbox\_screen}}
+\index{disp\_mod\_clear\_all\_msgbox\_screen@{disp\_mod\_clear\_all\_msgbox\_screen}!clear\_screen.c@{clear\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_clear\_all\_msgbox\_screen()}{disp\_mod\_clear\_all\_msgbox\_screen()}}
+{\footnotesize\ttfamily \label{clear__screen_8c_a553ebe05dedd1513b9c083be1a4d568e} 
+void disp\+\_\+mod\+\_\+clear\+\_\+all\+\_\+msgbox\+\_\+screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+function to create clear all message box 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clear__screen_8c_a553ebe05dedd1513b9c083be1a4d568e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{clear__screen_8c_a89e2ac3802227b44df4c97947a11fe80}\index{clear\_screen.c@{clear\_screen.c}!disp\_mod\_clear\_message\_screen@{disp\_mod\_clear\_message\_screen}}
+\index{disp\_mod\_clear\_message\_screen@{disp\_mod\_clear\_message\_screen}!clear\_screen.c@{clear\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_clear\_message\_screen()}{disp\_mod\_clear\_message\_screen()}}
+{\footnotesize\ttfamily \label{clear__screen_8c_a89e2ac3802227b44df4c97947a11fe80} 
+void disp\+\_\+mod\+\_\+clear\+\_\+message\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+function to create clear messages screen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & -\/ cursor \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clear__screen_8c_a89e2ac3802227b44df4c97947a11fe80_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clear__screen_8c_a89e2ac3802227b44df4c97947a11fe80_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{clear__screen_8c_a1f94c8d6ef6d3ea70af29820e397e377}\index{clear\_screen.c@{clear\_screen.c}!disp\_mod\_clear\_single\_msgbox\_screen@{disp\_mod\_clear\_single\_msgbox\_screen}}
+\index{disp\_mod\_clear\_single\_msgbox\_screen@{disp\_mod\_clear\_single\_msgbox\_screen}!clear\_screen.c@{clear\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_clear\_single\_msgbox\_screen()}{disp\_mod\_clear\_single\_msgbox\_screen()}}
+{\footnotesize\ttfamily \label{clear__screen_8c_a1f94c8d6ef6d3ea70af29820e397e377} 
+void disp\+\_\+mod\+\_\+clear\+\_\+single\+\_\+msgbox\+\_\+screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+function to create clear single message box 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{clear__screen_8c_a1f94c8d6ef6d3ea70af29820e397e377_icgraph}
+\end{center}
+\end{figure}

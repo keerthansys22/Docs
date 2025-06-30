@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mac__address_8c" xml:lang="en-US">
+<title>Data_processing/mac_address.c File Reference</title>
+<indexterm><primary>Data_processing/mac_address.c</primary></indexterm>
+<para>
+
+<para>Source that reads the MAC details from server. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for mac_address.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__address_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_mac__address_8c_1a434de6524abf0902881fe890323c1186">mac_address_details</link> ()</para>
+
+<para>function that access the MAC details </para>
+</listitem>
+            <listitem><para>void <link linkend="_mac__address_8c_1a2331b87d91c5f979969c5e27ad928661">print_mac_address_details</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_mac__address_8c_1ac756ee3e7675bde8bf3372559a8206e5">get_mac_address_string</link> (int port, char *mac_str, size_t size)</para>
+</listitem>
+            <listitem><para>int <link linkend="_mac__address_8c_1a06b108195d85b99abb936fe244fe064d">get_pin_details</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>mbn_mac_struct <link linkend="_mac__address_8c_1ab66488f979aa3d8c9910d72a98ff28cc">mbn_mac_details</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_mac__address_8c_1a33fa48f2f2b7e97b587a567e353ae24b">g_pin_val</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_mac__address_8c_1a28fb7538e246d23675861d74c5268869">g_pin_buffer</link> [4]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that reads the MAC details from server. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_mac__address_8c_1ac756ee3e7675bde8bf3372559a8206e5"/><section>
+    <title>get_mac_address_string()</title>
+<indexterm><primary>get_mac_address_string</primary><secondary>mac_address.c</secondary></indexterm>
+<indexterm><primary>mac_address.c</primary><secondary>get_mac_address_string</secondary></indexterm>
+<para><computeroutput>void get_mac_address_string (int port, char * mac_str, size_t size)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__address_8c_ac756ee3e7675bde8bf3372559a8206e5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_mac__address_8c_1a06b108195d85b99abb936fe244fe064d"/><section>
+    <title>get_pin_details()</title>
+<indexterm><primary>get_pin_details</primary><secondary>mac_address.c</secondary></indexterm>
+<indexterm><primary>mac_address.c</primary><secondary>get_pin_details</secondary></indexterm>
+<para><computeroutput>int get_pin_details ( )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__address_8c_a06b108195d85b99abb936fe244fe064d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__address_8c_a06b108195d85b99abb936fe244fe064d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_mac__address_8c_1a434de6524abf0902881fe890323c1186"/><section>
+    <title>mac_address_details()</title>
+<indexterm><primary>mac_address_details</primary><secondary>mac_address.c</secondary></indexterm>
+<indexterm><primary>mac_address.c</primary><secondary>mac_address_details</secondary></indexterm>
+<para><computeroutput>int mac_address_details ( )</computeroutput></para><para>
+
+<para>function that access the MAC details </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__address_8c_a434de6524abf0902881fe890323c1186_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__address_8c_a434de6524abf0902881fe890323c1186_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_mac__address_8c_1a2331b87d91c5f979969c5e27ad928661"/><section>
+    <title>print_mac_address_details()</title>
+<indexterm><primary>print_mac_address_details</primary><secondary>mac_address.c</secondary></indexterm>
+<indexterm><primary>mac_address.c</primary><secondary>print_mac_address_details</secondary></indexterm>
+<para><computeroutput>void print_mac_address_details ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_mac__address_8c_1a28fb7538e246d23675861d74c5268869"/><section>
+    <title>g_pin_buffer</title>
+<indexterm><primary>g_pin_buffer</primary><secondary>mac_address.c</secondary></indexterm>
+<indexterm><primary>mac_address.c</primary><secondary>g_pin_buffer</secondary></indexterm>
+<para><computeroutput>uint8_t g_pin_buffer[4]</computeroutput></para></section>
+<anchor xml:id="_mac__address_8c_1a33fa48f2f2b7e97b587a567e353ae24b"/><section>
+    <title>g_pin_val</title>
+<indexterm><primary>g_pin_val</primary><secondary>mac_address.c</secondary></indexterm>
+<indexterm><primary>mac_address.c</primary><secondary>g_pin_val</secondary></indexterm>
+<para><computeroutput>uint32_t g_pin_val = 0</computeroutput></para></section>
+<anchor xml:id="_mac__address_8c_1ab66488f979aa3d8c9910d72a98ff28cc"/><section>
+    <title>mbn_mac_details</title>
+<indexterm><primary>mbn_mac_details</primary><secondary>mac_address.c</secondary></indexterm>
+<indexterm><primary>mac_address.c</primary><secondary>mbn_mac_details</secondary></indexterm>
+<para><computeroutput>mbn_mac_struct mbn_mac_details</computeroutput></para></section>
+</section>
+</section>

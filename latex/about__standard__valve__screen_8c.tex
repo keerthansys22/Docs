@@ -1,0 +1,110 @@
+\doxysection{GUI/\+Screens/about\+\_\+standard\+\_\+valve\+\_\+screen.c File Reference}
+\hypertarget{about__standard__valve__screen_8c}{}\label{about__standard__valve__screen_8c}\index{GUI/Screens/about\_standard\_valve\_screen.c@{GUI/Screens/about\_standard\_valve\_screen.c}}
+
+
+Source that displays standard valves details screens.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for about\+\_\+standard\+\_\+valve\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{about__standard__valve__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{about__standard__valve__screen_8c_a19dd811709f7c0ace61e9975be018b15}{standart\+\_\+valve\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize standard about screen style. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{about__standard__valve__screen_8c_a7d1566a942eb3c3ace3cd36ad6c7d960}{disp\+\_\+mod\+\_\+about\+\_\+standard\+\_\+valve\+\_\+screen}} (uint8\+\_\+t pz\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Function to display standard about screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{about__standard__valve__screen_8c_a171bd087fd88267f8df70214d756df4a}{common\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+s\+\_\+about\+\_\+pz\+\_\+standard\+\_\+count \mbox{\hyperlink{about__standard__valve__screen_8c_a48aab5d52a9f2ff4b418715ec2cacf7a}{s\+\_\+about\+\_\+pz\+\_\+standard\+\_\+count\+\_\+value}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays standard valves details screens. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{about__standard__valve__screen_8c_a171bd087fd88267f8df70214d756df4a}\index{about\_standard\_valve\_screen.c@{about\_standard\_valve\_screen.c}!common\_label\_creation@{common\_label\_creation}}
+\index{common\_label\_creation@{common\_label\_creation}!about\_standard\_valve\_screen.c@{about\_standard\_valve\_screen.c}}
+\doxysubsubsection{\texorpdfstring{common\_label\_creation()}{common\_label\_creation()}}
+{\footnotesize\ttfamily \label{about__standard__valve__screen_8c_a171bd087fd88267f8df70214d756df4a} 
+void common\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__standard__valve__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{about__standard__valve__screen_8c_a7d1566a942eb3c3ace3cd36ad6c7d960}\index{about\_standard\_valve\_screen.c@{about\_standard\_valve\_screen.c}!disp\_mod\_about\_standard\_valve\_screen@{disp\_mod\_about\_standard\_valve\_screen}}
+\index{disp\_mod\_about\_standard\_valve\_screen@{disp\_mod\_about\_standard\_valve\_screen}!about\_standard\_valve\_screen.c@{about\_standard\_valve\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_about\_standard\_valve\_screen()}{disp\_mod\_about\_standard\_valve\_screen()}}
+{\footnotesize\ttfamily \label{about__standard__valve__screen_8c_a7d1566a942eb3c3ace3cd36ad6c7d960} 
+void disp\+\_\+mod\+\_\+about\+\_\+standard\+\_\+valve\+\_\+screen (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pz\+\_\+num}{}\end{DoxyParamCaption})}
+
+
+
+Function to display standard about screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pz\+\_\+num} & \+: represents corresponding pressure zone number\textquotesingle{}s standard valve\textquotesingle{}s count to display \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__standard__valve__screen_8c_a7d1566a942eb3c3ace3cd36ad6c7d960_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__standard__valve__screen_8c_a7d1566a942eb3c3ace3cd36ad6c7d960_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{about__standard__valve__screen_8c_a19dd811709f7c0ace61e9975be018b15}\index{about\_standard\_valve\_screen.c@{about\_standard\_valve\_screen.c}!standart\_valve\_style@{standart\_valve\_style}}
+\index{standart\_valve\_style@{standart\_valve\_style}!about\_standard\_valve\_screen.c@{about\_standard\_valve\_screen.c}}
+\doxysubsubsection{\texorpdfstring{standart\_valve\_style()}{standart\_valve\_style()}}
+{\footnotesize\ttfamily \label{about__standard__valve__screen_8c_a19dd811709f7c0ace61e9975be018b15} 
+void standart\+\_\+valve\+\_\+style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize standard about screen style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__standard__valve__screen_8c_a19dd811709f7c0ace61e9975be018b15_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{about__standard__valve__screen_8c_a48aab5d52a9f2ff4b418715ec2cacf7a}\index{about\_standard\_valve\_screen.c@{about\_standard\_valve\_screen.c}!s\_about\_pz\_standard\_count\_value@{s\_about\_pz\_standard\_count\_value}}
+\index{s\_about\_pz\_standard\_count\_value@{s\_about\_pz\_standard\_count\_value}!about\_standard\_valve\_screen.c@{about\_standard\_valve\_screen.c}}
+\doxysubsubsection{\texorpdfstring{s\_about\_pz\_standard\_count\_value}{s\_about\_pz\_standard\_count\_value}}
+{\footnotesize\ttfamily \label{about__standard__valve__screen_8c_a48aab5d52a9f2ff4b418715ec2cacf7a} 
+s\+\_\+about\+\_\+pz\+\_\+standard\+\_\+count s\+\_\+about\+\_\+pz\+\_\+standard\+\_\+count\+\_\+value\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

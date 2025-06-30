@@ -18,7 +18,7 @@
 <area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="108,259,157,301,190,325,225,346,252,357,250,361,222,350,187,330,154,306,104,263"/>
 <area shape="rect" id="Node000010" href="$_data_server_monitor_led_8c.html#ac453a3ae986d391e5a7c2e9c595ab332" title=" " alt="" coords="246,411,383,437"/>
 <area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="102,259,149,325,184,364,225,396,235,402,232,406,222,401,180,367,144,328,98,262"/>
-<area shape="rect" id="Node000011" href="$_main_bus_node_8c.html#aa5cb7c14e289bfee846b352ceed0a08a" title=": This is to retriev the ethercat run and error status" alt="" coords="224,461,405,488"/>
+<area shape="rect" id="Node000011" href="$_main_bus_node_8c.html#a3d2f2d898a7cbe4309e16954248f0e7e" title="Retrieves the EtherCAT run and error status from shared memory." alt="" coords="224,461,405,488"/>
 <area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="99,259,115,297,142,348,178,402,201,426,225,447,232,452,230,456,222,451,197,430,174,405,137,351,110,299,94,261"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,29,407,48,444,83,477,122,521,193,517,196,472,125,440,86,403,53,366,34"/>
 <area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="361,128,406,143,457,169,502,197,499,201,455,174,404,148,359,133"/>

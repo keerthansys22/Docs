@@ -1,0 +1,1086 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__main_bus_node_8c" xml:lang="en-US">
+<title>API_Source/MainBusNodeApiSource/MainBusNode.c File Reference</title>
+<indexterm><primary>API_Source/MainBusNodeApiSource/MainBusNode.c</primary></indexterm>
+<para>
+
+<para>This file contains the source code of the main bus API. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &quot;ti_rpmsg_char.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?>#include &quot;../Header/API_Header/IPCcanlinux.h&quot;<?linebreak?>#include &lt;string.h&gt;<?linebreak?></programlisting>Include dependency graph for MainBusNode.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a33126aa97893c7581c2e2ce391e08403">MBN_MOD_DEVICE_TYPE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 0)   /* uint32_t */</para>
+
+<para><emphasis>Main Bus Process Data Mapping</emphasis>&#8205;/ </para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a0f99763130eca9d97884967c2f8eeb70">MBN_MOD_VENDOR_ID_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 4)   /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1aa40055df00a37743dfd13256adda45b6">MBN_MOD_DEVICE_ID_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 8)   /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a2b65a3541be68e8dc34d3ca0a1a6f8e3">MBN_MOD_VENDOR_NAME_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 12)  /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a01cc06225b74d0b055f06a971a5b88ac">MBN_MOD_DEVICE_NAME_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 28)  /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a153cd7f7e8cdbf92298f9c6c8a6399bc">MBN_MOD_VARIANT_ID_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 44)  /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1af97a0728aa467101ca47002f07b2f168">MBN_MOD_HW_REV_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 60)  /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a2de3e02ee06e547781828f25c2206b9b">MBN_MOD_SERIAL_NO_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 76)  /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ac95749546255ba4931f57b6287393a06">MBN_MOD_SW_PART_NO_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 92)  /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a95feb0e6c4710f7018b543d9697b3904">MBN_MOD_SW_REV_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 108) /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a7a6231b0adaa822aa67a0d01f88b42a8">MBN_MODULE_POST_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 124) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a3bb474fb171d6a6a6127dc8e1ab7e6fc">MBN_MODULE_VA_VOLTAGE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 128) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ac973fa73480c2206c386b6254e64d298">MBN_MODULE_VB_VOLTAGE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 132) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a22c268ca27f7c8ff0e345d48dc212d4f">MBN_MODULE_OPERATING_HOURS_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 136) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a98af83b902014883961d1a1d3cd779bf">MBN_MODULE_OPERATING_MINS_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 140) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1af6f596f0c753ded472f4b388c92686e2">MBN_MODULE_MIN_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 144) /* int16_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ab984dc792f2a13b7253460503a5565f0">MBN_MODULE_MAX_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 146) /* int16_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ae36483ddbbae0136ffeae85e9a816770">MBN_MODULE_MEASURED_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 148) /* int16_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ad959c66600bdd51eadd9855bc59d1510">MBN_MODULE_EEPROM_LIFE_CYCLE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 152) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1aef6aa5149a5995eda836f0233f006ac1">MBN_MODULE_CAN_FD_EDS_VERSION_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 156) /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a1accba60a8f1e60f8802bc7113269848">MBN_MODULE_EDS_DATE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 172) /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a8a9d6f0754f6a085369987bb1bb6016a">MBN_MODULE_IO_DISCOVERED_COUNT_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 188) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a0a1652962dd6afb40502a1aa2757a98e">MBN_MODULE_PRESSURE_ZONE_DISCOVERED_COUNT_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 189) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a9f4d1b726b7a9b2b2d9d9447b995ee9f">MBN_MODULE_VALVE_ISLAND_VALIDATION_ID_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 190) /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a45a3df4bef6bf406e6d5035a9e078217">MBN_MODULE_VALVE_ISLAND_RESERVED_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 206) /* uint8_t[16] */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a6ef46c9fb6c549292a7a329dc5db88f8">MBN_MODULE_OPERATING_MODE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 222) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ac02164a50b6b05bb61974ac5ff4a021c">MBN_MODULE_IO_FORCE_MODE_STATE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 223) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a0fdcdd19e189cc1de3c1b84d7d190df2">MBN_MODULE_SYSTEM_STATUS_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 224) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ac61bfbde19f092b7894354900d8dc5a8">MBN_MODULE_MAC_ADDRESS_PORT1_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 225) /* uint64_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a7956d6ac7283079b86da8b210af8fc4c">MBN_MODULE_MAC_ADDRESS_PORT2_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 233) /* uint64_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a1e9e00aa4aeebb5bae9f335f74267dcb">MBN_MODULE_MAC_ADDRESS_PORT3_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 241) /* uint64_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a06bdd972637e936e97e497d82afe1dc4">MBN_MODULE_PIN_VALUE_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 249) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a14ab0c34d30d4ea7d046c2d03e19bb3e">MBN_MODULE_IP_ADDRESS_PORT1_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 253) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a41c2fde68f362544593364d3ef82ee32">MBN_MODULE_IP_ADDRESS_PORT2_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 257) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a5028a3411c8b0f8ce67dcb3331cb52c5">MBN_MODULE_IP_ADDRESS_PORT3_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 261) /* uint32_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a63dfa7c4a5a8c2cd9f991a26ff1609c2">MBN_MODULE_CLOUD_CONNECTED_STATUS_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 265) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a3daf1dc285b4e25599de65f99637b068">MBN_MODULE_NETWORK_CONNECTED_STATUS_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 266) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1aa9275028c5205663fbbbf4f492e5fe27">MBN_MODULE_CIP_STATUS_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 267) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a6921754425b26fd69210942bcfea31b6">MBN_MODULE_EEPROM_TEST_RESULT_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 268) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1af3e89734a5642e748c256b15c78c404f">MBN_MODULE_TEMPERATURE_TEST_RESULT_ADDR</link>&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 269) /* uint8_t */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a763c972ab3bc18a1eb676a27cda10a14">SERVICE_DATA_VERBOSE_GET_MBN</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a26eb89b96123185f7a4013aac66dbe02">SERVICE_DATA_VERBOSE_SET_MBN</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ac57429f38b22f8c068ad5564575a3910">PROCESS_DATA_VERBOSE_GET_MBN</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a309510f08a7a1c0a122d738ed435b868">PROCESS_DATA_VERBOSE_SET_MBN</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a4f0ae3512d2957fddc3949bc9c50dce8">PORT1_MAC_ADD</link>&#160;&#160;&#160;1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a3972a172c10ac16f5fcca1d76778a492">PORT2_MAC_ADD</link>&#160;&#160;&#160;2</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1aafe3461edf9cc1b05cea658a7a52f1b6">PORT3_MAC_ADD</link>&#160;&#160;&#160;3</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1aa31afafc864d7b400b938c36ac4de5ae">MBN_DEVICE_TYPE</link>&#160;&#160;&#160;0x00000055</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1aa76acef3f7804f40ebddf769766fd7a7">MBN_VENDOR_ID</link>&#160;&#160;&#160;0x00000010</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1afdae5c3e229b84e0980c4778926a166f">MBN_DEVICE_ID</link>&#160;&#160;&#160;0x00000055</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ab7cdace9d8cbf2c510febf84b7ebca61">MBN_VENDOR_NAME</link>&#160;&#160;&#160;&quot;MBN_NORGREN&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a22505fcf82d3050a8d5f3845fa142125">MBN_DEVICE_NAME</link>&#160;&#160;&#160;&quot;MBN_DEVICE&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ae09eb6181d86f540fec493f86d636ec2">MBN_VAR</link>&#160;&#160;&#160;&quot;MBN_VAR&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a558edc8a19bd5871a574872c8099cd10">HW_REV</link>&#160;&#160;&#160;&quot;AMBN-12-H&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1a0dacee985c3cc2a6f9f47c14f1668f55">SL_NO</link>&#160;&#160;&#160;&quot;1234&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1aef6edc0bc13d7c7e4fd375d06cae7fde">SW_PART_NO</link>&#160;&#160;&#160;&quot;MBN_SW_1&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="__main_bus_node_8c_1ac82504751eea500ec7332a5206f8c669">SW_REV</link>&#160;&#160;&#160;&quot;V1.2.0T&quot;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1ae512dcee3f48f317872617e5f4559b19">readSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1af3f698954f6a1cb3c49898e40a23cff0">getMBNModuleProcessData</link> (uint16_t mbn_device_handler, s_mbn_processdata *mbn_processdata)</para>
+
+<para>Retrieves the Process data of the Main Bus node. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1ae6ec7a987944307ed8a841f85d0c6f1d">getMainBusIdentificationInfo</link> (mbn_identification_info_t *identification_info)</para>
+
+<para>Retrieves the identification info of the Main Bus node. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1aac26aa5d5bec0cc929f579dc1aa6a60d">getMainBusMacAddress</link> (uint16_t parameter_name, uint64_t *mac_address_value)</para>
+
+<para>Retrieves the MAC address of the specified port. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1a36255dbd4db709691ff068cc0d205230">getIpAddress</link> (uint16_t parameter_name, uint32_t *ipaddress)</para>
+
+<para>Retrieves the IP address of the specified port. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1a73fc7fc81bda264bc2251a573c5a2771">setMainBusIpAddress</link> (uint16_t parameter_name, uint32_t *ipaddress_value)</para>
+
+<para>Retrieves the pin value of the main bus. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1a729fd2c0212cb2a3bc4a2e1a7f3ebc3f">getMBNServiceParam</link> (uint8_t parameter_name, void *data)</para>
+
+<para>Retrieves the acyclic data or service parameter of the MBN node. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1a631fbb9a53970b1369f6d8d7f26e8ac5">getMBNProcessData</link> (uint8_t *data)</para>
+
+<para>Retrieves process data from the main bus node (MBN). </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1af0ee6f1dfd818dca59612bd304ff3230">setMBNServiceParam</link> (uint8_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter of the main bus node (MBN). </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1aa5cb7c14e289bfee846b352ceed0a08a">getEthercatIndicationStatus</link> (s_mbn_indiaction *mbnethercatind)</para>
+
+<para>: This is to retriev the ethercat run and error status </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1a5f69684ec78d8ed0c94ae6e81080cde9">updateMBNVaVolatge</link> (uint32_t *voltage)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1a7160f3fbd59e634e42b954e101b5e3e4">updateMBNVbVolatge</link> (uint32_t *voltage)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__main_bus_node_8c_1a2acf746b21e600f86d117df8e8107e2b">updateCpswPortConfiguartion</link> (uint32_t ipadd)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__main_bus_node_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+            <listitem><para>rpmsg_char_dev_t * <link linkend="__main_bus_node_8c_1a274502dbc1ca0716301973df9a2ebb62">g_remote_rpmsg</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file contains the source code of the main bus API. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__main_bus_node_8c_1a558edc8a19bd5871a574872c8099cd10"/><section>
+    <title>HW_REV</title>
+<indexterm><primary>HW_REV</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>HW_REV</secondary></indexterm>
+<para><computeroutput>#define HW_REV&#160;&#160;&#160;&quot;AMBN-12-H&quot;</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1afdae5c3e229b84e0980c4778926a166f"/><section>
+    <title>MBN_DEVICE_ID</title>
+<indexterm><primary>MBN_DEVICE_ID</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_DEVICE_ID</secondary></indexterm>
+<para><computeroutput>#define MBN_DEVICE_ID&#160;&#160;&#160;0x00000055</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a22505fcf82d3050a8d5f3845fa142125"/><section>
+    <title>MBN_DEVICE_NAME</title>
+<indexterm><primary>MBN_DEVICE_NAME</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_DEVICE_NAME</secondary></indexterm>
+<para><computeroutput>#define MBN_DEVICE_NAME&#160;&#160;&#160;&quot;MBN_DEVICE&quot;</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1aa31afafc864d7b400b938c36ac4de5ae"/><section>
+    <title>MBN_DEVICE_TYPE</title>
+<indexterm><primary>MBN_DEVICE_TYPE</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_DEVICE_TYPE</secondary></indexterm>
+<para><computeroutput>#define MBN_DEVICE_TYPE&#160;&#160;&#160;0x00000055</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1aa40055df00a37743dfd13256adda45b6"/><section>
+    <title>MBN_MOD_DEVICE_ID_ADDR</title>
+<indexterm><primary>MBN_MOD_DEVICE_ID_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_DEVICE_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_DEVICE_ID_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 8)   /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a01cc06225b74d0b055f06a971a5b88ac"/><section>
+    <title>MBN_MOD_DEVICE_NAME_ADDR</title>
+<indexterm><primary>MBN_MOD_DEVICE_NAME_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_DEVICE_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_DEVICE_NAME_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 28)  /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a33126aa97893c7581c2e2ce391e08403"/><section>
+    <title>MBN_MOD_DEVICE_TYPE_ADDR</title>
+<indexterm><primary>MBN_MOD_DEVICE_TYPE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_DEVICE_TYPE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_DEVICE_TYPE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 0)   /* uint32_t */</computeroutput></para><para>
+
+<para><emphasis>Main Bus Process Data Mapping</emphasis>&#8205;/ </para>
+</para>
+
+<para><emphasis>Main Bus Process Data Mapping</emphasis>&#8205;/ </para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1af97a0728aa467101ca47002f07b2f168"/><section>
+    <title>MBN_MOD_HW_REV_ADDR</title>
+<indexterm><primary>MBN_MOD_HW_REV_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_HW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_HW_REV_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 60)  /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a2de3e02ee06e547781828f25c2206b9b"/><section>
+    <title>MBN_MOD_SERIAL_NO_ADDR</title>
+<indexterm><primary>MBN_MOD_SERIAL_NO_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_SERIAL_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_SERIAL_NO_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 76)  /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ac95749546255ba4931f57b6287393a06"/><section>
+    <title>MBN_MOD_SW_PART_NO_ADDR</title>
+<indexterm><primary>MBN_MOD_SW_PART_NO_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_SW_PART_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_SW_PART_NO_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 92)  /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a95feb0e6c4710f7018b543d9697b3904"/><section>
+    <title>MBN_MOD_SW_REV_ADDR</title>
+<indexterm><primary>MBN_MOD_SW_REV_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_SW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_SW_REV_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 108) /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a153cd7f7e8cdbf92298f9c6c8a6399bc"/><section>
+    <title>MBN_MOD_VARIANT_ID_ADDR</title>
+<indexterm><primary>MBN_MOD_VARIANT_ID_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_VARIANT_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_VARIANT_ID_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 44)  /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a0f99763130eca9d97884967c2f8eeb70"/><section>
+    <title>MBN_MOD_VENDOR_ID_ADDR</title>
+<indexterm><primary>MBN_MOD_VENDOR_ID_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_VENDOR_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_VENDOR_ID_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 4)   /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a2b65a3541be68e8dc34d3ca0a1a6f8e3"/><section>
+    <title>MBN_MOD_VENDOR_NAME_ADDR</title>
+<indexterm><primary>MBN_MOD_VENDOR_NAME_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MOD_VENDOR_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MOD_VENDOR_NAME_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 12)  /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1aef6aa5149a5995eda836f0233f006ac1"/><section>
+    <title>MBN_MODULE_CAN_FD_EDS_VERSION_ADDR</title>
+<indexterm><primary>MBN_MODULE_CAN_FD_EDS_VERSION_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_CAN_FD_EDS_VERSION_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_CAN_FD_EDS_VERSION_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 156) /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1aa9275028c5205663fbbbf4f492e5fe27"/><section>
+    <title>MBN_MODULE_CIP_STATUS_ADDR</title>
+<indexterm><primary>MBN_MODULE_CIP_STATUS_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_CIP_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_CIP_STATUS_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 267) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a63dfa7c4a5a8c2cd9f991a26ff1609c2"/><section>
+    <title>MBN_MODULE_CLOUD_CONNECTED_STATUS_ADDR</title>
+<indexterm><primary>MBN_MODULE_CLOUD_CONNECTED_STATUS_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_CLOUD_CONNECTED_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_CLOUD_CONNECTED_STATUS_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 265) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a1accba60a8f1e60f8802bc7113269848"/><section>
+    <title>MBN_MODULE_EDS_DATE_ADDR</title>
+<indexterm><primary>MBN_MODULE_EDS_DATE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_EDS_DATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_EDS_DATE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 172) /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ad959c66600bdd51eadd9855bc59d1510"/><section>
+    <title>MBN_MODULE_EEPROM_LIFE_CYCLE_ADDR</title>
+<indexterm><primary>MBN_MODULE_EEPROM_LIFE_CYCLE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_EEPROM_LIFE_CYCLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_EEPROM_LIFE_CYCLE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 152) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a6921754425b26fd69210942bcfea31b6"/><section>
+    <title>MBN_MODULE_EEPROM_TEST_RESULT_ADDR</title>
+<indexterm><primary>MBN_MODULE_EEPROM_TEST_RESULT_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_EEPROM_TEST_RESULT_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_EEPROM_TEST_RESULT_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 268) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a8a9d6f0754f6a085369987bb1bb6016a"/><section>
+    <title>MBN_MODULE_IO_DISCOVERED_COUNT_ADDR</title>
+<indexterm><primary>MBN_MODULE_IO_DISCOVERED_COUNT_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_IO_DISCOVERED_COUNT_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_IO_DISCOVERED_COUNT_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 188) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ac02164a50b6b05bb61974ac5ff4a021c"/><section>
+    <title>MBN_MODULE_IO_FORCE_MODE_STATE_ADDR</title>
+<indexterm><primary>MBN_MODULE_IO_FORCE_MODE_STATE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_IO_FORCE_MODE_STATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_IO_FORCE_MODE_STATE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 223) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a14ab0c34d30d4ea7d046c2d03e19bb3e"/><section>
+    <title>MBN_MODULE_IP_ADDRESS_PORT1_ADDR</title>
+<indexterm><primary>MBN_MODULE_IP_ADDRESS_PORT1_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_IP_ADDRESS_PORT1_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_IP_ADDRESS_PORT1_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 253) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a41c2fde68f362544593364d3ef82ee32"/><section>
+    <title>MBN_MODULE_IP_ADDRESS_PORT2_ADDR</title>
+<indexterm><primary>MBN_MODULE_IP_ADDRESS_PORT2_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_IP_ADDRESS_PORT2_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_IP_ADDRESS_PORT2_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 257) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a5028a3411c8b0f8ce67dcb3331cb52c5"/><section>
+    <title>MBN_MODULE_IP_ADDRESS_PORT3_ADDR</title>
+<indexterm><primary>MBN_MODULE_IP_ADDRESS_PORT3_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_IP_ADDRESS_PORT3_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_IP_ADDRESS_PORT3_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 261) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ac61bfbde19f092b7894354900d8dc5a8"/><section>
+    <title>MBN_MODULE_MAC_ADDRESS_PORT1_ADDR</title>
+<indexterm><primary>MBN_MODULE_MAC_ADDRESS_PORT1_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_MAC_ADDRESS_PORT1_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_MAC_ADDRESS_PORT1_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 225) /* uint64_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a7956d6ac7283079b86da8b210af8fc4c"/><section>
+    <title>MBN_MODULE_MAC_ADDRESS_PORT2_ADDR</title>
+<indexterm><primary>MBN_MODULE_MAC_ADDRESS_PORT2_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_MAC_ADDRESS_PORT2_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_MAC_ADDRESS_PORT2_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 233) /* uint64_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a1e9e00aa4aeebb5bae9f335f74267dcb"/><section>
+    <title>MBN_MODULE_MAC_ADDRESS_PORT3_ADDR</title>
+<indexterm><primary>MBN_MODULE_MAC_ADDRESS_PORT3_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_MAC_ADDRESS_PORT3_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_MAC_ADDRESS_PORT3_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 241) /* uint64_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ab984dc792f2a13b7253460503a5565f0"/><section>
+    <title>MBN_MODULE_MAX_TEMPERATURE_ADDR</title>
+<indexterm><primary>MBN_MODULE_MAX_TEMPERATURE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_MAX_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_MAX_TEMPERATURE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 146) /* int16_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ae36483ddbbae0136ffeae85e9a816770"/><section>
+    <title>MBN_MODULE_MEASURED_TEMPERATURE_ADDR</title>
+<indexterm><primary>MBN_MODULE_MEASURED_TEMPERATURE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_MEASURED_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_MEASURED_TEMPERATURE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 148) /* int16_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1af6f596f0c753ded472f4b388c92686e2"/><section>
+    <title>MBN_MODULE_MIN_TEMPERATURE_ADDR</title>
+<indexterm><primary>MBN_MODULE_MIN_TEMPERATURE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_MIN_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_MIN_TEMPERATURE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 144) /* int16_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a3daf1dc285b4e25599de65f99637b068"/><section>
+    <title>MBN_MODULE_NETWORK_CONNECTED_STATUS_ADDR</title>
+<indexterm><primary>MBN_MODULE_NETWORK_CONNECTED_STATUS_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_NETWORK_CONNECTED_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_NETWORK_CONNECTED_STATUS_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 266) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a22c268ca27f7c8ff0e345d48dc212d4f"/><section>
+    <title>MBN_MODULE_OPERATING_HOURS_ADDR</title>
+<indexterm><primary>MBN_MODULE_OPERATING_HOURS_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_OPERATING_HOURS_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_OPERATING_HOURS_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 136) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a98af83b902014883961d1a1d3cd779bf"/><section>
+    <title>MBN_MODULE_OPERATING_MINS_ADDR</title>
+<indexterm><primary>MBN_MODULE_OPERATING_MINS_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_OPERATING_MINS_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_OPERATING_MINS_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 140) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a6ef46c9fb6c549292a7a329dc5db88f8"/><section>
+    <title>MBN_MODULE_OPERATING_MODE_ADDR</title>
+<indexterm><primary>MBN_MODULE_OPERATING_MODE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_OPERATING_MODE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_OPERATING_MODE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 222) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a06bdd972637e936e97e497d82afe1dc4"/><section>
+    <title>MBN_MODULE_PIN_VALUE_ADDR</title>
+<indexterm><primary>MBN_MODULE_PIN_VALUE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_PIN_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_PIN_VALUE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 249) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a7a6231b0adaa822aa67a0d01f88b42a8"/><section>
+    <title>MBN_MODULE_POST_ERR_STATUS_ADDR</title>
+<indexterm><primary>MBN_MODULE_POST_ERR_STATUS_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_POST_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_POST_ERR_STATUS_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 124) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a0a1652962dd6afb40502a1aa2757a98e"/><section>
+    <title>MBN_MODULE_PRESSURE_ZONE_DISCOVERED_COUNT_ADDR</title>
+<indexterm><primary>MBN_MODULE_PRESSURE_ZONE_DISCOVERED_COUNT_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_PRESSURE_ZONE_DISCOVERED_COUNT_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_PRESSURE_ZONE_DISCOVERED_COUNT_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 189) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a0fdcdd19e189cc1de3c1b84d7d190df2"/><section>
+    <title>MBN_MODULE_SYSTEM_STATUS_ADDR</title>
+<indexterm><primary>MBN_MODULE_SYSTEM_STATUS_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_SYSTEM_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_SYSTEM_STATUS_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 224) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1af3e89734a5642e748c256b15c78c404f"/><section>
+    <title>MBN_MODULE_TEMPERATURE_TEST_RESULT_ADDR</title>
+<indexterm><primary>MBN_MODULE_TEMPERATURE_TEST_RESULT_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_TEMPERATURE_TEST_RESULT_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_TEMPERATURE_TEST_RESULT_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 269) /* uint8_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a3bb474fb171d6a6a6127dc8e1ab7e6fc"/><section>
+    <title>MBN_MODULE_VA_VOLTAGE_ADDR</title>
+<indexterm><primary>MBN_MODULE_VA_VOLTAGE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_VA_VOLTAGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_VA_VOLTAGE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 128) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a45a3df4bef6bf406e6d5035a9e078217"/><section>
+    <title>MBN_MODULE_VALVE_ISLAND_RESERVED_ADDR</title>
+<indexterm><primary>MBN_MODULE_VALVE_ISLAND_RESERVED_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_VALVE_ISLAND_RESERVED_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_VALVE_ISLAND_RESERVED_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 206) /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a9f4d1b726b7a9b2b2d9d9447b995ee9f"/><section>
+    <title>MBN_MODULE_VALVE_ISLAND_VALIDATION_ID_ADDR</title>
+<indexterm><primary>MBN_MODULE_VALVE_ISLAND_VALIDATION_ID_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_VALVE_ISLAND_VALIDATION_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_VALVE_ISLAND_VALIDATION_ID_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 190) /* uint8_t[16] */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ac973fa73480c2206c386b6254e64d298"/><section>
+    <title>MBN_MODULE_VB_VOLTAGE_ADDR</title>
+<indexterm><primary>MBN_MODULE_VB_VOLTAGE_ADDR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_MODULE_VB_VOLTAGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define MBN_MODULE_VB_VOLTAGE_ADDR&#160;&#160;&#160;(MBN_SERVICE_DATA_ADDR + 132) /* uint32_t */</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ae09eb6181d86f540fec493f86d636ec2"/><section>
+    <title>MBN_VAR</title>
+<indexterm><primary>MBN_VAR</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_VAR</secondary></indexterm>
+<para><computeroutput>#define MBN_VAR&#160;&#160;&#160;&quot;MBN_VAR&quot;</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1aa76acef3f7804f40ebddf769766fd7a7"/><section>
+    <title>MBN_VENDOR_ID</title>
+<indexterm><primary>MBN_VENDOR_ID</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_VENDOR_ID</secondary></indexterm>
+<para><computeroutput>#define MBN_VENDOR_ID&#160;&#160;&#160;0x00000010</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ab7cdace9d8cbf2c510febf84b7ebca61"/><section>
+    <title>MBN_VENDOR_NAME</title>
+<indexterm><primary>MBN_VENDOR_NAME</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>MBN_VENDOR_NAME</secondary></indexterm>
+<para><computeroutput>#define MBN_VENDOR_NAME&#160;&#160;&#160;&quot;MBN_NORGREN&quot;</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a4f0ae3512d2957fddc3949bc9c50dce8"/><section>
+    <title>PORT1_MAC_ADD</title>
+<indexterm><primary>PORT1_MAC_ADD</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>PORT1_MAC_ADD</secondary></indexterm>
+<para><computeroutput>#define PORT1_MAC_ADD&#160;&#160;&#160;1</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a3972a172c10ac16f5fcca1d76778a492"/><section>
+    <title>PORT2_MAC_ADD</title>
+<indexterm><primary>PORT2_MAC_ADD</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>PORT2_MAC_ADD</secondary></indexterm>
+<para><computeroutput>#define PORT2_MAC_ADD&#160;&#160;&#160;2</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1aafe3461edf9cc1b05cea658a7a52f1b6"/><section>
+    <title>PORT3_MAC_ADD</title>
+<indexterm><primary>PORT3_MAC_ADD</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>PORT3_MAC_ADD</secondary></indexterm>
+<para><computeroutput>#define PORT3_MAC_ADD&#160;&#160;&#160;3</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ac57429f38b22f8c068ad5564575a3910"/><section>
+    <title>PROCESS_DATA_VERBOSE_GET_MBN</title>
+<indexterm><primary>PROCESS_DATA_VERBOSE_GET_MBN</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>PROCESS_DATA_VERBOSE_GET_MBN</secondary></indexterm>
+<para><computeroutput>#define PROCESS_DATA_VERBOSE_GET_MBN&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a309510f08a7a1c0a122d738ed435b868"/><section>
+    <title>PROCESS_DATA_VERBOSE_SET_MBN</title>
+<indexterm><primary>PROCESS_DATA_VERBOSE_SET_MBN</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>PROCESS_DATA_VERBOSE_SET_MBN</secondary></indexterm>
+<para><computeroutput>#define PROCESS_DATA_VERBOSE_SET_MBN&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a763c972ab3bc18a1eb676a27cda10a14"/><section>
+    <title>SERVICE_DATA_VERBOSE_GET_MBN</title>
+<indexterm><primary>SERVICE_DATA_VERBOSE_GET_MBN</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>SERVICE_DATA_VERBOSE_GET_MBN</secondary></indexterm>
+<para><computeroutput>#define SERVICE_DATA_VERBOSE_GET_MBN&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a26eb89b96123185f7a4013aac66dbe02"/><section>
+    <title>SERVICE_DATA_VERBOSE_SET_MBN</title>
+<indexterm><primary>SERVICE_DATA_VERBOSE_SET_MBN</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>SERVICE_DATA_VERBOSE_SET_MBN</secondary></indexterm>
+<para><computeroutput>#define SERVICE_DATA_VERBOSE_SET_MBN&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a0dacee985c3cc2a6f9f47c14f1668f55"/><section>
+    <title>SL_NO</title>
+<indexterm><primary>SL_NO</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>SL_NO</secondary></indexterm>
+<para><computeroutput>#define SL_NO&#160;&#160;&#160;&quot;1234&quot;</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1aef6edc0bc13d7c7e4fd375d06cae7fde"/><section>
+    <title>SW_PART_NO</title>
+<indexterm><primary>SW_PART_NO</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>SW_PART_NO</secondary></indexterm>
+<para><computeroutput>#define SW_PART_NO&#160;&#160;&#160;&quot;MBN_SW_1&quot;</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ac82504751eea500ec7332a5206f8c669"/><section>
+    <title>SW_REV</title>
+<indexterm><primary>SW_REV</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>SW_REV</secondary></indexterm>
+<para><computeroutput>#define SW_REV&#160;&#160;&#160;&quot;V1.2.0T&quot;</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__main_bus_node_8c_1aa5cb7c14e289bfee846b352ceed0a08a"/><section>
+    <title>getEthercatIndicationStatus()</title>
+<indexterm><primary>getEthercatIndicationStatus</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>getEthercatIndicationStatus</secondary></indexterm>
+<para><computeroutput>uint8_t getEthercatIndicationStatus (s_mbn_indiaction * mbnethercatind)</computeroutput></para><para>
+
+<para>: This is to retriev the ethercat run and error status </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry></entry><entry>
+<para>mbnethercatind pointer to the s_mbn_indiaction structure where the value is stored </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: RET_OK on success , RET_ERROR on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_aa5cb7c14e289bfee846b352ceed0a08a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_aa5cb7c14e289bfee846b352ceed0a08a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1a36255dbd4db709691ff068cc0d205230"/><section>
+    <title>getIpAddress()</title>
+<indexterm><primary>getIpAddress</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>getIpAddress</secondary></indexterm>
+<para><computeroutput>uint8_t getIpAddress (uint16_t parameter_name, uint32_t * ipaddress)</computeroutput></para><para>
+
+<para>Retrieves the IP address of the specified port. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>parameter_name</entry><entry>
+<para>The parameter name for which the MAC address is to be retrieved. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ipaddress</entry><entry>
+<para>Pointer to store the retrieved IP address value.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns 0 on success, or an error code on failure. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a36255dbd4db709691ff068cc0d205230_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a36255dbd4db709691ff068cc0d205230_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1ae6ec7a987944307ed8a841f85d0c6f1d"/><section>
+    <title>getMainBusIdentificationInfo()</title>
+<indexterm><primary>getMainBusIdentificationInfo</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>getMainBusIdentificationInfo</secondary></indexterm>
+<para><computeroutput>uint8_t getMainBusIdentificationInfo (mbn_identification_info_t * identification_info)</computeroutput></para><para>
+
+<para>Retrieves the identification info of the Main Bus node. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>out</entry><entry>identification_info</entry><entry>
+<para>Pointer to the <computeroutput>mbn_identification_info_t</computeroutput> structure to store identification details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_ae6ec7a987944307ed8a841f85d0c6f1d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_ae6ec7a987944307ed8a841f85d0c6f1d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1aac26aa5d5bec0cc929f579dc1aa6a60d"/><section>
+    <title>getMainBusMacAddress()</title>
+<indexterm><primary>getMainBusMacAddress</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>getMainBusMacAddress</secondary></indexterm>
+<para><computeroutput>uint8_t getMainBusMacAddress (uint16_t parameter_name, uint64_t * mac_address_value)</computeroutput></para><para>
+
+<para>Retrieves the MAC address of the specified port. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>port_number</entry><entry>
+<para>The port number for which the MAC address is to be retrieved. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mac_address_value</entry><entry>
+<para>Pointer to store the retrieved MAC address value.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns 0 on success, or an error code on failure. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_aac26aa5d5bec0cc929f579dc1aa6a60d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1af3f698954f6a1cb3c49898e40a23cff0"/><section>
+    <title>getMBNModuleProcessData()</title>
+<indexterm><primary>getMBNModuleProcessData</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>getMBNModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getMBNModuleProcessData (uint16_t mbn_device_handler, s_mbn_processdata * mbn_processdata)</computeroutput></para><para>
+
+<para>Retrieves the Process data of the Main Bus node. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>out</entry><entry>mbn_processdata</entry><entry>
+<para>Pointer to the <computeroutput>s_mbn_processdata</computeroutput> structure to store the process data.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_af3f698954f6a1cb3c49898e40a23cff0_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1a631fbb9a53970b1369f6d8d7f26e8ac5"/><section>
+    <title>getMBNProcessData()</title>
+<indexterm><primary>getMBNProcessData</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>getMBNProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getMBNProcessData (uint8_t * data)</computeroutput></para><para>
+
+<para>Retrieves process data from the main bus node (MBN). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to a variable where the retrieved process data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint8_t Returns RET_OK on success, or RET_ERROR on failure. Refer to e_error_code for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a631fbb9a53970b1369f6d8d7f26e8ac5_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1a729fd2c0212cb2a3bc4a2e1a7f3ebc3f"/><section>
+    <title>getMBNServiceParam()</title>
+<indexterm><primary>getMBNServiceParam</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>getMBNServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t getMBNServiceParam (uint8_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the acyclic data or service parameter of the MBN node. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The enumerated parameter name to retrieve. Refer to <computeroutput>e_mbn_service_parameter_name</computeroutput> for valid MBN parameters. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the buffer where the retrieved parameter value will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns 0 on success, or an error code on failure. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a729fd2c0212cb2a3bc4a2e1a7f3ebc3f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a729fd2c0212cb2a3bc4a2e1a7f3ebc3f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1ae512dcee3f48f317872617e5f4559b19"/><section>
+    <title>readSharedMemoryData()</title>
+<indexterm><primary>readSharedMemoryData</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>readSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_ae512dcee3f48f317872617e5f4559b19_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1a73fc7fc81bda264bc2251a573c5a2771"/><section>
+    <title>setMainBusIpAddress()</title>
+<indexterm><primary>setMainBusIpAddress</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>setMainBusIpAddress</secondary></indexterm>
+<para><computeroutput>uint8_t setMainBusIpAddress (uint16_t parameter_name, uint32_t * ipaddress_value)</computeroutput></para><para>
+
+<para>Retrieves the pin value of the main bus. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The 32-bit pin value of the main bus.</para>
+</formalpara>
+Sets the IP address for the specified port on the main bus.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The enumerated parameter name specifying the port for which the IP address is to be set. Refer to <computeroutput>e_mainbus_parameter_name</computeroutput> for valid parameters. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>ipaddress_value</entry><entry>
+<para>The 32-bit IP address value to be assigned.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns 0 on success, or an error code on failure. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a73fc7fc81bda264bc2251a573c5a2771_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a73fc7fc81bda264bc2251a573c5a2771_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1af0ee6f1dfd818dca59612bd304ff3230"/><section>
+    <title>setMBNServiceParam()</title>
+<indexterm><primary>setMBNServiceParam</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>setMBNServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t setMBNServiceParam (uint8_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter of the main bus node (MBN). </para>
+</para>
+
+<para>This function sets a specific service parameter for the main bus node using the provided parameter name and data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name (ID) of the parameter to be set. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the data to be assigned to the parameter.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint8_t Returns 0 on success, or an error code on failure. Refer to e_error_code for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_af0ee6f1dfd818dca59612bd304ff3230_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1a2acf746b21e600f86d117df8e8107e2b"/><section>
+    <title>updateCpswPortConfiguartion()</title>
+<indexterm><primary>updateCpswPortConfiguartion</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>updateCpswPortConfiguartion</secondary></indexterm>
+<para><computeroutput>uint8_t updateCpswPortConfiguartion (uint32_t ipadd)</computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1a5f69684ec78d8ed0c94ae6e81080cde9"/><section>
+    <title>updateMBNVaVolatge()</title>
+<indexterm><primary>updateMBNVaVolatge</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>updateMBNVaVolatge</secondary></indexterm>
+<para><computeroutput>uint8_t updateMBNVaVolatge (uint32_t * voltage)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a5f69684ec78d8ed0c94ae6e81080cde9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a5f69684ec78d8ed0c94ae6e81080cde9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__main_bus_node_8c_1a7160f3fbd59e634e42b954e101b5e3e4"/><section>
+    <title>updateMBNVbVolatge()</title>
+<indexterm><primary>updateMBNVbVolatge</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>updateMBNVbVolatge</secondary></indexterm>
+<para><computeroutput>uint8_t updateMBNVbVolatge (uint32_t * voltage)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a7160f3fbd59e634e42b954e101b5e3e4_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_main_bus_node_8c_a7160f3fbd59e634e42b954e101b5e3e4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__main_bus_node_8c_1a274502dbc1ca0716301973df9a2ebb62"/><section>
+    <title>g_remote_rpmsg</title>
+<indexterm><primary>g_remote_rpmsg</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>g_remote_rpmsg</secondary></indexterm>
+<para><computeroutput>rpmsg_char_dev_t* g_remote_rpmsg<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__main_bus_node_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>MainBusNode.c</secondary></indexterm>
+<indexterm><primary>MainBusNode.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

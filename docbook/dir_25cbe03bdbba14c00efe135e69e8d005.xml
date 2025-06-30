@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_25cbe03bdbba14c00efe135e69e8d005" xml:lang="en-US">
+<title>Self_Tests Directory Reference</title>
+<indexterm><primary>Self_Tests Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_ddr__test_8c">ddr_test.c</link></para>
+
+<para>Source file to test the DDR memory. </para>
+</listitem>
+            <listitem><para>file <link linkend="_external__adc__test_8c">external_adc_test.c</link></para>
+
+<para>Source file to check external ADC test. </para>
+</listitem>
+            <listitem><para>file <link linkend="_internal__adc__test_8c">internal_adc_test.c</link></para>
+
+<para>source file to check internal ADC test </para>
+</listitem>
+            <listitem><para>file <link linkend="_io__expander__test_8c">io_expander_test.c</link></para>
+
+<para>source file to check the IO_Expander </para>
+</listitem>
+            <listitem><para>file <link linkend="_power__on__self__test_8c">power_on_self_test.c</link></para>
+
+<para>Source that contains the self test and voltage monitring files. </para>
+</listitem>
+            <listitem><para>file <link linkend="_self__test_8c">self_test.c</link></para>
+
+<para>source file that checks power-on self test </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

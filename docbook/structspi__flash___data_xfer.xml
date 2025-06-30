@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structspi__flash___data_xfer" xml:lang="en-US">
+<title>spi_flash_DataXfer Struct Reference</title>
+<indexterm><primary>spi_flash_DataXfer</primary></indexterm>
+Collaboration diagram for spi_flash_DataXfer:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structspi__flash___data_xfer__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_structspi__flash___data_xfer_1af66448b9cd0b741383e224be5e065934">Txbuff</link> [<link linkend="_spi__init_8c_1a454d8b312d295352b852af40dba72c51">SPI_MAX_BUFFER_SIZE</link>]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_structspi__flash___data_xfer_1a8b69031180adaa80a298602dd1eafe38">Rxbuff</link> [<link linkend="_spi__init_8c_1a454d8b312d295352b852af40dba72c51">SPI_MAX_BUFFER_SIZE</link>]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_structspi__flash___data_xfer_1a7565efc6120fc4e35e847f0d5d567ee2">Txlength</link></para>
+</listitem>
+            <listitem><para>unsigned char <link linkend="_structspi__flash___data_xfer_1a944c7b43f60ca8f2d49c1c3950b7143f">Rxlength</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_structspi__flash___data_xfer_1a46a6da6b1936191571fd30b2a749f38c">bits</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_structspi__flash___data_xfer_1a220859a8b5da0232739a11cbe7f79fc5">speed</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_structspi__flash___data_xfer_1a70fbd315df33bf9039e036725b569e7f">delay</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structspi__flash___data_xfer_1a6f8059414f0228f0256115e024eeed4b">fd</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_structspi__flash___data_xfer_1a46a6da6b1936191571fd30b2a749f38c"/><section>
+    <title>bits</title>
+<indexterm><primary>bits</primary><secondary>spi_flash_DataXfer</secondary></indexterm>
+<indexterm><primary>spi_flash_DataXfer</primary><secondary>bits</secondary></indexterm>
+<para><computeroutput>uint8_t bits</computeroutput></para></section>
+<anchor xml:id="_structspi__flash___data_xfer_1a70fbd315df33bf9039e036725b569e7f"/><section>
+    <title>delay</title>
+<indexterm><primary>delay</primary><secondary>spi_flash_DataXfer</secondary></indexterm>
+<indexterm><primary>spi_flash_DataXfer</primary><secondary>delay</secondary></indexterm>
+<para><computeroutput>uint8_t delay</computeroutput></para></section>
+<anchor xml:id="_structspi__flash___data_xfer_1a6f8059414f0228f0256115e024eeed4b"/><section>
+    <title>fd</title>
+<indexterm><primary>fd</primary><secondary>spi_flash_DataXfer</secondary></indexterm>
+<indexterm><primary>spi_flash_DataXfer</primary><secondary>fd</secondary></indexterm>
+<para><computeroutput>int fd</computeroutput></para></section>
+<anchor xml:id="_structspi__flash___data_xfer_1a8b69031180adaa80a298602dd1eafe38"/><section>
+    <title>Rxbuff</title>
+<indexterm><primary>Rxbuff</primary><secondary>spi_flash_DataXfer</secondary></indexterm>
+<indexterm><primary>spi_flash_DataXfer</primary><secondary>Rxbuff</secondary></indexterm>
+<para><computeroutput>uint8_t Rxbuff[<link linkend="_spi__init_8c_1a454d8b312d295352b852af40dba72c51">SPI_MAX_BUFFER_SIZE</link>]</computeroutput></para></section>
+<anchor xml:id="_structspi__flash___data_xfer_1a944c7b43f60ca8f2d49c1c3950b7143f"/><section>
+    <title>Rxlength</title>
+<indexterm><primary>Rxlength</primary><secondary>spi_flash_DataXfer</secondary></indexterm>
+<indexterm><primary>spi_flash_DataXfer</primary><secondary>Rxlength</secondary></indexterm>
+<para><computeroutput>unsigned char Rxlength</computeroutput></para></section>
+<anchor xml:id="_structspi__flash___data_xfer_1a220859a8b5da0232739a11cbe7f79fc5"/><section>
+    <title>speed</title>
+<indexterm><primary>speed</primary><secondary>spi_flash_DataXfer</secondary></indexterm>
+<indexterm><primary>spi_flash_DataXfer</primary><secondary>speed</secondary></indexterm>
+<para><computeroutput>uint32_t speed</computeroutput></para></section>
+<anchor xml:id="_structspi__flash___data_xfer_1af66448b9cd0b741383e224be5e065934"/><section>
+    <title>Txbuff</title>
+<indexterm><primary>Txbuff</primary><secondary>spi_flash_DataXfer</secondary></indexterm>
+<indexterm><primary>spi_flash_DataXfer</primary><secondary>Txbuff</secondary></indexterm>
+<para><computeroutput>uint8_t Txbuff[<link linkend="_spi__init_8c_1a454d8b312d295352b852af40dba72c51">SPI_MAX_BUFFER_SIZE</link>]</computeroutput></para></section>
+<anchor xml:id="_structspi__flash___data_xfer_1a7565efc6120fc4e35e847f0d5d567ee2"/><section>
+    <title>Txlength</title>
+<indexterm><primary>Txlength</primary><secondary>spi_flash_DataXfer</secondary></indexterm>
+<indexterm><primary>spi_flash_DataXfer</primary><secondary>Txlength</secondary></indexterm>
+<para><computeroutput>uint16_t Txlength</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Initializations/Hardware_Initializations/<link linkend="_spi__init_8c">spi_init.c</link></section>
+</section>

@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_common__screen__calls_8c" xml:lang="en-US">
+<title>GUI/Screens/common_screen_calls.c File Reference</title>
+<indexterm><primary>GUI/Screens/common_screen_calls.c</primary></indexterm>
+<para>
+
+<para>Source that has common function related to screen, label creations. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?></programlisting>Include dependency graph for common_screen_calls.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="common__screen__calls_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_common__screen__calls_8c_1adcc2034261addcb1e1ed1272af6e421d">status_label_creation</link> (lv_obj_t *screen_name, const char *text, lv_coord_t x, lv_coord_t y, lv_coord_t w, lv_coord_t h, const lv_font_t *font_name, uint32_t font_colour)</para>
+
+<para>function to create the labels </para>
+</listitem>
+            <listitem><para>void <link linkend="_common__screen__calls_8c_1aacff09f925b6d1af3bd78743926dfb3e">status_qr_creation</link> (lv_obj_t *screen_name, lv_coord_t size, char *text)</para>
+
+<para>function to create the QR </para>
+</listitem>
+            <listitem><para>void <link linkend="_common__screen__calls_8c_1a2cf24a7fb496a80ca43515bb265f1ae1">common_label_creation</link> (lv_obj_t *screen_name, const char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</para>
+
+<para>function to create the pin labels </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_structlv__color__t">lv_color_t</link> <link linkend="_common__screen__calls_8c_1af6bbe65dafca6d698a744d3a1e0d2c20">bg_color</link></para>
+</listitem>
+            <listitem><para><link linkend="_structlv__color__t">lv_color_t</link> <link linkend="_common__screen__calls_8c_1aa40cc747bee992b8d0c4c80f76dbfec3">fg_color</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_common__screen__calls_8c_1afdb49a0d2609b091797e99e18fb0cb96">qr</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that has common function related to screen, label creations. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_common__screen__calls_8c_1a2cf24a7fb496a80ca43515bb265f1ae1"/><section>
+    <title>common_label_creation()</title>
+<indexterm><primary>common_label_creation</primary><secondary>common_screen_calls.c</secondary></indexterm>
+<indexterm><primary>common_screen_calls.c</primary><secondary>common_label_creation</secondary></indexterm>
+<para><computeroutput>void common_label_creation (lv_obj_t * screen_name, const char * text, lv_coord_t x, lv_coord_t y, const lv_font_t * font_name, uint32_t font_colour)</computeroutput></para><para>
+
+<para>function to create the pin labels </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>screen_name</entry><entry>
+<para>- screen name </para>
+</entry>
+                            </row>
+                            <row>
+<entry>text</entry><entry>
+<para>- text to be displayed on the screen </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x</entry><entry>
+<para>- x axis alignment of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y</entry><entry>
+<para>- y axis alignment of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w</entry><entry>
+<para>- width of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>h</entry><entry>
+<para>- height of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>font_name</entry><entry>
+<para>- font name (Monospace821 BT) </para>
+</entry>
+                            </row>
+                            <row>
+<entry>font_color</entry><entry>
+<para>- font color (white or black) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="common__screen__calls_8c_a2cf24a7fb496a80ca43515bb265f1ae1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_common__screen__calls_8c_1adcc2034261addcb1e1ed1272af6e421d"/><section>
+    <title>status_label_creation()</title>
+<indexterm><primary>status_label_creation</primary><secondary>common_screen_calls.c</secondary></indexterm>
+<indexterm><primary>common_screen_calls.c</primary><secondary>status_label_creation</secondary></indexterm>
+<para><computeroutput>void status_label_creation (lv_obj_t * screen_name, const char * text, lv_coord_t x, lv_coord_t y, lv_coord_t w, lv_coord_t h, const lv_font_t * font_name, uint32_t font_colour)</computeroutput></para><para>
+
+<para>function to create the labels </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>screen_name</entry><entry>
+<para>- screen name </para>
+</entry>
+                            </row>
+                            <row>
+<entry>text</entry><entry>
+<para>- text to be displayed on the screen </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x</entry><entry>
+<para>- x axis alignment of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y</entry><entry>
+<para>- y axis alignment of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w</entry><entry>
+<para>- width of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>h</entry><entry>
+<para>- height of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>font_name</entry><entry>
+<para>- font name (Monospace821 BT) </para>
+</entry>
+                            </row>
+                            <row>
+<entry>font_color</entry><entry>
+<para>- font color (white or black) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="common__screen__calls_8c_adcc2034261addcb1e1ed1272af6e421d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_common__screen__calls_8c_1aacff09f925b6d1af3bd78743926dfb3e"/><section>
+    <title>status_qr_creation()</title>
+<indexterm><primary>status_qr_creation</primary><secondary>common_screen_calls.c</secondary></indexterm>
+<indexterm><primary>common_screen_calls.c</primary><secondary>status_qr_creation</secondary></indexterm>
+<para><computeroutput>void status_qr_creation (lv_obj_t * screen_name, lv_coord_t size, char * text)</computeroutput></para><para>
+
+<para>function to create the QR </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>screen_name</entry><entry>
+<para>- screen name </para>
+</entry>
+                            </row>
+                            <row>
+<entry>text</entry><entry>
+<para>- text to be displayed on QR code </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="common__screen__calls_8c_aacff09f925b6d1af3bd78743926dfb3e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_common__screen__calls_8c_1af6bbe65dafca6d698a744d3a1e0d2c20"/><section>
+    <title>bg_color</title>
+<indexterm><primary>bg_color</primary><secondary>common_screen_calls.c</secondary></indexterm>
+<indexterm><primary>common_screen_calls.c</primary><secondary>bg_color</secondary></indexterm>
+<para><computeroutput><link linkend="_structlv__color__t">lv_color_t</link> bg_color</computeroutput></para></section>
+<anchor xml:id="_common__screen__calls_8c_1aa40cc747bee992b8d0c4c80f76dbfec3"/><section>
+    <title>fg_color</title>
+<indexterm><primary>fg_color</primary><secondary>common_screen_calls.c</secondary></indexterm>
+<indexterm><primary>common_screen_calls.c</primary><secondary>fg_color</secondary></indexterm>
+<para><computeroutput><link linkend="_structlv__color__t">lv_color_t</link> fg_color</computeroutput></para></section>
+<anchor xml:id="_common__screen__calls_8c_1afdb49a0d2609b091797e99e18fb0cb96"/><section>
+    <title>qr</title>
+<indexterm><primary>qr</primary><secondary>common_screen_calls.c</secondary></indexterm>
+<indexterm><primary>common_screen_calls.c</primary><secondary>qr</secondary></indexterm>
+<para><computeroutput>lv_obj_t* qr</computeroutput></para></section>
+</section>
+</section>

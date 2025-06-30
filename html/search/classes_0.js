@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dma_5fbuf_5fphys_5fdata_0',['dma_buf_phys_data',['../structdma__buf__phys__data.html',1,'']]]
+  ['backend_5fstatus_5fentry_5ft_0',['backend_status_entry_t',['../structbackend__status__entry__t.html',1,'']]]
 ];

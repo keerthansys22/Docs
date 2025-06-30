@@ -1,0 +1,468 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__diag_valve_api_8c" xml:lang="en-US">
+<title>API_Source/ValveModulesApiSource/DiagValveApi.c File Reference</title>
+<indexterm><primary>API_Source/ValveModulesApiSource/DiagValveApi.c</primary></indexterm>
+<para>
+
+<para>This source file contains the api source related to Diag valve Parameter Access. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;ti_rpmsg_char.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?>#include &quot;../Header/API_Header/pzmapping.h&quot;<?linebreak?></programlisting>Include dependency graph for DiagValveApi.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="__diag_valve_api_8c_1a2383a3641c7a989a9d6c99be17bf45c8">writeSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t addr, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__diag_valve_api_8c_1ae512dcee3f48f317872617e5f4559b19">readSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__diag_valve_api_8c_1afffe0a8cc543604a9a4c31b71fe442bd">getPressureZoneProcessDataAddress</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__diag_valve_api_8c_1afa3d041d8597ff5b49a58ec5e13f2ea4">getPresssureZoneServiceDataAddress</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__diag_valve_api_8c_1a545d0e847091e676372549f906f38e0c">getPZID</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__diag_valve_api_8c_1ac3ec6ff63d65bb052cd01cb6eafd6634">getDiagValveProcessData</link> (uint16_t pressurezone_handler, uint16_t diagvalve_handler, diagvalve_processinfo *<link linkend="_diag__valve__status__info_8c_1a413c7c2e76c6e616ae42f8779dc9e19c">diagvalve_processdata</link>)</para>
+
+<para>Retrieves diagnostic process data for a specified diagnostic valve. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__diag_valve_api_8c_1ac53b63180fe37e7a819d6de4811052a1">setDiagValveWarningEventBit</link> (uint16_t pressurezone_handler, uint16_t diagvalve_handler, uint32_t *warningeventbit_val)</para>
+
+<para>Sets the warning event bit for a specified Diag Valve. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__diag_valve_api_8c_1ab57fddd9bef47dee7f0bcb70093c8617">setDiagValveFaultEventBit</link> (uint16_t pressurezone_handler, uint16_t diagvalve_handler, uint32_t *faulteventbit_val)</para>
+
+<para>Sets the fault event bit for a specified Diag Valve. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__diag_valve_api_8c_1ae815cb19c67de0a024a3d88b2026cc9e">getDiagValveServiceParameterData</link> (uint16_t pressurezone_handler, uint16_t diagvalve_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter of the diagnostic valve. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__diag_valve_api_8c_1ad3e28ae15c1e38539a93139f8b75e5d9">setDiagValveServiceParameterData</link> (uint16_t pressurezone_handler, uint16_t diagvalve_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified . </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__diag_valve_api_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+            <listitem><para>rpmsg_char_dev_t * <link linkend="__diag_valve_api_8c_1a274502dbc1ca0716301973df9a2ebb62">g_remote_rpmsg</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This source file contains the api source related to Diag valve Parameter Access. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__diag_valve_api_8c_1ac3ec6ff63d65bb052cd01cb6eafd6634"/><section>
+    <title>getDiagValveProcessData()</title>
+<indexterm><primary>getDiagValveProcessData</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>getDiagValveProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getDiagValveProcessData (uint16_t pressurezone_handler, uint16_t diagvalve_handler, diagvalve_processinfo * diagvalve_processdata)</computeroutput></para><para>
+
+<para>Retrieves diagnostic process data for a specified diagnostic valve. </para>
+</para>
+
+<para>This function fetches the diagnostic process data associated with a given diagnostic valve handler within a specified pressure zone.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>diagvalve_handler</entry><entry>
+<para>The handler for the diagnostic valve. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>diagvalve_processdata</entry><entry>
+<para>Pointer to a structure where the retrieved process data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint8_t Returns RET_OK on success, or an error code on failure. Refer to e_error_code for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ac3ec6ff63d65bb052cd01cb6eafd6634_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ac3ec6ff63d65bb052cd01cb6eafd6634_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1ae815cb19c67de0a024a3d88b2026cc9e"/><section>
+    <title>getDiagValveServiceParameterData()</title>
+<indexterm><primary>getDiagValveServiceParameterData</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>getDiagValveServiceParameterData</secondary></indexterm>
+<para><computeroutput>uint8_t getDiagValveServiceParameterData (uint16_t pressurezone_handler, uint16_t diagvalve_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter of the diagnostic valve. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>diagvalve_handler</entry><entry>
+<para>The handler for the diagnostic valve. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name (ID) of the parameter to be retrieved. Refer to Valve_FeatureParamId for valid parameter names. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the memory where the retrieved parameter value will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint8_t Returns RET_OK on success, or an error code on failure. Refer to e_error_code for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ae815cb19c67de0a024a3d88b2026cc9e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1afa3d041d8597ff5b49a58ec5e13f2ea4"/><section>
+    <title>getPresssureZoneServiceDataAddress()</title>
+<indexterm><primary>getPresssureZoneServiceDataAddress</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>getPresssureZoneServiceDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPresssureZoneServiceDataAddress (uint16_t pz_handler)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_afa3d041d8597ff5b49a58ec5e13f2ea4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1afffe0a8cc543604a9a4c31b71fe442bd"/><section>
+    <title>getPressureZoneProcessDataAddress()</title>
+<indexterm><primary>getPressureZoneProcessDataAddress</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>getPressureZoneProcessDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPressureZoneProcessDataAddress (uint16_t pz_handler)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_afffe0a8cc543604a9a4c31b71fe442bd_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1a545d0e847091e676372549f906f38e0c"/><section>
+    <title>getPZID()</title>
+<indexterm><primary>getPZID</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>getPZID</secondary></indexterm>
+<para><computeroutput>uint8_t getPZID (uint16_t pz_handler)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_a545d0e847091e676372549f906f38e0c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1ae512dcee3f48f317872617e5f4559b19"/><section>
+    <title>readSharedMemoryData()</title>
+<indexterm><primary>readSharedMemoryData</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>readSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ae512dcee3f48f317872617e5f4559b19_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1ab57fddd9bef47dee7f0bcb70093c8617"/><section>
+    <title>setDiagValveFaultEventBit()</title>
+<indexterm><primary>setDiagValveFaultEventBit</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>setDiagValveFaultEventBit</secondary></indexterm>
+<para><computeroutput>uint8_t setDiagValveFaultEventBit (uint16_t pressurezone_handler, uint16_t diagvalve_handler, uint32_t * faulteventbit_val)</computeroutput></para><para>
+
+<para>Sets the fault event bit for a specified Diag Valve. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>diagvalve_handler</entry><entry>
+<para>The handler for the Diag Valve.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>faulteventbit_val</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ab57fddd9bef47dee7f0bcb70093c8617_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ab57fddd9bef47dee7f0bcb70093c8617_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1ad3e28ae15c1e38539a93139f8b75e5d9"/><section>
+    <title>setDiagValveServiceParameterData()</title>
+<indexterm><primary>setDiagValveServiceParameterData</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>setDiagValveServiceParameterData</secondary></indexterm>
+<para><computeroutput>uint8_t setDiagValveServiceParameterData (uint16_t pressurezone_handler, uint16_t diagvalve_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified . </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>handler</entry><entry>
+<para>The handler for the diagnostic valve. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. Refer to the enumeration <computeroutput>Valve_FeatureParamId</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ad3e28ae15c1e38539a93139f8b75e5d9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1ac53b63180fe37e7a819d6de4811052a1"/><section>
+    <title>setDiagValveWarningEventBit()</title>
+<indexterm><primary>setDiagValveWarningEventBit</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>setDiagValveWarningEventBit</secondary></indexterm>
+<para><computeroutput>uint8_t setDiagValveWarningEventBit (uint16_t pressurezone_handler, uint16_t diagvalve_handler, uint32_t * warningeventbit_val)</computeroutput></para><para>
+
+<para>Sets the warning event bit for a specified Diag Valve. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>diagvalve_handler</entry><entry>
+<para>The handler for the ISEM diagnostic module.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>warningeventbit_val</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ac53b63180fe37e7a819d6de4811052a1_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_ac53b63180fe37e7a819d6de4811052a1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__diag_valve_api_8c_1a2383a3641c7a989a9d6c99be17bf45c8"/><section>
+    <title>writeSharedMemoryData()</title>
+<indexterm><primary>writeSharedMemoryData</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>writeSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t writeSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t addr, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_diag_valve_api_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__diag_valve_api_8c_1a274502dbc1ca0716301973df9a2ebb62"/><section>
+    <title>g_remote_rpmsg</title>
+<indexterm><primary>g_remote_rpmsg</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>g_remote_rpmsg</secondary></indexterm>
+<para><computeroutput>rpmsg_char_dev_t* g_remote_rpmsg<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__diag_valve_api_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>DiagValveApi.c</secondary></indexterm>
+<indexterm><primary>DiagValveApi.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

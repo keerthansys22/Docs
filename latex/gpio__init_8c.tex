@@ -1,0 +1,129 @@
+\doxysection{Initializations/\+Hardware\+\_\+\+Initializations/gpio\+\_\+init.c File Reference}
+\hypertarget{gpio__init_8c}{}\label{gpio__init_8c}\index{Initializations/Hardware\_Initializations/gpio\_init.c@{Initializations/Hardware\_Initializations/gpio\_init.c}}
+
+
+Source that initializes the GPIO pins.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+Include dependency graph for gpio\+\_\+init.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{gpio__init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gpio__init_8c_afdbe206b3c49f019757ab09b3cf52b9c}{gpio\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Function to perform LCD functionality. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gpio__init_8c_a8ddfcc1edc1807598865aced2e871313}{configure\+\_\+\+GPIO\+\_\+pins}} (int GPIONUM, int Direction)
+\begin{DoxyCompactList}\small\item\em configure the gpio pins \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gpio__init_8c_a992606101a6d77644f3a2be4afc99324}{GPIO\+\_\+pin\+\_\+\+Set\+Value}} (int GPIONUM, int Value)
+\begin{DoxyCompactList}\small\item\em Gpio set value high or low. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that initializes the GPIO pins. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gpio__init_8c_a8ddfcc1edc1807598865aced2e871313}\index{gpio\_init.c@{gpio\_init.c}!configure\_GPIO\_pins@{configure\_GPIO\_pins}}
+\index{configure\_GPIO\_pins@{configure\_GPIO\_pins}!gpio\_init.c@{gpio\_init.c}}
+\doxysubsubsection{\texorpdfstring{configure\_GPIO\_pins()}{configure\_GPIO\_pins()}}
+{\footnotesize\ttfamily \label{gpio__init_8c_a8ddfcc1edc1807598865aced2e871313} 
+int configure\+\_\+\+GPIO\+\_\+pins (\begin{DoxyParamCaption}\item[{int}]{GPIONUM}{, }\item[{int}]{Direction}{}\end{DoxyParamCaption})}
+
+
+
+configure the gpio pins 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIONUM} & gpio pin number \\
+\hline
+{\em Direction} & direction to which the what the gpio pin has to be set \mbox{[}1 -\/ out\mbox{]} \mbox{[}0-\/ in\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESSS\+\_\+test on success or AP\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{gpio__init_8c_a8ddfcc1edc1807598865aced2e871313_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gpio__init_8c_a8ddfcc1edc1807598865aced2e871313_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gpio__init_8c_afdbe206b3c49f019757ab09b3cf52b9c}\index{gpio\_init.c@{gpio\_init.c}!gpio\_init@{gpio\_init}}
+\index{gpio\_init@{gpio\_init}!gpio\_init.c@{gpio\_init.c}}
+\doxysubsubsection{\texorpdfstring{gpio\_init()}{gpio\_init()}}
+{\footnotesize\ttfamily \label{gpio__init_8c_afdbe206b3c49f019757ab09b3cf52b9c} 
+void gpio\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Function to perform LCD functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gpio__init_8c_afdbe206b3c49f019757ab09b3cf52b9c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gpio__init_8c_afdbe206b3c49f019757ab09b3cf52b9c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gpio__init_8c_a992606101a6d77644f3a2be4afc99324}\index{gpio\_init.c@{gpio\_init.c}!GPIO\_pin\_SetValue@{GPIO\_pin\_SetValue}}
+\index{GPIO\_pin\_SetValue@{GPIO\_pin\_SetValue}!gpio\_init.c@{gpio\_init.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_pin\_SetValue()}{GPIO\_pin\_SetValue()}}
+{\footnotesize\ttfamily \label{gpio__init_8c_a992606101a6d77644f3a2be4afc99324} 
+int GPIO\+\_\+pin\+\_\+\+Set\+Value (\begin{DoxyParamCaption}\item[{int}]{GPIONUM}{, }\item[{int}]{Value}{}\end{DoxyParamCaption})}
+
+
+
+Gpio set value high or low. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIONUM} & gpio pin number \\
+\hline
+{\em Value} & \mbox{[}1-\/ high\mbox{]} \mbox{[}0-\/ low\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESSS\+\_\+test on success or AP\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{gpio__init_8c_a992606101a6d77644f3a2be4afc99324_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gpio__init_8c_a992606101a6d77644f3a2be4afc99324_icgraph}
+\end{center}
+\end{figure}

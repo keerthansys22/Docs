@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_b28603d25d5f9d9511a663fa383d64ff" xml:lang="en-US">
+<title>Initializations/Indication Directory Reference</title>
+<indexterm><primary>Initializations/Indication Directory Reference</primary></indexterm>
+Directory dependency graph for Indication:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_b28603d25d5f9d9511a663fa383d64ff_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_indication_8c">indication.c</link></para>
+
+<para>Source that initializes and self-test the indication i2c-1. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_5ee8b5aa34d6db6a0dd6500f9d8988b2" xml:lang="en-US">
+<title>GUI/Screens Directory Reference</title>
+<indexterm><primary>GUI/Screens Directory Reference</primary></indexterm>
+Directory dependency graph for Screens:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_5ee8b5aa34d6db6a0dd6500f9d8988b2_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_about__screen_8c">about_screen.c</link></para>
+
+<para>Source that displays about screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_about__standard__valve__screen_8c">about_standard_valve_screen.c</link></para>
+
+<para>Source that displays standard valves details screens. </para>
+</listitem>
+            <listitem><para>file <link linkend="_clear__screen_8c">clear_screen.c</link></para>
+
+<para>Source that displays clear message screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_common__screen__calls_8c">common_screen_calls.c</link></para>
+
+<para>Source that has common function related to screen, label creations. </para>
+</listitem>
+            <listitem><para>file <link linkend="_config__screen_8c">config_screen.c</link></para>
+
+<para>Source that displays configuration (sub-menu) (ip_address_configuration) screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_diag__valve__about__screen_8c">diag_valve_about_screen.c</link></para>
+
+<para>Source that displays the diagnostic valves about screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_error__screen_8c">error_screen.c</link></para>
+
+<para>Source that displays error screen when there is an error. </para>
+</listitem>
+            <listitem><para>file <link linkend="_ext__propzone__about__screen_8c">ext_propzone_about_screen.c</link></para>
+
+<para>Source that displays the external pressure zone (i.e external prop valve) about screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_io__modules__about__screen_8c">io_modules_about_screen.c</link></para>
+
+<para>Source that displays IO_modules about screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_mac__screen_8c">mac_screen.c</link></para>
+
+<para>Source that displays MAC screen details. </para>
+</listitem>
+            <listitem><para>file <link linkend="_menu__screen_8c">menu_screen.c</link></para>
+
+<para>Source that displays menu screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_module__screen_8c">module_screen.c</link></para>
+
+<para>Source that displays module screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_pin__screen_8c">pin_screen.c</link></para>
+
+<para>Source that displays pin screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_pressure__zone__about__screen_8c">pressure_zone_about_screen.c</link></para>
+
+<para>Source that displays pressure zone&apos;s number screens. </para>
+</listitem>
+            <listitem><para>file <link linkend="_pz__details__about__screen_8c">pz_details_about_screen.c</link></para>
+
+<para>Source that displays pressure zone&apos;s details screens. </para>
+</listitem>
+            <listitem><para>file <link linkend="_qr__screen_8c">qr_screen.c</link></para>
+
+<para>Source that displays QR screen. </para>
+</listitem>
+            <listitem><para>file <link linkend="_status__screen_8c">status_screen.c</link></para>
+
+<para>Source that displays status screen. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

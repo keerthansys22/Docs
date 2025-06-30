@@ -1,0 +1,536 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_data__processing_8c" xml:lang="en-US">
+<title>Data_processing/data_processing.c File Reference</title>
+<indexterm><primary>Data_processing/data_processing.c</primary></indexterm>
+<para>
+
+<para>Source that processes the all the data server data. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for data_processing.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_data__processing_8c_1a33e091ca4ad4a808848bae50150d6bef">mbn_status_info</link> ()</para>
+
+<para>function that determines the MBN status information </para>
+</listitem>
+            <listitem><para>int <link linkend="_data__processing_8c_1a434de6524abf0902881fe890323c1186">mac_address_details</link> ()</para>
+
+<para>function that access the MAC details </para>
+</listitem>
+            <listitem><para>int <link linkend="_data__processing_8c_1a20c3cefbb0187f193f7b2b327e82342f">start_discovery</link> ()</para>
+
+<para>Function that processes the discovery details. </para>
+</listitem>
+            <listitem><para>void <link linkend="_data__processing_8c_1afc2a01db214bea71598ff4c8dba79574">copy_members</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_data__processing_8c_1adfca9bae7bdfdd358ced96390fb1f696">fetch_mbn_identification_parameters</link> ()</para>
+
+<para>Function that fetches the MBN identification parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_data__processing_8c_1a3e9b0f25faad61167968870d14001d3b">fetch_io_identification_parameters</link> ()</para>
+
+<para>Function that fetches the IO_module identification parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_data__processing_8c_1ac4306bff4d6d753d0caba597124ddbe3">fetch_pz_identification_parameters</link> ()</para>
+
+<para>Function that fetches the PZ identification parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_data__processing_8c_1aac0c03d78e4b434d9f855c01973071b1">fetch_propzone_identification_parameters</link> ()</para>
+
+<para>Function that fetches the PropZone identification parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_data__processing_8c_1a3671d63082904cd553ff0e84c91b088e">valves_modules_status_info</link> ()</para>
+
+<para>Function that processes the valves modules status information. </para>
+</listitem>
+            <listitem><para>void * <link linkend="_data__processing_8c_1a122b34d4ba9a92a2a595cee1b937537e">data_processing_func</link> (void *arg)</para>
+
+<para>Function that processes all the IO-modules and valves real-time data. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_data__processing_8c_1aa82d815e011dc2986b6dfc9e2ddfbfaa">g_start_flag</link></para>
+</listitem>
+            <listitem><para>s_discovery_details <link linkend="_data__processing_8c_1aecc928609def218c15f7c59447eb5a32">discover_details</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_data__processing_8c_1a302e4e8f28350675e1eb62a4e1481d8c">all_modules_normal</link> = true</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_data__processing_8c_1a5a48a03cca514f9b8f3f4f3efde71476">g_status_index</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_data__processing_8c_1a27e4047823c653df7bd5f560cd4fa460">g_total_no_of_status_screens</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that processes the all the data server data. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_data__processing_8c_1afc2a01db214bea71598ff4c8dba79574"/><section>
+    <title>copy_members()</title>
+<indexterm><primary>copy_members</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>copy_members</secondary></indexterm>
+<para><computeroutput>void copy_members ( )<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_afc2a01db214bea71598ff4c8dba79574_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_afc2a01db214bea71598ff4c8dba79574_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1a122b34d4ba9a92a2a595cee1b937537e"/><section>
+    <title>data_processing_func()</title>
+<indexterm><primary>data_processing_func</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>data_processing_func</secondary></indexterm>
+<para><computeroutput>void * data_processing_func (void * arg)</computeroutput></para><para>
+
+<para>Function that processes all the IO-modules and valves real-time data. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a122b34d4ba9a92a2a595cee1b937537e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1a3e9b0f25faad61167968870d14001d3b"/><section>
+    <title>fetch_io_identification_parameters()</title>
+<indexterm><primary>fetch_io_identification_parameters</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>fetch_io_identification_parameters</secondary></indexterm>
+<para><computeroutput>void fetch_io_identification_parameters ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that fetches the IO_module identification parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a3e9b0f25faad61167968870d14001d3b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a3e9b0f25faad61167968870d14001d3b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1adfca9bae7bdfdd358ced96390fb1f696"/><section>
+    <title>fetch_mbn_identification_parameters()</title>
+<indexterm><primary>fetch_mbn_identification_parameters</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>fetch_mbn_identification_parameters</secondary></indexterm>
+<para><computeroutput>void fetch_mbn_identification_parameters ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that fetches the MBN identification parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1aac0c03d78e4b434d9f855c01973071b1"/><section>
+    <title>fetch_propzone_identification_parameters()</title>
+<indexterm><primary>fetch_propzone_identification_parameters</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>fetch_propzone_identification_parameters</secondary></indexterm>
+<para><computeroutput>void fetch_propzone_identification_parameters ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that fetches the PropZone identification parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_aac0c03d78e4b434d9f855c01973071b1_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_aac0c03d78e4b434d9f855c01973071b1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1ac4306bff4d6d753d0caba597124ddbe3"/><section>
+    <title>fetch_pz_identification_parameters()</title>
+<indexterm><primary>fetch_pz_identification_parameters</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>fetch_pz_identification_parameters</secondary></indexterm>
+<para><computeroutput>void fetch_pz_identification_parameters ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that fetches the PZ identification parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1a434de6524abf0902881fe890323c1186"/><section>
+    <title>mac_address_details()</title>
+<indexterm><primary>mac_address_details</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>mac_address_details</secondary></indexterm>
+<para><computeroutput>int mac_address_details ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>function that access the MAC details </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a434de6524abf0902881fe890323c1186_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a434de6524abf0902881fe890323c1186_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1a33e091ca4ad4a808848bae50150d6bef"/><section>
+    <title>mbn_status_info()</title>
+<indexterm><primary>mbn_status_info</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>mbn_status_info</secondary></indexterm>
+<para><computeroutput>int mbn_status_info ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>function that determines the MBN status information </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>module_num_status</entry><entry>
+<para>- indicates the module number </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a33e091ca4ad4a808848bae50150d6bef_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1a20c3cefbb0187f193f7b2b327e82342f"/><section>
+    <title>start_discovery()</title>
+<indexterm><primary>start_discovery</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>start_discovery</secondary></indexterm>
+<para><computeroutput>int start_discovery ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that processes the discovery details. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a20c3cefbb0187f193f7b2b327e82342f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_data__processing_8c_1a3671d63082904cd553ff0e84c91b088e"/><section>
+    <title>valves_modules_status_info()</title>
+<indexterm><primary>valves_modules_status_info</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>valves_modules_status_info</secondary></indexterm>
+<para><computeroutput>void valves_modules_status_info ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that processes the valves modules status information. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a3671d63082904cd553ff0e84c91b088e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="data__processing_8c_a3671d63082904cd553ff0e84c91b088e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_data__processing_8c_1a302e4e8f28350675e1eb62a4e1481d8c"/><section>
+    <title>all_modules_normal</title>
+<indexterm><primary>all_modules_normal</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>all_modules_normal</secondary></indexterm>
+<para><computeroutput>bool all_modules_normal = true</computeroutput></para></section>
+<anchor xml:id="_data__processing_8c_1aecc928609def218c15f7c59447eb5a32"/><section>
+    <title>discover_details</title>
+<indexterm><primary>discover_details</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>discover_details</secondary></indexterm>
+<para><computeroutput>s_discovery_details discover_details<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_data__processing_8c_1aa82d815e011dc2986b6dfc9e2ddfbfaa"/><section>
+    <title>g_start_flag</title>
+<indexterm><primary>g_start_flag</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>g_start_flag</secondary></indexterm>
+<para><computeroutput>uint8_t g_start_flag<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_data__processing_8c_1a5a48a03cca514f9b8f3f4f3efde71476"/><section>
+    <title>g_status_index</title>
+<indexterm><primary>g_status_index</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>g_status_index</secondary></indexterm>
+<para><computeroutput>uint8_t g_status_index = 0</computeroutput></para></section>
+<anchor xml:id="_data__processing_8c_1a27e4047823c653df7bd5f560cd4fa460"/><section>
+    <title>g_total_no_of_status_screens</title>
+<indexterm><primary>g_total_no_of_status_screens</primary><secondary>data_processing.c</secondary></indexterm>
+<indexterm><primary>data_processing.c</primary><secondary>g_total_no_of_status_screens</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_no_of_status_screens = 0</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dv__fault__csv_8c" xml:lang="en-US">
+<title>csv/dv_fault_csv.c File Reference</title>
+<indexterm><primary>csv/dv_fault_csv.c</primary></indexterm>
+<para>
+
+<para>source file that reads the diagnostics valve fault csv file and stores it in a structure </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;AppGlobal.h&quot;<?linebreak?></programlisting>Include dependency graph for dv_fault_csv.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dv__fault__csv_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_dv__fault__csv_8c_1a082a8eea3d34f52a3711258709ba8bf4">read_dv_fault_csv</link> ()</para>
+
+<para>Function that reads the fault data from CSV file &amp; stores the same in the structure. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>fault_csv_struct <link linkend="_dv__fault__csv_8c_1a65eb192130f260606eb757f6dda24f56">fault_csv_value</link> [35] = {0}</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_dv__fault__csv_8c_1a380a0996399f42e4954d1701185a3484">fault_file_not_exist</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>source file that reads the diagnostics valve fault csv file and stores it in a structure </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_dv__fault__csv_8c_1a082a8eea3d34f52a3711258709ba8bf4"/><section>
+    <title>read_dv_fault_csv()</title>
+<indexterm><primary>read_dv_fault_csv</primary><secondary>dv_fault_csv.c</secondary></indexterm>
+<indexterm><primary>dv_fault_csv.c</primary><secondary>read_dv_fault_csv</secondary></indexterm>
+<para><computeroutput>void read_dv_fault_csv ( )</computeroutput></para><para>
+
+<para>Function that reads the fault data from CSV file &amp; stores the same in the structure. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dv__fault__csv_8c_a082a8eea3d34f52a3711258709ba8bf4_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dv__fault__csv_8c_a082a8eea3d34f52a3711258709ba8bf4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_dv__fault__csv_8c_1a65eb192130f260606eb757f6dda24f56"/><section>
+    <title>fault_csv_value</title>
+<indexterm><primary>fault_csv_value</primary><secondary>dv_fault_csv.c</secondary></indexterm>
+<indexterm><primary>dv_fault_csv.c</primary><secondary>fault_csv_value</secondary></indexterm>
+<para><computeroutput>fault_csv_struct fault_csv_value[35] = {0}</computeroutput></para></section>
+<anchor xml:id="_dv__fault__csv_8c_1a380a0996399f42e4954d1701185a3484"/><section>
+    <title>fault_file_not_exist</title>
+<indexterm><primary>fault_file_not_exist</primary><secondary>dv_fault_csv.c</secondary></indexterm>
+<indexterm><primary>dv_fault_csv.c</primary><secondary>fault_file_not_exist</secondary></indexterm>
+<para><computeroutput>uint8_t fault_file_not_exist = 0</computeroutput></para></section>
+</section>
+</section>

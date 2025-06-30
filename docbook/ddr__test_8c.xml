@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ddr__test_8c" xml:lang="en-US">
+<title>Self_Tests/ddr_test.c File Reference</title>
+<indexterm><primary>Self_Tests/ddr_test.c</primary></indexterm>
+<para>
+
+<para>Source file to test the DDR memory. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;main.h&quot;<?linebreak?></programlisting>Include dependency graph for ddr_test.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ddr__test_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_ddr__test_8c_1af0f2173e3b202ddf5756531b4471dcb2">MAX_LINE_LENGTH</link>&#160;&#160;&#160;256</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_ddr__test_8c_1a0474633aa7e989fea85a47f103ea70ce">ddr_memory</link> ()</para>
+
+<para>Test and verify the DDR memory. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file to test the DDR memory. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_ddr__test_8c_1af0f2173e3b202ddf5756531b4471dcb2"/><section>
+    <title>MAX_LINE_LENGTH</title>
+<indexterm><primary>MAX_LINE_LENGTH</primary><secondary>ddr_test.c</secondary></indexterm>
+<indexterm><primary>ddr_test.c</primary><secondary>MAX_LINE_LENGTH</secondary></indexterm>
+<para><computeroutput>#define MAX_LINE_LENGTH&#160;&#160;&#160;256</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_ddr__test_8c_1a0474633aa7e989fea85a47f103ea70ce"/><section>
+    <title>ddr_memory()</title>
+<indexterm><primary>ddr_memory</primary><secondary>ddr_test.c</secondary></indexterm>
+<indexterm><primary>ddr_test.c</primary><secondary>ddr_memory</secondary></indexterm>
+<para><computeroutput>int ddr_memory ( )</computeroutput></para><para>
+
+<para>Test and verify the DDR memory. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ddr__test_8c_a0474633aa7e989fea85a47f103ea70ce_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="ddr__test_8c_a0474633aa7e989fea85a47f103ea70ce_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

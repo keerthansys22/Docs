@@ -1,0 +1,462 @@
+\doxysection{Data\+\_\+processing/diag\+\_\+valve\+\_\+status\+\_\+info.c File Reference}
+\hypertarget{diag__valve__status__info_8c}{}\label{diag__valve__status__info_8c}\index{Data\_processing/diag\_valve\_status\_info.c@{Data\_processing/diag\_valve\_status\_info.c}}
+
+
+Source that processes the diag valve modules status information.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for diag\+\_\+valve\+\_\+status\+\_\+info.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{diag__valve__status__info_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{diag__valve__status__info_8c_a58997b988646976eadf522f6b26c9f46}{stop\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Function to stop the inactivity timer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_aa3a14562de0d1c12332a88b8f0a77c27}{getindexvalue}} (int index)
+\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_a744f1cd07a566814b870a1c9c929abe5}{get\+Module\+Number}} (int index)
+\item 
+void \mbox{\hyperlink{diag__valve__status__info_8c_a9e971832fa51f2017304dfc488f23b93}{disp\+\_\+mod\+\_\+status\+\_\+screen}} (int status\+\_\+value, int indx)
+\begin{DoxyCompactList}\small\item\em function to create the status screen \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_a181386d8ac3c39a998bc8b82730dc58c}{find\+\_\+bit\+\_\+difference\+\_\+war}} (uint32\+\_\+t data1, uint32\+\_\+t data2, int station\+\_\+ind, int mod\+\_\+num)
+\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_a9ee8455a4c41c2efd1719fe6fed51053}{find\+\_\+bit\+\_\+difference}} (uint32\+\_\+t data1, uint32\+\_\+t data2, int mod\+\_\+num)
+\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_a0f33a057d237123db3425ba08ebb47e3}{diag\+\_\+valve\+\_\+status\+\_\+info}} (uint8\+\_\+t pz\+\_\+index, uint8\+\_\+t diagvalve\+\_\+index, uint8\+\_\+t mod\+\_\+num, uint8\+\_\+t pz\+\_\+num, uint8\+\_\+t station\+\_\+ind, diagvalve\+\_\+processinfo \texorpdfstring{$\ast$}{*}processdata, uint8\+\_\+t status\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Function that processes the diag valve modules status information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{diag__valve__status__info_8c_aac575266636a7dcae8ddc521c7405ded}{reset\+\_\+diag\+\_\+status}} (uint8\+\_\+t reset\+\_\+type, uint8\+\_\+t \mbox{\hyperlink{lvgl__gui_8c_af9a91605decf4619baae281772693f6f}{module\+\_\+index}})
+\begin{DoxyCompactList}\small\item\em Reset DIAG valve warning and fault status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476}{g\+\_\+status\+\_\+index}}
+\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_a622544114a00d68e8aec2a522ee29aea}{station\+\_\+flag\+\_\+warning}} =0
+\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_ac9a0362fca0471874b6036793a24226c}{station\+\_\+flag\+\_\+fault}} =0
+\item 
+char \mbox{\hyperlink{diag__valve__status__info_8c_a6baea1f31afef887972474d14894a004}{str}} \mbox{[}8\mbox{]}
+\item 
+char \mbox{\hyperlink{diag__valve__status__info_8c_ae280ec1798f7444318b05544ad4e66dd}{str\+\_\+war}} \mbox{[}8\mbox{]}
+\item 
+char \mbox{\hyperlink{diag__valve__status__info_8c_ac108f8c38a53274eeebae8d741013458}{merged}} \mbox{[}141\mbox{]}
+\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_a7722c8ecbb62d99aee7ce68b1752f337}{N}} = 1
+\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_a76f11d9a0a47b94f72c2d0e77fb32240}{n}} = 1
+\item 
+uint32\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a9061ba876473c0485b630e7cd9bcfde1}{prev\+\_\+dv\+\_\+war}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]} = \{0\}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a7ae06bb4fda271e55df59575c5447073}{prev\+\_\+dv\+\_\+fault}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]} = \{0\}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a601731fa6e9ce4d048ff79536ecf9e17}{curr\+\_\+dv\+\_\+war}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a7c1d2a8af224b7df85080535d0b093bd}{curr\+\_\+dv\+\_\+fault}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a8283ddbfd893cd3bacd252a03eb89fcf}{diag\+\_\+valve\+\_\+device\+\_\+types}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a8d435a7e0e4c6432a0533cbf6d031edb}{stat\+\_\+pop\+\_\+flag}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_ac30e8b223c2b1984cd5c10e75b2cbcf6}{station\+\_\+num\+\_\+latest}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5}{cur\+\_\+disp\+\_\+scr\+\_\+index}}
+\item 
+int \mbox{\hyperlink{diag__valve__status__info_8c_aaa8fd3258b0349c782441c209b83cf5c}{G\+\_\+\+POP\+\_\+\+EVENT}}
+\item 
+status\+\_\+screen\+\_\+struct \mbox{\hyperlink{diag__valve__status__info_8c_aa924d7f7efa7b06289e7f6f283890fe1}{screen\+\_\+status\+\_\+value}} \mbox{[}20\mbox{]}
+\item 
+fault\+\_\+csv\+\_\+struct \mbox{\hyperlink{diag__valve__status__info_8c_a65eb192130f260606eb757f6dda24f56}{fault\+\_\+csv\+\_\+value}} \mbox{[}35\mbox{]}
+\item 
+warning\+\_\+csv\+\_\+struct \mbox{\hyperlink{diag__valve__status__info_8c_ab061281a930269e30a2ebf05c2eb9be6}{warning\+\_\+csv\+\_\+value}} \mbox{[}35\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a380a0996399f42e4954d1701185a3484}{fault\+\_\+file\+\_\+not\+\_\+exist}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a6260511c10d117876e78add9ead521fe}{warning\+\_\+file\+\_\+not\+\_\+exist}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a36972212c2938bee4597333076b0d292}{curr\+\_\+war\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_ac219734e0b7bff6a07a53d864b2cde17}{prev\+\_\+war\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a9e5e7d18c6596629d5f86a5ef0e6f9df}{curr\+\_\+fault\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a32d7ae5c30054bc52bf84eff8801f89b}{prev\+\_\+fault\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a0f1f761cbda8e6402f65783215e44356}{curr\+\_\+war\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a1bb899167b0374eb2c2de90e1de27a2b}{prev\+\_\+war\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4}{curr\+\_\+fault\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a4f901871e6da6fa9127c3255f9435aec}{prev\+\_\+fault\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_ab0bca095890a1fb58c691bea6aae554a}{normal\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+\mbox{\hyperlink{diag__valve__status__info_8c_a7efd42e524042cb435c007b138a90d28}{normal\+\_\+index}}
+\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{diag__valve__status__info_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}}
+\item 
+diagvalve\+\_\+processinfo \mbox{\hyperlink{diag__valve__status__info_8c_a413c7c2e76c6e616ae42f8779dc9e19c}{diagvalve\+\_\+processdata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that processes the diag valve modules status information. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{diag__valve__status__info_8c_a0f33a057d237123db3425ba08ebb47e3}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!diag\_valve\_status\_info@{diag\_valve\_status\_info}}
+\index{diag\_valve\_status\_info@{diag\_valve\_status\_info}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{diag\_valve\_status\_info()}{diag\_valve\_status\_info()}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a0f33a057d237123db3425ba08ebb47e3} 
+int diag\+\_\+valve\+\_\+status\+\_\+info (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pz\+\_\+index}{, }\item[{uint8\+\_\+t}]{diagvalve\+\_\+index}{, }\item[{uint8\+\_\+t}]{mod\+\_\+num}{, }\item[{uint8\+\_\+t}]{pz\+\_\+num}{, }\item[{uint8\+\_\+t}]{station\+\_\+ind}{, }\item[{diagvalve\+\_\+processinfo \texorpdfstring{$\ast$}{*}}]{processdata}{, }\item[{uint8\+\_\+t}]{status\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Function that processes the diag valve modules status information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pz\+\_\+index} & The index of the pressure zone \\
+\hline
+{\em diagvalve\+\_\+index} & The index of the diagnostic valve \\
+\hline
+{\em mod\+\_\+num} & The module number in the status screen \\
+\hline
+{\em pz\+\_\+num} & The pressure zone number \\
+\hline
+{\em station\+\_\+ind} & The station index \\
+\hline
+{\em processdata} & Pointer to already retrieved process data (can be NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\+\_\+\+OK on success, error code otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{diag__valve__status__info_8c_a0f33a057d237123db3425ba08ebb47e3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{diag__valve__status__info_8c_a0f33a057d237123db3425ba08ebb47e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{diag__valve__status__info_8c_a9e971832fa51f2017304dfc488f23b93}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!disp\_mod\_status\_screen@{disp\_mod\_status\_screen}}
+\index{disp\_mod\_status\_screen@{disp\_mod\_status\_screen}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_status\_screen()}{disp\_mod\_status\_screen()}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a9e971832fa51f2017304dfc488f23b93} 
+void disp\+\_\+mod\+\_\+status\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{status\+\_\+value}{, }\item[{int}]{indx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function to create the status screen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\+\_\+value} & -\/ (0 -\/ normal, 1 -\/ warning, 2 -\/ fault) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{diag__valve__status__info_8c_a9e971832fa51f2017304dfc488f23b93_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{diag__valve__status__info_8c_a9ee8455a4c41c2efd1719fe6fed51053}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!find\_bit\_difference@{find\_bit\_difference}}
+\index{find\_bit\_difference@{find\_bit\_difference}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{find\_bit\_difference()}{find\_bit\_difference()}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a9ee8455a4c41c2efd1719fe6fed51053} 
+int find\+\_\+bit\+\_\+difference (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data1}{, }\item[{uint32\+\_\+t}]{data2}{, }\item[{int}]{mod\+\_\+num}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{diag__valve__status__info_8c_a9ee8455a4c41c2efd1719fe6fed51053_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{diag__valve__status__info_8c_a181386d8ac3c39a998bc8b82730dc58c}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!find\_bit\_difference\_war@{find\_bit\_difference\_war}}
+\index{find\_bit\_difference\_war@{find\_bit\_difference\_war}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{find\_bit\_difference\_war()}{find\_bit\_difference\_war()}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a181386d8ac3c39a998bc8b82730dc58c} 
+int find\+\_\+bit\+\_\+difference\+\_\+war (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data1}{, }\item[{uint32\+\_\+t}]{data2}{, }\item[{int}]{station\+\_\+ind}{, }\item[{int}]{mod\+\_\+num}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{diag__valve__status__info_8c_a181386d8ac3c39a998bc8b82730dc58c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{diag__valve__status__info_8c_aa3a14562de0d1c12332a88b8f0a77c27}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!getindexvalue@{getindexvalue}}
+\index{getindexvalue@{getindexvalue}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{getindexvalue()}{getindexvalue()}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_aa3a14562de0d1c12332a88b8f0a77c27} 
+int getindexvalue (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a744f1cd07a566814b870a1c9c929abe5}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!getModuleNumber@{getModuleNumber}}
+\index{getModuleNumber@{getModuleNumber}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{getModuleNumber()}{getModuleNumber()}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a744f1cd07a566814b870a1c9c929abe5} 
+int get\+Module\+Number (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_aac575266636a7dcae8ddc521c7405ded}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!reset\_diag\_status@{reset\_diag\_status}}
+\index{reset\_diag\_status@{reset\_diag\_status}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{reset\_diag\_status()}{reset\_diag\_status()}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_aac575266636a7dcae8ddc521c7405ded} 
+void reset\+\_\+diag\+\_\+status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reset\+\_\+type}{, }\item[{uint8\+\_\+t}]{module\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Reset DIAG valve warning and fault status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reset\+\_\+type} & 0 for individual, 1 for all \\
+\hline
+{\em module\+\_\+index} & specific module index to reset (if reset\+\_\+type is 0) \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{diag__valve__status__info_8c_aac575266636a7dcae8ddc521c7405ded_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{diag__valve__status__info_8c_a58997b988646976eadf522f6b26c9f46}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!stop\_timer@{stop\_timer}}
+\index{stop\_timer@{stop\_timer}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{stop\_timer()}{stop\_timer()}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a58997b988646976eadf522f6b26c9f46} 
+void stop\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function to stop the inactivity timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{diag__valve__status__info_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!cur\_disp\_scr\_index@{cur\_disp\_scr\_index}}
+\index{cur\_disp\_scr\_index@{cur\_disp\_scr\_index}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{cur\_disp\_scr\_index}{cur\_disp\_scr\_index}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5} 
+uint8\+\_\+t cur\+\_\+disp\+\_\+scr\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a7c1d2a8af224b7df85080535d0b093bd}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!curr\_dv\_fault@{curr\_dv\_fault}}
+\index{curr\_dv\_fault@{curr\_dv\_fault}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_dv\_fault}{curr\_dv\_fault}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a7c1d2a8af224b7df85080535d0b093bd} 
+uint32\+\_\+t curr\+\_\+dv\+\_\+fault}
+
+\Hypertarget{diag__valve__status__info_8c_a601731fa6e9ce4d048ff79536ecf9e17}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!curr\_dv\_war@{curr\_dv\_war}}
+\index{curr\_dv\_war@{curr\_dv\_war}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_dv\_war}{curr\_dv\_war}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a601731fa6e9ce4d048ff79536ecf9e17} 
+uint32\+\_\+t curr\+\_\+dv\+\_\+war}
+
+\Hypertarget{diag__valve__status__info_8c_a9e5e7d18c6596629d5f86a5ef0e6f9df}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!curr\_fault\_index@{curr\_fault\_index}}
+\index{curr\_fault\_index@{curr\_fault\_index}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_fault\_index}{curr\_fault\_index}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a9e5e7d18c6596629d5f86a5ef0e6f9df} 
+uint8\+\_\+t curr\+\_\+fault\+\_\+index}
+
+\Hypertarget{diag__valve__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!curr\_fault\_list@{curr\_fault\_list}}
+\index{curr\_fault\_list@{curr\_fault\_list}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_fault\_list}{curr\_fault\_list}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4} 
+uint8\+\_\+t curr\+\_\+fault\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a36972212c2938bee4597333076b0d292}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!curr\_war\_index@{curr\_war\_index}}
+\index{curr\_war\_index@{curr\_war\_index}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_war\_index}{curr\_war\_index}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a36972212c2938bee4597333076b0d292} 
+uint8\+\_\+t curr\+\_\+war\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a0f1f761cbda8e6402f65783215e44356}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!curr\_war\_list@{curr\_war\_list}}
+\index{curr\_war\_list@{curr\_war\_list}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_war\_list}{curr\_war\_list}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a0f1f761cbda8e6402f65783215e44356} 
+uint8\+\_\+t curr\+\_\+war\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a8283ddbfd893cd3bacd252a03eb89fcf}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!diag\_valve\_device\_types@{diag\_valve\_device\_types}}
+\index{diag\_valve\_device\_types@{diag\_valve\_device\_types}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{diag\_valve\_device\_types}{diag\_valve\_device\_types}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a8283ddbfd893cd3bacd252a03eb89fcf} 
+uint32\+\_\+t diag\+\_\+valve\+\_\+device\+\_\+types\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a413c7c2e76c6e616ae42f8779dc9e19c}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!diagvalve\_processdata@{diagvalve\_processdata}}
+\index{diagvalve\_processdata@{diagvalve\_processdata}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{diagvalve\_processdata}{diagvalve\_processdata}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a413c7c2e76c6e616ae42f8779dc9e19c} 
+diagvalve\+\_\+processinfo diagvalve\+\_\+processdata}
+
+\Hypertarget{diag__valve__status__info_8c_a65eb192130f260606eb757f6dda24f56}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!fault\_csv\_value@{fault\_csv\_value}}
+\index{fault\_csv\_value@{fault\_csv\_value}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{fault\_csv\_value}{fault\_csv\_value}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a65eb192130f260606eb757f6dda24f56} 
+fault\+\_\+csv\+\_\+struct fault\+\_\+csv\+\_\+value\mbox{[}35\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a380a0996399f42e4954d1701185a3484}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!fault\_file\_not\_exist@{fault\_file\_not\_exist}}
+\index{fault\_file\_not\_exist@{fault\_file\_not\_exist}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{fault\_file\_not\_exist}{fault\_file\_not\_exist}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a380a0996399f42e4954d1701185a3484} 
+uint8\+\_\+t fault\+\_\+file\+\_\+not\+\_\+exist\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_aaa8fd3258b0349c782441c209b83cf5c}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!G\_POP\_EVENT@{G\_POP\_EVENT}}
+\index{G\_POP\_EVENT@{G\_POP\_EVENT}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{G\_POP\_EVENT}{G\_POP\_EVENT}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_aaa8fd3258b0349c782441c209b83cf5c} 
+int G\+\_\+\+POP\+\_\+\+EVENT\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!g\_status\_index@{g\_status\_index}}
+\index{g\_status\_index@{g\_status\_index}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{g\_status\_index}{g\_status\_index}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476} 
+uint8\+\_\+t g\+\_\+status\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_ac108f8c38a53274eeebae8d741013458}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!merged@{merged}}
+\index{merged@{merged}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{merged}{merged}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_ac108f8c38a53274eeebae8d741013458} 
+char merged\mbox{[}141\mbox{]}}
+
+\Hypertarget{diag__valve__status__info_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!mutex@{mutex}}
+\index{mutex@{mutex}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a4acff8232e4aec9cd5c6dc200ac55ef3} 
+pthread\+\_\+mutex\+\_\+t mutex\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a7722c8ecbb62d99aee7ce68b1752f337}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!N@{N}}
+\index{N@{N}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a7722c8ecbb62d99aee7ce68b1752f337} 
+int N = 1}
+
+\Hypertarget{diag__valve__status__info_8c_a76f11d9a0a47b94f72c2d0e77fb32240}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!n@{n}}
+\index{n@{n}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a76f11d9a0a47b94f72c2d0e77fb32240} 
+int n = 1}
+
+\Hypertarget{diag__valve__status__info_8c_a7efd42e524042cb435c007b138a90d28}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!normal\_index@{normal\_index}}
+\index{normal\_index@{normal\_index}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{normal\_index}{normal\_index}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a7efd42e524042cb435c007b138a90d28} 
+normal\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_ab0bca095890a1fb58c691bea6aae554a}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!normal\_list@{normal\_list}}
+\index{normal\_list@{normal\_list}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{normal\_list}{normal\_list}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_ab0bca095890a1fb58c691bea6aae554a} 
+uint8\+\_\+t normal\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a7ae06bb4fda271e55df59575c5447073}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!prev\_dv\_fault@{prev\_dv\_fault}}
+\index{prev\_dv\_fault@{prev\_dv\_fault}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_dv\_fault}{prev\_dv\_fault}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a7ae06bb4fda271e55df59575c5447073} 
+uint32\+\_\+t prev\+\_\+dv\+\_\+fault\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]} = \{0\}}
+
+\Hypertarget{diag__valve__status__info_8c_a9061ba876473c0485b630e7cd9bcfde1}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!prev\_dv\_war@{prev\_dv\_war}}
+\index{prev\_dv\_war@{prev\_dv\_war}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_dv\_war}{prev\_dv\_war}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a9061ba876473c0485b630e7cd9bcfde1} 
+uint32\+\_\+t prev\+\_\+dv\+\_\+war\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]} = \{0\}}
+
+\Hypertarget{diag__valve__status__info_8c_a32d7ae5c30054bc52bf84eff8801f89b}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!prev\_fault\_index@{prev\_fault\_index}}
+\index{prev\_fault\_index@{prev\_fault\_index}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_fault\_index}{prev\_fault\_index}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a32d7ae5c30054bc52bf84eff8801f89b} 
+uint8\+\_\+t prev\+\_\+fault\+\_\+index}
+
+\Hypertarget{diag__valve__status__info_8c_a4f901871e6da6fa9127c3255f9435aec}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!prev\_fault\_list@{prev\_fault\_list}}
+\index{prev\_fault\_list@{prev\_fault\_list}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_fault\_list}{prev\_fault\_list}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a4f901871e6da6fa9127c3255f9435aec} 
+uint8\+\_\+t prev\+\_\+fault\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_ac219734e0b7bff6a07a53d864b2cde17}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!prev\_war\_index@{prev\_war\_index}}
+\index{prev\_war\_index@{prev\_war\_index}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_war\_index}{prev\_war\_index}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_ac219734e0b7bff6a07a53d864b2cde17} 
+uint8\+\_\+t prev\+\_\+war\+\_\+index}
+
+\Hypertarget{diag__valve__status__info_8c_a1bb899167b0374eb2c2de90e1de27a2b}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!prev\_war\_list@{prev\_war\_list}}
+\index{prev\_war\_list@{prev\_war\_list}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_war\_list}{prev\_war\_list}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a1bb899167b0374eb2c2de90e1de27a2b} 
+uint8\+\_\+t prev\+\_\+war\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_aa924d7f7efa7b06289e7f6f283890fe1}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!screen\_status\_value@{screen\_status\_value}}
+\index{screen\_status\_value@{screen\_status\_value}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{screen\_status\_value}{screen\_status\_value}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_aa924d7f7efa7b06289e7f6f283890fe1} 
+status\+\_\+screen\+\_\+struct screen\+\_\+status\+\_\+value\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a8d435a7e0e4c6432a0533cbf6d031edb}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!stat\_pop\_flag@{stat\_pop\_flag}}
+\index{stat\_pop\_flag@{stat\_pop\_flag}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{stat\_pop\_flag}{stat\_pop\_flag}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a8d435a7e0e4c6432a0533cbf6d031edb} 
+uint8\+\_\+t stat\+\_\+pop\+\_\+flag}
+
+\Hypertarget{diag__valve__status__info_8c_ac9a0362fca0471874b6036793a24226c}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!station\_flag\_fault@{station\_flag\_fault}}
+\index{station\_flag\_fault@{station\_flag\_fault}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{station\_flag\_fault}{station\_flag\_fault}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_ac9a0362fca0471874b6036793a24226c} 
+int station\+\_\+flag\+\_\+fault =0}
+
+\Hypertarget{diag__valve__status__info_8c_a622544114a00d68e8aec2a522ee29aea}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!station\_flag\_warning@{station\_flag\_warning}}
+\index{station\_flag\_warning@{station\_flag\_warning}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{station\_flag\_warning}{station\_flag\_warning}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a622544114a00d68e8aec2a522ee29aea} 
+int station\+\_\+flag\+\_\+warning =0}
+
+\Hypertarget{diag__valve__status__info_8c_ac30e8b223c2b1984cd5c10e75b2cbcf6}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!station\_num\_latest@{station\_num\_latest}}
+\index{station\_num\_latest@{station\_num\_latest}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{station\_num\_latest}{station\_num\_latest}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_ac30e8b223c2b1984cd5c10e75b2cbcf6} 
+uint8\+\_\+t station\+\_\+num\+\_\+latest}
+
+\Hypertarget{diag__valve__status__info_8c_a6baea1f31afef887972474d14894a004}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!str@{str}}
+\index{str@{str}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a6baea1f31afef887972474d14894a004} 
+char str\mbox{[}8\mbox{]}}
+
+\Hypertarget{diag__valve__status__info_8c_ae280ec1798f7444318b05544ad4e66dd}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!str\_war@{str\_war}}
+\index{str\_war@{str\_war}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{str\_war}{str\_war}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_ae280ec1798f7444318b05544ad4e66dd} 
+char str\+\_\+war\mbox{[}8\mbox{]}}
+
+\Hypertarget{diag__valve__status__info_8c_ab061281a930269e30a2ebf05c2eb9be6}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!warning\_csv\_value@{warning\_csv\_value}}
+\index{warning\_csv\_value@{warning\_csv\_value}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{warning\_csv\_value}{warning\_csv\_value}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_ab061281a930269e30a2ebf05c2eb9be6} 
+warning\+\_\+csv\+\_\+struct warning\+\_\+csv\+\_\+value\mbox{[}35\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{diag__valve__status__info_8c_a6260511c10d117876e78add9ead521fe}\index{diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}!warning\_file\_not\_exist@{warning\_file\_not\_exist}}
+\index{warning\_file\_not\_exist@{warning\_file\_not\_exist}!diag\_valve\_status\_info.c@{diag\_valve\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{warning\_file\_not\_exist}{warning\_file\_not\_exist}}
+{\footnotesize\ttfamily \label{diag__valve__status__info_8c_a6260511c10d117876e78add9ead521fe} 
+uint8\+\_\+t warning\+\_\+file\+\_\+not\+\_\+exist\hspace{0.3cm}{\ttfamily [extern]}}
+

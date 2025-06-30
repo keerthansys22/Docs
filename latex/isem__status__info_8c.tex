@@ -1,0 +1,376 @@
+\doxysection{Data\+\_\+processing/isem\+\_\+status\+\_\+info.c File Reference}
+\hypertarget{isem__status__info_8c}{}\label{isem__status__info_8c}\index{Data\_processing/isem\_status\_info.c@{Data\_processing/isem\_status\_info.c}}
+
+
+Source that processes the isem modules status information.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for isem\+\_\+status\+\_\+info.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{isem__status__info_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{isem__status__info_8c_a58997b988646976eadf522f6b26c9f46}{stop\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Function to stop the inactivity timer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{isem__status__info_8c_ad3e3ba582ba271dd10563b919da8f94f}{find\+\_\+bit\+\_\+difference\+\_\+isem}} (uint32\+\_\+t data1, uint32\+\_\+t data2, int mod\+\_\+num)
+\item 
+int \mbox{\hyperlink{isem__status__info_8c_afa0da081e452bcba9fe88e18aee251fc}{find\+\_\+bit\+\_\+difference\+\_\+isem\+\_\+war}} (uint32\+\_\+t data1, uint32\+\_\+t data2, int mod\+\_\+num)
+\item 
+int \mbox{\hyperlink{isem__status__info_8c_ac556b861a63a472eab6b590aac6be953}{isem\+\_\+status\+\_\+info}} (uint8\+\_\+t pz\+\_\+index, uint8\+\_\+t isemdiag\+\_\+index, uint8\+\_\+t mod\+\_\+num, uint8\+\_\+t pz\+\_\+num, isemdiag\+\_\+processinfo \texorpdfstring{$\ast$}{*}processdata, uint8\+\_\+t status\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Function that processes the isem modules status information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{isem__status__info_8c_a9a3806a48e474cbce90adb9c92ad4ae9}{reset\+\_\+isem\+\_\+status}} (uint8\+\_\+t reset\+\_\+type, uint8\+\_\+t \mbox{\hyperlink{lvgl__gui_8c_af9a91605decf4619baae281772693f6f}{module\+\_\+index}})
+\begin{DoxyCompactList}\small\item\em Reset ISEM warning and fault status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+status\+\_\+screen\+\_\+struct \mbox{\hyperlink{isem__status__info_8c_a5a5465a4d5058460b8737c982eebeefb}{screen\+\_\+status\+\_\+value}} \mbox{[}20\mbox{]}
+\item 
+isem\+\_\+fault\+\_\+csv\+\_\+struct \mbox{\hyperlink{isem__status__info_8c_a3ac9bbaa8e60426f3dd023239a7363aa}{isem\+\_\+fault\+\_\+csv\+\_\+value}} \mbox{[}35\mbox{]}
+\item 
+isem\+\_\+warning\+\_\+csv\+\_\+struct \mbox{\hyperlink{isem__status__info_8c_a4b34591b3c7ce4a72ae500751937b9f4}{isem\+\_\+warning\+\_\+csv\+\_\+value}} \mbox{[}35\mbox{]}
+\item 
+int \mbox{\hyperlink{isem__status__info_8c_aaa8fd3258b0349c782441c209b83cf5c}{G\+\_\+\+POP\+\_\+\+EVENT}}
+\item 
+char \mbox{\hyperlink{isem__status__info_8c_a41587f5122991b58fb24979bd7d8b6c6}{str\+\_\+isem}} \mbox{[}8\mbox{]}
+\item 
+char \mbox{\hyperlink{isem__status__info_8c_aaa326b90680283c7b050db8bcf27d0e7}{str\+\_\+war\+\_\+isem}} \mbox{[}8\mbox{]}
+\item 
+char \mbox{\hyperlink{isem__status__info_8c_a461894f770c92197002cfab59d68a2c9}{merged\+\_\+isem}} \mbox{[}141\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a04b37597722e65e65ff856907598662d}{isem\+\_\+fault\+\_\+file\+\_\+not\+\_\+exist}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a2a491c8922b82cf66c8ca809d0b049d7}{isem\+\_\+warning\+\_\+file\+\_\+not\+\_\+exist}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{isem__status__info_8c_ac8b7f8ebcabc3a52bcdd9b8109ed77f3}{prev\+\_\+isem\+\_\+war}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a10cc7cec515e793daebaef0c2d403b3b}{prev\+\_\+isem\+\_\+fault}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{isem__status__info_8c_aa8d277cc39a7aab87f50837b5c596c8d}{curr\+\_\+isem\+\_\+war}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{isem__status__info_8c_abfe21061ddd1d702919ddabe5116eb8d}{curr\+\_\+isem\+\_\+fault}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_af2a697b053b917055a6916988d4d6ad0}{isem\+\_\+pop\+\_\+flag}} = 0
+\item 
+int \mbox{\hyperlink{isem__status__info_8c_ade31b093a3128d447667c83314429e03}{isem\+\_\+diag\+\_\+flag\+\_\+warning}} =0
+\item 
+int \mbox{\hyperlink{isem__status__info_8c_a8cbde846f33197e06ca1643f356275a0}{isem\+\_\+diag\+\_\+station\+\_\+flag\+\_\+fault}} =0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476}{g\+\_\+status\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a36972212c2938bee4597333076b0d292}{curr\+\_\+war\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_ac219734e0b7bff6a07a53d864b2cde17}{prev\+\_\+war\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a9e5e7d18c6596629d5f86a5ef0e6f9df}{curr\+\_\+fault\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a32d7ae5c30054bc52bf84eff8801f89b}{prev\+\_\+fault\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a0f1f761cbda8e6402f65783215e44356}{curr\+\_\+war\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a1bb899167b0374eb2c2de90e1de27a2b}{prev\+\_\+war\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4}{curr\+\_\+fault\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a4f901871e6da6fa9127c3255f9435aec}{prev\+\_\+fault\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{isem__status__info_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5}{cur\+\_\+disp\+\_\+scr\+\_\+index}}
+\item 
+isemdiag\+\_\+processinfo \mbox{\hyperlink{isem__status__info_8c_aa7a7f8f97218b67ca175015b6a315f9d}{isemdiag\+\_\+processdata}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{isem__status__info_8c_ae44ef9829ac44f5b2bb7abdefce34479}{g\+\_\+isemdiag\+\_\+count}}
+\item 
+PZone\+Details \mbox{\hyperlink{isem__status__info_8c_a7f5f23f78cf76bec56ebefff8cea7196}{pzonemodulesdetails}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that processes the isem modules status information. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{isem__status__info_8c_ad3e3ba582ba271dd10563b919da8f94f}\index{isem\_status\_info.c@{isem\_status\_info.c}!find\_bit\_difference\_isem@{find\_bit\_difference\_isem}}
+\index{find\_bit\_difference\_isem@{find\_bit\_difference\_isem}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{find\_bit\_difference\_isem()}{find\_bit\_difference\_isem()}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_ad3e3ba582ba271dd10563b919da8f94f} 
+int find\+\_\+bit\+\_\+difference\+\_\+isem (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data1}{, }\item[{uint32\+\_\+t}]{data2}{, }\item[{int}]{mod\+\_\+num}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isem__status__info_8c_ad3e3ba582ba271dd10563b919da8f94f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{isem__status__info_8c_afa0da081e452bcba9fe88e18aee251fc}\index{isem\_status\_info.c@{isem\_status\_info.c}!find\_bit\_difference\_isem\_war@{find\_bit\_difference\_isem\_war}}
+\index{find\_bit\_difference\_isem\_war@{find\_bit\_difference\_isem\_war}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{find\_bit\_difference\_isem\_war()}{find\_bit\_difference\_isem\_war()}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_afa0da081e452bcba9fe88e18aee251fc} 
+int find\+\_\+bit\+\_\+difference\+\_\+isem\+\_\+war (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{data1}{, }\item[{uint32\+\_\+t}]{data2}{, }\item[{int}]{mod\+\_\+num}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isem__status__info_8c_afa0da081e452bcba9fe88e18aee251fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{isem__status__info_8c_ac556b861a63a472eab6b590aac6be953}\index{isem\_status\_info.c@{isem\_status\_info.c}!isem\_status\_info@{isem\_status\_info}}
+\index{isem\_status\_info@{isem\_status\_info}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isem\_status\_info()}{isem\_status\_info()}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_ac556b861a63a472eab6b590aac6be953} 
+int isem\+\_\+status\+\_\+info (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pz\+\_\+index}{, }\item[{uint8\+\_\+t}]{isemdiag\+\_\+index}{, }\item[{uint8\+\_\+t}]{mod\+\_\+num}{, }\item[{uint8\+\_\+t}]{pz\+\_\+num}{, }\item[{isemdiag\+\_\+processinfo \texorpdfstring{$\ast$}{*}}]{processdata}{, }\item[{uint8\+\_\+t}]{status\+\_\+type}{}\end{DoxyParamCaption})}
+
+
+
+Function that processes the isem modules status information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pz\+\_\+index} & The index of the pressure zone \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isem__status__info_8c_ac556b861a63a472eab6b590aac6be953_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isem__status__info_8c_ac556b861a63a472eab6b590aac6be953_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{isem__status__info_8c_a9a3806a48e474cbce90adb9c92ad4ae9}\index{isem\_status\_info.c@{isem\_status\_info.c}!reset\_isem\_status@{reset\_isem\_status}}
+\index{reset\_isem\_status@{reset\_isem\_status}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{reset\_isem\_status()}{reset\_isem\_status()}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a9a3806a48e474cbce90adb9c92ad4ae9} 
+void reset\+\_\+isem\+\_\+status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reset\+\_\+type}{, }\item[{uint8\+\_\+t}]{module\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Reset ISEM warning and fault status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reset\+\_\+type} & 0 for individual, 1 for all \\
+\hline
+{\em module\+\_\+index} & specific module index to reset (if reset\+\_\+type is 0) \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isem__status__info_8c_a9a3806a48e474cbce90adb9c92ad4ae9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{isem__status__info_8c_a58997b988646976eadf522f6b26c9f46}\index{isem\_status\_info.c@{isem\_status\_info.c}!stop\_timer@{stop\_timer}}
+\index{stop\_timer@{stop\_timer}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{stop\_timer()}{stop\_timer()}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a58997b988646976eadf522f6b26c9f46} 
+void stop\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function to stop the inactivity timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{isem__status__info_8c_a58997b988646976eadf522f6b26c9f46_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{isem__status__info_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5}\index{isem\_status\_info.c@{isem\_status\_info.c}!cur\_disp\_scr\_index@{cur\_disp\_scr\_index}}
+\index{cur\_disp\_scr\_index@{cur\_disp\_scr\_index}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{cur\_disp\_scr\_index}{cur\_disp\_scr\_index}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5} 
+uint8\+\_\+t cur\+\_\+disp\+\_\+scr\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a9e5e7d18c6596629d5f86a5ef0e6f9df}\index{isem\_status\_info.c@{isem\_status\_info.c}!curr\_fault\_index@{curr\_fault\_index}}
+\index{curr\_fault\_index@{curr\_fault\_index}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_fault\_index}{curr\_fault\_index}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a9e5e7d18c6596629d5f86a5ef0e6f9df} 
+uint8\+\_\+t curr\+\_\+fault\+\_\+index}
+
+\Hypertarget{isem__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4}\index{isem\_status\_info.c@{isem\_status\_info.c}!curr\_fault\_list@{curr\_fault\_list}}
+\index{curr\_fault\_list@{curr\_fault\_list}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_fault\_list}{curr\_fault\_list}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4} 
+uint8\+\_\+t curr\+\_\+fault\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_abfe21061ddd1d702919ddabe5116eb8d}\index{isem\_status\_info.c@{isem\_status\_info.c}!curr\_isem\_fault@{curr\_isem\_fault}}
+\index{curr\_isem\_fault@{curr\_isem\_fault}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_isem\_fault}{curr\_isem\_fault}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_abfe21061ddd1d702919ddabe5116eb8d} 
+uint32\+\_\+t curr\+\_\+isem\+\_\+fault}
+
+\Hypertarget{isem__status__info_8c_aa8d277cc39a7aab87f50837b5c596c8d}\index{isem\_status\_info.c@{isem\_status\_info.c}!curr\_isem\_war@{curr\_isem\_war}}
+\index{curr\_isem\_war@{curr\_isem\_war}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_isem\_war}{curr\_isem\_war}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_aa8d277cc39a7aab87f50837b5c596c8d} 
+uint32\+\_\+t curr\+\_\+isem\+\_\+war}
+
+\Hypertarget{isem__status__info_8c_a36972212c2938bee4597333076b0d292}\index{isem\_status\_info.c@{isem\_status\_info.c}!curr\_war\_index@{curr\_war\_index}}
+\index{curr\_war\_index@{curr\_war\_index}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_war\_index}{curr\_war\_index}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a36972212c2938bee4597333076b0d292} 
+uint8\+\_\+t curr\+\_\+war\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a0f1f761cbda8e6402f65783215e44356}\index{isem\_status\_info.c@{isem\_status\_info.c}!curr\_war\_list@{curr\_war\_list}}
+\index{curr\_war\_list@{curr\_war\_list}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_war\_list}{curr\_war\_list}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a0f1f761cbda8e6402f65783215e44356} 
+uint8\+\_\+t curr\+\_\+war\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_ae44ef9829ac44f5b2bb7abdefce34479}\index{isem\_status\_info.c@{isem\_status\_info.c}!g\_isemdiag\_count@{g\_isemdiag\_count}}
+\index{g\_isemdiag\_count@{g\_isemdiag\_count}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{g\_isemdiag\_count}{g\_isemdiag\_count}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_ae44ef9829ac44f5b2bb7abdefce34479} 
+uint16\+\_\+t g\+\_\+isemdiag\+\_\+count\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_aaa8fd3258b0349c782441c209b83cf5c}\index{isem\_status\_info.c@{isem\_status\_info.c}!G\_POP\_EVENT@{G\_POP\_EVENT}}
+\index{G\_POP\_EVENT@{G\_POP\_EVENT}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{G\_POP\_EVENT}{G\_POP\_EVENT}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_aaa8fd3258b0349c782441c209b83cf5c} 
+int G\+\_\+\+POP\+\_\+\+EVENT\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476}\index{isem\_status\_info.c@{isem\_status\_info.c}!g\_status\_index@{g\_status\_index}}
+\index{g\_status\_index@{g\_status\_index}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{g\_status\_index}{g\_status\_index}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476} 
+uint8\+\_\+t g\+\_\+status\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_ade31b093a3128d447667c83314429e03}\index{isem\_status\_info.c@{isem\_status\_info.c}!isem\_diag\_flag\_warning@{isem\_diag\_flag\_warning}}
+\index{isem\_diag\_flag\_warning@{isem\_diag\_flag\_warning}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isem\_diag\_flag\_warning}{isem\_diag\_flag\_warning}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_ade31b093a3128d447667c83314429e03} 
+int isem\+\_\+diag\+\_\+flag\+\_\+warning =0}
+
+\Hypertarget{isem__status__info_8c_a8cbde846f33197e06ca1643f356275a0}\index{isem\_status\_info.c@{isem\_status\_info.c}!isem\_diag\_station\_flag\_fault@{isem\_diag\_station\_flag\_fault}}
+\index{isem\_diag\_station\_flag\_fault@{isem\_diag\_station\_flag\_fault}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isem\_diag\_station\_flag\_fault}{isem\_diag\_station\_flag\_fault}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a8cbde846f33197e06ca1643f356275a0} 
+int isem\+\_\+diag\+\_\+station\+\_\+flag\+\_\+fault =0}
+
+\Hypertarget{isem__status__info_8c_a3ac9bbaa8e60426f3dd023239a7363aa}\index{isem\_status\_info.c@{isem\_status\_info.c}!isem\_fault\_csv\_value@{isem\_fault\_csv\_value}}
+\index{isem\_fault\_csv\_value@{isem\_fault\_csv\_value}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isem\_fault\_csv\_value}{isem\_fault\_csv\_value}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a3ac9bbaa8e60426f3dd023239a7363aa} 
+isem\+\_\+fault\+\_\+csv\+\_\+struct isem\+\_\+fault\+\_\+csv\+\_\+value\mbox{[}35\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a04b37597722e65e65ff856907598662d}\index{isem\_status\_info.c@{isem\_status\_info.c}!isem\_fault\_file\_not\_exist@{isem\_fault\_file\_not\_exist}}
+\index{isem\_fault\_file\_not\_exist@{isem\_fault\_file\_not\_exist}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isem\_fault\_file\_not\_exist}{isem\_fault\_file\_not\_exist}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a04b37597722e65e65ff856907598662d} 
+uint8\+\_\+t isem\+\_\+fault\+\_\+file\+\_\+not\+\_\+exist\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_af2a697b053b917055a6916988d4d6ad0}\index{isem\_status\_info.c@{isem\_status\_info.c}!isem\_pop\_flag@{isem\_pop\_flag}}
+\index{isem\_pop\_flag@{isem\_pop\_flag}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isem\_pop\_flag}{isem\_pop\_flag}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_af2a697b053b917055a6916988d4d6ad0} 
+uint8\+\_\+t isem\+\_\+pop\+\_\+flag = 0}
+
+\Hypertarget{isem__status__info_8c_a4b34591b3c7ce4a72ae500751937b9f4}\index{isem\_status\_info.c@{isem\_status\_info.c}!isem\_warning\_csv\_value@{isem\_warning\_csv\_value}}
+\index{isem\_warning\_csv\_value@{isem\_warning\_csv\_value}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isem\_warning\_csv\_value}{isem\_warning\_csv\_value}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a4b34591b3c7ce4a72ae500751937b9f4} 
+isem\+\_\+warning\+\_\+csv\+\_\+struct isem\+\_\+warning\+\_\+csv\+\_\+value\mbox{[}35\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a2a491c8922b82cf66c8ca809d0b049d7}\index{isem\_status\_info.c@{isem\_status\_info.c}!isem\_warning\_file\_not\_exist@{isem\_warning\_file\_not\_exist}}
+\index{isem\_warning\_file\_not\_exist@{isem\_warning\_file\_not\_exist}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isem\_warning\_file\_not\_exist}{isem\_warning\_file\_not\_exist}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a2a491c8922b82cf66c8ca809d0b049d7} 
+uint8\+\_\+t isem\+\_\+warning\+\_\+file\+\_\+not\+\_\+exist\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_aa7a7f8f97218b67ca175015b6a315f9d}\index{isem\_status\_info.c@{isem\_status\_info.c}!isemdiag\_processdata@{isemdiag\_processdata}}
+\index{isemdiag\_processdata@{isemdiag\_processdata}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{isemdiag\_processdata}{isemdiag\_processdata}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_aa7a7f8f97218b67ca175015b6a315f9d} 
+isemdiag\+\_\+processinfo isemdiag\+\_\+processdata}
+
+\Hypertarget{isem__status__info_8c_a461894f770c92197002cfab59d68a2c9}\index{isem\_status\_info.c@{isem\_status\_info.c}!merged\_isem@{merged\_isem}}
+\index{merged\_isem@{merged\_isem}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{merged\_isem}{merged\_isem}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a461894f770c92197002cfab59d68a2c9} 
+char merged\+\_\+isem\mbox{[}141\mbox{]}}
+
+\Hypertarget{isem__status__info_8c_a32d7ae5c30054bc52bf84eff8801f89b}\index{isem\_status\_info.c@{isem\_status\_info.c}!prev\_fault\_index@{prev\_fault\_index}}
+\index{prev\_fault\_index@{prev\_fault\_index}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_fault\_index}{prev\_fault\_index}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a32d7ae5c30054bc52bf84eff8801f89b} 
+uint8\+\_\+t prev\+\_\+fault\+\_\+index}
+
+\Hypertarget{isem__status__info_8c_a4f901871e6da6fa9127c3255f9435aec}\index{isem\_status\_info.c@{isem\_status\_info.c}!prev\_fault\_list@{prev\_fault\_list}}
+\index{prev\_fault\_list@{prev\_fault\_list}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_fault\_list}{prev\_fault\_list}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a4f901871e6da6fa9127c3255f9435aec} 
+uint8\+\_\+t prev\+\_\+fault\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a10cc7cec515e793daebaef0c2d403b3b}\index{isem\_status\_info.c@{isem\_status\_info.c}!prev\_isem\_fault@{prev\_isem\_fault}}
+\index{prev\_isem\_fault@{prev\_isem\_fault}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_isem\_fault}{prev\_isem\_fault}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a10cc7cec515e793daebaef0c2d403b3b} 
+uint32\+\_\+t prev\+\_\+isem\+\_\+fault\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}}
+
+\Hypertarget{isem__status__info_8c_ac8b7f8ebcabc3a52bcdd9b8109ed77f3}\index{isem\_status\_info.c@{isem\_status\_info.c}!prev\_isem\_war@{prev\_isem\_war}}
+\index{prev\_isem\_war@{prev\_isem\_war}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_isem\_war}{prev\_isem\_war}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_ac8b7f8ebcabc3a52bcdd9b8109ed77f3} 
+uint32\+\_\+t prev\+\_\+isem\+\_\+war\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}}
+
+\Hypertarget{isem__status__info_8c_ac219734e0b7bff6a07a53d864b2cde17}\index{isem\_status\_info.c@{isem\_status\_info.c}!prev\_war\_index@{prev\_war\_index}}
+\index{prev\_war\_index@{prev\_war\_index}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_war\_index}{prev\_war\_index}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_ac219734e0b7bff6a07a53d864b2cde17} 
+uint8\+\_\+t prev\+\_\+war\+\_\+index}
+
+\Hypertarget{isem__status__info_8c_a1bb899167b0374eb2c2de90e1de27a2b}\index{isem\_status\_info.c@{isem\_status\_info.c}!prev\_war\_list@{prev\_war\_list}}
+\index{prev\_war\_list@{prev\_war\_list}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_war\_list}{prev\_war\_list}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a1bb899167b0374eb2c2de90e1de27a2b} 
+uint8\+\_\+t prev\+\_\+war\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a7f5f23f78cf76bec56ebefff8cea7196}\index{isem\_status\_info.c@{isem\_status\_info.c}!pzonemodulesdetails@{pzonemodulesdetails}}
+\index{pzonemodulesdetails@{pzonemodulesdetails}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{pzonemodulesdetails}{pzonemodulesdetails}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a7f5f23f78cf76bec56ebefff8cea7196} 
+PZone\+Details pzonemodulesdetails\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a5a5465a4d5058460b8737c982eebeefb}\index{isem\_status\_info.c@{isem\_status\_info.c}!screen\_status\_value@{screen\_status\_value}}
+\index{screen\_status\_value@{screen\_status\_value}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{screen\_status\_value}{screen\_status\_value}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a5a5465a4d5058460b8737c982eebeefb} 
+status\+\_\+screen\+\_\+struct screen\+\_\+status\+\_\+value\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{isem__status__info_8c_a41587f5122991b58fb24979bd7d8b6c6}\index{isem\_status\_info.c@{isem\_status\_info.c}!str\_isem@{str\_isem}}
+\index{str\_isem@{str\_isem}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{str\_isem}{str\_isem}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_a41587f5122991b58fb24979bd7d8b6c6} 
+char str\+\_\+isem\mbox{[}8\mbox{]}}
+
+\Hypertarget{isem__status__info_8c_aaa326b90680283c7b050db8bcf27d0e7}\index{isem\_status\_info.c@{isem\_status\_info.c}!str\_war\_isem@{str\_war\_isem}}
+\index{str\_war\_isem@{str\_war\_isem}!isem\_status\_info.c@{isem\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{str\_war\_isem}{str\_war\_isem}}
+{\footnotesize\ttfamily \label{isem__status__info_8c_aaa326b90680283c7b050db8bcf27d0e7} 
+char str\+\_\+war\+\_\+isem\mbox{[}8\mbox{]}}
+

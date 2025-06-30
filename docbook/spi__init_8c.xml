@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_spi__init_8c" xml:lang="en-US">
+<title>Initializations/Hardware_Initializations/spi_init.c File Reference</title>
+<indexterm><primary>Initializations/Hardware_Initializations/spi_init.c</primary></indexterm>
+<para>
+
+<para>Source that initializes the SPI interface. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?></programlisting>Include dependency graph for spi_init.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Structures    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structspi__flash___data_xfer">spi_flash_DataXfer</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_spi__init_8c_1a454d8b312d295352b852af40dba72c51">SPI_MAX_BUFFER_SIZE</link>&#160;&#160;&#160;4096</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_spi__init_8c_1ae909944aa85ae98323073c628be541aa">spi_init</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="_spi__init_8c_1ae58a0f067d31d19d3233434cba5c6139">spi_interface_init</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="_spi__init_8c_1a049cd8c34e247abfa2b43cbfac2ca3fb">LCD_SPI_WRITE</link> (uint8_t data)</para>
+</listitem>
+            <listitem><para>int <link linkend="_spi__init_8c_1ad1975fd8330425459b0ea85c1c5afb05">SPI_Exchange</link> (struct <link linkend="_structspi__flash___data_xfer">spi_flash_DataXfer</link> *spixfer)</para>
+</listitem>
+            <listitem><para>int <link linkend="_spi__init_8c_1a20244be6a13ba66fc8d004cbf92f6e4d">LCD_SPI_DATAWRITE</link> (uint8_t data)</para>
+</listitem>
+            <listitem><para>int <link linkend="_spi__init_8c_1af4441b8eab01e69f1b6222fee0f962ef">LCD_SPI_CMDWRITE</link> (uint8_t cmd)</para>
+</listitem>
+            <listitem><para>int <link linkend="_spi__init_8c_1a0f1f48ffd26be40513f42995372dfa1d">LCD_SPI_BUFFDATAWRITE</link> (uint8_t *data, uint16_t datalen)</para>
+</listitem>
+            <listitem><para>int <link linkend="_spi__init_8c_1adfb6e366f578e76ce29bbee1b0f1d295">LCD_SPI_BUFFWRITE</link> (uint8_t *data, uint16_t datalen)</para>
+</listitem>
+            <listitem><para>int <link linkend="_spi__init_8c_1a0543bbde4de0576ea0a80e73bac80a4e">LCD_SET_DATACMD</link> (char mode)</para>
+
+<para>Sets the data/cmd line to receive the data nased on the modes. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that initializes the SPI interface. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_spi__init_8c_1a454d8b312d295352b852af40dba72c51"/><section>
+    <title>SPI_MAX_BUFFER_SIZE</title>
+<indexterm><primary>SPI_MAX_BUFFER_SIZE</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>SPI_MAX_BUFFER_SIZE</secondary></indexterm>
+<para><computeroutput>#define SPI_MAX_BUFFER_SIZE&#160;&#160;&#160;4096</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_spi__init_8c_1a0543bbde4de0576ea0a80e73bac80a4e"/><section>
+    <title>LCD_SET_DATACMD()</title>
+<indexterm><primary>LCD_SET_DATACMD</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>LCD_SET_DATACMD</secondary></indexterm>
+<para><computeroutput>int LCD_SET_DATACMD (char mode)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Sets the data/cmd line to receive the data nased on the modes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mode</entry><entry>
+<para>[0- command], [1- data] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESSS_test on success or AP_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_a0543bbde4de0576ea0a80e73bac80a4e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_a0543bbde4de0576ea0a80e73bac80a4e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_spi__init_8c_1a0f1f48ffd26be40513f42995372dfa1d"/><section>
+    <title>LCD_SPI_BUFFDATAWRITE()</title>
+<indexterm><primary>LCD_SPI_BUFFDATAWRITE</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>LCD_SPI_BUFFDATAWRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_BUFFDATAWRITE (uint8_t * data, uint16_t datalen)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_a0f1f48ffd26be40513f42995372dfa1d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_a0f1f48ffd26be40513f42995372dfa1d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_spi__init_8c_1adfb6e366f578e76ce29bbee1b0f1d295"/><section>
+    <title>LCD_SPI_BUFFWRITE()</title>
+<indexterm><primary>LCD_SPI_BUFFWRITE</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>LCD_SPI_BUFFWRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_BUFFWRITE (uint8_t * data, uint16_t datalen)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_adfb6e366f578e76ce29bbee1b0f1d295_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_adfb6e366f578e76ce29bbee1b0f1d295_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_spi__init_8c_1af4441b8eab01e69f1b6222fee0f962ef"/><section>
+    <title>LCD_SPI_CMDWRITE()</title>
+<indexterm><primary>LCD_SPI_CMDWRITE</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>LCD_SPI_CMDWRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_CMDWRITE (uint8_t cmd)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_af4441b8eab01e69f1b6222fee0f962ef_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_af4441b8eab01e69f1b6222fee0f962ef_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_spi__init_8c_1a20244be6a13ba66fc8d004cbf92f6e4d"/><section>
+    <title>LCD_SPI_DATAWRITE()</title>
+<indexterm><primary>LCD_SPI_DATAWRITE</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>LCD_SPI_DATAWRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_DATAWRITE (uint8_t data)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_spi__init_8c_1a049cd8c34e247abfa2b43cbfac2ca3fb"/><section>
+    <title>LCD_SPI_WRITE()</title>
+<indexterm><primary>LCD_SPI_WRITE</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>LCD_SPI_WRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_WRITE (uint8_t data)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_a049cd8c34e247abfa2b43cbfac2ca3fb_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_a049cd8c34e247abfa2b43cbfac2ca3fb_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_spi__init_8c_1ad1975fd8330425459b0ea85c1c5afb05"/><section>
+    <title>SPI_Exchange()</title>
+<indexterm><primary>SPI_Exchange</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>SPI_Exchange</secondary></indexterm>
+<para><computeroutput>int SPI_Exchange (struct <link linkend="_structspi__flash___data_xfer">spi_flash_DataXfer</link> * spixfer)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_ad1975fd8330425459b0ea85c1c5afb05_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_ad1975fd8330425459b0ea85c1c5afb05_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_spi__init_8c_1ae909944aa85ae98323073c628be541aa"/><section>
+    <title>spi_init()</title>
+<indexterm><primary>spi_init</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>spi_init</secondary></indexterm>
+<para><computeroutput>void spi_init (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_ae909944aa85ae98323073c628be541aa_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_ae909944aa85ae98323073c628be541aa_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_spi__init_8c_1ae58a0f067d31d19d3233434cba5c6139"/><section>
+    <title>spi_interface_init()</title>
+<indexterm><primary>spi_interface_init</primary><secondary>spi_init.c</secondary></indexterm>
+<indexterm><primary>spi_init.c</primary><secondary>spi_interface_init</secondary></indexterm>
+<para><computeroutput>int spi_interface_init (void )</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="spi__init_8c_ae58a0f067d31d19d3233434cba5c6139_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

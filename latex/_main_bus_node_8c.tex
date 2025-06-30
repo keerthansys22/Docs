@@ -1,0 +1,901 @@
+\doxysection{API\+\_\+\+Source/\+Main\+Bus\+Node\+Api\+Source/\+Main\+Bus\+Node.c File Reference}
+\hypertarget{_main_bus_node_8c}{}\label{_main_bus_node_8c}\index{API\_Source/MainBusNodeApiSource/MainBusNode.c@{API\_Source/MainBusNodeApiSource/MainBusNode.c}}
+
+
+This file contains the source code of the main bus API.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}ti\+\_\+rpmsg\+\_\+char.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+IPCcanlinux.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for Main\+Bus\+Node.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a33126aa97893c7581c2e2ce391e08403}{MBN\+\_\+\+MOD\+\_\+\+DEVICE\+\_\+\+TYPE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 0)   /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\begin{DoxyCompactList}\small\item\em {\itshape Main Bus Process Data Mapping}/ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a0f99763130eca9d97884967c2f8eeb70}{MBN\+\_\+\+MOD\+\_\+\+VENDOR\+\_\+\+ID\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 4)   /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_aa40055df00a37743dfd13256adda45b6}{MBN\+\_\+\+MOD\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 8)   /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a2b65a3541be68e8dc34d3ca0a1a6f8e3}{MBN\+\_\+\+MOD\+\_\+\+VENDOR\+\_\+\+NAME\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 12)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a01cc06225b74d0b055f06a971a5b88ac}{MBN\+\_\+\+MOD\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 28)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a153cd7f7e8cdbf92298f9c6c8a6399bc}{MBN\+\_\+\+MOD\+\_\+\+VARIANT\+\_\+\+ID\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 44)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_af97a0728aa467101ca47002f07b2f168}{MBN\+\_\+\+MOD\+\_\+\+HW\+\_\+\+REV\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 60)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a2de3e02ee06e547781828f25c2206b9b}{MBN\+\_\+\+MOD\+\_\+\+SERIAL\+\_\+\+NO\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 76)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ac95749546255ba4931f57b6287393a06}{MBN\+\_\+\+MOD\+\_\+\+SW\+\_\+\+PART\+\_\+\+NO\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 92)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a95feb0e6c4710f7018b543d9697b3904}{MBN\+\_\+\+MOD\+\_\+\+SW\+\_\+\+REV\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 108) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a7a6231b0adaa822aa67a0d01f88b42a8}{MBN\+\_\+\+MODULE\+\_\+\+POST\+\_\+\+ERR\+\_\+\+STATUS\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 124) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a3bb474fb171d6a6a6127dc8e1ab7e6fc}{MBN\+\_\+\+MODULE\+\_\+\+VA\+\_\+\+VOLTAGE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 128) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ac973fa73480c2206c386b6254e64d298}{MBN\+\_\+\+MODULE\+\_\+\+VB\+\_\+\+VOLTAGE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 132) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a22c268ca27f7c8ff0e345d48dc212d4f}{MBN\+\_\+\+MODULE\+\_\+\+OPERATING\+\_\+\+HOURS\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 136) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a98af83b902014883961d1a1d3cd779bf}{MBN\+\_\+\+MODULE\+\_\+\+OPERATING\+\_\+\+MINS\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 140) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_af6f596f0c753ded472f4b388c92686e2}{MBN\+\_\+\+MODULE\+\_\+\+MIN\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 144) /\texorpdfstring{$\ast$}{*} int16\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ab984dc792f2a13b7253460503a5565f0}{MBN\+\_\+\+MODULE\+\_\+\+MAX\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 146) /\texorpdfstring{$\ast$}{*} int16\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ae36483ddbbae0136ffeae85e9a816770}{MBN\+\_\+\+MODULE\+\_\+\+MEASURED\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 148) /\texorpdfstring{$\ast$}{*} int16\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ad959c66600bdd51eadd9855bc59d1510}{MBN\+\_\+\+MODULE\+\_\+\+EEPROM\+\_\+\+LIFE\+\_\+\+CYCLE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 152) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_aef6aa5149a5995eda836f0233f006ac1}{MBN\+\_\+\+MODULE\+\_\+\+CAN\+\_\+\+FD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 156) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a1accba60a8f1e60f8802bc7113269848}{MBN\+\_\+\+MODULE\+\_\+\+EDS\+\_\+\+DATE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 172) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a8a9d6f0754f6a085369987bb1bb6016a}{MBN\+\_\+\+MODULE\+\_\+\+IO\+\_\+\+DISCOVERED\+\_\+\+COUNT\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 188) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a0a1652962dd6afb40502a1aa2757a98e}{MBN\+\_\+\+MODULE\+\_\+\+PRESSURE\+\_\+\+ZONE\+\_\+\+DISCOVERED\+\_\+\+COUNT\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 189) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a9f4d1b726b7a9b2b2d9d9447b995ee9f}{MBN\+\_\+\+MODULE\+\_\+\+VALVE\+\_\+\+ISLAND\+\_\+\+VALIDATION\+\_\+\+ID\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 190) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a45a3df4bef6bf406e6d5035a9e078217}{MBN\+\_\+\+MODULE\+\_\+\+VALVE\+\_\+\+ISLAND\+\_\+\+RESERVED\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 206) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a6ef46c9fb6c549292a7a329dc5db88f8}{MBN\+\_\+\+MODULE\+\_\+\+OPERATING\+\_\+\+MODE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 222) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ac02164a50b6b05bb61974ac5ff4a021c}{MBN\+\_\+\+MODULE\+\_\+\+IO\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+STATE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 223) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a0fdcdd19e189cc1de3c1b84d7d190df2}{MBN\+\_\+\+MODULE\+\_\+\+SYSTEM\+\_\+\+STATUS\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 224) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ac61bfbde19f092b7894354900d8dc5a8}{MBN\+\_\+\+MODULE\+\_\+\+MAC\+\_\+\+ADDRESS\+\_\+\+PORT1\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 225) /\texorpdfstring{$\ast$}{*} uint64\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a7956d6ac7283079b86da8b210af8fc4c}{MBN\+\_\+\+MODULE\+\_\+\+MAC\+\_\+\+ADDRESS\+\_\+\+PORT2\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 233) /\texorpdfstring{$\ast$}{*} uint64\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a1e9e00aa4aeebb5bae9f335f74267dcb}{MBN\+\_\+\+MODULE\+\_\+\+MAC\+\_\+\+ADDRESS\+\_\+\+PORT3\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 241) /\texorpdfstring{$\ast$}{*} uint64\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a06bdd972637e936e97e497d82afe1dc4}{MBN\+\_\+\+MODULE\+\_\+\+PIN\+\_\+\+VALUE\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 249) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a14ab0c34d30d4ea7d046c2d03e19bb3e}{MBN\+\_\+\+MODULE\+\_\+\+IP\+\_\+\+ADDRESS\+\_\+\+PORT1\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 253) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a41c2fde68f362544593364d3ef82ee32}{MBN\+\_\+\+MODULE\+\_\+\+IP\+\_\+\+ADDRESS\+\_\+\+PORT2\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 257) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a5028a3411c8b0f8ce67dcb3331cb52c5}{MBN\+\_\+\+MODULE\+\_\+\+IP\+\_\+\+ADDRESS\+\_\+\+PORT3\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 261) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a63dfa7c4a5a8c2cd9f991a26ff1609c2}{MBN\+\_\+\+MODULE\+\_\+\+CLOUD\+\_\+\+CONNECTED\+\_\+\+STATUS\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 265) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a3daf1dc285b4e25599de65f99637b068}{MBN\+\_\+\+MODULE\+\_\+\+NETWORK\+\_\+\+CONNECTED\+\_\+\+STATUS\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 266) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_aa9275028c5205663fbbbf4f492e5fe27}{MBN\+\_\+\+MODULE\+\_\+\+CIP\+\_\+\+STATUS\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 267) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a6921754425b26fd69210942bcfea31b6}{MBN\+\_\+\+MODULE\+\_\+\+EEPROM\+\_\+\+TEST\+\_\+\+RESULT\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 268) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_af3e89734a5642e748c256b15c78c404f}{MBN\+\_\+\+MODULE\+\_\+\+TEMPERATURE\+\_\+\+TEST\+\_\+\+RESULT\+\_\+\+ADDR}}~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 269) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a763c972ab3bc18a1eb676a27cda10a14}{SERVICE\+\_\+\+DATA\+\_\+\+VERBOSE\+\_\+\+GET\+\_\+\+MBN}}~0
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a26eb89b96123185f7a4013aac66dbe02}{SERVICE\+\_\+\+DATA\+\_\+\+VERBOSE\+\_\+\+SET\+\_\+\+MBN}}~0
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ac57429f38b22f8c068ad5564575a3910}{PROCESS\+\_\+\+DATA\+\_\+\+VERBOSE\+\_\+\+GET\+\_\+\+MBN}}~0
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a309510f08a7a1c0a122d738ed435b868}{PROCESS\+\_\+\+DATA\+\_\+\+VERBOSE\+\_\+\+SET\+\_\+\+MBN}}~0
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a4f0ae3512d2957fddc3949bc9c50dce8}{PORT1\+\_\+\+MAC\+\_\+\+ADD}}~1
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a3972a172c10ac16f5fcca1d76778a492}{PORT2\+\_\+\+MAC\+\_\+\+ADD}}~2
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_aafe3461edf9cc1b05cea658a7a52f1b6}{PORT3\+\_\+\+MAC\+\_\+\+ADD}}~3
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_aa31afafc864d7b400b938c36ac4de5ae}{MBN\+\_\+\+DEVICE\+\_\+\+TYPE}}~0x00000055
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_aa76acef3f7804f40ebddf769766fd7a7}{MBN\+\_\+\+VENDOR\+\_\+\+ID}}~0x00000010
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_afdae5c3e229b84e0980c4778926a166f}{MBN\+\_\+\+DEVICE\+\_\+\+ID}}~0x00000055
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ab7cdace9d8cbf2c510febf84b7ebca61}{MBN\+\_\+\+VENDOR\+\_\+\+NAME}}~"{}MBN\+\_\+\+NORGREN"{}
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a22505fcf82d3050a8d5f3845fa142125}{MBN\+\_\+\+DEVICE\+\_\+\+NAME}}~"{}MBN\+\_\+\+DEVICE"{}
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ae09eb6181d86f540fec493f86d636ec2}{MBN\+\_\+\+VAR}}~"{}MBN\+\_\+\+VAR"{}
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a558edc8a19bd5871a574872c8099cd10}{HW\+\_\+\+REV}}~"{}AMBN-\/12-\/H"{}
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_a0dacee985c3cc2a6f9f47c14f1668f55}{SL\+\_\+\+NO}}~"{}1234"{}
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_aef6edc0bc13d7c7e4fd375d06cae7fde}{SW\+\_\+\+PART\+\_\+\+NO}}~"{}MBN\+\_\+\+SW\+\_\+1"{}
+\item 
+\#define \mbox{\hyperlink{_main_bus_node_8c_ac82504751eea500ec7332a5206f8c669}{SW\+\_\+\+REV}}~"{}V1.\+2.\+0\+T"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_ae512dcee3f48f317872617e5f4559b19}{read\+Shared\+Memory\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_af3f698954f6a1cb3c49898e40a23cff0}{get\+MBNModule\+Process\+Data}} (uint16\+\_\+t mbn\+\_\+device\+\_\+handler, s\+\_\+mbn\+\_\+processdata \texorpdfstring{$\ast$}{*}mbn\+\_\+processdata)
+\begin{DoxyCompactList}\small\item\em Retrieves the Process data of the Main Bus node. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_ae6ec7a987944307ed8a841f85d0c6f1d}{get\+Main\+Bus\+Identification\+Info}} (mbn\+\_\+identification\+\_\+info\+\_\+t \texorpdfstring{$\ast$}{*}identification\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Retrieves the identification info of the Main Bus node. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_aac26aa5d5bec0cc929f579dc1aa6a60d}{get\+Main\+Bus\+Mac\+Address}} (uint16\+\_\+t parameter\+\_\+name, uint64\+\_\+t \texorpdfstring{$\ast$}{*}mac\+\_\+address\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Retrieves the MAC address of the specified port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_a36255dbd4db709691ff068cc0d205230}{get\+Ip\+Address}} (uint16\+\_\+t parameter\+\_\+name, uint32\+\_\+t \texorpdfstring{$\ast$}{*}ipaddress)
+\begin{DoxyCompactList}\small\item\em Retrieves the IP address of the specified port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_a73fc7fc81bda264bc2251a573c5a2771}{set\+Main\+Bus\+Ip\+Address}} (uint16\+\_\+t parameter\+\_\+name, uint32\+\_\+t \texorpdfstring{$\ast$}{*}ipaddress\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Retrieves the pin value of the main bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_a729fd2c0212cb2a3bc4a2e1a7f3ebc3f}{get\+MBNService\+Param}} (uint8\+\_\+t parameter\+\_\+name, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Retrieves the acyclic data or service parameter of the MBN node. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_a631fbb9a53970b1369f6d8d7f26e8ac5}{get\+MBNProcess\+Data}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Retrieves process data from the main bus node (MBN). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_af0ee6f1dfd818dca59612bd304ff3230}{set\+MBNService\+Param}} (uint8\+\_\+t parameter\+\_\+name, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Sets the service parameter of the main bus node (MBN). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_aa5cb7c14e289bfee846b352ceed0a08a}{get\+Ethercat\+Indication\+Status}} (s\+\_\+mbn\+\_\+indiaction \texorpdfstring{$\ast$}{*}mbnethercatind)
+\begin{DoxyCompactList}\small\item\em \+: This is to retriev the ethercat run and error status \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_a5f69684ec78d8ed0c94ae6e81080cde9}{update\+MBNVa\+Volatge}} (uint32\+\_\+t \texorpdfstring{$\ast$}{*}voltage)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_a7160f3fbd59e634e42b954e101b5e3e4}{update\+MBNVb\+Volatge}} (uint32\+\_\+t \texorpdfstring{$\ast$}{*}voltage)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_main_bus_node_8c_a2acf746b21e600f86d117df8e8107e2b}{update\+Cpsw\+Port\+Configuartion}} (uint32\+\_\+t ipadd)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \mbox{\hyperlink{_main_bus_node_8c_ad9088d5017838792bd64e604162503df}{gbuf}}
+\item 
+rpmsg\+\_\+char\+\_\+dev\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_main_bus_node_8c_a274502dbc1ca0716301973df9a2ebb62}{g\+\_\+remote\+\_\+rpmsg}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the source code of the main bus API. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_main_bus_node_8c_a558edc8a19bd5871a574872c8099cd10}\index{MainBusNode.c@{MainBusNode.c}!HW\_REV@{HW\_REV}}
+\index{HW\_REV@{HW\_REV}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{HW\_REV}{HW\_REV}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a558edc8a19bd5871a574872c8099cd10} 
+\#define HW\+\_\+\+REV~"{}AMBN-\/12-\/H"{}}
+
+\Hypertarget{_main_bus_node_8c_afdae5c3e229b84e0980c4778926a166f}\index{MainBusNode.c@{MainBusNode.c}!MBN\_DEVICE\_ID@{MBN\_DEVICE\_ID}}
+\index{MBN\_DEVICE\_ID@{MBN\_DEVICE\_ID}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_DEVICE\_ID}{MBN\_DEVICE\_ID}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_afdae5c3e229b84e0980c4778926a166f} 
+\#define MBN\+\_\+\+DEVICE\+\_\+\+ID~0x00000055}
+
+\Hypertarget{_main_bus_node_8c_a22505fcf82d3050a8d5f3845fa142125}\index{MainBusNode.c@{MainBusNode.c}!MBN\_DEVICE\_NAME@{MBN\_DEVICE\_NAME}}
+\index{MBN\_DEVICE\_NAME@{MBN\_DEVICE\_NAME}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_DEVICE\_NAME}{MBN\_DEVICE\_NAME}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a22505fcf82d3050a8d5f3845fa142125} 
+\#define MBN\+\_\+\+DEVICE\+\_\+\+NAME~"{}MBN\+\_\+\+DEVICE"{}}
+
+\Hypertarget{_main_bus_node_8c_aa31afafc864d7b400b938c36ac4de5ae}\index{MainBusNode.c@{MainBusNode.c}!MBN\_DEVICE\_TYPE@{MBN\_DEVICE\_TYPE}}
+\index{MBN\_DEVICE\_TYPE@{MBN\_DEVICE\_TYPE}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_DEVICE\_TYPE}{MBN\_DEVICE\_TYPE}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aa31afafc864d7b400b938c36ac4de5ae} 
+\#define MBN\+\_\+\+DEVICE\+\_\+\+TYPE~0x00000055}
+
+\Hypertarget{_main_bus_node_8c_aa40055df00a37743dfd13256adda45b6}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_DEVICE\_ID\_ADDR@{MBN\_MOD\_DEVICE\_ID\_ADDR}}
+\index{MBN\_MOD\_DEVICE\_ID\_ADDR@{MBN\_MOD\_DEVICE\_ID\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_DEVICE\_ID\_ADDR}{MBN\_MOD\_DEVICE\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aa40055df00a37743dfd13256adda45b6} 
+\#define MBN\+\_\+\+MOD\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 8)   /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a01cc06225b74d0b055f06a971a5b88ac}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_DEVICE\_NAME\_ADDR@{MBN\_MOD\_DEVICE\_NAME\_ADDR}}
+\index{MBN\_MOD\_DEVICE\_NAME\_ADDR@{MBN\_MOD\_DEVICE\_NAME\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_DEVICE\_NAME\_ADDR}{MBN\_MOD\_DEVICE\_NAME\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a01cc06225b74d0b055f06a971a5b88ac} 
+\#define MBN\+\_\+\+MOD\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 28)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a33126aa97893c7581c2e2ce391e08403}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_DEVICE\_TYPE\_ADDR@{MBN\_MOD\_DEVICE\_TYPE\_ADDR}}
+\index{MBN\_MOD\_DEVICE\_TYPE\_ADDR@{MBN\_MOD\_DEVICE\_TYPE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_DEVICE\_TYPE\_ADDR}{MBN\_MOD\_DEVICE\_TYPE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a33126aa97893c7581c2e2ce391e08403} 
+\#define MBN\+\_\+\+MOD\+\_\+\+DEVICE\+\_\+\+TYPE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 0)   /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+
+
+{\itshape Main Bus Process Data Mapping}/ 
+
+{\itshape Main Bus Process Data Mapping}/ \Hypertarget{_main_bus_node_8c_af97a0728aa467101ca47002f07b2f168}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_HW\_REV\_ADDR@{MBN\_MOD\_HW\_REV\_ADDR}}
+\index{MBN\_MOD\_HW\_REV\_ADDR@{MBN\_MOD\_HW\_REV\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_HW\_REV\_ADDR}{MBN\_MOD\_HW\_REV\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_af97a0728aa467101ca47002f07b2f168} 
+\#define MBN\+\_\+\+MOD\+\_\+\+HW\+\_\+\+REV\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 60)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a2de3e02ee06e547781828f25c2206b9b}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_SERIAL\_NO\_ADDR@{MBN\_MOD\_SERIAL\_NO\_ADDR}}
+\index{MBN\_MOD\_SERIAL\_NO\_ADDR@{MBN\_MOD\_SERIAL\_NO\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_SERIAL\_NO\_ADDR}{MBN\_MOD\_SERIAL\_NO\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a2de3e02ee06e547781828f25c2206b9b} 
+\#define MBN\+\_\+\+MOD\+\_\+\+SERIAL\+\_\+\+NO\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 76)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_ac95749546255ba4931f57b6287393a06}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_SW\_PART\_NO\_ADDR@{MBN\_MOD\_SW\_PART\_NO\_ADDR}}
+\index{MBN\_MOD\_SW\_PART\_NO\_ADDR@{MBN\_MOD\_SW\_PART\_NO\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_SW\_PART\_NO\_ADDR}{MBN\_MOD\_SW\_PART\_NO\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ac95749546255ba4931f57b6287393a06} 
+\#define MBN\+\_\+\+MOD\+\_\+\+SW\+\_\+\+PART\+\_\+\+NO\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 92)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a95feb0e6c4710f7018b543d9697b3904}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_SW\_REV\_ADDR@{MBN\_MOD\_SW\_REV\_ADDR}}
+\index{MBN\_MOD\_SW\_REV\_ADDR@{MBN\_MOD\_SW\_REV\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_SW\_REV\_ADDR}{MBN\_MOD\_SW\_REV\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a95feb0e6c4710f7018b543d9697b3904} 
+\#define MBN\+\_\+\+MOD\+\_\+\+SW\+\_\+\+REV\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 108) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a153cd7f7e8cdbf92298f9c6c8a6399bc}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_VARIANT\_ID\_ADDR@{MBN\_MOD\_VARIANT\_ID\_ADDR}}
+\index{MBN\_MOD\_VARIANT\_ID\_ADDR@{MBN\_MOD\_VARIANT\_ID\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_VARIANT\_ID\_ADDR}{MBN\_MOD\_VARIANT\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a153cd7f7e8cdbf92298f9c6c8a6399bc} 
+\#define MBN\+\_\+\+MOD\+\_\+\+VARIANT\+\_\+\+ID\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 44)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a0f99763130eca9d97884967c2f8eeb70}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_VENDOR\_ID\_ADDR@{MBN\_MOD\_VENDOR\_ID\_ADDR}}
+\index{MBN\_MOD\_VENDOR\_ID\_ADDR@{MBN\_MOD\_VENDOR\_ID\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_VENDOR\_ID\_ADDR}{MBN\_MOD\_VENDOR\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a0f99763130eca9d97884967c2f8eeb70} 
+\#define MBN\+\_\+\+MOD\+\_\+\+VENDOR\+\_\+\+ID\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 4)   /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a2b65a3541be68e8dc34d3ca0a1a6f8e3}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MOD\_VENDOR\_NAME\_ADDR@{MBN\_MOD\_VENDOR\_NAME\_ADDR}}
+\index{MBN\_MOD\_VENDOR\_NAME\_ADDR@{MBN\_MOD\_VENDOR\_NAME\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MOD\_VENDOR\_NAME\_ADDR}{MBN\_MOD\_VENDOR\_NAME\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a2b65a3541be68e8dc34d3ca0a1a6f8e3} 
+\#define MBN\+\_\+\+MOD\+\_\+\+VENDOR\+\_\+\+NAME\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 12)  /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_aef6aa5149a5995eda836f0233f006ac1}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_CAN\_FD\_EDS\_VERSION\_ADDR@{MBN\_MODULE\_CAN\_FD\_EDS\_VERSION\_ADDR}}
+\index{MBN\_MODULE\_CAN\_FD\_EDS\_VERSION\_ADDR@{MBN\_MODULE\_CAN\_FD\_EDS\_VERSION\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_CAN\_FD\_EDS\_VERSION\_ADDR}{MBN\_MODULE\_CAN\_FD\_EDS\_VERSION\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aef6aa5149a5995eda836f0233f006ac1} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+CAN\+\_\+\+FD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 156) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_aa9275028c5205663fbbbf4f492e5fe27}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_CIP\_STATUS\_ADDR@{MBN\_MODULE\_CIP\_STATUS\_ADDR}}
+\index{MBN\_MODULE\_CIP\_STATUS\_ADDR@{MBN\_MODULE\_CIP\_STATUS\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_CIP\_STATUS\_ADDR}{MBN\_MODULE\_CIP\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aa9275028c5205663fbbbf4f492e5fe27} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+CIP\+\_\+\+STATUS\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 267) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a63dfa7c4a5a8c2cd9f991a26ff1609c2}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_CLOUD\_CONNECTED\_STATUS\_ADDR@{MBN\_MODULE\_CLOUD\_CONNECTED\_STATUS\_ADDR}}
+\index{MBN\_MODULE\_CLOUD\_CONNECTED\_STATUS\_ADDR@{MBN\_MODULE\_CLOUD\_CONNECTED\_STATUS\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_CLOUD\_CONNECTED\_STATUS\_ADDR}{MBN\_MODULE\_CLOUD\_CONNECTED\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a63dfa7c4a5a8c2cd9f991a26ff1609c2} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+CLOUD\+\_\+\+CONNECTED\+\_\+\+STATUS\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 265) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a1accba60a8f1e60f8802bc7113269848}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_EDS\_DATE\_ADDR@{MBN\_MODULE\_EDS\_DATE\_ADDR}}
+\index{MBN\_MODULE\_EDS\_DATE\_ADDR@{MBN\_MODULE\_EDS\_DATE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_EDS\_DATE\_ADDR}{MBN\_MODULE\_EDS\_DATE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a1accba60a8f1e60f8802bc7113269848} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+EDS\+\_\+\+DATE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 172) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_ad959c66600bdd51eadd9855bc59d1510}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_EEPROM\_LIFE\_CYCLE\_ADDR@{MBN\_MODULE\_EEPROM\_LIFE\_CYCLE\_ADDR}}
+\index{MBN\_MODULE\_EEPROM\_LIFE\_CYCLE\_ADDR@{MBN\_MODULE\_EEPROM\_LIFE\_CYCLE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_EEPROM\_LIFE\_CYCLE\_ADDR}{MBN\_MODULE\_EEPROM\_LIFE\_CYCLE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ad959c66600bdd51eadd9855bc59d1510} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+EEPROM\+\_\+\+LIFE\+\_\+\+CYCLE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 152) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a6921754425b26fd69210942bcfea31b6}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_EEPROM\_TEST\_RESULT\_ADDR@{MBN\_MODULE\_EEPROM\_TEST\_RESULT\_ADDR}}
+\index{MBN\_MODULE\_EEPROM\_TEST\_RESULT\_ADDR@{MBN\_MODULE\_EEPROM\_TEST\_RESULT\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_EEPROM\_TEST\_RESULT\_ADDR}{MBN\_MODULE\_EEPROM\_TEST\_RESULT\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a6921754425b26fd69210942bcfea31b6} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+EEPROM\+\_\+\+TEST\+\_\+\+RESULT\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 268) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a8a9d6f0754f6a085369987bb1bb6016a}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_IO\_DISCOVERED\_COUNT\_ADDR@{MBN\_MODULE\_IO\_DISCOVERED\_COUNT\_ADDR}}
+\index{MBN\_MODULE\_IO\_DISCOVERED\_COUNT\_ADDR@{MBN\_MODULE\_IO\_DISCOVERED\_COUNT\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_IO\_DISCOVERED\_COUNT\_ADDR}{MBN\_MODULE\_IO\_DISCOVERED\_COUNT\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a8a9d6f0754f6a085369987bb1bb6016a} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+IO\+\_\+\+DISCOVERED\+\_\+\+COUNT\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 188) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_ac02164a50b6b05bb61974ac5ff4a021c}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_IO\_FORCE\_MODE\_STATE\_ADDR@{MBN\_MODULE\_IO\_FORCE\_MODE\_STATE\_ADDR}}
+\index{MBN\_MODULE\_IO\_FORCE\_MODE\_STATE\_ADDR@{MBN\_MODULE\_IO\_FORCE\_MODE\_STATE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_IO\_FORCE\_MODE\_STATE\_ADDR}{MBN\_MODULE\_IO\_FORCE\_MODE\_STATE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ac02164a50b6b05bb61974ac5ff4a021c} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+IO\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+STATE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 223) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a14ab0c34d30d4ea7d046c2d03e19bb3e}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_IP\_ADDRESS\_PORT1\_ADDR@{MBN\_MODULE\_IP\_ADDRESS\_PORT1\_ADDR}}
+\index{MBN\_MODULE\_IP\_ADDRESS\_PORT1\_ADDR@{MBN\_MODULE\_IP\_ADDRESS\_PORT1\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_IP\_ADDRESS\_PORT1\_ADDR}{MBN\_MODULE\_IP\_ADDRESS\_PORT1\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a14ab0c34d30d4ea7d046c2d03e19bb3e} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+IP\+\_\+\+ADDRESS\+\_\+\+PORT1\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 253) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a41c2fde68f362544593364d3ef82ee32}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_IP\_ADDRESS\_PORT2\_ADDR@{MBN\_MODULE\_IP\_ADDRESS\_PORT2\_ADDR}}
+\index{MBN\_MODULE\_IP\_ADDRESS\_PORT2\_ADDR@{MBN\_MODULE\_IP\_ADDRESS\_PORT2\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_IP\_ADDRESS\_PORT2\_ADDR}{MBN\_MODULE\_IP\_ADDRESS\_PORT2\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a41c2fde68f362544593364d3ef82ee32} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+IP\+\_\+\+ADDRESS\+\_\+\+PORT2\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 257) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a5028a3411c8b0f8ce67dcb3331cb52c5}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_IP\_ADDRESS\_PORT3\_ADDR@{MBN\_MODULE\_IP\_ADDRESS\_PORT3\_ADDR}}
+\index{MBN\_MODULE\_IP\_ADDRESS\_PORT3\_ADDR@{MBN\_MODULE\_IP\_ADDRESS\_PORT3\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_IP\_ADDRESS\_PORT3\_ADDR}{MBN\_MODULE\_IP\_ADDRESS\_PORT3\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a5028a3411c8b0f8ce67dcb3331cb52c5} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+IP\+\_\+\+ADDRESS\+\_\+\+PORT3\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 261) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_ac61bfbde19f092b7894354900d8dc5a8}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_MAC\_ADDRESS\_PORT1\_ADDR@{MBN\_MODULE\_MAC\_ADDRESS\_PORT1\_ADDR}}
+\index{MBN\_MODULE\_MAC\_ADDRESS\_PORT1\_ADDR@{MBN\_MODULE\_MAC\_ADDRESS\_PORT1\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_MAC\_ADDRESS\_PORT1\_ADDR}{MBN\_MODULE\_MAC\_ADDRESS\_PORT1\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ac61bfbde19f092b7894354900d8dc5a8} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+MAC\+\_\+\+ADDRESS\+\_\+\+PORT1\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 225) /\texorpdfstring{$\ast$}{*} uint64\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a7956d6ac7283079b86da8b210af8fc4c}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_MAC\_ADDRESS\_PORT2\_ADDR@{MBN\_MODULE\_MAC\_ADDRESS\_PORT2\_ADDR}}
+\index{MBN\_MODULE\_MAC\_ADDRESS\_PORT2\_ADDR@{MBN\_MODULE\_MAC\_ADDRESS\_PORT2\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_MAC\_ADDRESS\_PORT2\_ADDR}{MBN\_MODULE\_MAC\_ADDRESS\_PORT2\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a7956d6ac7283079b86da8b210af8fc4c} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+MAC\+\_\+\+ADDRESS\+\_\+\+PORT2\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 233) /\texorpdfstring{$\ast$}{*} uint64\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a1e9e00aa4aeebb5bae9f335f74267dcb}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_MAC\_ADDRESS\_PORT3\_ADDR@{MBN\_MODULE\_MAC\_ADDRESS\_PORT3\_ADDR}}
+\index{MBN\_MODULE\_MAC\_ADDRESS\_PORT3\_ADDR@{MBN\_MODULE\_MAC\_ADDRESS\_PORT3\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_MAC\_ADDRESS\_PORT3\_ADDR}{MBN\_MODULE\_MAC\_ADDRESS\_PORT3\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a1e9e00aa4aeebb5bae9f335f74267dcb} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+MAC\+\_\+\+ADDRESS\+\_\+\+PORT3\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 241) /\texorpdfstring{$\ast$}{*} uint64\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_ab984dc792f2a13b7253460503a5565f0}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_MAX\_TEMPERATURE\_ADDR@{MBN\_MODULE\_MAX\_TEMPERATURE\_ADDR}}
+\index{MBN\_MODULE\_MAX\_TEMPERATURE\_ADDR@{MBN\_MODULE\_MAX\_TEMPERATURE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_MAX\_TEMPERATURE\_ADDR}{MBN\_MODULE\_MAX\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ab984dc792f2a13b7253460503a5565f0} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+MAX\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 146) /\texorpdfstring{$\ast$}{*} int16\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_ae36483ddbbae0136ffeae85e9a816770}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_MEASURED\_TEMPERATURE\_ADDR@{MBN\_MODULE\_MEASURED\_TEMPERATURE\_ADDR}}
+\index{MBN\_MODULE\_MEASURED\_TEMPERATURE\_ADDR@{MBN\_MODULE\_MEASURED\_TEMPERATURE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_MEASURED\_TEMPERATURE\_ADDR}{MBN\_MODULE\_MEASURED\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ae36483ddbbae0136ffeae85e9a816770} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+MEASURED\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 148) /\texorpdfstring{$\ast$}{*} int16\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_af6f596f0c753ded472f4b388c92686e2}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_MIN\_TEMPERATURE\_ADDR@{MBN\_MODULE\_MIN\_TEMPERATURE\_ADDR}}
+\index{MBN\_MODULE\_MIN\_TEMPERATURE\_ADDR@{MBN\_MODULE\_MIN\_TEMPERATURE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_MIN\_TEMPERATURE\_ADDR}{MBN\_MODULE\_MIN\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_af6f596f0c753ded472f4b388c92686e2} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+MIN\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 144) /\texorpdfstring{$\ast$}{*} int16\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a3daf1dc285b4e25599de65f99637b068}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_NETWORK\_CONNECTED\_STATUS\_ADDR@{MBN\_MODULE\_NETWORK\_CONNECTED\_STATUS\_ADDR}}
+\index{MBN\_MODULE\_NETWORK\_CONNECTED\_STATUS\_ADDR@{MBN\_MODULE\_NETWORK\_CONNECTED\_STATUS\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_NETWORK\_CONNECTED\_STATUS\_ADDR}{MBN\_MODULE\_NETWORK\_CONNECTED\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a3daf1dc285b4e25599de65f99637b068} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+NETWORK\+\_\+\+CONNECTED\+\_\+\+STATUS\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 266) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a22c268ca27f7c8ff0e345d48dc212d4f}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_OPERATING\_HOURS\_ADDR@{MBN\_MODULE\_OPERATING\_HOURS\_ADDR}}
+\index{MBN\_MODULE\_OPERATING\_HOURS\_ADDR@{MBN\_MODULE\_OPERATING\_HOURS\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_OPERATING\_HOURS\_ADDR}{MBN\_MODULE\_OPERATING\_HOURS\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a22c268ca27f7c8ff0e345d48dc212d4f} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+OPERATING\+\_\+\+HOURS\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 136) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a98af83b902014883961d1a1d3cd779bf}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_OPERATING\_MINS\_ADDR@{MBN\_MODULE\_OPERATING\_MINS\_ADDR}}
+\index{MBN\_MODULE\_OPERATING\_MINS\_ADDR@{MBN\_MODULE\_OPERATING\_MINS\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_OPERATING\_MINS\_ADDR}{MBN\_MODULE\_OPERATING\_MINS\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a98af83b902014883961d1a1d3cd779bf} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+OPERATING\+\_\+\+MINS\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 140) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a6ef46c9fb6c549292a7a329dc5db88f8}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_OPERATING\_MODE\_ADDR@{MBN\_MODULE\_OPERATING\_MODE\_ADDR}}
+\index{MBN\_MODULE\_OPERATING\_MODE\_ADDR@{MBN\_MODULE\_OPERATING\_MODE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_OPERATING\_MODE\_ADDR}{MBN\_MODULE\_OPERATING\_MODE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a6ef46c9fb6c549292a7a329dc5db88f8} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+OPERATING\+\_\+\+MODE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 222) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a06bdd972637e936e97e497d82afe1dc4}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_PIN\_VALUE\_ADDR@{MBN\_MODULE\_PIN\_VALUE\_ADDR}}
+\index{MBN\_MODULE\_PIN\_VALUE\_ADDR@{MBN\_MODULE\_PIN\_VALUE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_PIN\_VALUE\_ADDR}{MBN\_MODULE\_PIN\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a06bdd972637e936e97e497d82afe1dc4} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+PIN\+\_\+\+VALUE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 249) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a7a6231b0adaa822aa67a0d01f88b42a8}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_POST\_ERR\_STATUS\_ADDR@{MBN\_MODULE\_POST\_ERR\_STATUS\_ADDR}}
+\index{MBN\_MODULE\_POST\_ERR\_STATUS\_ADDR@{MBN\_MODULE\_POST\_ERR\_STATUS\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_POST\_ERR\_STATUS\_ADDR}{MBN\_MODULE\_POST\_ERR\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a7a6231b0adaa822aa67a0d01f88b42a8} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+POST\+\_\+\+ERR\+\_\+\+STATUS\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 124) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a0a1652962dd6afb40502a1aa2757a98e}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_PRESSURE\_ZONE\_DISCOVERED\_COUNT\_ADDR@{MBN\_MODULE\_PRESSURE\_ZONE\_DISCOVERED\_COUNT\_ADDR}}
+\index{MBN\_MODULE\_PRESSURE\_ZONE\_DISCOVERED\_COUNT\_ADDR@{MBN\_MODULE\_PRESSURE\_ZONE\_DISCOVERED\_COUNT\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_PRESSURE\_ZONE\_DISCOVERED\_COUNT\_ADDR}{MBN\_MODULE\_PRESSURE\_ZONE\_DISCOVERED\_COUNT\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a0a1652962dd6afb40502a1aa2757a98e} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+PRESSURE\+\_\+\+ZONE\+\_\+\+DISCOVERED\+\_\+\+COUNT\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 189) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a0fdcdd19e189cc1de3c1b84d7d190df2}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_SYSTEM\_STATUS\_ADDR@{MBN\_MODULE\_SYSTEM\_STATUS\_ADDR}}
+\index{MBN\_MODULE\_SYSTEM\_STATUS\_ADDR@{MBN\_MODULE\_SYSTEM\_STATUS\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_SYSTEM\_STATUS\_ADDR}{MBN\_MODULE\_SYSTEM\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a0fdcdd19e189cc1de3c1b84d7d190df2} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+SYSTEM\+\_\+\+STATUS\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 224) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_af3e89734a5642e748c256b15c78c404f}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_TEMPERATURE\_TEST\_RESULT\_ADDR@{MBN\_MODULE\_TEMPERATURE\_TEST\_RESULT\_ADDR}}
+\index{MBN\_MODULE\_TEMPERATURE\_TEST\_RESULT\_ADDR@{MBN\_MODULE\_TEMPERATURE\_TEST\_RESULT\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_TEMPERATURE\_TEST\_RESULT\_ADDR}{MBN\_MODULE\_TEMPERATURE\_TEST\_RESULT\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_af3e89734a5642e748c256b15c78c404f} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+TEMPERATURE\+\_\+\+TEST\+\_\+\+RESULT\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 269) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a3bb474fb171d6a6a6127dc8e1ab7e6fc}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_VA\_VOLTAGE\_ADDR@{MBN\_MODULE\_VA\_VOLTAGE\_ADDR}}
+\index{MBN\_MODULE\_VA\_VOLTAGE\_ADDR@{MBN\_MODULE\_VA\_VOLTAGE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_VA\_VOLTAGE\_ADDR}{MBN\_MODULE\_VA\_VOLTAGE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a3bb474fb171d6a6a6127dc8e1ab7e6fc} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+VA\+\_\+\+VOLTAGE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 128) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a45a3df4bef6bf406e6d5035a9e078217}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_VALVE\_ISLAND\_RESERVED\_ADDR@{MBN\_MODULE\_VALVE\_ISLAND\_RESERVED\_ADDR}}
+\index{MBN\_MODULE\_VALVE\_ISLAND\_RESERVED\_ADDR@{MBN\_MODULE\_VALVE\_ISLAND\_RESERVED\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_VALVE\_ISLAND\_RESERVED\_ADDR}{MBN\_MODULE\_VALVE\_ISLAND\_RESERVED\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a45a3df4bef6bf406e6d5035a9e078217} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+VALVE\+\_\+\+ISLAND\+\_\+\+RESERVED\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 206) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_a9f4d1b726b7a9b2b2d9d9447b995ee9f}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_VALVE\_ISLAND\_VALIDATION\_ID\_ADDR@{MBN\_MODULE\_VALVE\_ISLAND\_VALIDATION\_ID\_ADDR}}
+\index{MBN\_MODULE\_VALVE\_ISLAND\_VALIDATION\_ID\_ADDR@{MBN\_MODULE\_VALVE\_ISLAND\_VALIDATION\_ID\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_VALVE\_ISLAND\_VALIDATION\_ID\_ADDR}{MBN\_MODULE\_VALVE\_ISLAND\_VALIDATION\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a9f4d1b726b7a9b2b2d9d9447b995ee9f} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+VALVE\+\_\+\+ISLAND\+\_\+\+VALIDATION\+\_\+\+ID\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 190) /\texorpdfstring{$\ast$}{*} uint8\+\_\+t\mbox{[}16\mbox{]} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_ac973fa73480c2206c386b6254e64d298}\index{MainBusNode.c@{MainBusNode.c}!MBN\_MODULE\_VB\_VOLTAGE\_ADDR@{MBN\_MODULE\_VB\_VOLTAGE\_ADDR}}
+\index{MBN\_MODULE\_VB\_VOLTAGE\_ADDR@{MBN\_MODULE\_VB\_VOLTAGE\_ADDR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_MODULE\_VB\_VOLTAGE\_ADDR}{MBN\_MODULE\_VB\_VOLTAGE\_ADDR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ac973fa73480c2206c386b6254e64d298} 
+\#define MBN\+\_\+\+MODULE\+\_\+\+VB\+\_\+\+VOLTAGE\+\_\+\+ADDR~(MBN\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR + 132) /\texorpdfstring{$\ast$}{*} uint32\+\_\+t \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_main_bus_node_8c_ae09eb6181d86f540fec493f86d636ec2}\index{MainBusNode.c@{MainBusNode.c}!MBN\_VAR@{MBN\_VAR}}
+\index{MBN\_VAR@{MBN\_VAR}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_VAR}{MBN\_VAR}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ae09eb6181d86f540fec493f86d636ec2} 
+\#define MBN\+\_\+\+VAR~"{}MBN\+\_\+\+VAR"{}}
+
+\Hypertarget{_main_bus_node_8c_aa76acef3f7804f40ebddf769766fd7a7}\index{MainBusNode.c@{MainBusNode.c}!MBN\_VENDOR\_ID@{MBN\_VENDOR\_ID}}
+\index{MBN\_VENDOR\_ID@{MBN\_VENDOR\_ID}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_VENDOR\_ID}{MBN\_VENDOR\_ID}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aa76acef3f7804f40ebddf769766fd7a7} 
+\#define MBN\+\_\+\+VENDOR\+\_\+\+ID~0x00000010}
+
+\Hypertarget{_main_bus_node_8c_ab7cdace9d8cbf2c510febf84b7ebca61}\index{MainBusNode.c@{MainBusNode.c}!MBN\_VENDOR\_NAME@{MBN\_VENDOR\_NAME}}
+\index{MBN\_VENDOR\_NAME@{MBN\_VENDOR\_NAME}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{MBN\_VENDOR\_NAME}{MBN\_VENDOR\_NAME}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ab7cdace9d8cbf2c510febf84b7ebca61} 
+\#define MBN\+\_\+\+VENDOR\+\_\+\+NAME~"{}MBN\+\_\+\+NORGREN"{}}
+
+\Hypertarget{_main_bus_node_8c_a4f0ae3512d2957fddc3949bc9c50dce8}\index{MainBusNode.c@{MainBusNode.c}!PORT1\_MAC\_ADD@{PORT1\_MAC\_ADD}}
+\index{PORT1\_MAC\_ADD@{PORT1\_MAC\_ADD}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{PORT1\_MAC\_ADD}{PORT1\_MAC\_ADD}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a4f0ae3512d2957fddc3949bc9c50dce8} 
+\#define PORT1\+\_\+\+MAC\+\_\+\+ADD~1}
+
+\Hypertarget{_main_bus_node_8c_a3972a172c10ac16f5fcca1d76778a492}\index{MainBusNode.c@{MainBusNode.c}!PORT2\_MAC\_ADD@{PORT2\_MAC\_ADD}}
+\index{PORT2\_MAC\_ADD@{PORT2\_MAC\_ADD}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{PORT2\_MAC\_ADD}{PORT2\_MAC\_ADD}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a3972a172c10ac16f5fcca1d76778a492} 
+\#define PORT2\+\_\+\+MAC\+\_\+\+ADD~2}
+
+\Hypertarget{_main_bus_node_8c_aafe3461edf9cc1b05cea658a7a52f1b6}\index{MainBusNode.c@{MainBusNode.c}!PORT3\_MAC\_ADD@{PORT3\_MAC\_ADD}}
+\index{PORT3\_MAC\_ADD@{PORT3\_MAC\_ADD}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{PORT3\_MAC\_ADD}{PORT3\_MAC\_ADD}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aafe3461edf9cc1b05cea658a7a52f1b6} 
+\#define PORT3\+\_\+\+MAC\+\_\+\+ADD~3}
+
+\Hypertarget{_main_bus_node_8c_ac57429f38b22f8c068ad5564575a3910}\index{MainBusNode.c@{MainBusNode.c}!PROCESS\_DATA\_VERBOSE\_GET\_MBN@{PROCESS\_DATA\_VERBOSE\_GET\_MBN}}
+\index{PROCESS\_DATA\_VERBOSE\_GET\_MBN@{PROCESS\_DATA\_VERBOSE\_GET\_MBN}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_DATA\_VERBOSE\_GET\_MBN}{PROCESS\_DATA\_VERBOSE\_GET\_MBN}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ac57429f38b22f8c068ad5564575a3910} 
+\#define PROCESS\+\_\+\+DATA\+\_\+\+VERBOSE\+\_\+\+GET\+\_\+\+MBN~0}
+
+\Hypertarget{_main_bus_node_8c_a309510f08a7a1c0a122d738ed435b868}\index{MainBusNode.c@{MainBusNode.c}!PROCESS\_DATA\_VERBOSE\_SET\_MBN@{PROCESS\_DATA\_VERBOSE\_SET\_MBN}}
+\index{PROCESS\_DATA\_VERBOSE\_SET\_MBN@{PROCESS\_DATA\_VERBOSE\_SET\_MBN}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{PROCESS\_DATA\_VERBOSE\_SET\_MBN}{PROCESS\_DATA\_VERBOSE\_SET\_MBN}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a309510f08a7a1c0a122d738ed435b868} 
+\#define PROCESS\+\_\+\+DATA\+\_\+\+VERBOSE\+\_\+\+SET\+\_\+\+MBN~0}
+
+\Hypertarget{_main_bus_node_8c_a763c972ab3bc18a1eb676a27cda10a14}\index{MainBusNode.c@{MainBusNode.c}!SERVICE\_DATA\_VERBOSE\_GET\_MBN@{SERVICE\_DATA\_VERBOSE\_GET\_MBN}}
+\index{SERVICE\_DATA\_VERBOSE\_GET\_MBN@{SERVICE\_DATA\_VERBOSE\_GET\_MBN}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{SERVICE\_DATA\_VERBOSE\_GET\_MBN}{SERVICE\_DATA\_VERBOSE\_GET\_MBN}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a763c972ab3bc18a1eb676a27cda10a14} 
+\#define SERVICE\+\_\+\+DATA\+\_\+\+VERBOSE\+\_\+\+GET\+\_\+\+MBN~0}
+
+\Hypertarget{_main_bus_node_8c_a26eb89b96123185f7a4013aac66dbe02}\index{MainBusNode.c@{MainBusNode.c}!SERVICE\_DATA\_VERBOSE\_SET\_MBN@{SERVICE\_DATA\_VERBOSE\_SET\_MBN}}
+\index{SERVICE\_DATA\_VERBOSE\_SET\_MBN@{SERVICE\_DATA\_VERBOSE\_SET\_MBN}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{SERVICE\_DATA\_VERBOSE\_SET\_MBN}{SERVICE\_DATA\_VERBOSE\_SET\_MBN}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a26eb89b96123185f7a4013aac66dbe02} 
+\#define SERVICE\+\_\+\+DATA\+\_\+\+VERBOSE\+\_\+\+SET\+\_\+\+MBN~0}
+
+\Hypertarget{_main_bus_node_8c_a0dacee985c3cc2a6f9f47c14f1668f55}\index{MainBusNode.c@{MainBusNode.c}!SL\_NO@{SL\_NO}}
+\index{SL\_NO@{SL\_NO}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{SL\_NO}{SL\_NO}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a0dacee985c3cc2a6f9f47c14f1668f55} 
+\#define SL\+\_\+\+NO~"{}1234"{}}
+
+\Hypertarget{_main_bus_node_8c_aef6edc0bc13d7c7e4fd375d06cae7fde}\index{MainBusNode.c@{MainBusNode.c}!SW\_PART\_NO@{SW\_PART\_NO}}
+\index{SW\_PART\_NO@{SW\_PART\_NO}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{SW\_PART\_NO}{SW\_PART\_NO}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aef6edc0bc13d7c7e4fd375d06cae7fde} 
+\#define SW\+\_\+\+PART\+\_\+\+NO~"{}MBN\+\_\+\+SW\+\_\+1"{}}
+
+\Hypertarget{_main_bus_node_8c_ac82504751eea500ec7332a5206f8c669}\index{MainBusNode.c@{MainBusNode.c}!SW\_REV@{SW\_REV}}
+\index{SW\_REV@{SW\_REV}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{SW\_REV}{SW\_REV}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ac82504751eea500ec7332a5206f8c669} 
+\#define SW\+\_\+\+REV~"{}V1.\+2.\+0\+T"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_main_bus_node_8c_aa5cb7c14e289bfee846b352ceed0a08a}\index{MainBusNode.c@{MainBusNode.c}!getEthercatIndicationStatus@{getEthercatIndicationStatus}}
+\index{getEthercatIndicationStatus@{getEthercatIndicationStatus}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{getEthercatIndicationStatus()}{getEthercatIndicationStatus()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aa5cb7c14e289bfee846b352ceed0a08a} 
+uint8\+\_\+t get\+Ethercat\+Indication\+Status (\begin{DoxyParamCaption}\item[{s\+\_\+mbn\+\_\+indiaction \texorpdfstring{$\ast$}{*}}]{mbnethercatind}{}\end{DoxyParamCaption})}
+
+
+
+\+: This is to retriev the ethercat run and error status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & mbnethercatind pointer to the s\+\_\+mbn\+\_\+indiaction structure where the value is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: RET\+\_\+\+OK on success , RET\+\_\+\+ERROR on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_aa5cb7c14e289bfee846b352ceed0a08a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_aa5cb7c14e289bfee846b352ceed0a08a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_a36255dbd4db709691ff068cc0d205230}\index{MainBusNode.c@{MainBusNode.c}!getIpAddress@{getIpAddress}}
+\index{getIpAddress@{getIpAddress}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{getIpAddress()}{getIpAddress()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a36255dbd4db709691ff068cc0d205230} 
+uint8\+\_\+t get\+Ip\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{ipaddress}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the IP address of the specified port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter\+\_\+name} & The parameter name for which the MAC address is to be retrieved. \\
+\hline
+{\em ipaddress} & Pointer to store the retrieved IP address value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or an error code on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{_main_bus_node_8c_a36255dbd4db709691ff068cc0d205230_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_a36255dbd4db709691ff068cc0d205230_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_ae6ec7a987944307ed8a841f85d0c6f1d}\index{MainBusNode.c@{MainBusNode.c}!getMainBusIdentificationInfo@{getMainBusIdentificationInfo}}
+\index{getMainBusIdentificationInfo@{getMainBusIdentificationInfo}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{getMainBusIdentificationInfo()}{getMainBusIdentificationInfo()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ae6ec7a987944307ed8a841f85d0c6f1d} 
+uint8\+\_\+t get\+Main\+Bus\+Identification\+Info (\begin{DoxyParamCaption}\item[{mbn\+\_\+identification\+\_\+info\+\_\+t \texorpdfstring{$\ast$}{*}}]{identification\+\_\+info}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the identification info of the Main Bus node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em identification\+\_\+info} & Pointer to the {\ttfamily mbn\+\_\+identification\+\_\+info\+\_\+t} structure to store identification details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_ae6ec7a987944307ed8a841f85d0c6f1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_ae6ec7a987944307ed8a841f85d0c6f1d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_aac26aa5d5bec0cc929f579dc1aa6a60d}\index{MainBusNode.c@{MainBusNode.c}!getMainBusMacAddress@{getMainBusMacAddress}}
+\index{getMainBusMacAddress@{getMainBusMacAddress}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{getMainBusMacAddress()}{getMainBusMacAddress()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_aac26aa5d5bec0cc929f579dc1aa6a60d} 
+uint8\+\_\+t get\+Main\+Bus\+Mac\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{mac\+\_\+address\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the MAC address of the specified port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+\_\+number} & The port number for which the MAC address is to be retrieved. \\
+\hline
+{\em mac\+\_\+address\+\_\+value} & Pointer to store the retrieved MAC address value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or an error code on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_aac26aa5d5bec0cc929f579dc1aa6a60d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_af3f698954f6a1cb3c49898e40a23cff0}\index{MainBusNode.c@{MainBusNode.c}!getMBNModuleProcessData@{getMBNModuleProcessData}}
+\index{getMBNModuleProcessData@{getMBNModuleProcessData}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{getMBNModuleProcessData()}{getMBNModuleProcessData()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_af3f698954f6a1cb3c49898e40a23cff0} 
+uint8\+\_\+t get\+MBNModule\+Process\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mbn\+\_\+device\+\_\+handler}{, }\item[{s\+\_\+mbn\+\_\+processdata \texorpdfstring{$\ast$}{*}}]{mbn\+\_\+processdata}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the Process data of the Main Bus node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em mbn\+\_\+processdata} & Pointer to the {\ttfamily s\+\_\+mbn\+\_\+processdata} structure to store the process data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_af3f698954f6a1cb3c49898e40a23cff0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_a631fbb9a53970b1369f6d8d7f26e8ac5}\index{MainBusNode.c@{MainBusNode.c}!getMBNProcessData@{getMBNProcessData}}
+\index{getMBNProcessData@{getMBNProcessData}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{getMBNProcessData()}{getMBNProcessData()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a631fbb9a53970b1369f6d8d7f26e8ac5} 
+uint8\+\_\+t get\+MBNProcess\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves process data from the main bus node (MBN). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em data} & Pointer to a variable where the retrieved process data will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Returns RET\+\_\+\+OK on success, or RET\+\_\+\+ERROR on failure. Refer to e\+\_\+error\+\_\+code for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{_main_bus_node_8c_a631fbb9a53970b1369f6d8d7f26e8ac5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_a729fd2c0212cb2a3bc4a2e1a7f3ebc3f}\index{MainBusNode.c@{MainBusNode.c}!getMBNServiceParam@{getMBNServiceParam}}
+\index{getMBNServiceParam@{getMBNServiceParam}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{getMBNServiceParam()}{getMBNServiceParam()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a729fd2c0212cb2a3bc4a2e1a7f3ebc3f} 
+uint8\+\_\+t get\+MBNService\+Param (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{parameter\+\_\+name}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the acyclic data or service parameter of the MBN node. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The enumerated parameter name to retrieve. Refer to {\ttfamily e\+\_\+mbn\+\_\+service\+\_\+parameter\+\_\+name} for valid MBN parameters. \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & Pointer to the buffer where the retrieved parameter value will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or an error code on failure. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{_main_bus_node_8c_a729fd2c0212cb2a3bc4a2e1a7f3ebc3f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_a729fd2c0212cb2a3bc4a2e1a7f3ebc3f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_ae512dcee3f48f317872617e5f4559b19}\index{MainBusNode.c@{MainBusNode.c}!readSharedMemoryData@{readSharedMemoryData}}
+\index{readSharedMemoryData@{readSharedMemoryData}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{readSharedMemoryData()}{readSharedMemoryData()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ae512dcee3f48f317872617e5f4559b19} 
+uint8\+\_\+t read\+Shared\+Memory\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_ae512dcee3f48f317872617e5f4559b19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_a73fc7fc81bda264bc2251a573c5a2771}\index{MainBusNode.c@{MainBusNode.c}!setMainBusIpAddress@{setMainBusIpAddress}}
+\index{setMainBusIpAddress@{setMainBusIpAddress}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{setMainBusIpAddress()}{setMainBusIpAddress()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a73fc7fc81bda264bc2251a573c5a2771} 
+uint8\+\_\+t set\+Main\+Bus\+Ip\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{ipaddress\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the pin value of the main bus. 
+
+\begin{DoxyReturn}{Returns}
+The 32-\/bit pin value of the main bus.
+\end{DoxyReturn}
+Sets the IP address for the specified port on the main bus.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The enumerated parameter name specifying the port for which the IP address is to be set. Refer to {\ttfamily e\+\_\+mainbus\+\_\+parameter\+\_\+name} for valid parameters. \\
+\hline
+\mbox{\texttt{ in}}  & {\em ipaddress\+\_\+value} & The 32-\/bit IP address value to be assigned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or an error code on failure. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{_main_bus_node_8c_a73fc7fc81bda264bc2251a573c5a2771_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_a73fc7fc81bda264bc2251a573c5a2771_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_af0ee6f1dfd818dca59612bd304ff3230}\index{MainBusNode.c@{MainBusNode.c}!setMBNServiceParam@{setMBNServiceParam}}
+\index{setMBNServiceParam@{setMBNServiceParam}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{setMBNServiceParam()}{setMBNServiceParam()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_af0ee6f1dfd818dca59612bd304ff3230} 
+uint8\+\_\+t set\+MBNService\+Param (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{parameter\+\_\+name}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Sets the service parameter of the main bus node (MBN). 
+
+This function sets a specific service parameter for the main bus node using the provided parameter name and data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The name (ID) of the parameter to be set. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the data to be assigned to the parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Returns 0 on success, or an error code on failure. Refer to e\+\_\+error\+\_\+code for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_af0ee6f1dfd818dca59612bd304ff3230_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_a2acf746b21e600f86d117df8e8107e2b}\index{MainBusNode.c@{MainBusNode.c}!updateCpswPortConfiguartion@{updateCpswPortConfiguartion}}
+\index{updateCpswPortConfiguartion@{updateCpswPortConfiguartion}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{updateCpswPortConfiguartion()}{updateCpswPortConfiguartion()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a2acf746b21e600f86d117df8e8107e2b} 
+uint8\+\_\+t update\+Cpsw\+Port\+Configuartion (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ipadd}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_main_bus_node_8c_a5f69684ec78d8ed0c94ae6e81080cde9}\index{MainBusNode.c@{MainBusNode.c}!updateMBNVaVolatge@{updateMBNVaVolatge}}
+\index{updateMBNVaVolatge@{updateMBNVaVolatge}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{updateMBNVaVolatge()}{updateMBNVaVolatge()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a5f69684ec78d8ed0c94ae6e81080cde9} 
+uint8\+\_\+t update\+MBNVa\+Volatge (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{voltage}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_a5f69684ec78d8ed0c94ae6e81080cde9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_a5f69684ec78d8ed0c94ae6e81080cde9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_main_bus_node_8c_a7160f3fbd59e634e42b954e101b5e3e4}\index{MainBusNode.c@{MainBusNode.c}!updateMBNVbVolatge@{updateMBNVbVolatge}}
+\index{updateMBNVbVolatge@{updateMBNVbVolatge}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{updateMBNVbVolatge()}{updateMBNVbVolatge()}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a7160f3fbd59e634e42b954e101b5e3e4} 
+uint8\+\_\+t update\+MBNVb\+Volatge (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{voltage}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_a7160f3fbd59e634e42b954e101b5e3e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_main_bus_node_8c_a7160f3fbd59e634e42b954e101b5e3e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_main_bus_node_8c_a274502dbc1ca0716301973df9a2ebb62}\index{MainBusNode.c@{MainBusNode.c}!g\_remote\_rpmsg@{g\_remote\_rpmsg}}
+\index{g\_remote\_rpmsg@{g\_remote\_rpmsg}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{g\_remote\_rpmsg}{g\_remote\_rpmsg}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_a274502dbc1ca0716301973df9a2ebb62} 
+rpmsg\+\_\+char\+\_\+dev\+\_\+t\texorpdfstring{$\ast$}{*} g\+\_\+remote\+\_\+rpmsg\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_main_bus_node_8c_ad9088d5017838792bd64e604162503df}\index{MainBusNode.c@{MainBusNode.c}!gbuf@{gbuf}}
+\index{gbuf@{gbuf}!MainBusNode.c@{MainBusNode.c}}
+\doxysubsubsection{\texorpdfstring{gbuf}{gbuf}}
+{\footnotesize\ttfamily \label{_main_bus_node_8c_ad9088d5017838792bd64e604162503df} 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} gbuf\hspace{0.3cm}{\ttfamily [extern]}}
+

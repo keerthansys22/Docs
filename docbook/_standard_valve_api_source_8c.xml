@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__standard_valve_api_source_8c" xml:lang="en-US">
+<title>API_Source/ValveModulesApiSource/StandardValveApiSource.c File Reference</title>
+<indexterm><primary>API_Source/ValveModulesApiSource/StandardValveApiSource.c</primary></indexterm>
+<para>
+
+<para>This source file contains the API source related to ISEM diag paramter access(cyclic and acyclic data) </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/pzmapping.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for StandardValveApiSource.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_standard_valve_api_source_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="__standard_valve_api_source_8c_1a2383a3641c7a989a9d6c99be17bf45c8">writeSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t addr, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__standard_valve_api_source_8c_1afffe0a8cc543604a9a4c31b71fe442bd">getPressureZoneProcessDataAddress</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__standard_valve_api_source_8c_1ab5cd1d1e0b731d60d0db314633c74283">getStationCoilAPosition</link> (uint16_t pressurezone_handler)</para>
+
+<para>Get the bit position of Coil A stations for a specific pressure zone. </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__standard_valve_api_source_8c_1ad8b309304f234e4b7838afa015ce2fd2">getStationCoilBPosition</link> (uint16_t pressurezone_handler)</para>
+
+<para>Get the bit position of Coil B stations for a specific pressure zone. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__standard_valve_api_source_8c_1a47a4137ed5e75bf918d1943eb49d1273">setStandardValveOutputValue</link> (uint16_t pressurezone_handler, uint8_t *station_data)</para>
+
+<para>Set standard valve output values for the specified pressure zone. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>system_discoverystatusinfo <link linkend="__standard_valve_api_source_8c_1a6dad6684cbe35726f4ae5cd7a3584616">system_info</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__standard_valve_api_source_8c_1ad19c359304948e3d3aea4c3ee826685c">internal_pressure_zone</link> [5]</para>
+</listitem>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__standard_valve_api_source_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This source file contains the API source related to ISEM diag paramter access(cyclic and acyclic data) </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__standard_valve_api_source_8c_1afffe0a8cc543604a9a4c31b71fe442bd"/><section>
+    <title>getPressureZoneProcessDataAddress()</title>
+<indexterm><primary>getPressureZoneProcessDataAddress</primary><secondary>StandardValveApiSource.c</secondary></indexterm>
+<indexterm><primary>StandardValveApiSource.c</primary><secondary>getPressureZoneProcessDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPressureZoneProcessDataAddress (uint16_t pz_handler)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_standard_valve_api_source_8c_afffe0a8cc543604a9a4c31b71fe442bd_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__standard_valve_api_source_8c_1ab5cd1d1e0b731d60d0db314633c74283"/><section>
+    <title>getStationCoilAPosition()</title>
+<indexterm><primary>getStationCoilAPosition</primary><secondary>StandardValveApiSource.c</secondary></indexterm>
+<indexterm><primary>StandardValveApiSource.c</primary><secondary>getStationCoilAPosition</secondary></indexterm>
+<para><computeroutput>uint32_t getStationCoilAPosition (uint16_t pressurezone_handler)</computeroutput></para><para>
+
+<para>Get the bit position of Coil A stations for a specific pressure zone. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pressurezone_handler</entry><entry>
+<para>Handler for the pressure zone. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Bit position value indicating Coil A presence for stations. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__standard_valve_api_source_8c_1ad8b309304f234e4b7838afa015ce2fd2"/><section>
+    <title>getStationCoilBPosition()</title>
+<indexterm><primary>getStationCoilBPosition</primary><secondary>StandardValveApiSource.c</secondary></indexterm>
+<indexterm><primary>StandardValveApiSource.c</primary><secondary>getStationCoilBPosition</secondary></indexterm>
+<para><computeroutput>uint32_t getStationCoilBPosition (uint16_t pressurezone_handler)</computeroutput></para><para>
+
+<para>Get the bit position of Coil B stations for a specific pressure zone. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pressurezone_handler</entry><entry>
+<para>Handler for the pressure zone. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Bit position value indicating Coil B presence for stations. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__standard_valve_api_source_8c_1a47a4137ed5e75bf918d1943eb49d1273"/><section>
+    <title>setStandardValveOutputValue()</title>
+<indexterm><primary>setStandardValveOutputValue</primary><secondary>StandardValveApiSource.c</secondary></indexterm>
+<indexterm><primary>StandardValveApiSource.c</primary><secondary>setStandardValveOutputValue</secondary></indexterm>
+<para><computeroutput>uint8_t setStandardValveOutputValue (uint16_t pressurezone_handler, uint8_t * station_data)</computeroutput></para><para>
+
+<para>Set standard valve output values for the specified pressure zone. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pressurezone_handler</entry><entry>
+<para>The handler ID for the target pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>station_data</entry><entry>
+<para>Pointer to a 6-byte array containing valve output statuses.<itemizedlist>
+<listitem>
+<para>1 byte contains 4 station statuses (2 bits per station: COIL A and COIL B).</para>
+</listitem><listitem>
+<para>Format: Byte 0: STA1–STA4 Byte 1: STA5–STA8 Byte 2: STA9–STA12 Byte 3: STA13–STA16 Byte 4: STA17–STA20 Byte 5: STA21–STA24</para>
+</listitem></itemizedlist>
+</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK on success, RET_ERROR on failure.</para>
+</formalpara>
+<note><title>Note</title>
+
+<para>The <computeroutput>station_data</computeroutput> pointer must reference exactly 6 valid bytes. </para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_standard_valve_api_source_8c_a47a4137ed5e75bf918d1943eb49d1273_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__standard_valve_api_source_8c_1a2383a3641c7a989a9d6c99be17bf45c8"/><section>
+    <title>writeSharedMemoryData()</title>
+<indexterm><primary>writeSharedMemoryData</primary><secondary>StandardValveApiSource.c</secondary></indexterm>
+<indexterm><primary>StandardValveApiSource.c</primary><secondary>writeSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t writeSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t addr, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_standard_valve_api_source_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__standard_valve_api_source_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>StandardValveApiSource.c</secondary></indexterm>
+<indexterm><primary>StandardValveApiSource.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__standard_valve_api_source_8c_1ad19c359304948e3d3aea4c3ee826685c"/><section>
+    <title>internal_pressure_zone</title>
+<indexterm><primary>internal_pressure_zone</primary><secondary>StandardValveApiSource.c</secondary></indexterm>
+<indexterm><primary>StandardValveApiSource.c</primary><secondary>internal_pressure_zone</secondary></indexterm>
+<para><computeroutput>uint8_t internal_pressure_zone[5]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__standard_valve_api_source_8c_1a6dad6684cbe35726f4ae5cd7a3584616"/><section>
+    <title>system_info</title>
+<indexterm><primary>system_info</primary><secondary>StandardValveApiSource.c</secondary></indexterm>
+<indexterm><primary>StandardValveApiSource.c</primary><secondary>system_info</secondary></indexterm>
+<para><computeroutput>system_discoverystatusinfo system_info<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

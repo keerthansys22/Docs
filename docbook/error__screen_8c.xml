@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_error__screen_8c" xml:lang="en-US">
+<title>GUI/Screens/error_screen.c File Reference</title>
+<indexterm><primary>GUI/Screens/error_screen.c</primary></indexterm>
+<para>
+
+<para>Source that displays error screen when there is an error. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?></programlisting>Include dependency graph for error_screen.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="error__screen_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_error__screen_8c_1a4198a5500b0e597aeee68e39200f0ad5">disp_error_screen</link> ()</para>
+
+<para>Function that calls the error display screen. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that displays error screen when there is an error. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_error__screen_8c_1a4198a5500b0e597aeee68e39200f0ad5"/><section>
+    <title>disp_error_screen()</title>
+<indexterm><primary>disp_error_screen</primary><secondary>error_screen.c</secondary></indexterm>
+<indexterm><primary>error_screen.c</primary><secondary>disp_error_screen</secondary></indexterm>
+<para><computeroutput>void disp_error_screen (void )</computeroutput></para><para>
+
+<para>Function that calls the error display screen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+</section>

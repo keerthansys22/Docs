@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__io_modules_8c" xml:lang="en-US">
+<title>API_Source/IoModulesApiSource.c/IoModules.c File Reference</title>
+<indexterm><primary>API_Source/IoModulesApiSource.c/IoModules.c</primary></indexterm>
+<para>
+
+<para>This file contains the source code of the io modules general functions. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for IoModules.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_io_modules_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="__io_modules_8c_1a91f3bb33371373e3e9b48b2290355551">getIOProcessDataInstanceAddress</link> (uint16_t handler)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__io_modules_8c_1aab64cdfe20fa84db4be92c96380d60a2">getIOServiceDataInstanceAddress</link> (uint16_t handler)</para>
+
+<para>: This is to get the address of the service data instance </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__io_modules_8c_1a043664b040817d73876f6a71652d7485">getIomoduleServiceParameterData</link> (uint16_t iodevicehandler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter data for a specified IO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__io_modules_8c_1afd2c6c98a642c2d347b891fa3fac06f2">setIomoduleServiceParameterData</link> (uint16_t iodevicehandler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified IO module. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file contains the source code of the io modules general functions. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__io_modules_8c_1a043664b040817d73876f6a71652d7485"/><section>
+    <title>getIomoduleServiceParameterData()</title>
+<indexterm><primary>getIomoduleServiceParameterData</primary><secondary>IoModules.c</secondary></indexterm>
+<indexterm><primary>IoModules.c</primary><secondary>getIomoduleServiceParameterData</secondary></indexterm>
+<para><computeroutput>uint8_t getIomoduleServiceParameterData (uint16_t iodevicehandler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter data for a specified IO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>iodevicehandler</entry><entry>
+<para>The handler for the IO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to retrieve. Refer to the enumeration <computeroutput>e_io_servicedata_parameter_name</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the buffer where the retrieved data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_io_modules_8c_a043664b040817d73876f6a71652d7485_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__io_modules_8c_1a91f3bb33371373e3e9b48b2290355551"/><section>
+    <title>getIOProcessDataInstanceAddress()</title>
+<indexterm><primary>getIOProcessDataInstanceAddress</primary><secondary>IoModules.c</secondary></indexterm>
+<indexterm><primary>IoModules.c</primary><secondary>getIOProcessDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOProcessDataInstanceAddress (uint16_t handler)</computeroutput></para>
+<para>@breif : This is to get the address of of the process data instance </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_io_modules_8c_a91f3bb33371373e3e9b48b2290355551_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__io_modules_8c_1aab64cdfe20fa84db4be92c96380d60a2"/><section>
+    <title>getIOServiceDataInstanceAddress()</title>
+<indexterm><primary>getIOServiceDataInstanceAddress</primary><secondary>IoModules.c</secondary></indexterm>
+<indexterm><primary>IoModules.c</primary><secondary>getIOServiceDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOServiceDataInstanceAddress (uint16_t handler)</computeroutput></para><para>
+
+<para>: This is to get the address of the service data instance </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_io_modules_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__io_modules_8c_1afd2c6c98a642c2d347b891fa3fac06f2"/><section>
+    <title>setIomoduleServiceParameterData()</title>
+<indexterm><primary>setIomoduleServiceParameterData</primary><secondary>IoModules.c</secondary></indexterm>
+<indexterm><primary>IoModules.c</primary><secondary>setIomoduleServiceParameterData</secondary></indexterm>
+<para><computeroutput>uint8_t setIomoduleServiceParameterData (uint16_t iodevicehandler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified IO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>iodevicehandler</entry><entry>
+<para>The handler for the IO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. Refer to the enumeration <computeroutput>e_io_servicedata_parameter_name</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_io_modules_8c_afd2c6c98a642c2d347b891fa3fac06f2_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

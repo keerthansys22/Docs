@@ -19,10 +19,11 @@ var searchData=
   ['station_5fflag_5ffault_16',['station_flag_fault',['../diag__valve__status__info_8c.html#ac9a0362fca0471874b6036793a24226c',1,'diag_valve_status_info.c']]],
   ['station_5fflag_5fwarning_17',['station_flag_warning',['../diag__valve__status__info_8c.html#a622544114a00d68e8aec2a522ee29aea',1,'diag_valve_status_info.c']]],
   ['station_5fnum_5flatest_18',['station_num_latest',['../diag__valve__status__info_8c.html#ac30e8b223c2b1984cd5c10e75b2cbcf6',1,'diag_valve_status_info.c']]],
-  ['str_19',['str',['../diag__valve__status__info_8c.html#a6baea1f31afef887972474d14894a004',1,'diag_valve_status_info.c']]],
-  ['str_5fisem_20',['str_isem',['../isem__status__info_8c.html#a41587f5122991b58fb24979bd7d8b6c6',1,'isem_status_info.c']]],
-  ['str_5fwar_21',['str_war',['../diag__valve__status__info_8c.html#ae280ec1798f7444318b05544ad4e66dd',1,'diag_valve_status_info.c']]],
-  ['str_5fwar_5fisem_22',['str_war_isem',['../isem__status__info_8c.html#aaa326b90680283c7b050db8bcf27d0e7',1,'isem_status_info.c']]],
-  ['sub_5findex_23',['sub_index',['../lvgl__gui_8c.html#a5a46d5f51f5374a876575371e288332e',1,'lvgl_gui.c']]],
-  ['system_5finfo_24',['system_info',['../_app_data_interce_8c.html#a6dad6684cbe35726f4ae5cd7a3584616',1,'system_info:&#160;AppDataInterce.c'],['../_data_server_fetch_8c.html#a6dad6684cbe35726f4ae5cd7a3584616',1,'system_info:&#160;AppDataInterce.c'],['../_standard_valve_api_source_8c.html#a6dad6684cbe35726f4ae5cd7a3584616',1,'system_info:&#160;AppDataInterce.c']]]
+  ['status_19',['status',['../structbackend__status__entry__t.html#ade818037fd6c985038ff29656089758d',1,'backend_status_entry_t']]],
+  ['str_20',['str',['../diag__valve__status__info_8c.html#a6baea1f31afef887972474d14894a004',1,'diag_valve_status_info.c']]],
+  ['str_5fisem_21',['str_isem',['../isem__status__info_8c.html#a41587f5122991b58fb24979bd7d8b6c6',1,'isem_status_info.c']]],
+  ['str_5fwar_22',['str_war',['../diag__valve__status__info_8c.html#ae280ec1798f7444318b05544ad4e66dd',1,'diag_valve_status_info.c']]],
+  ['str_5fwar_5fisem_23',['str_war_isem',['../isem__status__info_8c.html#aaa326b90680283c7b050db8bcf27d0e7',1,'isem_status_info.c']]],
+  ['sub_5findex_24',['sub_index',['../lvgl__gui_8c.html#a5a46d5f51f5374a876575371e288332e',1,'lvgl_gui.c']]],
+  ['system_5finfo_25',['system_info',['../_app_data_interce_8c.html#a6dad6684cbe35726f4ae5cd7a3584616',1,'system_info:&#160;AppDataInterce.c'],['../_data_server_fetch_8c.html#a6dad6684cbe35726f4ae5cd7a3584616',1,'system_info:&#160;AppDataInterce.c'],['../_standard_valve_api_source_8c.html#a6dad6684cbe35726f4ae5cd7a3584616',1,'system_info:&#160;AppDataInterce.c']]]
 ];

@@ -1,0 +1,117 @@
+\doxysection{Initializations/\+Indication/indication.c File Reference}
+\hypertarget{indication_8c}{}\label{indication_8c}\index{Initializations/Indication/indication.c@{Initializations/Indication/indication.c}}
+
+
+Source that initializes and self-\/test the indication i2c-\/1.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+Include dependency graph for indication.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{indication_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{indication_8c_a8a6c12d0194007da86226886cfce89b4}{I2\+C\+\_\+\+DEVICE}}~"{}/dev/i2c-\/1"{}
+\item 
+\#define \mbox{\hyperlink{indication_8c_aa6bcdac5119906d2c99dc8331533d28f}{I2\+C\+\_\+1\+\_\+\+ADDR1}}~0x22
+\item 
+\#define \mbox{\hyperlink{indication_8c_a594860e1ee49b3c8b145bda07bb0f3e4}{I2\+C\+\_\+1\+\_\+\+ADDR2}}~0x26
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{indication_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5}{indication\+\_\+self\+\_\+test}} (void)
+\begin{DoxyCompactList}\small\item\em Test to check the I2C read and write functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct i2c\+\_\+msg \mbox{\hyperlink{indication_8c_a26546fa59bb9d376eee575657dab9fe1}{i2cmsg}}
+\item 
+struct i2c\+\_\+rdwr\+\_\+ioctl\+\_\+data \mbox{\hyperlink{indication_8c_a8e38fc06f9426ed6e7bad6a4dc5e0980}{msg\+\_\+rdwr}}
+\item 
+int \mbox{\hyperlink{indication_8c_a41b2ae55793685136cd8f87b0ff4b669}{i2c\+\_\+va\+\_\+led\+\_\+file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that initializes and self-\/test the indication i2c-\/1. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{indication_8c_aa6bcdac5119906d2c99dc8331533d28f}\index{indication.c@{indication.c}!I2C\_1\_ADDR1@{I2C\_1\_ADDR1}}
+\index{I2C\_1\_ADDR1@{I2C\_1\_ADDR1}!indication.c@{indication.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_1\_ADDR1}{I2C\_1\_ADDR1}}
+{\footnotesize\ttfamily \label{indication_8c_aa6bcdac5119906d2c99dc8331533d28f} 
+\#define I2\+C\+\_\+1\+\_\+\+ADDR1~0x22}
+
+\Hypertarget{indication_8c_a594860e1ee49b3c8b145bda07bb0f3e4}\index{indication.c@{indication.c}!I2C\_1\_ADDR2@{I2C\_1\_ADDR2}}
+\index{I2C\_1\_ADDR2@{I2C\_1\_ADDR2}!indication.c@{indication.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_1\_ADDR2}{I2C\_1\_ADDR2}}
+{\footnotesize\ttfamily \label{indication_8c_a594860e1ee49b3c8b145bda07bb0f3e4} 
+\#define I2\+C\+\_\+1\+\_\+\+ADDR2~0x26}
+
+\Hypertarget{indication_8c_a8a6c12d0194007da86226886cfce89b4}\index{indication.c@{indication.c}!I2C\_DEVICE@{I2C\_DEVICE}}
+\index{I2C\_DEVICE@{I2C\_DEVICE}!indication.c@{indication.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_DEVICE}{I2C\_DEVICE}}
+{\footnotesize\ttfamily \label{indication_8c_a8a6c12d0194007da86226886cfce89b4} 
+\#define I2\+C\+\_\+\+DEVICE~"{}/dev/i2c-\/1"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{indication_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5}\index{indication.c@{indication.c}!indication\_self\_test@{indication\_self\_test}}
+\index{indication\_self\_test@{indication\_self\_test}!indication.c@{indication.c}}
+\doxysubsubsection{\texorpdfstring{indication\_self\_test()}{indication\_self\_test()}}
+{\footnotesize\ttfamily \label{indication_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5} 
+int indication\+\_\+self\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test to check the I2C read and write functionality. 
+
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESS\+\_\+test on success, API\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{indication_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{indication_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{indication_8c_a41b2ae55793685136cd8f87b0ff4b669}\index{indication.c@{indication.c}!i2c\_va\_led\_file@{i2c\_va\_led\_file}}
+\index{i2c\_va\_led\_file@{i2c\_va\_led\_file}!indication.c@{indication.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_va\_led\_file}{i2c\_va\_led\_file}}
+{\footnotesize\ttfamily \label{indication_8c_a41b2ae55793685136cd8f87b0ff4b669} 
+int i2c\+\_\+va\+\_\+led\+\_\+file}
+
+\Hypertarget{indication_8c_a26546fa59bb9d376eee575657dab9fe1}\index{indication.c@{indication.c}!i2cmsg@{i2cmsg}}
+\index{i2cmsg@{i2cmsg}!indication.c@{indication.c}}
+\doxysubsubsection{\texorpdfstring{i2cmsg}{i2cmsg}}
+{\footnotesize\ttfamily \label{indication_8c_a26546fa59bb9d376eee575657dab9fe1} 
+struct i2c\+\_\+msg i2cmsg}
+
+\Hypertarget{indication_8c_a8e38fc06f9426ed6e7bad6a4dc5e0980}\index{indication.c@{indication.c}!msg\_rdwr@{msg\_rdwr}}
+\index{msg\_rdwr@{msg\_rdwr}!indication.c@{indication.c}}
+\doxysubsubsection{\texorpdfstring{msg\_rdwr}{msg\_rdwr}}
+{\footnotesize\ttfamily \label{indication_8c_a8e38fc06f9426ed6e7bad6a4dc5e0980} 
+struct i2c\+\_\+rdwr\+\_\+ioctl\+\_\+data msg\+\_\+rdwr}
+

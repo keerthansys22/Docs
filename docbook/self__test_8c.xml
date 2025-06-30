@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_self__test_8c" xml:lang="en-US">
+<title>Self_Tests/self_test.c File Reference</title>
+<indexterm><primary>Self_Tests/self_test.c</primary></indexterm>
+<para>
+
+<para>source file that checks power-on self test </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &quot;main.h&quot;<?linebreak?></programlisting>Include dependency graph for self_test.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="self__test_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_self__test_8c_1ab74f2a3ded48c6ef69bb9007b3a75fa5">indication_self_test</link> (void)</para>
+
+<para>Test to check the I2C read and write functionality. </para>
+</listitem>
+            <listitem><para>int <link linkend="_self__test_8c_1afa6dcc66b21477fb9074d352884a00ce">self_test</link> (void)</para>
+
+<para>Power-On self-test to test the peripherals. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>source file that checks power-on self test </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_self__test_8c_1ab74f2a3ded48c6ef69bb9007b3a75fa5"/><section>
+    <title>indication_self_test()</title>
+<indexterm><primary>indication_self_test</primary><secondary>self_test.c</secondary></indexterm>
+<indexterm><primary>self_test.c</primary><secondary>indication_self_test</secondary></indexterm>
+<para><computeroutput>int indication_self_test (void )</computeroutput></para><para>
+
+<para>Test to check the I2C read and write functionality. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test on success, API_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="self__test_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="self__test_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_self__test_8c_1afa6dcc66b21477fb9074d352884a00ce"/><section>
+    <title>self_test()</title>
+<indexterm><primary>self_test</primary><secondary>self_test.c</secondary></indexterm>
+<indexterm><primary>self_test.c</primary><secondary>self_test</secondary></indexterm>
+<para><computeroutput>int self_test (void )</computeroutput></para><para>
+
+<para>Power-On self-test to test the peripherals. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test on success or API_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="self__test_8c_afa6dcc66b21477fb9074d352884a00ce_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

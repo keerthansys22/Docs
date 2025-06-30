@@ -1,0 +1,1233 @@
+\doxysection{API\+\_\+\+Source/\+App\+Data\+Interce.c File Reference}
+\hypertarget{_app_data_interce_8c}{}\label{_app_data_interce_8c}\index{API\_Source/AppDataInterce.c@{API\_Source/AppDataInterce.c}}
+
+
+This contain all the common api of the modules.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}linux/rpmsg.\+h"{}}\newline
+{\ttfamily \#include "{}ti\+\_\+rpmsg\+\_\+char.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for App\+Data\+Interce.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_app_data_interce_8c_a440122b4f7aff7e19931863de775cb51}{HANDELRS\+\_\+\+VERBOSE}}~0
+\item 
+\#define \mbox{\hyperlink{_app_data_interce_8c_af32a2b76bfd84ab81bfd808e1dc427a9}{GERNERAL\+\_\+\+VERBOSE}}~0
+\item 
+\#define \mbox{\hyperlink{_app_data_interce_8c_a13b7fb72a90a8488b6e502da0f432be6}{API\+\_\+\+NAME\+\_\+\+VERBOSE}}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_aab64cdfe20fa84db4be92c96380d60a2}{get\+IOService\+Data\+Instance\+Address}} (uint16\+\_\+t handler)
+\begin{DoxyCompactList}\small\item\em \+: This is to get the address of the service data instance \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_afa3d041d8597ff5b49a58ec5e13f2ea4}{get\+Presssure\+Zone\+Service\+Data\+Address}} (uint16\+\_\+t pz\+\_\+handler)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_acf4b478db18710fcdd7868a9aa4e3ec7}{get\+Prop\+Zone\+Service\+Data\+Address}} (uint16\+\_\+t propzone\+\_\+handler)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_ae512dcee3f48f317872617e5f4559b19}{read\+Shared\+Memory\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size)
+\item 
+int \mbox{\hyperlink{_app_data_interce_8c_ac92a673771db92e7156490091aef7135}{init}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_a510fa21187d2bc7234c063942d17a85f}{read\+Discovery\+Info}} (system\+\_\+discoverystatusinfo \texorpdfstring{$\ast$}{*}info)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_ad1a2eb9dcf28f6272ba0ba67eb0e802d}{get\+Discovery\+Details}} (s\+\_\+discovery\+\_\+details \texorpdfstring{$\ast$}{*}discovery\+\_\+detail)
+\begin{DoxyCompactList}\small\item\em Retrieve the discovery details of the modules. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_a1b65dccef5e16451b2ff09b40f8f28ca}{get\+Main\+Bus\+Handlers}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the Main Bus Handler. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_aeba633b8bfe717f26b91e9035f01b7f1}{get\+DIDevice\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for DI (Digital Input) modules. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_a9cc23bdb3b5e1b67530bbcbbef48e339}{get\+DODevice\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for DO (Digital output) modules. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_a3fa80841f585da80163ab056466b213d}{get\+DIODevice\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for DIO (Digital input output) modules. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_abf8b757f9f7ffdab556fac4e2820deb9}{get\+AIDevice\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for AI (Analog Input) modules. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_a523d5536043e2248772f5b5c0c3448ce}{get\+AODevice\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for AO (Analog Output) modules. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_a89e43b764a633d86b33b7e8fe437f256}{get\+AIODevice\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for AIO (Analog Input Output) modules. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_ad2985c903d0633288a5f3922334a6bd9}{get\+Pressure\+Zone\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the pressure zone handlers. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_a0a0d54861042d4ff550ea56a0dd816de}{get\+Pressure\+Zone\+Device\+Count\+Details}} (uint16\+\_\+t pressurezone\+\_\+handler, s\+\_\+prszone\+\_\+device\+\_\+count\+\_\+details \texorpdfstring{$\ast$}{*}pressurezone\+\_\+device\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Retrieves the device count from the specified pressure zone. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_a1f7998cf4936f312918dcb757d2344dc}{get\+External\+Prop\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the External Prop handlers. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_abf7ee8a86a9a734763668b9475436291}{get\+Isem\+Diag\+Handler}} (uint16\+\_\+t pressurezone\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for ISEM Diag module. \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_a8a191d56670ac7df40f394881b28344f}{get\+Standard\+Valve\+Handler}} (uint16\+\_\+t pressurezone\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for Standard Valve . \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_aece12e0108637e90d7f9695bc5d8caeb}{get\+Diag\+Valve\+Handler}} (uint16\+\_\+t pressurezone\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for Diag Valve . \end{DoxyCompactList}\item 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_interce_8c_a5602d1d731ab6db4c1f868ef03e01b51}{get\+Internal\+Prop\+Handler}} (uint16\+\_\+t pressurezone\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Retrieve the device handlers for Internal Prop . \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_ad3af788c60c86efbf57dd019321d2c3f}{get\+IOMod\+Identification\+Info}} (uint16\+\_\+t iodevice\+\_\+handler, s\+\_\+io\+\_\+identification\+\_\+info \texorpdfstring{$\ast$}{*}identification\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Retrieves the Digital Module Identification Info. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_aab42112e209d3e8af95f537bd7f0dfef}{get\+Digital\+Mod\+Identification\+Info}} (uint16\+\_\+t digital\+\_\+module\+\_\+handler, s\+\_\+io\+\_\+identification\+\_\+info \texorpdfstring{$\ast$}{*}identification\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Retrieves the Digital Module Identification Info. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_a74ddf7a39feee23540341c6521dc6000}{get\+Analog\+Mod\+Identification\+Info}} (uint16\+\_\+t analog\+\_\+module\+\_\+handler, s\+\_\+io\+\_\+identification\+\_\+info \texorpdfstring{$\ast$}{*}identification\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Retrieves the identification info of the requested analog module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_a41267b33c0c393b95c0460209f09b02b}{get\+Isem\+Diag\+Identification\+Info}} (uint16\+\_\+t pressurezone\+\_\+handler, uint16\+\_\+t isemdiag\+\_\+handler, isemdiagidentificationinfo \texorpdfstring{$\ast$}{*}identification\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Retrieves the identification info of the ISEM DIAG valve. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_ac71ff25182fc836e00281aa2b64038c5}{get\+Diag\+Valve\+Identification\+Info}} (uint16\+\_\+t pressurezone\+\_\+handler, uint16\+\_\+t diagvalve\+\_\+handler, diagvalveidentificationinfo \texorpdfstring{$\ast$}{*}identification\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Retrieves the identification info of the diagnostic valve. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_ac638b98825de1fdd9a55f36b77297f55}{get\+Int\+Prop\+Identification\+Info}} (uint16\+\_\+t pressurezone\+\_\+handler, uint16\+\_\+t internal\+\_\+prop\+\_\+handler, propidentificationinfo \texorpdfstring{$\ast$}{*}identification\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Retrieves the identification info of the Internal Prop . \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_ad9b02c253eb339a52cfef89977d11b91}{get\+Ext\+Prop\+Identification\+Info}} (uint16\+\_\+t extprop\+\_\+handler, propidentificationinfo \texorpdfstring{$\ast$}{*}identification\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Retrieves the identification info of the External prop. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_aa97f8415a0ba0596ba9e90c156378a95}{get\+Device\+Position}} (uint16\+\_\+t device\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Retrieves the position of a specified device. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_ac6ac24a2c74b160fa3e091b39598ab4c}{get\+Iodevice\+Part\+Number}} (uint16\+\_\+t device\+\_\+handler, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em This api is to get the IO device part number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_app_data_interce_8c_abb1f7159217e65e903f6658d812ccded}{get\+Isem\+Diag\+Part\+Number}} (void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em This api is to get the IO device part number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_app_data_interce_8c_a87e83e7a320bbdc787d99f4274b5acd4}{get\+Diag\+Valve\+Part\+Number}} (void \texorpdfstring{$\ast$}{*}data)
+\item 
+void \mbox{\hyperlink{_app_data_interce_8c_a42fce8bf6559b335d1d32c6f8d043e54}{get\+Internal\+Prop\+Part\+Numeber}} (void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em This api is to get the Internal Prop Valve Part number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_app_data_interce_8c_a46e2d1acaec3ced3fc4301e7c7d42fb2}{get\+External\+Prop\+Part\+Number}} (void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em This api is to get the External Prop Valve Part number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \mbox{\hyperlink{_app_data_interce_8c_ad9088d5017838792bd64e604162503df}{gbuf}}
+\item 
+system\+\_\+discoverystatusinfo \mbox{\hyperlink{_app_data_interce_8c_a6dad6684cbe35726f4ae5cd7a3584616}{system\+\_\+info}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_ad19c359304948e3d3aea4c3ee826685c}{internal\+\_\+pressure\+\_\+zone}} \mbox{[}5\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_interce_8c_a0441d0acf0c675222c4e9a8d4a853348}{external\+\_\+pressurezone}} \mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This contain all the common api of the modules. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_app_data_interce_8c_a13b7fb72a90a8488b6e502da0f432be6}\index{AppDataInterce.c@{AppDataInterce.c}!API\_NAME\_VERBOSE@{API\_NAME\_VERBOSE}}
+\index{API\_NAME\_VERBOSE@{API\_NAME\_VERBOSE}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{API\_NAME\_VERBOSE}{API\_NAME\_VERBOSE}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a13b7fb72a90a8488b6e502da0f432be6} 
+\#define API\+\_\+\+NAME\+\_\+\+VERBOSE~1}
+
+\Hypertarget{_app_data_interce_8c_af32a2b76bfd84ab81bfd808e1dc427a9}\index{AppDataInterce.c@{AppDataInterce.c}!GERNERAL\_VERBOSE@{GERNERAL\_VERBOSE}}
+\index{GERNERAL\_VERBOSE@{GERNERAL\_VERBOSE}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{GERNERAL\_VERBOSE}{GERNERAL\_VERBOSE}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_af32a2b76bfd84ab81bfd808e1dc427a9} 
+\#define GERNERAL\+\_\+\+VERBOSE~0}
+
+\Hypertarget{_app_data_interce_8c_a440122b4f7aff7e19931863de775cb51}\index{AppDataInterce.c@{AppDataInterce.c}!HANDELRS\_VERBOSE@{HANDELRS\_VERBOSE}}
+\index{HANDELRS\_VERBOSE@{HANDELRS\_VERBOSE}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{HANDELRS\_VERBOSE}{HANDELRS\_VERBOSE}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a440122b4f7aff7e19931863de775cb51} 
+\#define HANDELRS\+\_\+\+VERBOSE~0}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_app_data_interce_8c_abf8b757f9f7ffdab556fac4e2820deb9}\index{AppDataInterce.c@{AppDataInterce.c}!getAIDeviceHandler@{getAIDeviceHandler}}
+\index{getAIDeviceHandler@{getAIDeviceHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getAIDeviceHandler()}{getAIDeviceHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_abf8b757f9f7ffdab556fac4e2820deb9} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+AIDevice\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for AI (Analog Input) modules. 
+
+This API returns an array of handlers for AI modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for AI modules.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: DI module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is 9, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_abf8b757f9f7ffdab556fac4e2820deb9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a89e43b764a633d86b33b7e8fe437f256}\index{AppDataInterce.c@{AppDataInterce.c}!getAIODeviceHandler@{getAIODeviceHandler}}
+\index{getAIODeviceHandler@{getAIODeviceHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getAIODeviceHandler()}{getAIODeviceHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a89e43b764a633d86b33b7e8fe437f256} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+AIODevice\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for AIO (Analog Input Output) modules. 
+
+This API returns an array of handlers for DI modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for AIO modules.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: AIO module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is 9, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a89e43b764a633d86b33b7e8fe437f256_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a74ddf7a39feee23540341c6521dc6000}\index{AppDataInterce.c@{AppDataInterce.c}!getAnalogModIdentificationInfo@{getAnalogModIdentificationInfo}}
+\index{getAnalogModIdentificationInfo@{getAnalogModIdentificationInfo}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getAnalogModIdentificationInfo()}{getAnalogModIdentificationInfo()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a74ddf7a39feee23540341c6521dc6000} 
+uint8\+\_\+t get\+Analog\+Mod\+Identification\+Info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{analog\+\_\+module\+\_\+handler}{, }\item[{s\+\_\+io\+\_\+identification\+\_\+info \texorpdfstring{$\ast$}{*}}]{identification\+\_\+info}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the identification info of the requested analog module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em analog\+\_\+module\+\_\+handler} & Device handler of the analog module \mbox{[}AI, AO, AIO\mbox{]}. \\
+\hline
+\mbox{\texttt{ out}}  & {\em identification\+\_\+info} & Pointer to the {\ttfamily s\+\_\+io\+\_\+identification\+\_\+info} structure to store identification details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a74ddf7a39feee23540341c6521dc6000_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a74ddf7a39feee23540341c6521dc6000_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a523d5536043e2248772f5b5c0c3448ce}\index{AppDataInterce.c@{AppDataInterce.c}!getAODeviceHandler@{getAODeviceHandler}}
+\index{getAODeviceHandler@{getAODeviceHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getAODeviceHandler()}{getAODeviceHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a523d5536043e2248772f5b5c0c3448ce} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+AODevice\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for AO (Analog Output) modules. 
+
+This API returns an array of handlers for AO modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for AO modules.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: DI module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is 9, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a523d5536043e2248772f5b5c0c3448ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_aa97f8415a0ba0596ba9e90c156378a95}\index{AppDataInterce.c@{AppDataInterce.c}!getDevicePosition@{getDevicePosition}}
+\index{getDevicePosition@{getDevicePosition}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDevicePosition()}{getDevicePosition()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_aa97f8415a0ba0596ba9e90c156378a95} 
+uint8\+\_\+t get\+Device\+Position (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{device\+\_\+handler}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the position of a specified device. 
+
+This function returns the position of the device, which can be one of the following\+: MBN, IO modules, ISEM\+\_\+\+DIAG, DIAG\+\_\+\+VALVE, STANDARD\+\_\+\+VALVE, Internal Prop and External Prop.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device\+\_\+handler} & The handler for the device whose position is required.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the position of the device. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_aa97f8415a0ba0596ba9e90c156378a95_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_aece12e0108637e90d7f9695bc5d8caeb}\index{AppDataInterce.c@{AppDataInterce.c}!getDiagValveHandler@{getDiagValveHandler}}
+\index{getDiagValveHandler@{getDiagValveHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDiagValveHandler()}{getDiagValveHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_aece12e0108637e90d7f9695bc5d8caeb} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+Diag\+Valve\+Handler (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pressurezone\+\_\+handler}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for Diag Valve . 
+
+This API returns an array of handlers for Diag Valve. in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for Diag Valve.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: Diag Valve module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE +1, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_aece12e0108637e90d7f9695bc5d8caeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ac71ff25182fc836e00281aa2b64038c5}\index{AppDataInterce.c@{AppDataInterce.c}!getDiagValveIdentificationInfo@{getDiagValveIdentificationInfo}}
+\index{getDiagValveIdentificationInfo@{getDiagValveIdentificationInfo}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDiagValveIdentificationInfo()}{getDiagValveIdentificationInfo()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ac71ff25182fc836e00281aa2b64038c5} 
+uint8\+\_\+t get\+Diag\+Valve\+Identification\+Info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pressurezone\+\_\+handler}{, }\item[{uint16\+\_\+t}]{diagvalve\+\_\+handler}{, }\item[{diagvalveidentificationinfo \texorpdfstring{$\ast$}{*}}]{identification\+\_\+info}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the identification info of the diagnostic valve. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pressurezone\+\_\+handler} & Handler for the specific pressure zone. \\
+\hline
+\mbox{\texttt{ in}}  & {\em diagvalve\+\_\+handler} & Handler for the diagnostic valve. \\
+\hline
+\mbox{\texttt{ out}}  & {\em identification\+\_\+info} & Pointer to the {\ttfamily diagvalveidentificationinfo} structure to store identification details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ac71ff25182fc836e00281aa2b64038c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ac71ff25182fc836e00281aa2b64038c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a87e83e7a320bbdc787d99f4274b5acd4}\index{AppDataInterce.c@{AppDataInterce.c}!getDiagValvePartNumber@{getDiagValvePartNumber}}
+\index{getDiagValvePartNumber@{getDiagValvePartNumber}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDiagValvePartNumber()}{getDiagValvePartNumber()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a87e83e7a320bbdc787d99f4274b5acd4} 
+void get\+Diag\+Valve\+Part\+Number (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_interce_8c_aeba633b8bfe717f26b91e9035f01b7f1}\index{AppDataInterce.c@{AppDataInterce.c}!getDIDeviceHandler@{getDIDeviceHandler}}
+\index{getDIDeviceHandler@{getDIDeviceHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDIDeviceHandler()}{getDIDeviceHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_aeba633b8bfe717f26b91e9035f01b7f1} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+DIDevice\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for DI (Digital Input) modules. 
+
+This API returns an array of handlers for DI modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for DI modules.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: DI module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is 9, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_aeba633b8bfe717f26b91e9035f01b7f1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_aab42112e209d3e8af95f537bd7f0dfef}\index{AppDataInterce.c@{AppDataInterce.c}!getDigitalModIdentificationInfo@{getDigitalModIdentificationInfo}}
+\index{getDigitalModIdentificationInfo@{getDigitalModIdentificationInfo}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDigitalModIdentificationInfo()}{getDigitalModIdentificationInfo()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_aab42112e209d3e8af95f537bd7f0dfef} 
+uint8\+\_\+t get\+Digital\+Mod\+Identification\+Info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{digital\+\_\+module\+\_\+handler}{, }\item[{s\+\_\+io\+\_\+identification\+\_\+info \texorpdfstring{$\ast$}{*}}]{identification\+\_\+info}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the Digital Module Identification Info. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em digital\+\_\+module\+\_\+handler} & Device handler of the digital module \mbox{[}DI, DO, DIO\mbox{]}. \\
+\hline
+\mbox{\texttt{ out}}  & {\em identification\+\_\+info} & Pointer to the {\ttfamily s\+\_\+io\+\_\+identification\+\_\+info} structure to store identification details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_aab42112e209d3e8af95f537bd7f0dfef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_aab42112e209d3e8af95f537bd7f0dfef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a3fa80841f585da80163ab056466b213d}\index{AppDataInterce.c@{AppDataInterce.c}!getDIODeviceHandler@{getDIODeviceHandler}}
+\index{getDIODeviceHandler@{getDIODeviceHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDIODeviceHandler()}{getDIODeviceHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a3fa80841f585da80163ab056466b213d} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+DIODevice\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for DIO (Digital input output) modules. 
+
+This API returns an array of handlers for DIO modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for DIO modules.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: DIO module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is 9, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a3fa80841f585da80163ab056466b213d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ad1a2eb9dcf28f6272ba0ba67eb0e802d}\index{AppDataInterce.c@{AppDataInterce.c}!getDiscoveryDetails@{getDiscoveryDetails}}
+\index{getDiscoveryDetails@{getDiscoveryDetails}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDiscoveryDetails()}{getDiscoveryDetails()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ad1a2eb9dcf28f6272ba0ba67eb0e802d} 
+uint8\+\_\+t get\+Discovery\+Details (\begin{DoxyParamCaption}\item[{s\+\_\+discovery\+\_\+details \texorpdfstring{$\ast$}{*}}]{discovery\+\_\+detail}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the discovery details of the modules. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em discovery\+\_\+detail} & Pointer to a structure where the discovery details will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item RET\+\_\+\+OK on success.
+\item RET\+\_\+\+ERROR on failure
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The {\ttfamily s\+\_\+discovery\+\_\+details} structure will include the product name and the counts of various module types (DI, DO, DIO, AI, AO, AIO, Pressure Zones, Prop\+Zones). 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ad1a2eb9dcf28f6272ba0ba67eb0e802d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ad1a2eb9dcf28f6272ba0ba67eb0e802d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a9cc23bdb3b5e1b67530bbcbbef48e339}\index{AppDataInterce.c@{AppDataInterce.c}!getDODeviceHandler@{getDODeviceHandler}}
+\index{getDODeviceHandler@{getDODeviceHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getDODeviceHandler()}{getDODeviceHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a9cc23bdb3b5e1b67530bbcbbef48e339} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+DODevice\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for DO (Digital output) modules. 
+
+This API returns an array of handlers for DO modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for DO modules.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: DO module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is 9, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a9cc23bdb3b5e1b67530bbcbbef48e339_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a1f7998cf4936f312918dcb757d2344dc}\index{AppDataInterce.c@{AppDataInterce.c}!getExternalPropHandler@{getExternalPropHandler}}
+\index{getExternalPropHandler@{getExternalPropHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getExternalPropHandler()}{getExternalPropHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a1f7998cf4936f312918dcb757d2344dc} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+External\+Prop\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the External Prop handlers. 
+
+This API returns an array of External Prop handlers. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for the External Prop
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: External Prop handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is MAX\+\_\+\+EXTERNAL\+\_\+\+PROP\+\_\+\+ZONE+1, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a1f7998cf4936f312918dcb757d2344dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a46e2d1acaec3ced3fc4301e7c7d42fb2}\index{AppDataInterce.c@{AppDataInterce.c}!getExternalPropPartNumber@{getExternalPropPartNumber}}
+\index{getExternalPropPartNumber@{getExternalPropPartNumber}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getExternalPropPartNumber()}{getExternalPropPartNumber()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a46e2d1acaec3ced3fc4301e7c7d42fb2} 
+void get\+External\+Prop\+Part\+Number (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+This api is to get the External Prop Valve Part number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the buffer to which the data to be retrived. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a46e2d1acaec3ced3fc4301e7c7d42fb2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ad9b02c253eb339a52cfef89977d11b91}\index{AppDataInterce.c@{AppDataInterce.c}!getExtPropIdentificationInfo@{getExtPropIdentificationInfo}}
+\index{getExtPropIdentificationInfo@{getExtPropIdentificationInfo}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getExtPropIdentificationInfo()}{getExtPropIdentificationInfo()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ad9b02c253eb339a52cfef89977d11b91} 
+uint8\+\_\+t get\+Ext\+Prop\+Identification\+Info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{extprop\+\_\+handler}{, }\item[{propidentificationinfo \texorpdfstring{$\ast$}{*}}]{identification\+\_\+info}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the identification info of the External prop. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em extprop\+\_\+handler} & for the External prop. \\
+\hline
+\mbox{\texttt{ out}}  & {\em identification\+\_\+info} & Pointer to the {\ttfamily propidentificationinfo} structure to store identification details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ad9b02c253eb339a52cfef89977d11b91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ad9b02c253eb339a52cfef89977d11b91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a5602d1d731ab6db4c1f868ef03e01b51}\index{AppDataInterce.c@{AppDataInterce.c}!getInternalPropHandler@{getInternalPropHandler}}
+\index{getInternalPropHandler@{getInternalPropHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getInternalPropHandler()}{getInternalPropHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a5602d1d731ab6db4c1f868ef03e01b51} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+Internal\+Prop\+Handler (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pressurezone\+\_\+handler}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for Internal Prop . 
+
+This API returns an array of handlers for Internal Prop . in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for Prop Station.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: Prop Station Handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is MAX\+\_\+\+PROP\+\_\+\+STATION\+\_\+\+PER\+\_\+\+PZZONE +1, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a5602d1d731ab6db4c1f868ef03e01b51_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a42fce8bf6559b335d1d32c6f8d043e54}\index{AppDataInterce.c@{AppDataInterce.c}!getInternalPropPartNumeber@{getInternalPropPartNumeber}}
+\index{getInternalPropPartNumeber@{getInternalPropPartNumeber}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getInternalPropPartNumeber()}{getInternalPropPartNumeber()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a42fce8bf6559b335d1d32c6f8d043e54} 
+void get\+Internal\+Prop\+Part\+Numeber (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+This api is to get the Internal Prop Valve Part number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the buffer to which the data to be retrived. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a42fce8bf6559b335d1d32c6f8d043e54_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ac638b98825de1fdd9a55f36b77297f55}\index{AppDataInterce.c@{AppDataInterce.c}!getIntPropIdentificationInfo@{getIntPropIdentificationInfo}}
+\index{getIntPropIdentificationInfo@{getIntPropIdentificationInfo}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getIntPropIdentificationInfo()}{getIntPropIdentificationInfo()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ac638b98825de1fdd9a55f36b77297f55} 
+uint8\+\_\+t get\+Int\+Prop\+Identification\+Info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pressurezone\+\_\+handler}{, }\item[{uint16\+\_\+t}]{internal\+\_\+prop\+\_\+handler}{, }\item[{propidentificationinfo \texorpdfstring{$\ast$}{*}}]{identification\+\_\+info}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the identification info of the Internal Prop . 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pressurezone\+\_\+handler} & Handler for the specific pressure zone. \\
+\hline
+\mbox{\texttt{ in}}  & {\em internal\+\_\+prop\+\_\+handler} & Handler for the Internal Prop . \\
+\hline
+\mbox{\texttt{ out}}  & {\em identification\+\_\+info} & Pointer to the {\ttfamily propidentificationinfo} structure to store identification details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ac638b98825de1fdd9a55f36b77297f55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ac638b98825de1fdd9a55f36b77297f55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ac6ac24a2c74b160fa3e091b39598ab4c}\index{AppDataInterce.c@{AppDataInterce.c}!getIodevicePartNumber@{getIodevicePartNumber}}
+\index{getIodevicePartNumber@{getIodevicePartNumber}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getIodevicePartNumber()}{getIodevicePartNumber()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ac6ac24a2c74b160fa3e091b39598ab4c} 
+uint8\+\_\+t get\+Iodevice\+Part\+Number (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{device\+\_\+handler}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+This api is to get the IO device part number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device\+\_\+handler} & The handler for the IO device. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the buffer to which the data to be retrived. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ac6ac24a2c74b160fa3e091b39598ab4c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ac6ac24a2c74b160fa3e091b39598ab4c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ad3af788c60c86efbf57dd019321d2c3f}\index{AppDataInterce.c@{AppDataInterce.c}!getIOModIdentificationInfo@{getIOModIdentificationInfo}}
+\index{getIOModIdentificationInfo@{getIOModIdentificationInfo}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getIOModIdentificationInfo()}{getIOModIdentificationInfo()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ad3af788c60c86efbf57dd019321d2c3f} 
+uint8\+\_\+t get\+IOMod\+Identification\+Info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{iodevice\+\_\+handler}{, }\item[{s\+\_\+io\+\_\+identification\+\_\+info \texorpdfstring{$\ast$}{*}}]{identification\+\_\+info}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the Digital Module Identification Info. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em digital\+\_\+module\+\_\+handler} & Device handler of the digital module \mbox{[}DI, DO, DIO\mbox{]}. \\
+\hline
+\mbox{\texttt{ out}}  & {\em identification\+\_\+info} & Pointer to the {\ttfamily s\+\_\+io\+\_\+identification\+\_\+info} structure to store identification details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ad3af788c60c86efbf57dd019321d2c3f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_aab64cdfe20fa84db4be92c96380d60a2}\index{AppDataInterce.c@{AppDataInterce.c}!getIOServiceDataInstanceAddress@{getIOServiceDataInstanceAddress}}
+\index{getIOServiceDataInstanceAddress@{getIOServiceDataInstanceAddress}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getIOServiceDataInstanceAddress()}{getIOServiceDataInstanceAddress()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_aab64cdfe20fa84db4be92c96380d60a2} 
+uint32\+\_\+t get\+IOService\+Data\+Instance\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{handler}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+\+: This is to get the address of the service data instance 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_abf7ee8a86a9a734763668b9475436291}\index{AppDataInterce.c@{AppDataInterce.c}!getIsemDiagHandler@{getIsemDiagHandler}}
+\index{getIsemDiagHandler@{getIsemDiagHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getIsemDiagHandler()}{getIsemDiagHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_abf7ee8a86a9a734763668b9475436291} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+Isem\+Diag\+Handler (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pressurezone\+\_\+handler}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for ISEM Diag module. 
+
+This API returns an array of handlers for ISEM Diag Module. in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for ISEM Diag module.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: ISEM Diag module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is MAX\+\_\+\+ISEM\+\_\+\+PEE\+\_\+\+PZZONE +1, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_abf7ee8a86a9a734763668b9475436291_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a41267b33c0c393b95c0460209f09b02b}\index{AppDataInterce.c@{AppDataInterce.c}!getIsemDiagIdentificationInfo@{getIsemDiagIdentificationInfo}}
+\index{getIsemDiagIdentificationInfo@{getIsemDiagIdentificationInfo}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getIsemDiagIdentificationInfo()}{getIsemDiagIdentificationInfo()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a41267b33c0c393b95c0460209f09b02b} 
+uint8\+\_\+t get\+Isem\+Diag\+Identification\+Info (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pressurezone\+\_\+handler}{, }\item[{uint16\+\_\+t}]{isemdiag\+\_\+handler}{, }\item[{isemdiagidentificationinfo \texorpdfstring{$\ast$}{*}}]{identification\+\_\+info}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the identification info of the ISEM DIAG valve. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pressurezone\+\_\+handler} & Handler for the specific pressure zone. \\
+\hline
+\mbox{\texttt{ in}}  & {\em isemdiag\+\_\+handler} & Handler for the ISEM DIAG . \\
+\hline
+\mbox{\texttt{ out}}  & {\em identification\+\_\+info} & Pointer to the {\ttfamily valveidentificationinfo} structure to store identification details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily RET\+\_\+\+OK} on success.
+\item Error code on failure.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a41267b33c0c393b95c0460209f09b02b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a41267b33c0c393b95c0460209f09b02b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_abb1f7159217e65e903f6658d812ccded}\index{AppDataInterce.c@{AppDataInterce.c}!getIsemDiagPartNumber@{getIsemDiagPartNumber}}
+\index{getIsemDiagPartNumber@{getIsemDiagPartNumber}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getIsemDiagPartNumber()}{getIsemDiagPartNumber()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_abb1f7159217e65e903f6658d812ccded} 
+void get\+Isem\+Diag\+Part\+Number (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+This api is to get the IO device part number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the buffer to which the data to be retrived. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_abb1f7159217e65e903f6658d812ccded_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a1b65dccef5e16451b2ff09b40f8f28ca}\index{AppDataInterce.c@{AppDataInterce.c}!getMainBusHandlers@{getMainBusHandlers}}
+\index{getMainBusHandlers@{getMainBusHandlers}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getMainBusHandlers()}{getMainBusHandlers()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a1b65dccef5e16451b2ff09b40f8f28ca} 
+uint16\+\_\+t get\+Main\+Bus\+Handlers (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the Main Bus Handler. 
+
+This API returns the Main bus handler 
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t Main bus handler. 
+\end{DoxyReturn}
+\Hypertarget{_app_data_interce_8c_afa3d041d8597ff5b49a58ec5e13f2ea4}\index{AppDataInterce.c@{AppDataInterce.c}!getPresssureZoneServiceDataAddress@{getPresssureZoneServiceDataAddress}}
+\index{getPresssureZoneServiceDataAddress@{getPresssureZoneServiceDataAddress}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getPresssureZoneServiceDataAddress()}{getPresssureZoneServiceDataAddress()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_afa3d041d8597ff5b49a58ec5e13f2ea4} 
+uint32\+\_\+t get\+Presssure\+Zone\+Service\+Data\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pz\+\_\+handler}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_afa3d041d8597ff5b49a58ec5e13f2ea4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a0a0d54861042d4ff550ea56a0dd816de}\index{AppDataInterce.c@{AppDataInterce.c}!getPressureZoneDeviceCountDetails@{getPressureZoneDeviceCountDetails}}
+\index{getPressureZoneDeviceCountDetails@{getPressureZoneDeviceCountDetails}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getPressureZoneDeviceCountDetails()}{getPressureZoneDeviceCountDetails()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a0a0d54861042d4ff550ea56a0dd816de} 
+uint8\+\_\+t get\+Pressure\+Zone\+Device\+Count\+Details (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pressurezone\+\_\+handler}{, }\item[{s\+\_\+prszone\+\_\+device\+\_\+count\+\_\+details \texorpdfstring{$\ast$}{*}}]{pressurezone\+\_\+device\+\_\+count}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the device count from the specified pressure zone. 
+
+This function fetches the number of devices present in a given pressure zone, including ISEM DIAG, Standard Valve, Diag Valve, and Internal Prop
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pressurezone\+\_\+handler} & The handler for the specific pressure zone. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pressurezone\+\_\+device\+\_\+count} & Pointer to a structure where the device count details will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns {\ttfamily RET\+\_\+\+OK} on success, or an error code on failure. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a0a0d54861042d4ff550ea56a0dd816de_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ad2985c903d0633288a5f3922334a6bd9}\index{AppDataInterce.c@{AppDataInterce.c}!getPressureZoneHandler@{getPressureZoneHandler}}
+\index{getPressureZoneHandler@{getPressureZoneHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getPressureZoneHandler()}{getPressureZoneHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ad2985c903d0633288a5f3922334a6bd9} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+Pressure\+Zone\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the pressure zone handlers. 
+
+This API returns an array of pressure zone handlers. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for the pressure zone.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: Pressure Zone handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is 6, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ad2985c903d0633288a5f3922334a6bd9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_acf4b478db18710fcdd7868a9aa4e3ec7}\index{AppDataInterce.c@{AppDataInterce.c}!getPropZoneServiceDataAddress@{getPropZoneServiceDataAddress}}
+\index{getPropZoneServiceDataAddress@{getPropZoneServiceDataAddress}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getPropZoneServiceDataAddress()}{getPropZoneServiceDataAddress()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_acf4b478db18710fcdd7868a9aa4e3ec7} 
+uint32\+\_\+t get\+Prop\+Zone\+Service\+Data\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{propzone\+\_\+handler}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_acf4b478db18710fcdd7868a9aa4e3ec7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a8a191d56670ac7df40f394881b28344f}\index{AppDataInterce.c@{AppDataInterce.c}!getStandardValveHandler@{getStandardValveHandler}}
+\index{getStandardValveHandler@{getStandardValveHandler}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{getStandardValveHandler()}{getStandardValveHandler()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a8a191d56670ac7df40f394881b28344f} 
+uint16\+\_\+t \texorpdfstring{$\ast$}{*} get\+Standard\+Valve\+Handler (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{pressurezone\+\_\+handler}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the device handlers for Standard Valve . 
+
+This API returns an array of handlers for Standard Valve. in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t\texorpdfstring{$\ast$}{*} A pointer to an array of handlers for Standard Valve.
+\begin{DoxyItemize}
+\item Index 0\+: Number of handlers.
+\item Index 1 to Index (N)\+: Standard Valve module handlers.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The maximum size of the array is MAX\+\_\+\+STANDARD\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE+1, where index 0 contains the count of handlers. 
+\end{DoxyItemize}
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a8a191d56670ac7df40f394881b28344f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ac92a673771db92e7156490091aef7135}\index{AppDataInterce.c@{AppDataInterce.c}!init@{init}}
+\index{init@{init}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ac92a673771db92e7156490091aef7135} 
+int init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ac92a673771db92e7156490091aef7135_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ac92a673771db92e7156490091aef7135_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_a510fa21187d2bc7234c063942d17a85f}\index{AppDataInterce.c@{AppDataInterce.c}!readDiscoveryInfo@{readDiscoveryInfo}}
+\index{readDiscoveryInfo@{readDiscoveryInfo}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{readDiscoveryInfo()}{readDiscoveryInfo()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a510fa21187d2bc7234c063942d17a85f} 
+uint8\+\_\+t read\+Discovery\+Info (\begin{DoxyParamCaption}\item[{system\+\_\+discoverystatusinfo \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{_app_data_interce_8c_a510fa21187d2bc7234c063942d17a85f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_a510fa21187d2bc7234c063942d17a85f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_interce_8c_ae512dcee3f48f317872617e5f4559b19}\index{AppDataInterce.c@{AppDataInterce.c}!readSharedMemoryData@{readSharedMemoryData}}
+\index{readSharedMemoryData@{readSharedMemoryData}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{readSharedMemoryData()}{readSharedMemoryData()}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ae512dcee3f48f317872617e5f4559b19} 
+uint8\+\_\+t read\+Shared\+Memory\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_interce_8c_ae512dcee3f48f317872617e5f4559b19_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_app_data_interce_8c_a0441d0acf0c675222c4e9a8d4a853348}\index{AppDataInterce.c@{AppDataInterce.c}!external\_pressurezone@{external\_pressurezone}}
+\index{external\_pressurezone@{external\_pressurezone}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{external\_pressurezone}{external\_pressurezone}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a0441d0acf0c675222c4e9a8d4a853348} 
+uint8\+\_\+t external\+\_\+pressurezone\mbox{[}16\mbox{]}}
+
+\Hypertarget{_app_data_interce_8c_ad9088d5017838792bd64e604162503df}\index{AppDataInterce.c@{AppDataInterce.c}!gbuf@{gbuf}}
+\index{gbuf@{gbuf}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{gbuf}{gbuf}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ad9088d5017838792bd64e604162503df} 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} gbuf\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_app_data_interce_8c_ad19c359304948e3d3aea4c3ee826685c}\index{AppDataInterce.c@{AppDataInterce.c}!internal\_pressure\_zone@{internal\_pressure\_zone}}
+\index{internal\_pressure\_zone@{internal\_pressure\_zone}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{internal\_pressure\_zone}{internal\_pressure\_zone}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_ad19c359304948e3d3aea4c3ee826685c} 
+uint8\+\_\+t internal\+\_\+pressure\+\_\+zone\mbox{[}5\mbox{]}}
+
+\Hypertarget{_app_data_interce_8c_a6dad6684cbe35726f4ae5cd7a3584616}\index{AppDataInterce.c@{AppDataInterce.c}!system\_info@{system\_info}}
+\index{system\_info@{system\_info}!AppDataInterce.c@{AppDataInterce.c}}
+\doxysubsubsection{\texorpdfstring{system\_info}{system\_info}}
+{\footnotesize\ttfamily \label{_app_data_interce_8c_a6dad6684cbe35726f4ae5cd7a3584616} 
+system\+\_\+discoverystatusinfo system\+\_\+info}
+

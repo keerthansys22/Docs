@@ -1,0 +1,111 @@
+\doxysection{GUI/\+Screens/qr\+\_\+screen.c File Reference}
+\hypertarget{qr__screen_8c}{}\label{qr__screen_8c}\index{GUI/Screens/qr\_screen.c@{GUI/Screens/qr\_screen.c}}
+
+
+Source that displays QR screen.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for qr\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{qr__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{qr__screen_8c_aa78326b69d080c6deefb86855d0a595c}{disp\+\_\+mod\+\_\+qr\+\_\+screen}} (int status\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Function to display QR screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{qr__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d}{stop\+\_\+flashing\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em function to stop the flashing timer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{qr__screen_8c_acf4df21b18b924052d66abac113599bb}{flash\+\_\+on}}
+\item 
+status\+\_\+screen\+\_\+struct \mbox{\hyperlink{qr__screen_8c_a01a09ef94e00ab546916776847cc4dc1}{screen\+\_\+status\+\_\+value}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+status\+\_\+screen \mbox{\hyperlink{qr__screen_8c_aa70753c1475c299a99fbf946dceb9c1e}{m\+\_\+status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays QR screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{qr__screen_8c_aa78326b69d080c6deefb86855d0a595c}\index{qr\_screen.c@{qr\_screen.c}!disp\_mod\_qr\_screen@{disp\_mod\_qr\_screen}}
+\index{disp\_mod\_qr\_screen@{disp\_mod\_qr\_screen}!qr\_screen.c@{qr\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_qr\_screen()}{disp\_mod\_qr\_screen()}}
+{\footnotesize\ttfamily \label{qr__screen_8c_aa78326b69d080c6deefb86855d0a595c} 
+void disp\+\_\+mod\+\_\+qr\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{status\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Function to display QR screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\+\_\+value} & \+: represents the status screen number \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{qr__screen_8c_aa78326b69d080c6deefb86855d0a595c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{qr__screen_8c_aa78326b69d080c6deefb86855d0a595c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{qr__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d}\index{qr\_screen.c@{qr\_screen.c}!stop\_flashing\_timer@{stop\_flashing\_timer}}
+\index{stop\_flashing\_timer@{stop\_flashing\_timer}!qr\_screen.c@{qr\_screen.c}}
+\doxysubsubsection{\texorpdfstring{stop\_flashing\_timer()}{stop\_flashing\_timer()}}
+{\footnotesize\ttfamily \label{qr__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d} 
+void stop\+\_\+flashing\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function to stop the flashing timer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{qr__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{qr__screen_8c_acf4df21b18b924052d66abac113599bb}\index{qr\_screen.c@{qr\_screen.c}!flash\_on@{flash\_on}}
+\index{flash\_on@{flash\_on}!qr\_screen.c@{qr\_screen.c}}
+\doxysubsubsection{\texorpdfstring{flash\_on}{flash\_on}}
+{\footnotesize\ttfamily \label{qr__screen_8c_acf4df21b18b924052d66abac113599bb} 
+int flash\+\_\+on\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{qr__screen_8c_aa70753c1475c299a99fbf946dceb9c1e}\index{qr\_screen.c@{qr\_screen.c}!m\_status@{m\_status}}
+\index{m\_status@{m\_status}!qr\_screen.c@{qr\_screen.c}}
+\doxysubsubsection{\texorpdfstring{m\_status}{m\_status}}
+{\footnotesize\ttfamily \label{qr__screen_8c_aa70753c1475c299a99fbf946dceb9c1e} 
+status\+\_\+screen m\+\_\+status\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{qr__screen_8c_a01a09ef94e00ab546916776847cc4dc1}\index{qr\_screen.c@{qr\_screen.c}!screen\_status\_value@{screen\_status\_value}}
+\index{screen\_status\_value@{screen\_status\_value}!qr\_screen.c@{qr\_screen.c}}
+\doxysubsubsection{\texorpdfstring{screen\_status\_value}{screen\_status\_value}}
+{\footnotesize\ttfamily \label{qr__screen_8c_a01a09ef94e00ab546916776847cc4dc1} 
+status\+\_\+screen\+\_\+struct screen\+\_\+status\+\_\+value\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -103,6 +103,7 @@ $(function(){initNavTree('valves__modules__status__info_8c.html',''); initResiza
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">valves_modules_status_info.c File Reference</div></div>
@@ -126,6 +127,11 @@ Include dependency graph for valves_modules_status_info.c:</div>
 </map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbackend__status__entry__t.html">backend_status_entry_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a293e2832c7e56f4cf2f54db9ffd70e66" id="r_a293e2832c7e56f4cf2f54db9ffd70e66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a293e2832c7e56f4cf2f54db9ffd70e66">isem_status_info</a> (uint8_t pz_handler, uint8_t isemdiag_handler, uint8_t mod_num, uint8_t pz_num, isemdiag_processinfo *processdata, uint8_t status_type)</td></tr>
@@ -134,15 +140,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a1839b12ae4ad1c086a62cb4cc60be893" id="r_a1839b12ae4ad1c086a62cb4cc60be893"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1839b12ae4ad1c086a62cb4cc60be893">diag_valve_status_info</a> (uint8_t pz_handler, uint8_t diagvalve_handler, uint8_t mod_num, uint8_t pz_num, uint8_t station_ind, diagvalve_processinfo *processdata, uint8_t status_type)</td></tr>
 <tr class="memdesc:a1839b12ae4ad1c086a62cb4cc60be893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that processes the diag valve modules status information.  <br /></td></tr>
 <tr class="separator:a1839b12ae4ad1c086a62cb4cc60be893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d810ae77672dd3e21568adc7a42b38c" id="r_a0d810ae77672dd3e21568adc7a42b38c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d810ae77672dd3e21568adc7a42b38c">process_isem_status_info</a> ()</td></tr>
+<tr class="memdesc:a0d810ae77672dd3e21568adc7a42b38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process ISEM status information across pressure zones.  <br /></td></tr>
+<tr class="separator:a0d810ae77672dd3e21568adc7a42b38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd8df8b25c0dee8a4dc6fcb656ba741" id="r_a1fd8df8b25c0dee8a4dc6fcb656ba741"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fd8df8b25c0dee8a4dc6fcb656ba741">process_diag_valve_status_info</a> ()</td></tr>
+<tr class="memdesc:a1fd8df8b25c0dee8a4dc6fcb656ba741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process diagnostic valve status information across pressure zones.  <br /></td></tr>
+<tr class="separator:a1fd8df8b25c0dee8a4dc6fcb656ba741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3671d63082904cd553ff0e84c91b088e" id="r_a3671d63082904cd553ff0e84c91b088e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3671d63082904cd553ff0e84c91b088e">valves_modules_status_info</a> ()</td></tr>
 <tr class="memdesc:a3671d63082904cd553ff0e84c91b088e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that processes the valves modules status information.  <br /></td></tr>
 <tr class="separator:a3671d63082904cd553ff0e84c91b088e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0f3dfc9666e2ed3508827b4b9a1d98a" id="r_aa0f3dfc9666e2ed3508827b4b9a1d98a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0f3dfc9666e2ed3508827b4b9a1d98a">process_isem_status_info</a> (void)</td></tr>
-<tr class="memdesc:aa0f3dfc9666e2ed3508827b4b9a1d98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process ISEM status information across pressure zones.  <br /></td></tr>
-<tr class="separator:aa0f3dfc9666e2ed3508827b4b9a1d98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab161d09da45c6c42b5a903700818aa9b" id="r_ab161d09da45c6c42b5a903700818aa9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab161d09da45c6c42b5a903700818aa9b">process_diag_valve_status_info</a> (void)</td></tr>
-<tr class="memdesc:ab161d09da45c6c42b5a903700818aa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process diagnostic valve status information across pressure zones.  <br /></td></tr>
-<tr class="separator:ab161d09da45c6c42b5a903700818aa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c98732ae9f946e8ad3c716bd836320a" id="r_a4c98732ae9f946e8ad3c716bd836320a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c98732ae9f946e8ad3c716bd836320a">clear_individual_status_message</a> (uint8_t module_num)</td></tr>
 <tr class="memdesc:a4c98732ae9f946e8ad3c716bd836320a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to clear individual status message.  <br /></td></tr>
 <tr class="separator:a4c98732ae9f946e8ad3c716bd836320a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,20 +192,26 @@ Variables</h2></td></tr>
 <tr class="separator:a9efa8f5df2c4da78ec903dc160bc96a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a086543ca17e695c954a70626ac508a5d" id="r_a086543ca17e695c954a70626ac508a5d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a086543ca17e695c954a70626ac508a5d">diag_present</a> = 0</td></tr>
 <tr class="separator:a086543ca17e695c954a70626ac508a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0617f4dab30b9c966cbd08430cc3d367" id="r_a0617f4dab30b9c966cbd08430cc3d367"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0617f4dab30b9c966cbd08430cc3d367">clear_isem_present</a> = 0</td></tr>
+<tr class="separator:a0617f4dab30b9c966cbd08430cc3d367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39e40400e571e3af868ddb0cbc6f467" id="r_ac39e40400e571e3af868ddb0cbc6f467"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac39e40400e571e3af868ddb0cbc6f467">clear_diag_present</a> = 0</td></tr>
+<tr class="separator:ac39e40400e571e3af868ddb0cbc6f467"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36972212c2938bee4597333076b0d292" id="r_a36972212c2938bee4597333076b0d292"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36972212c2938bee4597333076b0d292">curr_war_index</a></td></tr>
 <tr class="separator:a36972212c2938bee4597333076b0d292"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac219734e0b7bff6a07a53d864b2cde17" id="r_ac219734e0b7bff6a07a53d864b2cde17"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac219734e0b7bff6a07a53d864b2cde17">prev_war_index</a></td></tr>
 <tr class="separator:ac219734e0b7bff6a07a53d864b2cde17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a817f4ff27b6d78d7007cb9682fce68fe" id="r_a817f4ff27b6d78d7007cb9682fce68fe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a817f4ff27b6d78d7007cb9682fce68fe">normal_index</a></td></tr>
 <tr class="separator:a817f4ff27b6d78d7007cb9682fce68fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4109e75cac85b53790c0cc32d788f7bc" id="r_a4109e75cac85b53790c0cc32d788f7bc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4109e75cac85b53790c0cc32d788f7bc">fault_index</a></td></tr>
-<tr class="separator:a4109e75cac85b53790c0cc32d788f7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e5e7d18c6596629d5f86a5ef0e6f9df" id="r_a9e5e7d18c6596629d5f86a5ef0e6f9df"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e5e7d18c6596629d5f86a5ef0e6f9df">curr_fault_index</a></td></tr>
 <tr class="separator:a9e5e7d18c6596629d5f86a5ef0e6f9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32d7ae5c30054bc52bf84eff8801f89b" id="r_a32d7ae5c30054bc52bf84eff8801f89b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32d7ae5c30054bc52bf84eff8801f89b">prev_fault_index</a></td></tr>
 <tr class="separator:a32d7ae5c30054bc52bf84eff8801f89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0bca095890a1fb58c691bea6aae554a" id="r_ab0bca095890a1fb58c691bea6aae554a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0bca095890a1fb58c691bea6aae554a">normal_list</a> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</td></tr>
 <tr class="separator:ab0bca095890a1fb58c691bea6aae554a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62939d998f34b2b77c671be6fc35548e" id="r_a62939d998f34b2b77c671be6fc35548e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structbackend__status__entry__t.html">backend_status_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62939d998f34b2b77c671be6fc35548e">backend_status_buffer</a> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</td></tr>
+<tr class="separator:a62939d998f34b2b77c671be6fc35548e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f649c0ac4a850a6902e32bd1979a60a" id="r_a2f649c0ac4a850a6902e32bd1979a60a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f649c0ac4a850a6902e32bd1979a60a">backend_status_size</a> = 0</td></tr>
+<tr class="separator:a2f649c0ac4a850a6902e32bd1979a60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Source that processes the valves modules status information. </p>
@@ -226,39 +238,26 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="valves__modules__status__info_8c_aa164888e33feacda7236004c79306b87_cgraph.png" border="0" usemap="#avalves__modules__status__info_8c_aa164888e33feacda7236004c79306b87_cgraph" alt=""/></div>
 <map name="avalves__modules__status__info_8c_aa164888e33feacda7236004c79306b87_cgraph" id="avalves__modules__status__info_8c_aa164888e33feacda7236004c79306b87_cgraph">
-<area shape="rect" title="Function to clear all status messages." alt="" coords="5,132,185,159"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ac3ec6ff63d65bb052cd01cb6eafd6634" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="243,5,415,32"/>
-<area shape="poly" title=" " alt="" coords="109,129,161,86,195,62,231,42,247,35,249,40,234,46,198,67,164,91,113,133"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#ad9a986ad54e6f23b84d77e8c751e07f6" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="245,56,413,83"/>
-<area shape="poly" title=" " alt="" coords="130,129,232,92,256,85,258,90,234,97,132,134"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ab57fddd9bef47dee7f0bcb70093c8617" title="Sets the fault event bit for a specified Diag Valve." alt="" coords="242,107,416,133"/>
-<area shape="poly" title=" " alt="" coords="185,133,226,128,227,134,185,138"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ac53b63180fe37e7a819d6de4811052a1" title="Sets the warning event bit for a specified Diag Valve." alt="" coords="233,157,425,184"/>
-<area shape="poly" title=" " alt="" coords="185,152,217,156,217,161,185,158"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#a0a5bb8ffbfc03e38824abcef42af94dd" title="Sets the fault event bit for a specified ISEM DIAG ." alt="" coords="244,208,414,235"/>
-<area shape="poly" title=" " alt="" coords="132,157,234,193,258,201,256,206,232,199,130,162"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#a39ea1b5335a46c699174c72c567afc72" title="Sets the warning event bit for a specified ISEM DIAG ." alt="" coords="234,259,424,285"/>
-<area shape="poly" title=" " alt="" coords="113,157,164,200,198,224,234,244,249,251,247,256,231,249,195,228,161,204,109,161"/>
-<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="474,73,668,116"/>
-<area shape="poly" title=" " alt="" coords="386,30,426,41,496,65,495,70,424,47,384,35"/>
-<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="490,15,651,41"/>
-<area shape="poly" title=" " alt="" coords="415,19,475,22,475,27,415,25"/>
-<area shape="poly" title=" " alt="" coords="414,76,459,80,458,86,413,81"/>
-<area shape="poly" title=" " alt="" coords="411,53,474,42,475,47,412,58"/>
-<area shape="poly" title=" " alt="" coords="416,108,457,104,458,109,416,114"/>
-<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="489,157,652,184"/>
-<area shape="poly" title=" " alt="" coords="397,131,489,151,488,156,396,137"/>
-<area shape="poly" title=" " alt="" coords="384,154,424,143,495,119,496,124,426,148,386,159"/>
-<area shape="poly" title=" " alt="" coords="425,168,474,168,474,173,425,173"/>
-<area shape="rect" href="_pressure_zone_8c.html#a545d0e847091e676372549f906f38e0c" title=" " alt="" coords="537,208,604,235"/>
-<area shape="poly" title=" " alt="" coords="397,182,522,209,521,214,396,187"/>
-<area shape="poly" title=" " alt="" coords="396,205,488,185,489,190,397,210"/>
-<area shape="poly" title=" " alt="" coords="414,219,522,219,522,224,414,224"/>
-<area shape="rect" href="_pressure_zone_8c.html#afa3d041d8597ff5b49a58ec5e13f2ea4" title=" " alt="" coords="473,259,668,301"/>
-<area shape="poly" title=" " alt="" coords="387,233,466,252,464,257,386,238"/>
-<area shape="poly" title=" " alt="" coords="399,256,424,244,438,232,447,220,456,207,472,194,483,188,485,193,474,198,460,210,451,223,442,236,426,249,401,260"/>
-<area shape="poly" title=" " alt="" coords="396,255,521,229,522,234,397,261"/>
-<area shape="poly" title=" " alt="" coords="424,272,458,274,457,279,424,278"/>
+<area shape="rect" title="Function to clear all status messages." alt="" coords="5,123,185,149"/>
+<area shape="rect" href="_pressure_zone_8c.html#a85784a70b098ab9ef9c262dec44468da" title="This API is to clear the warning and fault bits of the modules @Note : This API can clear particular ..." alt="" coords="260,56,377,83"/>
+<area shape="poly" title=" " alt="" coords="142,119,256,85,257,90,143,125"/>
+<area shape="rect" href="_diag_valve_api_8c.html#afc63918903c176d7dd2fb86d4b14106d" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="233,173,404,200"/>
+<area shape="poly" title=" " alt="" coords="158,147,242,167,241,172,157,153"/>
+<area shape="rect" href="_isem_diag_valve_api_8c.html#ae283023d1787899e956cfe2df0c04300" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="234,123,403,149"/>
+<area shape="poly" title=" " alt="" coords="185,133,218,133,218,139,185,139"/>
+<area shape="rect" href="_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title=" " alt="" coords="477,56,622,83"/>
+<area shape="poly" title=" " alt="" coords="377,67,461,67,461,72,377,72"/>
+<area shape="rect" href="_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title=" " alt="" coords="483,5,616,32"/>
+<area shape="poly" title=" " alt="" coords="377,54,470,33,471,38,378,59"/>
+<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="452,107,646,149"/>
+<area shape="poly" title=" " alt="" coords="373,170,447,151,448,156,374,175"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="469,173,630,200"/>
+<area shape="poly" title=" " alt="" coords="405,184,453,184,453,189,405,189"/>
+<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="468,224,631,251"/>
+<area shape="poly" title=" " alt="" coords="383,198,471,218,470,223,382,203"/>
+<area shape="poly" title=" " alt="" coords="403,130,437,129,437,135,403,136"/>
+<area shape="poly" title=" " alt="" coords="383,147,471,167,470,172,382,153"/>
+<area shape="poly" title=" " alt="" coords="381,147,405,159,421,172,430,185,439,198,453,210,464,215,462,220,451,214,435,202,426,188,417,176,403,164,379,152"/>
 </map>
 </div>
 <div class="dynheader">
@@ -343,39 +342,26 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="valves__modules__status__info_8c_a4c98732ae9f946e8ad3c716bd836320a_cgraph.png" border="0" usemap="#avalves__modules__status__info_8c_a4c98732ae9f946e8ad3c716bd836320a_cgraph" alt=""/></div>
 <map name="avalves__modules__status__info_8c_a4c98732ae9f946e8ad3c716bd836320a_cgraph" id="avalves__modules__status__info_8c_a4c98732ae9f946e8ad3c716bd836320a_cgraph">
-<area shape="rect" title="Function to clear individual status message." alt="" coords="5,124,157,167"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ac3ec6ff63d65bb052cd01cb6eafd6634" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="215,5,387,32"/>
-<area shape="poly" title=" " alt="" coords="101,122,145,81,174,60,203,42,217,35,220,40,206,46,176,64,149,85,105,125"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#ad9a986ad54e6f23b84d77e8c751e07f6" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="217,56,385,83"/>
-<area shape="poly" title=" " alt="" coords="130,121,204,92,227,85,229,90,206,97,132,126"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ab57fddd9bef47dee7f0bcb70093c8617" title="Sets the fault event bit for a specified Diag Valve." alt="" coords="214,107,388,133"/>
-<area shape="poly" title=" " alt="" coords="157,134,198,129,199,134,157,139"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ac53b63180fe37e7a819d6de4811052a1" title="Sets the warning event bit for a specified Diag Valve." alt="" coords="205,157,397,184"/>
-<area shape="poly" title=" " alt="" coords="157,151,190,155,189,160,157,157"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#a0a5bb8ffbfc03e38824abcef42af94dd" title="Sets the fault event bit for a specified ISEM DIAG ." alt="" coords="216,208,386,235"/>
-<area shape="poly" title=" " alt="" coords="132,165,206,193,229,201,227,206,204,199,130,170"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#a39ea1b5335a46c699174c72c567afc72" title="Sets the warning event bit for a specified ISEM DIAG ." alt="" coords="206,259,396,285"/>
-<area shape="poly" title=" " alt="" coords="105,165,149,206,176,227,206,244,220,250,217,255,203,249,174,231,145,210,101,169"/>
-<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="446,73,640,116"/>
-<area shape="poly" title=" " alt="" coords="358,30,398,41,468,65,467,70,396,47,356,35"/>
-<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="462,15,623,41"/>
-<area shape="poly" title=" " alt="" coords="387,19,447,22,447,27,387,25"/>
-<area shape="poly" title=" " alt="" coords="386,76,431,80,430,86,385,81"/>
-<area shape="poly" title=" " alt="" coords="383,53,446,42,447,47,384,58"/>
-<area shape="poly" title=" " alt="" coords="388,108,429,104,430,109,388,114"/>
-<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="461,157,624,184"/>
-<area shape="poly" title=" " alt="" coords="369,131,461,151,460,156,368,137"/>
-<area shape="poly" title=" " alt="" coords="356,154,396,143,467,119,468,124,398,148,358,159"/>
-<area shape="poly" title=" " alt="" coords="397,168,446,168,446,173,397,173"/>
-<area shape="rect" href="_pressure_zone_8c.html#a545d0e847091e676372549f906f38e0c" title=" " alt="" coords="509,208,576,235"/>
-<area shape="poly" title=" " alt="" coords="369,182,494,209,493,214,368,187"/>
-<area shape="poly" title=" " alt="" coords="368,205,460,185,461,190,369,210"/>
-<area shape="poly" title=" " alt="" coords="386,219,494,219,494,224,386,224"/>
-<area shape="rect" href="_pressure_zone_8c.html#afa3d041d8597ff5b49a58ec5e13f2ea4" title=" " alt="" coords="445,259,640,301"/>
-<area shape="poly" title=" " alt="" coords="359,233,438,252,436,257,358,238"/>
-<area shape="poly" title=" " alt="" coords="371,256,396,244,410,232,419,220,428,207,444,194,455,188,457,193,446,198,432,210,423,223,414,236,398,249,373,260"/>
-<area shape="poly" title=" " alt="" coords="368,255,493,229,494,234,369,261"/>
-<area shape="poly" title=" " alt="" coords="396,272,430,274,429,279,396,278"/>
+<area shape="rect" title="Function to clear individual status message." alt="" coords="5,115,157,157"/>
+<area shape="rect" href="_pressure_zone_8c.html#a85784a70b098ab9ef9c262dec44468da" title="This API is to clear the warning and fault bits of the modules @Note : This API can clear particular ..." alt="" coords="232,56,349,83"/>
+<area shape="poly" title=" " alt="" coords="149,112,231,85,232,90,151,117"/>
+<area shape="rect" href="_diag_valve_api_8c.html#afc63918903c176d7dd2fb86d4b14106d" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="205,173,376,200"/>
+<area shape="poly" title=" " alt="" coords="158,152,218,167,217,172,156,157"/>
+<area shape="rect" href="_isem_diag_valve_api_8c.html#ae283023d1787899e956cfe2df0c04300" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="206,123,375,149"/>
+<area shape="poly" title=" " alt="" coords="157,133,190,133,190,139,157,139"/>
+<area shape="rect" href="_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title=" " alt="" coords="449,56,594,83"/>
+<area shape="poly" title=" " alt="" coords="349,67,433,67,433,72,349,72"/>
+<area shape="rect" href="_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title=" " alt="" coords="455,5,588,32"/>
+<area shape="poly" title=" " alt="" coords="349,54,442,33,443,38,350,59"/>
+<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="424,107,618,149"/>
+<area shape="poly" title=" " alt="" coords="345,170,419,151,420,156,346,175"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="441,173,602,200"/>
+<area shape="poly" title=" " alt="" coords="377,184,425,184,425,189,377,189"/>
+<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="440,224,603,251"/>
+<area shape="poly" title=" " alt="" coords="355,198,443,218,442,223,354,203"/>
+<area shape="poly" title=" " alt="" coords="375,130,409,129,409,135,375,136"/>
+<area shape="poly" title=" " alt="" coords="355,147,443,167,442,172,354,153"/>
+<area shape="poly" title=" " alt="" coords="353,147,377,159,393,172,402,185,411,198,425,210,436,215,434,220,423,214,407,202,398,188,389,176,375,164,351,152"/>
 </map>
 </div>
 <div class="dynheader">
@@ -507,14 +493,16 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="111,78,202,42,223,34,224,40,204,46,113,83"/>
 <area shape="rect" href="diag__valve__status__info_8c.html#a181386d8ac3c39a998bc8b82730dc58c" title=" " alt="" coords="213,56,364,83"/>
 <area shape="poly" title=" " alt="" coords="155,83,197,78,197,83,155,88"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ac3ec6ff63d65bb052cd01cb6eafd6634" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="203,107,374,133"/>
+<area shape="rect" href="_diag_valve_api_8c.html#afc63918903c176d7dd2fb86d4b14106d" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="203,107,374,133"/>
 <area shape="poly" title=" " alt="" coords="155,101,187,105,187,110,155,106"/>
 <area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="249,157,328,184"/>
 <area shape="poly" title=" " alt="" coords="113,106,204,143,234,153,233,158,202,148,111,111"/>
-<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="422,69,616,112"/>
-<area shape="poly" title=" " alt="" coords="374,106,406,102,407,108,375,112"/>
-<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="439,136,600,163"/>
-<area shape="poly" title=" " alt="" coords="375,128,423,134,423,140,374,134"/>
+<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="422,40,616,83"/>
+<area shape="poly" title=" " alt="" coords="343,104,417,85,418,90,344,109"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="439,107,600,133"/>
+<area shape="poly" title=" " alt="" coords="375,117,423,117,423,123,375,123"/>
+<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="438,157,601,184"/>
+<area shape="poly" title=" " alt="" coords="353,131,441,151,440,156,352,137"/>
 </map>
 </div>
 <div class="dynheader">
@@ -523,7 +511,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="valves__modules__status__info_8c_a1839b12ae4ad1c086a62cb4cc60be893_icgraph.png" border="0" usemap="#avalves__modules__status__info_8c_a1839b12ae4ad1c086a62cb4cc60be893_icgraph" alt=""/></div>
 <map name="avalves__modules__status__info_8c_a1839b12ae4ad1c086a62cb4cc60be893_icgraph" id="avalves__modules__status__info_8c_a1839b12ae4ad1c086a62cb4cc60be893_icgraph">
 <area shape="rect" title="Function that processes the diag valve modules status information." alt="" coords="1459,544,1609,571"/>
-<area shape="rect" href="valves__modules__status__info_8c.html#ab161d09da45c6c42b5a903700818aa9b" title="Process diagnostic valve status information across pressure zones." alt="" coords="1279,536,1411,579"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#a1fd8df8b25c0dee8a4dc6fcb656ba741" title="Process diagnostic valve status information across pressure zones." alt="" coords="1279,536,1411,579"/>
 <area shape="poly" title=" " alt="" coords="1444,560,1412,560,1412,555,1444,555"/>
 <area shape="rect" href="valves__modules__status__info_8c.html#a3671d63082904cd553ff0e84c91b088e" title="Function that processes the valves modules status information." alt="" coords="1050,544,1231,571"/>
 <area shape="poly" title=" " alt="" coords="1264,560,1231,560,1231,555,1264,555"/>
@@ -641,14 +629,16 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="85,91,124,66,172,42,188,35,190,40,174,46,127,71,88,95"/>
 <area shape="rect" href="isem__status__info_8c.html#afa0da081e452bcba9fe88e18aee251fc" title=" " alt="" coords="195,56,319,99"/>
 <area shape="poly" title=" " alt="" coords="125,95,179,87,180,92,126,100"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#ad9a986ad54e6f23b84d77e8c751e07f6" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="173,123,341,149"/>
+<area shape="rect" href="_isem_diag_valve_api_8c.html#ae283023d1787899e956cfe2df0c04300" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="173,123,341,149"/>
 <area shape="poly" title=" " alt="" coords="126,113,158,118,157,123,125,118"/>
 <area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="217,173,297,200"/>
 <area shape="poly" title=" " alt="" coords="91,118,174,159,203,169,201,174,172,164,89,123"/>
-<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="389,85,583,128"/>
-<area shape="poly" title=" " alt="" coords="341,123,373,118,374,124,342,128"/>
-<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="406,152,567,179"/>
-<area shape="poly" title=" " alt="" coords="342,144,391,150,390,156,341,149"/>
+<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="389,56,583,99"/>
+<area shape="poly" title=" " alt="" coords="311,120,385,101,386,106,313,125"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="406,123,567,149"/>
+<area shape="poly" title=" " alt="" coords="341,133,390,133,390,139,341,139"/>
+<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="405,173,568,200"/>
+<area shape="poly" title=" " alt="" coords="321,147,408,167,407,172,320,153"/>
 </map>
 </div>
 <div class="dynheader">
@@ -657,7 +647,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="valves__modules__status__info_8c_a293e2832c7e56f4cf2f54db9ffd70e66_icgraph.png" border="0" usemap="#avalves__modules__status__info_8c_a293e2832c7e56f4cf2f54db9ffd70e66_icgraph" alt=""/></div>
 <map name="avalves__modules__status__info_8c_a293e2832c7e56f4cf2f54db9ffd70e66_icgraph" id="avalves__modules__status__info_8c_a293e2832c7e56f4cf2f54db9ffd70e66_icgraph">
 <area shape="rect" title="Function that processes the isem modules status information." alt="" coords="1499,544,1619,571"/>
-<area shape="rect" href="valves__modules__status__info_8c.html#aa0f3dfc9666e2ed3508827b4b9a1d98a" title="Process ISEM status information across pressure zones." alt="" coords="1279,544,1451,571"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#a0d810ae77672dd3e21568adc7a42b38c" title="Process ISEM status information across pressure zones." alt="" coords="1279,544,1451,571"/>
 <area shape="poly" title=" " alt="" coords="1483,560,1452,560,1452,555,1483,555"/>
 <area shape="rect" href="valves__modules__status__info_8c.html#a3671d63082904cd553ff0e84c91b088e" title="Function that processes the valves modules status information." alt="" coords="1050,544,1231,571"/>
 <area shape="poly" title=" " alt="" coords="1264,560,1231,560,1231,555,1264,555"/>
@@ -711,8 +701,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ab161d09da45c6c42b5a903700818aa9b" name="ab161d09da45c6c42b5a903700818aa9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab161d09da45c6c42b5a903700818aa9b">&#9670;&#160;</a></span>process_diag_valve_status_info()</h2>
+<a id="a1fd8df8b25c0dee8a4dc6fcb656ba741" name="a1fd8df8b25c0dee8a4dc6fcb656ba741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd8df8b25c0dee8a4dc6fcb656ba741">&#9670;&#160;</a></span>process_diag_valve_status_info()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -737,12 +727,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="valves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_cgraph.png" border="0" usemap="#avalves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_cgraph" alt=""/></div>
-<map name="avalves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_cgraph" id="avalves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_cgraph">
+<div class="center"><img src="valves__modules__status__info_8c_a1fd8df8b25c0dee8a4dc6fcb656ba741_cgraph.png" border="0" usemap="#avalves__modules__status__info_8c_a1fd8df8b25c0dee8a4dc6fcb656ba741_cgraph" alt=""/></div>
+<map name="avalves__modules__status__info_8c_a1fd8df8b25c0dee8a4dc6fcb656ba741_cgraph" id="avalves__modules__status__info_8c_a1fd8df8b25c0dee8a4dc6fcb656ba741_cgraph">
 <area shape="rect" title="Process diagnostic valve status information across pressure zones." alt="" coords="5,124,138,167"/>
 <area shape="rect" href="diag__valve__status__info_8c.html#a0f33a057d237123db3425ba08ebb47e3" title="Function that processes the diag valve modules status information." alt="" coords="186,107,335,133"/>
 <area shape="poly" title=" " alt="" coords="138,134,170,129,171,135,138,139"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ac3ec6ff63d65bb052cd01cb6eafd6634" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="383,157,554,184"/>
+<area shape="rect" href="_diag_valve_api_8c.html#afc63918903c176d7dd2fb86d4b14106d" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="383,157,554,184"/>
 <area shape="poly" title=" " alt="" coords="138,147,368,162,367,167,138,152"/>
 <area shape="rect" href="diag__valve__status__info_8c.html#a9ee8455a4c41c2efd1719fe6fed51053" title=" " alt="" coords="407,5,531,32"/>
 <area shape="poly" title=" " alt="" coords="279,104,324,73,382,42,398,35,400,40,384,46,327,78,282,108"/>
@@ -751,17 +741,19 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="319,131,397,151,396,156,318,137"/>
 <area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="429,107,508,133"/>
 <area shape="poly" title=" " alt="" coords="335,117,413,117,413,123,335,123"/>
-<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="602,120,797,163"/>
-<area shape="poly" title=" " alt="" coords="555,157,587,153,587,158,555,162"/>
-<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="619,187,780,213"/>
-<area shape="poly" title=" " alt="" coords="555,179,604,185,603,190,555,184"/>
+<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="602,91,797,133"/>
+<area shape="poly" title=" " alt="" coords="523,154,597,135,599,140,525,159"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="619,157,780,184"/>
+<area shape="poly" title=" " alt="" coords="555,168,603,168,603,173,555,173"/>
+<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="618,208,781,235"/>
+<area shape="poly" title=" " alt="" coords="534,182,621,202,620,207,532,187"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="valves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_icgraph.png" border="0" usemap="#avalves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_icgraph" alt=""/></div>
-<map name="avalves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_icgraph" id="avalves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_icgraph">
+<div class="center"><img src="valves__modules__status__info_8c_a1fd8df8b25c0dee8a4dc6fcb656ba741_icgraph.png" border="0" usemap="#avalves__modules__status__info_8c_a1fd8df8b25c0dee8a4dc6fcb656ba741_icgraph" alt=""/></div>
+<map name="avalves__modules__status__info_8c_a1fd8df8b25c0dee8a4dc6fcb656ba741_icgraph" id="avalves__modules__status__info_8c_a1fd8df8b25c0dee8a4dc6fcb656ba741_icgraph">
 <area shape="rect" title="Process diagnostic valve status information across pressure zones." alt="" coords="1279,536,1411,579"/>
 <area shape="rect" href="valves__modules__status__info_8c.html#a3671d63082904cd553ff0e84c91b088e" title="Function that processes the valves modules status information." alt="" coords="1050,544,1231,571"/>
 <area shape="poly" title=" " alt="" coords="1264,560,1231,560,1231,555,1264,555"/>
@@ -815,8 +807,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aa0f3dfc9666e2ed3508827b4b9a1d98a" name="aa0f3dfc9666e2ed3508827b4b9a1d98a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0f3dfc9666e2ed3508827b4b9a1d98a">&#9670;&#160;</a></span>process_isem_status_info()</h2>
+<a id="a0d810ae77672dd3e21568adc7a42b38c" name="a0d810ae77672dd3e21568adc7a42b38c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d810ae77672dd3e21568adc7a42b38c">&#9670;&#160;</a></span>process_isem_status_info()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,31 +833,33 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="valves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_cgraph.png" border="0" usemap="#avalves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_cgraph" alt=""/></div>
-<map name="avalves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_cgraph" id="avalves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_cgraph">
-<area shape="rect" title="Process ISEM status information across pressure zones." alt="" coords="5,68,178,95"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#ad9a986ad54e6f23b84d77e8c751e07f6" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="393,43,561,69"/>
-<area shape="poly" title=" " alt="" coords="178,73,377,60,378,65,178,78"/>
-<area shape="rect" href="isem__status__info_8c.html#ac556b861a63a472eab6b590aac6be953" title="Function that processes the isem modules status information." alt="" coords="226,93,345,120"/>
-<area shape="poly" title=" " alt="" coords="178,90,210,94,210,99,177,95"/>
+<div class="center"><img src="valves__modules__status__info_8c_a0d810ae77672dd3e21568adc7a42b38c_cgraph.png" border="0" usemap="#avalves__modules__status__info_8c_a0d810ae77672dd3e21568adc7a42b38c_cgraph" alt=""/></div>
+<map name="avalves__modules__status__info_8c_a0d810ae77672dd3e21568adc7a42b38c_cgraph" id="avalves__modules__status__info_8c_a0d810ae77672dd3e21568adc7a42b38c_cgraph">
+<area shape="rect" title="Process ISEM status information across pressure zones." alt="" coords="5,97,178,124"/>
+<area shape="rect" href="_isem_diag_valve_api_8c.html#ae283023d1787899e956cfe2df0c04300" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="393,72,561,99"/>
+<area shape="poly" title=" " alt="" coords="178,102,377,89,378,95,178,108"/>
+<area shape="rect" href="isem__status__info_8c.html#ac556b861a63a472eab6b590aac6be953" title="Function that processes the isem modules status information." alt="" coords="226,123,345,149"/>
+<area shape="poly" title=" " alt="" coords="178,119,210,124,210,129,177,125"/>
 <area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="609,5,804,48"/>
-<area shape="poly" title=" " alt="" coords="561,43,594,38,594,44,562,48"/>
+<area shape="poly" title=" " alt="" coords="532,69,605,50,606,55,533,74"/>
 <area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="626,72,787,99"/>
-<area shape="poly" title=" " alt="" coords="562,64,611,70,610,76,561,69"/>
-<area shape="poly" title=" " alt="" coords="338,90,408,71,410,76,340,95"/>
-<area shape="rect" href="isem__status__info_8c.html#ad3e3ba582ba271dd10563b919da8f94f" title=" " alt="" coords="398,93,557,120"/>
-<area shape="poly" title=" " alt="" coords="345,104,382,104,382,109,345,109"/>
-<area shape="rect" href="isem__status__info_8c.html#afa0da081e452bcba9fe88e18aee251fc" title=" " alt="" coords="415,144,539,187"/>
-<area shape="poly" title=" " alt="" coords="332,118,401,139,399,144,331,123"/>
-<area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="438,211,517,237"/>
-<area shape="poly" title=" " alt="" coords="301,119,340,157,366,178,394,196,423,209,421,214,392,201,363,182,337,161,297,122"/>
+<area shape="poly" title=" " alt="" coords="562,83,610,83,610,88,562,88"/>
+<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="625,123,788,149"/>
+<area shape="poly" title=" " alt="" coords="542,97,629,116,627,121,540,102"/>
+<area shape="poly" title=" " alt="" coords="338,119,408,101,410,106,340,125"/>
+<area shape="rect" href="isem__status__info_8c.html#ad3e3ba582ba271dd10563b919da8f94f" title=" " alt="" coords="398,123,557,149"/>
+<area shape="poly" title=" " alt="" coords="345,133,382,133,382,139,345,139"/>
+<area shape="rect" href="isem__status__info_8c.html#afa0da081e452bcba9fe88e18aee251fc" title=" " alt="" coords="415,173,539,216"/>
+<area shape="poly" title=" " alt="" coords="332,147,401,169,399,174,331,152"/>
+<area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="438,240,517,267"/>
+<area shape="poly" title=" " alt="" coords="301,148,340,186,366,207,394,226,423,238,421,243,392,230,363,212,337,190,297,152"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="valves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_icgraph.png" border="0" usemap="#avalves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_icgraph" alt=""/></div>
-<map name="avalves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_icgraph" id="avalves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_icgraph">
+<div class="center"><img src="valves__modules__status__info_8c_a0d810ae77672dd3e21568adc7a42b38c_icgraph.png" border="0" usemap="#avalves__modules__status__info_8c_a0d810ae77672dd3e21568adc7a42b38c_icgraph" alt=""/></div>
+<map name="avalves__modules__status__info_8c_a0d810ae77672dd3e21568adc7a42b38c_icgraph" id="avalves__modules__status__info_8c_a0d810ae77672dd3e21568adc7a42b38c_icgraph">
 <area shape="rect" title="Process ISEM status information across pressure zones." alt="" coords="1279,544,1451,571"/>
 <area shape="rect" href="valves__modules__status__info_8c.html#a3671d63082904cd553ff0e84c91b088e" title="Function that processes the valves modules status information." alt="" coords="1050,544,1231,571"/>
 <area shape="poly" title=" " alt="" coords="1264,560,1231,560,1231,555,1264,555"/>
@@ -947,13 +941,13 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="valves__modules__status__info_8c_a3671d63082904cd553ff0e84c91b088e_cgraph.png" border="0" usemap="#avalves__modules__status__info_8c_a3671d63082904cd553ff0e84c91b088e_cgraph" alt=""/></div>
 <map name="avalves__modules__status__info_8c_a3671d63082904cd553ff0e84c91b088e_cgraph" id="avalves__modules__status__info_8c_a3671d63082904cd553ff0e84c91b088e_cgraph">
 <area shape="rect" title="Function that processes the valves modules status information." alt="" coords="5,168,187,195"/>
-<area shape="rect" href="valves__modules__status__info_8c.html#ab161d09da45c6c42b5a903700818aa9b" title="Process diagnostic valve status information across pressure zones." alt="" coords="255,109,387,152"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#a1fd8df8b25c0dee8a4dc6fcb656ba741" title="Process diagnostic valve status information across pressure zones." alt="" coords="255,109,387,152"/>
 <area shape="poly" title=" " alt="" coords="158,165,239,146,240,152,159,170"/>
-<area shape="rect" href="valves__modules__status__info_8c.html#aa0f3dfc9666e2ed3508827b4b9a1d98a" title="Process ISEM status information across pressure zones." alt="" coords="235,197,407,224"/>
+<area shape="rect" href="valves__modules__status__info_8c.html#a0d810ae77672dd3e21568adc7a42b38c" title="Process ISEM status information across pressure zones." alt="" coords="235,197,407,224"/>
 <area shape="poly" title=" " alt="" coords="187,191,219,195,219,200,187,196"/>
 <area shape="rect" href="diag__valve__status__info_8c.html#a0f33a057d237123db3425ba08ebb47e3" title="Function that processes the diag valve modules status information." alt="" coords="455,67,604,93"/>
 <area shape="poly" title=" " alt="" coords="387,112,456,95,458,100,388,117"/>
-<area shape="rect" href="_diag_valve_api_8c.html#ac3ec6ff63d65bb052cd01cb6eafd6634" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="652,107,824,133"/>
+<area shape="rect" href="_diag_valve_api_8c.html#afc63918903c176d7dd2fb86d4b14106d" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="652,107,824,133"/>
 <area shape="poly" title=" " alt="" coords="387,126,637,120,637,125,387,132"/>
 <area shape="rect" href="diag__valve__status__info_8c.html#a9ee8455a4c41c2efd1719fe6fed51053" title=" " alt="" coords="676,56,800,83"/>
 <area shape="poly" title=" " alt="" coords="605,74,661,71,661,76,605,79"/>
@@ -962,16 +956,19 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="603,91,650,101,649,106,602,97"/>
 <area shape="rect" href="default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="698,157,778,184"/>
 <area shape="poly" title=" " alt="" coords="555,92,600,117,653,143,684,154,683,159,651,148,597,122,552,96"/>
-<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="872,109,1066,152"/>
-<area shape="poly" title=" " alt="" coords="824,121,856,123,856,128,824,127"/>
-<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="888,187,1050,213"/>
-<area shape="poly" title=" " alt="" coords="789,131,825,143,873,162,917,178,915,183,871,166,823,148,787,136"/>
-<area shape="rect" href="_isem_diag_valve_api_8c.html#ad9a986ad54e6f23b84d77e8c751e07f6" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="654,208,822,235"/>
+<area shape="rect" href="_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="872,95,1066,137"/>
+<area shape="poly" title=" " alt="" coords="824,116,856,115,856,121,824,121"/>
+<area shape="rect" href="_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="888,161,1050,188"/>
+<area shape="poly" title=" " alt="" coords="798,131,896,155,894,160,797,137"/>
+<area shape="rect" href="_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="887,212,1051,239"/>
+<area shape="poly" title=" " alt="" coords="802,132,825,143,841,157,850,171,858,185,873,198,883,203,881,208,870,202,854,188,845,174,837,161,822,148,799,136"/>
+<area shape="rect" href="_isem_diag_valve_api_8c.html#ae283023d1787899e956cfe2df0c04300" title="Retrieves diagnostic process data for a specified ISEM diagnostic handler." alt="" coords="654,208,822,235"/>
 <area shape="poly" title=" " alt="" coords="408,210,639,216,638,221,407,216"/>
 <area shape="rect" href="isem__status__info_8c.html#ac556b861a63a472eab6b590aac6be953" title="Function that processes the isem modules status information." alt="" coords="470,248,589,275"/>
 <area shape="poly" title=" " alt="" coords="380,222,458,241,456,246,378,227"/>
-<area shape="poly" title=" " alt="" coords="789,205,823,194,905,157,907,161,825,198,790,210"/>
-<area shape="poly" title=" " alt="" coords="822,211,872,206,873,212,823,216"/>
+<area shape="poly" title=" " alt="" coords="798,205,822,194,837,183,846,171,855,159,870,147,879,142,881,147,873,152,859,163,850,175,840,186,825,198,800,210"/>
+<area shape="poly" title=" " alt="" coords="807,205,884,189,885,194,808,210"/>
+<area shape="poly" title=" " alt="" coords="822,220,872,221,872,226,822,225"/>
 <area shape="poly" title=" " alt="" coords="552,245,597,220,651,194,683,182,684,187,653,198,600,224,555,250"/>
 <area shape="poly" title=" " alt="" coords="589,247,650,236,651,241,590,252"/>
 <area shape="rect" href="isem__status__info_8c.html#ad3e3ba582ba271dd10563b919da8f94f" title=" " alt="" coords="658,325,818,352"/>
@@ -1055,6 +1052,62 @@ Here is the caller graph for this function:</div>
 <span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62939d998f34b2b77c671be6fc35548e" name="a62939d998f34b2b77c671be6fc35548e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62939d998f34b2b77c671be6fc35548e">&#9670;&#160;</a></span>backend_status_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structbackend__status__entry__t.html">backend_status_entry_t</a> backend_status_buffer[MACRO_MAX_MESSAGE_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f649c0ac4a850a6902e32bd1979a60a" name="a2f649c0ac4a850a6902e32bd1979a60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f649c0ac4a850a6902e32bd1979a60a">&#9670;&#160;</a></span>backend_status_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int backend_status_size = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac39e40400e571e3af868ddb0cbc6f467" name="ac39e40400e571e3af868ddb0cbc6f467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac39e40400e571e3af868ddb0cbc6f467">&#9670;&#160;</a></span>clear_diag_present</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t clear_diag_present = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0617f4dab30b9c966cbd08430cc3d367" name="a0617f4dab30b9c966cbd08430cc3d367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0617f4dab30b9c966cbd08430cc3d367">&#9670;&#160;</a></span>clear_isem_present</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t clear_isem_present = 0</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -1149,20 +1202,6 @@ Here is the caller graph for this function:</div>
 <span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4109e75cac85b53790c0cc32d788f7bc" name="a4109e75cac85b53790c0cc32d788f7bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4109e75cac85b53790c0cc32d788f7bc">&#9670;&#160;</a></span>fault_index</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t fault_index</td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>

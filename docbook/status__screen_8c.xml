@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_status__screen_8c" xml:lang="en-US">
+<title>GUI/Screens/status_screen.c File Reference</title>
+<indexterm><primary>GUI/Screens/status_screen.c</primary></indexterm>
+<para>
+
+<para>Source that displays status screen. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;AppGlobal.h&gt;<?linebreak?></programlisting>Include dependency graph for status_screen.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="status__screen_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_status__screen_8c_1a9e971832fa51f2017304dfc488f23b93">disp_mod_status_screen</link> (int status_value, int indx)</para>
+
+<para>function to create the status screen </para>
+</listitem>
+            <listitem><para>void <link linkend="_status__screen_8c_1a9d9732ee883427a96c71ce5b6e1b217d">stop_flashing_timer</link> ()</para>
+
+<para>function to stop the flashing timer </para>
+</listitem>
+            <listitem><para>void <link linkend="_status__screen_8c_1adcc2034261addcb1e1ed1272af6e421d">status_label_creation</link> (lv_obj_t *screen_name, const char *text, lv_coord_t x, lv_coord_t y, lv_coord_t w, lv_coord_t h, const lv_font_t *font_name, uint32_t font_colour)</para>
+
+<para>function to create the labels </para>
+</listitem>
+            <listitem><para>void <link linkend="_status__screen_8c_1aacff09f925b6d1af3bd78743926dfb3e">status_qr_creation</link> (lv_obj_t *screen_name, lv_coord_t size, char *text)</para>
+
+<para>function to create the QR </para>
+</listitem>
+            <listitem><para>void <link linkend="_status__screen_8c_1a4f6a30dc66c4eb48d9ce877149b302e8">set_animation</link> (lv_obj_t *label)</para>
+
+<para>create animations for normal and warning status </para>
+</listitem>
+            <listitem><para>void <link linkend="_status__screen_8c_1a05e26f94ed962040b81fad16870a99d7">set_animation_fault</link> (lv_obj_t *label)</para>
+
+<para>create animations for fault status </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>status_screen_struct <link linkend="_status__screen_8c_1a01a09ef94e00ab546916776847cc4dc1">screen_status_value</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_status__screen_8c_1a27e4047823c653df7bd5f560cd4fa460">g_total_no_of_status_screens</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1a659c2822fbcf0630ce20c397c108be6d">label1</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1af49d663f415abf955b2efbe3f53a4c31">label2</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1a914f48210428226902e114735b225766">label3</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1aba55cf84319de41c3ab63e89fcd64bdb">label4</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1a719f94200ba7b54c0f6eeaa77ffb3c18">label5</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1ac0cbf06f8355bdf1ab95d6fea7a52eb9">label6</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1aaf0259e2b24d760482d7c0ef9cda4f2a">label7</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1a1e4d3ce2e258c1af70da182d911a3cba">label8</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_status__screen_8c_1af185586be2ec40d1479b8616e18c5456">war_icn</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_status__screen_8c_1acf4df21b18b924052d66abac113599bb">flash_on</link> = 0</para>
+</listitem>
+            <listitem><para>status_screen <link linkend="_status__screen_8c_1aa70753c1475c299a99fbf946dceb9c1e">m_status</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that displays status screen. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_status__screen_8c_1a9e971832fa51f2017304dfc488f23b93"/><section>
+    <title>disp_mod_status_screen()</title>
+<indexterm><primary>disp_mod_status_screen</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>disp_mod_status_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_status_screen (int status_value, int indx)</computeroutput></para><para>
+
+<para>function to create the status screen </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>status_value</entry><entry>
+<para>- (0 - normal, 1 - warning, 2 - fault) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="status__screen_8c_a9e971832fa51f2017304dfc488f23b93_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="status__screen_8c_a9e971832fa51f2017304dfc488f23b93_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_status__screen_8c_1a4f6a30dc66c4eb48d9ce877149b302e8"/><section>
+    <title>set_animation()</title>
+<indexterm><primary>set_animation</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>set_animation</secondary></indexterm>
+<para><computeroutput>void set_animation (lv_obj_t * label)</computeroutput></para><para>
+
+<para>create animations for normal and warning status </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>label</entry><entry>
+<para>- label name for animations to occur </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_status__screen_8c_1a05e26f94ed962040b81fad16870a99d7"/><section>
+    <title>set_animation_fault()</title>
+<indexterm><primary>set_animation_fault</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>set_animation_fault</secondary></indexterm>
+<para><computeroutput>void set_animation_fault (lv_obj_t * label)</computeroutput></para><para>
+
+<para>create animations for fault status </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>label</entry><entry>
+<para>- label name for animations to occur </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_status__screen_8c_1adcc2034261addcb1e1ed1272af6e421d"/><section>
+    <title>status_label_creation()</title>
+<indexterm><primary>status_label_creation</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>status_label_creation</secondary></indexterm>
+<para><computeroutput>void status_label_creation (lv_obj_t * screen_name, const char * text, lv_coord_t x, lv_coord_t y, lv_coord_t w, lv_coord_t h, const lv_font_t * font_name, uint32_t font_colour)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>function to create the labels </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>screen_name</entry><entry>
+<para>- screen name </para>
+</entry>
+                            </row>
+                            <row>
+<entry>text</entry><entry>
+<para>- text to be displayed on the screen </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x</entry><entry>
+<para>- x axis alignment of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y</entry><entry>
+<para>- y axis alignment of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w</entry><entry>
+<para>- width of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>h</entry><entry>
+<para>- height of the label </para>
+</entry>
+                            </row>
+                            <row>
+<entry>font_name</entry><entry>
+<para>- font name (Monospace821 BT) </para>
+</entry>
+                            </row>
+                            <row>
+<entry>font_color</entry><entry>
+<para>- font color (white or black) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="status__screen_8c_adcc2034261addcb1e1ed1272af6e421d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_status__screen_8c_1aacff09f925b6d1af3bd78743926dfb3e"/><section>
+    <title>status_qr_creation()</title>
+<indexterm><primary>status_qr_creation</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>status_qr_creation</secondary></indexterm>
+<para><computeroutput>void status_qr_creation (lv_obj_t * screen_name, lv_coord_t size, char * text)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>function to create the QR </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>screen_name</entry><entry>
+<para>- screen name </para>
+</entry>
+                            </row>
+                            <row>
+<entry>text</entry><entry>
+<para>- text to be displayed on QR code </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="status__screen_8c_aacff09f925b6d1af3bd78743926dfb3e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_status__screen_8c_1a9d9732ee883427a96c71ce5b6e1b217d"/><section>
+    <title>stop_flashing_timer()</title>
+<indexterm><primary>stop_flashing_timer</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>stop_flashing_timer</secondary></indexterm>
+<para><computeroutput>void stop_flashing_timer ( )</computeroutput></para><para>
+
+<para>function to stop the flashing timer </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="status__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_status__screen_8c_1acf4df21b18b924052d66abac113599bb"/><section>
+    <title>flash_on</title>
+<indexterm><primary>flash_on</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>flash_on</secondary></indexterm>
+<para><computeroutput>int flash_on = 0</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1a27e4047823c653df7bd5f560cd4fa460"/><section>
+    <title>g_total_no_of_status_screens</title>
+<indexterm><primary>g_total_no_of_status_screens</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>g_total_no_of_status_screens</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_no_of_status_screens<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1a659c2822fbcf0630ce20c397c108be6d"/><section>
+    <title>label1</title>
+<indexterm><primary>label1</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>label1</secondary></indexterm>
+<para><computeroutput>lv_obj_t* label1</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1af49d663f415abf955b2efbe3f53a4c31"/><section>
+    <title>label2</title>
+<indexterm><primary>label2</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>label2</secondary></indexterm>
+<para><computeroutput>lv_obj_t* label2</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1a914f48210428226902e114735b225766"/><section>
+    <title>label3</title>
+<indexterm><primary>label3</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>label3</secondary></indexterm>
+<para><computeroutput>lv_obj_t* label3</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1aba55cf84319de41c3ab63e89fcd64bdb"/><section>
+    <title>label4</title>
+<indexterm><primary>label4</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>label4</secondary></indexterm>
+<para><computeroutput>lv_obj_t* label4</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1a719f94200ba7b54c0f6eeaa77ffb3c18"/><section>
+    <title>label5</title>
+<indexterm><primary>label5</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>label5</secondary></indexterm>
+<para><computeroutput>lv_obj_t* label5</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1ac0cbf06f8355bdf1ab95d6fea7a52eb9"/><section>
+    <title>label6</title>
+<indexterm><primary>label6</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>label6</secondary></indexterm>
+<para><computeroutput>lv_obj_t* label6</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1aaf0259e2b24d760482d7c0ef9cda4f2a"/><section>
+    <title>label7</title>
+<indexterm><primary>label7</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>label7</secondary></indexterm>
+<para><computeroutput>lv_obj_t* label7</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1a1e4d3ce2e258c1af70da182d911a3cba"/><section>
+    <title>label8</title>
+<indexterm><primary>label8</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>label8</secondary></indexterm>
+<para><computeroutput>lv_obj_t* label8</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1aa70753c1475c299a99fbf946dceb9c1e"/><section>
+    <title>m_status</title>
+<indexterm><primary>m_status</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>m_status</secondary></indexterm>
+<para><computeroutput>status_screen m_status</computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1a01a09ef94e00ab546916776847cc4dc1"/><section>
+    <title>screen_status_value</title>
+<indexterm><primary>screen_status_value</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>screen_status_value</secondary></indexterm>
+<para><computeroutput>status_screen_struct screen_status_value[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_status__screen_8c_1af185586be2ec40d1479b8616e18c5456"/><section>
+    <title>war_icn</title>
+<indexterm><primary>war_icn</primary><secondary>status_screen.c</secondary></indexterm>
+<indexterm><primary>status_screen.c</primary><secondary>war_icn</secondary></indexterm>
+<para><computeroutput>lv_obj_t* war_icn</computeroutput></para></section>
+</section>
+</section>

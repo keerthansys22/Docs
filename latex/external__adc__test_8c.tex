@@ -1,0 +1,159 @@
+\doxysection{Self\+\_\+\+Tests/external\+\_\+adc\+\_\+test.c File Reference}
+\hypertarget{external__adc__test_8c}{}\label{external__adc__test_8c}\index{Self\_Tests/external\_adc\_test.c@{Self\_Tests/external\_adc\_test.c}}
+
+
+Source file to check external ADC test.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$linux/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$linux/spi/spidev.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$sys/eventfd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/epoll.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$linux/types.\+h$>$}\newline
+{\ttfamily \#include $<$linux/i2c-\/dev.\+h$>$}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+Include dependency graph for external\+\_\+adc\+\_\+test.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{external__adc__test_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{external__adc__test_8c_a8a6c12d0194007da86226886cfce89b4}{I2\+C\+\_\+\+DEVICE}}~"{}/dev/i2c-\/1"{}
+\item 
+\#define \mbox{\hyperlink{external__adc__test_8c_a82628cba864d51e71cc788b230aeba91}{I2\+C\+\_\+\+ADDR\+\_\+\+EX}}~0x48
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{external__adc__test_8c_a83e318d326e7f103978ba924020b873e}{external\+\_\+adc\+\_\+reading\+\_\+voltage}} (int i2c\+File\+\_\+ex\+\_\+va)
+\begin{DoxyCompactList}\small\item\em To read the voltage of the VA measured using external adc. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{external__adc__test_8c_adec54fe2681f570d972be8fc93a06400}{external\+\_\+adc}} (void)
+\begin{DoxyCompactList}\small\item\em Function to test the External ADC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct i2c\+\_\+msg \mbox{\hyperlink{external__adc__test_8c_a26546fa59bb9d376eee575657dab9fe1}{i2cmsg}}
+\item 
+struct i2c\+\_\+rdwr\+\_\+ioctl\+\_\+data \mbox{\hyperlink{external__adc__test_8c_a8e38fc06f9426ed6e7bad6a4dc5e0980}{msg\+\_\+rdwr}}
+\item 
+int \mbox{\hyperlink{external__adc__test_8c_a41b2ae55793685136cd8f87b0ff4b669}{i2c\+\_\+va\+\_\+led\+\_\+file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source file to check external ADC test. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{external__adc__test_8c_a82628cba864d51e71cc788b230aeba91}\index{external\_adc\_test.c@{external\_adc\_test.c}!I2C\_ADDR\_EX@{I2C\_ADDR\_EX}}
+\index{I2C\_ADDR\_EX@{I2C\_ADDR\_EX}!external\_adc\_test.c@{external\_adc\_test.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_ADDR\_EX}{I2C\_ADDR\_EX}}
+{\footnotesize\ttfamily \label{external__adc__test_8c_a82628cba864d51e71cc788b230aeba91} 
+\#define I2\+C\+\_\+\+ADDR\+\_\+\+EX~0x48}
+
+\Hypertarget{external__adc__test_8c_a8a6c12d0194007da86226886cfce89b4}\index{external\_adc\_test.c@{external\_adc\_test.c}!I2C\_DEVICE@{I2C\_DEVICE}}
+\index{I2C\_DEVICE@{I2C\_DEVICE}!external\_adc\_test.c@{external\_adc\_test.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_DEVICE}{I2C\_DEVICE}}
+{\footnotesize\ttfamily \label{external__adc__test_8c_a8a6c12d0194007da86226886cfce89b4} 
+\#define I2\+C\+\_\+\+DEVICE~"{}/dev/i2c-\/1"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{external__adc__test_8c_adec54fe2681f570d972be8fc93a06400}\index{external\_adc\_test.c@{external\_adc\_test.c}!external\_adc@{external\_adc}}
+\index{external\_adc@{external\_adc}!external\_adc\_test.c@{external\_adc\_test.c}}
+\doxysubsubsection{\texorpdfstring{external\_adc()}{external\_adc()}}
+{\footnotesize\ttfamily \label{external__adc__test_8c_adec54fe2681f570d972be8fc93a06400} 
+int external\+\_\+adc (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Function to test the External ADC. 
+
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+FAILURE\+\_\+test on failure or API\+\_\+\+SUCCESS\+\_\+test on success 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{external__adc__test_8c_adec54fe2681f570d972be8fc93a06400_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{external__adc__test_8c_adec54fe2681f570d972be8fc93a06400_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{external__adc__test_8c_a83e318d326e7f103978ba924020b873e}\index{external\_adc\_test.c@{external\_adc\_test.c}!external\_adc\_reading\_voltage@{external\_adc\_reading\_voltage}}
+\index{external\_adc\_reading\_voltage@{external\_adc\_reading\_voltage}!external\_adc\_test.c@{external\_adc\_test.c}}
+\doxysubsubsection{\texorpdfstring{external\_adc\_reading\_voltage()}{external\_adc\_reading\_voltage()}}
+{\footnotesize\ttfamily \label{external__adc__test_8c_a83e318d326e7f103978ba924020b873e} 
+float external\+\_\+adc\+\_\+reading\+\_\+voltage (\begin{DoxyParamCaption}\item[{int}]{i2c\+File\+\_\+ex\+\_\+va}{}\end{DoxyParamCaption})}
+
+
+
+To read the voltage of the VA measured using external adc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+File\+\_\+ex\+\_\+va} & file discriptor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+voltage\+\_\+va Value of the voltage read 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{external__adc__test_8c_a83e318d326e7f103978ba924020b873e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{external__adc__test_8c_a83e318d326e7f103978ba924020b873e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{external__adc__test_8c_a41b2ae55793685136cd8f87b0ff4b669}\index{external\_adc\_test.c@{external\_adc\_test.c}!i2c\_va\_led\_file@{i2c\_va\_led\_file}}
+\index{i2c\_va\_led\_file@{i2c\_va\_led\_file}!external\_adc\_test.c@{external\_adc\_test.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_va\_led\_file}{i2c\_va\_led\_file}}
+{\footnotesize\ttfamily \label{external__adc__test_8c_a41b2ae55793685136cd8f87b0ff4b669} 
+int i2c\+\_\+va\+\_\+led\+\_\+file\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{external__adc__test_8c_a26546fa59bb9d376eee575657dab9fe1}\index{external\_adc\_test.c@{external\_adc\_test.c}!i2cmsg@{i2cmsg}}
+\index{i2cmsg@{i2cmsg}!external\_adc\_test.c@{external\_adc\_test.c}}
+\doxysubsubsection{\texorpdfstring{i2cmsg}{i2cmsg}}
+{\footnotesize\ttfamily \label{external__adc__test_8c_a26546fa59bb9d376eee575657dab9fe1} 
+struct i2c\+\_\+msg i2cmsg\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{external__adc__test_8c_a8e38fc06f9426ed6e7bad6a4dc5e0980}\index{external\_adc\_test.c@{external\_adc\_test.c}!msg\_rdwr@{msg\_rdwr}}
+\index{msg\_rdwr@{msg\_rdwr}!external\_adc\_test.c@{external\_adc\_test.c}}
+\doxysubsubsection{\texorpdfstring{msg\_rdwr}{msg\_rdwr}}
+{\footnotesize\ttfamily \label{external__adc__test_8c_a8e38fc06f9426ed6e7bad6a4dc5e0980} 
+struct i2c\+\_\+rdwr\+\_\+ioctl\+\_\+data msg\+\_\+rdwr\hspace{0.3cm}{\ttfamily [extern]}}
+

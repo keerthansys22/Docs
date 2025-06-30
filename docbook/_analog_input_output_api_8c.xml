@@ -1,0 +1,879 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__analog_input_output_api_8c" xml:lang="en-US">
+<title>API_Source/IoModulesApiSource.c/AnalogInputOutputApi.c File Reference</title>
+<indexterm><primary>API_Source/IoModulesApiSource.c/AnalogInputOutputApi.c</primary></indexterm>
+<para>
+
+<para>This file contains the source code of the analog input output module API. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for AnalogInputOutputApi.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link>&#160;&#160;&#160;0x00000000</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1afb9320299e696d63ffd6d8987fb6b1d1">AIO_MOD_IDENT_DEVICE_TYPE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1af870a4da36b7623f0bd65440a8b3d41f">AIO_MOD_IDENT_VENDOR_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 4)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1abd518d959bbfdd7003c2a228d1c9af8b">AIO_MOD_IDENT_DEVICE_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 8)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a188e3ea137676bfdb3a8e6a02883afb9">AIO_MOD_IDENT_VENDOR_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 12)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a94c79443c34aef77750b802f9960ae1c">AIO_MOD_IDENT_DEVICE_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 28)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a26f71f5b0cc75cd659b9ca4307f853df">AIO_MOD_IDENT_VARIANT_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 44)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a97d7afa2768c3cedd772bf3f354f3c61">AIO_MOD_IDENT_HW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 60)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a68683cfb00130bfa7a4ae3f8b2795079">AIO_MOD_IDENT_SERIAL_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 76)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1adabd9706fed02f6bd7508980bfe274cf">AIO_MOD_IDENT_SW_PART_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 92)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1ace79b40fa114445a20be6c03401ce9d2">AIO_MOD_IDENT_SW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 108)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a21b249fb02fdb95e4fe75ea596a03d2a">AIO_MOD_AI_FORCE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 124)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a09e4a7abfd6f2b64aa9180689463cb86">AIO_MOD_AI_FORCE_MODE_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 125)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1adc797949832794c63fedd49bf21f22f1">AIO_MOD_AI_ADC_VOLTCUR_INPUT_RANGE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 133)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a368df05507f031a2e7aa50caed6a2115">AIO_MOD_AI_RANGE_OVERRUN_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 137)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1af27d4ce124b84896de9d38e79ad1c849">AIO_MOD_AI_RANGE_UNDERRUN_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 138)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a3171d3cf5b13d1348c41a03b179b7761">AIO_MOD_AI_WIRE_BREAK_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 139)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1adf03546434fab9c2fb6c103ca07f4708">AIO_MOD_AI_AVERAGE_COUNT_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 140)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a6771f473831bf26cf14bad670feb04ee">AIO_MOD_AI_SENSOR_SUPPLY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 144)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a8e10da48c6719dce1c397068633f31b6">AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 145)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a733a282060ed1b7e9c5e22223837f31b">AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 146)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1aa045e2c19a316959bf9475c9a19af155">AIO_MOD_AI_CHANNEL_RANGE_MODE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 147)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a9c1730fae947d3da53dab68e556b7b89">AIO_MOD_AI_UPPER_LIMIT_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 148)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a52772ae871b2f1ab966959ccf4f72cb0">AIO_MOD_AI_UPPER_LIMIT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 149)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1abcbea85aaef2ad7fda33168403894543">AIO_MOD_AI_LOWER_LIMIT_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 157)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a7bf4fa88d24a3e0d4a595e9ebfdb56f5">AIO_MOD_AI_LOWER_LIMIT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 158)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a2bde6cf818e5facf5177114793faf731">AIO_MOD_AI_LIMIT_HYSTERESIS_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 166)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a242fac7141c34f33457d202b63f0388d">AIO_MOD_AI_ERROR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 174)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1abae8e5335cdc5a85e6dc76edce17bf50">AIO_MOD_AO_ACTR_SUPPLY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 178)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a0fa24db8b2993918d869e7a939e477a4">AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_DIAG_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 179)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a02cbab40a78bdcf629a265aaf7da1b88">AIO_MOD_AO_SHORT_CKT_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 180)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1ab185e52fdb35284ac9176179a6d1cabe">AIO_MOD_AO_OPEN_CKT_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 181)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a783094e4468c3f9df303c6358de8c591">AIO_MOD_AO_UPPER_LIMIT_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 182)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a081726e1fcc7f001c49d0cbf7d7758d0">AIO_MOD_AO_LOWER_LIMIT_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 183)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a4f01a3fd45392cee1e01cdcb2d78c2f5">AIO_MOD_AO_DAC_VOLTCUR_RANGE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 184)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a8fc762adb2b836fd964420adbd7e1200">AIO_MOD_AO_FORCE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 188)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a8b14b6f626f4eb67d8f1718b151f1be0">AIO_MOD_AO_FORCE_MODE_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 189)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a29d1acdd3b710bf9cd1e34196a146615">AIO_MOD_AO_IDLE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 197)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a1af421a1b8fb199ade1f4dee073ecc99">AIO_MOD_AO_IDLE_MODE_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 198)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a814f69b082a580ca744f35743f70ce93">AIO_MOD_AO_MODULE_IDLE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 206)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1aa28b7b8ef1cf34a505b9db29e2365dd4">AIO_MOD_AO_BUS_FAULT_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 207)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1af2fcc86df08d92dd50eb5860576430b5">AIO_MOD_AO_BUS_FAULT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 208)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a1dc93b343902117d1d8f450c7a5643a4">AIO_MOD_AO_SHORT_CKT_RECOVERY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 216)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a1b97e2f96a22b600500e59e42726ac19">AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 217)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a0d7c066de1bb48e496d40b4821d2e798">AIO_MOD_AO_RANGE_MODE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 218)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a9f517a00318c794ed3fd5143a4a9fe8c">AIO_MOD_AO_UPPER_LIMIT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 219)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1aa845da5bbd82c6bae8be14277685c2be">AIO_MOD_AO_LOWER_LIMIT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 227)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a5ffefb7bfa41720df4d96e410e935a8d">AIO_MOD_AO_ERROR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 235)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a41d76881dd5b4558c0fe4589e41479de">AIO_MOD_VA_VB_VOLTAGE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 239)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a96ab7376de40fec3a82003da9dbb3509">AIO_MOD_POST_ERROR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 247)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a487dd882433aae31465bf48e18bd6674">AIO_MOD_OPERATION_TIME_HOURS_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 251)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a96eb00ba284797dc41d5aa2cecfadc32">AIO_MOD_OPERATION_TIME_MINUTES_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 255)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1af629ed5930952b071ddb30ec0edf769a">AIO_MOD_MIN_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 257)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a9b352ba917790e2291908c50be7dec3d">AIO_MOD_MAX_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 259)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1af25a69d482fd6ecd35bb8c9f49519378">AIO_MOD_MEASURED_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 261)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1af8c92c97b1404816ffae2ea81b773947">AIO_MOD_MEMORY_LIFECYCLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 263)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1adc69b73ff24d639c9ebe645c406eec16">AIO_MOD_AI_DATA_SEND_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 267)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1acec288986f22529e48cf09b23bbc3e1c">AIO_MOD_AI_DATA_POINT_COUNT_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 268)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1abda1617cddf1362767dd2ab33e40da16">AIO_MOD_AI_DATA_POINT_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 269)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1aca63762fa42f7811ede6299402c89272">AIO_MOD_AI_SCAN_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 270)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1afbfaacf372636fade561ec103e25fd9e">AIO_MOD_AO_DATA_POINT_COUNT_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 271)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a5487117a79e298f7ab9d5715f865bc79">AIO_MOD_AO_DATA_POINT_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 272)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a37783a227c14cb56b3eb7f11b5910823">AIO_MOD_AO_SCAN_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 273)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1abdef514f88a9fcf897f480ac5f0a8619">AIO_MOD_MODULE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 274)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a47f271af32f290fd02e4709020546305">AIO_MOD_AI_CHANNELS_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 275)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1aeea86a3ab638b958105733ecda30b82f">AIO_MOD_AO_CHANNELS_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 276)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a7276cd105c705dbc2411d69e15517646">AIO_MOD_AUX_SUPPLY_OVR_VOLTAGE_RECOVERY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 277)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a9f1dc1a6487790cda65bc4fe0328c10f">AIO_MOD_AUX_SUPPLY_UND_VOLTAGE_RECOVERY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 278)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1aae4c8df7fa2ccf55a21304c750c060e7">AIO_MOD_EDS_VERSION_NUMBER_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 279)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_output_api_8c_1a63ef0da74528dec692667fbfee69c3ab">AIO_MOD_EDS_VERSION_DATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 295)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="__analog_input_output_api_8c_1aab64cdfe20fa84db4be92c96380d60a2">getIOServiceDataInstanceAddress</link> (uint16_t handler)</para>
+
+<para>: This is to get the address of the service data instance </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__analog_input_output_api_8c_1a91f3bb33371373e3e9b48b2290355551">getIOProcessDataInstanceAddress</link> (uint16_t handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_output_api_8c_1a2383a3641c7a989a9d6c99be17bf45c8">writeSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t addr, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_output_api_8c_1ae512dcee3f48f317872617e5f4559b19">readSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_output_api_8c_1a1f8ab9854c2deaffad41501aa7eca426">getAIOModuleProcessData</link> (uint16_t aio_device_handler, aiomodule_processinfo *aiomod_processdata)</para>
+
+<para>Retrieves the process data for a specified AIO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_output_api_8c_1abe5a30d36357c0fada90ee802aa49d48">setAIOModuleProcessData</link> (uint16_t aio_device_handler, int16_t data, uint8_t channle_number)</para>
+
+<para>Sets the analog output value for a specified AIO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_output_api_8c_1a4fc906d0b3feeafa0f217d95654b43b3">getAnalogInputOutputServiceData</link> (uint16_t analog_inputoutput_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter data for a specified AIO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_output_api_8c_1a47f316d2e168adb8b3f0651d7f1642aa">setAnalogInputOutputServiceData</link> (uint16_t analog_inputoutput_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified AIO module. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__analog_input_output_api_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file contains the source code of the analog input output module API. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__analog_input_output_api_8c_1adc797949832794c63fedd49bf21f22f1"/><section>
+    <title>AIO_MOD_AI_ADC_VOLTCUR_INPUT_RANGE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_ADC_VOLTCUR_INPUT_RANGE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_ADC_VOLTCUR_INPUT_RANGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_ADC_VOLTCUR_INPUT_RANGE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 133)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1adf03546434fab9c2fb6c103ca07f4708"/><section>
+    <title>AIO_MOD_AI_AVERAGE_COUNT_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_AVERAGE_COUNT_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_AVERAGE_COUNT_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_AVERAGE_COUNT_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 140)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1aa045e2c19a316959bf9475c9a19af155"/><section>
+    <title>AIO_MOD_AI_CHANNEL_RANGE_MODE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_CHANNEL_RANGE_MODE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_CHANNEL_RANGE_MODE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_CHANNEL_RANGE_MODE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 147)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a47f271af32f290fd02e4709020546305"/><section>
+    <title>AIO_MOD_AI_CHANNELS_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_CHANNELS_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_CHANNELS_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_CHANNELS_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 275)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1acec288986f22529e48cf09b23bbc3e1c"/><section>
+    <title>AIO_MOD_AI_DATA_POINT_COUNT_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_DATA_POINT_COUNT_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_DATA_POINT_COUNT_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_DATA_POINT_COUNT_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 268)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1abda1617cddf1362767dd2ab33e40da16"/><section>
+    <title>AIO_MOD_AI_DATA_POINT_INTERVAL_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_DATA_POINT_INTERVAL_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_DATA_POINT_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_DATA_POINT_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 269)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1adc69b73ff24d639c9ebe645c406eec16"/><section>
+    <title>AIO_MOD_AI_DATA_SEND_INTERVAL_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_DATA_SEND_INTERVAL_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_DATA_SEND_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_DATA_SEND_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 267)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a242fac7141c34f33457d202b63f0388d"/><section>
+    <title>AIO_MOD_AI_ERROR_STATUS_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_ERROR_STATUS_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_ERROR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_ERROR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 174)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a21b249fb02fdb95e4fe75ea596a03d2a"/><section>
+    <title>AIO_MOD_AI_FORCE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_FORCE_MODE_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_FORCE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_FORCE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 124)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a09e4a7abfd6f2b64aa9180689463cb86"/><section>
+    <title>AIO_MOD_AI_FORCE_MODE_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_FORCE_MODE_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_FORCE_MODE_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_FORCE_MODE_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 125)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a2bde6cf818e5facf5177114793faf731"/><section>
+    <title>AIO_MOD_AI_LIMIT_HYSTERESIS_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_LIMIT_HYSTERESIS_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_LIMIT_HYSTERESIS_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_LIMIT_HYSTERESIS_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 166)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1abcbea85aaef2ad7fda33168403894543"/><section>
+    <title>AIO_MOD_AI_LOWER_LIMIT_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_LOWER_LIMIT_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_LOWER_LIMIT_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_LOWER_LIMIT_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 157)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a7bf4fa88d24a3e0d4a595e9ebfdb56f5"/><section>
+    <title>AIO_MOD_AI_LOWER_LIMIT_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_LOWER_LIMIT_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_LOWER_LIMIT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_LOWER_LIMIT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 158)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a368df05507f031a2e7aa50caed6a2115"/><section>
+    <title>AIO_MOD_AI_RANGE_OVERRUN_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_RANGE_OVERRUN_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_RANGE_OVERRUN_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_RANGE_OVERRUN_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 137)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1af27d4ce124b84896de9d38e79ad1c849"/><section>
+    <title>AIO_MOD_AI_RANGE_UNDERRUN_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_RANGE_UNDERRUN_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_RANGE_UNDERRUN_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_RANGE_UNDERRUN_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 138)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1aca63762fa42f7811ede6299402c89272"/><section>
+    <title>AIO_MOD_AI_SCAN_INTERVAL_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_SCAN_INTERVAL_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_SCAN_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_SCAN_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 270)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a6771f473831bf26cf14bad670feb04ee"/><section>
+    <title>AIO_MOD_AI_SENSOR_SUPPLY_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_SENSOR_SUPPLY_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_SENSOR_SUPPLY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_SENSOR_SUPPLY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 144)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a8e10da48c6719dce1c397068633f31b6"/><section>
+    <title>AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 145)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a733a282060ed1b7e9c5e22223837f31b"/><section>
+    <title>AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 146)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a9c1730fae947d3da53dab68e556b7b89"/><section>
+    <title>AIO_MOD_AI_UPPER_LIMIT_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_UPPER_LIMIT_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_UPPER_LIMIT_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_UPPER_LIMIT_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 148)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a52772ae871b2f1ab966959ccf4f72cb0"/><section>
+    <title>AIO_MOD_AI_UPPER_LIMIT_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_UPPER_LIMIT_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_UPPER_LIMIT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_UPPER_LIMIT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 149)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a3171d3cf5b13d1348c41a03b179b7761"/><section>
+    <title>AIO_MOD_AI_WIRE_BREAK_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AI_WIRE_BREAK_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AI_WIRE_BREAK_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AI_WIRE_BREAK_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 139)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1abae8e5335cdc5a85e6dc76edce17bf50"/><section>
+    <title>AIO_MOD_AO_ACTR_SUPPLY_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_ACTR_SUPPLY_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_ACTR_SUPPLY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_ACTR_SUPPLY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 178)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a0fa24db8b2993918d869e7a939e477a4"/><section>
+    <title>AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_DIAG_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_DIAG_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_DIAG_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_DIAG_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 179)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a1b97e2f96a22b600500e59e42726ac19"/><section>
+    <title>AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_ACTR_SUPPLY_SHORT_CKT_RECOVERY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 217)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1aa28b7b8ef1cf34a505b9db29e2365dd4"/><section>
+    <title>AIO_MOD_AO_BUS_FAULT_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_BUS_FAULT_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_BUS_FAULT_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_BUS_FAULT_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 207)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1af2fcc86df08d92dd50eb5860576430b5"/><section>
+    <title>AIO_MOD_AO_BUS_FAULT_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_BUS_FAULT_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_BUS_FAULT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_BUS_FAULT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 208)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1aeea86a3ab638b958105733ecda30b82f"/><section>
+    <title>AIO_MOD_AO_CHANNELS_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_CHANNELS_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_CHANNELS_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_CHANNELS_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 276)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a4f01a3fd45392cee1e01cdcb2d78c2f5"/><section>
+    <title>AIO_MOD_AO_DAC_VOLTCUR_RANGE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_DAC_VOLTCUR_RANGE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_DAC_VOLTCUR_RANGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_DAC_VOLTCUR_RANGE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 184)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1afbfaacf372636fade561ec103e25fd9e"/><section>
+    <title>AIO_MOD_AO_DATA_POINT_COUNT_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_DATA_POINT_COUNT_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_DATA_POINT_COUNT_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_DATA_POINT_COUNT_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 271)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a5487117a79e298f7ab9d5715f865bc79"/><section>
+    <title>AIO_MOD_AO_DATA_POINT_INTERVAL_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_DATA_POINT_INTERVAL_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_DATA_POINT_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_DATA_POINT_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 272)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a5ffefb7bfa41720df4d96e410e935a8d"/><section>
+    <title>AIO_MOD_AO_ERROR_STATUS_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_ERROR_STATUS_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_ERROR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_ERROR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 235)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a8fc762adb2b836fd964420adbd7e1200"/><section>
+    <title>AIO_MOD_AO_FORCE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_FORCE_MODE_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_FORCE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_FORCE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 188)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a8b14b6f626f4eb67d8f1718b151f1be0"/><section>
+    <title>AIO_MOD_AO_FORCE_MODE_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_FORCE_MODE_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_FORCE_MODE_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_FORCE_MODE_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 189)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a29d1acdd3b710bf9cd1e34196a146615"/><section>
+    <title>AIO_MOD_AO_IDLE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_IDLE_MODE_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_IDLE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_IDLE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 197)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a1af421a1b8fb199ade1f4dee073ecc99"/><section>
+    <title>AIO_MOD_AO_IDLE_MODE_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_IDLE_MODE_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_IDLE_MODE_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_IDLE_MODE_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 198)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a081726e1fcc7f001c49d0cbf7d7758d0"/><section>
+    <title>AIO_MOD_AO_LOWER_LIMIT_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_LOWER_LIMIT_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_LOWER_LIMIT_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_LOWER_LIMIT_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 183)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1aa845da5bbd82c6bae8be14277685c2be"/><section>
+    <title>AIO_MOD_AO_LOWER_LIMIT_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_LOWER_LIMIT_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_LOWER_LIMIT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_LOWER_LIMIT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 227)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a814f69b082a580ca744f35743f70ce93"/><section>
+    <title>AIO_MOD_AO_MODULE_IDLE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_MODULE_IDLE_MODE_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_MODULE_IDLE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_MODULE_IDLE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 206)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1ab185e52fdb35284ac9176179a6d1cabe"/><section>
+    <title>AIO_MOD_AO_OPEN_CKT_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_OPEN_CKT_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_OPEN_CKT_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_OPEN_CKT_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 181)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a0d7c066de1bb48e496d40b4821d2e798"/><section>
+    <title>AIO_MOD_AO_RANGE_MODE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_RANGE_MODE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_RANGE_MODE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_RANGE_MODE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 218)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a37783a227c14cb56b3eb7f11b5910823"/><section>
+    <title>AIO_MOD_AO_SCAN_INTERVAL_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_SCAN_INTERVAL_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_SCAN_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_SCAN_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 273)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a02cbab40a78bdcf629a265aaf7da1b88"/><section>
+    <title>AIO_MOD_AO_SHORT_CKT_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_SHORT_CKT_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_SHORT_CKT_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_SHORT_CKT_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 180)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a1dc93b343902117d1d8f450c7a5643a4"/><section>
+    <title>AIO_MOD_AO_SHORT_CKT_RECOVERY_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_SHORT_CKT_RECOVERY_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_SHORT_CKT_RECOVERY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_SHORT_CKT_RECOVERY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 216)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a783094e4468c3f9df303c6358de8c591"/><section>
+    <title>AIO_MOD_AO_UPPER_LIMIT_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_UPPER_LIMIT_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_UPPER_LIMIT_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_UPPER_LIMIT_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 182)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a9f517a00318c794ed3fd5143a4a9fe8c"/><section>
+    <title>AIO_MOD_AO_UPPER_LIMIT_VALUE_ADDR</title>
+<indexterm><primary>AIO_MOD_AO_UPPER_LIMIT_VALUE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AO_UPPER_LIMIT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AO_UPPER_LIMIT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 219)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a7276cd105c705dbc2411d69e15517646"/><section>
+    <title>AIO_MOD_AUX_SUPPLY_OVR_VOLTAGE_RECOVERY_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AUX_SUPPLY_OVR_VOLTAGE_RECOVERY_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AUX_SUPPLY_OVR_VOLTAGE_RECOVERY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AUX_SUPPLY_OVR_VOLTAGE_RECOVERY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 277)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a9f1dc1a6487790cda65bc4fe0328c10f"/><section>
+    <title>AIO_MOD_AUX_SUPPLY_UND_VOLTAGE_RECOVERY_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_AUX_SUPPLY_UND_VOLTAGE_RECOVERY_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_AUX_SUPPLY_UND_VOLTAGE_RECOVERY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_AUX_SUPPLY_UND_VOLTAGE_RECOVERY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 278)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a63ef0da74528dec692667fbfee69c3ab"/><section>
+    <title>AIO_MOD_EDS_VERSION_DATE_ADDR</title>
+<indexterm><primary>AIO_MOD_EDS_VERSION_DATE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_EDS_VERSION_DATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_EDS_VERSION_DATE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 295)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1aae4c8df7fa2ccf55a21304c750c060e7"/><section>
+    <title>AIO_MOD_EDS_VERSION_NUMBER_ADDR</title>
+<indexterm><primary>AIO_MOD_EDS_VERSION_NUMBER_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_EDS_VERSION_NUMBER_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_EDS_VERSION_NUMBER_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 279)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1abd518d959bbfdd7003c2a228d1c9af8b"/><section>
+    <title>AIO_MOD_IDENT_DEVICE_ID_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_DEVICE_ID_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_DEVICE_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_DEVICE_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 8)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a94c79443c34aef77750b802f9960ae1c"/><section>
+    <title>AIO_MOD_IDENT_DEVICE_NAME_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_DEVICE_NAME_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_DEVICE_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_DEVICE_NAME_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 28)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1afb9320299e696d63ffd6d8987fb6b1d1"/><section>
+    <title>AIO_MOD_IDENT_DEVICE_TYPE_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_DEVICE_TYPE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_DEVICE_TYPE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_DEVICE_TYPE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a97d7afa2768c3cedd772bf3f354f3c61"/><section>
+    <title>AIO_MOD_IDENT_HW_REV_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_HW_REV_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_HW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_HW_REV_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 60)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201"/><section>
+    <title>AIO_MOD_IDENT_INFO_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_INFO_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_INFO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_INFO_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a68683cfb00130bfa7a4ae3f8b2795079"/><section>
+    <title>AIO_MOD_IDENT_SERIAL_NO_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_SERIAL_NO_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_SERIAL_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_SERIAL_NO_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 76)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1adabd9706fed02f6bd7508980bfe274cf"/><section>
+    <title>AIO_MOD_IDENT_SW_PART_NO_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_SW_PART_NO_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_SW_PART_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_SW_PART_NO_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 92)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1ace79b40fa114445a20be6c03401ce9d2"/><section>
+    <title>AIO_MOD_IDENT_SW_REV_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_SW_REV_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_SW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_SW_REV_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 108)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a26f71f5b0cc75cd659b9ca4307f853df"/><section>
+    <title>AIO_MOD_IDENT_VARIANT_ID_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_VARIANT_ID_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_VARIANT_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_VARIANT_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 44)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1af870a4da36b7623f0bd65440a8b3d41f"/><section>
+    <title>AIO_MOD_IDENT_VENDOR_ID_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_VENDOR_ID_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_VENDOR_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_VENDOR_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 4)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a188e3ea137676bfdb3a8e6a02883afb9"/><section>
+    <title>AIO_MOD_IDENT_VENDOR_NAME_ADDR</title>
+<indexterm><primary>AIO_MOD_IDENT_VENDOR_NAME_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_IDENT_VENDOR_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_IDENT_VENDOR_NAME_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1aa7b54a048bbd83f850af2a3ce0504201">AIO_MOD_IDENT_INFO_ADDR</link> + 12)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a9b352ba917790e2291908c50be7dec3d"/><section>
+    <title>AIO_MOD_MAX_TEMPERATURE_ADDR</title>
+<indexterm><primary>AIO_MOD_MAX_TEMPERATURE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_MAX_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_MAX_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 259)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1af25a69d482fd6ecd35bb8c9f49519378"/><section>
+    <title>AIO_MOD_MEASURED_TEMPERATURE_ADDR</title>
+<indexterm><primary>AIO_MOD_MEASURED_TEMPERATURE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_MEASURED_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_MEASURED_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 261)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1af8c92c97b1404816ffae2ea81b773947"/><section>
+    <title>AIO_MOD_MEMORY_LIFECYCLE_ADDR</title>
+<indexterm><primary>AIO_MOD_MEMORY_LIFECYCLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_MEMORY_LIFECYCLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_MEMORY_LIFECYCLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 263)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1af629ed5930952b071ddb30ec0edf769a"/><section>
+    <title>AIO_MOD_MIN_TEMPERATURE_ADDR</title>
+<indexterm><primary>AIO_MOD_MIN_TEMPERATURE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_MIN_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_MIN_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 257)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1abdef514f88a9fcf897f480ac5f0a8619"/><section>
+    <title>AIO_MOD_MODULE_ENABLE_ADDR</title>
+<indexterm><primary>AIO_MOD_MODULE_ENABLE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_MODULE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_MODULE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 274)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a487dd882433aae31465bf48e18bd6674"/><section>
+    <title>AIO_MOD_OPERATION_TIME_HOURS_ADDR</title>
+<indexterm><primary>AIO_MOD_OPERATION_TIME_HOURS_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_OPERATION_TIME_HOURS_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_OPERATION_TIME_HOURS_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 251)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a96eb00ba284797dc41d5aa2cecfadc32"/><section>
+    <title>AIO_MOD_OPERATION_TIME_MINUTES_ADDR</title>
+<indexterm><primary>AIO_MOD_OPERATION_TIME_MINUTES_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_OPERATION_TIME_MINUTES_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_OPERATION_TIME_MINUTES_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 255)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a96ab7376de40fec3a82003da9dbb3509"/><section>
+    <title>AIO_MOD_POST_ERROR_STATUS_ADDR</title>
+<indexterm><primary>AIO_MOD_POST_ERROR_STATUS_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_POST_ERROR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_POST_ERROR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 247)</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c"/><section>
+    <title>AIO_MOD_SERVICE_DATA_ADDR</title>
+<indexterm><primary>AIO_MOD_SERVICE_DATA_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_SERVICE_DATA_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_SERVICE_DATA_ADDR&#160;&#160;&#160;0x00000000</computeroutput></para></section>
+<anchor xml:id="__analog_input_output_api_8c_1a41d76881dd5b4558c0fe4589e41479de"/><section>
+    <title>AIO_MOD_VA_VB_VOLTAGE_ADDR</title>
+<indexterm><primary>AIO_MOD_VA_VB_VOLTAGE_ADDR</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>AIO_MOD_VA_VB_VOLTAGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AIO_MOD_VA_VB_VOLTAGE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_output_api_8c_1ab2e2cad52b51848018c1f1a70417f50c">AIO_MOD_SERVICE_DATA_ADDR</link> + 239)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__analog_input_output_api_8c_1a1f8ab9854c2deaffad41501aa7eca426"/><section>
+    <title>getAIOModuleProcessData()</title>
+<indexterm><primary>getAIOModuleProcessData</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>getAIOModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getAIOModuleProcessData (uint16_t aio_device_handler, aiomodule_processinfo * aiomod_processdata)</computeroutput></para><para>
+
+<para>Retrieves the process data for a specified AIO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>aio_device_handler</entry><entry>
+<para>The handler for the AIO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>aiomod_processdata</entry><entry>
+<para>Pointer to the <computeroutput>aiomodule_processinfo</computeroutput> structure to store process data.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_a1f8ab9854c2deaffad41501aa7eca426_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_a1f8ab9854c2deaffad41501aa7eca426_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_output_api_8c_1a4fc906d0b3feeafa0f217d95654b43b3"/><section>
+    <title>getAnalogInputOutputServiceData()</title>
+<indexterm><primary>getAnalogInputOutputServiceData</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>getAnalogInputOutputServiceData</secondary></indexterm>
+<para><computeroutput>uint8_t getAnalogInputOutputServiceData (uint16_t analog_inputoutput_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter data for a specified AIO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>analog_input_handler</entry><entry>
+<para>The handler for the AIO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to retrieve. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the buffer where the retrieved data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_a4fc906d0b3feeafa0f217d95654b43b3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_a4fc906d0b3feeafa0f217d95654b43b3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_output_api_8c_1a91f3bb33371373e3e9b48b2290355551"/><section>
+    <title>getIOProcessDataInstanceAddress()</title>
+<indexterm><primary>getIOProcessDataInstanceAddress</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>getIOProcessDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOProcessDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para>
+<para>@breif : This is to get the address of of the process data instance </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_a91f3bb33371373e3e9b48b2290355551_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_output_api_8c_1aab64cdfe20fa84db4be92c96380d60a2"/><section>
+    <title>getIOServiceDataInstanceAddress()</title>
+<indexterm><primary>getIOServiceDataInstanceAddress</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>getIOServiceDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOServiceDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>: This is to get the address of the service data instance </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_output_api_8c_1ae512dcee3f48f317872617e5f4559b19"/><section>
+    <title>readSharedMemoryData()</title>
+<indexterm><primary>readSharedMemoryData</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>readSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_ae512dcee3f48f317872617e5f4559b19_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_output_api_8c_1abe5a30d36357c0fada90ee802aa49d48"/><section>
+    <title>setAIOModuleProcessData()</title>
+<indexterm><primary>setAIOModuleProcessData</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>setAIOModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t setAIOModuleProcessData (uint16_t aio_device_handler, int16_t data, uint8_t channle_number)</computeroutput></para><para>
+
+<para>Sets the analog output value for a specified AIO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>aio_device_handler</entry><entry>
+<para>The handler for the AIO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Value of the data to be set</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_abe5a30d36357c0fada90ee802aa49d48_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_output_api_8c_1a47f316d2e168adb8b3f0651d7f1642aa"/><section>
+    <title>setAnalogInputOutputServiceData()</title>
+<indexterm><primary>setAnalogInputOutputServiceData</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>setAnalogInputOutputServiceData</secondary></indexterm>
+<para><computeroutput>uint8_t setAnalogInputOutputServiceData (uint16_t analog_inputoutput_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified AIO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>analog_inputoutput_handler</entry><entry>
+<para>The handler for the AIO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. //Refer to the enumeration <computeroutput>e_io_servicedata_parameter_name</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+
+<para>IOAcyclic_Inst_x-&gt;aioserviceobj.aiappUpperLimitval[1] = *(int16_t *)data;</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_a47f316d2e168adb8b3f0651d7f1642aa_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_a47f316d2e168adb8b3f0651d7f1642aa_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_output_api_8c_1a2383a3641c7a989a9d6c99be17bf45c8"/><section>
+    <title>writeSharedMemoryData()</title>
+<indexterm><primary>writeSharedMemoryData</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>writeSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t writeSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t addr, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_output_api_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__analog_input_output_api_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>AnalogInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputOutputApi.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

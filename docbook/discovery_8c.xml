@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_discovery_8c" xml:lang="en-US">
+<title>Data_processing/discovery.c File Reference</title>
+<indexterm><primary>Data_processing/discovery.c</primary></indexterm>
+<para>
+
+<para>Source that handles the discovery part of all module details. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for discovery.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_discovery_8c_1a4b65e82368bb41640facc3743c8e3671">retrieveAndCopyHandlers</link> (uint16_t *(*getHandlerFunc)(void), uint16_t *destArray, const char *moduleName, uint16_t maxHandlers)</para>
+
+<para>Helper function to retrieve and copy handlers. </para>
+</listitem>
+            <listitem><para>void <link linkend="_discovery_8c_1a9fb9bb9f432567d6ac9d3084230d13d0">retrieveAndCopyHandlersWithArg</link> (uint16_t *(*getHandlerFunc)(uint16_t), uint16_t *destArray, const char *moduleName, uint16_t maxHandlers, uint16_t handler, uint16_t *count)</para>
+
+<para>Helper function to retrieve and copy handlers with arguments. </para>
+</listitem>
+            <listitem><para>int <link linkend="_discovery_8c_1a20c3cefbb0187f193f7b2b327e82342f">start_discovery</link> ()</para>
+
+<para>Function that processes the discovery details. </para>
+</listitem>
+            <listitem><para>int <link linkend="_discovery_8c_1af14569278f4c7b310cd060593a7e65eb">fetch_pressure_zone_handlers</link> (uint8_t pz_count)</para>
+
+<para>Function that fetches all the individual pressure zone handler details. </para>
+</listitem>
+            <listitem><para>int <link linkend="_discovery_8c_1a3b848e11cbd331e215031a342401a683">fetch_prop_zone_details</link> (uint8_t prop_zone_count)</para>
+
+<para>Function that fetches all the individual property zone details. </para>
+</listitem>
+            <listitem><para>int <link linkend="_discovery_8c_1a06b108195d85b99abb936fe244fe064d">get_pin_details</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>s_discovery_details <link linkend="_discovery_8c_1aecc928609def218c15f7c59447eb5a32">discover_details</link></para>
+</listitem>
+            <listitem><para>s_prszone_device_count_details <link linkend="_discovery_8c_1a639ca1471160314ce61d52506c2a8d0d">pz_count_details</link> [MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a13ce44a86fef638ebd3999c53867bfa0">mbn_handler_linux</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1acb71097bdde0eeb8f371374d3a7e14ed">di_handlers</link> [MACRO_MAX_IO_HANDLERS] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a92e023a01eb6cda34cb71ffb24aac30d">do_handlers</link> [MACRO_MAX_IO_HANDLERS] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a469ccdb9274911410aa03d305dda5343">dio_handlers</link> [MACRO_MAX_IO_HANDLERS] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a1b52b26f5eaa915de63b353f7186b998">ai_handlers</link> [MACRO_MAX_IO_HANDLERS] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1aa42415ce458bf3e4b6111071869ee688">ao_handlers</link> [MACRO_MAX_IO_HANDLERS] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a02fd0c072e2bbeb279db2b5a5e77879b">aio_handlers</link> [MACRO_MAX_IO_HANDLERS] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a8f6252caf33f738fd9f6e6c46db45eb8">pz_handlers</link> [MACRO_MAX_PZ_HANDLERS] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1aa99741c64ccbcc97a4d63b9364f74eac">prop_zone_handlers</link> [MACRO_MAX_PROP_ZONE_HANDLERS] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1abde244b58c27c11e6d996745e398332a">isemdiag_handlers</link> [MACRO_MAX_ISEM_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a674bdb8ef9a107fc2ac0646e0909a4ec">diag_handlers</link> [MACRO_MAX_DIAG_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a33c9d8d2ebd58c0dcf868d7c0ab472d1">standard_valve_handlers</link> [MACRO_MAX_STANDARD_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1ae4e2d1b8f9fe83b73ea8e64eb7dc411d">prop_station_handlers</link> [MACRO_MAX_PROP_STATION_PER_ZONE *MACRO_MAX_PRESSURE_ZONE] = {0}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1ae44ef9829ac44f5b2bb7abdefce34479">g_isemdiag_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1ae824f62265a6998b6bcd6d92e5af8bd4">g_diagvalve_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1ac1b2883704d5fd290aff23571f36d986">g_propstation_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_discovery_8c_1a6249503e353816197750f9b9191368be">g_standardvalve_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_discovery_8c_1a99853c346c63e9d4b6d00633a57cbe9c">g_total_digital_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_discovery_8c_1ad02cee25b80418d1bfe5049c4acc3725">g_total_analog_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_discovery_8c_1a53824936cb4a69eb284b074623bb06bd">g_total_io_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_discovery_8c_1aaf8d9633f5ba3c88d4e3f0cf26a3c415">g_total_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_discovery_8c_1aa82d815e011dc2986b6dfc9e2ddfbfaa">g_start_flag</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that handles the discovery part of all module details. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_discovery_8c_1af14569278f4c7b310cd060593a7e65eb"/><section>
+    <title>fetch_pressure_zone_handlers()</title>
+<indexterm><primary>fetch_pressure_zone_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>fetch_pressure_zone_handlers</secondary></indexterm>
+<para><computeroutput>int fetch_pressure_zone_handlers (uint8_t pz_count)</computeroutput></para><para>
+
+<para>Function that fetches all the individual pressure zone handler details. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pz_count</entry><entry>
+<para>The number of pressure zones to fetch details for </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_af14569278f4c7b310cd060593a7e65eb_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_af14569278f4c7b310cd060593a7e65eb_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_discovery_8c_1a3b848e11cbd331e215031a342401a683"/><section>
+    <title>fetch_prop_zone_details()</title>
+<indexterm><primary>fetch_prop_zone_details</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>fetch_prop_zone_details</secondary></indexterm>
+<para><computeroutput>int fetch_prop_zone_details (uint8_t prop_zone_count)</computeroutput></para><para>
+
+<para>Function that fetches all the individual property zone details. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>prop_zone_count</entry><entry>
+<para>The number of property zones to fetch details for </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_a3b848e11cbd331e215031a342401a683_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_a3b848e11cbd331e215031a342401a683_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_discovery_8c_1a06b108195d85b99abb936fe244fe064d"/><section>
+    <title>get_pin_details()</title>
+<indexterm><primary>get_pin_details</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>get_pin_details</secondary></indexterm>
+<para><computeroutput>int get_pin_details ( )<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_a06b108195d85b99abb936fe244fe064d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_a06b108195d85b99abb936fe244fe064d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_discovery_8c_1a4b65e82368bb41640facc3743c8e3671"/><section>
+    <title>retrieveAndCopyHandlers()</title>
+<indexterm><primary>retrieveAndCopyHandlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>retrieveAndCopyHandlers</secondary></indexterm>
+<para><computeroutput>void retrieveAndCopyHandlers (uint16_t *(* getHandlerFunc&#160;)(void), uint16_t * destArray, const char * moduleName, uint16_t maxHandlers)</computeroutput></para><para>
+
+<para>Helper function to retrieve and copy handlers. </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_a4b65e82368bb41640facc3743c8e3671_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_discovery_8c_1a9fb9bb9f432567d6ac9d3084230d13d0"/><section>
+    <title>retrieveAndCopyHandlersWithArg()</title>
+<indexterm><primary>retrieveAndCopyHandlersWithArg</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>retrieveAndCopyHandlersWithArg</secondary></indexterm>
+<para><computeroutput>void retrieveAndCopyHandlersWithArg (uint16_t *(* getHandlerFunc&#160;)(uint16_t), uint16_t * destArray, const char * moduleName, uint16_t maxHandlers, uint16_t handler, uint16_t * count)</computeroutput></para><para>
+
+<para>Helper function to retrieve and copy handlers with arguments. </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_a9fb9bb9f432567d6ac9d3084230d13d0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_discovery_8c_1a20c3cefbb0187f193f7b2b327e82342f"/><section>
+    <title>start_discovery()</title>
+<indexterm><primary>start_discovery</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>start_discovery</secondary></indexterm>
+<para><computeroutput>int start_discovery ( )</computeroutput></para><para>
+
+<para>Function that processes the discovery details. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_a20c3cefbb0187f193f7b2b327e82342f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="discovery_8c_a20c3cefbb0187f193f7b2b327e82342f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_discovery_8c_1a1b52b26f5eaa915de63b353f7186b998"/><section>
+    <title>ai_handlers</title>
+<indexterm><primary>ai_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>ai_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t ai_handlers[MACRO_MAX_IO_HANDLERS] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a02fd0c072e2bbeb279db2b5a5e77879b"/><section>
+    <title>aio_handlers</title>
+<indexterm><primary>aio_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>aio_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t aio_handlers[MACRO_MAX_IO_HANDLERS] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1aa42415ce458bf3e4b6111071869ee688"/><section>
+    <title>ao_handlers</title>
+<indexterm><primary>ao_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>ao_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t ao_handlers[MACRO_MAX_IO_HANDLERS] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1acb71097bdde0eeb8f371374d3a7e14ed"/><section>
+    <title>di_handlers</title>
+<indexterm><primary>di_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>di_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t di_handlers[MACRO_MAX_IO_HANDLERS] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a674bdb8ef9a107fc2ac0646e0909a4ec"/><section>
+    <title>diag_handlers</title>
+<indexterm><primary>diag_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>diag_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t diag_handlers[MACRO_MAX_DIAG_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a469ccdb9274911410aa03d305dda5343"/><section>
+    <title>dio_handlers</title>
+<indexterm><primary>dio_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>dio_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t dio_handlers[MACRO_MAX_IO_HANDLERS] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1aecc928609def218c15f7c59447eb5a32"/><section>
+    <title>discover_details</title>
+<indexterm><primary>discover_details</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>discover_details</secondary></indexterm>
+<para><computeroutput>s_discovery_details discover_details</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a92e023a01eb6cda34cb71ffb24aac30d"/><section>
+    <title>do_handlers</title>
+<indexterm><primary>do_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>do_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t do_handlers[MACRO_MAX_IO_HANDLERS] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1ae824f62265a6998b6bcd6d92e5af8bd4"/><section>
+    <title>g_diagvalve_count</title>
+<indexterm><primary>g_diagvalve_count</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_diagvalve_count</secondary></indexterm>
+<para><computeroutput>uint16_t g_diagvalve_count = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1ae44ef9829ac44f5b2bb7abdefce34479"/><section>
+    <title>g_isemdiag_count</title>
+<indexterm><primary>g_isemdiag_count</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_isemdiag_count</secondary></indexterm>
+<para><computeroutput>uint16_t g_isemdiag_count = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1ac1b2883704d5fd290aff23571f36d986"/><section>
+    <title>g_propstation_count</title>
+<indexterm><primary>g_propstation_count</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_propstation_count</secondary></indexterm>
+<para><computeroutput>uint16_t g_propstation_count = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a6249503e353816197750f9b9191368be"/><section>
+    <title>g_standardvalve_count</title>
+<indexterm><primary>g_standardvalve_count</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_standardvalve_count</secondary></indexterm>
+<para><computeroutput>uint16_t g_standardvalve_count = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1aa82d815e011dc2986b6dfc9e2ddfbfaa"/><section>
+    <title>g_start_flag</title>
+<indexterm><primary>g_start_flag</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_start_flag</secondary></indexterm>
+<para><computeroutput>uint8_t g_start_flag = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1ad02cee25b80418d1bfe5049c4acc3725"/><section>
+    <title>g_total_analog_count</title>
+<indexterm><primary>g_total_analog_count</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_total_analog_count</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_analog_count = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1aaf8d9633f5ba3c88d4e3f0cf26a3c415"/><section>
+    <title>g_total_count</title>
+<indexterm><primary>g_total_count</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_total_count</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_count = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a99853c346c63e9d4b6d00633a57cbe9c"/><section>
+    <title>g_total_digital_count</title>
+<indexterm><primary>g_total_digital_count</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_total_digital_count</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_digital_count = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a53824936cb4a69eb284b074623bb06bd"/><section>
+    <title>g_total_io_count</title>
+<indexterm><primary>g_total_io_count</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>g_total_io_count</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_io_count = 0</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1abde244b58c27c11e6d996745e398332a"/><section>
+    <title>isemdiag_handlers</title>
+<indexterm><primary>isemdiag_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>isemdiag_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t isemdiag_handlers[MACRO_MAX_ISEM_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a13ce44a86fef638ebd3999c53867bfa0"/><section>
+    <title>mbn_handler_linux</title>
+<indexterm><primary>mbn_handler_linux</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>mbn_handler_linux</secondary></indexterm>
+<para><computeroutput>uint16_t mbn_handler_linux</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1ae4e2d1b8f9fe83b73ea8e64eb7dc411d"/><section>
+    <title>prop_station_handlers</title>
+<indexterm><primary>prop_station_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>prop_station_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t prop_station_handlers[MACRO_MAX_PROP_STATION_PER_ZONE *MACRO_MAX_PRESSURE_ZONE] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1aa99741c64ccbcc97a4d63b9364f74eac"/><section>
+    <title>prop_zone_handlers</title>
+<indexterm><primary>prop_zone_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>prop_zone_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t prop_zone_handlers[MACRO_MAX_PROP_ZONE_HANDLERS] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a639ca1471160314ce61d52506c2a8d0d"/><section>
+    <title>pz_count_details</title>
+<indexterm><primary>pz_count_details</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>pz_count_details</secondary></indexterm>
+<para><computeroutput>s_prszone_device_count_details pz_count_details[MACRO_MAX_PRESSURE_ZONE]</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a8f6252caf33f738fd9f6e6c46db45eb8"/><section>
+    <title>pz_handlers</title>
+<indexterm><primary>pz_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>pz_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t pz_handlers[MACRO_MAX_PZ_HANDLERS] = {0}</computeroutput></para></section>
+<anchor xml:id="_discovery_8c_1a33c9d8d2ebd58c0dcf868d7c0ab472d1"/><section>
+    <title>standard_valve_handlers</title>
+<indexterm><primary>standard_valve_handlers</primary><secondary>discovery.c</secondary></indexterm>
+<indexterm><primary>discovery.c</primary><secondary>standard_valve_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t standard_valve_handlers[MACRO_MAX_STANDARD_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE] = {0}</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_diag__valve__status__info_8c" xml:lang="en-US">
+<title>Data_processing/diag_valve_status_info.c File Reference</title>
+<indexterm><primary>Data_processing/diag_valve_status_info.c</primary></indexterm>
+<para>
+
+<para>Source that processes the diag valve modules status information. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for diag_valve_status_info.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="diag__valve__status__info_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_diag__valve__status__info_8c_1a58997b988646976eadf522f6b26c9f46">stop_timer</link> ()</para>
+
+<para>Function to stop the inactivity timer. </para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1aa3a14562de0d1c12332a88b8f0a77c27">getindexvalue</link> (int index)</para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1a744f1cd07a566814b870a1c9c929abe5">getModuleNumber</link> (int index)</para>
+</listitem>
+            <listitem><para>void <link linkend="_diag__valve__status__info_8c_1a9e971832fa51f2017304dfc488f23b93">disp_mod_status_screen</link> (int status_value, int indx)</para>
+
+<para>function to create the status screen </para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1a181386d8ac3c39a998bc8b82730dc58c">find_bit_difference_war</link> (uint32_t data1, uint32_t data2, int station_ind, int mod_num)</para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1a9ee8455a4c41c2efd1719fe6fed51053">find_bit_difference</link> (uint32_t data1, uint32_t data2, int mod_num)</para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1a0f33a057d237123db3425ba08ebb47e3">diag_valve_status_info</link> (uint8_t pz_index, uint8_t diagvalve_index, uint8_t mod_num, uint8_t pz_num, uint8_t station_ind, diagvalve_processinfo *processdata, uint8_t status_type)</para>
+
+<para>Function that processes the diag valve modules status information. </para>
+</listitem>
+            <listitem><para>void <link linkend="_diag__valve__status__info_8c_1aac575266636a7dcae8ddc521c7405ded">reset_diag_status</link> (uint8_t reset_type, uint8_t <link linkend="_lvgl__gui_8c_1af9a91605decf4619baae281772693f6f">module_index</link>)</para>
+
+<para>Reset DIAG valve warning and fault status. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a5a48a03cca514f9b8f3f4f3efde71476">g_status_index</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1a622544114a00d68e8aec2a522ee29aea">station_flag_warning</link> =0</para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1ac9a0362fca0471874b6036793a24226c">station_flag_fault</link> =0</para>
+</listitem>
+            <listitem><para>char <link linkend="_diag__valve__status__info_8c_1a6baea1f31afef887972474d14894a004">str</link> [8]</para>
+</listitem>
+            <listitem><para>char <link linkend="_diag__valve__status__info_8c_1ae280ec1798f7444318b05544ad4e66dd">str_war</link> [8]</para>
+</listitem>
+            <listitem><para>char <link linkend="_diag__valve__status__info_8c_1ac108f8c38a53274eeebae8d741013458">merged</link> [141]</para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1a7722c8ecbb62d99aee7ce68b1752f337">N</link> = 1</para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1a76f11d9a0a47b94f72c2d0e77fb32240">n</link> = 1</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_diag__valve__status__info_8c_1a9061ba876473c0485b630e7cd9bcfde1">prev_dv_war</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE] = {0}</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_diag__valve__status__info_8c_1a7ae06bb4fda271e55df59575c5447073">prev_dv_fault</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE] = {0}</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_diag__valve__status__info_8c_1a601731fa6e9ce4d048ff79536ecf9e17">curr_dv_war</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_diag__valve__status__info_8c_1a7c1d2a8af224b7df85080535d0b093bd">curr_dv_fault</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_diag__valve__status__info_8c_1a8283ddbfd893cd3bacd252a03eb89fcf">diag_valve_device_types</link> [MACRO_MAX_PRESSURE_ZONE][MACRO_MAX_DIAG_VALVE_PER_PZZONE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a8d435a7e0e4c6432a0533cbf6d031edb">stat_pop_flag</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1ac30e8b223c2b1984cd5c10e75b2cbcf6">station_num_latest</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a49952e1fb0d52f6ef2f6fd0f381ab1b5">cur_disp_scr_index</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_diag__valve__status__info_8c_1aaa8fd3258b0349c782441c209b83cf5c">G_POP_EVENT</link></para>
+</listitem>
+            <listitem><para>status_screen_struct <link linkend="_diag__valve__status__info_8c_1aa924d7f7efa7b06289e7f6f283890fe1">screen_status_value</link> [20]</para>
+</listitem>
+            <listitem><para>fault_csv_struct <link linkend="_diag__valve__status__info_8c_1a65eb192130f260606eb757f6dda24f56">fault_csv_value</link> [35]</para>
+</listitem>
+            <listitem><para>warning_csv_struct <link linkend="_diag__valve__status__info_8c_1ab061281a930269e30a2ebf05c2eb9be6">warning_csv_value</link> [35]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a380a0996399f42e4954d1701185a3484">fault_file_not_exist</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a6260511c10d117876e78add9ead521fe">warning_file_not_exist</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a36972212c2938bee4597333076b0d292">curr_war_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1ac219734e0b7bff6a07a53d864b2cde17">prev_war_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a9e5e7d18c6596629d5f86a5ef0e6f9df">curr_fault_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a32d7ae5c30054bc52bf84eff8801f89b">prev_fault_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a0f1f761cbda8e6402f65783215e44356">curr_war_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a1bb899167b0374eb2c2de90e1de27a2b">prev_war_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a1d4a7b1a77c7b811d00083d16ba749c4">curr_fault_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1a4f901871e6da6fa9127c3255f9435aec">prev_fault_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_diag__valve__status__info_8c_1ab0bca095890a1fb58c691bea6aae554a">normal_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para><link linkend="_diag__valve__status__info_8c_1a7efd42e524042cb435c007b138a90d28">normal_index</link></para>
+</listitem>
+            <listitem><para>pthread_mutex_t <link linkend="_diag__valve__status__info_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3">mutex</link></para>
+</listitem>
+            <listitem><para>diagvalve_processinfo <link linkend="_diag__valve__status__info_8c_1a413c7c2e76c6e616ae42f8779dc9e19c">diagvalve_processdata</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that processes the diag valve modules status information. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_diag__valve__status__info_8c_1a0f33a057d237123db3425ba08ebb47e3"/><section>
+    <title>diag_valve_status_info()</title>
+<indexterm><primary>diag_valve_status_info</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>diag_valve_status_info</secondary></indexterm>
+<para><computeroutput>int diag_valve_status_info (uint8_t pz_index, uint8_t diagvalve_index, uint8_t mod_num, uint8_t pz_num, uint8_t station_ind, diagvalve_processinfo * processdata, uint8_t status_type)</computeroutput></para><para>
+
+<para>Function that processes the diag valve modules status information. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pz_index</entry><entry>
+<para>The index of the pressure zone </para>
+</entry>
+                            </row>
+                            <row>
+<entry>diagvalve_index</entry><entry>
+<para>The index of the diagnostic valve </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mod_num</entry><entry>
+<para>The module number in the status screen </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pz_num</entry><entry>
+<para>The pressure zone number </para>
+</entry>
+                            </row>
+                            <row>
+<entry>station_ind</entry><entry>
+<para>The station index </para>
+</entry>
+                            </row>
+                            <row>
+<entry>processdata</entry><entry>
+<para>Pointer to already retrieved process data (can be NULL) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK on success, error code otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="diag__valve__status__info_8c_a0f33a057d237123db3425ba08ebb47e3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="diag__valve__status__info_8c_a0f33a057d237123db3425ba08ebb47e3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_diag__valve__status__info_8c_1a9e971832fa51f2017304dfc488f23b93"/><section>
+    <title>disp_mod_status_screen()</title>
+<indexterm><primary>disp_mod_status_screen</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>disp_mod_status_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_status_screen (int status_value, int indx)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>function to create the status screen </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>status_value</entry><entry>
+<para>- (0 - normal, 1 - warning, 2 - fault) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="diag__valve__status__info_8c_a9e971832fa51f2017304dfc488f23b93_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_diag__valve__status__info_8c_1a9ee8455a4c41c2efd1719fe6fed51053"/><section>
+    <title>find_bit_difference()</title>
+<indexterm><primary>find_bit_difference</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>find_bit_difference</secondary></indexterm>
+<para><computeroutput>int find_bit_difference (uint32_t data1, uint32_t data2, int mod_num)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="diag__valve__status__info_8c_a9ee8455a4c41c2efd1719fe6fed51053_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_diag__valve__status__info_8c_1a181386d8ac3c39a998bc8b82730dc58c"/><section>
+    <title>find_bit_difference_war()</title>
+<indexterm><primary>find_bit_difference_war</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>find_bit_difference_war</secondary></indexterm>
+<para><computeroutput>int find_bit_difference_war (uint32_t data1, uint32_t data2, int station_ind, int mod_num)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="diag__valve__status__info_8c_a181386d8ac3c39a998bc8b82730dc58c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_diag__valve__status__info_8c_1aa3a14562de0d1c12332a88b8f0a77c27"/><section>
+    <title>getindexvalue()</title>
+<indexterm><primary>getindexvalue</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>getindexvalue</secondary></indexterm>
+<para><computeroutput>int getindexvalue (int index)<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a744f1cd07a566814b870a1c9c929abe5"/><section>
+    <title>getModuleNumber()</title>
+<indexterm><primary>getModuleNumber</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>getModuleNumber</secondary></indexterm>
+<para><computeroutput>int getModuleNumber (int index)<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1aac575266636a7dcae8ddc521c7405ded"/><section>
+    <title>reset_diag_status()</title>
+<indexterm><primary>reset_diag_status</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>reset_diag_status</secondary></indexterm>
+<para><computeroutput>void reset_diag_status (uint8_t reset_type, uint8_t module_index)</computeroutput></para><para>
+
+<para>Reset DIAG valve warning and fault status. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>reset_type</entry><entry>
+<para>0 for individual, 1 for all </para>
+</entry>
+                            </row>
+                            <row>
+<entry>module_index</entry><entry>
+<para>specific module index to reset (if reset_type is 0) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="diag__valve__status__info_8c_aac575266636a7dcae8ddc521c7405ded_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_diag__valve__status__info_8c_1a58997b988646976eadf522f6b26c9f46"/><section>
+    <title>stop_timer()</title>
+<indexterm><primary>stop_timer</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>stop_timer</secondary></indexterm>
+<para><computeroutput>void stop_timer ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function to stop the inactivity timer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_diag__valve__status__info_8c_1a49952e1fb0d52f6ef2f6fd0f381ab1b5"/><section>
+    <title>cur_disp_scr_index</title>
+<indexterm><primary>cur_disp_scr_index</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>cur_disp_scr_index</secondary></indexterm>
+<para><computeroutput>uint8_t cur_disp_scr_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a7c1d2a8af224b7df85080535d0b093bd"/><section>
+    <title>curr_dv_fault</title>
+<indexterm><primary>curr_dv_fault</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>curr_dv_fault</secondary></indexterm>
+<para><computeroutput>uint32_t curr_dv_fault</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a601731fa6e9ce4d048ff79536ecf9e17"/><section>
+    <title>curr_dv_war</title>
+<indexterm><primary>curr_dv_war</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>curr_dv_war</secondary></indexterm>
+<para><computeroutput>uint32_t curr_dv_war</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a9e5e7d18c6596629d5f86a5ef0e6f9df"/><section>
+    <title>curr_fault_index</title>
+<indexterm><primary>curr_fault_index</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>curr_fault_index</secondary></indexterm>
+<para><computeroutput>uint8_t curr_fault_index</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a1d4a7b1a77c7b811d00083d16ba749c4"/><section>
+    <title>curr_fault_list</title>
+<indexterm><primary>curr_fault_list</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>curr_fault_list</secondary></indexterm>
+<para><computeroutput>uint8_t curr_fault_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a36972212c2938bee4597333076b0d292"/><section>
+    <title>curr_war_index</title>
+<indexterm><primary>curr_war_index</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>curr_war_index</secondary></indexterm>
+<para><computeroutput>uint8_t curr_war_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a0f1f761cbda8e6402f65783215e44356"/><section>
+    <title>curr_war_list</title>
+<indexterm><primary>curr_war_list</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>curr_war_list</secondary></indexterm>
+<para><computeroutput>uint8_t curr_war_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a8283ddbfd893cd3bacd252a03eb89fcf"/><section>
+    <title>diag_valve_device_types</title>
+<indexterm><primary>diag_valve_device_types</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>diag_valve_device_types</secondary></indexterm>
+<para><computeroutput>uint32_t diag_valve_device_types[MACRO_MAX_PRESSURE_ZONE][MACRO_MAX_DIAG_VALVE_PER_PZZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a413c7c2e76c6e616ae42f8779dc9e19c"/><section>
+    <title>diagvalve_processdata</title>
+<indexterm><primary>diagvalve_processdata</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>diagvalve_processdata</secondary></indexterm>
+<para><computeroutput>diagvalve_processinfo diagvalve_processdata</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a65eb192130f260606eb757f6dda24f56"/><section>
+    <title>fault_csv_value</title>
+<indexterm><primary>fault_csv_value</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>fault_csv_value</secondary></indexterm>
+<para><computeroutput>fault_csv_struct fault_csv_value[35]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a380a0996399f42e4954d1701185a3484"/><section>
+    <title>fault_file_not_exist</title>
+<indexterm><primary>fault_file_not_exist</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>fault_file_not_exist</secondary></indexterm>
+<para><computeroutput>uint8_t fault_file_not_exist<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1aaa8fd3258b0349c782441c209b83cf5c"/><section>
+    <title>G_POP_EVENT</title>
+<indexterm><primary>G_POP_EVENT</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>G_POP_EVENT</secondary></indexterm>
+<para><computeroutput>int G_POP_EVENT<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a5a48a03cca514f9b8f3f4f3efde71476"/><section>
+    <title>g_status_index</title>
+<indexterm><primary>g_status_index</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>g_status_index</secondary></indexterm>
+<para><computeroutput>uint8_t g_status_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1ac108f8c38a53274eeebae8d741013458"/><section>
+    <title>merged</title>
+<indexterm><primary>merged</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>merged</secondary></indexterm>
+<para><computeroutput>char merged[141]</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3"/><section>
+    <title>mutex</title>
+<indexterm><primary>mutex</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>mutex</secondary></indexterm>
+<para><computeroutput>pthread_mutex_t mutex<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a7722c8ecbb62d99aee7ce68b1752f337"/><section>
+    <title>N</title>
+<indexterm><primary>N</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>N</secondary></indexterm>
+<para><computeroutput>int N = 1</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a76f11d9a0a47b94f72c2d0e77fb32240"/><section>
+    <title>n</title>
+<indexterm><primary>n</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>n</secondary></indexterm>
+<para><computeroutput>int n = 1</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a7efd42e524042cb435c007b138a90d28"/><section>
+    <title>normal_index</title>
+<indexterm><primary>normal_index</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>normal_index</secondary></indexterm>
+<para><computeroutput>normal_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1ab0bca095890a1fb58c691bea6aae554a"/><section>
+    <title>normal_list</title>
+<indexterm><primary>normal_list</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>normal_list</secondary></indexterm>
+<para><computeroutput>uint8_t normal_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a7ae06bb4fda271e55df59575c5447073"/><section>
+    <title>prev_dv_fault</title>
+<indexterm><primary>prev_dv_fault</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>prev_dv_fault</secondary></indexterm>
+<para><computeroutput>uint32_t prev_dv_fault[MACRO_MAX_MESSAGE_QUEUE_SIZE] = {0}</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a9061ba876473c0485b630e7cd9bcfde1"/><section>
+    <title>prev_dv_war</title>
+<indexterm><primary>prev_dv_war</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>prev_dv_war</secondary></indexterm>
+<para><computeroutput>uint32_t prev_dv_war[MACRO_MAX_MESSAGE_QUEUE_SIZE] = {0}</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a32d7ae5c30054bc52bf84eff8801f89b"/><section>
+    <title>prev_fault_index</title>
+<indexterm><primary>prev_fault_index</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>prev_fault_index</secondary></indexterm>
+<para><computeroutput>uint8_t prev_fault_index</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a4f901871e6da6fa9127c3255f9435aec"/><section>
+    <title>prev_fault_list</title>
+<indexterm><primary>prev_fault_list</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>prev_fault_list</secondary></indexterm>
+<para><computeroutput>uint8_t prev_fault_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1ac219734e0b7bff6a07a53d864b2cde17"/><section>
+    <title>prev_war_index</title>
+<indexterm><primary>prev_war_index</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>prev_war_index</secondary></indexterm>
+<para><computeroutput>uint8_t prev_war_index</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a1bb899167b0374eb2c2de90e1de27a2b"/><section>
+    <title>prev_war_list</title>
+<indexterm><primary>prev_war_list</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>prev_war_list</secondary></indexterm>
+<para><computeroutput>uint8_t prev_war_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1aa924d7f7efa7b06289e7f6f283890fe1"/><section>
+    <title>screen_status_value</title>
+<indexterm><primary>screen_status_value</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>screen_status_value</secondary></indexterm>
+<para><computeroutput>status_screen_struct screen_status_value<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a8d435a7e0e4c6432a0533cbf6d031edb"/><section>
+    <title>stat_pop_flag</title>
+<indexterm><primary>stat_pop_flag</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>stat_pop_flag</secondary></indexterm>
+<para><computeroutput>uint8_t stat_pop_flag</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1ac9a0362fca0471874b6036793a24226c"/><section>
+    <title>station_flag_fault</title>
+<indexterm><primary>station_flag_fault</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>station_flag_fault</secondary></indexterm>
+<para><computeroutput>int station_flag_fault =0</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a622544114a00d68e8aec2a522ee29aea"/><section>
+    <title>station_flag_warning</title>
+<indexterm><primary>station_flag_warning</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>station_flag_warning</secondary></indexterm>
+<para><computeroutput>int station_flag_warning =0</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1ac30e8b223c2b1984cd5c10e75b2cbcf6"/><section>
+    <title>station_num_latest</title>
+<indexterm><primary>station_num_latest</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>station_num_latest</secondary></indexterm>
+<para><computeroutput>uint8_t station_num_latest</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a6baea1f31afef887972474d14894a004"/><section>
+    <title>str</title>
+<indexterm><primary>str</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>str</secondary></indexterm>
+<para><computeroutput>char str[8]</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1ae280ec1798f7444318b05544ad4e66dd"/><section>
+    <title>str_war</title>
+<indexterm><primary>str_war</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>str_war</secondary></indexterm>
+<para><computeroutput>char str_war[8]</computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1ab061281a930269e30a2ebf05c2eb9be6"/><section>
+    <title>warning_csv_value</title>
+<indexterm><primary>warning_csv_value</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>warning_csv_value</secondary></indexterm>
+<para><computeroutput>warning_csv_struct warning_csv_value[35]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_diag__valve__status__info_8c_1a6260511c10d117876e78add9ead521fe"/><section>
+    <title>warning_file_not_exist</title>
+<indexterm><primary>warning_file_not_exist</primary><secondary>diag_valve_status_info.c</secondary></indexterm>
+<indexterm><primary>diag_valve_status_info.c</primary><secondary>warning_file_not_exist</secondary></indexterm>
+<para><computeroutput>uint8_t warning_file_not_exist<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

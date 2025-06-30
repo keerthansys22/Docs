@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_external__adc__test_8c" xml:lang="en-US">
+<title>Self_Tests/external_adc_test.c File Reference</title>
+<indexterm><primary>Self_Tests/external_adc_test.c</primary></indexterm>
+<para>
+
+<para>Source file to check external ADC test. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;sys/ioctl.h&gt;<?linebreak?>#include &lt;linux/gpio.h&gt;<?linebreak?>#include &lt;fcntl.h&gt;<?linebreak?>#include &lt;linux/spi/spidev.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;errno.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;pthread.h&gt;<?linebreak?>#include &lt;sys/eventfd.h&gt;<?linebreak?>#include &lt;sys/epoll.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;time.h&gt;<?linebreak?>#include &lt;getopt.h&gt;<?linebreak?>#include &lt;sys/time.h&gt;<?linebreak?>#include &lt;linux/types.h&gt;<?linebreak?>#include &lt;linux/i2c-dev.h&gt;<?linebreak?>#include &quot;main.h&quot;<?linebreak?></programlisting>Include dependency graph for external_adc_test.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="external__adc__test_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_external__adc__test_8c_1a8a6c12d0194007da86226886cfce89b4">I2C_DEVICE</link>&#160;&#160;&#160;&quot;/dev/i2c-1&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_external__adc__test_8c_1a82628cba864d51e71cc788b230aeba91">I2C_ADDR_EX</link>&#160;&#160;&#160;0x48</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_external__adc__test_8c_1a83e318d326e7f103978ba924020b873e">external_adc_reading_voltage</link> (int i2cFile_ex_va)</para>
+
+<para>To read the voltage of the VA measured using external adc. </para>
+</listitem>
+            <listitem><para>int <link linkend="_external__adc__test_8c_1adec54fe2681f570d972be8fc93a06400">external_adc</link> (void)</para>
+
+<para>Function to test the External ADC. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct i2c_msg <link linkend="_external__adc__test_8c_1a26546fa59bb9d376eee575657dab9fe1">i2cmsg</link></para>
+</listitem>
+            <listitem><para>struct i2c_rdwr_ioctl_data <link linkend="_external__adc__test_8c_1a8e38fc06f9426ed6e7bad6a4dc5e0980">msg_rdwr</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_external__adc__test_8c_1a41b2ae55793685136cd8f87b0ff4b669">i2c_va_led_file</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source file to check external ADC test. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_external__adc__test_8c_1a82628cba864d51e71cc788b230aeba91"/><section>
+    <title>I2C_ADDR_EX</title>
+<indexterm><primary>I2C_ADDR_EX</primary><secondary>external_adc_test.c</secondary></indexterm>
+<indexterm><primary>external_adc_test.c</primary><secondary>I2C_ADDR_EX</secondary></indexterm>
+<para><computeroutput>#define I2C_ADDR_EX&#160;&#160;&#160;0x48</computeroutput></para></section>
+<anchor xml:id="_external__adc__test_8c_1a8a6c12d0194007da86226886cfce89b4"/><section>
+    <title>I2C_DEVICE</title>
+<indexterm><primary>I2C_DEVICE</primary><secondary>external_adc_test.c</secondary></indexterm>
+<indexterm><primary>external_adc_test.c</primary><secondary>I2C_DEVICE</secondary></indexterm>
+<para><computeroutput>#define I2C_DEVICE&#160;&#160;&#160;&quot;/dev/i2c-1&quot;</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_external__adc__test_8c_1adec54fe2681f570d972be8fc93a06400"/><section>
+    <title>external_adc()</title>
+<indexterm><primary>external_adc</primary><secondary>external_adc_test.c</secondary></indexterm>
+<indexterm><primary>external_adc_test.c</primary><secondary>external_adc</secondary></indexterm>
+<para><computeroutput>int external_adc (void )</computeroutput></para><para>
+
+<para>Function to test the External ADC. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_FAILURE_test on failure or API_SUCCESS_test on success </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="external__adc__test_8c_adec54fe2681f570d972be8fc93a06400_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="external__adc__test_8c_adec54fe2681f570d972be8fc93a06400_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_external__adc__test_8c_1a83e318d326e7f103978ba924020b873e"/><section>
+    <title>external_adc_reading_voltage()</title>
+<indexterm><primary>external_adc_reading_voltage</primary><secondary>external_adc_test.c</secondary></indexterm>
+<indexterm><primary>external_adc_test.c</primary><secondary>external_adc_reading_voltage</secondary></indexterm>
+<para><computeroutput>float external_adc_reading_voltage (int i2cFile_ex_va)</computeroutput></para><para>
+
+<para>To read the voltage of the VA measured using external adc. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>i2cFile_ex_va</entry><entry>
+<para>file discriptor </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>voltage_va Value of the voltage read </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="external__adc__test_8c_a83e318d326e7f103978ba924020b873e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="external__adc__test_8c_a83e318d326e7f103978ba924020b873e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_external__adc__test_8c_1a41b2ae55793685136cd8f87b0ff4b669"/><section>
+    <title>i2c_va_led_file</title>
+<indexterm><primary>i2c_va_led_file</primary><secondary>external_adc_test.c</secondary></indexterm>
+<indexterm><primary>external_adc_test.c</primary><secondary>i2c_va_led_file</secondary></indexterm>
+<para><computeroutput>int i2c_va_led_file<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_external__adc__test_8c_1a26546fa59bb9d376eee575657dab9fe1"/><section>
+    <title>i2cmsg</title>
+<indexterm><primary>i2cmsg</primary><secondary>external_adc_test.c</secondary></indexterm>
+<indexterm><primary>external_adc_test.c</primary><secondary>i2cmsg</secondary></indexterm>
+<para><computeroutput>struct i2c_msg i2cmsg<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_external__adc__test_8c_1a8e38fc06f9426ed6e7bad6a4dc5e0980"/><section>
+    <title>msg_rdwr</title>
+<indexterm><primary>msg_rdwr</primary><secondary>external_adc_test.c</secondary></indexterm>
+<indexterm><primary>external_adc_test.c</primary><secondary>msg_rdwr</secondary></indexterm>
+<para><computeroutput>struct i2c_rdwr_ioctl_data msg_rdwr<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

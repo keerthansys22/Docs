@@ -1,0 +1,133 @@
+\doxysection{Data\+\_\+processing/mac\+\_\+address.c File Reference}
+\hypertarget{mac__address_8c}{}\label{mac__address_8c}\index{Data\_processing/mac\_address.c@{Data\_processing/mac\_address.c}}
+
+
+Source that reads the MAC details from server.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for mac\+\_\+address.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{mac__address_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mac__address_8c_a434de6524abf0902881fe890323c1186}{mac\+\_\+address\+\_\+details}} ()
+\begin{DoxyCompactList}\small\item\em function that access the MAC details \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mac__address_8c_a2331b87d91c5f979969c5e27ad928661}{print\+\_\+mac\+\_\+address\+\_\+details}} ()
+\item 
+void \mbox{\hyperlink{mac__address_8c_ac756ee3e7675bde8bf3372559a8206e5}{get\+\_\+mac\+\_\+address\+\_\+string}} (int port, char \texorpdfstring{$\ast$}{*}mac\+\_\+str, size\+\_\+t size)
+\item 
+int \mbox{\hyperlink{mac__address_8c_a06b108195d85b99abb936fe244fe064d}{get\+\_\+pin\+\_\+details}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+mbn\+\_\+mac\+\_\+struct \mbox{\hyperlink{mac__address_8c_ab66488f979aa3d8c9910d72a98ff28cc}{mbn\+\_\+mac\+\_\+details}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{mac__address_8c_a33fa48f2f2b7e97b587a567e353ae24b}{g\+\_\+pin\+\_\+val}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mac__address_8c_a28fb7538e246d23675861d74c5268869}{g\+\_\+pin\+\_\+buffer}} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that reads the MAC details from server. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mac__address_8c_ac756ee3e7675bde8bf3372559a8206e5}\index{mac\_address.c@{mac\_address.c}!get\_mac\_address\_string@{get\_mac\_address\_string}}
+\index{get\_mac\_address\_string@{get\_mac\_address\_string}!mac\_address.c@{mac\_address.c}}
+\doxysubsubsection{\texorpdfstring{get\_mac\_address\_string()}{get\_mac\_address\_string()}}
+{\footnotesize\ttfamily \label{mac__address_8c_ac756ee3e7675bde8bf3372559a8206e5} 
+void get\+\_\+mac\+\_\+address\+\_\+string (\begin{DoxyParamCaption}\item[{int}]{port}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{mac\+\_\+str}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mac__address_8c_ac756ee3e7675bde8bf3372559a8206e5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mac__address_8c_a06b108195d85b99abb936fe244fe064d}\index{mac\_address.c@{mac\_address.c}!get\_pin\_details@{get\_pin\_details}}
+\index{get\_pin\_details@{get\_pin\_details}!mac\_address.c@{mac\_address.c}}
+\doxysubsubsection{\texorpdfstring{get\_pin\_details()}{get\_pin\_details()}}
+{\footnotesize\ttfamily \label{mac__address_8c_a06b108195d85b99abb936fe244fe064d} 
+int get\+\_\+pin\+\_\+details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mac__address_8c_a06b108195d85b99abb936fe244fe064d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mac__address_8c_a06b108195d85b99abb936fe244fe064d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mac__address_8c_a434de6524abf0902881fe890323c1186}\index{mac\_address.c@{mac\_address.c}!mac\_address\_details@{mac\_address\_details}}
+\index{mac\_address\_details@{mac\_address\_details}!mac\_address.c@{mac\_address.c}}
+\doxysubsubsection{\texorpdfstring{mac\_address\_details()}{mac\_address\_details()}}
+{\footnotesize\ttfamily \label{mac__address_8c_a434de6524abf0902881fe890323c1186} 
+int mac\+\_\+address\+\_\+details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+function that access the MAC details 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mac__address_8c_a434de6524abf0902881fe890323c1186_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mac__address_8c_a434de6524abf0902881fe890323c1186_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mac__address_8c_a2331b87d91c5f979969c5e27ad928661}\index{mac\_address.c@{mac\_address.c}!print\_mac\_address\_details@{print\_mac\_address\_details}}
+\index{print\_mac\_address\_details@{print\_mac\_address\_details}!mac\_address.c@{mac\_address.c}}
+\doxysubsubsection{\texorpdfstring{print\_mac\_address\_details()}{print\_mac\_address\_details()}}
+{\footnotesize\ttfamily \label{mac__address_8c_a2331b87d91c5f979969c5e27ad928661} 
+void print\+\_\+mac\+\_\+address\+\_\+details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mac__address_8c_a28fb7538e246d23675861d74c5268869}\index{mac\_address.c@{mac\_address.c}!g\_pin\_buffer@{g\_pin\_buffer}}
+\index{g\_pin\_buffer@{g\_pin\_buffer}!mac\_address.c@{mac\_address.c}}
+\doxysubsubsection{\texorpdfstring{g\_pin\_buffer}{g\_pin\_buffer}}
+{\footnotesize\ttfamily \label{mac__address_8c_a28fb7538e246d23675861d74c5268869} 
+uint8\+\_\+t g\+\_\+pin\+\_\+buffer\mbox{[}4\mbox{]}}
+
+\Hypertarget{mac__address_8c_a33fa48f2f2b7e97b587a567e353ae24b}\index{mac\_address.c@{mac\_address.c}!g\_pin\_val@{g\_pin\_val}}
+\index{g\_pin\_val@{g\_pin\_val}!mac\_address.c@{mac\_address.c}}
+\doxysubsubsection{\texorpdfstring{g\_pin\_val}{g\_pin\_val}}
+{\footnotesize\ttfamily \label{mac__address_8c_a33fa48f2f2b7e97b587a567e353ae24b} 
+uint32\+\_\+t g\+\_\+pin\+\_\+val = 0}
+
+\Hypertarget{mac__address_8c_ab66488f979aa3d8c9910d72a98ff28cc}\index{mac\_address.c@{mac\_address.c}!mbn\_mac\_details@{mbn\_mac\_details}}
+\index{mbn\_mac\_details@{mbn\_mac\_details}!mac\_address.c@{mac\_address.c}}
+\doxysubsubsection{\texorpdfstring{mbn\_mac\_details}{mbn\_mac\_details}}
+{\footnotesize\ttfamily \label{mac__address_8c_ab66488f979aa3d8c9910d72a98ff28cc} 
+mbn\+\_\+mac\+\_\+struct mbn\+\_\+mac\+\_\+details}
+

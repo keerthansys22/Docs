@@ -1,0 +1,378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__external_prop_8c" xml:lang="en-US">
+<title>API_Source/ValveModulesApiSource/ExternalProp.c File Reference</title>
+<indexterm><primary>API_Source/ValveModulesApiSource/ExternalProp.c</primary></indexterm>
+<para>
+
+<para>This source file contains the API source related to External Prop. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?>#include &quot;../Header/API_Header/pzmapping.h&quot;<?linebreak?></programlisting>Include dependency graph for ExternalProp.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="__external_prop_8c_1a2383a3641c7a989a9d6c99be17bf45c8">writeSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t addr, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__external_prop_8c_1ae512dcee3f48f317872617e5f4559b19">readSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__external_prop_8c_1ae2e6a8daa2875bb4fb56a99cc5c0b716">getPropZoneProcessDataAddress</link> (uint16_t propzone_handler)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__external_prop_8c_1acf4b478db18710fcdd7868a9aa4e3ec7">getPropZoneServiceDataAddress</link> (uint16_t propzone_handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__external_prop_8c_1af263134ac7b206af9ff2919a93f18ed3">getExtPropProcessData</link> (uint16_t extprop_handler, pzxextprop_processinfo *extprop_processdata)</para>
+
+<para>Retrieves process data for a specified External Prop. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__external_prop_8c_1ad6a8d0d15c15fd2492fd230c7568def6">setExtPropSetPointPressure</link> (uint16_t extprop_handler, void *data)</para>
+
+<para>Sets the PDO (Process Data Output) for a specified External Prop. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__external_prop_8c_1a987cb2aaa4a8020e9c8e181ce46aaca7">getExtPropServiceParameterData</link> (uint16_t extprop_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter of the External Prop. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__external_prop_8c_1a03295d3ff415e5e416cf59caeba36145">setExtPropServiceParameterData</link> (uint16_t extprop_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified External Prop. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="__external_prop_8c_1a0441d0acf0c675222c4e9a8d4a853348">external_pressurezone</link> [16]</para>
+</listitem>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__external_prop_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This source file contains the API source related to External Prop. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__external_prop_8c_1af263134ac7b206af9ff2919a93f18ed3"/><section>
+    <title>getExtPropProcessData()</title>
+<indexterm><primary>getExtPropProcessData</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>getExtPropProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getExtPropProcessData (uint16_t extprop_handler, pzxextprop_processinfo * extprop_processdata)</computeroutput></para><para>
+
+<para>Retrieves process data for a specified External Prop. </para>
+</para>
+
+<para>This function fetches the diagnostic process data associated with a given proportional valve handler within a specified External Prop .</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>extprop_handler</entry><entry>
+<para>The handler for the External Prop </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>pzxextprop_processinfo</entry><entry>
+<para>Pointer to a structure where the retrieved process data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint8_t Returns RET_OK on success, or an error code on failure. Refer to e_error_code for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c_af263134ac7b206af9ff2919a93f18ed3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__external_prop_8c_1a987cb2aaa4a8020e9c8e181ce46aaca7"/><section>
+    <title>getExtPropServiceParameterData()</title>
+<indexterm><primary>getExtPropServiceParameterData</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>getExtPropServiceParameterData</secondary></indexterm>
+<para><computeroutput>uint8_t getExtPropServiceParameterData (uint16_t extprop_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter of the External Prop. </para>
+</para>
+
+<para>This function fetches a specific service parameter of the External Prop within the specified pressure zone.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>extprop_handler</entry><entry>
+<para>The handler for the External Prop. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name (ID) of the parameter to be retrieved. Refer to Valve_FeatureParamId for valid parameter names. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the memory where the retrieved parameter value will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint8_t Returns 0 on success, or an error code on failure. Refer to e_error_code for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c_a987cb2aaa4a8020e9c8e181ce46aaca7_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__external_prop_8c_1ae2e6a8daa2875bb4fb56a99cc5c0b716"/><section>
+    <title>getPropZoneProcessDataAddress()</title>
+<indexterm><primary>getPropZoneProcessDataAddress</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>getPropZoneProcessDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPropZoneProcessDataAddress (uint16_t propzone_handler)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c_ae2e6a8daa2875bb4fb56a99cc5c0b716_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__external_prop_8c_1acf4b478db18710fcdd7868a9aa4e3ec7"/><section>
+    <title>getPropZoneServiceDataAddress()</title>
+<indexterm><primary>getPropZoneServiceDataAddress</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>getPropZoneServiceDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPropZoneServiceDataAddress (uint16_t propzone_handler)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c_acf4b478db18710fcdd7868a9aa4e3ec7_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__external_prop_8c_1ae512dcee3f48f317872617e5f4559b19"/><section>
+    <title>readSharedMemoryData()</title>
+<indexterm><primary>readSharedMemoryData</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>readSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c_ae512dcee3f48f317872617e5f4559b19_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__external_prop_8c_1a03295d3ff415e5e416cf59caeba36145"/><section>
+    <title>setExtPropServiceParameterData()</title>
+<indexterm><primary>setExtPropServiceParameterData</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>setExtPropServiceParameterData</secondary></indexterm>
+<para><computeroutput>uint8_t setExtPropServiceParameterData (uint16_t extprop_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified External Prop. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>extprop_handler</entry><entry>
+<para>The handler for the External Prop. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. Refer to the enumeration <computeroutput>Valve_FeatureParamId</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c_a03295d3ff415e5e416cf59caeba36145_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__external_prop_8c_1ad6a8d0d15c15fd2492fd230c7568def6"/><section>
+    <title>setExtPropSetPointPressure()</title>
+<indexterm><primary>setExtPropSetPointPressure</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>setExtPropSetPointPressure</secondary></indexterm>
+<para><computeroutput>uint8_t setExtPropSetPointPressure (uint16_t extprop_handler, void * data)</computeroutput></para><para>
+
+<para>Sets the PDO (Process Data Output) for a specified External Prop. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>extprop_handler</entry><entry>
+<para>Handler for the External Prop </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>Pointer to the data to be written to the External Prop. The data must match the expected structure format.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK on success, RET_ERROR on failure.</para>
+</formalpara>
+Sets the setpoint pressure for the specified External Prop.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>extprop_handler</entry><entry>
+<para>Handler for the External Prop. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>Pointer to the data containing the setpoint pressure value. This should point to a valid structure or data type expected by the function.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK on success, RET_ERROR on failure. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c_ad6a8d0d15c15fd2492fd230c7568def6_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__external_prop_8c_1a2383a3641c7a989a9d6c99be17bf45c8"/><section>
+    <title>writeSharedMemoryData()</title>
+<indexterm><primary>writeSharedMemoryData</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>writeSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t writeSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t addr, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_external_prop_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__external_prop_8c_1a0441d0acf0c675222c4e9a8d4a853348"/><section>
+    <title>external_pressurezone</title>
+<indexterm><primary>external_pressurezone</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>external_pressurezone</secondary></indexterm>
+<para><computeroutput>uint8_t external_pressurezone[16]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__external_prop_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>ExternalProp.c</secondary></indexterm>
+<indexterm><primary>ExternalProp.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,597 @@
+\doxysection{Keypress/\+Data\+Server\+Monitor\+Led.c File Reference}
+\hypertarget{_data_server_monitor_led_8c}{}\label{_data_server_monitor_led_8c}\index{Keypress/DataServerMonitorLed.c@{Keypress/DataServerMonitorLed.c}}
+
+
+Source that monitors LED indications and key press indications.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/eventfd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/epoll.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$linux/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$linux/spi/spidev.\+h$>$}\newline
+{\ttfamily \#include $<$linux/i2c-\/dev.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+Include dependency graph for Data\+Server\+Monitor\+Led.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_data_server_monitor_led_8c_a17eed206acd033b4bad7b2937d4bd88b}{ERRUN\+\_\+\+OFF\+\_\+\+STATE}}~0
+\item 
+\#define \mbox{\hyperlink{_data_server_monitor_led_8c_a3fac230fa9331caab37892ab4a706404}{ERRUN\+\_\+\+ON\+\_\+\+STATE}}~1
+\item 
+\#define \mbox{\hyperlink{_data_server_monitor_led_8c_aab05f68977b558817a262ef3994a9329}{ERRUN\+\_\+\+BLINKING\+\_\+\+STATE}}~2
+\item 
+\#define \mbox{\hyperlink{_data_server_monitor_led_8c_a0b15795ff903c47a4b4c14317cce9fd6}{ERRUN\+\_\+\+FLASHING\+\_\+\+STATE}}~4
+\item 
+\#define \mbox{\hyperlink{_data_server_monitor_led_8c_a2765214f4d4bfdbb700da05dfcaeb96e}{ERRUN\+\_\+\+FLICKERING\+\_\+\+STATE}}~8
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{_data_server_monitor_led_8c_a2413b7289e27122d76c2b44d98a56918}{volatageva\+\_\+monitoring}} (int fd)
+\item 
+float \mbox{\hyperlink{_data_server_monitor_led_8c_af78e2e405fb1dfada593994ec787e570}{volatge\+\_\+vb\+\_\+monitoring}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_data_server_monitor_led_8c_ae01aad6066b3904dfbb903803dca64ca}{get\+IOmodules\+Force\+State\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em This function is to check the force state enabled or no. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_data_server_monitor_led_8c_a355ba4c5f111a60750fb52a4ddb7773b}{get\+Io\+Mod\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the IO Modules status (warning or faults) \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_data_server_monitor_led_8c_a20a4ac1b64ad62bac504668394ddee31}{get\+Valve\+Modules\+Error\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em fetches the valves error status \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_aa3ef1744ca7e52c293c49ccef26798e8}{reset\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Function to reset the inactivity timer after 30sec. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_a0ca34427a401d6225f367827b2ba5644}{longpress\+\_\+callback}} (union sigval sv)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_a4456c0194a45c65f825950c8d477e420}{start\+\_\+longpress\+\_\+timer}} ()
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_a9b5b2b00a81a3ea6535ef5417e1cc919}{stop\+\_\+longpress\+\_\+timer}} ()
+\item 
+int \mbox{\hyperlink{_data_server_monitor_led_8c_a57f9e71624bc8b3bef967a3c66814f0a}{Key\+Press\+\_\+check}} (int fd)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_ad91ea9caab13cbfe57e3952a1b2cf9db}{blinking\+\_\+red}} (void)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_a63035d42da12201cdaa1082ec0fcbea5}{blinking\+\_\+green}} (void)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_add0a974d654d10a6480310ec47a7c988}{flashing\+\_\+red}} (uint8\+\_\+t n\+\_\+value)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_a4689958847da4eb04b01ee65eb3f2613}{flasing\+\_\+green}} (uint8\+\_\+t n\+\_\+value)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_a052c861ff7758d0f6be0fc147b035aa1}{flashing\+\_\+red\+\_\+green}} (uint8\+\_\+t n\+\_\+value)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_ac453a3ae986d391e5a7c2e9c595ab332}{flickering\+\_\+red\+\_\+green}} (void)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_a8632f23360c4570305609236cae8f4d8}{flickering\+\_\+red}} (void)
+\item 
+void \mbox{\hyperlink{_data_server_monitor_led_8c_a553733e5f16326a3049e63307c4bcb49}{flickering\+\_\+green}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_data_server_monitor_led_8c_af5cb2ba0d32e073daaf90d4aef07dac2}{monitor\+Network\+Status\+Led}} (void)
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_data_server_monitor_led_8c_a93bd9d13cecd64903edf61230489ef5a}{monitor\+Led\+Task}} (void \texorpdfstring{$\ast$}{*}args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_data_server_monitor_led_8c_ae56fe8b25067ad4c0815823ecbe1a028}{g\+\_\+led\+\_\+error\+\_\+flag1}} = 0xff
+\item 
+int \mbox{\hyperlink{_data_server_monitor_led_8c_a4c2d8c66ab29de28e84ad3fc97d298db}{g\+\_\+led\+\_\+error\+\_\+flag2}} = 0x07
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_data_server_monitor_led_8c_a0d4542cd6083f6c10692818325ab989f}{g\+\_\+keypressed}} = 0x00
+\item 
+int \mbox{\hyperlink{_data_server_monitor_led_8c_ac69e4e922707981e211d8a9791d8b849}{fd\+\_\+led}}
+\item 
+int \mbox{\hyperlink{_data_server_monitor_led_8c_a6baa346e44f4c2158d2be4f9b77b8203}{ret}}
+\item 
+struct i2c\+\_\+msg \mbox{\hyperlink{_data_server_monitor_led_8c_a101a08b09da918500b4e325b8016c408}{i2cmsgdemo}}
+\item 
+struct i2c\+\_\+rdwr\+\_\+ioctl\+\_\+data \mbox{\hyperlink{_data_server_monitor_led_8c_a8c2ae5ee1bb07521123798c2a03f452f}{msg\+\_\+rdwrdemo}}
+\item 
+int \mbox{\hyperlink{_data_server_monitor_led_8c_aa388bbbd2af08b7f83c6e55667c86270}{G\+\_\+\+KEY\+\_\+\+PRESSED\+\_\+\+EVENT}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_data_server_monitor_led_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5}{cur\+\_\+disp\+\_\+scr\+\_\+index}}
+\item 
+timer\+\_\+t \mbox{\hyperlink{_data_server_monitor_led_8c_a7b71b5c7a7fbb0d56b514bdfddb301fd}{longpress\+\_\+timer}}
+\item 
+volatile bool \mbox{\hyperlink{_data_server_monitor_led_8c_a7f2797c133895a11557ac19b0d846127}{long\+\_\+flag}} = false
+\item 
+volatile bool \mbox{\hyperlink{_data_server_monitor_led_8c_a8bd143ed2741955bf62bb2d2bc319386}{longpress\+\_\+detected}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that monitors LED indications and key press indications. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_data_server_monitor_led_8c_aab05f68977b558817a262ef3994a9329}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!ERRUN\_BLINKING\_STATE@{ERRUN\_BLINKING\_STATE}}
+\index{ERRUN\_BLINKING\_STATE@{ERRUN\_BLINKING\_STATE}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{ERRUN\_BLINKING\_STATE}{ERRUN\_BLINKING\_STATE}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_aab05f68977b558817a262ef3994a9329} 
+\#define ERRUN\+\_\+\+BLINKING\+\_\+\+STATE~2}
+
+\Hypertarget{_data_server_monitor_led_8c_a0b15795ff903c47a4b4c14317cce9fd6}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!ERRUN\_FLASHING\_STATE@{ERRUN\_FLASHING\_STATE}}
+\index{ERRUN\_FLASHING\_STATE@{ERRUN\_FLASHING\_STATE}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{ERRUN\_FLASHING\_STATE}{ERRUN\_FLASHING\_STATE}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a0b15795ff903c47a4b4c14317cce9fd6} 
+\#define ERRUN\+\_\+\+FLASHING\+\_\+\+STATE~4}
+
+\Hypertarget{_data_server_monitor_led_8c_a2765214f4d4bfdbb700da05dfcaeb96e}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!ERRUN\_FLICKERING\_STATE@{ERRUN\_FLICKERING\_STATE}}
+\index{ERRUN\_FLICKERING\_STATE@{ERRUN\_FLICKERING\_STATE}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{ERRUN\_FLICKERING\_STATE}{ERRUN\_FLICKERING\_STATE}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a2765214f4d4bfdbb700da05dfcaeb96e} 
+\#define ERRUN\+\_\+\+FLICKERING\+\_\+\+STATE~8}
+
+\Hypertarget{_data_server_monitor_led_8c_a17eed206acd033b4bad7b2937d4bd88b}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!ERRUN\_OFF\_STATE@{ERRUN\_OFF\_STATE}}
+\index{ERRUN\_OFF\_STATE@{ERRUN\_OFF\_STATE}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{ERRUN\_OFF\_STATE}{ERRUN\_OFF\_STATE}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a17eed206acd033b4bad7b2937d4bd88b} 
+\#define ERRUN\+\_\+\+OFF\+\_\+\+STATE~0}
+
+\Hypertarget{_data_server_monitor_led_8c_a3fac230fa9331caab37892ab4a706404}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!ERRUN\_ON\_STATE@{ERRUN\_ON\_STATE}}
+\index{ERRUN\_ON\_STATE@{ERRUN\_ON\_STATE}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{ERRUN\_ON\_STATE}{ERRUN\_ON\_STATE}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a3fac230fa9331caab37892ab4a706404} 
+\#define ERRUN\+\_\+\+ON\+\_\+\+STATE~1}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_data_server_monitor_led_8c_a63035d42da12201cdaa1082ec0fcbea5}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!blinking\_green@{blinking\_green}}
+\index{blinking\_green@{blinking\_green}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{blinking\_green()}{blinking\_green()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a63035d42da12201cdaa1082ec0fcbea5} 
+void blinking\+\_\+green (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{_data_server_monitor_led_8c_a63035d42da12201cdaa1082ec0fcbea5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a63035d42da12201cdaa1082ec0fcbea5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_ad91ea9caab13cbfe57e3952a1b2cf9db}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!blinking\_red@{blinking\_red}}
+\index{blinking\_red@{blinking\_red}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{blinking\_red()}{blinking\_red()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_ad91ea9caab13cbfe57e3952a1b2cf9db} 
+void blinking\+\_\+red (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_data_server_monitor_led_8c_ad91ea9caab13cbfe57e3952a1b2cf9db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_ad91ea9caab13cbfe57e3952a1b2cf9db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_add0a974d654d10a6480310ec47a7c988}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!flashing\_red@{flashing\_red}}
+\index{flashing\_red@{flashing\_red}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{flashing\_red()}{flashing\_red()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_add0a974d654d10a6480310ec47a7c988} 
+void flashing\+\_\+red (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n\+\_\+value}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_data_server_monitor_led_8c_add0a974d654d10a6480310ec47a7c988_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_add0a974d654d10a6480310ec47a7c988_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a052c861ff7758d0f6be0fc147b035aa1}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!flashing\_red\_green@{flashing\_red\_green}}
+\index{flashing\_red\_green@{flashing\_red\_green}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{flashing\_red\_green()}{flashing\_red\_green()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a052c861ff7758d0f6be0fc147b035aa1} 
+void flashing\+\_\+red\+\_\+green (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n\+\_\+value}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{_data_server_monitor_led_8c_a052c861ff7758d0f6be0fc147b035aa1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a052c861ff7758d0f6be0fc147b035aa1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a4689958847da4eb04b01ee65eb3f2613}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!flasing\_green@{flasing\_green}}
+\index{flasing\_green@{flasing\_green}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{flasing\_green()}{flasing\_green()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a4689958847da4eb04b01ee65eb3f2613} 
+void flasing\+\_\+green (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n\+\_\+value}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{_data_server_monitor_led_8c_a4689958847da4eb04b01ee65eb3f2613_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a4689958847da4eb04b01ee65eb3f2613_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a553733e5f16326a3049e63307c4bcb49}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!flickering\_green@{flickering\_green}}
+\index{flickering\_green@{flickering\_green}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{flickering\_green()}{flickering\_green()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a553733e5f16326a3049e63307c4bcb49} 
+void flickering\+\_\+green (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{_data_server_monitor_led_8c_a553733e5f16326a3049e63307c4bcb49_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a553733e5f16326a3049e63307c4bcb49_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a8632f23360c4570305609236cae8f4d8}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!flickering\_red@{flickering\_red}}
+\index{flickering\_red@{flickering\_red}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{flickering\_red()}{flickering\_red()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a8632f23360c4570305609236cae8f4d8} 
+void flickering\+\_\+red (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{_data_server_monitor_led_8c_a8632f23360c4570305609236cae8f4d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a8632f23360c4570305609236cae8f4d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_ac453a3ae986d391e5a7c2e9c595ab332}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!flickering\_red\_green@{flickering\_red\_green}}
+\index{flickering\_red\_green@{flickering\_red\_green}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{flickering\_red\_green()}{flickering\_red\_green()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_ac453a3ae986d391e5a7c2e9c595ab332} 
+void flickering\+\_\+red\+\_\+green (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{_data_server_monitor_led_8c_ac453a3ae986d391e5a7c2e9c595ab332_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_ac453a3ae986d391e5a7c2e9c595ab332_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a355ba4c5f111a60750fb52a4ddb7773b}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!getIoModStatus@{getIoModStatus}}
+\index{getIoModStatus@{getIoModStatus}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{getIoModStatus()}{getIoModStatus()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a355ba4c5f111a60750fb52a4ddb7773b} 
+uint8\+\_\+t get\+Io\+Mod\+Status (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Gets the IO Modules status (warning or faults) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a355ba4c5f111a60750fb52a4ddb7773b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a355ba4c5f111a60750fb52a4ddb7773b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_ae01aad6066b3904dfbb903803dca64ca}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!getIOmodulesForceStateEnable@{getIOmodulesForceStateEnable}}
+\index{getIOmodulesForceStateEnable@{getIOmodulesForceStateEnable}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{getIOmodulesForceStateEnable()}{getIOmodulesForceStateEnable()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_ae01aad6066b3904dfbb903803dca64ca} 
+uint8\+\_\+t get\+IOmodules\+Force\+State\+Enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function is to check the force state enabled or no. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_ae01aad6066b3904dfbb903803dca64ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_ae01aad6066b3904dfbb903803dca64ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a20a4ac1b64ad62bac504668394ddee31}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!getValveModulesErrorStatus@{getValveModulesErrorStatus}}
+\index{getValveModulesErrorStatus@{getValveModulesErrorStatus}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{getValveModulesErrorStatus()}{getValveModulesErrorStatus()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a20a4ac1b64ad62bac504668394ddee31} 
+uint8\+\_\+t get\+Valve\+Modules\+Error\+Status (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+fetches the valves error status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a20a4ac1b64ad62bac504668394ddee31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a20a4ac1b64ad62bac504668394ddee31_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a57f9e71624bc8b3bef967a3c66814f0a}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!KeyPress\_check@{KeyPress\_check}}
+\index{KeyPress\_check@{KeyPress\_check}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{KeyPress\_check()}{KeyPress\_check()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a57f9e71624bc8b3bef967a3c66814f0a} 
+int Key\+Press\+\_\+check (\begin{DoxyParamCaption}\item[{int}]{fd}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_data_server_monitor_led_8c_a0ca34427a401d6225f367827b2ba5644}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!longpress\_callback@{longpress\_callback}}
+\index{longpress\_callback@{longpress\_callback}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{longpress\_callback()}{longpress\_callback()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a0ca34427a401d6225f367827b2ba5644} 
+void longpress\+\_\+callback (\begin{DoxyParamCaption}\item[{union sigval}]{sv}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{_data_server_monitor_led_8c_a0ca34427a401d6225f367827b2ba5644_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a93bd9d13cecd64903edf61230489ef5a}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!monitorLedTask@{monitorLedTask}}
+\index{monitorLedTask@{monitorLedTask}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{monitorLedTask()}{monitorLedTask()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a93bd9d13cecd64903edf61230489ef5a} 
+void \texorpdfstring{$\ast$}{*} monitor\+Led\+Task (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a93bd9d13cecd64903edf61230489ef5a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a93bd9d13cecd64903edf61230489ef5a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_af5cb2ba0d32e073daaf90d4aef07dac2}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!monitorNetworkStatusLed@{monitorNetworkStatusLed}}
+\index{monitorNetworkStatusLed@{monitorNetworkStatusLed}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{monitorNetworkStatusLed()}{monitorNetworkStatusLed()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_af5cb2ba0d32e073daaf90d4aef07dac2} 
+uint8\+\_\+t monitor\+Network\+Status\+Led (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_af5cb2ba0d32e073daaf90d4aef07dac2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_af5cb2ba0d32e073daaf90d4aef07dac2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_aa3ef1744ca7e52c293c49ccef26798e8}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!reset\_timer@{reset\_timer}}
+\index{reset\_timer@{reset\_timer}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{reset\_timer()}{reset\_timer()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_aa3ef1744ca7e52c293c49ccef26798e8} 
+void reset\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function to reset the inactivity timer after 30sec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_data_server_monitor_led_8c_a4456c0194a45c65f825950c8d477e420}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!start\_longpress\_timer@{start\_longpress\_timer}}
+\index{start\_longpress\_timer@{start\_longpress\_timer}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{start\_longpress\_timer()}{start\_longpress\_timer()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a4456c0194a45c65f825950c8d477e420} 
+void start\+\_\+longpress\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{_data_server_monitor_led_8c_a4456c0194a45c65f825950c8d477e420_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_a9b5b2b00a81a3ea6535ef5417e1cc919}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!stop\_longpress\_timer@{stop\_longpress\_timer}}
+\index{stop\_longpress\_timer@{stop\_longpress\_timer}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{stop\_longpress\_timer()}{stop\_longpress\_timer()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a9b5b2b00a81a3ea6535ef5417e1cc919} 
+void stop\+\_\+longpress\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_data_server_monitor_led_8c_a2413b7289e27122d76c2b44d98a56918}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!volatageva\_monitoring@{volatageva\_monitoring}}
+\index{volatageva\_monitoring@{volatageva\_monitoring}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{volatageva\_monitoring()}{volatageva\_monitoring()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a2413b7289e27122d76c2b44d98a56918} 
+float volatageva\+\_\+monitoring (\begin{DoxyParamCaption}\item[{int}]{fd}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_a2413b7289e27122d76c2b44d98a56918_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_server_monitor_led_8c_af78e2e405fb1dfada593994ec787e570}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!volatge\_vb\_monitoring@{volatge\_vb\_monitoring}}
+\index{volatge\_vb\_monitoring@{volatge\_vb\_monitoring}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{volatge\_vb\_monitoring()}{volatge\_vb\_monitoring()}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_af78e2e405fb1dfada593994ec787e570} 
+float volatge\+\_\+vb\+\_\+monitoring (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_monitor_led_8c_af78e2e405fb1dfada593994ec787e570_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_data_server_monitor_led_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!cur\_disp\_scr\_index@{cur\_disp\_scr\_index}}
+\index{cur\_disp\_scr\_index@{cur\_disp\_scr\_index}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{cur\_disp\_scr\_index}{cur\_disp\_scr\_index}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a49952e1fb0d52f6ef2f6fd0f381ab1b5} 
+uint8\+\_\+t cur\+\_\+disp\+\_\+scr\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_data_server_monitor_led_8c_ac69e4e922707981e211d8a9791d8b849}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!fd\_led@{fd\_led}}
+\index{fd\_led@{fd\_led}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{fd\_led}{fd\_led}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_ac69e4e922707981e211d8a9791d8b849} 
+int fd\+\_\+led}
+
+\Hypertarget{_data_server_monitor_led_8c_aa388bbbd2af08b7f83c6e55667c86270}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!G\_KEY\_PRESSED\_EVENT@{G\_KEY\_PRESSED\_EVENT}}
+\index{G\_KEY\_PRESSED\_EVENT@{G\_KEY\_PRESSED\_EVENT}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{G\_KEY\_PRESSED\_EVENT}{G\_KEY\_PRESSED\_EVENT}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_aa388bbbd2af08b7f83c6e55667c86270} 
+int G\+\_\+\+KEY\+\_\+\+PRESSED\+\_\+\+EVENT\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_data_server_monitor_led_8c_a0d4542cd6083f6c10692818325ab989f}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!g\_keypressed@{g\_keypressed}}
+\index{g\_keypressed@{g\_keypressed}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{g\_keypressed}{g\_keypressed}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a0d4542cd6083f6c10692818325ab989f} 
+uint8\+\_\+t g\+\_\+keypressed = 0x00}
+
+\Hypertarget{_data_server_monitor_led_8c_ae56fe8b25067ad4c0815823ecbe1a028}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!g\_led\_error\_flag1@{g\_led\_error\_flag1}}
+\index{g\_led\_error\_flag1@{g\_led\_error\_flag1}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{g\_led\_error\_flag1}{g\_led\_error\_flag1}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_ae56fe8b25067ad4c0815823ecbe1a028} 
+int g\+\_\+led\+\_\+error\+\_\+flag1 = 0xff}
+
+\Hypertarget{_data_server_monitor_led_8c_a4c2d8c66ab29de28e84ad3fc97d298db}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!g\_led\_error\_flag2@{g\_led\_error\_flag2}}
+\index{g\_led\_error\_flag2@{g\_led\_error\_flag2}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{g\_led\_error\_flag2}{g\_led\_error\_flag2}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a4c2d8c66ab29de28e84ad3fc97d298db} 
+int g\+\_\+led\+\_\+error\+\_\+flag2 = 0x07}
+
+\Hypertarget{_data_server_monitor_led_8c_a101a08b09da918500b4e325b8016c408}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!i2cmsgdemo@{i2cmsgdemo}}
+\index{i2cmsgdemo@{i2cmsgdemo}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{i2cmsgdemo}{i2cmsgdemo}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a101a08b09da918500b4e325b8016c408} 
+struct i2c\+\_\+msg i2cmsgdemo}
+
+\Hypertarget{_data_server_monitor_led_8c_a7f2797c133895a11557ac19b0d846127}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!long\_flag@{long\_flag}}
+\index{long\_flag@{long\_flag}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{long\_flag}{long\_flag}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a7f2797c133895a11557ac19b0d846127} 
+volatile bool long\+\_\+flag = false}
+
+\Hypertarget{_data_server_monitor_led_8c_a8bd143ed2741955bf62bb2d2bc319386}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!longpress\_detected@{longpress\_detected}}
+\index{longpress\_detected@{longpress\_detected}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{longpress\_detected}{longpress\_detected}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a8bd143ed2741955bf62bb2d2bc319386} 
+volatile bool longpress\+\_\+detected = false}
+
+\Hypertarget{_data_server_monitor_led_8c_a7b71b5c7a7fbb0d56b514bdfddb301fd}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!longpress\_timer@{longpress\_timer}}
+\index{longpress\_timer@{longpress\_timer}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{longpress\_timer}{longpress\_timer}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a7b71b5c7a7fbb0d56b514bdfddb301fd} 
+timer\+\_\+t longpress\+\_\+timer}
+
+\Hypertarget{_data_server_monitor_led_8c_a8c2ae5ee1bb07521123798c2a03f452f}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!msg\_rdwrdemo@{msg\_rdwrdemo}}
+\index{msg\_rdwrdemo@{msg\_rdwrdemo}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{msg\_rdwrdemo}{msg\_rdwrdemo}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a8c2ae5ee1bb07521123798c2a03f452f} 
+struct i2c\+\_\+rdwr\+\_\+ioctl\+\_\+data msg\+\_\+rdwrdemo}
+
+\Hypertarget{_data_server_monitor_led_8c_a6baa346e44f4c2158d2be4f9b77b8203}\index{DataServerMonitorLed.c@{DataServerMonitorLed.c}!ret@{ret}}
+\index{ret@{ret}!DataServerMonitorLed.c@{DataServerMonitorLed.c}}
+\doxysubsubsection{\texorpdfstring{ret}{ret}}
+{\footnotesize\ttfamily \label{_data_server_monitor_led_8c_a6baa346e44f4c2158d2be4f9b77b8203} 
+int ret}
+

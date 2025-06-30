@@ -1,0 +1,85 @@
+\doxysection{Self\+\_\+\+Tests/self\+\_\+test.c File Reference}
+\hypertarget{self__test_8c}{}\label{self__test_8c}\index{Self\_Tests/self\_test.c@{Self\_Tests/self\_test.c}}
+
+
+source file that checks power-\/on self test  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+Include dependency graph for self\+\_\+test.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{self__test_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{self__test_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5}{indication\+\_\+self\+\_\+test}} (void)
+\begin{DoxyCompactList}\small\item\em Test to check the I2C read and write functionality. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{self__test_8c_afa6dcc66b21477fb9074d352884a00ce}{self\+\_\+test}} (void)
+\begin{DoxyCompactList}\small\item\em Power-\/\+On self-\/test to test the peripherals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+source file that checks power-\/on self test 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{self__test_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5}\index{self\_test.c@{self\_test.c}!indication\_self\_test@{indication\_self\_test}}
+\index{indication\_self\_test@{indication\_self\_test}!self\_test.c@{self\_test.c}}
+\doxysubsubsection{\texorpdfstring{indication\_self\_test()}{indication\_self\_test()}}
+{\footnotesize\ttfamily \label{self__test_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5} 
+int indication\+\_\+self\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Test to check the I2C read and write functionality. 
+
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESS\+\_\+test on success, API\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{self__test_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{self__test_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{self__test_8c_afa6dcc66b21477fb9074d352884a00ce}\index{self\_test.c@{self\_test.c}!self\_test@{self\_test}}
+\index{self\_test@{self\_test}!self\_test.c@{self\_test.c}}
+\doxysubsubsection{\texorpdfstring{self\_test()}{self\_test()}}
+{\footnotesize\ttfamily \label{self__test_8c_afa6dcc66b21477fb9074d352884a00ce} 
+int self\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Power-\/\+On self-\/test to test the peripherals. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESS\+\_\+test on success or API\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{self__test_8c_afa6dcc66b21477fb9074d352884a00ce_cgraph}
+\end{center}
+\end{figure}

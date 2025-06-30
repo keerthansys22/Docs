@@ -1,0 +1,1080 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lcd__init_8c" xml:lang="en-US">
+<title>Initializations/Hardware_Initializations/lcd_init.c File Reference</title>
+<indexterm><primary>Initializations/Hardware_Initializations/lcd_init.c</primary></indexterm>
+<para>
+
+<para>source file that has LCD display drivers - ST7291 </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;sys/ioctl.h&gt;<?linebreak?>#include &lt;linux/gpio.h&gt;<?linebreak?>#include &lt;fcntl.h&gt;<?linebreak?>#include &lt;linux/spi/spidev.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;errno.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;pthread.h&gt;<?linebreak?>#include &lt;sys/eventfd.h&gt;<?linebreak?>#include &lt;sys/epoll.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;time.h&gt;<?linebreak?>#include &lt;getopt.h&gt;<?linebreak?>#include &lt;sys/time.h&gt;<?linebreak?>#include &lt;linux/types.h&gt;<?linebreak?></programlisting>Include dependency graph for lcd_init.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Structures    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlv__color__t">lv_color_t</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1afe71c6ee9148504ba9b10d9d0471882e">ST7291_SW_RESET</link>&#160;&#160;&#160;0x01</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a90689f81f9debdc5b68bd744c66502b9">ST7291_SLPOUT</link>&#160;&#160;&#160;0x11</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ac04e282ff071644b863b3d6fe91add1a">ST7291_FRMCTR1</link>&#160;&#160;&#160;0xB1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a706995cbe87282242495c5551597388c">ST7291_FRMCTR2</link>&#160;&#160;&#160;0xB2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ad918bc60bc6e95a508d36bc16bba8f13">ST7291_FRMCTR3</link>&#160;&#160;&#160;0xB3</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1afd78faa7563ddf0430bd66465a83400d">ST7291_INVCTR</link>&#160;&#160;&#160;0xB4</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1aee0c305ab6860962b126eb8082984e82">ST7291_PWCTR1</link>&#160;&#160;&#160;0xC0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a7c821476eecd542363f366e52a9ed1e0">ST7291_PWCTR2</link>&#160;&#160;&#160;0xC1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ad6a5754c453a1e5fea2e7302b9d85025">ST7291_PWCTR3</link>&#160;&#160;&#160;0xC2</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a567c83cc6fc496c650ca36f6e7b87795">ST7291_PWCTR4</link>&#160;&#160;&#160;0xC3</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ae51b74eedaca991ffed615099f55266a">ST7291_PWCTR5</link>&#160;&#160;&#160;0xC4</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a78f0fa7b4d34cce0b968478feb0a924f">ST7291_VMCTR1</link>&#160;&#160;&#160;0xC5</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a04c0812e507fef41e832a0f6a4ffdb9c">ST7291_COLMOD</link>&#160;&#160;&#160;0x3A</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a550509e74750bce5a7df39a3ff4ac5a3">ST7291_MADCTL</link>&#160;&#160;&#160;0x36 /* Memory Data Access Control */</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a7f77a08673908c58312a842f92ad8577">ST7291_CASET</link>&#160;&#160;&#160;0x2A</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ac83825a942586c93252cf471a2c8c9dc">ST7291_RASET</link>&#160;&#160;&#160;0x2B</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a673256b4bf64fbc59f8ddf26a6512f36">ST7291_GMSET</link>&#160;&#160;&#160;0xF2 /* Gammas Adjustment. */</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ad1cc7063d6c6f58a1f4301ebf5b237f6">ST7291_GMCTRP1</link>&#160;&#160;&#160;0xE0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a7bfc9b97394630cb0a80ae022dd10fda">ST7291_GMCTRN1</link>&#160;&#160;&#160;0xE1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1addad02007c67369bda7ddc289df2a7e4">ST7291_DISPOFF</link>&#160;&#160;&#160;0x28</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a3c8d117719ab02504ef45e03a945759f">ST7291_DISPON</link>&#160;&#160;&#160;0x29</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ae483a5f6713cdc2a4ddcffc88b974214">ST7291_NORON</link>&#160;&#160;&#160;0x13</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a220e2130eb847aadf000811eefd7bf95">ST7291_RAMWR</link>&#160;&#160;&#160;0x2C</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1aa32f6c50fe89cc11c61d8571acabaca7">LCD_RED</link>&#160;&#160;&#160;0xF800</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a93c7d21d563437550a6873fe0cfe3c0b">LCD_GREEN</link>&#160;&#160;&#160;0x07E0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a796c66d860ebc83d78b45f2ab697e428">LCD_AMBER</link>&#160;&#160;&#160;0x0BFC</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ae08bdcd40ed17c40c7ff537b31ae6c20">LCD_BLUE</link>&#160;&#160;&#160;0x001F</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a34f95804d4bfa75ef2ab12cc2b65a65c">LCD_WHITE</link>&#160;&#160;&#160;0xFFFF</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a89194c8cf2691afa77b4f81ad1cde821">LCD_BLACK</link>&#160;&#160;&#160;0x0000</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1aba19350e46c7bc94e268c3b6354462a9">LCD_SPICS_GPIO</link>&#160;&#160;&#160;379</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1addda83d3c22042f740b41d54de0e3ea0">LCD_RST_GPIO</link>&#160;&#160;&#160;380</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a6be38b43a4b733e18a5a22fade479555">LCD_DATACMD_GPIO</link>&#160;&#160;&#160;383</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a52d5f135e53ac9a6240ff3086d57f8b9">LCD_IO_CONTROL_PIN</link>&#160;&#160;&#160;467</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ac3329e12db8417821839a31b3d8a2e60">ST7735_SCREEN_WIDTH</link>&#160;&#160;&#160;160</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1addc34a2ba61cbb02657a700df7fdb9e0">ST7735_SCREEN_HEIGHT</link>&#160;&#160;&#160;132</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1addc34a2ba61cbb02657a700df7fdb9e0">ST7735_SCREEN_HEIGHT</link>&#160;&#160;&#160;132</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</link>&#160;&#160;&#160;((<link linkend="_lcd__init_8c_1ac3329e12db8417821839a31b3d8a2e60">ST7735_SCREEN_WIDTH</link> * <link linkend="_lcd__init_8c_1addc34a2ba61cbb02657a700df7fdb9e0">ST7735_SCREEN_HEIGHT</link> * 3)  + 16)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a0797bafdef30c8f6d8a634b29e73b5af">MAX_CHUCK_SIZE</link>&#160;&#160;&#160;1024</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a4e88ae31ea2ceef8a909bf5a41931b8b">DRAW_BUFFER_NUM_LINESS</link>&#160;&#160;&#160;10</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a3fae95557dba09431f64cc2c370aa64d">MY_DISP_HOR_RESS</link>&#160;&#160;&#160;132</para>
+</listitem>
+            <listitem><para>#define <link linkend="_lcd__init_8c_1a69c306e7e1cae1e8842f62c0b0067434">MY_DISP_VER_RESS</link>&#160;&#160;&#160;132</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_lcd__init_8c_1a992606101a6d77644f3a2be4afc99324">GPIO_pin_SetValue</link> (int GPIONUM, int Value)</para>
+
+<para>Gpio set value high or low. </para>
+</listitem>
+            <listitem><para>int <link linkend="_lcd__init_8c_1a20244be6a13ba66fc8d004cbf92f6e4d">LCD_SPI_DATAWRITE</link> (uint8_t data)</para>
+</listitem>
+            <listitem><para>int <link linkend="_lcd__init_8c_1af4441b8eab01e69f1b6222fee0f962ef">LCD_SPI_CMDWRITE</link> (uint8_t cmd)</para>
+</listitem>
+            <listitem><para>int <link linkend="_lcd__init_8c_1a0f1f48ffd26be40513f42995372dfa1d">LCD_SPI_BUFFDATAWRITE</link> (uint8_t *data, uint16_t datalen)</para>
+</listitem>
+            <listitem><para>int <link linkend="_lcd__init_8c_1adfb6e366f578e76ce29bbee1b0f1d295">LCD_SPI_BUFFWRITE</link> (uint8_t *data, uint16_t datalen)</para>
+</listitem>
+            <listitem><para>void <link linkend="_lcd__init_8c_1a6842775ba83d166f02b8fef8bb63b1e6">lcd_init</link> (void)</para>
+
+<para>Function to perform LCD functionality. </para>
+</listitem>
+            <listitem><para>void <link linkend="_lcd__init_8c_1a4e054c44735fef87ab7359d8f6c37683">LCD_RST</link> (void)</para>
+
+<para>LCD reset. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_lcd__init_8c_1afb4958a723598cf0433b9251483b3d5e">ST7291_setScreenColor</link> (uint16_t screenBasecolor, uint32_t pixcelNum)</para>
+
+<para>function to fill the screen color </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_lcd__init_8c_1a80262b4fad757ccd0e8a02b55f58801b">ST7291_fillScreenColor</link> (uint16_t screenBasecolor)</para>
+
+<para>Function to fill the screen colour pixel by pixel. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_lcd__init_8c_1acea4b86040a91d501a913d67133a693b">ST7291_setScreenWindow</link> (uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)</para>
+
+<para>function to setting the window color </para>
+</listitem>
+            <listitem><para>int <link linkend="_lcd__init_8c_1a18e43791216d53f52c3bca5d8b3bf60c">ST7291_init</link> (void)</para>
+
+<para>Initialization of the LCD ST7291_chip. </para>
+</listitem>
+            <listitem><para>int <link linkend="_lcd__init_8c_1a0543bbde4de0576ea0a80e73bac80a4e">LCD_SET_DATACMD</link> (char mode)</para>
+
+<para>Sets the data/cmd line to receive the data nased on the modes. </para>
+</listitem>
+            <listitem><para>void <link linkend="_lcd__init_8c_1aad7f10e222fef42f9ca5d002a3e6d436">lcd_refresh</link> (<link linkend="_structlv__color__t">lv_color_t</link> *framebuf)</para>
+
+<para>Refreshes the screen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_lcd__init_8c_1ae55992fae61ed8e00b3bbc6cff04ef17">lcd_send_data</link> (uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint8_t *p)</para>
+
+<para>Send data pixelwise. </para>
+</listitem>
+            <listitem><para>void <link linkend="_lcd__init_8c_1a95df70df16fe9bcb0ab0c6c8388b6dc3">lcd_refreshbuf</link> (<link linkend="_structlv__color__t">lv_color_t</link> *framebuf)</para>
+
+<para>Refreshes the screen. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>int32_t <link linkend="_lcd__init_8c_1a810b845887b60187bd887573eaf75c2c">colours</link> [6] = { <link linkend="_lcd__init_8c_1aa32f6c50fe89cc11c61d8571acabaca7">LCD_RED</link>, <link linkend="_lcd__init_8c_1a93c7d21d563437550a6873fe0cfe3c0b">LCD_GREEN</link>, <link linkend="_lcd__init_8c_1a796c66d860ebc83d78b45f2ab697e428">LCD_AMBER</link>,<link linkend="_lcd__init_8c_1ae08bdcd40ed17c40c7ff537b31ae6c20">LCD_BLUE</link>, <link linkend="_lcd__init_8c_1a34f95804d4bfa75ef2ab12cc2b65a65c">LCD_WHITE</link>,<link linkend="_lcd__init_8c_1a89194c8cf2691afa77b4f81ad1cde821">LCD_BLACK</link>}</para>
+</listitem>
+            <listitem><para>char <link linkend="_lcd__init_8c_1aab3d3051ab911f66e9afd7745d5ebbb5">errbuf</link> [100] ={0}</para>
+</listitem>
+            <listitem><para>int <link linkend="_lcd__init_8c_1a72ff51e6a0a0544319b3181a0043bdb7">lcd_status</link> = 1</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>source file that has LCD display drivers - ST7291 </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_lcd__init_8c_1a4e88ae31ea2ceef8a909bf5a41931b8b"/><section>
+    <title>DRAW_BUFFER_NUM_LINESS</title>
+<indexterm><primary>DRAW_BUFFER_NUM_LINESS</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>DRAW_BUFFER_NUM_LINESS</secondary></indexterm>
+<para><computeroutput>#define DRAW_BUFFER_NUM_LINESS&#160;&#160;&#160;10</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a796c66d860ebc83d78b45f2ab697e428"/><section>
+    <title>LCD_AMBER</title>
+<indexterm><primary>LCD_AMBER</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_AMBER</secondary></indexterm>
+<para><computeroutput>#define LCD_AMBER&#160;&#160;&#160;0x0BFC</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a89194c8cf2691afa77b4f81ad1cde821"/><section>
+    <title>LCD_BLACK</title>
+<indexterm><primary>LCD_BLACK</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_BLACK</secondary></indexterm>
+<para><computeroutput>#define LCD_BLACK&#160;&#160;&#160;0x0000</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ae08bdcd40ed17c40c7ff537b31ae6c20"/><section>
+    <title>LCD_BLUE</title>
+<indexterm><primary>LCD_BLUE</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_BLUE</secondary></indexterm>
+<para><computeroutput>#define LCD_BLUE&#160;&#160;&#160;0x001F</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a6be38b43a4b733e18a5a22fade479555"/><section>
+    <title>LCD_DATACMD_GPIO</title>
+<indexterm><primary>LCD_DATACMD_GPIO</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_DATACMD_GPIO</secondary></indexterm>
+<para><computeroutput>#define LCD_DATACMD_GPIO&#160;&#160;&#160;383</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a93c7d21d563437550a6873fe0cfe3c0b"/><section>
+    <title>LCD_GREEN</title>
+<indexterm><primary>LCD_GREEN</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_GREEN</secondary></indexterm>
+<para><computeroutput>#define LCD_GREEN&#160;&#160;&#160;0x07E0</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a52d5f135e53ac9a6240ff3086d57f8b9"/><section>
+    <title>LCD_IO_CONTROL_PIN</title>
+<indexterm><primary>LCD_IO_CONTROL_PIN</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_IO_CONTROL_PIN</secondary></indexterm>
+<para><computeroutput>#define LCD_IO_CONTROL_PIN&#160;&#160;&#160;467</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1aa32f6c50fe89cc11c61d8571acabaca7"/><section>
+    <title>LCD_RED</title>
+<indexterm><primary>LCD_RED</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_RED</secondary></indexterm>
+<para><computeroutput>#define LCD_RED&#160;&#160;&#160;0xF800</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1addda83d3c22042f740b41d54de0e3ea0"/><section>
+    <title>LCD_RST_GPIO</title>
+<indexterm><primary>LCD_RST_GPIO</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_RST_GPIO</secondary></indexterm>
+<para><computeroutput>#define LCD_RST_GPIO&#160;&#160;&#160;380</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1aba19350e46c7bc94e268c3b6354462a9"/><section>
+    <title>LCD_SPICS_GPIO</title>
+<indexterm><primary>LCD_SPICS_GPIO</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_SPICS_GPIO</secondary></indexterm>
+<para><computeroutput>#define LCD_SPICS_GPIO&#160;&#160;&#160;379</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a34f95804d4bfa75ef2ab12cc2b65a65c"/><section>
+    <title>LCD_WHITE</title>
+<indexterm><primary>LCD_WHITE</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_WHITE</secondary></indexterm>
+<para><computeroutput>#define LCD_WHITE&#160;&#160;&#160;0xFFFF</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ad4d796b98c583d49e83adabd74a63bf6"/><section>
+    <title>MAX_BUFFER_SIZE</title>
+<indexterm><primary>MAX_BUFFER_SIZE</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>MAX_BUFFER_SIZE</secondary></indexterm>
+<para><computeroutput>#define MAX_BUFFER_SIZE&#160;&#160;&#160;((<link linkend="_lcd__init_8c_1ac3329e12db8417821839a31b3d8a2e60">ST7735_SCREEN_WIDTH</link> * <link linkend="_lcd__init_8c_1addc34a2ba61cbb02657a700df7fdb9e0">ST7735_SCREEN_HEIGHT</link> * 3)  + 16)</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a0797bafdef30c8f6d8a634b29e73b5af"/><section>
+    <title>MAX_CHUCK_SIZE</title>
+<indexterm><primary>MAX_CHUCK_SIZE</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>MAX_CHUCK_SIZE</secondary></indexterm>
+<para><computeroutput>#define MAX_CHUCK_SIZE&#160;&#160;&#160;1024</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a3fae95557dba09431f64cc2c370aa64d"/><section>
+    <title>MY_DISP_HOR_RESS</title>
+<indexterm><primary>MY_DISP_HOR_RESS</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>MY_DISP_HOR_RESS</secondary></indexterm>
+<para><computeroutput>#define MY_DISP_HOR_RESS&#160;&#160;&#160;132</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a69c306e7e1cae1e8842f62c0b0067434"/><section>
+    <title>MY_DISP_VER_RESS</title>
+<indexterm><primary>MY_DISP_VER_RESS</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>MY_DISP_VER_RESS</secondary></indexterm>
+<para><computeroutput>#define MY_DISP_VER_RESS&#160;&#160;&#160;132</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a7f77a08673908c58312a842f92ad8577"/><section>
+    <title>ST7291_CASET</title>
+<indexterm><primary>ST7291_CASET</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_CASET</secondary></indexterm>
+<para><computeroutput>#define ST7291_CASET&#160;&#160;&#160;0x2A</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a04c0812e507fef41e832a0f6a4ffdb9c"/><section>
+    <title>ST7291_COLMOD</title>
+<indexterm><primary>ST7291_COLMOD</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_COLMOD</secondary></indexterm>
+<para><computeroutput>#define ST7291_COLMOD&#160;&#160;&#160;0x3A</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1addad02007c67369bda7ddc289df2a7e4"/><section>
+    <title>ST7291_DISPOFF</title>
+<indexterm><primary>ST7291_DISPOFF</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_DISPOFF</secondary></indexterm>
+<para><computeroutput>#define ST7291_DISPOFF&#160;&#160;&#160;0x28</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a3c8d117719ab02504ef45e03a945759f"/><section>
+    <title>ST7291_DISPON</title>
+<indexterm><primary>ST7291_DISPON</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_DISPON</secondary></indexterm>
+<para><computeroutput>#define ST7291_DISPON&#160;&#160;&#160;0x29</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ac04e282ff071644b863b3d6fe91add1a"/><section>
+    <title>ST7291_FRMCTR1</title>
+<indexterm><primary>ST7291_FRMCTR1</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_FRMCTR1</secondary></indexterm>
+<para><computeroutput>#define ST7291_FRMCTR1&#160;&#160;&#160;0xB1</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a706995cbe87282242495c5551597388c"/><section>
+    <title>ST7291_FRMCTR2</title>
+<indexterm><primary>ST7291_FRMCTR2</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_FRMCTR2</secondary></indexterm>
+<para><computeroutput>#define ST7291_FRMCTR2&#160;&#160;&#160;0xB2</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ad918bc60bc6e95a508d36bc16bba8f13"/><section>
+    <title>ST7291_FRMCTR3</title>
+<indexterm><primary>ST7291_FRMCTR3</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_FRMCTR3</secondary></indexterm>
+<para><computeroutput>#define ST7291_FRMCTR3&#160;&#160;&#160;0xB3</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a7bfc9b97394630cb0a80ae022dd10fda"/><section>
+    <title>ST7291_GMCTRN1</title>
+<indexterm><primary>ST7291_GMCTRN1</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_GMCTRN1</secondary></indexterm>
+<para><computeroutput>#define ST7291_GMCTRN1&#160;&#160;&#160;0xE1</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ad1cc7063d6c6f58a1f4301ebf5b237f6"/><section>
+    <title>ST7291_GMCTRP1</title>
+<indexterm><primary>ST7291_GMCTRP1</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_GMCTRP1</secondary></indexterm>
+<para><computeroutput>#define ST7291_GMCTRP1&#160;&#160;&#160;0xE0</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a673256b4bf64fbc59f8ddf26a6512f36"/><section>
+    <title>ST7291_GMSET</title>
+<indexterm><primary>ST7291_GMSET</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_GMSET</secondary></indexterm>
+<para><computeroutput>#define ST7291_GMSET&#160;&#160;&#160;0xF2 /* Gammas Adjustment. */</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1afd78faa7563ddf0430bd66465a83400d"/><section>
+    <title>ST7291_INVCTR</title>
+<indexterm><primary>ST7291_INVCTR</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_INVCTR</secondary></indexterm>
+<para><computeroutput>#define ST7291_INVCTR&#160;&#160;&#160;0xB4</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a550509e74750bce5a7df39a3ff4ac5a3"/><section>
+    <title>ST7291_MADCTL</title>
+<indexterm><primary>ST7291_MADCTL</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_MADCTL</secondary></indexterm>
+<para><computeroutput>#define ST7291_MADCTL&#160;&#160;&#160;0x36 /* Memory Data Access Control */</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ae483a5f6713cdc2a4ddcffc88b974214"/><section>
+    <title>ST7291_NORON</title>
+<indexterm><primary>ST7291_NORON</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_NORON</secondary></indexterm>
+<para><computeroutput>#define ST7291_NORON&#160;&#160;&#160;0x13</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1aee0c305ab6860962b126eb8082984e82"/><section>
+    <title>ST7291_PWCTR1</title>
+<indexterm><primary>ST7291_PWCTR1</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_PWCTR1</secondary></indexterm>
+<para><computeroutput>#define ST7291_PWCTR1&#160;&#160;&#160;0xC0</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a7c821476eecd542363f366e52a9ed1e0"/><section>
+    <title>ST7291_PWCTR2</title>
+<indexterm><primary>ST7291_PWCTR2</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_PWCTR2</secondary></indexterm>
+<para><computeroutput>#define ST7291_PWCTR2&#160;&#160;&#160;0xC1</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ad6a5754c453a1e5fea2e7302b9d85025"/><section>
+    <title>ST7291_PWCTR3</title>
+<indexterm><primary>ST7291_PWCTR3</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_PWCTR3</secondary></indexterm>
+<para><computeroutput>#define ST7291_PWCTR3&#160;&#160;&#160;0xC2</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a567c83cc6fc496c650ca36f6e7b87795"/><section>
+    <title>ST7291_PWCTR4</title>
+<indexterm><primary>ST7291_PWCTR4</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_PWCTR4</secondary></indexterm>
+<para><computeroutput>#define ST7291_PWCTR4&#160;&#160;&#160;0xC3</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ae51b74eedaca991ffed615099f55266a"/><section>
+    <title>ST7291_PWCTR5</title>
+<indexterm><primary>ST7291_PWCTR5</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_PWCTR5</secondary></indexterm>
+<para><computeroutput>#define ST7291_PWCTR5&#160;&#160;&#160;0xC4</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a220e2130eb847aadf000811eefd7bf95"/><section>
+    <title>ST7291_RAMWR</title>
+<indexterm><primary>ST7291_RAMWR</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_RAMWR</secondary></indexterm>
+<para><computeroutput>#define ST7291_RAMWR&#160;&#160;&#160;0x2C</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ac83825a942586c93252cf471a2c8c9dc"/><section>
+    <title>ST7291_RASET</title>
+<indexterm><primary>ST7291_RASET</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_RASET</secondary></indexterm>
+<para><computeroutput>#define ST7291_RASET&#160;&#160;&#160;0x2B</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a90689f81f9debdc5b68bd744c66502b9"/><section>
+    <title>ST7291_SLPOUT</title>
+<indexterm><primary>ST7291_SLPOUT</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_SLPOUT</secondary></indexterm>
+<para><computeroutput>#define ST7291_SLPOUT&#160;&#160;&#160;0x11</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1afe71c6ee9148504ba9b10d9d0471882e"/><section>
+    <title>ST7291_SW_RESET</title>
+<indexterm><primary>ST7291_SW_RESET</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_SW_RESET</secondary></indexterm>
+<para><computeroutput>#define ST7291_SW_RESET&#160;&#160;&#160;0x01</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a78f0fa7b4d34cce0b968478feb0a924f"/><section>
+    <title>ST7291_VMCTR1</title>
+<indexterm><primary>ST7291_VMCTR1</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_VMCTR1</secondary></indexterm>
+<para><computeroutput>#define ST7291_VMCTR1&#160;&#160;&#160;0xC5</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1addc34a2ba61cbb02657a700df7fdb9e0"/><section>
+    <title>ST7735_SCREEN_HEIGHT<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>ST7735_SCREEN_HEIGHT</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7735_SCREEN_HEIGHT</secondary></indexterm>
+<para><computeroutput>#define ST7735_SCREEN_HEIGHT&#160;&#160;&#160;132</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1addc34a2ba61cbb02657a700df7fdb9e0"/><section>
+    <title>ST7735_SCREEN_HEIGHT<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>ST7735_SCREEN_HEIGHT</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7735_SCREEN_HEIGHT</secondary></indexterm>
+<para><computeroutput>#define ST7735_SCREEN_HEIGHT&#160;&#160;&#160;132</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1ac3329e12db8417821839a31b3d8a2e60"/><section>
+    <title>ST7735_SCREEN_WIDTH</title>
+<indexterm><primary>ST7735_SCREEN_WIDTH</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7735_SCREEN_WIDTH</secondary></indexterm>
+<para><computeroutput>#define ST7735_SCREEN_WIDTH&#160;&#160;&#160;160</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_lcd__init_8c_1a992606101a6d77644f3a2be4afc99324"/><section>
+    <title>GPIO_pin_SetValue()</title>
+<indexterm><primary>GPIO_pin_SetValue</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>GPIO_pin_SetValue</secondary></indexterm>
+<para><computeroutput>int GPIO_pin_SetValue (int GPIONUM, int Value)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Gpio set value high or low. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>GPIONUM</entry><entry>
+<para>gpio pin number </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Value</entry><entry>
+<para>[1- high] [0- low] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESSS_test on success or AP_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a992606101a6d77644f3a2be4afc99324_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a992606101a6d77644f3a2be4afc99324_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1a6842775ba83d166f02b8fef8bb63b1e6"/><section>
+    <title>lcd_init()</title>
+<indexterm><primary>lcd_init</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>lcd_init</secondary></indexterm>
+<para><computeroutput>void lcd_init (void )</computeroutput></para><para>
+
+<para>Function to perform LCD functionality. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>NULL</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESSS_test on success or API_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a6842775ba83d166f02b8fef8bb63b1e6_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a6842775ba83d166f02b8fef8bb63b1e6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1aad7f10e222fef42f9ca5d002a3e6d436"/><section>
+    <title>lcd_refresh()</title>
+<indexterm><primary>lcd_refresh</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>lcd_refresh</secondary></indexterm>
+<para><computeroutput>void lcd_refresh (<link linkend="_structlv__color__t">lv_color_t</link> * framebuf)</computeroutput></para><para>
+
+<para>Refreshes the screen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>*framebuf</entry><entry>
+<para>pointer to the buffer value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_aad7f10e222fef42f9ca5d002a3e6d436_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1a95df70df16fe9bcb0ab0c6c8388b6dc3"/><section>
+    <title>lcd_refreshbuf()</title>
+<indexterm><primary>lcd_refreshbuf</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>lcd_refreshbuf</secondary></indexterm>
+<para><computeroutput>void lcd_refreshbuf (<link linkend="_structlv__color__t">lv_color_t</link> * framebuf)</computeroutput></para><para>
+
+<para>Refreshes the screen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>*framebuf</entry><entry>
+<para>pointer to the buffer value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a95df70df16fe9bcb0ab0c6c8388b6dc3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1a4e054c44735fef87ab7359d8f6c37683"/><section>
+    <title>LCD_RST()</title>
+<indexterm><primary>LCD_RST</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_RST</secondary></indexterm>
+<para><computeroutput>void LCD_RST (void )</computeroutput></para><para>
+
+<para>LCD reset. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a4e054c44735fef87ab7359d8f6c37683_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a4e054c44735fef87ab7359d8f6c37683_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1ae55992fae61ed8e00b3bbc6cff04ef17"/><section>
+    <title>lcd_send_data()</title>
+<indexterm><primary>lcd_send_data</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>lcd_send_data</secondary></indexterm>
+<para><computeroutput>void lcd_send_data (uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint8_t * p)</computeroutput></para><para>
+
+<para>Send data pixelwise. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>x_start</entry><entry>
+<para>starting address of x axis </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y_start</entry><entry>
+<para>starting address of y axis </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x_end</entry><entry>
+<para>ending address of the x axis </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y_end</entry><entry>
+<para>ending address of the y axis </para>
+</entry>
+                            </row>
+                            <row>
+<entry>*p</entry><entry>
+<para>pixel </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1a0543bbde4de0576ea0a80e73bac80a4e"/><section>
+    <title>LCD_SET_DATACMD()</title>
+<indexterm><primary>LCD_SET_DATACMD</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_SET_DATACMD</secondary></indexterm>
+<para><computeroutput>int LCD_SET_DATACMD (char mode)</computeroutput></para><para>
+
+<para>Sets the data/cmd line to receive the data nased on the modes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mode</entry><entry>
+<para>[0- command], [1- data] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESSS_test on success or AP_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a0543bbde4de0576ea0a80e73bac80a4e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a0543bbde4de0576ea0a80e73bac80a4e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1a0f1f48ffd26be40513f42995372dfa1d"/><section>
+    <title>LCD_SPI_BUFFDATAWRITE()</title>
+<indexterm><primary>LCD_SPI_BUFFDATAWRITE</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_SPI_BUFFDATAWRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_BUFFDATAWRITE (uint8_t * data, uint16_t datalen)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a0f1f48ffd26be40513f42995372dfa1d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a0f1f48ffd26be40513f42995372dfa1d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1adfb6e366f578e76ce29bbee1b0f1d295"/><section>
+    <title>LCD_SPI_BUFFWRITE()</title>
+<indexterm><primary>LCD_SPI_BUFFWRITE</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_SPI_BUFFWRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_BUFFWRITE (uint8_t * data, uint16_t datalen)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_adfb6e366f578e76ce29bbee1b0f1d295_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_adfb6e366f578e76ce29bbee1b0f1d295_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1af4441b8eab01e69f1b6222fee0f962ef"/><section>
+    <title>LCD_SPI_CMDWRITE()</title>
+<indexterm><primary>LCD_SPI_CMDWRITE</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_SPI_CMDWRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_CMDWRITE (uint8_t cmd)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_af4441b8eab01e69f1b6222fee0f962ef_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_af4441b8eab01e69f1b6222fee0f962ef_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1a20244be6a13ba66fc8d004cbf92f6e4d"/><section>
+    <title>LCD_SPI_DATAWRITE()</title>
+<indexterm><primary>LCD_SPI_DATAWRITE</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>LCD_SPI_DATAWRITE</secondary></indexterm>
+<para><computeroutput>int LCD_SPI_DATAWRITE (uint8_t data)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1a80262b4fad757ccd0e8a02b55f58801b"/><section>
+    <title>ST7291_fillScreenColor()</title>
+<indexterm><primary>ST7291_fillScreenColor</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_fillScreenColor</secondary></indexterm>
+<para><computeroutput>uint8_t ST7291_fillScreenColor (uint16_t screenBasecolor)</computeroutput></para><para>
+
+<para>Function to fill the screen colour pixel by pixel. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>screenBasecolor</entry><entry>
+<para>RGB value of the colour to be filled </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pixcelNum</entry><entry>
+<para>Total number of pixcel on the LCD screen </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 on completion </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a80262b4fad757ccd0e8a02b55f58801b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1a18e43791216d53f52c3bca5d8b3bf60c"/><section>
+    <title>ST7291_init()</title>
+<indexterm><primary>ST7291_init</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_init</secondary></indexterm>
+<para><computeroutput>int ST7291_init (void )</computeroutput></para><para>
+
+<para>Initialization of the LCD ST7291_chip. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on completion </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a18e43791216d53f52c3bca5d8b3bf60c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_a18e43791216d53f52c3bca5d8b3bf60c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1afb4958a723598cf0433b9251483b3d5e"/><section>
+    <title>ST7291_setScreenColor()</title>
+<indexterm><primary>ST7291_setScreenColor</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_setScreenColor</secondary></indexterm>
+<para><computeroutput>uint8_t ST7291_setScreenColor (uint16_t screenBasecolor, uint32_t pixcelNum)</computeroutput></para><para>
+
+<para>function to fill the screen color </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>screenBasecolor</entry><entry>
+<para>- hex value of the color </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pixcelNum</entry><entry>
+<para>- pixel number </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_afb4958a723598cf0433b9251483b3d5e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_afb4958a723598cf0433b9251483b3d5e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lcd__init_8c_1acea4b86040a91d501a913d67133a693b"/><section>
+    <title>ST7291_setScreenWindow()</title>
+<indexterm><primary>ST7291_setScreenWindow</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>ST7291_setScreenWindow</secondary></indexterm>
+<para><computeroutput>uint8_t ST7291_setScreenWindow (uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)</computeroutput></para><para>
+
+<para>function to setting the window color </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>x1</entry><entry>
+<para>- start x position </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y1</entry><entry>
+<para>- start y position </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x2</entry><entry>
+<para>- end x position </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y2</entry><entry>
+<para>- end y position </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_acea4b86040a91d501a913d67133a693b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lcd__init_8c_acea4b86040a91d501a913d67133a693b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_lcd__init_8c_1a810b845887b60187bd887573eaf75c2c"/><section>
+    <title>colours</title>
+<indexterm><primary>colours</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>colours</secondary></indexterm>
+<para><computeroutput>int32_t colours[6] = { <link linkend="_lcd__init_8c_1aa32f6c50fe89cc11c61d8571acabaca7">LCD_RED</link>, <link linkend="_lcd__init_8c_1a93c7d21d563437550a6873fe0cfe3c0b">LCD_GREEN</link>, <link linkend="_lcd__init_8c_1a796c66d860ebc83d78b45f2ab697e428">LCD_AMBER</link>,<link linkend="_lcd__init_8c_1ae08bdcd40ed17c40c7ff537b31ae6c20">LCD_BLUE</link>, <link linkend="_lcd__init_8c_1a34f95804d4bfa75ef2ab12cc2b65a65c">LCD_WHITE</link>,<link linkend="_lcd__init_8c_1a89194c8cf2691afa77b4f81ad1cde821">LCD_BLACK</link>}</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1aab3d3051ab911f66e9afd7745d5ebbb5"/><section>
+    <title>errbuf</title>
+<indexterm><primary>errbuf</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>errbuf</secondary></indexterm>
+<para><computeroutput>char errbuf[100] ={0}</computeroutput></para></section>
+<anchor xml:id="_lcd__init_8c_1a72ff51e6a0a0544319b3181a0043bdb7"/><section>
+    <title>lcd_status</title>
+<indexterm><primary>lcd_status</primary><secondary>lcd_init.c</secondary></indexterm>
+<indexterm><primary>lcd_init.c</primary><secondary>lcd_status</secondary></indexterm>
+<para><computeroutput>int lcd_status = 1</computeroutput></para></section>
+</section>
+</section>

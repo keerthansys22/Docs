@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_05041d447ccc69ea46a00e90c452973a" xml:lang="en-US">
+<title>Initializations/Hardware_Initializations Directory Reference</title>
+<indexterm><primary>Initializations/Hardware_Initializations Directory Reference</primary></indexterm>
+Directory dependency graph for Hardware_Initializations:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_05041d447ccc69ea46a00e90c452973a_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_gpio__init_8c">gpio_init.c</link></para>
+
+<para>Source that initializes the GPIO pins. </para>
+</listitem>
+            <listitem><para>file <link linkend="_hw__init_8c">hw_init.c</link></para>
+
+<para>Source that initializes the hardware components. </para>
+</listitem>
+            <listitem><para>file <link linkend="_lcd__init_8c">lcd_init.c</link></para>
+
+<para>source file that has LCD display drivers - ST7291 </para>
+</listitem>
+            <listitem><para>file <link linkend="_spi__init_8c">spi_init.c</link></para>
+
+<para>Source that initializes the SPI interface. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

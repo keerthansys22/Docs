@@ -1,0 +1,248 @@
+\doxysection{API\+\_\+\+Source/\+Valve\+Modules\+Api\+Source/\+External\+Prop.c File Reference}
+\hypertarget{_external_prop_8c}{}\label{_external_prop_8c}\index{API\_Source/ValveModulesApiSource/ExternalProp.c@{API\_Source/ValveModulesApiSource/ExternalProp.c}}
+
+
+This source file contains the API source related to External Prop.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/pzmapping.\+h"{}}\newline
+Include dependency graph for External\+Prop.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_external_prop_8c_a2383a3641c7a989a9d6c99be17bf45c8}{write\+Shared\+Memory\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t addr, uint32\+\_\+t size)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_external_prop_8c_ae512dcee3f48f317872617e5f4559b19}{read\+Shared\+Memory\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_external_prop_8c_ae2e6a8daa2875bb4fb56a99cc5c0b716}{get\+Prop\+Zone\+Process\+Data\+Address}} (uint16\+\_\+t propzone\+\_\+handler)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_external_prop_8c_acf4b478db18710fcdd7868a9aa4e3ec7}{get\+Prop\+Zone\+Service\+Data\+Address}} (uint16\+\_\+t propzone\+\_\+handler)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_external_prop_8c_af263134ac7b206af9ff2919a93f18ed3}{get\+Ext\+Prop\+Process\+Data}} (uint16\+\_\+t extprop\+\_\+handler, pzxextprop\+\_\+processinfo \texorpdfstring{$\ast$}{*}extprop\+\_\+processdata)
+\begin{DoxyCompactList}\small\item\em Retrieves process data for a specified External Prop. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_external_prop_8c_ad6a8d0d15c15fd2492fd230c7568def6}{set\+Ext\+Prop\+Set\+Point\+Pressure}} (uint16\+\_\+t extprop\+\_\+handler, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Sets the PDO (Process Data Output) for a specified External Prop. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_external_prop_8c_a987cb2aaa4a8020e9c8e181ce46aaca7}{get\+Ext\+Prop\+Service\+Parameter\+Data}} (uint16\+\_\+t extprop\+\_\+handler, uint16\+\_\+t parameter\+\_\+name, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Retrieves the service parameter of the External Prop. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_external_prop_8c_a03295d3ff415e5e416cf59caeba36145}{set\+Ext\+Prop\+Service\+Parameter\+Data}} (uint16\+\_\+t extprop\+\_\+handler, uint16\+\_\+t parameter\+\_\+name, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Sets the service parameter data for a specified External Prop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_external_prop_8c_a0441d0acf0c675222c4e9a8d4a853348}{external\+\_\+pressurezone}} \mbox{[}16\mbox{]}
+\item 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \mbox{\hyperlink{_external_prop_8c_ad9088d5017838792bd64e604162503df}{gbuf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This source file contains the API source related to External Prop. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_external_prop_8c_af263134ac7b206af9ff2919a93f18ed3}\index{ExternalProp.c@{ExternalProp.c}!getExtPropProcessData@{getExtPropProcessData}}
+\index{getExtPropProcessData@{getExtPropProcessData}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{getExtPropProcessData()}{getExtPropProcessData()}}
+{\footnotesize\ttfamily \label{_external_prop_8c_af263134ac7b206af9ff2919a93f18ed3} 
+uint8\+\_\+t get\+Ext\+Prop\+Process\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{extprop\+\_\+handler}{, }\item[{pzxextprop\+\_\+processinfo \texorpdfstring{$\ast$}{*}}]{extprop\+\_\+processdata}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves process data for a specified External Prop. 
+
+This function fetches the diagnostic process data associated with a given proportional valve handler within a specified External Prop .
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em extprop\+\_\+handler} & The handler for the External Prop \\
+\hline
+\mbox{\texttt{ out}}  & {\em pzxextprop\+\_\+processinfo} & Pointer to a structure where the retrieved process data will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Returns RET\+\_\+\+OK on success, or an error code on failure. Refer to e\+\_\+error\+\_\+code for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c_af263134ac7b206af9ff2919a93f18ed3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_external_prop_8c_a987cb2aaa4a8020e9c8e181ce46aaca7}\index{ExternalProp.c@{ExternalProp.c}!getExtPropServiceParameterData@{getExtPropServiceParameterData}}
+\index{getExtPropServiceParameterData@{getExtPropServiceParameterData}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{getExtPropServiceParameterData()}{getExtPropServiceParameterData()}}
+{\footnotesize\ttfamily \label{_external_prop_8c_a987cb2aaa4a8020e9c8e181ce46aaca7} 
+uint8\+\_\+t get\+Ext\+Prop\+Service\+Parameter\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{extprop\+\_\+handler}{, }\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the service parameter of the External Prop. 
+
+This function fetches a specific service parameter of the External Prop within the specified pressure zone.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em extprop\+\_\+handler} & The handler for the External Prop. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The name (ID) of the parameter to be retrieved. Refer to Valve\+\_\+\+Feature\+Param\+Id for valid parameter names. \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & Pointer to the memory where the retrieved parameter value will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Returns 0 on success, or an error code on failure. Refer to e\+\_\+error\+\_\+code for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c_a987cb2aaa4a8020e9c8e181ce46aaca7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_external_prop_8c_ae2e6a8daa2875bb4fb56a99cc5c0b716}\index{ExternalProp.c@{ExternalProp.c}!getPropZoneProcessDataAddress@{getPropZoneProcessDataAddress}}
+\index{getPropZoneProcessDataAddress@{getPropZoneProcessDataAddress}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{getPropZoneProcessDataAddress()}{getPropZoneProcessDataAddress()}}
+{\footnotesize\ttfamily \label{_external_prop_8c_ae2e6a8daa2875bb4fb56a99cc5c0b716} 
+uint32\+\_\+t get\+Prop\+Zone\+Process\+Data\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{propzone\+\_\+handler}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c_ae2e6a8daa2875bb4fb56a99cc5c0b716_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_external_prop_8c_acf4b478db18710fcdd7868a9aa4e3ec7}\index{ExternalProp.c@{ExternalProp.c}!getPropZoneServiceDataAddress@{getPropZoneServiceDataAddress}}
+\index{getPropZoneServiceDataAddress@{getPropZoneServiceDataAddress}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{getPropZoneServiceDataAddress()}{getPropZoneServiceDataAddress()}}
+{\footnotesize\ttfamily \label{_external_prop_8c_acf4b478db18710fcdd7868a9aa4e3ec7} 
+uint32\+\_\+t get\+Prop\+Zone\+Service\+Data\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{propzone\+\_\+handler}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c_acf4b478db18710fcdd7868a9aa4e3ec7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_external_prop_8c_ae512dcee3f48f317872617e5f4559b19}\index{ExternalProp.c@{ExternalProp.c}!readSharedMemoryData@{readSharedMemoryData}}
+\index{readSharedMemoryData@{readSharedMemoryData}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{readSharedMemoryData()}{readSharedMemoryData()}}
+{\footnotesize\ttfamily \label{_external_prop_8c_ae512dcee3f48f317872617e5f4559b19} 
+uint8\+\_\+t read\+Shared\+Memory\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c_ae512dcee3f48f317872617e5f4559b19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_external_prop_8c_a03295d3ff415e5e416cf59caeba36145}\index{ExternalProp.c@{ExternalProp.c}!setExtPropServiceParameterData@{setExtPropServiceParameterData}}
+\index{setExtPropServiceParameterData@{setExtPropServiceParameterData}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{setExtPropServiceParameterData()}{setExtPropServiceParameterData()}}
+{\footnotesize\ttfamily \label{_external_prop_8c_a03295d3ff415e5e416cf59caeba36145} 
+uint8\+\_\+t set\+Ext\+Prop\+Service\+Parameter\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{extprop\+\_\+handler}{, }\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Sets the service parameter data for a specified External Prop. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em extprop\+\_\+handler} & The handler for the External Prop. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The name of the parameter to set. Refer to the enumeration {\ttfamily Valve\+\_\+\+Feature\+Param\+Id}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the buffer containing the data to be set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an error code indicating the status of the operation. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c_a03295d3ff415e5e416cf59caeba36145_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_external_prop_8c_ad6a8d0d15c15fd2492fd230c7568def6}\index{ExternalProp.c@{ExternalProp.c}!setExtPropSetPointPressure@{setExtPropSetPointPressure}}
+\index{setExtPropSetPointPressure@{setExtPropSetPointPressure}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{setExtPropSetPointPressure()}{setExtPropSetPointPressure()}}
+{\footnotesize\ttfamily \label{_external_prop_8c_ad6a8d0d15c15fd2492fd230c7568def6} 
+uint8\+\_\+t set\+Ext\+Prop\+Set\+Point\+Pressure (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{extprop\+\_\+handler}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Sets the PDO (Process Data Output) for a specified External Prop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extprop\+\_\+handler} & Handler for the External Prop \\
+\hline
+{\em data} & Pointer to the data to be written to the External Prop. The data must match the expected structure format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\+\_\+\+OK on success, RET\+\_\+\+ERROR on failure.
+\end{DoxyReturn}
+Sets the setpoint pressure for the specified External Prop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em extprop\+\_\+handler} & Handler for the External Prop. \\
+\hline
+{\em data} & Pointer to the data containing the setpoint pressure value. This should point to a valid structure or data type expected by the function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\+\_\+\+OK on success, RET\+\_\+\+ERROR on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c_ad6a8d0d15c15fd2492fd230c7568def6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_external_prop_8c_a2383a3641c7a989a9d6c99be17bf45c8}\index{ExternalProp.c@{ExternalProp.c}!writeSharedMemoryData@{writeSharedMemoryData}}
+\index{writeSharedMemoryData@{writeSharedMemoryData}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{writeSharedMemoryData()}{writeSharedMemoryData()}}
+{\footnotesize\ttfamily \label{_external_prop_8c_a2383a3641c7a989a9d6c99be17bf45c8} 
+uint8\+\_\+t write\+Shared\+Memory\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{addr}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_external_prop_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_external_prop_8c_a0441d0acf0c675222c4e9a8d4a853348}\index{ExternalProp.c@{ExternalProp.c}!external\_pressurezone@{external\_pressurezone}}
+\index{external\_pressurezone@{external\_pressurezone}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{external\_pressurezone}{external\_pressurezone}}
+{\footnotesize\ttfamily \label{_external_prop_8c_a0441d0acf0c675222c4e9a8d4a853348} 
+uint8\+\_\+t external\+\_\+pressurezone\mbox{[}16\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_external_prop_8c_ad9088d5017838792bd64e604162503df}\index{ExternalProp.c@{ExternalProp.c}!gbuf@{gbuf}}
+\index{gbuf@{gbuf}!ExternalProp.c@{ExternalProp.c}}
+\doxysubsubsection{\texorpdfstring{gbuf}{gbuf}}
+{\footnotesize\ttfamily \label{_external_prop_8c_ad9088d5017838792bd64e604162503df} 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} gbuf\hspace{0.3cm}{\ttfamily [extern]}}
+

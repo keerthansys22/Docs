@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainpage" xml:lang="en-US">
+<title>Arrow3 Linux application</title>
+<indexterm><primary>Arrow3 Linux application</primary></indexterm>
+<section xml:id="_index_1intro_sec">
+<title>Introduction</title>
+<para>This documentation contains the Industrial Valve Island (Arrow3 product) linux application contents. Here we have Main bus node, IO modules and Valves connected.</para>
+
+<para><emphasis role="bold">IO modules</emphasis> can contain following modules:-<itemizedlist>
+<listitem>
+<para>DIO</para>
+</listitem><listitem>
+<para>DO</para>
+</listitem><listitem>
+<para>DI</para>
+</listitem><listitem>
+<para>AIO</para>
+</listitem><listitem>
+<para>AO</para>
+</listitem><listitem>
+<para>AI</para>
+</listitem></itemizedlist>
+</para>
+
+<para><emphasis role="bold">Valves</emphasis> can contain the following:-<itemizedlist>
+<listitem>
+<para><emphasis role="bold">Pressure zone</emphasis>:- ISEM diagnostics valve, No of stations(Standard valves), No of diagnostics valves, Proportional station valves(Internal prop)</para>
+</listitem><listitem>
+<para><emphasis role="bold">External pressure zone</emphasis>:- Proportional module valves(External prop)</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_index_1install_sec">
+<title>Overview</title>
+<para>The LCD GUI application operates on a Linux core, communicating with a data server for data exchange. The application includes five threads, each dedicated to specific tasks to ensure modularity, scalability, and performance. </para>
+<section xml:id="_index_1step1">
+<title><emphasis role="bold">Key Features</emphasis></title></section>
+<section xml:id="_index_1step2">
+<title><emphasis role="bold">Read Operations</emphasis>:</title>
+<para><itemizedlist>
+<listitem>
+<para>Fetch MAC address</para>
+</listitem><listitem>
+<para>Module details (Part number, Hardware and Firmware revision)</para>
+</listitem><listitem>
+<para>PIN details</para>
+</listitem><listitem>
+<para>IP address details (default values)</para>
+</listitem><listitem>
+<para>module status (device type, status value, scrolling status and suggestion details)</para>
+</listitem><listitem>
+<para>Poll status details from the data server on configurable interval. </para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_index_1step3">
+<title><emphasis role="bold">Write Operations</emphasis>:</title>
+<para><itemizedlist>
+<listitem>
+<para>Send user-entered IP configuration details to the data server. </para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_index_1step4">
+<title><emphasis role="bold">Threads and Responsibilities</emphasis>:</title>
+<para><itemizedlist>
+<listitem>
+<para><emphasis role="bold">Thread 1: LVGL State Machine</emphasis><itemizedlist>
+<listitem>
+<para>Manages the lifecycle and states of the LVGL GUI framework.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Thread 2: LVGL GUI</emphasis><itemizedlist>
+<listitem>
+<para>Handles GUI rendering and user interface interactions on the display.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Thread 3: Data processing polling</emphasis><itemizedlist>
+<listitem>
+<para>Continuously polls the status details for all the modules in a hierarchy.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Thread 4: Poll for Screen Alerts</emphasis><itemizedlist>
+<listitem>
+<para>Continuously polls for any screen pop-ups indicating warning or fault statuses.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Thread 5: Keypress Check</emphasis><itemizedlist>
+<listitem>
+<para>Monitors keypress events for navigation and user actions. </para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_index_1step5">
+<title><emphasis role="bold">Sequence Diagram</emphasis> - <link xlink:href="https://celstream-my.sharepoint.com/:w:/r/personal/keerthangs_celstream_com/Documents/Linux_core%20(1).docx?d=w48ba3bef893a4520b4c96850e6687d14&amp;csf=1&amp;web=1&amp;e=9IROZ5">link</link></title></section>
+</section>
+</chapter>

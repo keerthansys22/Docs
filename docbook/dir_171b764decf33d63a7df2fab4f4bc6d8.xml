@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_171b764decf33d63a7df2fab4f4bc6d8" xml:lang="en-US">
+<title>GUI Directory Reference</title>
+<indexterm><primary>GUI Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_5ee8b5aa34d6db6a0dd6500f9d8988b2">Screens</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_lvgl__gui_8c">lvgl_gui.c</link></para>
+
+<para>source that handles the screen and key press logic </para>
+</listitem>
+            <listitem><para>file <link linkend="_lvgl__init_8c">lvgl_init.c</link></para>
+
+<para>Source that initializes lvgl drivers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

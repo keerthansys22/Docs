@@ -1,0 +1,382 @@
+\doxysection{Data\+\_\+processing/discovery.c File Reference}
+\hypertarget{discovery_8c}{}\label{discovery_8c}\index{Data\_processing/discovery.c@{Data\_processing/discovery.c}}
+
+
+Source that handles the discovery part of all module details.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for discovery.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{discovery_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{discovery_8c_a4b65e82368bb41640facc3743c8e3671}{retrieve\+And\+Copy\+Handlers}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}get\+Handler\+Func)(void), uint16\+\_\+t \texorpdfstring{$\ast$}{*}dest\+Array, const char \texorpdfstring{$\ast$}{*}module\+Name, uint16\+\_\+t max\+Handlers)
+\begin{DoxyCompactList}\small\item\em Helper function to retrieve and copy handlers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{discovery_8c_a9fb9bb9f432567d6ac9d3084230d13d0}{retrieve\+And\+Copy\+Handlers\+With\+Arg}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}get\+Handler\+Func)(uint16\+\_\+t), uint16\+\_\+t \texorpdfstring{$\ast$}{*}dest\+Array, const char \texorpdfstring{$\ast$}{*}module\+Name, uint16\+\_\+t max\+Handlers, uint16\+\_\+t handler, uint16\+\_\+t \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Helper function to retrieve and copy handlers with arguments. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{discovery_8c_a20c3cefbb0187f193f7b2b327e82342f}{start\+\_\+discovery}} ()
+\begin{DoxyCompactList}\small\item\em Function that processes the discovery details. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{discovery_8c_af14569278f4c7b310cd060593a7e65eb}{fetch\+\_\+pressure\+\_\+zone\+\_\+handlers}} (uint8\+\_\+t pz\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Function that fetches all the individual pressure zone handler details. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{discovery_8c_a3b848e11cbd331e215031a342401a683}{fetch\+\_\+prop\+\_\+zone\+\_\+details}} (uint8\+\_\+t prop\+\_\+zone\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Function that fetches all the individual property zone details. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{discovery_8c_a06b108195d85b99abb936fe244fe064d}{get\+\_\+pin\+\_\+details}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+s\+\_\+discovery\+\_\+details \mbox{\hyperlink{discovery_8c_aecc928609def218c15f7c59447eb5a32}{discover\+\_\+details}}
+\item 
+s\+\_\+prszone\+\_\+device\+\_\+count\+\_\+details \mbox{\hyperlink{discovery_8c_a639ca1471160314ce61d52506c2a8d0d}{pz\+\_\+count\+\_\+details}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a13ce44a86fef638ebd3999c53867bfa0}{mbn\+\_\+handler\+\_\+linux}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_acb71097bdde0eeb8f371374d3a7e14ed}{di\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a92e023a01eb6cda34cb71ffb24aac30d}{do\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a469ccdb9274911410aa03d305dda5343}{dio\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a1b52b26f5eaa915de63b353f7186b998}{ai\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_aa42415ce458bf3e4b6111071869ee688}{ao\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a02fd0c072e2bbeb279db2b5a5e77879b}{aio\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a8f6252caf33f738fd9f6e6c46db45eb8}{pz\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PZ\+\_\+\+HANDLERS\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_aa99741c64ccbcc97a4d63b9364f74eac}{prop\+\_\+zone\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+ZONE\+\_\+\+HANDLERS\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_abde244b58c27c11e6d996745e398332a}{isemdiag\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+ISEM\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a674bdb8ef9a107fc2ac0646e0909a4ec}{diag\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a33c9d8d2ebd58c0dcf868d7c0ab472d1}{standard\+\_\+valve\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+STANDARD\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_ae4e2d1b8f9fe83b73ea8e64eb7dc411d}{prop\+\_\+station\+\_\+handlers}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+STATION\+\_\+\+PER\+\_\+\+ZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_ae44ef9829ac44f5b2bb7abdefce34479}{g\+\_\+isemdiag\+\_\+count}} = 0
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_ae824f62265a6998b6bcd6d92e5af8bd4}{g\+\_\+diagvalve\+\_\+count}} = 0
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_ac1b2883704d5fd290aff23571f36d986}{g\+\_\+propstation\+\_\+count}} = 0
+\item 
+uint16\+\_\+t \mbox{\hyperlink{discovery_8c_a6249503e353816197750f9b9191368be}{g\+\_\+standardvalve\+\_\+count}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{discovery_8c_a99853c346c63e9d4b6d00633a57cbe9c}{g\+\_\+total\+\_\+digital\+\_\+count}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{discovery_8c_ad02cee25b80418d1bfe5049c4acc3725}{g\+\_\+total\+\_\+analog\+\_\+count}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{discovery_8c_a53824936cb4a69eb284b074623bb06bd}{g\+\_\+total\+\_\+io\+\_\+count}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{discovery_8c_aaf8d9633f5ba3c88d4e3f0cf26a3c415}{g\+\_\+total\+\_\+count}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{discovery_8c_aa82d815e011dc2986b6dfc9e2ddfbfaa}{g\+\_\+start\+\_\+flag}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that handles the discovery part of all module details. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{discovery_8c_af14569278f4c7b310cd060593a7e65eb}\index{discovery.c@{discovery.c}!fetch\_pressure\_zone\_handlers@{fetch\_pressure\_zone\_handlers}}
+\index{fetch\_pressure\_zone\_handlers@{fetch\_pressure\_zone\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{fetch\_pressure\_zone\_handlers()}{fetch\_pressure\_zone\_handlers()}}
+{\footnotesize\ttfamily \label{discovery_8c_af14569278f4c7b310cd060593a7e65eb} 
+int fetch\+\_\+pressure\+\_\+zone\+\_\+handlers (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pz\+\_\+count}{}\end{DoxyParamCaption})}
+
+
+
+Function that fetches all the individual pressure zone handler details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pz\+\_\+count} & The number of pressure zones to fetch details for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESS\+\_\+test 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_af14569278f4c7b310cd060593a7e65eb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_af14569278f4c7b310cd060593a7e65eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{discovery_8c_a3b848e11cbd331e215031a342401a683}\index{discovery.c@{discovery.c}!fetch\_prop\_zone\_details@{fetch\_prop\_zone\_details}}
+\index{fetch\_prop\_zone\_details@{fetch\_prop\_zone\_details}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{fetch\_prop\_zone\_details()}{fetch\_prop\_zone\_details()}}
+{\footnotesize\ttfamily \label{discovery_8c_a3b848e11cbd331e215031a342401a683} 
+int fetch\+\_\+prop\+\_\+zone\+\_\+details (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{prop\+\_\+zone\+\_\+count}{}\end{DoxyParamCaption})}
+
+
+
+Function that fetches all the individual property zone details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prop\+\_\+zone\+\_\+count} & The number of property zones to fetch details for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESS\+\_\+test 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{discovery_8c_a3b848e11cbd331e215031a342401a683_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_a3b848e11cbd331e215031a342401a683_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{discovery_8c_a06b108195d85b99abb936fe244fe064d}\index{discovery.c@{discovery.c}!get\_pin\_details@{get\_pin\_details}}
+\index{get\_pin\_details@{get\_pin\_details}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{get\_pin\_details()}{get\_pin\_details()}}
+{\footnotesize\ttfamily \label{discovery_8c_a06b108195d85b99abb936fe244fe064d} 
+int get\+\_\+pin\+\_\+details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_a06b108195d85b99abb936fe244fe064d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_a06b108195d85b99abb936fe244fe064d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{discovery_8c_a4b65e82368bb41640facc3743c8e3671}\index{discovery.c@{discovery.c}!retrieveAndCopyHandlers@{retrieveAndCopyHandlers}}
+\index{retrieveAndCopyHandlers@{retrieveAndCopyHandlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{retrieveAndCopyHandlers()}{retrieveAndCopyHandlers()}}
+{\footnotesize\ttfamily \label{discovery_8c_a4b65e82368bb41640facc3743c8e3671} 
+void retrieve\+And\+Copy\+Handlers (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}}]{get\+Handler\+Func~}{)(void), }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{dest\+Array}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{module\+Name}{, }\item[{uint16\+\_\+t}]{max\+Handlers}{}\end{DoxyParamCaption})}
+
+
+
+Helper function to retrieve and copy handlers. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_a4b65e82368bb41640facc3743c8e3671_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{discovery_8c_a9fb9bb9f432567d6ac9d3084230d13d0}\index{discovery.c@{discovery.c}!retrieveAndCopyHandlersWithArg@{retrieveAndCopyHandlersWithArg}}
+\index{retrieveAndCopyHandlersWithArg@{retrieveAndCopyHandlersWithArg}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{retrieveAndCopyHandlersWithArg()}{retrieveAndCopyHandlersWithArg()}}
+{\footnotesize\ttfamily \label{discovery_8c_a9fb9bb9f432567d6ac9d3084230d13d0} 
+void retrieve\+And\+Copy\+Handlers\+With\+Arg (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}}]{get\+Handler\+Func~}{)(uint16\+\_\+t), }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{dest\+Array}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{module\+Name}{, }\item[{uint16\+\_\+t}]{max\+Handlers}{, }\item[{uint16\+\_\+t}]{handler}{, }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Helper function to retrieve and copy handlers with arguments. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_a9fb9bb9f432567d6ac9d3084230d13d0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{discovery_8c_a20c3cefbb0187f193f7b2b327e82342f}\index{discovery.c@{discovery.c}!start\_discovery@{start\_discovery}}
+\index{start\_discovery@{start\_discovery}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{start\_discovery()}{start\_discovery()}}
+{\footnotesize\ttfamily \label{discovery_8c_a20c3cefbb0187f193f7b2b327e82342f} 
+int start\+\_\+discovery (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function that processes the discovery details. 
+
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESS\+\_\+test 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_a20c3cefbb0187f193f7b2b327e82342f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{discovery_8c_a20c3cefbb0187f193f7b2b327e82342f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{discovery_8c_a1b52b26f5eaa915de63b353f7186b998}\index{discovery.c@{discovery.c}!ai\_handlers@{ai\_handlers}}
+\index{ai\_handlers@{ai\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{ai\_handlers}{ai\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_a1b52b26f5eaa915de63b353f7186b998} 
+uint16\+\_\+t ai\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_a02fd0c072e2bbeb279db2b5a5e77879b}\index{discovery.c@{discovery.c}!aio\_handlers@{aio\_handlers}}
+\index{aio\_handlers@{aio\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{aio\_handlers}{aio\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_a02fd0c072e2bbeb279db2b5a5e77879b} 
+uint16\+\_\+t aio\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_aa42415ce458bf3e4b6111071869ee688}\index{discovery.c@{discovery.c}!ao\_handlers@{ao\_handlers}}
+\index{ao\_handlers@{ao\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{ao\_handlers}{ao\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_aa42415ce458bf3e4b6111071869ee688} 
+uint16\+\_\+t ao\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_acb71097bdde0eeb8f371374d3a7e14ed}\index{discovery.c@{discovery.c}!di\_handlers@{di\_handlers}}
+\index{di\_handlers@{di\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{di\_handlers}{di\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_acb71097bdde0eeb8f371374d3a7e14ed} 
+uint16\+\_\+t di\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_a674bdb8ef9a107fc2ac0646e0909a4ec}\index{discovery.c@{discovery.c}!diag\_handlers@{diag\_handlers}}
+\index{diag\_handlers@{diag\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{diag\_handlers}{diag\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_a674bdb8ef9a107fc2ac0646e0909a4ec} 
+uint16\+\_\+t diag\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+DIAG\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_a469ccdb9274911410aa03d305dda5343}\index{discovery.c@{discovery.c}!dio\_handlers@{dio\_handlers}}
+\index{dio\_handlers@{dio\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{dio\_handlers}{dio\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_a469ccdb9274911410aa03d305dda5343} 
+uint16\+\_\+t dio\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_aecc928609def218c15f7c59447eb5a32}\index{discovery.c@{discovery.c}!discover\_details@{discover\_details}}
+\index{discover\_details@{discover\_details}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{discover\_details}{discover\_details}}
+{\footnotesize\ttfamily \label{discovery_8c_aecc928609def218c15f7c59447eb5a32} 
+s\+\_\+discovery\+\_\+details discover\+\_\+details}
+
+\Hypertarget{discovery_8c_a92e023a01eb6cda34cb71ffb24aac30d}\index{discovery.c@{discovery.c}!do\_handlers@{do\_handlers}}
+\index{do\_handlers@{do\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{do\_handlers}{do\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_a92e023a01eb6cda34cb71ffb24aac30d} 
+uint16\+\_\+t do\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+IO\+\_\+\+HANDLERS\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_ae824f62265a6998b6bcd6d92e5af8bd4}\index{discovery.c@{discovery.c}!g\_diagvalve\_count@{g\_diagvalve\_count}}
+\index{g\_diagvalve\_count@{g\_diagvalve\_count}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_diagvalve\_count}{g\_diagvalve\_count}}
+{\footnotesize\ttfamily \label{discovery_8c_ae824f62265a6998b6bcd6d92e5af8bd4} 
+uint16\+\_\+t g\+\_\+diagvalve\+\_\+count = 0}
+
+\Hypertarget{discovery_8c_ae44ef9829ac44f5b2bb7abdefce34479}\index{discovery.c@{discovery.c}!g\_isemdiag\_count@{g\_isemdiag\_count}}
+\index{g\_isemdiag\_count@{g\_isemdiag\_count}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_isemdiag\_count}{g\_isemdiag\_count}}
+{\footnotesize\ttfamily \label{discovery_8c_ae44ef9829ac44f5b2bb7abdefce34479} 
+uint16\+\_\+t g\+\_\+isemdiag\+\_\+count = 0}
+
+\Hypertarget{discovery_8c_ac1b2883704d5fd290aff23571f36d986}\index{discovery.c@{discovery.c}!g\_propstation\_count@{g\_propstation\_count}}
+\index{g\_propstation\_count@{g\_propstation\_count}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_propstation\_count}{g\_propstation\_count}}
+{\footnotesize\ttfamily \label{discovery_8c_ac1b2883704d5fd290aff23571f36d986} 
+uint16\+\_\+t g\+\_\+propstation\+\_\+count = 0}
+
+\Hypertarget{discovery_8c_a6249503e353816197750f9b9191368be}\index{discovery.c@{discovery.c}!g\_standardvalve\_count@{g\_standardvalve\_count}}
+\index{g\_standardvalve\_count@{g\_standardvalve\_count}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_standardvalve\_count}{g\_standardvalve\_count}}
+{\footnotesize\ttfamily \label{discovery_8c_a6249503e353816197750f9b9191368be} 
+uint16\+\_\+t g\+\_\+standardvalve\+\_\+count = 0}
+
+\Hypertarget{discovery_8c_aa82d815e011dc2986b6dfc9e2ddfbfaa}\index{discovery.c@{discovery.c}!g\_start\_flag@{g\_start\_flag}}
+\index{g\_start\_flag@{g\_start\_flag}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_start\_flag}{g\_start\_flag}}
+{\footnotesize\ttfamily \label{discovery_8c_aa82d815e011dc2986b6dfc9e2ddfbfaa} 
+uint8\+\_\+t g\+\_\+start\+\_\+flag = 0}
+
+\Hypertarget{discovery_8c_ad02cee25b80418d1bfe5049c4acc3725}\index{discovery.c@{discovery.c}!g\_total\_analog\_count@{g\_total\_analog\_count}}
+\index{g\_total\_analog\_count@{g\_total\_analog\_count}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_total\_analog\_count}{g\_total\_analog\_count}}
+{\footnotesize\ttfamily \label{discovery_8c_ad02cee25b80418d1bfe5049c4acc3725} 
+uint8\+\_\+t g\+\_\+total\+\_\+analog\+\_\+count = 0}
+
+\Hypertarget{discovery_8c_aaf8d9633f5ba3c88d4e3f0cf26a3c415}\index{discovery.c@{discovery.c}!g\_total\_count@{g\_total\_count}}
+\index{g\_total\_count@{g\_total\_count}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_total\_count}{g\_total\_count}}
+{\footnotesize\ttfamily \label{discovery_8c_aaf8d9633f5ba3c88d4e3f0cf26a3c415} 
+uint8\+\_\+t g\+\_\+total\+\_\+count = 0}
+
+\Hypertarget{discovery_8c_a99853c346c63e9d4b6d00633a57cbe9c}\index{discovery.c@{discovery.c}!g\_total\_digital\_count@{g\_total\_digital\_count}}
+\index{g\_total\_digital\_count@{g\_total\_digital\_count}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_total\_digital\_count}{g\_total\_digital\_count}}
+{\footnotesize\ttfamily \label{discovery_8c_a99853c346c63e9d4b6d00633a57cbe9c} 
+uint8\+\_\+t g\+\_\+total\+\_\+digital\+\_\+count = 0}
+
+\Hypertarget{discovery_8c_a53824936cb4a69eb284b074623bb06bd}\index{discovery.c@{discovery.c}!g\_total\_io\_count@{g\_total\_io\_count}}
+\index{g\_total\_io\_count@{g\_total\_io\_count}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{g\_total\_io\_count}{g\_total\_io\_count}}
+{\footnotesize\ttfamily \label{discovery_8c_a53824936cb4a69eb284b074623bb06bd} 
+uint8\+\_\+t g\+\_\+total\+\_\+io\+\_\+count = 0}
+
+\Hypertarget{discovery_8c_abde244b58c27c11e6d996745e398332a}\index{discovery.c@{discovery.c}!isemdiag\_handlers@{isemdiag\_handlers}}
+\index{isemdiag\_handlers@{isemdiag\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{isemdiag\_handlers}{isemdiag\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_abde244b58c27c11e6d996745e398332a} 
+uint16\+\_\+t isemdiag\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+ISEM\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_a13ce44a86fef638ebd3999c53867bfa0}\index{discovery.c@{discovery.c}!mbn\_handler\_linux@{mbn\_handler\_linux}}
+\index{mbn\_handler\_linux@{mbn\_handler\_linux}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{mbn\_handler\_linux}{mbn\_handler\_linux}}
+{\footnotesize\ttfamily \label{discovery_8c_a13ce44a86fef638ebd3999c53867bfa0} 
+uint16\+\_\+t mbn\+\_\+handler\+\_\+linux}
+
+\Hypertarget{discovery_8c_ae4e2d1b8f9fe83b73ea8e64eb7dc411d}\index{discovery.c@{discovery.c}!prop\_station\_handlers@{prop\_station\_handlers}}
+\index{prop\_station\_handlers@{prop\_station\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{prop\_station\_handlers}{prop\_station\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_ae4e2d1b8f9fe83b73ea8e64eb7dc411d} 
+uint16\+\_\+t prop\+\_\+station\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+STATION\+\_\+\+PER\+\_\+\+ZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_aa99741c64ccbcc97a4d63b9364f74eac}\index{discovery.c@{discovery.c}!prop\_zone\_handlers@{prop\_zone\_handlers}}
+\index{prop\_zone\_handlers@{prop\_zone\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{prop\_zone\_handlers}{prop\_zone\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_aa99741c64ccbcc97a4d63b9364f74eac} 
+uint16\+\_\+t prop\+\_\+zone\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PROP\+\_\+\+ZONE\+\_\+\+HANDLERS\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_a639ca1471160314ce61d52506c2a8d0d}\index{discovery.c@{discovery.c}!pz\_count\_details@{pz\_count\_details}}
+\index{pz\_count\_details@{pz\_count\_details}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{pz\_count\_details}{pz\_count\_details}}
+{\footnotesize\ttfamily \label{discovery_8c_a639ca1471160314ce61d52506c2a8d0d} 
+s\+\_\+prszone\+\_\+device\+\_\+count\+\_\+details pz\+\_\+count\+\_\+details\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]}}
+
+\Hypertarget{discovery_8c_a8f6252caf33f738fd9f6e6c46db45eb8}\index{discovery.c@{discovery.c}!pz\_handlers@{pz\_handlers}}
+\index{pz\_handlers@{pz\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{pz\_handlers}{pz\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_a8f6252caf33f738fd9f6e6c46db45eb8} 
+uint16\+\_\+t pz\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+PZ\+\_\+\+HANDLERS\mbox{]} = \{0\}}
+
+\Hypertarget{discovery_8c_a33c9d8d2ebd58c0dcf868d7c0ab472d1}\index{discovery.c@{discovery.c}!standard\_valve\_handlers@{standard\_valve\_handlers}}
+\index{standard\_valve\_handlers@{standard\_valve\_handlers}!discovery.c@{discovery.c}}
+\doxysubsubsection{\texorpdfstring{standard\_valve\_handlers}{standard\_valve\_handlers}}
+{\footnotesize\ttfamily \label{discovery_8c_a33c9d8d2ebd58c0dcf868d7c0ab472d1} 
+uint16\+\_\+t standard\+\_\+valve\+\_\+handlers\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+STANDARD\+\_\+\+VALVE\+\_\+\+PER\+\_\+\+PZZONE \texorpdfstring{$\ast$}{*}MACRO\+\_\+\+MAX\+\_\+\+PRESSURE\+\_\+\+ZONE\mbox{]} = \{0\}}
+

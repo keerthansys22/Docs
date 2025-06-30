@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__data_server_fetch_8c" xml:lang="en-US">
+<title>API_Source/DataServerFetch.c File Reference</title>
+<indexterm><primary>API_Source/DataServerFetch.c</primary></indexterm>
+<para>
+
+<para>Source that fetches the module values from server to enable led monitoring. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stddef.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;stdarg.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;poll.h&gt;<?linebreak?>#include &lt;errno.h&gt;<?linebreak?>#include &lt;pthread.h&gt;<?linebreak?>#include &quot;ti_rpmsg_char.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?>#include &quot;../Header/API_Header/IPCcanlinux.h&quot;<?linebreak?>#include &quot;AppGlobal.h&quot;<?linebreak?></programlisting>Include dependency graph for DataServerFetch.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_fetch_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="__data_server_fetch_8c_1ae01aad6066b3904dfbb903803dca64ca">getIOmodulesForceStateEnable</link> (void)</para>
+
+<para>This function is to check the force state enabled or no. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__data_server_fetch_8c_1a355ba4c5f111a60750fb52a4ddb7773b">getIoModStatus</link> (void)</para>
+
+<para>Gets the IO Modules status (warning or faults) </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__data_server_fetch_8c_1a20a4ac1b64ad62bac504668394ddee31">getValveModulesErrorStatus</link> (void)</para>
+
+<para>fetches the valves error status </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1acb71097bdde0eeb8f371374d3a7e14ed">di_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1a92e023a01eb6cda34cb71ffb24aac30d">do_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1a469ccdb9274911410aa03d305dda5343">dio_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1a1b52b26f5eaa915de63b353f7186b998">ai_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1aa42415ce458bf3e4b6111071869ee688">ao_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1a02fd0c072e2bbeb279db2b5a5e77879b">aio_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1a8f6252caf33f738fd9f6e6c46db45eb8">pz_handlers</link> [MACRO_MAX_PZ_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1a674bdb8ef9a107fc2ac0646e0909a4ec">diag_handlers</link> [MACRO_MAX_DIAG_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__data_server_fetch_8c_1a33c9d8d2ebd58c0dcf868d7c0ab472d1">standard_valve_handlers</link> [MACRO_MAX_STANDARD_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>s_discovery_details <link linkend="__data_server_fetch_8c_1aecc928609def218c15f7c59447eb5a32">discover_details</link></para>
+</listitem>
+            <listitem><para>s_prszone_device_count_details <link linkend="__data_server_fetch_8c_1a639ca1471160314ce61d52506c2a8d0d">pz_count_details</link> [MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>pzxmodules_processinfo <link linkend="__data_server_fetch_8c_1a644a7122ac98484b70280037d862e9c0">pzprocessdata</link></para>
+</listitem>
+            <listitem><para>pthread_t <link linkend="__data_server_fetch_8c_1ae423b79bc939baf59a8f58f32f547fe0">task1</link></para>
+</listitem>
+            <listitem><para>system_discoverystatusinfo <link linkend="__data_server_fetch_8c_1a6dad6684cbe35726f4ae5cd7a3584616">system_info</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that fetches the module values from server to enable led monitoring. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__data_server_fetch_8c_1a355ba4c5f111a60750fb52a4ddb7773b"/><section>
+    <title>getIoModStatus()</title>
+<indexterm><primary>getIoModStatus</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>getIoModStatus</secondary></indexterm>
+<para><computeroutput>uint8_t getIoModStatus (void )</computeroutput></para><para>
+
+<para>Gets the IO Modules status (warning or faults) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_fetch_8c_a355ba4c5f111a60750fb52a4ddb7773b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_fetch_8c_a355ba4c5f111a60750fb52a4ddb7773b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_fetch_8c_1ae01aad6066b3904dfbb903803dca64ca"/><section>
+    <title>getIOmodulesForceStateEnable()</title>
+<indexterm><primary>getIOmodulesForceStateEnable</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>getIOmodulesForceStateEnable</secondary></indexterm>
+<para><computeroutput>uint8_t getIOmodulesForceStateEnable (void )</computeroutput></para><para>
+
+<para>This function is to check the force state enabled or no. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_fetch_8c_ae01aad6066b3904dfbb903803dca64ca_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_fetch_8c_ae01aad6066b3904dfbb903803dca64ca_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_fetch_8c_1a20a4ac1b64ad62bac504668394ddee31"/><section>
+    <title>getValveModulesErrorStatus()</title>
+<indexterm><primary>getValveModulesErrorStatus</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>getValveModulesErrorStatus</secondary></indexterm>
+<para><computeroutput>uint8_t getValveModulesErrorStatus (void )</computeroutput></para><para>
+
+<para>fetches the valves error status </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_fetch_8c_a20a4ac1b64ad62bac504668394ddee31_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_fetch_8c_a20a4ac1b64ad62bac504668394ddee31_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__data_server_fetch_8c_1a1b52b26f5eaa915de63b353f7186b998"/><section>
+    <title>ai_handlers</title>
+<indexterm><primary>ai_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>ai_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t ai_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a02fd0c072e2bbeb279db2b5a5e77879b"/><section>
+    <title>aio_handlers</title>
+<indexterm><primary>aio_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>aio_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t aio_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1aa42415ce458bf3e4b6111071869ee688"/><section>
+    <title>ao_handlers</title>
+<indexterm><primary>ao_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>ao_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t ao_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1acb71097bdde0eeb8f371374d3a7e14ed"/><section>
+    <title>di_handlers</title>
+<indexterm><primary>di_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>di_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t di_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a674bdb8ef9a107fc2ac0646e0909a4ec"/><section>
+    <title>diag_handlers</title>
+<indexterm><primary>diag_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>diag_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t diag_handlers[MACRO_MAX_DIAG_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a469ccdb9274911410aa03d305dda5343"/><section>
+    <title>dio_handlers</title>
+<indexterm><primary>dio_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>dio_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t dio_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1aecc928609def218c15f7c59447eb5a32"/><section>
+    <title>discover_details</title>
+<indexterm><primary>discover_details</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>discover_details</secondary></indexterm>
+<para><computeroutput>s_discovery_details discover_details<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a92e023a01eb6cda34cb71ffb24aac30d"/><section>
+    <title>do_handlers</title>
+<indexterm><primary>do_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>do_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t do_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a639ca1471160314ce61d52506c2a8d0d"/><section>
+    <title>pz_count_details</title>
+<indexterm><primary>pz_count_details</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>pz_count_details</secondary></indexterm>
+<para><computeroutput>s_prszone_device_count_details pz_count_details[MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a8f6252caf33f738fd9f6e6c46db45eb8"/><section>
+    <title>pz_handlers</title>
+<indexterm><primary>pz_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>pz_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t pz_handlers[MACRO_MAX_PZ_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a644a7122ac98484b70280037d862e9c0"/><section>
+    <title>pzprocessdata</title>
+<indexterm><primary>pzprocessdata</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>pzprocessdata</secondary></indexterm>
+<para><computeroutput>pzxmodules_processinfo pzprocessdata</computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a33c9d8d2ebd58c0dcf868d7c0ab472d1"/><section>
+    <title>standard_valve_handlers</title>
+<indexterm><primary>standard_valve_handlers</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>standard_valve_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t standard_valve_handlers[MACRO_MAX_STANDARD_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1a6dad6684cbe35726f4ae5cd7a3584616"/><section>
+    <title>system_info</title>
+<indexterm><primary>system_info</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>system_info</secondary></indexterm>
+<para><computeroutput>system_discoverystatusinfo system_info<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_fetch_8c_1ae423b79bc939baf59a8f58f32f547fe0"/><section>
+    <title>task1</title>
+<indexterm><primary>task1</primary><secondary>DataServerFetch.c</secondary></indexterm>
+<indexterm><primary>DataServerFetch.c</primary><secondary>task1</secondary></indexterm>
+<para><computeroutput>pthread_t task1</computeroutput></para></section>
+</section>
+</section>

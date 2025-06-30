@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_internal__adc__test_8c" xml:lang="en-US">
+<title>Self_Tests/internal_adc_test.c File Reference</title>
+<indexterm><primary>Self_Tests/internal_adc_test.c</primary></indexterm>
+<para>
+
+<para>source file to check internal ADC test </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;main.h&quot;<?linebreak?></programlisting>Include dependency graph for internal_adc_test.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="internal__adc__test_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_internal__adc__test_8c_1a2491303d0fe260aaba8f46717cda66cc">MAX_BUF</link>&#160;&#160;&#160;64</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_internal__adc__test_8c_1acabe5c2e4711c98ec1ffd0782284c275">read_adc_value1</link> (const char *filename)</para>
+
+<para>To read the value of voltage from internal ADC. </para>
+</listitem>
+            <listitem><para>int <link linkend="_internal__adc__test_8c_1a544c9c668c5f7c00c7bf460701cc832a">internal_adc</link> ()</para>
+
+<para>Test to check the Internal ADC. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>source file to check internal ADC test </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_internal__adc__test_8c_1a2491303d0fe260aaba8f46717cda66cc"/><section>
+    <title>MAX_BUF</title>
+<indexterm><primary>MAX_BUF</primary><secondary>internal_adc_test.c</secondary></indexterm>
+<indexterm><primary>internal_adc_test.c</primary><secondary>MAX_BUF</secondary></indexterm>
+<para><computeroutput>#define MAX_BUF&#160;&#160;&#160;64</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_internal__adc__test_8c_1a544c9c668c5f7c00c7bf460701cc832a"/><section>
+    <title>internal_adc()</title>
+<indexterm><primary>internal_adc</primary><secondary>internal_adc_test.c</secondary></indexterm>
+<indexterm><primary>internal_adc_test.c</primary><secondary>internal_adc</secondary></indexterm>
+<para><computeroutput>int internal_adc ( )</computeroutput></para><para>
+
+<para>Test to check the Internal ADC. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test for success API_FAILURE_test for failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="internal__adc__test_8c_a544c9c668c5f7c00c7bf460701cc832a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="internal__adc__test_8c_a544c9c668c5f7c00c7bf460701cc832a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_internal__adc__test_8c_1acabe5c2e4711c98ec1ffd0782284c275"/><section>
+    <title>read_adc_value1()</title>
+<indexterm><primary>read_adc_value1</primary><secondary>internal_adc_test.c</secondary></indexterm>
+<indexterm><primary>internal_adc_test.c</primary><secondary>read_adc_value1</secondary></indexterm>
+<para><computeroutput>int read_adc_value1 (const char * filename)</computeroutput></para><para>
+
+<para>To read the value of voltage from internal ADC. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file_discriptor</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>adc_value Voltage value </para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="internal__adc__test_8c_acabe5c2e4711c98ec1ffd0782284c275_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

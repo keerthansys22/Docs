@@ -1,0 +1,434 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__app_data_init_8c" xml:lang="en-US">
+<title>API_Source/AppDataInit.c File Reference</title>
+<indexterm><primary>API_Source/AppDataInit.c</primary></indexterm>
+<para>
+
+<para>This file has the initialization api related to shared memory. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;stdc-predef.h&gt;<?linebreak?>#include &lt;fcntl.h&gt;<?linebreak?>#include &lt;errno.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;poll.h&gt;<?linebreak?>#include &lt;sys/types.h&gt;<?linebreak?>#include &lt;sys/ioctl.h&gt;<?linebreak?>#include &lt;sys/mman.h&gt;<?linebreak?>#include &lt;linux/dma-buf.h&gt;<?linebreak?>#include &lt;linux/dma-heap.h&gt;<?linebreak?>#include &lt;linux/rpmsg.h&gt;<?linebreak?>#include &lt;ti_rpmsg_char.h&gt;<?linebreak?>#include &quot;../Header/API_Header/IPCcanlinux.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for AppDataInit.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Structures    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structdma__buf__phys__data">dma_buf_phys_data</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structsample">sample</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1ab3be0641eb76161a48ed528e6eea2ac3">NUM_ITERATIONS</link>&#160;&#160;&#160;1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1a7be6ced5220d75bbaca18fa0bc90ac87">REMOTE_ENDPT</link>&#160;&#160;&#160;16</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1ad292464ae24bf46746530cb1d07a6e98">DEFAULT_BUF_SIZE_KB</link>&#160;&#160;&#160;(1024)      /*  1MB */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1a3d81f921b0df6e01384ac371b9d70fde">MAX_BUF_SIZE_KB</link>&#160;&#160;&#160;(300 * 1024) /* 64KB/64MB To be cross checked*/</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1aa02d0ace1f241a43dcc8d6348549b95a">DEFAULT_BUF_PATTERN</link>&#160;&#160;&#160;0xAAAA5555</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1af0f9c0a655627b75bcdfedab31420cd0">DMA_HEAP_RESERVED</link>&#160;&#160;&#160;&quot;reserved&quot;   /* cma-reserved */</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1a6fba0d7ecd0d3820d6949b3b50fa864f">SHM_STARTING_BASE_ADDR</link>&#160;&#160;&#160;0xA7000000</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1a16e67aa18d42bbdb08ac9af1c8d0f4f9">SHM_SIZE</link>&#160;&#160;&#160;32768</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1a8b1deb94146c4fac73e3e40800549706">DMA_BUF_PHYS_IOC_MAGIC</link>&#160;&#160;&#160;&apos;D&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_init_8c_1ac4fd1a1764953056d6467fed53ae84e5">DMA_BUF_PHYS_IOC_CONVERT</link>&#160;&#160;&#160;_IOWR(<link linkend="__app_data_init_8c_1a8b1deb94146c4fac73e3e40800549706">DMA_BUF_PHYS_IOC_MAGIC</link>, 0, struct <link linkend="_structdma__buf__phys__data">dma_buf_phys_data</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="__app_data_init_8c_1ad09246453a4dabd919c7541484046a87">__attribute__</link> ((__packed__))</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_init_8c_1a1f2d0c6114cf6cd97d18e5b2a15134c3">ipc_send_message</link> (int fd, s_ipcmsg_packet *ipc)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_init_8c_1afe667f1c61ab72a0423f199dee3906d6">ipc_receive_message</link> (int fd, s_ipcmsg_packet *ipc, int timeout_ms)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1ac71aba88cc1fd0e3f88a29995e6ea594">dmabuf_get_phys</link> (int phys_fd, int dma_buf_fd, u_int64_t *phys_addr)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1abd03986677f9e517f5559c36490951ed">dmaheap_open</link> (char *heap_name)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1a98d90b2a428c793a4ec9a748a7276736">dmaheap_alloc</link> (int fd, size_t len)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1a08e380e7af7b0eeafeff03a254731015">dmabuf_heap_alloc</link> (int <link linkend="__app_data_init_8c_1a557db9b79c0309f594ae169b6c9e6471">dma_heap_fd</link>, int size, struct <link linkend="_structlocal__buf">local_buf</link> *lbuf, struct ipc_buf *ibuf)</para>
+</listitem>
+            <listitem><para>void <link linkend="__app_data_init_8c_1a3d13dad35d9576866fa3fbe078c9e931">dmabuf_heap_free</link> (struct <link linkend="_structlocal__buf">local_buf</link> *lbuf)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_init_8c_1a2383a3641c7a989a9d6c99be17bf45c8">writeSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t addr, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_init_8c_1a2c891988aba3928991563510a0a143d8">readDiscoveryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_init_8c_1ab626ee9878bdad1df5d26d5e215c1c7e">readSharedMemoryData1</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size, uint32_t address)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_init_8c_1ae512dcee3f48f317872617e5f4559b19">readSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>void <link linkend="__app_data_init_8c_1aeba6c23aae53422bdf1062006227ade0">buffer_init</link> (struct <link linkend="_structlocal__buf">local_buf</link> *lbuf, uint32_t pattern)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1a31cb1113be3fef03981b400dfab4919a">buffer_validate_r5f0_0</link> (struct <link linkend="_structlocal__buf">local_buf</link> *lbuf, uint32_t pattern)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1ad704115cd24d226c42b28b3b1e681d7a">buffer_validate</link> (struct <link linkend="_structlocal__buf">local_buf</link> *lbuf, uint32_t pattern)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1a61b02bc2681a98a6e228d723dd625641">heap_init</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1a58b73e2d9979a6b0af8f0bd6d599f44b">rpmsgIpcInit</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1a9e36d95079f670e69afb0e57a74c1bbd">rpmsgIpcDeinit</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_init_8c_1ac92a673771db92e7156490091aef7135">init</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__app_data_init_8c_1a557db9b79c0309f594ae169b6c9e6471">dma_heap_fd</link></para>
+</listitem>
+            <listitem><para>rpmsg_char_dev_t * <link linkend="__app_data_init_8c_1a274502dbc1ca0716301973df9a2ebb62">g_remote_rpmsg</link></para>
+</listitem>
+            <listitem><para>rpmsg_char_dev_t * <link linkend="__app_data_init_8c_1a84b92fc3b5d1822db07d698a854bd3a8">task1_rcdev</link></para>
+</listitem>
+            <listitem><para>rpmsg_char_dev_t * <link linkend="__app_data_init_8c_1a36a44375280a8329d101c2f897bc2dda">task2_rcdev</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__app_data_init_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__app_data_init_8c_1a25030d99cac8ba95b504a0f7313c2ae7">previous_value</link> =0x00000000</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file has the initialization api related to shared memory. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__app_data_init_8c_1aa02d0ace1f241a43dcc8d6348549b95a"/><section>
+    <title>DEFAULT_BUF_PATTERN</title>
+<indexterm><primary>DEFAULT_BUF_PATTERN</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>DEFAULT_BUF_PATTERN</secondary></indexterm>
+<para><computeroutput>#define DEFAULT_BUF_PATTERN&#160;&#160;&#160;0xAAAA5555</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1ad292464ae24bf46746530cb1d07a6e98"/><section>
+    <title>DEFAULT_BUF_SIZE_KB</title>
+<indexterm><primary>DEFAULT_BUF_SIZE_KB</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>DEFAULT_BUF_SIZE_KB</secondary></indexterm>
+<para><computeroutput>#define DEFAULT_BUF_SIZE_KB&#160;&#160;&#160;(1024)      /*  1MB */</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1ac4fd1a1764953056d6467fed53ae84e5"/><section>
+    <title>DMA_BUF_PHYS_IOC_CONVERT</title>
+<indexterm><primary>DMA_BUF_PHYS_IOC_CONVERT</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>DMA_BUF_PHYS_IOC_CONVERT</secondary></indexterm>
+<para><computeroutput>#define DMA_BUF_PHYS_IOC_CONVERT&#160;&#160;&#160;_IOWR(<link linkend="__app_data_init_8c_1a8b1deb94146c4fac73e3e40800549706">DMA_BUF_PHYS_IOC_MAGIC</link>, 0, struct <link linkend="_structdma__buf__phys__data">dma_buf_phys_data</link>)</computeroutput></para>
+<para>DOC: DMA_BUF_PHYS_IOC_CONVERT - Convert DMA-BUF to physical address</para>
+
+<para>Takes a <link linkend="_structdma__buf__phys__data">dma_buf_phys_data</link> struct containing a fd for a physicaly contigous buffer. Pins this buffer and populates phys field with the CPU physical address. </para>
+</section>
+<anchor xml:id="__app_data_init_8c_1a8b1deb94146c4fac73e3e40800549706"/><section>
+    <title>DMA_BUF_PHYS_IOC_MAGIC</title>
+<indexterm><primary>DMA_BUF_PHYS_IOC_MAGIC</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>DMA_BUF_PHYS_IOC_MAGIC</secondary></indexterm>
+<para><computeroutput>#define DMA_BUF_PHYS_IOC_MAGIC&#160;&#160;&#160;&apos;D&apos;</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1af0f9c0a655627b75bcdfedab31420cd0"/><section>
+    <title>DMA_HEAP_RESERVED</title>
+<indexterm><primary>DMA_HEAP_RESERVED</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>DMA_HEAP_RESERVED</secondary></indexterm>
+<para><computeroutput>#define DMA_HEAP_RESERVED&#160;&#160;&#160;&quot;reserved&quot;   /* cma-reserved */</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a3d81f921b0df6e01384ac371b9d70fde"/><section>
+    <title>MAX_BUF_SIZE_KB</title>
+<indexterm><primary>MAX_BUF_SIZE_KB</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>MAX_BUF_SIZE_KB</secondary></indexterm>
+<para><computeroutput>#define MAX_BUF_SIZE_KB&#160;&#160;&#160;(300 * 1024) /* 64KB/64MB To be cross checked*/</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1ab3be0641eb76161a48ed528e6eea2ac3"/><section>
+    <title>NUM_ITERATIONS</title>
+<indexterm><primary>NUM_ITERATIONS</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>NUM_ITERATIONS</secondary></indexterm>
+<para><computeroutput>#define NUM_ITERATIONS&#160;&#160;&#160;1</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a7be6ced5220d75bbaca18fa0bc90ac87"/><section>
+    <title>REMOTE_ENDPT</title>
+<indexterm><primary>REMOTE_ENDPT</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>REMOTE_ENDPT</secondary></indexterm>
+<para><computeroutput>#define REMOTE_ENDPT&#160;&#160;&#160;16</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a16e67aa18d42bbdb08ac9af1c8d0f4f9"/><section>
+    <title>SHM_SIZE</title>
+<indexterm><primary>SHM_SIZE</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>SHM_SIZE</secondary></indexterm>
+<para><computeroutput>#define SHM_SIZE&#160;&#160;&#160;32768</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a6fba0d7ecd0d3820d6949b3b50fa864f"/><section>
+    <title>SHM_STARTING_BASE_ADDR</title>
+<indexterm><primary>SHM_STARTING_BASE_ADDR</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>SHM_STARTING_BASE_ADDR</secondary></indexterm>
+<para><computeroutput>#define SHM_STARTING_BASE_ADDR&#160;&#160;&#160;0xA7000000</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__app_data_init_8c_1ad09246453a4dabd919c7541484046a87"/><section>
+    <title>__attribute__()</title>
+<indexterm><primary>__attribute__</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>__attribute__</secondary></indexterm>
+<para><computeroutput>struct __attribute__ ((__packed__) )</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1aeba6c23aae53422bdf1062006227ade0"/><section>
+    <title>buffer_init()</title>
+<indexterm><primary>buffer_init</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>buffer_init</secondary></indexterm>
+<para><computeroutput>void buffer_init (struct <link linkend="_structlocal__buf">local_buf</link> * lbuf, uint32_t pattern)</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1ad704115cd24d226c42b28b3b1e681d7a"/><section>
+    <title>buffer_validate()</title>
+<indexterm><primary>buffer_validate</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>buffer_validate</secondary></indexterm>
+<para><computeroutput>int buffer_validate (struct <link linkend="_structlocal__buf">local_buf</link> * lbuf, uint32_t pattern)</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a31cb1113be3fef03981b400dfab4919a"/><section>
+    <title>buffer_validate_r5f0_0()</title>
+<indexterm><primary>buffer_validate_r5f0_0</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>buffer_validate_r5f0_0</secondary></indexterm>
+<para><computeroutput>int buffer_validate_r5f0_0 (struct <link linkend="_structlocal__buf">local_buf</link> * lbuf, uint32_t pattern)</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1ac71aba88cc1fd0e3f88a29995e6ea594"/><section>
+    <title>dmabuf_get_phys()</title>
+<indexterm><primary>dmabuf_get_phys</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>dmabuf_get_phys</secondary></indexterm>
+<para><computeroutput>int dmabuf_get_phys (int phys_fd, int dma_buf_fd, u_int64_t * phys_addr)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_ac71aba88cc1fd0e3f88a29995e6ea594_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1a08e380e7af7b0eeafeff03a254731015"/><section>
+    <title>dmabuf_heap_alloc()</title>
+<indexterm><primary>dmabuf_heap_alloc</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>dmabuf_heap_alloc</secondary></indexterm>
+<para><computeroutput>int dmabuf_heap_alloc (int dma_heap_fd, int size, struct <link linkend="_structlocal__buf">local_buf</link> * lbuf, struct ipc_buf * ibuf)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_a08e380e7af7b0eeafeff03a254731015_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_a08e380e7af7b0eeafeff03a254731015_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1a3d13dad35d9576866fa3fbe078c9e931"/><section>
+    <title>dmabuf_heap_free()</title>
+<indexterm><primary>dmabuf_heap_free</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>dmabuf_heap_free</secondary></indexterm>
+<para><computeroutput>void dmabuf_heap_free (struct <link linkend="_structlocal__buf">local_buf</link> * lbuf)</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a98d90b2a428c793a4ec9a748a7276736"/><section>
+    <title>dmaheap_alloc()</title>
+<indexterm><primary>dmaheap_alloc</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>dmaheap_alloc</secondary></indexterm>
+<para><computeroutput>int dmaheap_alloc (int fd, size_t len)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_a98d90b2a428c793a4ec9a748a7276736_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1abd03986677f9e517f5559c36490951ed"/><section>
+    <title>dmaheap_open()</title>
+<indexterm><primary>dmaheap_open</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>dmaheap_open</secondary></indexterm>
+<para><computeroutput>int dmaheap_open (char * heap_name)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_abd03986677f9e517f5559c36490951ed_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1a61b02bc2681a98a6e228d723dd625641"/><section>
+    <title>heap_init()</title>
+<indexterm><primary>heap_init</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>heap_init</secondary></indexterm>
+<para><computeroutput>int heap_init (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_a61b02bc2681a98a6e228d723dd625641_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_a61b02bc2681a98a6e228d723dd625641_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1ac92a673771db92e7156490091aef7135"/><section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>init</secondary></indexterm>
+<para><computeroutput>int init (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_ac92a673771db92e7156490091aef7135_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_ac92a673771db92e7156490091aef7135_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1afe667f1c61ab72a0423f199dee3906d6"/><section>
+    <title>ipc_receive_message()</title>
+<indexterm><primary>ipc_receive_message</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>ipc_receive_message</secondary></indexterm>
+<para><computeroutput>uint8_t ipc_receive_message (int fd, s_ipcmsg_packet * ipc, int timeout_ms)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_afe667f1c61ab72a0423f199dee3906d6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1a1f2d0c6114cf6cd97d18e5b2a15134c3"/><section>
+    <title>ipc_send_message()</title>
+<indexterm><primary>ipc_send_message</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>ipc_send_message</secondary></indexterm>
+<para><computeroutput>uint8_t ipc_send_message (int fd, s_ipcmsg_packet * ipc)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_a1f2d0c6114cf6cd97d18e5b2a15134c3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1a2c891988aba3928991563510a0a143d8"/><section>
+    <title>readDiscoveryData()</title>
+<indexterm><primary>readDiscoveryData</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>readDiscoveryData</secondary></indexterm>
+<para><computeroutput>uint8_t readDiscoveryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1ae512dcee3f48f317872617e5f4559b19"/><section>
+    <title>readSharedMemoryData()</title>
+<indexterm><primary>readSharedMemoryData</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>readSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_ae512dcee3f48f317872617e5f4559b19_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1ab626ee9878bdad1df5d26d5e215c1c7e"/><section>
+    <title>readSharedMemoryData1()</title>
+<indexterm><primary>readSharedMemoryData1</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>readSharedMemoryData1</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData1 (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size, uint32_t address)</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a9e36d95079f670e69afb0e57a74c1bbd"/><section>
+    <title>rpmsgIpcDeinit()</title>
+<indexterm><primary>rpmsgIpcDeinit</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>rpmsgIpcDeinit</secondary></indexterm>
+<para><computeroutput>int rpmsgIpcDeinit (void )</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a58b73e2d9979a6b0af8f0bd6d599f44b"/><section>
+    <title>rpmsgIpcInit()</title>
+<indexterm><primary>rpmsgIpcInit</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>rpmsgIpcInit</secondary></indexterm>
+<para><computeroutput>int rpmsgIpcInit (void )</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_a58b73e2d9979a6b0af8f0bd6d599f44b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_init_8c_1a2383a3641c7a989a9d6c99be17bf45c8"/><section>
+    <title>writeSharedMemoryData()</title>
+<indexterm><primary>writeSharedMemoryData</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>writeSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t writeSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t addr, uint32_t size)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_init_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__app_data_init_8c_1a557db9b79c0309f594ae169b6c9e6471"/><section>
+    <title>dma_heap_fd</title>
+<indexterm><primary>dma_heap_fd</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>dma_heap_fd</secondary></indexterm>
+<para><computeroutput>int dma_heap_fd</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a274502dbc1ca0716301973df9a2ebb62"/><section>
+    <title>g_remote_rpmsg</title>
+<indexterm><primary>g_remote_rpmsg</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>g_remote_rpmsg</secondary></indexterm>
+<para><computeroutput>rpmsg_char_dev_t* g_remote_rpmsg</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a25030d99cac8ba95b504a0f7313c2ae7"/><section>
+    <title>previous_value</title>
+<indexterm><primary>previous_value</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>previous_value</secondary></indexterm>
+<para><computeroutput>uint32_t previous_value =0x00000000</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a84b92fc3b5d1822db07d698a854bd3a8"/><section>
+    <title>task1_rcdev</title>
+<indexterm><primary>task1_rcdev</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>task1_rcdev</secondary></indexterm>
+<para><computeroutput>rpmsg_char_dev_t* task1_rcdev</computeroutput></para></section>
+<anchor xml:id="__app_data_init_8c_1a36a44375280a8329d101c2f897bc2dda"/><section>
+    <title>task2_rcdev</title>
+<indexterm><primary>task2_rcdev</primary><secondary>AppDataInit.c</secondary></indexterm>
+<indexterm><primary>AppDataInit.c</primary><secondary>task2_rcdev</secondary></indexterm>
+<para><computeroutput>rpmsg_char_dev_t* task2_rcdev</computeroutput></para></section>
+</section>
+</section>

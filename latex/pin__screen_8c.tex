@@ -1,0 +1,314 @@
+\doxysection{GUI/\+Screens/pin\+\_\+screen.c File Reference}
+\hypertarget{pin__screen_8c}{}\label{pin__screen_8c}\index{GUI/Screens/pin\_screen.c@{GUI/Screens/pin\_screen.c}}
+
+
+Source that displays pin screen.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for pin\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{pin__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pin__screen_8c_a534608539b87e4f36f1eae36115432ce}{disp\+\_\+mod\+\_\+pin\+\_\+screen}} (int \mbox{\hyperlink{lvgl__gui_8c_a76c6a3773046abf39bbf0d0412f7b766}{pin\+\_\+buf}}\mbox{[}$\,$\mbox{]}, int index)
+\begin{DoxyCompactList}\small\item\em Function to display pin screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pin__screen_8c_a276ba619847bf50daf2dc4cea6272df5}{pin\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize pin screen styles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pin__screen_8c_a77e1cab537aa02532d02c2791b94a8ee}{disp\+\_\+pin\+\_\+correct\+\_\+details}} ()
+\begin{DoxyCompactList}\small\item\em Function to print "{}\+PIN MATCHED"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pin__screen_8c_a0fbaa1131eaf5dc6f3a04c15120def13}{Incrementpin1}} (int \mbox{\hyperlink{lvgl__gui_8c_a76c6a3773046abf39bbf0d0412f7b766}{pin\+\_\+buf}}\mbox{[}$\,$\mbox{]}, int index)
+\begin{DoxyCompactList}\small\item\em Function to display pin screen in caret mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pin__screen_8c_ad846808e38468bca121aab4b73ab5b08}{disp\+\_\+mod\+\_\+pin\+\_\+screen\+\_\+wrap}} (int \mbox{\hyperlink{lvgl__gui_8c_a76c6a3773046abf39bbf0d0412f7b766}{pin\+\_\+buf}}\mbox{[}$\,$\mbox{]}, int index)
+\begin{DoxyCompactList}\small\item\em Function to display pin screen to wrap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pin__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1}{common\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, const char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\begin{DoxyCompactList}\small\item\em function to create the pin labels \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pin__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d}{stop\+\_\+flashing\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em function to stop the flashing timer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pin__screen_8c_acf4df21b18b924052d66abac113599bb}{flash\+\_\+on}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pin__screen_8c_ac42cfedc99840143b38f53cd14bb8a82}{pin\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pin__screen_8c_af05b2f44f6a1907e9cdfac0e6851730d}{label\+\_\+pin}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pin__screen_8c_a160edf462cc4fa3ea86112207715380b}{label1\+\_\+pin}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pin__screen_8c_a5b5c41c36b4429aa34d258105d117b91}{pin0\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pin__screen_8c_a675e92d056d55cebcf8f9727f3e52208}{pin1\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pin__screen_8c_abceedf2c67709a2590ae3f672c93e7d6}{pin2\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pin__screen_8c_abeebe1219410c9bd188f777a726a4bb7}{pin3\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pin__screen_8c_ae7f85d1824e526589001c7e1f5c2a4d8}{pin\+\_\+corr\+\_\+label}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays pin screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pin__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1}\index{pin\_screen.c@{pin\_screen.c}!common\_label\_creation@{common\_label\_creation}}
+\index{common\_label\_creation@{common\_label\_creation}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{common\_label\_creation()}{common\_label\_creation()}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1} 
+void common\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function to create the pin labels 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen\+\_\+name} & -\/ screen name \\
+\hline
+{\em text} & -\/ text to be displayed on the screen \\
+\hline
+{\em x} & -\/ x axis alignment of the label \\
+\hline
+{\em y} & -\/ y axis alignment of the label \\
+\hline
+{\em w} & -\/ width of the label \\
+\hline
+{\em h} & -\/ height of the label \\
+\hline
+{\em font\+\_\+name} & -\/ font name (Monospace821 BT) \\
+\hline
+{\em font\+\_\+color} & -\/ font color (white or black) \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pin__screen_8c_a534608539b87e4f36f1eae36115432ce}\index{pin\_screen.c@{pin\_screen.c}!disp\_mod\_pin\_screen@{disp\_mod\_pin\_screen}}
+\index{disp\_mod\_pin\_screen@{disp\_mod\_pin\_screen}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_pin\_screen()}{disp\_mod\_pin\_screen()}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a534608539b87e4f36f1eae36115432ce} 
+void disp\+\_\+mod\+\_\+pin\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{pin\+\_\+buf}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Function to display pin screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+buf\mbox{[}$\,$\mbox{]}} & \+: default pin values, index \+: pin\+\_\+index value \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{pin__screen_8c_a534608539b87e4f36f1eae36115432ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_a534608539b87e4f36f1eae36115432ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pin__screen_8c_ad846808e38468bca121aab4b73ab5b08}\index{pin\_screen.c@{pin\_screen.c}!disp\_mod\_pin\_screen\_wrap@{disp\_mod\_pin\_screen\_wrap}}
+\index{disp\_mod\_pin\_screen\_wrap@{disp\_mod\_pin\_screen\_wrap}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_pin\_screen\_wrap()}{disp\_mod\_pin\_screen\_wrap()}}
+{\footnotesize\ttfamily \label{pin__screen_8c_ad846808e38468bca121aab4b73ab5b08} 
+void disp\+\_\+mod\+\_\+pin\+\_\+screen\+\_\+wrap (\begin{DoxyParamCaption}\item[{int}]{pin\+\_\+buf}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Function to display pin screen to wrap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+buf\mbox{[}$\,$\mbox{]}} & \+: default pin values, index \+: pin\+\_\+index value \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_ad846808e38468bca121aab4b73ab5b08_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_ad846808e38468bca121aab4b73ab5b08_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pin__screen_8c_a77e1cab537aa02532d02c2791b94a8ee}\index{pin\_screen.c@{pin\_screen.c}!disp\_pin\_correct\_details@{disp\_pin\_correct\_details}}
+\index{disp\_pin\_correct\_details@{disp\_pin\_correct\_details}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_pin\_correct\_details()}{disp\_pin\_correct\_details()}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a77e1cab537aa02532d02c2791b94a8ee} 
+void disp\+\_\+pin\+\_\+correct\+\_\+details (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function to print "{}\+PIN MATCHED"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_a77e1cab537aa02532d02c2791b94a8ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_a77e1cab537aa02532d02c2791b94a8ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pin__screen_8c_a0fbaa1131eaf5dc6f3a04c15120def13}\index{pin\_screen.c@{pin\_screen.c}!Incrementpin1@{Incrementpin1}}
+\index{Incrementpin1@{Incrementpin1}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{Incrementpin1()}{Incrementpin1()}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a0fbaa1131eaf5dc6f3a04c15120def13} 
+void Incrementpin1 (\begin{DoxyParamCaption}\item[{int}]{pin\+\_\+buf}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Function to display pin screen in caret mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+buf\mbox{[}$\,$\mbox{]}} & \+: default pin values, index \+: pin\+\_\+index value \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{pin__screen_8c_a0fbaa1131eaf5dc6f3a04c15120def13_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_a0fbaa1131eaf5dc6f3a04c15120def13_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pin__screen_8c_a276ba619847bf50daf2dc4cea6272df5}\index{pin\_screen.c@{pin\_screen.c}!pin\_style@{pin\_style}}
+\index{pin\_style@{pin\_style}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pin\_style()}{pin\_style()}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a276ba619847bf50daf2dc4cea6272df5} 
+void pin\+\_\+style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize pin screen styles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_a276ba619847bf50daf2dc4cea6272df5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{pin__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d}\index{pin\_screen.c@{pin\_screen.c}!stop\_flashing\_timer@{stop\_flashing\_timer}}
+\index{stop\_flashing\_timer@{stop\_flashing\_timer}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{stop\_flashing\_timer()}{stop\_flashing\_timer()}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d} 
+void stop\+\_\+flashing\+\_\+timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function to stop the flashing timer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pin__screen_8c_a9d9732ee883427a96c71ce5b6e1b217d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{pin__screen_8c_acf4df21b18b924052d66abac113599bb}\index{pin\_screen.c@{pin\_screen.c}!flash\_on@{flash\_on}}
+\index{flash\_on@{flash\_on}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{flash\_on}{flash\_on}}
+{\footnotesize\ttfamily \label{pin__screen_8c_acf4df21b18b924052d66abac113599bb} 
+int flash\+\_\+on\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{pin__screen_8c_a160edf462cc4fa3ea86112207715380b}\index{pin\_screen.c@{pin\_screen.c}!label1\_pin@{label1\_pin}}
+\index{label1\_pin@{label1\_pin}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label1\_pin}{label1\_pin}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a160edf462cc4fa3ea86112207715380b} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label1\+\_\+pin}
+
+\Hypertarget{pin__screen_8c_af05b2f44f6a1907e9cdfac0e6851730d}\index{pin\_screen.c@{pin\_screen.c}!label\_pin@{label\_pin}}
+\index{label\_pin@{label\_pin}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{label\_pin}{label\_pin}}
+{\footnotesize\ttfamily \label{pin__screen_8c_af05b2f44f6a1907e9cdfac0e6851730d} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} label\+\_\+pin}
+
+\Hypertarget{pin__screen_8c_a5b5c41c36b4429aa34d258105d117b91}\index{pin\_screen.c@{pin\_screen.c}!pin0\_label@{pin0\_label}}
+\index{pin0\_label@{pin0\_label}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pin0\_label}{pin0\_label}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a5b5c41c36b4429aa34d258105d117b91} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} pin0\+\_\+label}
+
+\Hypertarget{pin__screen_8c_a675e92d056d55cebcf8f9727f3e52208}\index{pin\_screen.c@{pin\_screen.c}!pin1\_label@{pin1\_label}}
+\index{pin1\_label@{pin1\_label}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pin1\_label}{pin1\_label}}
+{\footnotesize\ttfamily \label{pin__screen_8c_a675e92d056d55cebcf8f9727f3e52208} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} pin1\+\_\+label}
+
+\Hypertarget{pin__screen_8c_abceedf2c67709a2590ae3f672c93e7d6}\index{pin\_screen.c@{pin\_screen.c}!pin2\_label@{pin2\_label}}
+\index{pin2\_label@{pin2\_label}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pin2\_label}{pin2\_label}}
+{\footnotesize\ttfamily \label{pin__screen_8c_abceedf2c67709a2590ae3f672c93e7d6} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} pin2\+\_\+label}
+
+\Hypertarget{pin__screen_8c_abeebe1219410c9bd188f777a726a4bb7}\index{pin\_screen.c@{pin\_screen.c}!pin3\_label@{pin3\_label}}
+\index{pin3\_label@{pin3\_label}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pin3\_label}{pin3\_label}}
+{\footnotesize\ttfamily \label{pin__screen_8c_abeebe1219410c9bd188f777a726a4bb7} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} pin3\+\_\+label}
+
+\Hypertarget{pin__screen_8c_ae7f85d1824e526589001c7e1f5c2a4d8}\index{pin\_screen.c@{pin\_screen.c}!pin\_corr\_label@{pin\_corr\_label}}
+\index{pin\_corr\_label@{pin\_corr\_label}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pin\_corr\_label}{pin\_corr\_label}}
+{\footnotesize\ttfamily \label{pin__screen_8c_ae7f85d1824e526589001c7e1f5c2a4d8} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} pin\+\_\+corr\+\_\+label}
+
+\Hypertarget{pin__screen_8c_ac42cfedc99840143b38f53cd14bb8a82}\index{pin\_screen.c@{pin\_screen.c}!pin\_label@{pin\_label}}
+\index{pin\_label@{pin\_label}!pin\_screen.c@{pin\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pin\_label}{pin\_label}}
+{\footnotesize\ttfamily \label{pin__screen_8c_ac42cfedc99840143b38f53cd14bb8a82} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} pin\+\_\+label}
+

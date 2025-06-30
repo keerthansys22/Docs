@@ -1,0 +1,689 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__data_server_monitor_led_8c" xml:lang="en-US">
+<title>Keypress/DataServerMonitorLed.c File Reference</title>
+<indexterm><primary>Keypress/DataServerMonitorLed.c</primary></indexterm>
+<para>
+
+<para>Source that monitors LED indications and key press indications. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;sys/ioctl.h&gt;<?linebreak?>#include &lt;sys/eventfd.h&gt;<?linebreak?>#include &lt;sys/epoll.h&gt;<?linebreak?>#include &lt;sys/time.h&gt;<?linebreak?>#include &lt;linux/gpio.h&gt;<?linebreak?>#include &lt;linux/spi/spidev.h&gt;<?linebreak?>#include &lt;linux/i2c-dev.h&gt;<?linebreak?>#include &lt;fcntl.h&gt;<?linebreak?>#include &lt;errno.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;time.h&gt;<?linebreak?>#include &lt;getopt.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?>#include &quot;AppGlobal.h&quot;<?linebreak?></programlisting>Include dependency graph for DataServerMonitorLed.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__data_server_monitor_led_8c_1a17eed206acd033b4bad7b2937d4bd88b">ERRUN_OFF_STATE</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__data_server_monitor_led_8c_1a3fac230fa9331caab37892ab4a706404">ERRUN_ON_STATE</link>&#160;&#160;&#160;1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__data_server_monitor_led_8c_1aab05f68977b558817a262ef3994a9329">ERRUN_BLINKING_STATE</link>&#160;&#160;&#160;2</para>
+</listitem>
+            <listitem><para>#define <link linkend="__data_server_monitor_led_8c_1a0b15795ff903c47a4b4c14317cce9fd6">ERRUN_FLASHING_STATE</link>&#160;&#160;&#160;4</para>
+</listitem>
+            <listitem><para>#define <link linkend="__data_server_monitor_led_8c_1a2765214f4d4bfdbb700da05dfcaeb96e">ERRUN_FLICKERING_STATE</link>&#160;&#160;&#160;8</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="__data_server_monitor_led_8c_1a2413b7289e27122d76c2b44d98a56918">volatageva_monitoring</link> (int fd)</para>
+</listitem>
+            <listitem><para>float <link linkend="__data_server_monitor_led_8c_1af78e2e405fb1dfada593994ec787e570">volatge_vb_monitoring</link> (void)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__data_server_monitor_led_8c_1ae01aad6066b3904dfbb903803dca64ca">getIOmodulesForceStateEnable</link> (void)</para>
+
+<para>This function is to check the force state enabled or no. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__data_server_monitor_led_8c_1a355ba4c5f111a60750fb52a4ddb7773b">getIoModStatus</link> (void)</para>
+
+<para>Gets the IO Modules status (warning or faults) </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__data_server_monitor_led_8c_1a20a4ac1b64ad62bac504668394ddee31">getValveModulesErrorStatus</link> (void)</para>
+
+<para>fetches the valves error status </para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1aa3ef1744ca7e52c293c49ccef26798e8">reset_timer</link> ()</para>
+
+<para>Function to reset the inactivity timer after 30sec. </para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1a0ca34427a401d6225f367827b2ba5644">longpress_callback</link> (union sigval sv)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1a4456c0194a45c65f825950c8d477e420">start_longpress_timer</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1a9b5b2b00a81a3ea6535ef5417e1cc919">stop_longpress_timer</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="__data_server_monitor_led_8c_1a57f9e71624bc8b3bef967a3c66814f0a">KeyPress_check</link> (int fd)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1ad91ea9caab13cbfe57e3952a1b2cf9db">blinking_red</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1a63035d42da12201cdaa1082ec0fcbea5">blinking_green</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1add0a974d654d10a6480310ec47a7c988">flashing_red</link> (uint8_t n_value)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1a4689958847da4eb04b01ee65eb3f2613">flasing_green</link> (uint8_t n_value)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1a052c861ff7758d0f6be0fc147b035aa1">flashing_red_green</link> (uint8_t n_value)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1ac453a3ae986d391e5a7c2e9c595ab332">flickering_red_green</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1a8632f23360c4570305609236cae8f4d8">flickering_red</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="__data_server_monitor_led_8c_1a553733e5f16326a3049e63307c4bcb49">flickering_green</link> (void)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__data_server_monitor_led_8c_1af5cb2ba0d32e073daaf90d4aef07dac2">monitorNetworkStatusLed</link> (void)</para>
+</listitem>
+            <listitem><para>void * <link linkend="__data_server_monitor_led_8c_1a93bd9d13cecd64903edf61230489ef5a">monitorLedTask</link> (void *args)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__data_server_monitor_led_8c_1ae56fe8b25067ad4c0815823ecbe1a028">g_led_error_flag1</link> = 0xff</para>
+</listitem>
+            <listitem><para>int <link linkend="__data_server_monitor_led_8c_1a4c2d8c66ab29de28e84ad3fc97d298db">g_led_error_flag2</link> = 0x07</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__data_server_monitor_led_8c_1a0d4542cd6083f6c10692818325ab989f">g_keypressed</link> = 0x00</para>
+</listitem>
+            <listitem><para>int <link linkend="__data_server_monitor_led_8c_1ac69e4e922707981e211d8a9791d8b849">fd_led</link></para>
+</listitem>
+            <listitem><para>int <link linkend="__data_server_monitor_led_8c_1a6baa346e44f4c2158d2be4f9b77b8203">ret</link></para>
+</listitem>
+            <listitem><para>struct i2c_msg <link linkend="__data_server_monitor_led_8c_1a101a08b09da918500b4e325b8016c408">i2cmsgdemo</link></para>
+</listitem>
+            <listitem><para>struct i2c_rdwr_ioctl_data <link linkend="__data_server_monitor_led_8c_1a8c2ae5ee1bb07521123798c2a03f452f">msg_rdwrdemo</link></para>
+</listitem>
+            <listitem><para>int <link linkend="__data_server_monitor_led_8c_1aa388bbbd2af08b7f83c6e55667c86270">G_KEY_PRESSED_EVENT</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__data_server_monitor_led_8c_1a49952e1fb0d52f6ef2f6fd0f381ab1b5">cur_disp_scr_index</link></para>
+</listitem>
+            <listitem><para>timer_t <link linkend="__data_server_monitor_led_8c_1a7b71b5c7a7fbb0d56b514bdfddb301fd">longpress_timer</link></para>
+</listitem>
+            <listitem><para>volatile bool <link linkend="__data_server_monitor_led_8c_1a7f2797c133895a11557ac19b0d846127">long_flag</link> = false</para>
+</listitem>
+            <listitem><para>volatile bool <link linkend="__data_server_monitor_led_8c_1a8bd143ed2741955bf62bb2d2bc319386">longpress_detected</link> = false</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that monitors LED indications and key press indications. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__data_server_monitor_led_8c_1aab05f68977b558817a262ef3994a9329"/><section>
+    <title>ERRUN_BLINKING_STATE</title>
+<indexterm><primary>ERRUN_BLINKING_STATE</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>ERRUN_BLINKING_STATE</secondary></indexterm>
+<para><computeroutput>#define ERRUN_BLINKING_STATE&#160;&#160;&#160;2</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a0b15795ff903c47a4b4c14317cce9fd6"/><section>
+    <title>ERRUN_FLASHING_STATE</title>
+<indexterm><primary>ERRUN_FLASHING_STATE</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>ERRUN_FLASHING_STATE</secondary></indexterm>
+<para><computeroutput>#define ERRUN_FLASHING_STATE&#160;&#160;&#160;4</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a2765214f4d4bfdbb700da05dfcaeb96e"/><section>
+    <title>ERRUN_FLICKERING_STATE</title>
+<indexterm><primary>ERRUN_FLICKERING_STATE</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>ERRUN_FLICKERING_STATE</secondary></indexterm>
+<para><computeroutput>#define ERRUN_FLICKERING_STATE&#160;&#160;&#160;8</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a17eed206acd033b4bad7b2937d4bd88b"/><section>
+    <title>ERRUN_OFF_STATE</title>
+<indexterm><primary>ERRUN_OFF_STATE</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>ERRUN_OFF_STATE</secondary></indexterm>
+<para><computeroutput>#define ERRUN_OFF_STATE&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a3fac230fa9331caab37892ab4a706404"/><section>
+    <title>ERRUN_ON_STATE</title>
+<indexterm><primary>ERRUN_ON_STATE</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>ERRUN_ON_STATE</secondary></indexterm>
+<para><computeroutput>#define ERRUN_ON_STATE&#160;&#160;&#160;1</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__data_server_monitor_led_8c_1a63035d42da12201cdaa1082ec0fcbea5"/><section>
+    <title>blinking_green()</title>
+<indexterm><primary>blinking_green</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>blinking_green</secondary></indexterm>
+<para><computeroutput>void blinking_green (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a63035d42da12201cdaa1082ec0fcbea5_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a63035d42da12201cdaa1082ec0fcbea5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1ad91ea9caab13cbfe57e3952a1b2cf9db"/><section>
+    <title>blinking_red()</title>
+<indexterm><primary>blinking_red</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>blinking_red</secondary></indexterm>
+<para><computeroutput>void blinking_red (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_ad91ea9caab13cbfe57e3952a1b2cf9db_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_ad91ea9caab13cbfe57e3952a1b2cf9db_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1add0a974d654d10a6480310ec47a7c988"/><section>
+    <title>flashing_red()</title>
+<indexterm><primary>flashing_red</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>flashing_red</secondary></indexterm>
+<para><computeroutput>void flashing_red (uint8_t n_value)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_add0a974d654d10a6480310ec47a7c988_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_add0a974d654d10a6480310ec47a7c988_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a052c861ff7758d0f6be0fc147b035aa1"/><section>
+    <title>flashing_red_green()</title>
+<indexterm><primary>flashing_red_green</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>flashing_red_green</secondary></indexterm>
+<para><computeroutput>void flashing_red_green (uint8_t n_value)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a052c861ff7758d0f6be0fc147b035aa1_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a052c861ff7758d0f6be0fc147b035aa1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a4689958847da4eb04b01ee65eb3f2613"/><section>
+    <title>flasing_green()</title>
+<indexterm><primary>flasing_green</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>flasing_green</secondary></indexterm>
+<para><computeroutput>void flasing_green (uint8_t n_value)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a4689958847da4eb04b01ee65eb3f2613_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a4689958847da4eb04b01ee65eb3f2613_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a553733e5f16326a3049e63307c4bcb49"/><section>
+    <title>flickering_green()</title>
+<indexterm><primary>flickering_green</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>flickering_green</secondary></indexterm>
+<para><computeroutput>void flickering_green (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a553733e5f16326a3049e63307c4bcb49_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a553733e5f16326a3049e63307c4bcb49_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a8632f23360c4570305609236cae8f4d8"/><section>
+    <title>flickering_red()</title>
+<indexterm><primary>flickering_red</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>flickering_red</secondary></indexterm>
+<para><computeroutput>void flickering_red (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a8632f23360c4570305609236cae8f4d8_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a8632f23360c4570305609236cae8f4d8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1ac453a3ae986d391e5a7c2e9c595ab332"/><section>
+    <title>flickering_red_green()</title>
+<indexterm><primary>flickering_red_green</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>flickering_red_green</secondary></indexterm>
+<para><computeroutput>void flickering_red_green (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_ac453a3ae986d391e5a7c2e9c595ab332_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_ac453a3ae986d391e5a7c2e9c595ab332_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a355ba4c5f111a60750fb52a4ddb7773b"/><section>
+    <title>getIoModStatus()</title>
+<indexterm><primary>getIoModStatus</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>getIoModStatus</secondary></indexterm>
+<para><computeroutput>uint8_t getIoModStatus (void )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Gets the IO Modules status (warning or faults) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a355ba4c5f111a60750fb52a4ddb7773b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a355ba4c5f111a60750fb52a4ddb7773b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1ae01aad6066b3904dfbb903803dca64ca"/><section>
+    <title>getIOmodulesForceStateEnable()</title>
+<indexterm><primary>getIOmodulesForceStateEnable</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>getIOmodulesForceStateEnable</secondary></indexterm>
+<para><computeroutput>uint8_t getIOmodulesForceStateEnable (void )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>This function is to check the force state enabled or no. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_ae01aad6066b3904dfbb903803dca64ca_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_ae01aad6066b3904dfbb903803dca64ca_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a20a4ac1b64ad62bac504668394ddee31"/><section>
+    <title>getValveModulesErrorStatus()</title>
+<indexterm><primary>getValveModulesErrorStatus</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>getValveModulesErrorStatus</secondary></indexterm>
+<para><computeroutput>uint8_t getValveModulesErrorStatus (void )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>fetches the valves error status </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a20a4ac1b64ad62bac504668394ddee31_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a20a4ac1b64ad62bac504668394ddee31_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a57f9e71624bc8b3bef967a3c66814f0a"/><section>
+    <title>KeyPress_check()</title>
+<indexterm><primary>KeyPress_check</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>KeyPress_check</secondary></indexterm>
+<para><computeroutput>int KeyPress_check (int fd)</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a0ca34427a401d6225f367827b2ba5644"/><section>
+    <title>longpress_callback()</title>
+<indexterm><primary>longpress_callback</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>longpress_callback</secondary></indexterm>
+<para><computeroutput>void longpress_callback (union sigval sv)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a0ca34427a401d6225f367827b2ba5644_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a93bd9d13cecd64903edf61230489ef5a"/><section>
+    <title>monitorLedTask()</title>
+<indexterm><primary>monitorLedTask</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>monitorLedTask</secondary></indexterm>
+<para><computeroutput>void * monitorLedTask (void * args)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a93bd9d13cecd64903edf61230489ef5a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a93bd9d13cecd64903edf61230489ef5a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1af5cb2ba0d32e073daaf90d4aef07dac2"/><section>
+    <title>monitorNetworkStatusLed()</title>
+<indexterm><primary>monitorNetworkStatusLed</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>monitorNetworkStatusLed</secondary></indexterm>
+<para><computeroutput>uint8_t monitorNetworkStatusLed (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_af5cb2ba0d32e073daaf90d4aef07dac2_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_af5cb2ba0d32e073daaf90d4aef07dac2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1aa3ef1744ca7e52c293c49ccef26798e8"/><section>
+    <title>reset_timer()</title>
+<indexterm><primary>reset_timer</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>reset_timer</secondary></indexterm>
+<para><computeroutput>void reset_timer ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function to reset the inactivity timer after 30sec. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a4456c0194a45c65f825950c8d477e420"/><section>
+    <title>start_longpress_timer()</title>
+<indexterm><primary>start_longpress_timer</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>start_longpress_timer</secondary></indexterm>
+<para><computeroutput>void start_longpress_timer ( )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a4456c0194a45c65f825950c8d477e420_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1a9b5b2b00a81a3ea6535ef5417e1cc919"/><section>
+    <title>stop_longpress_timer()</title>
+<indexterm><primary>stop_longpress_timer</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>stop_longpress_timer</secondary></indexterm>
+<para><computeroutput>void stop_longpress_timer ( )</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a2413b7289e27122d76c2b44d98a56918"/><section>
+    <title>volatageva_monitoring()</title>
+<indexterm><primary>volatageva_monitoring</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>volatageva_monitoring</secondary></indexterm>
+<para><computeroutput>float volatageva_monitoring (int fd)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_a2413b7289e27122d76c2b44d98a56918_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__data_server_monitor_led_8c_1af78e2e405fb1dfada593994ec787e570"/><section>
+    <title>volatge_vb_monitoring()</title>
+<indexterm><primary>volatge_vb_monitoring</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>volatge_vb_monitoring</secondary></indexterm>
+<para><computeroutput>float volatge_vb_monitoring (void )</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_monitor_led_8c_af78e2e405fb1dfada593994ec787e570_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__data_server_monitor_led_8c_1a49952e1fb0d52f6ef2f6fd0f381ab1b5"/><section>
+    <title>cur_disp_scr_index</title>
+<indexterm><primary>cur_disp_scr_index</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>cur_disp_scr_index</secondary></indexterm>
+<para><computeroutput>uint8_t cur_disp_scr_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1ac69e4e922707981e211d8a9791d8b849"/><section>
+    <title>fd_led</title>
+<indexterm><primary>fd_led</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>fd_led</secondary></indexterm>
+<para><computeroutput>int fd_led</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1aa388bbbd2af08b7f83c6e55667c86270"/><section>
+    <title>G_KEY_PRESSED_EVENT</title>
+<indexterm><primary>G_KEY_PRESSED_EVENT</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>G_KEY_PRESSED_EVENT</secondary></indexterm>
+<para><computeroutput>int G_KEY_PRESSED_EVENT<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a0d4542cd6083f6c10692818325ab989f"/><section>
+    <title>g_keypressed</title>
+<indexterm><primary>g_keypressed</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>g_keypressed</secondary></indexterm>
+<para><computeroutput>uint8_t g_keypressed = 0x00</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1ae56fe8b25067ad4c0815823ecbe1a028"/><section>
+    <title>g_led_error_flag1</title>
+<indexterm><primary>g_led_error_flag1</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>g_led_error_flag1</secondary></indexterm>
+<para><computeroutput>int g_led_error_flag1 = 0xff</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a4c2d8c66ab29de28e84ad3fc97d298db"/><section>
+    <title>g_led_error_flag2</title>
+<indexterm><primary>g_led_error_flag2</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>g_led_error_flag2</secondary></indexterm>
+<para><computeroutput>int g_led_error_flag2 = 0x07</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a101a08b09da918500b4e325b8016c408"/><section>
+    <title>i2cmsgdemo</title>
+<indexterm><primary>i2cmsgdemo</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>i2cmsgdemo</secondary></indexterm>
+<para><computeroutput>struct i2c_msg i2cmsgdemo</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a7f2797c133895a11557ac19b0d846127"/><section>
+    <title>long_flag</title>
+<indexterm><primary>long_flag</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>long_flag</secondary></indexterm>
+<para><computeroutput>volatile bool long_flag = false</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a8bd143ed2741955bf62bb2d2bc319386"/><section>
+    <title>longpress_detected</title>
+<indexterm><primary>longpress_detected</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>longpress_detected</secondary></indexterm>
+<para><computeroutput>volatile bool longpress_detected = false</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a7b71b5c7a7fbb0d56b514bdfddb301fd"/><section>
+    <title>longpress_timer</title>
+<indexterm><primary>longpress_timer</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>longpress_timer</secondary></indexterm>
+<para><computeroutput>timer_t longpress_timer</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a8c2ae5ee1bb07521123798c2a03f452f"/><section>
+    <title>msg_rdwrdemo</title>
+<indexterm><primary>msg_rdwrdemo</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>msg_rdwrdemo</secondary></indexterm>
+<para><computeroutput>struct i2c_rdwr_ioctl_data msg_rdwrdemo</computeroutput></para></section>
+<anchor xml:id="__data_server_monitor_led_8c_1a6baa346e44f4c2158d2be4f9b77b8203"/><section>
+    <title>ret</title>
+<indexterm><primary>ret</primary><secondary>DataServerMonitorLed.c</secondary></indexterm>
+<indexterm><primary>DataServerMonitorLed.c</primary><secondary>ret</secondary></indexterm>
+<para><computeroutput>int ret</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,455 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_module__details__processing_8c" xml:lang="en-US">
+<title>Data_processing/module_details_processing.c File Reference</title>
+<indexterm><primary>Data_processing/module_details_processing.c</primary></indexterm>
+<para>
+
+<para>Source that processes the MBN status information. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for module_details_processing.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_module__details__processing_8c_1adfca9bae7bdfdd358ced96390fb1f696">fetch_mbn_identification_parameters</link> ()</para>
+
+<para>Function that fetches the MBN identification parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_module__details__processing_8c_1a3e9b0f25faad61167968870d14001d3b">fetch_io_identification_parameters</link> ()</para>
+
+<para>Function that fetches the IO_module identification parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_module__details__processing_8c_1ac4306bff4d6d753d0caba597124ddbe3">fetch_pz_identification_parameters</link> ()</para>
+
+<para>Function that fetches the PZ identification parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_module__details__processing_8c_1aac0c03d78e4b434d9f855c01973071b1">fetch_propzone_identification_parameters</link> ()</para>
+
+<para>Function that fetches the PropZone identification parameters. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>mbn_identification_info_t <link linkend="_module__details__processing_8c_1a5e513538eebc0523aa0dd56964ae2de9">mbn_module_info</link></para>
+</listitem>
+            <listitem><para>s_io_identification_info <link linkend="_module__details__processing_8c_1a350ae9e33a3016b3334d36d41513c9dc">io_module_info</link> [MACRO_MAX_IO_MODULES]</para>
+</listitem>
+            <listitem><para>isemdiagidentificationinfo <link linkend="_module__details__processing_8c_1afe1cbe48c5f14cbc8409273db880f69e">isem_diag_module_info</link> [MAX_ISEM_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>diagvalveidentificationinfo <link linkend="_module__details__processing_8c_1a5c1f7b9aa2924d9827ee28c651a1715d">diag_module_info</link> [MAX_DIAG_VALVE_PER_PZZONE]</para>
+</listitem>
+            <listitem><para>propidentificationinfo <link linkend="_module__details__processing_8c_1adf465f1e5563b110346cadfa4796c76f">prop_station_module_info</link> [MAX_PROP_STATION_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>propidentificationinfo <link linkend="_module__details__processing_8c_1aef9f062d491a6ef917ee55a497b9233b">prop_zone_module_info</link> [MACRO_MAX_PROP_ZONE]</para>
+</listitem>
+            <listitem><para>ModuleDetails <link linkend="_module__details__processing_8c_1a8779a863e7d67f1e3e6e0315e137fba4">modulesdetails</link> [MACRO_MAX_MODULES_DETAILS]</para>
+</listitem>
+            <listitem><para>PZoneDetails <link linkend="_module__details__processing_8c_1a7f5f23f78cf76bec56ebefff8cea7196">pzonemodulesdetails</link> [MACRO_MAX_MODULES_DETAILS]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_module__details__processing_8c_1a6ee6cb3fb906eec58c30fefafa737e34">g_module_details_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_module__details__processing_8c_1ae928c14f046dfa456e971341fdfab7c3">g_pzone_details_count</link> = 0</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_module__details__processing_8c_1a8283ddbfd893cd3bacd252a03eb89fcf">diag_valve_device_types</link> [MACRO_MAX_PRESSURE_ZONE][MACRO_MAX_DIAG_VALVE_PER_PZZONE]</para>
+</listitem>
+            <listitem><para>s_discovery_details <link linkend="_module__details__processing_8c_1aecc928609def218c15f7c59447eb5a32">discover_details</link></para>
+</listitem>
+            <listitem><para>s_prszone_device_count_details <link linkend="_module__details__processing_8c_1a639ca1471160314ce61d52506c2a8d0d">pz_count_details</link> [MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1acb71097bdde0eeb8f371374d3a7e14ed">di_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1a92e023a01eb6cda34cb71ffb24aac30d">do_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1a469ccdb9274911410aa03d305dda5343">dio_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1a1b52b26f5eaa915de63b353f7186b998">ai_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1aa42415ce458bf3e4b6111071869ee688">ao_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1a02fd0c072e2bbeb279db2b5a5e77879b">aio_handlers</link> [MACRO_MAX_IO_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1a8f6252caf33f738fd9f6e6c46db45eb8">pz_handlers</link> [MACRO_MAX_PZ_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1aa99741c64ccbcc97a4d63b9364f74eac">prop_zone_handlers</link> [MACRO_MAX_PROP_ZONE_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1a8805f3ed6a9cc57f5be8d3493520d689">isemdiag_handlers</link> [MAX_ISEM_PER_PZZONE *MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1aa75499d0a62f43079c1e194f965b1a3d">diag_handlers</link> [MAX_DIAG_VALVE_PER_PZZONE]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1a8dcd1736f88832ad3a48bcc2d94ba37a">prop_station_handlers</link> [MAX_PROP_STATION_PER_PZZONE *MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_module__details__processing_8c_1a99853c346c63e9d4b6d00633a57cbe9c">g_total_digital_count</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_module__details__processing_8c_1ad02cee25b80418d1bfe5049c4acc3725">g_total_analog_count</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1ae44ef9829ac44f5b2bb7abdefce34479">g_isemdiag_count</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_module__details__processing_8c_1ae824f62265a6998b6bcd6d92e5af8bd4">g_diagvalve_count</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_module__details__processing_8c_1ae9ddf52b205881f5c387d7a7f8940af6">prop_station_indices</link> [MACRO_MAX_PRESSURE_ZONE] = {-1, -1, -1, -1, -1}</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that processes the MBN status information. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_module__details__processing_8c_1a3e9b0f25faad61167968870d14001d3b"/><section>
+    <title>fetch_io_identification_parameters()</title>
+<indexterm><primary>fetch_io_identification_parameters</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>fetch_io_identification_parameters</secondary></indexterm>
+<para><computeroutput>void fetch_io_identification_parameters ( )</computeroutput></para><para>
+
+<para>Function that fetches the IO_module identification parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c_a3e9b0f25faad61167968870d14001d3b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c_a3e9b0f25faad61167968870d14001d3b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_module__details__processing_8c_1adfca9bae7bdfdd358ced96390fb1f696"/><section>
+    <title>fetch_mbn_identification_parameters()</title>
+<indexterm><primary>fetch_mbn_identification_parameters</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>fetch_mbn_identification_parameters</secondary></indexterm>
+<para><computeroutput>void fetch_mbn_identification_parameters ( )</computeroutput></para><para>
+
+<para>Function that fetches the MBN identification parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c_adfca9bae7bdfdd358ced96390fb1f696_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_module__details__processing_8c_1aac0c03d78e4b434d9f855c01973071b1"/><section>
+    <title>fetch_propzone_identification_parameters()</title>
+<indexterm><primary>fetch_propzone_identification_parameters</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>fetch_propzone_identification_parameters</secondary></indexterm>
+<para><computeroutput>void fetch_propzone_identification_parameters ( )</computeroutput></para><para>
+
+<para>Function that fetches the PropZone identification parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c_aac0c03d78e4b434d9f855c01973071b1_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c_aac0c03d78e4b434d9f855c01973071b1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_module__details__processing_8c_1ac4306bff4d6d753d0caba597124ddbe3"/><section>
+    <title>fetch_pz_identification_parameters()</title>
+<indexterm><primary>fetch_pz_identification_parameters</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>fetch_pz_identification_parameters</secondary></indexterm>
+<para><computeroutput>void fetch_pz_identification_parameters ( )</computeroutput></para><para>
+
+<para>Function that fetches the PZ identification parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__details__processing_8c_ac4306bff4d6d753d0caba597124ddbe3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_module__details__processing_8c_1a1b52b26f5eaa915de63b353f7186b998"/><section>
+    <title>ai_handlers</title>
+<indexterm><primary>ai_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>ai_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t ai_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a02fd0c072e2bbeb279db2b5a5e77879b"/><section>
+    <title>aio_handlers</title>
+<indexterm><primary>aio_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>aio_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t aio_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1aa42415ce458bf3e4b6111071869ee688"/><section>
+    <title>ao_handlers</title>
+<indexterm><primary>ao_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>ao_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t ao_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1acb71097bdde0eeb8f371374d3a7e14ed"/><section>
+    <title>di_handlers</title>
+<indexterm><primary>di_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>di_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t di_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1aa75499d0a62f43079c1e194f965b1a3d"/><section>
+    <title>diag_handlers</title>
+<indexterm><primary>diag_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>diag_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t diag_handlers[MAX_DIAG_VALVE_PER_PZZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a5c1f7b9aa2924d9827ee28c651a1715d"/><section>
+    <title>diag_module_info</title>
+<indexterm><primary>diag_module_info</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>diag_module_info</secondary></indexterm>
+<para><computeroutput>diagvalveidentificationinfo diag_module_info[MAX_DIAG_VALVE_PER_PZZONE]</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a8283ddbfd893cd3bacd252a03eb89fcf"/><section>
+    <title>diag_valve_device_types</title>
+<indexterm><primary>diag_valve_device_types</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>diag_valve_device_types</secondary></indexterm>
+<para><computeroutput>uint32_t diag_valve_device_types[MACRO_MAX_PRESSURE_ZONE][MACRO_MAX_DIAG_VALVE_PER_PZZONE]</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a469ccdb9274911410aa03d305dda5343"/><section>
+    <title>dio_handlers</title>
+<indexterm><primary>dio_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>dio_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t dio_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1aecc928609def218c15f7c59447eb5a32"/><section>
+    <title>discover_details</title>
+<indexterm><primary>discover_details</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>discover_details</secondary></indexterm>
+<para><computeroutput>s_discovery_details discover_details<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a92e023a01eb6cda34cb71ffb24aac30d"/><section>
+    <title>do_handlers</title>
+<indexterm><primary>do_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>do_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t do_handlers[MACRO_MAX_IO_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1ae824f62265a6998b6bcd6d92e5af8bd4"/><section>
+    <title>g_diagvalve_count</title>
+<indexterm><primary>g_diagvalve_count</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>g_diagvalve_count</secondary></indexterm>
+<para><computeroutput>uint16_t g_diagvalve_count</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1ae44ef9829ac44f5b2bb7abdefce34479"/><section>
+    <title>g_isemdiag_count</title>
+<indexterm><primary>g_isemdiag_count</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>g_isemdiag_count</secondary></indexterm>
+<para><computeroutput>uint16_t g_isemdiag_count<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a6ee6cb3fb906eec58c30fefafa737e34"/><section>
+    <title>g_module_details_count</title>
+<indexterm><primary>g_module_details_count</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>g_module_details_count</secondary></indexterm>
+<para><computeroutput>uint8_t g_module_details_count = 0</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1ae928c14f046dfa456e971341fdfab7c3"/><section>
+    <title>g_pzone_details_count</title>
+<indexterm><primary>g_pzone_details_count</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>g_pzone_details_count</secondary></indexterm>
+<para><computeroutput>uint8_t g_pzone_details_count = 0</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1ad02cee25b80418d1bfe5049c4acc3725"/><section>
+    <title>g_total_analog_count</title>
+<indexterm><primary>g_total_analog_count</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>g_total_analog_count</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_analog_count</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a99853c346c63e9d4b6d00633a57cbe9c"/><section>
+    <title>g_total_digital_count</title>
+<indexterm><primary>g_total_digital_count</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>g_total_digital_count</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_digital_count<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a350ae9e33a3016b3334d36d41513c9dc"/><section>
+    <title>io_module_info</title>
+<indexterm><primary>io_module_info</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>io_module_info</secondary></indexterm>
+<para><computeroutput>s_io_identification_info io_module_info[MACRO_MAX_IO_MODULES]</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1afe1cbe48c5f14cbc8409273db880f69e"/><section>
+    <title>isem_diag_module_info</title>
+<indexterm><primary>isem_diag_module_info</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>isem_diag_module_info</secondary></indexterm>
+<para><computeroutput>isemdiagidentificationinfo isem_diag_module_info[MAX_ISEM_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a8805f3ed6a9cc57f5be8d3493520d689"/><section>
+    <title>isemdiag_handlers</title>
+<indexterm><primary>isemdiag_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>isemdiag_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t isemdiag_handlers[MAX_ISEM_PER_PZZONE *MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a5e513538eebc0523aa0dd56964ae2de9"/><section>
+    <title>mbn_module_info</title>
+<indexterm><primary>mbn_module_info</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>mbn_module_info</secondary></indexterm>
+<para><computeroutput>mbn_identification_info_t mbn_module_info</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a8779a863e7d67f1e3e6e0315e137fba4"/><section>
+    <title>modulesdetails</title>
+<indexterm><primary>modulesdetails</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>modulesdetails</secondary></indexterm>
+<para><computeroutput>ModuleDetails modulesdetails[MACRO_MAX_MODULES_DETAILS]</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a8dcd1736f88832ad3a48bcc2d94ba37a"/><section>
+    <title>prop_station_handlers</title>
+<indexterm><primary>prop_station_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>prop_station_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t prop_station_handlers[MAX_PROP_STATION_PER_PZZONE *MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1ae9ddf52b205881f5c387d7a7f8940af6"/><section>
+    <title>prop_station_indices</title>
+<indexterm><primary>prop_station_indices</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>prop_station_indices</secondary></indexterm>
+<para><computeroutput>int prop_station_indices[MACRO_MAX_PRESSURE_ZONE] = {-1, -1, -1, -1, -1}</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1adf465f1e5563b110346cadfa4796c76f"/><section>
+    <title>prop_station_module_info</title>
+<indexterm><primary>prop_station_module_info</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>prop_station_module_info</secondary></indexterm>
+<para><computeroutput>propidentificationinfo prop_station_module_info[MAX_PROP_STATION_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1aa99741c64ccbcc97a4d63b9364f74eac"/><section>
+    <title>prop_zone_handlers</title>
+<indexterm><primary>prop_zone_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>prop_zone_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t prop_zone_handlers[MACRO_MAX_PROP_ZONE_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1aef9f062d491a6ef917ee55a497b9233b"/><section>
+    <title>prop_zone_module_info</title>
+<indexterm><primary>prop_zone_module_info</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>prop_zone_module_info</secondary></indexterm>
+<para><computeroutput>propidentificationinfo prop_zone_module_info[MACRO_MAX_PROP_ZONE]</computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a639ca1471160314ce61d52506c2a8d0d"/><section>
+    <title>pz_count_details</title>
+<indexterm><primary>pz_count_details</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>pz_count_details</secondary></indexterm>
+<para><computeroutput>s_prszone_device_count_details pz_count_details[MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a8f6252caf33f738fd9f6e6c46db45eb8"/><section>
+    <title>pz_handlers</title>
+<indexterm><primary>pz_handlers</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>pz_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t pz_handlers[MACRO_MAX_PZ_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__details__processing_8c_1a7f5f23f78cf76bec56ebefff8cea7196"/><section>
+    <title>pzonemodulesdetails</title>
+<indexterm><primary>pzonemodulesdetails</primary><secondary>module_details_processing.c</secondary></indexterm>
+<indexterm><primary>module_details_processing.c</primary><secondary>pzonemodulesdetails</secondary></indexterm>
+<para><computeroutput>PZoneDetails pzonemodulesdetails[MACRO_MAX_MODULES_DETAILS]</computeroutput></para></section>
+</section>
+</section>

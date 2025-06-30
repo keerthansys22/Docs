@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_module__screen_8c" xml:lang="en-US">
+<title>GUI/Screens/module_screen.c File Reference</title>
+<indexterm><primary>GUI/Screens/module_screen.c</primary></indexterm>
+<para>
+
+<para>Source that displays module screen. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;AppGlobal.h&gt;<?linebreak?></programlisting>Include dependency graph for module_screen.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__screen_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_module__screen_8c_1a8329af7c1c8dac99cc1870fe0992e576">module_style</link> ()</para>
+
+<para>Function to initialize the module screen style. </para>
+</listitem>
+            <listitem><para>void <link linkend="_module__screen_8c_1ab60bbdc6121e8f2704bfbbe37f79650a">disp_mod_module_screen</link> (int <link linkend="_lvgl__gui_8c_1af9a91605decf4619baae281772693f6f">module_index</link>, int module_number)</para>
+
+<para>Function to display module information (identification parameters) </para>
+</listitem>
+            <listitem><para>void <link linkend="_module__screen_8c_1a171bd087fd88267f8df70214d756df4a">common_label_creation</link> (lv_obj_t *screen_name, char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>ModuleDetails <link linkend="_module__screen_8c_1a8779a863e7d67f1e3e6e0315e137fba4">modulesdetails</link> [MACRO_MAX_MODULES_DETAILS]</para>
+</listitem>
+            <listitem><para>module_screen <link linkend="_module__screen_8c_1a6d0257fc38db25ed31d6c668c42b37b6">m_module_screen</link></para>
+</listitem>
+            <listitem><para>PZoneDetails <link linkend="_module__screen_8c_1a7f5f23f78cf76bec56ebefff8cea7196">pzonemodulesdetails</link> [MACRO_MAX_MODULES_DETAILS]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_module__screen_8c_1aa4fe13dc0266543c3bda858c6f4d9006">io_module_status</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_module__screen_8c_1af75d44c0559a3ee5bd192affe42b61fa">back_label_module</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_module__screen_8c_1ad85ee643d84fc46eb57f364fb1fa7b62">part_label</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_module__screen_8c_1a0219abe0f25db99de2aad5b1d881650c">part_val_label</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_module__screen_8c_1a514c8c632912f8e99195d5fbf9a7acec">firm_label</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_module__screen_8c_1a384568a17b52028e2b87dd36acc16fd2">firm_val_label</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_module__screen_8c_1a9194598c3b6bbd8feb5028796f00d8ae">hard_label</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_module__screen_8c_1a488ab067bfb6fe50a0bb4d04e0402325">hard_val_label</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that displays module screen. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_module__screen_8c_1a171bd087fd88267f8df70214d756df4a"/><section>
+    <title>common_label_creation()</title>
+<indexterm><primary>common_label_creation</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>common_label_creation</secondary></indexterm>
+<para><computeroutput>void common_label_creation (lv_obj_t * screen_name, char * text, lv_coord_t x, lv_coord_t y, const lv_font_t * font_name, uint32_t font_colour)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_module__screen_8c_1ab60bbdc6121e8f2704bfbbe37f79650a"/><section>
+    <title>disp_mod_module_screen()</title>
+<indexterm><primary>disp_mod_module_screen</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>disp_mod_module_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_module_screen (int module_index, int module_number)</computeroutput></para><para>
+
+<para>Function to display module information (identification parameters) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>module_index</entry><entry>
+<para>: represents the line number inside the module screen </para>
+</entry>
+                            </row>
+                            <row>
+<entry>module_number</entry><entry>
+<para>: represents the module number info to be displayed </para>
+</entry>
+                            </row>
+                            <row>
+<entry>io_module_status</entry><entry>
+<para>: represents the current module type being displayed </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__screen_8c_ab60bbdc6121e8f2704bfbbe37f79650a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__screen_8c_ab60bbdc6121e8f2704bfbbe37f79650a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_module__screen_8c_1a8329af7c1c8dac99cc1870fe0992e576"/><section>
+    <title>module_style()</title>
+<indexterm><primary>module_style</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>module_style</secondary></indexterm>
+<para><computeroutput>void module_style ( )</computeroutput></para><para>
+
+<para>Function to initialize the module screen style. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="module__screen_8c_a8329af7c1c8dac99cc1870fe0992e576_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_module__screen_8c_1af75d44c0559a3ee5bd192affe42b61fa"/><section>
+    <title>back_label_module</title>
+<indexterm><primary>back_label_module</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>back_label_module</secondary></indexterm>
+<para><computeroutput>lv_obj_t* back_label_module</computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1a514c8c632912f8e99195d5fbf9a7acec"/><section>
+    <title>firm_label</title>
+<indexterm><primary>firm_label</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>firm_label</secondary></indexterm>
+<para><computeroutput>lv_obj_t* firm_label</computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1a384568a17b52028e2b87dd36acc16fd2"/><section>
+    <title>firm_val_label</title>
+<indexterm><primary>firm_val_label</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>firm_val_label</secondary></indexterm>
+<para><computeroutput>lv_obj_t* firm_val_label</computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1a9194598c3b6bbd8feb5028796f00d8ae"/><section>
+    <title>hard_label</title>
+<indexterm><primary>hard_label</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>hard_label</secondary></indexterm>
+<para><computeroutput>lv_obj_t* hard_label</computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1a488ab067bfb6fe50a0bb4d04e0402325"/><section>
+    <title>hard_val_label</title>
+<indexterm><primary>hard_val_label</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>hard_val_label</secondary></indexterm>
+<para><computeroutput>lv_obj_t* hard_val_label</computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1aa4fe13dc0266543c3bda858c6f4d9006"/><section>
+    <title>io_module_status</title>
+<indexterm><primary>io_module_status</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>io_module_status</secondary></indexterm>
+<para><computeroutput>uint8_t io_module_status<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1a6d0257fc38db25ed31d6c668c42b37b6"/><section>
+    <title>m_module_screen</title>
+<indexterm><primary>m_module_screen</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>m_module_screen</secondary></indexterm>
+<para><computeroutput>module_screen m_module_screen<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1a8779a863e7d67f1e3e6e0315e137fba4"/><section>
+    <title>modulesdetails</title>
+<indexterm><primary>modulesdetails</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>modulesdetails</secondary></indexterm>
+<para><computeroutput>ModuleDetails modulesdetails[MACRO_MAX_MODULES_DETAILS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1ad85ee643d84fc46eb57f364fb1fa7b62"/><section>
+    <title>part_label</title>
+<indexterm><primary>part_label</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>part_label</secondary></indexterm>
+<para><computeroutput>lv_obj_t* part_label</computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1a0219abe0f25db99de2aad5b1d881650c"/><section>
+    <title>part_val_label</title>
+<indexterm><primary>part_val_label</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>part_val_label</secondary></indexterm>
+<para><computeroutput>lv_obj_t* part_val_label</computeroutput></para></section>
+<anchor xml:id="_module__screen_8c_1a7f5f23f78cf76bec56ebefff8cea7196"/><section>
+    <title>pzonemodulesdetails</title>
+<indexterm><primary>pzonemodulesdetails</primary><secondary>module_screen.c</secondary></indexterm>
+<indexterm><primary>module_screen.c</primary><secondary>pzonemodulesdetails</secondary></indexterm>
+<para><computeroutput>PZoneDetails pzonemodulesdetails[MACRO_MAX_MODULES_DETAILS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

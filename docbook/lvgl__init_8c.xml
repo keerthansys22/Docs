@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lvgl__init_8c" xml:lang="en-US">
+<title>GUI/lvgl_init.c File Reference</title>
+<indexterm><primary>GUI/lvgl_init.c</primary></indexterm>
+<para>
+
+<para>Source that initializes lvgl drivers. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;AppGlobal.h&gt;<?linebreak?></programlisting>Include dependency graph for lvgl_init.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lvgl__init_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_lvgl__init_8c_1a1bc242c30202597de90d690f92f95691">ACTUAL_DISP_BUF_2</link>&#160;&#160;&#160;disp_buf2</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_lvgl__init_8c_1ae55992fae61ed8e00b3bbc6cff04ef17">lcd_send_data</link> (uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint8_t *p)</para>
+
+<para>Send data pixelwise. </para>
+</listitem>
+            <listitem><para>void <link linkend="_lvgl__init_8c_1a51a0d8444720631af4e4ccd140a6a038">lvgl_init</link> (void)</para>
+
+<para>Function to initialize lvgl drivers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>lv_display_t * <link linkend="_lvgl__init_8c_1a647e5f267167a38dcd0e6fe55dfcfc61">disp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that initializes lvgl drivers. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_lvgl__init_8c_1a1bc242c30202597de90d690f92f95691"/><section>
+    <title>ACTUAL_DISP_BUF_2</title>
+<indexterm><primary>ACTUAL_DISP_BUF_2</primary><secondary>lvgl_init.c</secondary></indexterm>
+<indexterm><primary>lvgl_init.c</primary><secondary>ACTUAL_DISP_BUF_2</secondary></indexterm>
+<para><computeroutput>#define ACTUAL_DISP_BUF_2&#160;&#160;&#160;disp_buf2</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_lvgl__init_8c_1ae55992fae61ed8e00b3bbc6cff04ef17"/><section>
+    <title>lcd_send_data()</title>
+<indexterm><primary>lcd_send_data</primary><secondary>lvgl_init.c</secondary></indexterm>
+<indexterm><primary>lvgl_init.c</primary><secondary>lcd_send_data</secondary></indexterm>
+<para><computeroutput>void lcd_send_data (uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint8_t * p)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Send data pixelwise. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>x_start</entry><entry>
+<para>starting address of x axis </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y_start</entry><entry>
+<para>starting address of y axis </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x_end</entry><entry>
+<para>ending address of the x axis </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y_end</entry><entry>
+<para>ending address of the y axis </para>
+</entry>
+                            </row>
+                            <row>
+<entry>*p</entry><entry>
+<para>pixel </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lvgl__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_lvgl__init_8c_1a51a0d8444720631af4e4ccd140a6a038"/><section>
+    <title>lvgl_init()</title>
+<indexterm><primary>lvgl_init</primary><secondary>lvgl_init.c</secondary></indexterm>
+<indexterm><primary>lvgl_init.c</primary><secondary>lvgl_init</secondary></indexterm>
+<para><computeroutput>void lvgl_init (void )</computeroutput></para><para>
+
+<para>Function to initialize lvgl drivers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="lvgl__init_8c_a51a0d8444720631af4e4ccd140a6a038_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_lvgl__init_8c_1a647e5f267167a38dcd0e6fe55dfcfc61"/><section>
+    <title>disp</title>
+<indexterm><primary>disp</primary><secondary>lvgl_init.c</secondary></indexterm>
+<indexterm><primary>lvgl_init.c</primary><secondary>disp</secondary></indexterm>
+<para><computeroutput>lv_display_t* disp</computeroutput></para></section>
+</section>
+</section>

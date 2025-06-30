@@ -1,0 +1,161 @@
+\doxysection{Self\+\_\+\+Tests/power\+\_\+on\+\_\+self\+\_\+test.c File Reference}
+\hypertarget{power__on__self__test_8c}{}\label{power__on__self__test_8c}\index{Self\_Tests/power\_on\_self\_test.c@{Self\_Tests/power\_on\_self\_test.c}}
+
+
+Source that contains the self test and voltage monitring files.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/eventfd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/epoll.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$linux/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$linux/spi/spidev.\+h$>$}\newline
+{\ttfamily \#include $<$linux/i2c-\/dev.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for power\+\_\+on\+\_\+self\+\_\+test.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{power__on__self__test_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{power__on__self__test_8c_a2b69d74572d29a70ecb8148fdb6b9f69}{poweron\+\_\+selftest}} (void)
+\item 
+int \mbox{\hyperlink{power__on__self__test_8c_a7e4bd03d5000eaba98f7880b37979086}{ddr\+\_\+memory\+\_\+test}} (void)
+\item 
+int \mbox{\hyperlink{power__on__self__test_8c_a3aac4e89479292ddefe58923976b3103}{external\+\_\+adc\+\_\+test}} (void)
+\item 
+int \mbox{\hyperlink{power__on__self__test_8c_a99fb93fc053acbdeac28adb7dd9998dc}{internal\+\_\+adc\+\_\+test}} (void)
+\item 
+int \mbox{\hyperlink{power__on__self__test_8c_a0928c556839f0083145f58540674e7a3}{led\+\_\+test}} (void)
+\item 
+int \mbox{\hyperlink{power__on__self__test_8c_ac15199a45dee6b739fbcfcc1f509e0b5}{lcd\+\_\+init\+\_\+test}} (void \texorpdfstring{$\ast$}{*}args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{power__on__self__test_8c_a72ff51e6a0a0544319b3181a0043bdb7}{lcd\+\_\+status}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{power__on__self__test_8c_adc333f1f8f37a4c72924e5aed1d6e98c}{post\+\_\+error\+\_\+flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that contains the self test and voltage monitring files. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{power__on__self__test_8c_a7e4bd03d5000eaba98f7880b37979086}\index{power\_on\_self\_test.c@{power\_on\_self\_test.c}!ddr\_memory\_test@{ddr\_memory\_test}}
+\index{ddr\_memory\_test@{ddr\_memory\_test}!power\_on\_self\_test.c@{power\_on\_self\_test.c}}
+\doxysubsubsection{\texorpdfstring{ddr\_memory\_test()}{ddr\_memory\_test()}}
+{\footnotesize\ttfamily \label{power__on__self__test_8c_a7e4bd03d5000eaba98f7880b37979086} 
+int ddr\+\_\+memory\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{power__on__self__test_8c_a7e4bd03d5000eaba98f7880b37979086_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{power__on__self__test_8c_a3aac4e89479292ddefe58923976b3103}\index{power\_on\_self\_test.c@{power\_on\_self\_test.c}!external\_adc\_test@{external\_adc\_test}}
+\index{external\_adc\_test@{external\_adc\_test}!power\_on\_self\_test.c@{power\_on\_self\_test.c}}
+\doxysubsubsection{\texorpdfstring{external\_adc\_test()}{external\_adc\_test()}}
+{\footnotesize\ttfamily \label{power__on__self__test_8c_a3aac4e89479292ddefe58923976b3103} 
+int external\+\_\+adc\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{power__on__self__test_8c_a3aac4e89479292ddefe58923976b3103_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{power__on__self__test_8c_a99fb93fc053acbdeac28adb7dd9998dc}\index{power\_on\_self\_test.c@{power\_on\_self\_test.c}!internal\_adc\_test@{internal\_adc\_test}}
+\index{internal\_adc\_test@{internal\_adc\_test}!power\_on\_self\_test.c@{power\_on\_self\_test.c}}
+\doxysubsubsection{\texorpdfstring{internal\_adc\_test()}{internal\_adc\_test()}}
+{\footnotesize\ttfamily \label{power__on__self__test_8c_a99fb93fc053acbdeac28adb7dd9998dc} 
+int internal\+\_\+adc\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{power__on__self__test_8c_a99fb93fc053acbdeac28adb7dd9998dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{power__on__self__test_8c_ac15199a45dee6b739fbcfcc1f509e0b5}\index{power\_on\_self\_test.c@{power\_on\_self\_test.c}!lcd\_init\_test@{lcd\_init\_test}}
+\index{lcd\_init\_test@{lcd\_init\_test}!power\_on\_self\_test.c@{power\_on\_self\_test.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_init\_test()}{lcd\_init\_test()}}
+{\footnotesize\ttfamily \label{power__on__self__test_8c_ac15199a45dee6b739fbcfcc1f509e0b5} 
+int lcd\+\_\+init\+\_\+test (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{power__on__self__test_8c_ac15199a45dee6b739fbcfcc1f509e0b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{power__on__self__test_8c_a0928c556839f0083145f58540674e7a3}\index{power\_on\_self\_test.c@{power\_on\_self\_test.c}!led\_test@{led\_test}}
+\index{led\_test@{led\_test}!power\_on\_self\_test.c@{power\_on\_self\_test.c}}
+\doxysubsubsection{\texorpdfstring{led\_test()}{led\_test()}}
+{\footnotesize\ttfamily \label{power__on__self__test_8c_a0928c556839f0083145f58540674e7a3} 
+int led\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{power__on__self__test_8c_a0928c556839f0083145f58540674e7a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{power__on__self__test_8c_a2b69d74572d29a70ecb8148fdb6b9f69}\index{power\_on\_self\_test.c@{power\_on\_self\_test.c}!poweron\_selftest@{poweron\_selftest}}
+\index{poweron\_selftest@{poweron\_selftest}!power\_on\_self\_test.c@{power\_on\_self\_test.c}}
+\doxysubsubsection{\texorpdfstring{poweron\_selftest()}{poweron\_selftest()}}
+{\footnotesize\ttfamily \label{power__on__self__test_8c_a2b69d74572d29a70ecb8148fdb6b9f69} 
+uint32\+\_\+t poweron\+\_\+selftest (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{power__on__self__test_8c_a2b69d74572d29a70ecb8148fdb6b9f69_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{power__on__self__test_8c_a2b69d74572d29a70ecb8148fdb6b9f69_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{power__on__self__test_8c_a72ff51e6a0a0544319b3181a0043bdb7}\index{power\_on\_self\_test.c@{power\_on\_self\_test.c}!lcd\_status@{lcd\_status}}
+\index{lcd\_status@{lcd\_status}!power\_on\_self\_test.c@{power\_on\_self\_test.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_status}{lcd\_status}}
+{\footnotesize\ttfamily \label{power__on__self__test_8c_a72ff51e6a0a0544319b3181a0043bdb7} 
+int lcd\+\_\+status\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{power__on__self__test_8c_adc333f1f8f37a4c72924e5aed1d6e98c}\index{power\_on\_self\_test.c@{power\_on\_self\_test.c}!post\_error\_flag@{post\_error\_flag}}
+\index{post\_error\_flag@{post\_error\_flag}!power\_on\_self\_test.c@{power\_on\_self\_test.c}}
+\doxysubsubsection{\texorpdfstring{post\_error\_flag}{post\_error\_flag}}
+{\footnotesize\ttfamily \label{power__on__self__test_8c_adc333f1f8f37a4c72924e5aed1d6e98c} 
+uint32\+\_\+t post\+\_\+error\+\_\+flag}
+

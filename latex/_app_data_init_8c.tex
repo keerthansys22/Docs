@@ -1,0 +1,444 @@
+\doxysection{API\+\_\+\+Source/\+App\+Data\+Init.c File Reference}
+\hypertarget{_app_data_init_8c}{}\label{_app_data_init_8c}\index{API\_Source/AppDataInit.c@{API\_Source/AppDataInit.c}}
+
+
+This file has the initialization api related to shared memory.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdc-\/predef.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$poll.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$linux/dma-\/buf.\+h$>$}\newline
+{\ttfamily \#include $<$linux/dma-\/heap.\+h$>$}\newline
+{\ttfamily \#include $<$linux/rpmsg.\+h$>$}\newline
+{\ttfamily \#include $<$ti\+\_\+rpmsg\+\_\+char.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+IPCcanlinux.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for App\+Data\+Init.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}}
+\item 
+struct \mbox{\hyperlink{structdma__buf__phys__data}{dma\+\_\+buf\+\_\+phys\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structsample}{sample}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_ab3be0641eb76161a48ed528e6eea2ac3}{NUM\+\_\+\+ITERATIONS}}~1
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_a7be6ced5220d75bbaca18fa0bc90ac87}{REMOTE\+\_\+\+ENDPT}}~16
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_ad292464ae24bf46746530cb1d07a6e98}{DEFAULT\+\_\+\+BUF\+\_\+\+SIZE\+\_\+\+KB}}~(1024)      /\texorpdfstring{$\ast$}{*}  1MB \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_a3d81f921b0df6e01384ac371b9d70fde}{MAX\+\_\+\+BUF\+\_\+\+SIZE\+\_\+\+KB}}~(300 \texorpdfstring{$\ast$}{*} 1024) /\texorpdfstring{$\ast$}{*} 64KB/64MB To be cross checked\texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_aa02d0ace1f241a43dcc8d6348549b95a}{DEFAULT\+\_\+\+BUF\+\_\+\+PATTERN}}~0x\+AAAA5555
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_af0f9c0a655627b75bcdfedab31420cd0}{DMA\+\_\+\+HEAP\+\_\+\+RESERVED}}~"{}reserved"{}   /\texorpdfstring{$\ast$}{*} cma-\/reserved \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_a6fba0d7ecd0d3820d6949b3b50fa864f}{SHM\+\_\+\+STARTING\+\_\+\+BASE\+\_\+\+ADDR}}~0x\+A7000000
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_a16e67aa18d42bbdb08ac9af1c8d0f4f9}{SHM\+\_\+\+SIZE}}~32768
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_a8b1deb94146c4fac73e3e40800549706}{DMA\+\_\+\+BUF\+\_\+\+PHYS\+\_\+\+IOC\+\_\+\+MAGIC}}~\textquotesingle{}D\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_app_data_init_8c_ac4fd1a1764953056d6467fed53ae84e5}{DMA\+\_\+\+BUF\+\_\+\+PHYS\+\_\+\+IOC\+\_\+\+CONVERT}}~\+\_\+\+IOWR(\mbox{\hyperlink{_app_data_init_8c_a8b1deb94146c4fac73e3e40800549706}{DMA\+\_\+\+BUF\+\_\+\+PHYS\+\_\+\+IOC\+\_\+\+MAGIC}}, 0, struct \mbox{\hyperlink{structdma__buf__phys__data}{dma\+\_\+buf\+\_\+phys\+\_\+data}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{_app_data_init_8c_ad09246453a4dabd919c7541484046a87}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((\+\_\+\+\_\+packed\+\_\+\+\_\+))
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_init_8c_a1f2d0c6114cf6cd97d18e5b2a15134c3}{ipc\+\_\+send\+\_\+message}} (int fd, s\+\_\+ipcmsg\+\_\+packet \texorpdfstring{$\ast$}{*}ipc)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_init_8c_afe667f1c61ab72a0423f199dee3906d6}{ipc\+\_\+receive\+\_\+message}} (int fd, s\+\_\+ipcmsg\+\_\+packet \texorpdfstring{$\ast$}{*}ipc, int timeout\+\_\+ms)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_ac71aba88cc1fd0e3f88a29995e6ea594}{dmabuf\+\_\+get\+\_\+phys}} (int phys\+\_\+fd, int dma\+\_\+buf\+\_\+fd, u\+\_\+int64\+\_\+t \texorpdfstring{$\ast$}{*}phys\+\_\+addr)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_abd03986677f9e517f5559c36490951ed}{dmaheap\+\_\+open}} (char \texorpdfstring{$\ast$}{*}heap\+\_\+name)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_a98d90b2a428c793a4ec9a748a7276736}{dmaheap\+\_\+alloc}} (int fd, size\+\_\+t len)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_a08e380e7af7b0eeafeff03a254731015}{dmabuf\+\_\+heap\+\_\+alloc}} (int \mbox{\hyperlink{_app_data_init_8c_a557db9b79c0309f594ae169b6c9e6471}{dma\+\_\+heap\+\_\+fd}}, int size, struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}lbuf, struct ipc\+\_\+buf \texorpdfstring{$\ast$}{*}ibuf)
+\item 
+void \mbox{\hyperlink{_app_data_init_8c_a3d13dad35d9576866fa3fbe078c9e931}{dmabuf\+\_\+heap\+\_\+free}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}lbuf)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_init_8c_a2383a3641c7a989a9d6c99be17bf45c8}{write\+Shared\+Memory\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t addr, uint32\+\_\+t size)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_init_8c_a2c891988aba3928991563510a0a143d8}{read\+Discovery\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_init_8c_ab626ee9878bdad1df5d26d5e215c1c7e}{read\+Shared\+Memory\+Data1}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size, uint32\+\_\+t address)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_app_data_init_8c_ae512dcee3f48f317872617e5f4559b19}{read\+Shared\+Memory\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size)
+\item 
+void \mbox{\hyperlink{_app_data_init_8c_aeba6c23aae53422bdf1062006227ade0}{buffer\+\_\+init}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}lbuf, uint32\+\_\+t pattern)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_a31cb1113be3fef03981b400dfab4919a}{buffer\+\_\+validate\+\_\+r5f0\+\_\+0}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}lbuf, uint32\+\_\+t pattern)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_ad704115cd24d226c42b28b3b1e681d7a}{buffer\+\_\+validate}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}lbuf, uint32\+\_\+t pattern)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_a61b02bc2681a98a6e228d723dd625641}{heap\+\_\+init}} (void)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_a58b73e2d9979a6b0af8f0bd6d599f44b}{rpmsg\+Ipc\+Init}} (void)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_a9e36d95079f670e69afb0e57a74c1bbd}{rpmsg\+Ipc\+Deinit}} (void)
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_ac92a673771db92e7156490091aef7135}{init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_app_data_init_8c_a557db9b79c0309f594ae169b6c9e6471}{dma\+\_\+heap\+\_\+fd}}
+\item 
+rpmsg\+\_\+char\+\_\+dev\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_init_8c_a274502dbc1ca0716301973df9a2ebb62}{g\+\_\+remote\+\_\+rpmsg}}
+\item 
+rpmsg\+\_\+char\+\_\+dev\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_init_8c_a84b92fc3b5d1822db07d698a854bd3a8}{task1\+\_\+rcdev}}
+\item 
+rpmsg\+\_\+char\+\_\+dev\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_app_data_init_8c_a36a44375280a8329d101c2f897bc2dda}{task2\+\_\+rcdev}}
+\item 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \mbox{\hyperlink{_app_data_init_8c_ad9088d5017838792bd64e604162503df}{gbuf}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_app_data_init_8c_a25030d99cac8ba95b504a0f7313c2ae7}{previous\+\_\+value}} =0x00000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file has the initialization api related to shared memory. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_app_data_init_8c_aa02d0ace1f241a43dcc8d6348549b95a}\index{AppDataInit.c@{AppDataInit.c}!DEFAULT\_BUF\_PATTERN@{DEFAULT\_BUF\_PATTERN}}
+\index{DEFAULT\_BUF\_PATTERN@{DEFAULT\_BUF\_PATTERN}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_BUF\_PATTERN}{DEFAULT\_BUF\_PATTERN}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_aa02d0ace1f241a43dcc8d6348549b95a} 
+\#define DEFAULT\+\_\+\+BUF\+\_\+\+PATTERN~0x\+AAAA5555}
+
+\Hypertarget{_app_data_init_8c_ad292464ae24bf46746530cb1d07a6e98}\index{AppDataInit.c@{AppDataInit.c}!DEFAULT\_BUF\_SIZE\_KB@{DEFAULT\_BUF\_SIZE\_KB}}
+\index{DEFAULT\_BUF\_SIZE\_KB@{DEFAULT\_BUF\_SIZE\_KB}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_BUF\_SIZE\_KB}{DEFAULT\_BUF\_SIZE\_KB}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ad292464ae24bf46746530cb1d07a6e98} 
+\#define DEFAULT\+\_\+\+BUF\+\_\+\+SIZE\+\_\+\+KB~(1024)      /\texorpdfstring{$\ast$}{*}  1MB \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_app_data_init_8c_ac4fd1a1764953056d6467fed53ae84e5}\index{AppDataInit.c@{AppDataInit.c}!DMA\_BUF\_PHYS\_IOC\_CONVERT@{DMA\_BUF\_PHYS\_IOC\_CONVERT}}
+\index{DMA\_BUF\_PHYS\_IOC\_CONVERT@{DMA\_BUF\_PHYS\_IOC\_CONVERT}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{DMA\_BUF\_PHYS\_IOC\_CONVERT}{DMA\_BUF\_PHYS\_IOC\_CONVERT}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ac4fd1a1764953056d6467fed53ae84e5} 
+\#define DMA\+\_\+\+BUF\+\_\+\+PHYS\+\_\+\+IOC\+\_\+\+CONVERT~\+\_\+\+IOWR(\mbox{\hyperlink{_app_data_init_8c_a8b1deb94146c4fac73e3e40800549706}{DMA\+\_\+\+BUF\+\_\+\+PHYS\+\_\+\+IOC\+\_\+\+MAGIC}}, 0, struct \mbox{\hyperlink{structdma__buf__phys__data}{dma\+\_\+buf\+\_\+phys\+\_\+data}})}
+
+DOC\+: DMA\+\_\+\+BUF\+\_\+\+PHYS\+\_\+\+IOC\+\_\+\+CONVERT -\/ Convert DMA-\/\+BUF to physical address
+
+Takes a \doxylink{structdma__buf__phys__data}{dma\+\_\+buf\+\_\+phys\+\_\+data} struct containing a fd for a physicaly contigous buffer. Pins this buffer and populates phys field with the CPU physical address. \Hypertarget{_app_data_init_8c_a8b1deb94146c4fac73e3e40800549706}\index{AppDataInit.c@{AppDataInit.c}!DMA\_BUF\_PHYS\_IOC\_MAGIC@{DMA\_BUF\_PHYS\_IOC\_MAGIC}}
+\index{DMA\_BUF\_PHYS\_IOC\_MAGIC@{DMA\_BUF\_PHYS\_IOC\_MAGIC}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{DMA\_BUF\_PHYS\_IOC\_MAGIC}{DMA\_BUF\_PHYS\_IOC\_MAGIC}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a8b1deb94146c4fac73e3e40800549706} 
+\#define DMA\+\_\+\+BUF\+\_\+\+PHYS\+\_\+\+IOC\+\_\+\+MAGIC~\textquotesingle{}D\textquotesingle{}}
+
+\Hypertarget{_app_data_init_8c_af0f9c0a655627b75bcdfedab31420cd0}\index{AppDataInit.c@{AppDataInit.c}!DMA\_HEAP\_RESERVED@{DMA\_HEAP\_RESERVED}}
+\index{DMA\_HEAP\_RESERVED@{DMA\_HEAP\_RESERVED}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{DMA\_HEAP\_RESERVED}{DMA\_HEAP\_RESERVED}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_af0f9c0a655627b75bcdfedab31420cd0} 
+\#define DMA\+\_\+\+HEAP\+\_\+\+RESERVED~"{}reserved"{}   /\texorpdfstring{$\ast$}{*} cma-\/reserved \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_app_data_init_8c_a3d81f921b0df6e01384ac371b9d70fde}\index{AppDataInit.c@{AppDataInit.c}!MAX\_BUF\_SIZE\_KB@{MAX\_BUF\_SIZE\_KB}}
+\index{MAX\_BUF\_SIZE\_KB@{MAX\_BUF\_SIZE\_KB}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUF\_SIZE\_KB}{MAX\_BUF\_SIZE\_KB}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a3d81f921b0df6e01384ac371b9d70fde} 
+\#define MAX\+\_\+\+BUF\+\_\+\+SIZE\+\_\+\+KB~(300 \texorpdfstring{$\ast$}{*} 1024) /\texorpdfstring{$\ast$}{*} 64KB/64MB To be cross checked\texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_app_data_init_8c_ab3be0641eb76161a48ed528e6eea2ac3}\index{AppDataInit.c@{AppDataInit.c}!NUM\_ITERATIONS@{NUM\_ITERATIONS}}
+\index{NUM\_ITERATIONS@{NUM\_ITERATIONS}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_ITERATIONS}{NUM\_ITERATIONS}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ab3be0641eb76161a48ed528e6eea2ac3} 
+\#define NUM\+\_\+\+ITERATIONS~1}
+
+\Hypertarget{_app_data_init_8c_a7be6ced5220d75bbaca18fa0bc90ac87}\index{AppDataInit.c@{AppDataInit.c}!REMOTE\_ENDPT@{REMOTE\_ENDPT}}
+\index{REMOTE\_ENDPT@{REMOTE\_ENDPT}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{REMOTE\_ENDPT}{REMOTE\_ENDPT}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a7be6ced5220d75bbaca18fa0bc90ac87} 
+\#define REMOTE\+\_\+\+ENDPT~16}
+
+\Hypertarget{_app_data_init_8c_a16e67aa18d42bbdb08ac9af1c8d0f4f9}\index{AppDataInit.c@{AppDataInit.c}!SHM\_SIZE@{SHM\_SIZE}}
+\index{SHM\_SIZE@{SHM\_SIZE}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{SHM\_SIZE}{SHM\_SIZE}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a16e67aa18d42bbdb08ac9af1c8d0f4f9} 
+\#define SHM\+\_\+\+SIZE~32768}
+
+\Hypertarget{_app_data_init_8c_a6fba0d7ecd0d3820d6949b3b50fa864f}\index{AppDataInit.c@{AppDataInit.c}!SHM\_STARTING\_BASE\_ADDR@{SHM\_STARTING\_BASE\_ADDR}}
+\index{SHM\_STARTING\_BASE\_ADDR@{SHM\_STARTING\_BASE\_ADDR}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{SHM\_STARTING\_BASE\_ADDR}{SHM\_STARTING\_BASE\_ADDR}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a6fba0d7ecd0d3820d6949b3b50fa864f} 
+\#define SHM\+\_\+\+STARTING\+\_\+\+BASE\+\_\+\+ADDR~0x\+A7000000}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_app_data_init_8c_ad09246453a4dabd919c7541484046a87}\index{AppDataInit.c@{AppDataInit.c}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ad09246453a4dabd919c7541484046a87} 
+struct \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(\+\_\+\+\_\+packed\+\_\+\+\_\+)}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_init_8c_aeba6c23aae53422bdf1062006227ade0}\index{AppDataInit.c@{AppDataInit.c}!buffer\_init@{buffer\_init}}
+\index{buffer\_init@{buffer\_init}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{buffer\_init()}{buffer\_init()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_aeba6c23aae53422bdf1062006227ade0} 
+void buffer\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{lbuf}{, }\item[{uint32\+\_\+t}]{pattern}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_init_8c_ad704115cd24d226c42b28b3b1e681d7a}\index{AppDataInit.c@{AppDataInit.c}!buffer\_validate@{buffer\_validate}}
+\index{buffer\_validate@{buffer\_validate}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{buffer\_validate()}{buffer\_validate()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ad704115cd24d226c42b28b3b1e681d7a} 
+int buffer\+\_\+validate (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{lbuf}{, }\item[{uint32\+\_\+t}]{pattern}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_init_8c_a31cb1113be3fef03981b400dfab4919a}\index{AppDataInit.c@{AppDataInit.c}!buffer\_validate\_r5f0\_0@{buffer\_validate\_r5f0\_0}}
+\index{buffer\_validate\_r5f0\_0@{buffer\_validate\_r5f0\_0}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{buffer\_validate\_r5f0\_0()}{buffer\_validate\_r5f0\_0()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a31cb1113be3fef03981b400dfab4919a} 
+int buffer\+\_\+validate\+\_\+r5f0\+\_\+0 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{lbuf}{, }\item[{uint32\+\_\+t}]{pattern}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_init_8c_ac71aba88cc1fd0e3f88a29995e6ea594}\index{AppDataInit.c@{AppDataInit.c}!dmabuf\_get\_phys@{dmabuf\_get\_phys}}
+\index{dmabuf\_get\_phys@{dmabuf\_get\_phys}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{dmabuf\_get\_phys()}{dmabuf\_get\_phys()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ac71aba88cc1fd0e3f88a29995e6ea594} 
+int dmabuf\+\_\+get\+\_\+phys (\begin{DoxyParamCaption}\item[{int}]{phys\+\_\+fd}{, }\item[{int}]{dma\+\_\+buf\+\_\+fd}{, }\item[{u\+\_\+int64\+\_\+t \texorpdfstring{$\ast$}{*}}]{phys\+\_\+addr}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_ac71aba88cc1fd0e3f88a29995e6ea594_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_a08e380e7af7b0eeafeff03a254731015}\index{AppDataInit.c@{AppDataInit.c}!dmabuf\_heap\_alloc@{dmabuf\_heap\_alloc}}
+\index{dmabuf\_heap\_alloc@{dmabuf\_heap\_alloc}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{dmabuf\_heap\_alloc()}{dmabuf\_heap\_alloc()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a08e380e7af7b0eeafeff03a254731015} 
+int dmabuf\+\_\+heap\+\_\+alloc (\begin{DoxyParamCaption}\item[{int}]{dma\+\_\+heap\+\_\+fd}{, }\item[{int}]{size}{, }\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{lbuf}{, }\item[{struct ipc\+\_\+buf \texorpdfstring{$\ast$}{*}}]{ibuf}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{_app_data_init_8c_a08e380e7af7b0eeafeff03a254731015_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_a08e380e7af7b0eeafeff03a254731015_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_a3d13dad35d9576866fa3fbe078c9e931}\index{AppDataInit.c@{AppDataInit.c}!dmabuf\_heap\_free@{dmabuf\_heap\_free}}
+\index{dmabuf\_heap\_free@{dmabuf\_heap\_free}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{dmabuf\_heap\_free()}{dmabuf\_heap\_free()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a3d13dad35d9576866fa3fbe078c9e931} 
+void dmabuf\+\_\+heap\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{lbuf}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_init_8c_a98d90b2a428c793a4ec9a748a7276736}\index{AppDataInit.c@{AppDataInit.c}!dmaheap\_alloc@{dmaheap\_alloc}}
+\index{dmaheap\_alloc@{dmaheap\_alloc}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{dmaheap\_alloc()}{dmaheap\_alloc()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a98d90b2a428c793a4ec9a748a7276736} 
+int dmaheap\+\_\+alloc (\begin{DoxyParamCaption}\item[{int}]{fd}{, }\item[{size\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_a98d90b2a428c793a4ec9a748a7276736_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_abd03986677f9e517f5559c36490951ed}\index{AppDataInit.c@{AppDataInit.c}!dmaheap\_open@{dmaheap\_open}}
+\index{dmaheap\_open@{dmaheap\_open}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{dmaheap\_open()}{dmaheap\_open()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_abd03986677f9e517f5559c36490951ed} 
+int dmaheap\+\_\+open (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{heap\+\_\+name}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_abd03986677f9e517f5559c36490951ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_a61b02bc2681a98a6e228d723dd625641}\index{AppDataInit.c@{AppDataInit.c}!heap\_init@{heap\_init}}
+\index{heap\_init@{heap\_init}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{heap\_init()}{heap\_init()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a61b02bc2681a98a6e228d723dd625641} 
+int heap\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_a61b02bc2681a98a6e228d723dd625641_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_a61b02bc2681a98a6e228d723dd625641_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_ac92a673771db92e7156490091aef7135}\index{AppDataInit.c@{AppDataInit.c}!init@{init}}
+\index{init@{init}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ac92a673771db92e7156490091aef7135} 
+int init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_ac92a673771db92e7156490091aef7135_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_ac92a673771db92e7156490091aef7135_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_afe667f1c61ab72a0423f199dee3906d6}\index{AppDataInit.c@{AppDataInit.c}!ipc\_receive\_message@{ipc\_receive\_message}}
+\index{ipc\_receive\_message@{ipc\_receive\_message}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{ipc\_receive\_message()}{ipc\_receive\_message()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_afe667f1c61ab72a0423f199dee3906d6} 
+uint8\+\_\+t ipc\+\_\+receive\+\_\+message (\begin{DoxyParamCaption}\item[{int}]{fd}{, }\item[{s\+\_\+ipcmsg\+\_\+packet \texorpdfstring{$\ast$}{*}}]{ipc}{, }\item[{int}]{timeout\+\_\+ms}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_afe667f1c61ab72a0423f199dee3906d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_a1f2d0c6114cf6cd97d18e5b2a15134c3}\index{AppDataInit.c@{AppDataInit.c}!ipc\_send\_message@{ipc\_send\_message}}
+\index{ipc\_send\_message@{ipc\_send\_message}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{ipc\_send\_message()}{ipc\_send\_message()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a1f2d0c6114cf6cd97d18e5b2a15134c3} 
+uint8\+\_\+t ipc\+\_\+send\+\_\+message (\begin{DoxyParamCaption}\item[{int}]{fd}{, }\item[{s\+\_\+ipcmsg\+\_\+packet \texorpdfstring{$\ast$}{*}}]{ipc}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_a1f2d0c6114cf6cd97d18e5b2a15134c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_a2c891988aba3928991563510a0a143d8}\index{AppDataInit.c@{AppDataInit.c}!readDiscoveryData@{readDiscoveryData}}
+\index{readDiscoveryData@{readDiscoveryData}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{readDiscoveryData()}{readDiscoveryData()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a2c891988aba3928991563510a0a143d8} 
+uint8\+\_\+t read\+Discovery\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_init_8c_ae512dcee3f48f317872617e5f4559b19}\index{AppDataInit.c@{AppDataInit.c}!readSharedMemoryData@{readSharedMemoryData}}
+\index{readSharedMemoryData@{readSharedMemoryData}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{readSharedMemoryData()}{readSharedMemoryData()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ae512dcee3f48f317872617e5f4559b19} 
+uint8\+\_\+t read\+Shared\+Memory\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{_app_data_init_8c_ae512dcee3f48f317872617e5f4559b19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_ab626ee9878bdad1df5d26d5e215c1c7e}\index{AppDataInit.c@{AppDataInit.c}!readSharedMemoryData1@{readSharedMemoryData1}}
+\index{readSharedMemoryData1@{readSharedMemoryData1}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{readSharedMemoryData1()}{readSharedMemoryData1()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ab626ee9878bdad1df5d26d5e215c1c7e} 
+uint8\+\_\+t read\+Shared\+Memory\+Data1 (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{, }\item[{uint32\+\_\+t}]{address}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_init_8c_a9e36d95079f670e69afb0e57a74c1bbd}\index{AppDataInit.c@{AppDataInit.c}!rpmsgIpcDeinit@{rpmsgIpcDeinit}}
+\index{rpmsgIpcDeinit@{rpmsgIpcDeinit}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{rpmsgIpcDeinit()}{rpmsgIpcDeinit()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a9e36d95079f670e69afb0e57a74c1bbd} 
+int rpmsg\+Ipc\+Deinit (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_app_data_init_8c_a58b73e2d9979a6b0af8f0bd6d599f44b}\index{AppDataInit.c@{AppDataInit.c}!rpmsgIpcInit@{rpmsgIpcInit}}
+\index{rpmsgIpcInit@{rpmsgIpcInit}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{rpmsgIpcInit()}{rpmsgIpcInit()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a58b73e2d9979a6b0af8f0bd6d599f44b} 
+int rpmsg\+Ipc\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_a58b73e2d9979a6b0af8f0bd6d599f44b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_app_data_init_8c_a2383a3641c7a989a9d6c99be17bf45c8}\index{AppDataInit.c@{AppDataInit.c}!writeSharedMemoryData@{writeSharedMemoryData}}
+\index{writeSharedMemoryData@{writeSharedMemoryData}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{writeSharedMemoryData()}{writeSharedMemoryData()}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a2383a3641c7a989a9d6c99be17bf45c8} 
+uint8\+\_\+t write\+Shared\+Memory\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{addr}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_app_data_init_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_app_data_init_8c_a557db9b79c0309f594ae169b6c9e6471}\index{AppDataInit.c@{AppDataInit.c}!dma\_heap\_fd@{dma\_heap\_fd}}
+\index{dma\_heap\_fd@{dma\_heap\_fd}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{dma\_heap\_fd}{dma\_heap\_fd}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a557db9b79c0309f594ae169b6c9e6471} 
+int dma\+\_\+heap\+\_\+fd}
+
+\Hypertarget{_app_data_init_8c_a274502dbc1ca0716301973df9a2ebb62}\index{AppDataInit.c@{AppDataInit.c}!g\_remote\_rpmsg@{g\_remote\_rpmsg}}
+\index{g\_remote\_rpmsg@{g\_remote\_rpmsg}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{g\_remote\_rpmsg}{g\_remote\_rpmsg}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a274502dbc1ca0716301973df9a2ebb62} 
+rpmsg\+\_\+char\+\_\+dev\+\_\+t\texorpdfstring{$\ast$}{*} g\+\_\+remote\+\_\+rpmsg}
+
+\Hypertarget{_app_data_init_8c_ad9088d5017838792bd64e604162503df}\index{AppDataInit.c@{AppDataInit.c}!gbuf@{gbuf}}
+\index{gbuf@{gbuf}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{gbuf}{gbuf}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_ad9088d5017838792bd64e604162503df} 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} gbuf}
+
+\Hypertarget{_app_data_init_8c_a25030d99cac8ba95b504a0f7313c2ae7}\index{AppDataInit.c@{AppDataInit.c}!previous\_value@{previous\_value}}
+\index{previous\_value@{previous\_value}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{previous\_value}{previous\_value}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a25030d99cac8ba95b504a0f7313c2ae7} 
+uint32\+\_\+t previous\+\_\+value =0x00000000}
+
+\Hypertarget{_app_data_init_8c_a84b92fc3b5d1822db07d698a854bd3a8}\index{AppDataInit.c@{AppDataInit.c}!task1\_rcdev@{task1\_rcdev}}
+\index{task1\_rcdev@{task1\_rcdev}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{task1\_rcdev}{task1\_rcdev}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a84b92fc3b5d1822db07d698a854bd3a8} 
+rpmsg\+\_\+char\+\_\+dev\+\_\+t\texorpdfstring{$\ast$}{*} task1\+\_\+rcdev}
+
+\Hypertarget{_app_data_init_8c_a36a44375280a8329d101c2f897bc2dda}\index{AppDataInit.c@{AppDataInit.c}!task2\_rcdev@{task2\_rcdev}}
+\index{task2\_rcdev@{task2\_rcdev}!AppDataInit.c@{AppDataInit.c}}
+\doxysubsubsection{\texorpdfstring{task2\_rcdev}{task2\_rcdev}}
+{\footnotesize\ttfamily \label{_app_data_init_8c_a36a44375280a8329d101c2f897bc2dda} 
+rpmsg\+\_\+char\+\_\+dev\+\_\+t\texorpdfstring{$\ast$}{*} task2\+\_\+rcdev}
+

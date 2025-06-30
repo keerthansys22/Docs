@@ -1,0 +1,686 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__digital_input_output_api_8c" xml:lang="en-US">
+<title>API_Source/IoModulesApiSource.c/DigitalInputOutputApi.c File Reference</title>
+<indexterm><primary>API_Source/IoModulesApiSource.c/DigitalInputOutputApi.c</primary></indexterm>
+<para>
+
+<para>This file contains the source code of the digital input output module API. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for DigitalInputOutputApi.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link>&#160;&#160;&#160;0x00000000</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1afd03339ebebe3f3c2256d762f78097a0">DIO_MOD_IDENT_DEVICE_TYPE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a25dd0393c30fe0d8d1d5f6d034c69692">DIO_MOD_IDENT_VENDOR_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 4)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a8034bf2cf2253fc8a3c25f62774ccf43">DIO_MOD_IDENT_DEVICE_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 8)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a9f33df8310130a41589e812252b93271">DIO_MOD_IDENT_VENDOR_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 12)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a7b59ed007df16e13820705c96d2897b8">DIO_MOD_IDENT_DEVICE_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 28)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a8ae2aa33db14b403613cbb606fb6aca4">DIO_MOD_IDENT_VARIANT_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 44)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a49f1f2a5fbd53e5613317cec30d48d0e">DIO_MOD_IDENT_HW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 60)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a88c946986d79d33c80e830d119363324">DIO_MOD_IDENT_SERIAL_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 76)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a63d0729e9603fbab81b3abf5ee5617ca">DIO_MOD_IDENT_SW_PART_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 92)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a33372e9db7511cd6a1bca6722886c39e">DIO_MOD_IDENT_SW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 108)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a93aa275e7d580bae8a0e356f448dfa47">DIO_MOD_DI_DEBOUNCE_DUR_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 124)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1af5e25a976823d1dd9fbfa9c37d1d75e7">DIO_MOD_DI_HOLD_DUR_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 132)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a9d9645bc645bb59446859ba3f31ba52a">DIO_MOD_DI_LOGIC_INVERT_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 140)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a88473e8ce0c22417ac57d2109e68cdcb">DIO_MOD_DI_FORCE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 141)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a891e614b965ed2320fb7f7532512f947">DIO_MOD_DI_FORCE_MODE_STATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 142)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a55445921e93f3834dbb5aba4687bdcd1">DIO_MOD_DI_INT_BOTH_EDGES_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 143)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1aa4b0c7baeea6ec165fac66a3f8f82821">DIO_MOD_DI_INT_RISING_EDGES_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 144)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1aae97a8c7c27a325132e75ae4b82fbcfd">DIO_MOD_DI_INT_FALLING_EDGES_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 145)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a75364937fc00f413f292db837c654ba8">DIO_MOD_DI_INPUT_TYPE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 146)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1aaa23a65d66c1c7967737d3a56ef566a0">DIO_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 148)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a26a2ede83c7afc9bbb541a735bf1f0bc">DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_EN</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 149)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a0711117f4bb96fd7f2ad364e87da28d0">DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_RECVY_DIAG_EN</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 150)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1af179d92d545f3e07854ce88c64629aee">DIO_MOD_DI_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 151)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1aa00a696f931707fbbb63e7b3051b253e">DIO_MOD_DO_BUS_FAULT_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 159)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a7fd4b06d3c9ecbd1990efaf97d37aa45">DIO_MOD_DO_BUS_FAULT_STATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 160)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1ad52ab966ff99b3ebd7f700a3613bfe4e">DIO_MOD_DO_FORCE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 161)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1acffd75bf5f093c8a9b7c2920d0aa7c00">DIO_MOD_DO_FORCE_MODE_STATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 162)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1aa5d16030b73758905ee1bb5579a6c0a0">DIO_MOD_DO_IDLE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 163)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a6830a4369f894267bb133d60a93decd1">DIO_MOD_DO_IDLE_MODE_STATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 164)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1adcd749a7d2f3de98eeb9c5489efcb588">DIO_MOD_DO_MODULE_IDLE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 165)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1af6480e1fb41b43f1321aa64b6b7aeecc">DIO_MOD_DO_OUTPUT_SHORT_CKT_RECOVERY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 166)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a611fafd29ed437908d0a30798a13ab7b">DIO_MOD_DO_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 167)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1af3ad9fad44746352f19bc9c1d12f5025">DIO_MOD_VA_VB_VOLTAGE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 175)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a5a037434e6306ce8d134e9948a02a6df">DIO_MOD_POST_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 183)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a4076c0c155e46a0f012b8f22030de107">DIO_MOD_OPERATION_TIME_HR_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 187)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1ade92a806c945f2e78b51e935b920b4ac">DIO_MOD_OPERATION_TIME_MIN_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 191)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a0c8d1b0a257fca87352a3db4af1ca280">DIO_MOD_MIN_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 193)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1addaad9ca9070ddf39a636ec0d46233b7">DIO_MOD_MAX_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 195)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1ac7cea7e09ffd5882dfb2c2ac67939917">DIO_MOD_MEASURED_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 197)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1aa06d2529ac06cb73fa949b1bc969016e">DIO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 199)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1ae5e07e7a366f6d10156da97f5e35584e">DIO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 200)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a67b1924b95aea09218124952eb2bdacb">DIO_MOD_MEMORY_LIFE_CYCLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 201)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a79543288fb0ab99c1603d38072b69f6c">DIO_MOD_MODULE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 205)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a338f08981fa5ab022ccb955a0536c303">DIO_MOD_DI_CHANNELS_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 206)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a2fdaeb6f530382c4dd62fa26e2a46613">DIO_MOD_DO_CHANNELS_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 207)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1afacf9ca589e0d5b086a8c55599e17eb1">DIO_MOD_EDS_VERSION_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 208)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_output_api_8c_1a69058eb7afe7c96d021cec6e8250a326">DIO_MOD_EDS_VERSION_DATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 224)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="__digital_input_output_api_8c_1aab64cdfe20fa84db4be92c96380d60a2">getIOServiceDataInstanceAddress</link> (uint16_t handler)</para>
+
+<para>: This is to get the address of the service data instance </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__digital_input_output_api_8c_1a91f3bb33371373e3e9b48b2290355551">getIOProcessDataInstanceAddress</link> (uint16_t handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__digital_input_output_api_8c_1a7a8432d00349ffb6c7bddc226122f26c">getDIOModuleProcessData</link> (uint16_t dio_device_handler, diomodule_processinfo *diomod_processdata)</para>
+
+<para>Retrieves the process data for a specified DIO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__digital_input_output_api_8c_1a5c4ce5661882b136ac3598f54658eb57">setDIOModuleProcessData</link> (uint16_t dio_device_handler, uint8_t data)</para>
+
+<para>Sets the digital output for a specified DIO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__digital_input_output_api_8c_1a5f9a0d3206f152c993e4ca6cd2e1920a">getDigitalInputOutputModuleServiceParam</link> (uint16_t digital_inpoutput_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter data for a specified DIO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__digital_input_output_api_8c_1ab545c66f79961369da1e6fc58a817ad7">setDigitalInputOutputModuleServiceParam</link> (uint16_t digital_inpoutput_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified DIO module. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__digital_input_output_api_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file contains the source code of the digital input output module API. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__digital_input_output_api_8c_1aa06d2529ac06cb73fa949b1bc969016e"/><section>
+    <title>DIO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</title>
+<indexterm><primary>DIO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 199)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1ae5e07e7a366f6d10156da97f5e35584e"/><section>
+    <title>DIO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</title>
+<indexterm><primary>DIO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 200)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a338f08981fa5ab022ccb955a0536c303"/><section>
+    <title>DIO_MOD_DI_CHANNELS_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_CHANNELS_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_CHANNELS_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_CHANNELS_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 206)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a93aa275e7d580bae8a0e356f448dfa47"/><section>
+    <title>DIO_MOD_DI_DEBOUNCE_DUR_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_DEBOUNCE_DUR_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_DEBOUNCE_DUR_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_DEBOUNCE_DUR_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 124)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1af179d92d545f3e07854ce88c64629aee"/><section>
+    <title>DIO_MOD_DI_ERR_STATUS_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_ERR_STATUS_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 151)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a88473e8ce0c22417ac57d2109e68cdcb"/><section>
+    <title>DIO_MOD_DI_FORCE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_FORCE_MODE_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_FORCE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_FORCE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 141)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a891e614b965ed2320fb7f7532512f947"/><section>
+    <title>DIO_MOD_DI_FORCE_MODE_STATE_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_FORCE_MODE_STATE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_FORCE_MODE_STATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_FORCE_MODE_STATE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 142)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1af5e25a976823d1dd9fbfa9c37d1d75e7"/><section>
+    <title>DIO_MOD_DI_HOLD_DUR_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_HOLD_DUR_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_HOLD_DUR_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_HOLD_DUR_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 132)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a75364937fc00f413f292db837c654ba8"/><section>
+    <title>DIO_MOD_DI_INPUT_TYPE_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_INPUT_TYPE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_INPUT_TYPE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_INPUT_TYPE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 146)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a55445921e93f3834dbb5aba4687bdcd1"/><section>
+    <title>DIO_MOD_DI_INT_BOTH_EDGES_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_INT_BOTH_EDGES_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_INT_BOTH_EDGES_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_INT_BOTH_EDGES_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 143)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1aae97a8c7c27a325132e75ae4b82fbcfd"/><section>
+    <title>DIO_MOD_DI_INT_FALLING_EDGES_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_INT_FALLING_EDGES_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_INT_FALLING_EDGES_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_INT_FALLING_EDGES_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 145)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1aa4b0c7baeea6ec165fac66a3f8f82821"/><section>
+    <title>DIO_MOD_DI_INT_RISING_EDGES_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_INT_RISING_EDGES_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_INT_RISING_EDGES_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_INT_RISING_EDGES_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 144)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a9d9645bc645bb59446859ba3f31ba52a"/><section>
+    <title>DIO_MOD_DI_LOGIC_INVERT_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_LOGIC_INVERT_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_LOGIC_INVERT_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_LOGIC_INVERT_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 140)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1aaa23a65d66c1c7967737d3a56ef566a0"/><section>
+    <title>DIO_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 148)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a26a2ede83c7afc9bbb541a735bf1f0bc"/><section>
+    <title>DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_EN</title>
+<indexterm><primary>DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_EN</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_EN</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_EN&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 149)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a0711117f4bb96fd7f2ad364e87da28d0"/><section>
+    <title>DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_RECVY_DIAG_EN</title>
+<indexterm><primary>DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_RECVY_DIAG_EN</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_RECVY_DIAG_EN</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_RECVY_DIAG_EN&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 150)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1aa00a696f931707fbbb63e7b3051b253e"/><section>
+    <title>DIO_MOD_DO_BUS_FAULT_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_BUS_FAULT_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_BUS_FAULT_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_BUS_FAULT_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 159)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a7fd4b06d3c9ecbd1990efaf97d37aa45"/><section>
+    <title>DIO_MOD_DO_BUS_FAULT_STATE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_BUS_FAULT_STATE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_BUS_FAULT_STATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_BUS_FAULT_STATE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 160)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a2fdaeb6f530382c4dd62fa26e2a46613"/><section>
+    <title>DIO_MOD_DO_CHANNELS_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_CHANNELS_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_CHANNELS_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_CHANNELS_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 207)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a611fafd29ed437908d0a30798a13ab7b"/><section>
+    <title>DIO_MOD_DO_ERR_STATUS_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_ERR_STATUS_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 167)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1ad52ab966ff99b3ebd7f700a3613bfe4e"/><section>
+    <title>DIO_MOD_DO_FORCE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_FORCE_MODE_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_FORCE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_FORCE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 161)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1acffd75bf5f093c8a9b7c2920d0aa7c00"/><section>
+    <title>DIO_MOD_DO_FORCE_MODE_STATE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_FORCE_MODE_STATE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_FORCE_MODE_STATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_FORCE_MODE_STATE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 162)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1aa5d16030b73758905ee1bb5579a6c0a0"/><section>
+    <title>DIO_MOD_DO_IDLE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_IDLE_MODE_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_IDLE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_IDLE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 163)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a6830a4369f894267bb133d60a93decd1"/><section>
+    <title>DIO_MOD_DO_IDLE_MODE_STATE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_IDLE_MODE_STATE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_IDLE_MODE_STATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_IDLE_MODE_STATE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 164)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1adcd749a7d2f3de98eeb9c5489efcb588"/><section>
+    <title>DIO_MOD_DO_MODULE_IDLE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_MODULE_IDLE_MODE_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_MODULE_IDLE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_MODULE_IDLE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 165)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1af6480e1fb41b43f1321aa64b6b7aeecc"/><section>
+    <title>DIO_MOD_DO_OUTPUT_SHORT_CKT_RECOVERY_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_DO_OUTPUT_SHORT_CKT_RECOVERY_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_DO_OUTPUT_SHORT_CKT_RECOVERY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_DO_OUTPUT_SHORT_CKT_RECOVERY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 166)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a69058eb7afe7c96d021cec6e8250a326"/><section>
+    <title>DIO_MOD_EDS_VERSION_DATE_ADDR</title>
+<indexterm><primary>DIO_MOD_EDS_VERSION_DATE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_EDS_VERSION_DATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_EDS_VERSION_DATE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 224)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1afacf9ca589e0d5b086a8c55599e17eb1"/><section>
+    <title>DIO_MOD_EDS_VERSION_NO_ADDR</title>
+<indexterm><primary>DIO_MOD_EDS_VERSION_NO_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_EDS_VERSION_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_EDS_VERSION_NO_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 208)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a8034bf2cf2253fc8a3c25f62774ccf43"/><section>
+    <title>DIO_MOD_IDENT_DEVICE_ID_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_DEVICE_ID_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_DEVICE_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_DEVICE_ID_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 8)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a7b59ed007df16e13820705c96d2897b8"/><section>
+    <title>DIO_MOD_IDENT_DEVICE_NAME_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_DEVICE_NAME_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_DEVICE_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_DEVICE_NAME_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 28)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1afd03339ebebe3f3c2256d762f78097a0"/><section>
+    <title>DIO_MOD_IDENT_DEVICE_TYPE_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_DEVICE_TYPE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_DEVICE_TYPE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_DEVICE_TYPE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a49f1f2a5fbd53e5613317cec30d48d0e"/><section>
+    <title>DIO_MOD_IDENT_HW_REV_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_HW_REV_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_HW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_HW_REV_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 60)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4"/><section>
+    <title>DIO_MOD_IDENT_INFO_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_INFO_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_INFO_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_INFO_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a88c946986d79d33c80e830d119363324"/><section>
+    <title>DIO_MOD_IDENT_SERIAL_NO_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_SERIAL_NO_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_SERIAL_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_SERIAL_NO_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 76)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a63d0729e9603fbab81b3abf5ee5617ca"/><section>
+    <title>DIO_MOD_IDENT_SW_PART_NO_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_SW_PART_NO_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_SW_PART_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_SW_PART_NO_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 92)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a33372e9db7511cd6a1bca6722886c39e"/><section>
+    <title>DIO_MOD_IDENT_SW_REV_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_SW_REV_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_SW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_SW_REV_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 108)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a8ae2aa33db14b403613cbb606fb6aca4"/><section>
+    <title>DIO_MOD_IDENT_VARIANT_ID_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_VARIANT_ID_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_VARIANT_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_VARIANT_ID_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 44)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a25dd0393c30fe0d8d1d5f6d034c69692"/><section>
+    <title>DIO_MOD_IDENT_VENDOR_ID_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_VENDOR_ID_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_VENDOR_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_VENDOR_ID_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 4)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a9f33df8310130a41589e812252b93271"/><section>
+    <title>DIO_MOD_IDENT_VENDOR_NAME_ADDR</title>
+<indexterm><primary>DIO_MOD_IDENT_VENDOR_NAME_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_IDENT_VENDOR_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_IDENT_VENDOR_NAME_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a0ab6db671d06dccd9d38fe15f8850fa4">DIO_MOD_IDENT_INFO_ADDR</link> + 12)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1addaad9ca9070ddf39a636ec0d46233b7"/><section>
+    <title>DIO_MOD_MAX_TEMPERATURE_ADDR</title>
+<indexterm><primary>DIO_MOD_MAX_TEMPERATURE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_MAX_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_MAX_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 195)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1ac7cea7e09ffd5882dfb2c2ac67939917"/><section>
+    <title>DIO_MOD_MEASURED_TEMPERATURE_ADDR</title>
+<indexterm><primary>DIO_MOD_MEASURED_TEMPERATURE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_MEASURED_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_MEASURED_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 197)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a67b1924b95aea09218124952eb2bdacb"/><section>
+    <title>DIO_MOD_MEMORY_LIFE_CYCLE_ADDR</title>
+<indexterm><primary>DIO_MOD_MEMORY_LIFE_CYCLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_MEMORY_LIFE_CYCLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_MEMORY_LIFE_CYCLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 201)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a0c8d1b0a257fca87352a3db4af1ca280"/><section>
+    <title>DIO_MOD_MIN_TEMPERATURE_ADDR</title>
+<indexterm><primary>DIO_MOD_MIN_TEMPERATURE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_MIN_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_MIN_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 193)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a79543288fb0ab99c1603d38072b69f6c"/><section>
+    <title>DIO_MOD_MODULE_ENABLE_ADDR</title>
+<indexterm><primary>DIO_MOD_MODULE_ENABLE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_MODULE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_MODULE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 205)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a4076c0c155e46a0f012b8f22030de107"/><section>
+    <title>DIO_MOD_OPERATION_TIME_HR_ADDR</title>
+<indexterm><primary>DIO_MOD_OPERATION_TIME_HR_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_OPERATION_TIME_HR_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_OPERATION_TIME_HR_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 187)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1ade92a806c945f2e78b51e935b920b4ac"/><section>
+    <title>DIO_MOD_OPERATION_TIME_MIN_ADDR</title>
+<indexterm><primary>DIO_MOD_OPERATION_TIME_MIN_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_OPERATION_TIME_MIN_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_OPERATION_TIME_MIN_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 191)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a5a037434e6306ce8d134e9948a02a6df"/><section>
+    <title>DIO_MOD_POST_ERR_STATUS_ADDR</title>
+<indexterm><primary>DIO_MOD_POST_ERR_STATUS_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_POST_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_POST_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 183)</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142"/><section>
+    <title>DIO_MOD_SERVICE_DATA_ADDR</title>
+<indexterm><primary>DIO_MOD_SERVICE_DATA_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_SERVICE_DATA_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_SERVICE_DATA_ADDR&#160;&#160;&#160;0x00000000</computeroutput></para></section>
+<anchor xml:id="__digital_input_output_api_8c_1af3ad9fad44746352f19bc9c1d12f5025"/><section>
+    <title>DIO_MOD_VA_VB_VOLTAGE_ADDR</title>
+<indexterm><primary>DIO_MOD_VA_VB_VOLTAGE_ADDR</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>DIO_MOD_VA_VB_VOLTAGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DIO_MOD_VA_VB_VOLTAGE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_output_api_8c_1a67a1b6ea4e18aa3b254abf6740e1a142">DIO_MOD_SERVICE_DATA_ADDR</link> + 175)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__digital_input_output_api_8c_1a5f9a0d3206f152c993e4ca6cd2e1920a"/><section>
+    <title>getDigitalInputOutputModuleServiceParam()</title>
+<indexterm><primary>getDigitalInputOutputModuleServiceParam</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>getDigitalInputOutputModuleServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t getDigitalInputOutputModuleServiceParam (uint16_t digital_inpoutput_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter data for a specified DIO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>digital_inpoutput_handler</entry><entry>
+<para>The handler for the DIO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>dimod_processdata</entry><entry>
+<para>Pointer to the <computeroutput>dimodule_processinfo</computeroutput> structure to store process data.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_a5f9a0d3206f152c993e4ca6cd2e1920a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_a5f9a0d3206f152c993e4ca6cd2e1920a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_output_api_8c_1a7a8432d00349ffb6c7bddc226122f26c"/><section>
+    <title>getDIOModuleProcessData()</title>
+<indexterm><primary>getDIOModuleProcessData</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>getDIOModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getDIOModuleProcessData (uint16_t dio_device_handler, diomodule_processinfo * diomod_processdata)</computeroutput></para><para>
+
+<para>Retrieves the process data for a specified DIO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>dio_device_handler</entry><entry>
+<para>The handler for the DIO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>diomod_processdata</entry><entry>
+<para>Pointer to the <computeroutput>diomodule_processinfo</computeroutput> structure to store process data.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_a7a8432d00349ffb6c7bddc226122f26c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_a7a8432d00349ffb6c7bddc226122f26c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_output_api_8c_1a91f3bb33371373e3e9b48b2290355551"/><section>
+    <title>getIOProcessDataInstanceAddress()</title>
+<indexterm><primary>getIOProcessDataInstanceAddress</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>getIOProcessDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOProcessDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para>
+<para>@breif : This is to get the address of of the process data instance </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_a91f3bb33371373e3e9b48b2290355551_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_output_api_8c_1aab64cdfe20fa84db4be92c96380d60a2"/><section>
+    <title>getIOServiceDataInstanceAddress()</title>
+<indexterm><primary>getIOServiceDataInstanceAddress</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>getIOServiceDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOServiceDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>: This is to get the address of the service data instance </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_output_api_8c_1ab545c66f79961369da1e6fc58a817ad7"/><section>
+    <title>setDigitalInputOutputModuleServiceParam()</title>
+<indexterm><primary>setDigitalInputOutputModuleServiceParam</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>setDigitalInputOutputModuleServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t setDigitalInputOutputModuleServiceParam (uint16_t digital_inpoutput_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified DIO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>digital_inpoutput_handler</entry><entry>
+<para>The handler for the DIO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. //Refer to the enumeration <computeroutput>e_io_servicedata_parameter_name</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_ab545c66f79961369da1e6fc58a817ad7_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_ab545c66f79961369da1e6fc58a817ad7_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_output_api_8c_1a5c4ce5661882b136ac3598f54658eb57"/><section>
+    <title>setDIOModuleProcessData()</title>
+<indexterm><primary>setDIOModuleProcessData</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>setDIOModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t setDIOModuleProcessData (uint16_t dio_device_handler, uint8_t data)</computeroutput></para><para>
+
+<para>Sets the digital output for a specified DIO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>dio_device_handler</entry><entry>
+<para>The handler for the DO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Value of the data to be set</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_output_api_8c_a5c4ce5661882b136ac3598f54658eb57_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__digital_input_output_api_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>DigitalInputOutputApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputOutputApi.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,7 @@
+<map id="clearwarningfault" name="clearwarningfault">
+<area shape="rect" id="Node000001" title="This API is to clear the warning and fault bits of the modules @Note : This API can clear particular ..." alt="" coords="5,31,123,57"/>
+<area shape="rect" id="Node000002" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title=" " alt="" coords="171,5,316,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,33,155,28,156,34,124,38"/>
+<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title=" " alt="" coords="177,56,310,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,50,162,55,161,60,123,55"/>
+</map>

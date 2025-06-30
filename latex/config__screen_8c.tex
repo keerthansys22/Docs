@@ -1,0 +1,379 @@
+\doxysection{GUI/\+Screens/config\+\_\+screen.c File Reference}
+\hypertarget{config__screen_8c}{}\label{config__screen_8c}\index{GUI/Screens/config\_screen.c@{GUI/Screens/config\_screen.c}}
+
+
+Source that displays configuration (sub-\/menu) (ip\+\_\+address\+\_\+configuration) screen.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for config\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{config__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{config__screen_8c_a98c37bf58f04cc93e36ff7902151475e}{config\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize config screen styles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{config__screen_8c_aa842831f606b324fb3de80b157c7248d}{disp\+\_\+mod\+\_\+config\+\_\+screen}} (int \mbox{\hyperlink{lvgl__gui_8c_abc2ec52db269f87c1cbb39ffe462a113}{config\+\_\+index}}, int \mbox{\hyperlink{lvgl__gui_8c_a688b9f32cd181edb753620a8117bef1c}{ip\+\_\+buf1}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{lvgl__gui_8c_a234eb967321f3645e5cc5633c18db915}{ip\+\_\+buf2}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{lvgl__gui_8c_a2a9e882327ae7a22148096d9fe042068}{upgrade\+\_\+index}})
+\begin{DoxyCompactList}\small\item\em Function to display config screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{config__screen_8c_a9730ce850a975e6a1cf4712cace1ad88}{disp\+\_\+mod\+\_\+upgrade\+\_\+screen}} (int \mbox{\hyperlink{lvgl__gui_8c_a2a9e882327ae7a22148096d9fe042068}{upgrade\+\_\+index}}, int \mbox{\hyperlink{lvgl__gui_8c_a688b9f32cd181edb753620a8117bef1c}{ip\+\_\+buf1}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{lvgl__gui_8c_a234eb967321f3645e5cc5633c18db915}{ip\+\_\+buf2}}\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function to display upgrade screen inside config screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{config__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113}{Incrementip1}} (int \mbox{\hyperlink{lvgl__gui_8c_a688b9f32cd181edb753620a8117bef1c}{ip\+\_\+buf1}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{lvgl__gui_8c_a30fe57633e1e0a4d54c17eafd2cb92aa}{octet1}})
+\begin{DoxyCompactList}\small\item\em Function to display caret on config screen -\/\texorpdfstring{$>$}{>} IP Octet1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{config__screen_8c_a0bb5911360ef0cddb25e395831649d96}{Incrementip2}} (int \mbox{\hyperlink{lvgl__gui_8c_a234eb967321f3645e5cc5633c18db915}{ip\+\_\+buf2}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{lvgl__gui_8c_a2a4166abc42c90a7cee7efc0c4e9c6cb}{octet2}})
+\begin{DoxyCompactList}\small\item\em Function to display caret on config screen -\/\texorpdfstring{$>$}{>} IP Octet2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{config__screen_8c_a951a5e11d0f3bb0dd553cc7a6abaa9f3}{config\+\_\+upgrade\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize config screen upgrade styles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{config__screen_8c_a171bd087fd88267f8df70214d756df4a}{common\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_aa151211f1d5a331a1dc9a8bff870c259}{back\+\_\+title\+\_\+config}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_aeeee522cb98f5bc17581471b164e7c43}{ip1\+\_\+title}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a06f83689868f529fbe40a5aadf4cd9f7}{ip1\+\_\+value}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a2e1c6abf493c71414e9255434e39e1fd}{ip2\+\_\+title}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_aaf4fb2a6cfeb4487f4f574b4641a74a2}{ip2\+\_\+value}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_af31f7a5b615478ae835b6b73f265c952}{upgrade\+\_\+title}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_acefaab976cd297cf995a3f7d624eb3bd}{coming\+\_\+title}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a6ed9e2340cb10e462365cc3967df5a7c}{ip1\+\_\+value1}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a3afe082aa21b7915fb17bf5389fa82eb}{ip1\+\_\+value2}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a572b36846803aef9c6e2e22d1b40bf32}{ip1\+\_\+value3}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a6855d55e87dcddbcfd35d6c80b4a8e69}{ip2\+\_\+value1}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_afd394101df35b22cb8060c830e76c8cc}{ip2\+\_\+value2}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_ab928b48c31c71648ffbfecd91096c833}{ip2\+\_\+value3}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a03f5443cbefd191326411d74eb4588f3}{oct1\+\_\+val1}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_ae8beda753f7f2fd62a249ba8316fa69b}{oct1\+\_\+val2}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_aafe8a758f775737f2e55de6c1aadb025}{oct1\+\_\+val3}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a25cd58d40e4edbd8f242009cb51ab0ea}{oct2\+\_\+val1}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_a3d03226eafbcff8bbfa5106f84057513}{oct2\+\_\+val2}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{config__screen_8c_af8db8accfd4bc7511d75d92ba7d064f3}{oct2\+\_\+val3}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays configuration (sub-\/menu) (ip\+\_\+address\+\_\+configuration) screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{config__screen_8c_a171bd087fd88267f8df70214d756df4a}\index{config\_screen.c@{config\_screen.c}!common\_label\_creation@{common\_label\_creation}}
+\index{common\_label\_creation@{common\_label\_creation}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{common\_label\_creation()}{common\_label\_creation()}}
+{\footnotesize\ttfamily \label{config__screen_8c_a171bd087fd88267f8df70214d756df4a} 
+void common\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{config__screen_8c_a98c37bf58f04cc93e36ff7902151475e}\index{config\_screen.c@{config\_screen.c}!config\_style@{config\_style}}
+\index{config\_style@{config\_style}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{config\_style()}{config\_style()}}
+{\footnotesize\ttfamily \label{config__screen_8c_a98c37bf58f04cc93e36ff7902151475e} 
+void config\+\_\+style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize config screen styles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_a98c37bf58f04cc93e36ff7902151475e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{config__screen_8c_a951a5e11d0f3bb0dd553cc7a6abaa9f3}\index{config\_screen.c@{config\_screen.c}!config\_upgrade\_style@{config\_upgrade\_style}}
+\index{config\_upgrade\_style@{config\_upgrade\_style}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{config\_upgrade\_style()}{config\_upgrade\_style()}}
+{\footnotesize\ttfamily \label{config__screen_8c_a951a5e11d0f3bb0dd553cc7a6abaa9f3} 
+void config\+\_\+upgrade\+\_\+style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize config screen upgrade styles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_a951a5e11d0f3bb0dd553cc7a6abaa9f3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{config__screen_8c_aa842831f606b324fb3de80b157c7248d}\index{config\_screen.c@{config\_screen.c}!disp\_mod\_config\_screen@{disp\_mod\_config\_screen}}
+\index{disp\_mod\_config\_screen@{disp\_mod\_config\_screen}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_config\_screen()}{disp\_mod\_config\_screen()}}
+{\footnotesize\ttfamily \label{config__screen_8c_aa842831f606b324fb3de80b157c7248d} 
+void disp\+\_\+mod\+\_\+config\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{config\+\_\+index}{, }\item[{int}]{ip\+\_\+buf1}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{ip\+\_\+buf2}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{upgrade\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Function to display config screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+\_\+index} & \+: represents line number, ip\+\_\+buf1\mbox{[}\mbox{]} \+: IP Octet1 default values(255), ip\+\_\+buf2\mbox{[}\mbox{]} \+: IP Octet2 default values(255) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_aa842831f606b324fb3de80b157c7248d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_aa842831f606b324fb3de80b157c7248d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{config__screen_8c_a9730ce850a975e6a1cf4712cace1ad88}\index{config\_screen.c@{config\_screen.c}!disp\_mod\_upgrade\_screen@{disp\_mod\_upgrade\_screen}}
+\index{disp\_mod\_upgrade\_screen@{disp\_mod\_upgrade\_screen}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_upgrade\_screen()}{disp\_mod\_upgrade\_screen()}}
+{\footnotesize\ttfamily \label{config__screen_8c_a9730ce850a975e6a1cf4712cace1ad88} 
+void disp\+\_\+mod\+\_\+upgrade\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{upgrade\+\_\+index}{, }\item[{int}]{ip\+\_\+buf1}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{ip\+\_\+buf2}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Function to display upgrade screen inside config screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em upgrade\+\_\+index} & -\/ indicates ON or OFF \\
+\hline
+{\em ip\+\_\+buf1\mbox{[}$\,$\mbox{]}} & \+: IP Octet1 default values \\
+\hline
+{\em ip\+\_\+buf2\mbox{[}$\,$\mbox{]}} & -\/ IP Octet2 default values \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_a9730ce850a975e6a1cf4712cace1ad88_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_a9730ce850a975e6a1cf4712cace1ad88_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{config__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113}\index{config\_screen.c@{config\_screen.c}!Incrementip1@{Incrementip1}}
+\index{Incrementip1@{Incrementip1}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{Incrementip1()}{Incrementip1()}}
+{\footnotesize\ttfamily \label{config__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113} 
+void Incrementip1 (\begin{DoxyParamCaption}\item[{int}]{ip\+\_\+buf1}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{octet1}{}\end{DoxyParamCaption})}
+
+
+
+Function to display caret on config screen -\/\texorpdfstring{$>$}{>} IP Octet1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+\_\+buf1\mbox{[}$\,$\mbox{]}} & \+: IP Octet1 default values \\
+\hline
+{\em octet1} & \+: index value of IP Octet1 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{config__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{config__screen_8c_a0bb5911360ef0cddb25e395831649d96}\index{config\_screen.c@{config\_screen.c}!Incrementip2@{Incrementip2}}
+\index{Incrementip2@{Incrementip2}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{Incrementip2()}{Incrementip2()}}
+{\footnotesize\ttfamily \label{config__screen_8c_a0bb5911360ef0cddb25e395831649d96} 
+void Incrementip2 (\begin{DoxyParamCaption}\item[{int}]{ip\+\_\+buf2}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{octet2}{}\end{DoxyParamCaption})}
+
+
+
+Function to display caret on config screen -\/\texorpdfstring{$>$}{>} IP Octet2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+\_\+buf2\mbox{[}$\,$\mbox{]}} & \+: IP Octet2 default values \\
+\hline
+{\em octet2} & \+: index value of IP Octet2 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{config__screen_8c_a0bb5911360ef0cddb25e395831649d96_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{config__screen_8c_a0bb5911360ef0cddb25e395831649d96_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{config__screen_8c_aa151211f1d5a331a1dc9a8bff870c259}\index{config\_screen.c@{config\_screen.c}!back\_title\_config@{back\_title\_config}}
+\index{back\_title\_config@{back\_title\_config}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{back\_title\_config}{back\_title\_config}}
+{\footnotesize\ttfamily \label{config__screen_8c_aa151211f1d5a331a1dc9a8bff870c259} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} back\+\_\+title\+\_\+config}
+
+\Hypertarget{config__screen_8c_acefaab976cd297cf995a3f7d624eb3bd}\index{config\_screen.c@{config\_screen.c}!coming\_title@{coming\_title}}
+\index{coming\_title@{coming\_title}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{coming\_title}{coming\_title}}
+{\footnotesize\ttfamily \label{config__screen_8c_acefaab976cd297cf995a3f7d624eb3bd} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} coming\+\_\+title}
+
+\Hypertarget{config__screen_8c_aeeee522cb98f5bc17581471b164e7c43}\index{config\_screen.c@{config\_screen.c}!ip1\_title@{ip1\_title}}
+\index{ip1\_title@{ip1\_title}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip1\_title}{ip1\_title}}
+{\footnotesize\ttfamily \label{config__screen_8c_aeeee522cb98f5bc17581471b164e7c43} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip1\+\_\+title}
+
+\Hypertarget{config__screen_8c_a06f83689868f529fbe40a5aadf4cd9f7}\index{config\_screen.c@{config\_screen.c}!ip1\_value@{ip1\_value}}
+\index{ip1\_value@{ip1\_value}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip1\_value}{ip1\_value}}
+{\footnotesize\ttfamily \label{config__screen_8c_a06f83689868f529fbe40a5aadf4cd9f7} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip1\+\_\+value}
+
+\Hypertarget{config__screen_8c_a6ed9e2340cb10e462365cc3967df5a7c}\index{config\_screen.c@{config\_screen.c}!ip1\_value1@{ip1\_value1}}
+\index{ip1\_value1@{ip1\_value1}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip1\_value1}{ip1\_value1}}
+{\footnotesize\ttfamily \label{config__screen_8c_a6ed9e2340cb10e462365cc3967df5a7c} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip1\+\_\+value1}
+
+\Hypertarget{config__screen_8c_a3afe082aa21b7915fb17bf5389fa82eb}\index{config\_screen.c@{config\_screen.c}!ip1\_value2@{ip1\_value2}}
+\index{ip1\_value2@{ip1\_value2}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip1\_value2}{ip1\_value2}}
+{\footnotesize\ttfamily \label{config__screen_8c_a3afe082aa21b7915fb17bf5389fa82eb} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip1\+\_\+value2}
+
+\Hypertarget{config__screen_8c_a572b36846803aef9c6e2e22d1b40bf32}\index{config\_screen.c@{config\_screen.c}!ip1\_value3@{ip1\_value3}}
+\index{ip1\_value3@{ip1\_value3}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip1\_value3}{ip1\_value3}}
+{\footnotesize\ttfamily \label{config__screen_8c_a572b36846803aef9c6e2e22d1b40bf32} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip1\+\_\+value3}
+
+\Hypertarget{config__screen_8c_a2e1c6abf493c71414e9255434e39e1fd}\index{config\_screen.c@{config\_screen.c}!ip2\_title@{ip2\_title}}
+\index{ip2\_title@{ip2\_title}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip2\_title}{ip2\_title}}
+{\footnotesize\ttfamily \label{config__screen_8c_a2e1c6abf493c71414e9255434e39e1fd} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip2\+\_\+title}
+
+\Hypertarget{config__screen_8c_aaf4fb2a6cfeb4487f4f574b4641a74a2}\index{config\_screen.c@{config\_screen.c}!ip2\_value@{ip2\_value}}
+\index{ip2\_value@{ip2\_value}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip2\_value}{ip2\_value}}
+{\footnotesize\ttfamily \label{config__screen_8c_aaf4fb2a6cfeb4487f4f574b4641a74a2} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip2\+\_\+value}
+
+\Hypertarget{config__screen_8c_a6855d55e87dcddbcfd35d6c80b4a8e69}\index{config\_screen.c@{config\_screen.c}!ip2\_value1@{ip2\_value1}}
+\index{ip2\_value1@{ip2\_value1}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip2\_value1}{ip2\_value1}}
+{\footnotesize\ttfamily \label{config__screen_8c_a6855d55e87dcddbcfd35d6c80b4a8e69} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip2\+\_\+value1}
+
+\Hypertarget{config__screen_8c_afd394101df35b22cb8060c830e76c8cc}\index{config\_screen.c@{config\_screen.c}!ip2\_value2@{ip2\_value2}}
+\index{ip2\_value2@{ip2\_value2}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip2\_value2}{ip2\_value2}}
+{\footnotesize\ttfamily \label{config__screen_8c_afd394101df35b22cb8060c830e76c8cc} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip2\+\_\+value2}
+
+\Hypertarget{config__screen_8c_ab928b48c31c71648ffbfecd91096c833}\index{config\_screen.c@{config\_screen.c}!ip2\_value3@{ip2\_value3}}
+\index{ip2\_value3@{ip2\_value3}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ip2\_value3}{ip2\_value3}}
+{\footnotesize\ttfamily \label{config__screen_8c_ab928b48c31c71648ffbfecd91096c833} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} ip2\+\_\+value3}
+
+\Hypertarget{config__screen_8c_a03f5443cbefd191326411d74eb4588f3}\index{config\_screen.c@{config\_screen.c}!oct1\_val1@{oct1\_val1}}
+\index{oct1\_val1@{oct1\_val1}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{oct1\_val1}{oct1\_val1}}
+{\footnotesize\ttfamily \label{config__screen_8c_a03f5443cbefd191326411d74eb4588f3} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} oct1\+\_\+val1}
+
+\Hypertarget{config__screen_8c_ae8beda753f7f2fd62a249ba8316fa69b}\index{config\_screen.c@{config\_screen.c}!oct1\_val2@{oct1\_val2}}
+\index{oct1\_val2@{oct1\_val2}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{oct1\_val2}{oct1\_val2}}
+{\footnotesize\ttfamily \label{config__screen_8c_ae8beda753f7f2fd62a249ba8316fa69b} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} oct1\+\_\+val2}
+
+\Hypertarget{config__screen_8c_aafe8a758f775737f2e55de6c1aadb025}\index{config\_screen.c@{config\_screen.c}!oct1\_val3@{oct1\_val3}}
+\index{oct1\_val3@{oct1\_val3}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{oct1\_val3}{oct1\_val3}}
+{\footnotesize\ttfamily \label{config__screen_8c_aafe8a758f775737f2e55de6c1aadb025} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} oct1\+\_\+val3}
+
+\Hypertarget{config__screen_8c_a25cd58d40e4edbd8f242009cb51ab0ea}\index{config\_screen.c@{config\_screen.c}!oct2\_val1@{oct2\_val1}}
+\index{oct2\_val1@{oct2\_val1}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{oct2\_val1}{oct2\_val1}}
+{\footnotesize\ttfamily \label{config__screen_8c_a25cd58d40e4edbd8f242009cb51ab0ea} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} oct2\+\_\+val1}
+
+\Hypertarget{config__screen_8c_a3d03226eafbcff8bbfa5106f84057513}\index{config\_screen.c@{config\_screen.c}!oct2\_val2@{oct2\_val2}}
+\index{oct2\_val2@{oct2\_val2}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{oct2\_val2}{oct2\_val2}}
+{\footnotesize\ttfamily \label{config__screen_8c_a3d03226eafbcff8bbfa5106f84057513} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} oct2\+\_\+val2}
+
+\Hypertarget{config__screen_8c_af8db8accfd4bc7511d75d92ba7d064f3}\index{config\_screen.c@{config\_screen.c}!oct2\_val3@{oct2\_val3}}
+\index{oct2\_val3@{oct2\_val3}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{oct2\_val3}{oct2\_val3}}
+{\footnotesize\ttfamily \label{config__screen_8c_af8db8accfd4bc7511d75d92ba7d064f3} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} oct2\+\_\+val3}
+
+\Hypertarget{config__screen_8c_af31f7a5b615478ae835b6b73f265c952}\index{config\_screen.c@{config\_screen.c}!upgrade\_title@{upgrade\_title}}
+\index{upgrade\_title@{upgrade\_title}!config\_screen.c@{config\_screen.c}}
+\doxysubsubsection{\texorpdfstring{upgrade\_title}{upgrade\_title}}
+{\footnotesize\ttfamily \label{config__screen_8c_af31f7a5b615478ae835b6b73f265c952} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} upgrade\+\_\+title}
+

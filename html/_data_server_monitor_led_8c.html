@@ -129,49 +129,52 @@ $(function(){initNavTree('_data_server_monitor_led_8c.html',''); initResizable(t
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;getopt.h&gt;</code><br />
 <code>#include &quot;../Header/API_Header/AppDataInterface.h&quot;</code><br />
+<code>#include &quot;../Header/API_Header/MainCoreGlobal.h&quot;</code><br />
 <code>#include &quot;AppGlobal.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DataServerMonitorLed.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="_data_server_monitor_led_8c__incl.png" border="0" usemap="#a_keypress_2_data_server_monitor_led_8c" alt=""/></div>
 <map name="a_keypress_2_data_server_monitor_led_8c" id="a_keypress_2_data_server_monitor_led_8c">
-<area shape="rect" title="Source that monitors LED indications and key press indications." alt="" coords="814,5,1001,48"/>
+<area shape="rect" title="Source that monitors LED indications and key press indications." alt="" coords="878,5,1065,48"/>
 <area shape="rect" title=" " alt="" coords="5,104,66,131"/>
-<area shape="poly" title=" " alt="" coords="814,34,428,56,225,74,142,86,79,99,73,100,72,95,78,93,141,80,224,69,427,50,814,29"/>
+<area shape="poly" title=" " alt="" coords="878,34,691,41,460,54,239,73,148,85,79,99,73,100,72,95,78,93,147,80,238,68,460,49,691,36,878,28"/>
 <area shape="rect" title=" " alt="" coords="90,104,154,131"/>
-<area shape="poly" title=" " alt="" coords="814,35,471,59,294,77,222,87,167,99,161,101,159,95,166,93,221,82,294,71,471,53,814,30"/>
+<area shape="poly" title=" " alt="" coords="878,35,503,57,308,75,228,86,167,99,160,100,159,95,166,93,227,81,307,70,503,51,878,29"/>
 <area shape="rect" title=" " alt="" coords="179,104,242,131"/>
-<area shape="poly" title=" " alt="" coords="814,31,700,35,559,46,406,66,329,81,255,99,249,100,248,95,253,93,328,75,405,61,558,41,699,30,814,26"/>
+<area shape="poly" title=" " alt="" coords="878,30,753,33,596,43,425,63,338,79,255,99,249,101,247,95,253,93,337,74,424,58,596,37,753,27,878,24"/>
 <area shape="rect" title=" " alt="" coords="266,104,333,131"/>
-<area shape="poly" title=" " alt="" coords="814,34,716,40,598,52,471,71,346,99,339,101,338,95,344,93,470,65,597,46,715,34,814,28"/>
+<area shape="poly" title=" " alt="" coords="878,32,769,37,635,48,489,68,345,99,339,100,338,95,344,93,488,63,634,43,768,32,878,27"/>
 <area shape="rect" title=" " alt="" coords="358,104,439,131"/>
-<area shape="poly" title=" " alt="" coords="814,38,644,60,547,77,451,99,443,101,441,96,449,93,546,72,643,55,814,33"/>
+<area shape="poly" title=" " alt="" coords="878,36,680,56,565,74,451,99,443,101,441,96,450,93,564,69,679,51,878,31"/>
 <area shape="rect" title=" " alt="" coords="463,104,560,131"/>
-<area shape="poly" title=" " alt="" coords="814,46,698,69,572,99,562,102,560,96,571,93,697,64,813,41"/>
+<area shape="poly" title=" " alt="" coords="878,42,733,65,572,99,561,101,560,96,571,93,732,60,877,37"/>
 <area shape="rect" title=" " alt="" coords="584,104,668,131"/>
-<area shape="poly" title=" " alt="" coords="835,51,682,99,674,101,673,96,680,93,834,46"/>
+<area shape="poly" title=" " alt="" coords="878,50,783,71,682,99,674,101,672,96,680,93,782,66,877,44"/>
 <area shape="rect" title=" " alt="" coords="693,104,775,131"/>
-<area shape="poly" title=" " alt="" coords="868,51,774,99,771,94,866,46"/>
+<area shape="poly" title=" " alt="" coords="916,51,788,98,782,101,780,96,787,94,915,46"/>
 <area shape="rect" title=" " alt="" coords="800,104,887,131"/>
-<area shape="poly" title=" " alt="" coords="895,50,864,93,859,90,890,47"/>
+<area shape="poly" title=" " alt="" coords="943,51,876,97,872,93,940,46"/>
 <area shape="rect" title=" " alt="" coords="911,104,1032,131"/>
-<area shape="poly" title=" " alt="" coords="925,47,956,90,951,93,920,50"/>
+<area shape="poly" title=" " alt="" coords="974,48,974,88,969,88,969,48"/>
 <area shape="rect" title=" " alt="" coords="1056,104,1159,131"/>
-<area shape="poly" title=" " alt="" coords="955,46,1066,95,1064,100,953,51"/>
+<area shape="poly" title=" " alt="" coords="1005,46,1077,93,1074,98,1002,51"/>
 <area shape="rect" title=" " alt="" coords="1183,104,1240,131"/>
-<area shape="poly" title=" " alt="" coords="1002,44,1086,66,1172,93,1176,95,1174,100,1171,99,1084,71,1001,50"/>
+<area shape="poly" title=" " alt="" coords="1040,46,1172,94,1175,95,1173,100,1171,98,1039,51"/>
 <area shape="rect" title=" " alt="" coords="1264,104,1325,131"/>
-<area shape="poly" title=" " alt="" coords="1002,38,1122,59,1252,93,1257,95,1255,100,1251,99,1121,65,1001,43"/>
+<area shape="poly" title=" " alt="" coords="1066,43,1157,65,1252,93,1257,95,1255,100,1251,99,1155,70,1064,48"/>
 <area shape="rect" title=" " alt="" coords="1349,104,1413,131"/>
-<area shape="poly" title=" " alt="" coords="1002,33,1160,54,1250,71,1338,93,1343,95,1341,100,1336,99,1249,76,1159,59,1001,38"/>
+<area shape="poly" title=" " alt="" coords="1065,36,1196,58,1267,74,1338,93,1343,95,1341,100,1336,99,1266,79,1195,63,1065,42"/>
 <area shape="rect" title=" " alt="" coords="1438,104,1495,131"/>
-<area shape="poly" title=" " alt="" coords="1001,29,1091,35,1199,47,1313,66,1426,93,1430,95,1429,100,1424,99,1312,71,1198,52,1091,40,1001,34"/>
+<area shape="poly" title=" " alt="" coords="1065,31,1235,51,1331,69,1426,93,1430,95,1429,100,1424,99,1330,74,1234,56,1065,36"/>
 <area shape="rect" title=" " alt="" coords="1519,104,1587,131"/>
-<area shape="poly" title=" " alt="" coords="1001,27,1106,33,1234,44,1372,64,1508,93,1515,95,1513,101,1507,99,1371,69,1233,50,1106,38,1001,33"/>
+<area shape="poly" title=" " alt="" coords="1065,29,1159,36,1270,48,1390,66,1508,93,1515,95,1513,101,1507,99,1389,72,1270,53,1158,41,1065,34"/>
 <area shape="rect" title=" " alt="" coords="1611,96,1759,139"/>
-<area shape="poly" title=" " alt="" coords="1001,31,1265,51,1429,69,1596,93,1595,98,1428,75,1264,57,1001,36"/>
-<area shape="rect" title=" " alt="" coords="1783,104,1875,131"/>
-<area shape="poly" title=" " alt="" coords="1001,25,1150,28,1342,38,1557,59,1665,74,1771,93,1783,96,1782,102,1770,99,1664,79,1556,64,1342,44,1150,34,1001,30"/>
+<area shape="poly" title=" " alt="" coords="1065,32,1303,54,1448,71,1597,93,1596,98,1447,76,1302,59,1065,37"/>
+<area shape="rect" title=" " alt="" coords="1783,96,1931,139"/>
+<area shape="poly" title=" " alt="" coords="1065,29,1373,48,1568,67,1768,93,1768,99,1568,72,1373,54,1065,34"/>
+<area shape="rect" title=" " alt="" coords="1955,104,2047,131"/>
+<area shape="poly" title=" " alt="" coords="1065,29,1520,52,1765,70,1866,81,1943,93,1955,96,1954,102,1942,99,1865,87,1764,76,1520,57,1065,34"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -1406,9 +1409,9 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="80,969,169,910,235,874,310,841,390,814,474,801,516,800,557,805,598,815,637,831,663,848,686,868,725,916,753,966,772,1007,767,1009,748,968,720,919,682,872,659,852,634,836,596,820,556,810,516,805,474,806,392,820,312,846,237,879,172,915,83,974"/>
 <area shape="rect" href="_data_server_monitor_led_8c.html#af5cb2ba0d32e073daaf90d4aef07dac2" title=" " alt="" coords="184,972,355,999"/>
 <area shape="poly" title=" " alt="" coords="119,983,169,983,169,988,119,988"/>
-<area shape="rect" href="_main_bus_node_8c.html#a5f69684ec78d8ed0c94ae6e81080cde9" title=" " alt="" coords="195,1073,344,1100"/>
+<area shape="rect" href="_main_bus_node_8c.html#a5f69684ec78d8ed0c94ae6e81080cde9" title="This is to update the Voltage VA." alt="" coords="195,1073,344,1100"/>
 <area shape="poly" title=" " alt="" coords="80,997,118,1028,168,1059,183,1065,181,1070,165,1064,115,1033,77,1001"/>
-<area shape="rect" href="_main_bus_node_8c.html#a7160f3fbd59e634e42b954e101b5e3e4" title=" " alt="" coords="195,1023,344,1049"/>
+<area shape="rect" href="_main_bus_node_8c.html#a7160f3fbd59e634e42b954e101b5e3e4" title="This is to update the Voltage VB." alt="" coords="195,1023,344,1049"/>
 <area shape="poly" title=" " alt="" coords="120,997,198,1016,197,1021,119,1002"/>
 <area shape="rect" href="_data_server_monitor_led_8c.html#a2413b7289e27122d76c2b44d98a56918" title=" " alt="" coords="196,1124,343,1151"/>
 <area shape="poly" title=" " alt="" coords="73,998,109,1053,136,1084,168,1110,183,1117,180,1122,165,1114,132,1088,105,1056,68,1001"/>
@@ -1487,7 +1490,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="355,991,464,1002,463,1007,355,996"/>
 <area shape="rect" href="_data_server_monitor_led_8c.html#ac453a3ae986d391e5a7c2e9c595ab332" title=" " alt="" coords="460,1048,596,1075"/>
 <area shape="poly" title=" " alt="" coords="337,997,373,1008,397,1021,421,1034,446,1042,444,1047,419,1038,395,1026,371,1013,335,1002"/>
-<area shape="rect" href="_main_bus_node_8c.html#aa5cb7c14e289bfee846b352ceed0a08a" title=": This is to retriev the ethercat run and error status" alt="" coords="437,376,618,403"/>
+<area shape="rect" href="_main_bus_node_8c.html#a3d2f2d898a7cbe4309e16954248f0e7e" title="Retrieves the EtherCAT run and error status from shared memory." alt="" coords="437,376,618,403"/>
 <area shape="poly" title=" " alt="" coords="277,970,322,892,348,839,369,782,376,746,379,700,382,592,384,537,390,486,401,444,418,413,422,409,426,412,422,416,406,446,395,487,390,537,387,592,385,701,381,747,375,783,353,841,327,895,282,973"/>
 <area shape="poly" title=" " alt="" coords="580,1148,634,1128,697,1093,748,1057,751,1061,699,1098,636,1133,581,1153"/>
 <area shape="poly" title=" " alt="" coords="572,1206,604,1199,634,1186,673,1158,708,1124,760,1060,764,1064,712,1128,677,1162,637,1190,605,1204,574,1211"/>
@@ -1595,7 +1598,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="108,259,157,301,190,325,225,346,252,357,250,361,222,350,187,330,154,306,104,263"/>
 <area shape="rect" href="_data_server_monitor_led_8c.html#ac453a3ae986d391e5a7c2e9c595ab332" title=" " alt="" coords="246,411,383,437"/>
 <area shape="poly" title=" " alt="" coords="102,259,149,325,184,364,225,396,235,402,232,406,222,401,180,367,144,328,98,262"/>
-<area shape="rect" href="_main_bus_node_8c.html#aa5cb7c14e289bfee846b352ceed0a08a" title=": This is to retriev the ethercat run and error status" alt="" coords="224,461,405,488"/>
+<area shape="rect" href="_main_bus_node_8c.html#a3d2f2d898a7cbe4309e16954248f0e7e" title="Retrieves the EtherCAT run and error status from shared memory." alt="" coords="224,461,405,488"/>
 <area shape="poly" title=" " alt="" coords="99,259,115,297,142,348,178,402,201,426,225,447,232,452,230,456,222,451,197,430,174,405,137,351,110,299,94,261"/>
 <area shape="poly" title=" " alt="" coords="368,29,407,48,444,83,477,122,521,193,517,196,472,125,440,86,403,53,366,34"/>
 <area shape="poly" title=" " alt="" coords="361,128,406,143,457,169,502,197,499,201,455,174,404,148,359,133"/>

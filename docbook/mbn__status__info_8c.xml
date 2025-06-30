@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mbn__status__info_8c" xml:lang="en-US">
+<title>Data_processing/mbn_status_info.c File Reference</title>
+<indexterm><primary>Data_processing/mbn_status_info.c</primary></indexterm>
+<para>
+
+<para>Source that processes the MBN status information. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for mbn_status_info.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mbn__status__info_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_mbn__status__info_8c_1a33e091ca4ad4a808848bae50150d6bef">mbn_status_info</link> ()</para>
+
+<para>function that determines the MBN status information </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>status_screen_struct <link linkend="_mbn__status__info_8c_1a01a09ef94e00ab546916776847cc4dc1">screen_status_value</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>mbn_identification_info_t <link linkend="_mbn__status__info_8c_1a5e513538eebc0523aa0dd56964ae2de9">mbn_module_info</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_mbn__status__info_8c_1ab0bca095890a1fb58c691bea6aae554a">normal_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_mbn__status__info_8c_1a0f1f761cbda8e6402f65783215e44356">curr_war_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_mbn__status__info_8c_1a1d4a7b1a77c7b811d00083d16ba749c4">curr_fault_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_mbn__status__info_8c_1a5a48a03cca514f9b8f3f4f3efde71476">g_status_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_mbn__status__info_8c_1a58cf58672be2b0203fa375321d93b251">prev_mbn_status_value</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that processes the MBN status information. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_mbn__status__info_8c_1a33e091ca4ad4a808848bae50150d6bef"/><section>
+    <title>mbn_status_info()</title>
+<indexterm><primary>mbn_status_info</primary><secondary>mbn_status_info.c</secondary></indexterm>
+<indexterm><primary>mbn_status_info.c</primary><secondary>mbn_status_info</secondary></indexterm>
+<para><computeroutput>int mbn_status_info ( )</computeroutput></para><para>
+
+<para>function that determines the MBN status information </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>module_num_status</entry><entry>
+<para>- indicates the module number </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mbn__status__info_8c_a33e091ca4ad4a808848bae50150d6bef_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_mbn__status__info_8c_1a1d4a7b1a77c7b811d00083d16ba749c4"/><section>
+    <title>curr_fault_list</title>
+<indexterm><primary>curr_fault_list</primary><secondary>mbn_status_info.c</secondary></indexterm>
+<indexterm><primary>mbn_status_info.c</primary><secondary>curr_fault_list</secondary></indexterm>
+<para><computeroutput>uint8_t curr_fault_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]</computeroutput></para></section>
+<anchor xml:id="_mbn__status__info_8c_1a0f1f761cbda8e6402f65783215e44356"/><section>
+    <title>curr_war_list</title>
+<indexterm><primary>curr_war_list</primary><secondary>mbn_status_info.c</secondary></indexterm>
+<indexterm><primary>mbn_status_info.c</primary><secondary>curr_war_list</secondary></indexterm>
+<para><computeroutput>uint8_t curr_war_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]</computeroutput></para></section>
+<anchor xml:id="_mbn__status__info_8c_1a5a48a03cca514f9b8f3f4f3efde71476"/><section>
+    <title>g_status_index</title>
+<indexterm><primary>g_status_index</primary><secondary>mbn_status_info.c</secondary></indexterm>
+<indexterm><primary>mbn_status_info.c</primary><secondary>g_status_index</secondary></indexterm>
+<para><computeroutput>uint8_t g_status_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_mbn__status__info_8c_1a5e513538eebc0523aa0dd56964ae2de9"/><section>
+    <title>mbn_module_info</title>
+<indexterm><primary>mbn_module_info</primary><secondary>mbn_status_info.c</secondary></indexterm>
+<indexterm><primary>mbn_status_info.c</primary><secondary>mbn_module_info</secondary></indexterm>
+<para><computeroutput>mbn_identification_info_t mbn_module_info<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_mbn__status__info_8c_1ab0bca095890a1fb58c691bea6aae554a"/><section>
+    <title>normal_list</title>
+<indexterm><primary>normal_list</primary><secondary>mbn_status_info.c</secondary></indexterm>
+<indexterm><primary>mbn_status_info.c</primary><secondary>normal_list</secondary></indexterm>
+<para><computeroutput>uint8_t normal_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_mbn__status__info_8c_1a58cf58672be2b0203fa375321d93b251"/><section>
+    <title>prev_mbn_status_value</title>
+<indexterm><primary>prev_mbn_status_value</primary><secondary>mbn_status_info.c</secondary></indexterm>
+<indexterm><primary>mbn_status_info.c</primary><secondary>prev_mbn_status_value</secondary></indexterm>
+<para><computeroutput>uint8_t prev_mbn_status_value = 0</computeroutput></para></section>
+<anchor xml:id="_mbn__status__info_8c_1a01a09ef94e00ab546916776847cc4dc1"/><section>
+    <title>screen_status_value</title>
+<indexterm><primary>screen_status_value</primary><secondary>mbn_status_info.c</secondary></indexterm>
+<indexterm><primary>mbn_status_info.c</primary><secondary>screen_status_value</secondary></indexterm>
+<para><computeroutput>status_screen_struct screen_status_value[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

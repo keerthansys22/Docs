@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_config__screen_8c" xml:lang="en-US">
+<title>GUI/Screens/config_screen.c File Reference</title>
+<indexterm><primary>GUI/Screens/config_screen.c</primary></indexterm>
+<para>
+
+<para>Source that displays configuration (sub-menu) (ip_address_configuration) screen. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;AppGlobal.h&gt;<?linebreak?></programlisting>Include dependency graph for config_screen.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_config__screen_8c_1a98c37bf58f04cc93e36ff7902151475e">config_style</link> ()</para>
+
+<para>Function to initialize config screen styles. </para>
+</listitem>
+            <listitem><para>void <link linkend="_config__screen_8c_1aa842831f606b324fb3de80b157c7248d">disp_mod_config_screen</link> (int <link linkend="_lvgl__gui_8c_1abc2ec52db269f87c1cbb39ffe462a113">config_index</link>, int <link linkend="_lvgl__gui_8c_1a688b9f32cd181edb753620a8117bef1c">ip_buf1</link>[], int <link linkend="_lvgl__gui_8c_1a234eb967321f3645e5cc5633c18db915">ip_buf2</link>[], int <link linkend="_lvgl__gui_8c_1a2a9e882327ae7a22148096d9fe042068">upgrade_index</link>)</para>
+
+<para>Function to display config screen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_config__screen_8c_1a9730ce850a975e6a1cf4712cace1ad88">disp_mod_upgrade_screen</link> (int <link linkend="_lvgl__gui_8c_1a2a9e882327ae7a22148096d9fe042068">upgrade_index</link>, int <link linkend="_lvgl__gui_8c_1a688b9f32cd181edb753620a8117bef1c">ip_buf1</link>[], int <link linkend="_lvgl__gui_8c_1a234eb967321f3645e5cc5633c18db915">ip_buf2</link>[])</para>
+
+<para>Function to display upgrade screen inside config screen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_config__screen_8c_1a9f6c0d8474482ff0da5f49dfaf92e113">Incrementip1</link> (int <link linkend="_lvgl__gui_8c_1a688b9f32cd181edb753620a8117bef1c">ip_buf1</link>[], int <link linkend="_lvgl__gui_8c_1a30fe57633e1e0a4d54c17eafd2cb92aa">octet1</link>)</para>
+
+<para>Function to display caret on config screen -&gt; IP Octet1. </para>
+</listitem>
+            <listitem><para>void <link linkend="_config__screen_8c_1a0bb5911360ef0cddb25e395831649d96">Incrementip2</link> (int <link linkend="_lvgl__gui_8c_1a234eb967321f3645e5cc5633c18db915">ip_buf2</link>[], int <link linkend="_lvgl__gui_8c_1a2a4166abc42c90a7cee7efc0c4e9c6cb">octet2</link>)</para>
+
+<para>Function to display caret on config screen -&gt; IP Octet2. </para>
+</listitem>
+            <listitem><para>void <link linkend="_config__screen_8c_1a951a5e11d0f3bb0dd553cc7a6abaa9f3">config_upgrade_style</link> ()</para>
+
+<para>Function to initialize config screen upgrade styles. </para>
+</listitem>
+            <listitem><para>void <link linkend="_config__screen_8c_1a171bd087fd88267f8df70214d756df4a">common_label_creation</link> (lv_obj_t *screen_name, char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1aa151211f1d5a331a1dc9a8bff870c259">back_title_config</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1aeeee522cb98f5bc17581471b164e7c43">ip1_title</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a06f83689868f529fbe40a5aadf4cd9f7">ip1_value</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a2e1c6abf493c71414e9255434e39e1fd">ip2_title</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1aaf4fb2a6cfeb4487f4f574b4641a74a2">ip2_value</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1af31f7a5b615478ae835b6b73f265c952">upgrade_title</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1acefaab976cd297cf995a3f7d624eb3bd">coming_title</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a6ed9e2340cb10e462365cc3967df5a7c">ip1_value1</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a3afe082aa21b7915fb17bf5389fa82eb">ip1_value2</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a572b36846803aef9c6e2e22d1b40bf32">ip1_value3</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a6855d55e87dcddbcfd35d6c80b4a8e69">ip2_value1</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1afd394101df35b22cb8060c830e76c8cc">ip2_value2</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1ab928b48c31c71648ffbfecd91096c833">ip2_value3</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a03f5443cbefd191326411d74eb4588f3">oct1_val1</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1ae8beda753f7f2fd62a249ba8316fa69b">oct1_val2</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1aafe8a758f775737f2e55de6c1aadb025">oct1_val3</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a25cd58d40e4edbd8f242009cb51ab0ea">oct2_val1</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1a3d03226eafbcff8bbfa5106f84057513">oct2_val2</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_config__screen_8c_1af8db8accfd4bc7511d75d92ba7d064f3">oct2_val3</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that displays configuration (sub-menu) (ip_address_configuration) screen. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_config__screen_8c_1a171bd087fd88267f8df70214d756df4a"/><section>
+    <title>common_label_creation()</title>
+<indexterm><primary>common_label_creation</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>common_label_creation</secondary></indexterm>
+<para><computeroutput>void common_label_creation (lv_obj_t * screen_name, char * text, lv_coord_t x, lv_coord_t y, const lv_font_t * font_name, uint32_t font_colour)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_config__screen_8c_1a98c37bf58f04cc93e36ff7902151475e"/><section>
+    <title>config_style()</title>
+<indexterm><primary>config_style</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>config_style</secondary></indexterm>
+<para><computeroutput>void config_style ( )</computeroutput></para><para>
+
+<para>Function to initialize config screen styles. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a98c37bf58f04cc93e36ff7902151475e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_config__screen_8c_1a951a5e11d0f3bb0dd553cc7a6abaa9f3"/><section>
+    <title>config_upgrade_style()</title>
+<indexterm><primary>config_upgrade_style</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>config_upgrade_style</secondary></indexterm>
+<para><computeroutput>void config_upgrade_style ( )</computeroutput></para><para>
+
+<para>Function to initialize config screen upgrade styles. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a951a5e11d0f3bb0dd553cc7a6abaa9f3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_config__screen_8c_1aa842831f606b324fb3de80b157c7248d"/><section>
+    <title>disp_mod_config_screen()</title>
+<indexterm><primary>disp_mod_config_screen</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>disp_mod_config_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_config_screen (int config_index, int ip_buf1[], int ip_buf2[], int upgrade_index)</computeroutput></para><para>
+
+<para>Function to display config screen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>config_index</entry><entry>
+<para>: represents line number, ip_buf1[] : IP Octet1 default values(255), ip_buf2[] : IP Octet2 default values(255) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_aa842831f606b324fb3de80b157c7248d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_aa842831f606b324fb3de80b157c7248d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_config__screen_8c_1a9730ce850a975e6a1cf4712cace1ad88"/><section>
+    <title>disp_mod_upgrade_screen()</title>
+<indexterm><primary>disp_mod_upgrade_screen</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>disp_mod_upgrade_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_upgrade_screen (int upgrade_index, int ip_buf1[], int ip_buf2[])</computeroutput></para><para>
+
+<para>Function to display upgrade screen inside config screen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>upgrade_index</entry><entry>
+<para>- indicates ON or OFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ip_buf1[]</entry><entry>
+<para>: IP Octet1 default values </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ip_buf2[]</entry><entry>
+<para>- IP Octet2 default values </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a9730ce850a975e6a1cf4712cace1ad88_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a9730ce850a975e6a1cf4712cace1ad88_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_config__screen_8c_1a9f6c0d8474482ff0da5f49dfaf92e113"/><section>
+    <title>Incrementip1()</title>
+<indexterm><primary>Incrementip1</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>Incrementip1</secondary></indexterm>
+<para><computeroutput>void Incrementip1 (int ip_buf1[], int octet1)</computeroutput></para><para>
+
+<para>Function to display caret on config screen -&gt; IP Octet1. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ip_buf1[]</entry><entry>
+<para>: IP Octet1 default values </para>
+</entry>
+                            </row>
+                            <row>
+<entry>octet1</entry><entry>
+<para>: index value of IP Octet1 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_config__screen_8c_1a0bb5911360ef0cddb25e395831649d96"/><section>
+    <title>Incrementip2()</title>
+<indexterm><primary>Incrementip2</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>Incrementip2</secondary></indexterm>
+<para><computeroutput>void Incrementip2 (int ip_buf2[], int octet2)</computeroutput></para><para>
+
+<para>Function to display caret on config screen -&gt; IP Octet2. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ip_buf2[]</entry><entry>
+<para>: IP Octet2 default values </para>
+</entry>
+                            </row>
+                            <row>
+<entry>octet2</entry><entry>
+<para>: index value of IP Octet2 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a0bb5911360ef0cddb25e395831649d96_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="config__screen_8c_a0bb5911360ef0cddb25e395831649d96_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_config__screen_8c_1aa151211f1d5a331a1dc9a8bff870c259"/><section>
+    <title>back_title_config</title>
+<indexterm><primary>back_title_config</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>back_title_config</secondary></indexterm>
+<para><computeroutput>lv_obj_t* back_title_config</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1acefaab976cd297cf995a3f7d624eb3bd"/><section>
+    <title>coming_title</title>
+<indexterm><primary>coming_title</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>coming_title</secondary></indexterm>
+<para><computeroutput>lv_obj_t* coming_title</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1aeeee522cb98f5bc17581471b164e7c43"/><section>
+    <title>ip1_title</title>
+<indexterm><primary>ip1_title</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip1_title</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip1_title</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a06f83689868f529fbe40a5aadf4cd9f7"/><section>
+    <title>ip1_value</title>
+<indexterm><primary>ip1_value</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip1_value</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip1_value</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a6ed9e2340cb10e462365cc3967df5a7c"/><section>
+    <title>ip1_value1</title>
+<indexterm><primary>ip1_value1</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip1_value1</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip1_value1</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a3afe082aa21b7915fb17bf5389fa82eb"/><section>
+    <title>ip1_value2</title>
+<indexterm><primary>ip1_value2</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip1_value2</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip1_value2</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a572b36846803aef9c6e2e22d1b40bf32"/><section>
+    <title>ip1_value3</title>
+<indexterm><primary>ip1_value3</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip1_value3</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip1_value3</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a2e1c6abf493c71414e9255434e39e1fd"/><section>
+    <title>ip2_title</title>
+<indexterm><primary>ip2_title</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip2_title</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip2_title</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1aaf4fb2a6cfeb4487f4f574b4641a74a2"/><section>
+    <title>ip2_value</title>
+<indexterm><primary>ip2_value</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip2_value</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip2_value</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a6855d55e87dcddbcfd35d6c80b4a8e69"/><section>
+    <title>ip2_value1</title>
+<indexterm><primary>ip2_value1</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip2_value1</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip2_value1</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1afd394101df35b22cb8060c830e76c8cc"/><section>
+    <title>ip2_value2</title>
+<indexterm><primary>ip2_value2</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip2_value2</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip2_value2</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1ab928b48c31c71648ffbfecd91096c833"/><section>
+    <title>ip2_value3</title>
+<indexterm><primary>ip2_value3</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>ip2_value3</secondary></indexterm>
+<para><computeroutput>lv_obj_t* ip2_value3</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a03f5443cbefd191326411d74eb4588f3"/><section>
+    <title>oct1_val1</title>
+<indexterm><primary>oct1_val1</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>oct1_val1</secondary></indexterm>
+<para><computeroutput>lv_obj_t* oct1_val1</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1ae8beda753f7f2fd62a249ba8316fa69b"/><section>
+    <title>oct1_val2</title>
+<indexterm><primary>oct1_val2</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>oct1_val2</secondary></indexterm>
+<para><computeroutput>lv_obj_t* oct1_val2</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1aafe8a758f775737f2e55de6c1aadb025"/><section>
+    <title>oct1_val3</title>
+<indexterm><primary>oct1_val3</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>oct1_val3</secondary></indexterm>
+<para><computeroutput>lv_obj_t* oct1_val3</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a25cd58d40e4edbd8f242009cb51ab0ea"/><section>
+    <title>oct2_val1</title>
+<indexterm><primary>oct2_val1</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>oct2_val1</secondary></indexterm>
+<para><computeroutput>lv_obj_t* oct2_val1</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1a3d03226eafbcff8bbfa5106f84057513"/><section>
+    <title>oct2_val2</title>
+<indexterm><primary>oct2_val2</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>oct2_val2</secondary></indexterm>
+<para><computeroutput>lv_obj_t* oct2_val2</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1af8db8accfd4bc7511d75d92ba7d064f3"/><section>
+    <title>oct2_val3</title>
+<indexterm><primary>oct2_val3</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>oct2_val3</secondary></indexterm>
+<para><computeroutput>lv_obj_t* oct2_val3</computeroutput></para></section>
+<anchor xml:id="_config__screen_8c_1af31f7a5b615478ae835b6b73f265c952"/><section>
+    <title>upgrade_title</title>
+<indexterm><primary>upgrade_title</primary><secondary>config_screen.c</secondary></indexterm>
+<indexterm><primary>config_screen.c</primary><secondary>upgrade_title</secondary></indexterm>
+<para><computeroutput>lv_obj_t* upgrade_title</computeroutput></para></section>
+</section>
+</section>

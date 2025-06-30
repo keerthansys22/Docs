@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structsample" xml:lang="en-US">
+<title>sample Struct Reference</title>
+<indexterm><primary>sample</primary></indexterm>
+Collaboration diagram for sample:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structsample__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_structsample_1ab9c960832b7e834e6657e0c6ab4c3d8a">device_type</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_structsample_1a637f79bd563df5abfcf808c70728f457">device_position</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_structsample_1a637f79bd563df5abfcf808c70728f457"/><section>
+    <title>device_position</title>
+<indexterm><primary>device_position</primary><secondary>sample</secondary></indexterm>
+<indexterm><primary>sample</primary><secondary>device_position</secondary></indexterm>
+<para><computeroutput>uint8_t device_position</computeroutput></para></section>
+<anchor xml:id="_structsample_1ab9c960832b7e834e6657e0c6ab4c3d8a"/><section>
+    <title>device_type</title>
+<indexterm><primary>device_type</primary><secondary>sample</secondary></indexterm>
+<indexterm><primary>sample</primary><secondary>device_type</secondary></indexterm>
+<para><computeroutput>uint8_t device_type</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+API_Source/<link linkend="__app_data_init_8c">AppDataInit.c</link></section>
+</section>

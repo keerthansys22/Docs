@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structlocal__buf" xml:lang="en-US">
+<title>local_buf Struct Reference</title>
+<indexterm><primary>local_buf</primary></indexterm>
+Collaboration diagram for local_buf:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structlocal__buf__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_structlocal__buf_1a5e3813a1f9ed626dbc10f3beccde57f0">phys_fd</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structlocal__buf_1af58874517424bd8ff3f1ad693e6d062a">dma_buf_fd</link></para>
+</listitem>
+            <listitem><para>uint8_t * <link linkend="_structlocal__buf_1a5163e68197c654de07c69df77640f03a">shared_buf</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structlocal__buf_1a439227feff9d7f55384e8780cfc2eb82">size</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_structlocal__buf_1af58874517424bd8ff3f1ad693e6d062a"/><section>
+    <title>dma_buf_fd</title>
+<indexterm><primary>dma_buf_fd</primary><secondary>local_buf</secondary></indexterm>
+<indexterm><primary>local_buf</primary><secondary>dma_buf_fd</secondary></indexterm>
+<para><computeroutput>int dma_buf_fd</computeroutput></para></section>
+<anchor xml:id="_structlocal__buf_1a5e3813a1f9ed626dbc10f3beccde57f0"/><section>
+    <title>phys_fd</title>
+<indexterm><primary>phys_fd</primary><secondary>local_buf</secondary></indexterm>
+<indexterm><primary>local_buf</primary><secondary>phys_fd</secondary></indexterm>
+<para><computeroutput>int phys_fd</computeroutput></para></section>
+<anchor xml:id="_structlocal__buf_1a5163e68197c654de07c69df77640f03a"/><section>
+    <title>shared_buf</title>
+<indexterm><primary>shared_buf</primary><secondary>local_buf</secondary></indexterm>
+<indexterm><primary>local_buf</primary><secondary>shared_buf</secondary></indexterm>
+<para><computeroutput>uint8_t* shared_buf</computeroutput></para></section>
+<anchor xml:id="_structlocal__buf_1a439227feff9d7f55384e8780cfc2eb82"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>local_buf</secondary></indexterm>
+<indexterm><primary>local_buf</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>int size</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+API_Source/<link linkend="__app_data_init_8c">AppDataInit.c</link></section>
+</section>

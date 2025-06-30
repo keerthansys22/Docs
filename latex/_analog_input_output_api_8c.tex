@@ -1,0 +1,822 @@
+\doxysection{API\+\_\+\+Source/\+Io\+Modules\+Api\+Source.c/\+Analog\+Input\+Output\+Api.c File Reference}
+\hypertarget{_analog_input_output_api_8c}{}\label{_analog_input_output_api_8c}\index{API\_Source/IoModulesApiSource.c/AnalogInputOutputApi.c@{API\_Source/IoModulesApiSource.c/AnalogInputOutputApi.c}}
+
+
+This file contains the source code of the analog input output module API.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for Analog\+Input\+Output\+Api.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}}~0x00000000
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 0)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_afb9320299e696d63ffd6d8987fb6b1d1}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+TYPE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 0)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_af870a4da36b7623f0bd65440a8b3d41f}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VENDOR\+\_\+\+ID\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 4)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_abd518d959bbfdd7003c2a228d1c9af8b}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 8)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a188e3ea137676bfdb3a8e6a02883afb9}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VENDOR\+\_\+\+NAME\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 12)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a94c79443c34aef77750b802f9960ae1c}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 28)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a26f71f5b0cc75cd659b9ca4307f853df}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VARIANT\+\_\+\+ID\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 44)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a97d7afa2768c3cedd772bf3f354f3c61}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+HW\+\_\+\+REV\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 60)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a68683cfb00130bfa7a4ae3f8b2795079}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SERIAL\+\_\+\+NO\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 76)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_adabd9706fed02f6bd7508980bfe274cf}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SW\+\_\+\+PART\+\_\+\+NO\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 92)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_ace79b40fa114445a20be6c03401ce9d2}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SW\+\_\+\+REV\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 108)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a21b249fb02fdb95e4fe75ea596a03d2a}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 124)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a09e4a7abfd6f2b64aa9180689463cb86}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 125)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_adc797949832794c63fedd49bf21f22f1}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+ADC\+\_\+\+VOLTCUR\+\_\+\+INPUT\+\_\+\+RANGE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 133)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a368df05507f031a2e7aa50caed6a2115}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+RANGE\+\_\+\+OVERRUN\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 137)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_af27d4ce124b84896de9d38e79ad1c849}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+RANGE\+\_\+\+UNDERRUN\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 138)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a3171d3cf5b13d1348c41a03b179b7761}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+WIRE\+\_\+\+BREAK\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 139)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_adf03546434fab9c2fb6c103ca07f4708}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+AVERAGE\+\_\+\+COUNT\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 140)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a6771f473831bf26cf14bad670feb04ee}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 144)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a8e10da48c6719dce1c397068633f31b6}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 145)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a733a282060ed1b7e9c5e22223837f31b}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+RECOVERY\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 146)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_aa045e2c19a316959bf9475c9a19af155}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+CHANNEL\+\_\+\+RANGE\+\_\+\+MODE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 147)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a9c1730fae947d3da53dab68e556b7b89}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+UPPER\+\_\+\+LIMIT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 148)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a52772ae871b2f1ab966959ccf4f72cb0}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+UPPER\+\_\+\+LIMIT\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 149)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_abcbea85aaef2ad7fda33168403894543}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+LOWER\+\_\+\+LIMIT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 157)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a7bf4fa88d24a3e0d4a595e9ebfdb56f5}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+LOWER\+\_\+\+LIMIT\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 158)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a2bde6cf818e5facf5177114793faf731}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+LIMIT\+\_\+\+HYSTERESIS\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 166)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a242fac7141c34f33457d202b63f0388d}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+ERROR\+\_\+\+STATUS\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 174)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_abae8e5335cdc5a85e6dc76edce17bf50}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+ACTR\+\_\+\+SUPPLY\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 178)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a0fa24db8b2993918d869e7a939e477a4}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+ACTR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 179)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a02cbab40a78bdcf629a265aaf7da1b88}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 180)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_ab185e52fdb35284ac9176179a6d1cabe}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+OPEN\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 181)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a783094e4468c3f9df303c6358de8c591}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+UPPER\+\_\+\+LIMIT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 182)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a081726e1fcc7f001c49d0cbf7d7758d0}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+LOWER\+\_\+\+LIMIT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 183)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a4f01a3fd45392cee1e01cdcb2d78c2f5}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+DAC\+\_\+\+VOLTCUR\+\_\+\+RANGE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 184)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a8fc762adb2b836fd964420adbd7e1200}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 188)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a8b14b6f626f4eb67d8f1718b151f1be0}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 189)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a29d1acdd3b710bf9cd1e34196a146615}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+IDLE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 197)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a1af421a1b8fb199ade1f4dee073ecc99}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+IDLE\+\_\+\+MODE\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 198)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a814f69b082a580ca744f35743f70ce93}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+MODULE\+\_\+\+IDLE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 206)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_aa28b7b8ef1cf34a505b9db29e2365dd4}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+BUS\+\_\+\+FAULT\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 207)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_af2fcc86df08d92dd50eb5860576430b5}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+BUS\+\_\+\+FAULT\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 208)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a1dc93b343902117d1d8f450c7a5643a4}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+RECOVERY\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 216)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a1b97e2f96a22b600500e59e42726ac19}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+ACTR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+RECOVERY\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 217)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a0d7c066de1bb48e496d40b4821d2e798}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+RANGE\+\_\+\+MODE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 218)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a9f517a00318c794ed3fd5143a4a9fe8c}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+UPPER\+\_\+\+LIMIT\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 219)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_aa845da5bbd82c6bae8be14277685c2be}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+LOWER\+\_\+\+LIMIT\+\_\+\+VALUE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 227)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a5ffefb7bfa41720df4d96e410e935a8d}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+ERROR\+\_\+\+STATUS\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 235)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a41d76881dd5b4558c0fe4589e41479de}{AIO\+\_\+\+MOD\+\_\+\+VA\+\_\+\+VB\+\_\+\+VOLTAGE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 239)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a96ab7376de40fec3a82003da9dbb3509}{AIO\+\_\+\+MOD\+\_\+\+POST\+\_\+\+ERROR\+\_\+\+STATUS\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 247)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a487dd882433aae31465bf48e18bd6674}{AIO\+\_\+\+MOD\+\_\+\+OPERATION\+\_\+\+TIME\+\_\+\+HOURS\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 251)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a96eb00ba284797dc41d5aa2cecfadc32}{AIO\+\_\+\+MOD\+\_\+\+OPERATION\+\_\+\+TIME\+\_\+\+MINUTES\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 255)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_af629ed5930952b071ddb30ec0edf769a}{AIO\+\_\+\+MOD\+\_\+\+MIN\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 257)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a9b352ba917790e2291908c50be7dec3d}{AIO\+\_\+\+MOD\+\_\+\+MAX\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 259)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_af25a69d482fd6ecd35bb8c9f49519378}{AIO\+\_\+\+MOD\+\_\+\+MEASURED\+\_\+\+TEMPERATURE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 261)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_af8c92c97b1404816ffae2ea81b773947}{AIO\+\_\+\+MOD\+\_\+\+MEMORY\+\_\+\+LIFECYCLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 263)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_adc69b73ff24d639c9ebe645c406eec16}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+DATA\+\_\+\+SEND\+\_\+\+INTERVAL\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 267)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_acec288986f22529e48cf09b23bbc3e1c}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+DATA\+\_\+\+POINT\+\_\+\+COUNT\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 268)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_abda1617cddf1362767dd2ab33e40da16}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+DATA\+\_\+\+POINT\+\_\+\+INTERVAL\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 269)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_aca63762fa42f7811ede6299402c89272}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+SCAN\+\_\+\+INTERVAL\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 270)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_afbfaacf372636fade561ec103e25fd9e}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+DATA\+\_\+\+POINT\+\_\+\+COUNT\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 271)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a5487117a79e298f7ab9d5715f865bc79}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+DATA\+\_\+\+POINT\+\_\+\+INTERVAL\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 272)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a37783a227c14cb56b3eb7f11b5910823}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+SCAN\+\_\+\+INTERVAL\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 273)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_abdef514f88a9fcf897f480ac5f0a8619}{AIO\+\_\+\+MOD\+\_\+\+MODULE\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 274)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a47f271af32f290fd02e4709020546305}{AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+CHANNELS\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 275)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_aeea86a3ab638b958105733ecda30b82f}{AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+CHANNELS\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 276)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a7276cd105c705dbc2411d69e15517646}{AIO\+\_\+\+MOD\+\_\+\+AUX\+\_\+\+SUPPLY\+\_\+\+OVR\+\_\+\+VOLTAGE\+\_\+\+RECOVERY\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 277)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a9f1dc1a6487790cda65bc4fe0328c10f}{AIO\+\_\+\+MOD\+\_\+\+AUX\+\_\+\+SUPPLY\+\_\+\+UND\+\_\+\+VOLTAGE\+\_\+\+RECOVERY\+\_\+\+ENABLE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 278)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_aae4c8df7fa2ccf55a21304c750c060e7}{AIO\+\_\+\+MOD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+NUMBER\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 279)
+\item 
+\#define \mbox{\hyperlink{_analog_input_output_api_8c_a63ef0da74528dec692667fbfee69c3ab}{AIO\+\_\+\+MOD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+DATE\+\_\+\+ADDR}}~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 295)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_analog_input_output_api_8c_aab64cdfe20fa84db4be92c96380d60a2}{get\+IOService\+Data\+Instance\+Address}} (uint16\+\_\+t handler)
+\begin{DoxyCompactList}\small\item\em \+: This is to get the address of the service data instance \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_analog_input_output_api_8c_a91f3bb33371373e3e9b48b2290355551}{get\+IOProcess\+Data\+Instance\+Address}} (uint16\+\_\+t handler)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_analog_input_output_api_8c_a2383a3641c7a989a9d6c99be17bf45c8}{write\+Shared\+Memory\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t addr, uint32\+\_\+t size)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_analog_input_output_api_8c_ae512dcee3f48f317872617e5f4559b19}{read\+Shared\+Memory\+Data}} (struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}g\+\_\+shmd\+\_\+buf, void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_analog_input_output_api_8c_a1f8ab9854c2deaffad41501aa7eca426}{get\+AIOModule\+Process\+Data}} (uint16\+\_\+t aio\+\_\+device\+\_\+handler, aiomodule\+\_\+processinfo \texorpdfstring{$\ast$}{*}aiomod\+\_\+processdata)
+\begin{DoxyCompactList}\small\item\em Retrieves the process data for a specified AIO module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_analog_input_output_api_8c_abe5a30d36357c0fada90ee802aa49d48}{set\+AIOModule\+Process\+Data}} (uint16\+\_\+t aio\+\_\+device\+\_\+handler, int16\+\_\+t data, uint8\+\_\+t channle\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Sets the analog output value for a specified AIO module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_analog_input_output_api_8c_a4fc906d0b3feeafa0f217d95654b43b3}{get\+Analog\+Input\+Output\+Service\+Data}} (uint16\+\_\+t analog\+\_\+inputoutput\+\_\+handler, uint16\+\_\+t parameter\+\_\+name, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Retrieves the service parameter data for a specified AIO module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_analog_input_output_api_8c_a47f316d2e168adb8b3f0651d7f1642aa}{set\+Analog\+Input\+Output\+Service\+Data}} (uint16\+\_\+t analog\+\_\+inputoutput\+\_\+handler, uint16\+\_\+t parameter\+\_\+name, void \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Sets the service parameter data for a specified AIO module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \mbox{\hyperlink{_analog_input_output_api_8c_ad9088d5017838792bd64e604162503df}{gbuf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the source code of the analog input output module API. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_analog_input_output_api_8c_adc797949832794c63fedd49bf21f22f1}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_ADC\_VOLTCUR\_INPUT\_RANGE\_ADDR@{AIO\_MOD\_AI\_ADC\_VOLTCUR\_INPUT\_RANGE\_ADDR}}
+\index{AIO\_MOD\_AI\_ADC\_VOLTCUR\_INPUT\_RANGE\_ADDR@{AIO\_MOD\_AI\_ADC\_VOLTCUR\_INPUT\_RANGE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_ADC\_VOLTCUR\_INPUT\_RANGE\_ADDR}{AIO\_MOD\_AI\_ADC\_VOLTCUR\_INPUT\_RANGE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_adc797949832794c63fedd49bf21f22f1} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+ADC\+\_\+\+VOLTCUR\+\_\+\+INPUT\+\_\+\+RANGE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 133)}
+
+\Hypertarget{_analog_input_output_api_8c_adf03546434fab9c2fb6c103ca07f4708}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_AVERAGE\_COUNT\_ADDR@{AIO\_MOD\_AI\_AVERAGE\_COUNT\_ADDR}}
+\index{AIO\_MOD\_AI\_AVERAGE\_COUNT\_ADDR@{AIO\_MOD\_AI\_AVERAGE\_COUNT\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_AVERAGE\_COUNT\_ADDR}{AIO\_MOD\_AI\_AVERAGE\_COUNT\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_adf03546434fab9c2fb6c103ca07f4708} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+AVERAGE\+\_\+\+COUNT\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 140)}
+
+\Hypertarget{_analog_input_output_api_8c_aa045e2c19a316959bf9475c9a19af155}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_CHANNEL\_RANGE\_MODE\_ADDR@{AIO\_MOD\_AI\_CHANNEL\_RANGE\_MODE\_ADDR}}
+\index{AIO\_MOD\_AI\_CHANNEL\_RANGE\_MODE\_ADDR@{AIO\_MOD\_AI\_CHANNEL\_RANGE\_MODE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_CHANNEL\_RANGE\_MODE\_ADDR}{AIO\_MOD\_AI\_CHANNEL\_RANGE\_MODE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_aa045e2c19a316959bf9475c9a19af155} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+CHANNEL\+\_\+\+RANGE\+\_\+\+MODE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 147)}
+
+\Hypertarget{_analog_input_output_api_8c_a47f271af32f290fd02e4709020546305}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_CHANNELS\_ENABLE\_ADDR@{AIO\_MOD\_AI\_CHANNELS\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AI\_CHANNELS\_ENABLE\_ADDR@{AIO\_MOD\_AI\_CHANNELS\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_CHANNELS\_ENABLE\_ADDR}{AIO\_MOD\_AI\_CHANNELS\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a47f271af32f290fd02e4709020546305} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+CHANNELS\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 275)}
+
+\Hypertarget{_analog_input_output_api_8c_acec288986f22529e48cf09b23bbc3e1c}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_DATA\_POINT\_COUNT\_ADDR@{AIO\_MOD\_AI\_DATA\_POINT\_COUNT\_ADDR}}
+\index{AIO\_MOD\_AI\_DATA\_POINT\_COUNT\_ADDR@{AIO\_MOD\_AI\_DATA\_POINT\_COUNT\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_DATA\_POINT\_COUNT\_ADDR}{AIO\_MOD\_AI\_DATA\_POINT\_COUNT\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_acec288986f22529e48cf09b23bbc3e1c} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+DATA\+\_\+\+POINT\+\_\+\+COUNT\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 268)}
+
+\Hypertarget{_analog_input_output_api_8c_abda1617cddf1362767dd2ab33e40da16}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_DATA\_POINT\_INTERVAL\_ADDR@{AIO\_MOD\_AI\_DATA\_POINT\_INTERVAL\_ADDR}}
+\index{AIO\_MOD\_AI\_DATA\_POINT\_INTERVAL\_ADDR@{AIO\_MOD\_AI\_DATA\_POINT\_INTERVAL\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_DATA\_POINT\_INTERVAL\_ADDR}{AIO\_MOD\_AI\_DATA\_POINT\_INTERVAL\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_abda1617cddf1362767dd2ab33e40da16} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+DATA\+\_\+\+POINT\+\_\+\+INTERVAL\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 269)}
+
+\Hypertarget{_analog_input_output_api_8c_adc69b73ff24d639c9ebe645c406eec16}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_DATA\_SEND\_INTERVAL\_ADDR@{AIO\_MOD\_AI\_DATA\_SEND\_INTERVAL\_ADDR}}
+\index{AIO\_MOD\_AI\_DATA\_SEND\_INTERVAL\_ADDR@{AIO\_MOD\_AI\_DATA\_SEND\_INTERVAL\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_DATA\_SEND\_INTERVAL\_ADDR}{AIO\_MOD\_AI\_DATA\_SEND\_INTERVAL\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_adc69b73ff24d639c9ebe645c406eec16} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+DATA\+\_\+\+SEND\+\_\+\+INTERVAL\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 267)}
+
+\Hypertarget{_analog_input_output_api_8c_a242fac7141c34f33457d202b63f0388d}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_ERROR\_STATUS\_ADDR@{AIO\_MOD\_AI\_ERROR\_STATUS\_ADDR}}
+\index{AIO\_MOD\_AI\_ERROR\_STATUS\_ADDR@{AIO\_MOD\_AI\_ERROR\_STATUS\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_ERROR\_STATUS\_ADDR}{AIO\_MOD\_AI\_ERROR\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a242fac7141c34f33457d202b63f0388d} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+ERROR\+\_\+\+STATUS\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 174)}
+
+\Hypertarget{_analog_input_output_api_8c_a21b249fb02fdb95e4fe75ea596a03d2a}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_FORCE\_MODE\_ENABLE\_ADDR@{AIO\_MOD\_AI\_FORCE\_MODE\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AI\_FORCE\_MODE\_ENABLE\_ADDR@{AIO\_MOD\_AI\_FORCE\_MODE\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_FORCE\_MODE\_ENABLE\_ADDR}{AIO\_MOD\_AI\_FORCE\_MODE\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a21b249fb02fdb95e4fe75ea596a03d2a} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 124)}
+
+\Hypertarget{_analog_input_output_api_8c_a09e4a7abfd6f2b64aa9180689463cb86}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_FORCE\_MODE\_VALUE\_ADDR@{AIO\_MOD\_AI\_FORCE\_MODE\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AI\_FORCE\_MODE\_VALUE\_ADDR@{AIO\_MOD\_AI\_FORCE\_MODE\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_FORCE\_MODE\_VALUE\_ADDR}{AIO\_MOD\_AI\_FORCE\_MODE\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a09e4a7abfd6f2b64aa9180689463cb86} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 125)}
+
+\Hypertarget{_analog_input_output_api_8c_a2bde6cf818e5facf5177114793faf731}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_LIMIT\_HYSTERESIS\_VALUE\_ADDR@{AIO\_MOD\_AI\_LIMIT\_HYSTERESIS\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AI\_LIMIT\_HYSTERESIS\_VALUE\_ADDR@{AIO\_MOD\_AI\_LIMIT\_HYSTERESIS\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_LIMIT\_HYSTERESIS\_VALUE\_ADDR}{AIO\_MOD\_AI\_LIMIT\_HYSTERESIS\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a2bde6cf818e5facf5177114793faf731} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+LIMIT\+\_\+\+HYSTERESIS\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 166)}
+
+\Hypertarget{_analog_input_output_api_8c_abcbea85aaef2ad7fda33168403894543}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AI\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AI\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_abcbea85aaef2ad7fda33168403894543} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+LOWER\+\_\+\+LIMIT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 157)}
+
+\Hypertarget{_analog_input_output_api_8c_a7bf4fa88d24a3e0d4a595e9ebfdb56f5}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_LOWER\_LIMIT\_VALUE\_ADDR@{AIO\_MOD\_AI\_LOWER\_LIMIT\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AI\_LOWER\_LIMIT\_VALUE\_ADDR@{AIO\_MOD\_AI\_LOWER\_LIMIT\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_LOWER\_LIMIT\_VALUE\_ADDR}{AIO\_MOD\_AI\_LOWER\_LIMIT\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a7bf4fa88d24a3e0d4a595e9ebfdb56f5} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+LOWER\+\_\+\+LIMIT\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 158)}
+
+\Hypertarget{_analog_input_output_api_8c_a368df05507f031a2e7aa50caed6a2115}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_RANGE\_OVERRUN\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_RANGE\_OVERRUN\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AI\_RANGE\_OVERRUN\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_RANGE\_OVERRUN\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_RANGE\_OVERRUN\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AI\_RANGE\_OVERRUN\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a368df05507f031a2e7aa50caed6a2115} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+RANGE\+\_\+\+OVERRUN\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 137)}
+
+\Hypertarget{_analog_input_output_api_8c_af27d4ce124b84896de9d38e79ad1c849}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_RANGE\_UNDERRUN\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_RANGE\_UNDERRUN\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AI\_RANGE\_UNDERRUN\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_RANGE\_UNDERRUN\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_RANGE\_UNDERRUN\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AI\_RANGE\_UNDERRUN\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_af27d4ce124b84896de9d38e79ad1c849} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+RANGE\+\_\+\+UNDERRUN\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 138)}
+
+\Hypertarget{_analog_input_output_api_8c_aca63762fa42f7811ede6299402c89272}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_SCAN\_INTERVAL\_ADDR@{AIO\_MOD\_AI\_SCAN\_INTERVAL\_ADDR}}
+\index{AIO\_MOD\_AI\_SCAN\_INTERVAL\_ADDR@{AIO\_MOD\_AI\_SCAN\_INTERVAL\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_SCAN\_INTERVAL\_ADDR}{AIO\_MOD\_AI\_SCAN\_INTERVAL\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_aca63762fa42f7811ede6299402c89272} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+SCAN\+\_\+\+INTERVAL\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 270)}
+
+\Hypertarget{_analog_input_output_api_8c_a6771f473831bf26cf14bad670feb04ee}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_SENSOR\_SUPPLY\_ENABLE\_ADDR@{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_ENABLE\_ADDR@{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_ENABLE\_ADDR}{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a6771f473831bf26cf14bad670feb04ee} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 144)}
+
+\Hypertarget{_analog_input_output_api_8c_a8e10da48c6719dce1c397068633f31b6}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR@{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}}
+\index{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR@{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a8e10da48c6719dce1c397068633f31b6} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 145)}
+
+\Hypertarget{_analog_input_output_api_8c_a733a282060ed1b7e9c5e22223837f31b}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ADDR@{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ADDR}}
+\index{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ADDR@{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ADDR}{AIO\_MOD\_AI\_SENSOR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a733a282060ed1b7e9c5e22223837f31b} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+SENSOR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+RECOVERY\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 146)}
+
+\Hypertarget{_analog_input_output_api_8c_a9c1730fae947d3da53dab68e556b7b89}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AI\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AI\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a9c1730fae947d3da53dab68e556b7b89} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+UPPER\+\_\+\+LIMIT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 148)}
+
+\Hypertarget{_analog_input_output_api_8c_a52772ae871b2f1ab966959ccf4f72cb0}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_UPPER\_LIMIT\_VALUE\_ADDR@{AIO\_MOD\_AI\_UPPER\_LIMIT\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AI\_UPPER\_LIMIT\_VALUE\_ADDR@{AIO\_MOD\_AI\_UPPER\_LIMIT\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_UPPER\_LIMIT\_VALUE\_ADDR}{AIO\_MOD\_AI\_UPPER\_LIMIT\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a52772ae871b2f1ab966959ccf4f72cb0} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+UPPER\+\_\+\+LIMIT\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 149)}
+
+\Hypertarget{_analog_input_output_api_8c_a3171d3cf5b13d1348c41a03b179b7761}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AI\_WIRE\_BREAK\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_WIRE\_BREAK\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AI\_WIRE\_BREAK\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AI\_WIRE\_BREAK\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AI\_WIRE\_BREAK\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AI\_WIRE\_BREAK\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a3171d3cf5b13d1348c41a03b179b7761} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AI\+\_\+\+WIRE\+\_\+\+BREAK\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 139)}
+
+\Hypertarget{_analog_input_output_api_8c_abae8e5335cdc5a85e6dc76edce17bf50}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_ACTR\_SUPPLY\_ENABLE\_ADDR@{AIO\_MOD\_AO\_ACTR\_SUPPLY\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_ACTR\_SUPPLY\_ENABLE\_ADDR@{AIO\_MOD\_AO\_ACTR\_SUPPLY\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_ACTR\_SUPPLY\_ENABLE\_ADDR}{AIO\_MOD\_AO\_ACTR\_SUPPLY\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_abae8e5335cdc5a85e6dc76edce17bf50} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+ACTR\+\_\+\+SUPPLY\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 178)}
+
+\Hypertarget{_analog_input_output_api_8c_a0fa24db8b2993918d869e7a939e477a4}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR@{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}}
+\index{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR@{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_DIAG\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a0fa24db8b2993918d869e7a939e477a4} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+ACTR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 179)}
+
+\Hypertarget{_analog_input_output_api_8c_a1b97e2f96a22b600500e59e42726ac19}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR@{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR@{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR}{AIO\_MOD\_AO\_ACTR\_SUPPLY\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a1b97e2f96a22b600500e59e42726ac19} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+ACTR\+\_\+\+SUPPLY\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+RECOVERY\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 217)}
+
+\Hypertarget{_analog_input_output_api_8c_aa28b7b8ef1cf34a505b9db29e2365dd4}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_BUS\_FAULT\_ENABLE\_ADDR@{AIO\_MOD\_AO\_BUS\_FAULT\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_BUS\_FAULT\_ENABLE\_ADDR@{AIO\_MOD\_AO\_BUS\_FAULT\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_BUS\_FAULT\_ENABLE\_ADDR}{AIO\_MOD\_AO\_BUS\_FAULT\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_aa28b7b8ef1cf34a505b9db29e2365dd4} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+BUS\+\_\+\+FAULT\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 207)}
+
+\Hypertarget{_analog_input_output_api_8c_af2fcc86df08d92dd50eb5860576430b5}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_BUS\_FAULT\_VALUE\_ADDR@{AIO\_MOD\_AO\_BUS\_FAULT\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AO\_BUS\_FAULT\_VALUE\_ADDR@{AIO\_MOD\_AO\_BUS\_FAULT\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_BUS\_FAULT\_VALUE\_ADDR}{AIO\_MOD\_AO\_BUS\_FAULT\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_af2fcc86df08d92dd50eb5860576430b5} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+BUS\+\_\+\+FAULT\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 208)}
+
+\Hypertarget{_analog_input_output_api_8c_aeea86a3ab638b958105733ecda30b82f}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_CHANNELS\_ENABLE\_ADDR@{AIO\_MOD\_AO\_CHANNELS\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_CHANNELS\_ENABLE\_ADDR@{AIO\_MOD\_AO\_CHANNELS\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_CHANNELS\_ENABLE\_ADDR}{AIO\_MOD\_AO\_CHANNELS\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_aeea86a3ab638b958105733ecda30b82f} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+CHANNELS\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 276)}
+
+\Hypertarget{_analog_input_output_api_8c_a4f01a3fd45392cee1e01cdcb2d78c2f5}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_DAC\_VOLTCUR\_RANGE\_ADDR@{AIO\_MOD\_AO\_DAC\_VOLTCUR\_RANGE\_ADDR}}
+\index{AIO\_MOD\_AO\_DAC\_VOLTCUR\_RANGE\_ADDR@{AIO\_MOD\_AO\_DAC\_VOLTCUR\_RANGE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_DAC\_VOLTCUR\_RANGE\_ADDR}{AIO\_MOD\_AO\_DAC\_VOLTCUR\_RANGE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a4f01a3fd45392cee1e01cdcb2d78c2f5} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+DAC\+\_\+\+VOLTCUR\+\_\+\+RANGE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 184)}
+
+\Hypertarget{_analog_input_output_api_8c_afbfaacf372636fade561ec103e25fd9e}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_DATA\_POINT\_COUNT\_ADDR@{AIO\_MOD\_AO\_DATA\_POINT\_COUNT\_ADDR}}
+\index{AIO\_MOD\_AO\_DATA\_POINT\_COUNT\_ADDR@{AIO\_MOD\_AO\_DATA\_POINT\_COUNT\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_DATA\_POINT\_COUNT\_ADDR}{AIO\_MOD\_AO\_DATA\_POINT\_COUNT\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_afbfaacf372636fade561ec103e25fd9e} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+DATA\+\_\+\+POINT\+\_\+\+COUNT\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 271)}
+
+\Hypertarget{_analog_input_output_api_8c_a5487117a79e298f7ab9d5715f865bc79}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_DATA\_POINT\_INTERVAL\_ADDR@{AIO\_MOD\_AO\_DATA\_POINT\_INTERVAL\_ADDR}}
+\index{AIO\_MOD\_AO\_DATA\_POINT\_INTERVAL\_ADDR@{AIO\_MOD\_AO\_DATA\_POINT\_INTERVAL\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_DATA\_POINT\_INTERVAL\_ADDR}{AIO\_MOD\_AO\_DATA\_POINT\_INTERVAL\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a5487117a79e298f7ab9d5715f865bc79} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+DATA\+\_\+\+POINT\+\_\+\+INTERVAL\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 272)}
+
+\Hypertarget{_analog_input_output_api_8c_a5ffefb7bfa41720df4d96e410e935a8d}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_ERROR\_STATUS\_ADDR@{AIO\_MOD\_AO\_ERROR\_STATUS\_ADDR}}
+\index{AIO\_MOD\_AO\_ERROR\_STATUS\_ADDR@{AIO\_MOD\_AO\_ERROR\_STATUS\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_ERROR\_STATUS\_ADDR}{AIO\_MOD\_AO\_ERROR\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a5ffefb7bfa41720df4d96e410e935a8d} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+ERROR\+\_\+\+STATUS\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 235)}
+
+\Hypertarget{_analog_input_output_api_8c_a8fc762adb2b836fd964420adbd7e1200}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_FORCE\_MODE\_ENABLE\_ADDR@{AIO\_MOD\_AO\_FORCE\_MODE\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_FORCE\_MODE\_ENABLE\_ADDR@{AIO\_MOD\_AO\_FORCE\_MODE\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_FORCE\_MODE\_ENABLE\_ADDR}{AIO\_MOD\_AO\_FORCE\_MODE\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a8fc762adb2b836fd964420adbd7e1200} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 188)}
+
+\Hypertarget{_analog_input_output_api_8c_a8b14b6f626f4eb67d8f1718b151f1be0}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_FORCE\_MODE\_VALUE\_ADDR@{AIO\_MOD\_AO\_FORCE\_MODE\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AO\_FORCE\_MODE\_VALUE\_ADDR@{AIO\_MOD\_AO\_FORCE\_MODE\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_FORCE\_MODE\_VALUE\_ADDR}{AIO\_MOD\_AO\_FORCE\_MODE\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a8b14b6f626f4eb67d8f1718b151f1be0} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+FORCE\+\_\+\+MODE\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 189)}
+
+\Hypertarget{_analog_input_output_api_8c_a29d1acdd3b710bf9cd1e34196a146615}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_IDLE\_MODE\_ENABLE\_ADDR@{AIO\_MOD\_AO\_IDLE\_MODE\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_IDLE\_MODE\_ENABLE\_ADDR@{AIO\_MOD\_AO\_IDLE\_MODE\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_IDLE\_MODE\_ENABLE\_ADDR}{AIO\_MOD\_AO\_IDLE\_MODE\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a29d1acdd3b710bf9cd1e34196a146615} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+IDLE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 197)}
+
+\Hypertarget{_analog_input_output_api_8c_a1af421a1b8fb199ade1f4dee073ecc99}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_IDLE\_MODE\_VALUE\_ADDR@{AIO\_MOD\_AO\_IDLE\_MODE\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AO\_IDLE\_MODE\_VALUE\_ADDR@{AIO\_MOD\_AO\_IDLE\_MODE\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_IDLE\_MODE\_VALUE\_ADDR}{AIO\_MOD\_AO\_IDLE\_MODE\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a1af421a1b8fb199ade1f4dee073ecc99} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+IDLE\+\_\+\+MODE\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 198)}
+
+\Hypertarget{_analog_input_output_api_8c_a081726e1fcc7f001c49d0cbf7d7758d0}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AO\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AO\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AO\_LOWER\_LIMIT\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a081726e1fcc7f001c49d0cbf7d7758d0} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+LOWER\+\_\+\+LIMIT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 183)}
+
+\Hypertarget{_analog_input_output_api_8c_aa845da5bbd82c6bae8be14277685c2be}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_LOWER\_LIMIT\_VALUE\_ADDR@{AIO\_MOD\_AO\_LOWER\_LIMIT\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AO\_LOWER\_LIMIT\_VALUE\_ADDR@{AIO\_MOD\_AO\_LOWER\_LIMIT\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_LOWER\_LIMIT\_VALUE\_ADDR}{AIO\_MOD\_AO\_LOWER\_LIMIT\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_aa845da5bbd82c6bae8be14277685c2be} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+LOWER\+\_\+\+LIMIT\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 227)}
+
+\Hypertarget{_analog_input_output_api_8c_a814f69b082a580ca744f35743f70ce93}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_MODULE\_IDLE\_MODE\_ENABLE\_ADDR@{AIO\_MOD\_AO\_MODULE\_IDLE\_MODE\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_MODULE\_IDLE\_MODE\_ENABLE\_ADDR@{AIO\_MOD\_AO\_MODULE\_IDLE\_MODE\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_MODULE\_IDLE\_MODE\_ENABLE\_ADDR}{AIO\_MOD\_AO\_MODULE\_IDLE\_MODE\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a814f69b082a580ca744f35743f70ce93} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+MODULE\+\_\+\+IDLE\+\_\+\+MODE\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 206)}
+
+\Hypertarget{_analog_input_output_api_8c_ab185e52fdb35284ac9176179a6d1cabe}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_OPEN\_CKT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AO\_OPEN\_CKT\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_OPEN\_CKT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AO\_OPEN\_CKT\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_OPEN\_CKT\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AO\_OPEN\_CKT\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_ab185e52fdb35284ac9176179a6d1cabe} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+OPEN\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 181)}
+
+\Hypertarget{_analog_input_output_api_8c_a0d7c066de1bb48e496d40b4821d2e798}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_RANGE\_MODE\_ADDR@{AIO\_MOD\_AO\_RANGE\_MODE\_ADDR}}
+\index{AIO\_MOD\_AO\_RANGE\_MODE\_ADDR@{AIO\_MOD\_AO\_RANGE\_MODE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_RANGE\_MODE\_ADDR}{AIO\_MOD\_AO\_RANGE\_MODE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a0d7c066de1bb48e496d40b4821d2e798} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+RANGE\+\_\+\+MODE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 218)}
+
+\Hypertarget{_analog_input_output_api_8c_a37783a227c14cb56b3eb7f11b5910823}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_SCAN\_INTERVAL\_ADDR@{AIO\_MOD\_AO\_SCAN\_INTERVAL\_ADDR}}
+\index{AIO\_MOD\_AO\_SCAN\_INTERVAL\_ADDR@{AIO\_MOD\_AO\_SCAN\_INTERVAL\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_SCAN\_INTERVAL\_ADDR}{AIO\_MOD\_AO\_SCAN\_INTERVAL\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a37783a227c14cb56b3eb7f11b5910823} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+SCAN\+\_\+\+INTERVAL\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 273)}
+
+\Hypertarget{_analog_input_output_api_8c_a02cbab40a78bdcf629a265aaf7da1b88}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_SHORT\_CKT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AO\_SHORT\_CKT\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_SHORT\_CKT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AO\_SHORT\_CKT\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_SHORT\_CKT\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AO\_SHORT\_CKT\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a02cbab40a78bdcf629a265aaf7da1b88} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 180)}
+
+\Hypertarget{_analog_input_output_api_8c_a1dc93b343902117d1d8f450c7a5643a4}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR@{AIO\_MOD\_AO\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR@{AIO\_MOD\_AO\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR}{AIO\_MOD\_AO\_SHORT\_CKT\_RECOVERY\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a1dc93b343902117d1d8f450c7a5643a4} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+SHORT\+\_\+\+CKT\+\_\+\+RECOVERY\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 216)}
+
+\Hypertarget{_analog_input_output_api_8c_a783094e4468c3f9df303c6358de8c591}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AO\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AO\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR@{AIO\_MOD\_AO\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR}{AIO\_MOD\_AO\_UPPER\_LIMIT\_DIAG\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a783094e4468c3f9df303c6358de8c591} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+UPPER\+\_\+\+LIMIT\+\_\+\+DIAG\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 182)}
+
+\Hypertarget{_analog_input_output_api_8c_a9f517a00318c794ed3fd5143a4a9fe8c}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AO\_UPPER\_LIMIT\_VALUE\_ADDR@{AIO\_MOD\_AO\_UPPER\_LIMIT\_VALUE\_ADDR}}
+\index{AIO\_MOD\_AO\_UPPER\_LIMIT\_VALUE\_ADDR@{AIO\_MOD\_AO\_UPPER\_LIMIT\_VALUE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AO\_UPPER\_LIMIT\_VALUE\_ADDR}{AIO\_MOD\_AO\_UPPER\_LIMIT\_VALUE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a9f517a00318c794ed3fd5143a4a9fe8c} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AO\+\_\+\+UPPER\+\_\+\+LIMIT\+\_\+\+VALUE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 219)}
+
+\Hypertarget{_analog_input_output_api_8c_a7276cd105c705dbc2411d69e15517646}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AUX\_SUPPLY\_OVR\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR@{AIO\_MOD\_AUX\_SUPPLY\_OVR\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AUX\_SUPPLY\_OVR\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR@{AIO\_MOD\_AUX\_SUPPLY\_OVR\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AUX\_SUPPLY\_OVR\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR}{AIO\_MOD\_AUX\_SUPPLY\_OVR\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a7276cd105c705dbc2411d69e15517646} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AUX\+\_\+\+SUPPLY\+\_\+\+OVR\+\_\+\+VOLTAGE\+\_\+\+RECOVERY\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 277)}
+
+\Hypertarget{_analog_input_output_api_8c_a9f1dc1a6487790cda65bc4fe0328c10f}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_AUX\_SUPPLY\_UND\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR@{AIO\_MOD\_AUX\_SUPPLY\_UND\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_AUX\_SUPPLY\_UND\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR@{AIO\_MOD\_AUX\_SUPPLY\_UND\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_AUX\_SUPPLY\_UND\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR}{AIO\_MOD\_AUX\_SUPPLY\_UND\_VOLTAGE\_RECOVERY\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a9f1dc1a6487790cda65bc4fe0328c10f} 
+\#define AIO\+\_\+\+MOD\+\_\+\+AUX\+\_\+\+SUPPLY\+\_\+\+UND\+\_\+\+VOLTAGE\+\_\+\+RECOVERY\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 278)}
+
+\Hypertarget{_analog_input_output_api_8c_a63ef0da74528dec692667fbfee69c3ab}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_EDS\_VERSION\_DATE\_ADDR@{AIO\_MOD\_EDS\_VERSION\_DATE\_ADDR}}
+\index{AIO\_MOD\_EDS\_VERSION\_DATE\_ADDR@{AIO\_MOD\_EDS\_VERSION\_DATE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_EDS\_VERSION\_DATE\_ADDR}{AIO\_MOD\_EDS\_VERSION\_DATE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a63ef0da74528dec692667fbfee69c3ab} 
+\#define AIO\+\_\+\+MOD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+DATE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 295)}
+
+\Hypertarget{_analog_input_output_api_8c_aae4c8df7fa2ccf55a21304c750c060e7}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_EDS\_VERSION\_NUMBER\_ADDR@{AIO\_MOD\_EDS\_VERSION\_NUMBER\_ADDR}}
+\index{AIO\_MOD\_EDS\_VERSION\_NUMBER\_ADDR@{AIO\_MOD\_EDS\_VERSION\_NUMBER\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_EDS\_VERSION\_NUMBER\_ADDR}{AIO\_MOD\_EDS\_VERSION\_NUMBER\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_aae4c8df7fa2ccf55a21304c750c060e7} 
+\#define AIO\+\_\+\+MOD\+\_\+\+EDS\+\_\+\+VERSION\+\_\+\+NUMBER\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 279)}
+
+\Hypertarget{_analog_input_output_api_8c_abd518d959bbfdd7003c2a228d1c9af8b}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_DEVICE\_ID\_ADDR@{AIO\_MOD\_IDENT\_DEVICE\_ID\_ADDR}}
+\index{AIO\_MOD\_IDENT\_DEVICE\_ID\_ADDR@{AIO\_MOD\_IDENT\_DEVICE\_ID\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_DEVICE\_ID\_ADDR}{AIO\_MOD\_IDENT\_DEVICE\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_abd518d959bbfdd7003c2a228d1c9af8b} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 8)}
+
+\Hypertarget{_analog_input_output_api_8c_a94c79443c34aef77750b802f9960ae1c}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_DEVICE\_NAME\_ADDR@{AIO\_MOD\_IDENT\_DEVICE\_NAME\_ADDR}}
+\index{AIO\_MOD\_IDENT\_DEVICE\_NAME\_ADDR@{AIO\_MOD\_IDENT\_DEVICE\_NAME\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_DEVICE\_NAME\_ADDR}{AIO\_MOD\_IDENT\_DEVICE\_NAME\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a94c79443c34aef77750b802f9960ae1c} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 28)}
+
+\Hypertarget{_analog_input_output_api_8c_afb9320299e696d63ffd6d8987fb6b1d1}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR@{AIO\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR}}
+\index{AIO\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR@{AIO\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR}{AIO\_MOD\_IDENT\_DEVICE\_TYPE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_afb9320299e696d63ffd6d8987fb6b1d1} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+DEVICE\+\_\+\+TYPE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 0)}
+
+\Hypertarget{_analog_input_output_api_8c_a97d7afa2768c3cedd772bf3f354f3c61}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_HW\_REV\_ADDR@{AIO\_MOD\_IDENT\_HW\_REV\_ADDR}}
+\index{AIO\_MOD\_IDENT\_HW\_REV\_ADDR@{AIO\_MOD\_IDENT\_HW\_REV\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_HW\_REV\_ADDR}{AIO\_MOD\_IDENT\_HW\_REV\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a97d7afa2768c3cedd772bf3f354f3c61} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+HW\+\_\+\+REV\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 60)}
+
+\Hypertarget{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_INFO\_ADDR@{AIO\_MOD\_IDENT\_INFO\_ADDR}}
+\index{AIO\_MOD\_IDENT\_INFO\_ADDR@{AIO\_MOD\_IDENT\_INFO\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_INFO\_ADDR}{AIO\_MOD\_IDENT\_INFO\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 0)}
+
+\Hypertarget{_analog_input_output_api_8c_a68683cfb00130bfa7a4ae3f8b2795079}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_SERIAL\_NO\_ADDR@{AIO\_MOD\_IDENT\_SERIAL\_NO\_ADDR}}
+\index{AIO\_MOD\_IDENT\_SERIAL\_NO\_ADDR@{AIO\_MOD\_IDENT\_SERIAL\_NO\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_SERIAL\_NO\_ADDR}{AIO\_MOD\_IDENT\_SERIAL\_NO\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a68683cfb00130bfa7a4ae3f8b2795079} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SERIAL\+\_\+\+NO\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 76)}
+
+\Hypertarget{_analog_input_output_api_8c_adabd9706fed02f6bd7508980bfe274cf}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_SW\_PART\_NO\_ADDR@{AIO\_MOD\_IDENT\_SW\_PART\_NO\_ADDR}}
+\index{AIO\_MOD\_IDENT\_SW\_PART\_NO\_ADDR@{AIO\_MOD\_IDENT\_SW\_PART\_NO\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_SW\_PART\_NO\_ADDR}{AIO\_MOD\_IDENT\_SW\_PART\_NO\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_adabd9706fed02f6bd7508980bfe274cf} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SW\+\_\+\+PART\+\_\+\+NO\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 92)}
+
+\Hypertarget{_analog_input_output_api_8c_ace79b40fa114445a20be6c03401ce9d2}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_SW\_REV\_ADDR@{AIO\_MOD\_IDENT\_SW\_REV\_ADDR}}
+\index{AIO\_MOD\_IDENT\_SW\_REV\_ADDR@{AIO\_MOD\_IDENT\_SW\_REV\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_SW\_REV\_ADDR}{AIO\_MOD\_IDENT\_SW\_REV\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_ace79b40fa114445a20be6c03401ce9d2} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+SW\+\_\+\+REV\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 108)}
+
+\Hypertarget{_analog_input_output_api_8c_a26f71f5b0cc75cd659b9ca4307f853df}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_VARIANT\_ID\_ADDR@{AIO\_MOD\_IDENT\_VARIANT\_ID\_ADDR}}
+\index{AIO\_MOD\_IDENT\_VARIANT\_ID\_ADDR@{AIO\_MOD\_IDENT\_VARIANT\_ID\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_VARIANT\_ID\_ADDR}{AIO\_MOD\_IDENT\_VARIANT\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a26f71f5b0cc75cd659b9ca4307f853df} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VARIANT\+\_\+\+ID\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 44)}
+
+\Hypertarget{_analog_input_output_api_8c_af870a4da36b7623f0bd65440a8b3d41f}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_VENDOR\_ID\_ADDR@{AIO\_MOD\_IDENT\_VENDOR\_ID\_ADDR}}
+\index{AIO\_MOD\_IDENT\_VENDOR\_ID\_ADDR@{AIO\_MOD\_IDENT\_VENDOR\_ID\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_VENDOR\_ID\_ADDR}{AIO\_MOD\_IDENT\_VENDOR\_ID\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_af870a4da36b7623f0bd65440a8b3d41f} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VENDOR\+\_\+\+ID\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 4)}
+
+\Hypertarget{_analog_input_output_api_8c_a188e3ea137676bfdb3a8e6a02883afb9}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_IDENT\_VENDOR\_NAME\_ADDR@{AIO\_MOD\_IDENT\_VENDOR\_NAME\_ADDR}}
+\index{AIO\_MOD\_IDENT\_VENDOR\_NAME\_ADDR@{AIO\_MOD\_IDENT\_VENDOR\_NAME\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_IDENT\_VENDOR\_NAME\_ADDR}{AIO\_MOD\_IDENT\_VENDOR\_NAME\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a188e3ea137676bfdb3a8e6a02883afb9} 
+\#define AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+VENDOR\+\_\+\+NAME\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_aa7b54a048bbd83f850af2a3ce0504201}{AIO\+\_\+\+MOD\+\_\+\+IDENT\+\_\+\+INFO\+\_\+\+ADDR}} + 12)}
+
+\Hypertarget{_analog_input_output_api_8c_a9b352ba917790e2291908c50be7dec3d}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_MAX\_TEMPERATURE\_ADDR@{AIO\_MOD\_MAX\_TEMPERATURE\_ADDR}}
+\index{AIO\_MOD\_MAX\_TEMPERATURE\_ADDR@{AIO\_MOD\_MAX\_TEMPERATURE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_MAX\_TEMPERATURE\_ADDR}{AIO\_MOD\_MAX\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a9b352ba917790e2291908c50be7dec3d} 
+\#define AIO\+\_\+\+MOD\+\_\+\+MAX\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 259)}
+
+\Hypertarget{_analog_input_output_api_8c_af25a69d482fd6ecd35bb8c9f49519378}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_MEASURED\_TEMPERATURE\_ADDR@{AIO\_MOD\_MEASURED\_TEMPERATURE\_ADDR}}
+\index{AIO\_MOD\_MEASURED\_TEMPERATURE\_ADDR@{AIO\_MOD\_MEASURED\_TEMPERATURE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_MEASURED\_TEMPERATURE\_ADDR}{AIO\_MOD\_MEASURED\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_af25a69d482fd6ecd35bb8c9f49519378} 
+\#define AIO\+\_\+\+MOD\+\_\+\+MEASURED\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 261)}
+
+\Hypertarget{_analog_input_output_api_8c_af8c92c97b1404816ffae2ea81b773947}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_MEMORY\_LIFECYCLE\_ADDR@{AIO\_MOD\_MEMORY\_LIFECYCLE\_ADDR}}
+\index{AIO\_MOD\_MEMORY\_LIFECYCLE\_ADDR@{AIO\_MOD\_MEMORY\_LIFECYCLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_MEMORY\_LIFECYCLE\_ADDR}{AIO\_MOD\_MEMORY\_LIFECYCLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_af8c92c97b1404816ffae2ea81b773947} 
+\#define AIO\+\_\+\+MOD\+\_\+\+MEMORY\+\_\+\+LIFECYCLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 263)}
+
+\Hypertarget{_analog_input_output_api_8c_af629ed5930952b071ddb30ec0edf769a}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_MIN\_TEMPERATURE\_ADDR@{AIO\_MOD\_MIN\_TEMPERATURE\_ADDR}}
+\index{AIO\_MOD\_MIN\_TEMPERATURE\_ADDR@{AIO\_MOD\_MIN\_TEMPERATURE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_MIN\_TEMPERATURE\_ADDR}{AIO\_MOD\_MIN\_TEMPERATURE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_af629ed5930952b071ddb30ec0edf769a} 
+\#define AIO\+\_\+\+MOD\+\_\+\+MIN\+\_\+\+TEMPERATURE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 257)}
+
+\Hypertarget{_analog_input_output_api_8c_abdef514f88a9fcf897f480ac5f0a8619}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_MODULE\_ENABLE\_ADDR@{AIO\_MOD\_MODULE\_ENABLE\_ADDR}}
+\index{AIO\_MOD\_MODULE\_ENABLE\_ADDR@{AIO\_MOD\_MODULE\_ENABLE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_MODULE\_ENABLE\_ADDR}{AIO\_MOD\_MODULE\_ENABLE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_abdef514f88a9fcf897f480ac5f0a8619} 
+\#define AIO\+\_\+\+MOD\+\_\+\+MODULE\+\_\+\+ENABLE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 274)}
+
+\Hypertarget{_analog_input_output_api_8c_a487dd882433aae31465bf48e18bd6674}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_OPERATION\_TIME\_HOURS\_ADDR@{AIO\_MOD\_OPERATION\_TIME\_HOURS\_ADDR}}
+\index{AIO\_MOD\_OPERATION\_TIME\_HOURS\_ADDR@{AIO\_MOD\_OPERATION\_TIME\_HOURS\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_OPERATION\_TIME\_HOURS\_ADDR}{AIO\_MOD\_OPERATION\_TIME\_HOURS\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a487dd882433aae31465bf48e18bd6674} 
+\#define AIO\+\_\+\+MOD\+\_\+\+OPERATION\+\_\+\+TIME\+\_\+\+HOURS\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 251)}
+
+\Hypertarget{_analog_input_output_api_8c_a96eb00ba284797dc41d5aa2cecfadc32}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_OPERATION\_TIME\_MINUTES\_ADDR@{AIO\_MOD\_OPERATION\_TIME\_MINUTES\_ADDR}}
+\index{AIO\_MOD\_OPERATION\_TIME\_MINUTES\_ADDR@{AIO\_MOD\_OPERATION\_TIME\_MINUTES\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_OPERATION\_TIME\_MINUTES\_ADDR}{AIO\_MOD\_OPERATION\_TIME\_MINUTES\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a96eb00ba284797dc41d5aa2cecfadc32} 
+\#define AIO\+\_\+\+MOD\+\_\+\+OPERATION\+\_\+\+TIME\+\_\+\+MINUTES\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 255)}
+
+\Hypertarget{_analog_input_output_api_8c_a96ab7376de40fec3a82003da9dbb3509}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_POST\_ERROR\_STATUS\_ADDR@{AIO\_MOD\_POST\_ERROR\_STATUS\_ADDR}}
+\index{AIO\_MOD\_POST\_ERROR\_STATUS\_ADDR@{AIO\_MOD\_POST\_ERROR\_STATUS\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_POST\_ERROR\_STATUS\_ADDR}{AIO\_MOD\_POST\_ERROR\_STATUS\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a96ab7376de40fec3a82003da9dbb3509} 
+\#define AIO\+\_\+\+MOD\+\_\+\+POST\+\_\+\+ERROR\+\_\+\+STATUS\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 247)}
+
+\Hypertarget{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_SERVICE\_DATA\_ADDR@{AIO\_MOD\_SERVICE\_DATA\_ADDR}}
+\index{AIO\_MOD\_SERVICE\_DATA\_ADDR@{AIO\_MOD\_SERVICE\_DATA\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_SERVICE\_DATA\_ADDR}{AIO\_MOD\_SERVICE\_DATA\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c} 
+\#define AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR~0x00000000}
+
+\Hypertarget{_analog_input_output_api_8c_a41d76881dd5b4558c0fe4589e41479de}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!AIO\_MOD\_VA\_VB\_VOLTAGE\_ADDR@{AIO\_MOD\_VA\_VB\_VOLTAGE\_ADDR}}
+\index{AIO\_MOD\_VA\_VB\_VOLTAGE\_ADDR@{AIO\_MOD\_VA\_VB\_VOLTAGE\_ADDR}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{AIO\_MOD\_VA\_VB\_VOLTAGE\_ADDR}{AIO\_MOD\_VA\_VB\_VOLTAGE\_ADDR}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a41d76881dd5b4558c0fe4589e41479de} 
+\#define AIO\+\_\+\+MOD\+\_\+\+VA\+\_\+\+VB\+\_\+\+VOLTAGE\+\_\+\+ADDR~(\mbox{\hyperlink{_analog_input_output_api_8c_ab2e2cad52b51848018c1f1a70417f50c}{AIO\+\_\+\+MOD\+\_\+\+SERVICE\+\_\+\+DATA\+\_\+\+ADDR}} + 239)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_analog_input_output_api_8c_a1f8ab9854c2deaffad41501aa7eca426}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!getAIOModuleProcessData@{getAIOModuleProcessData}}
+\index{getAIOModuleProcessData@{getAIOModuleProcessData}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{getAIOModuleProcessData()}{getAIOModuleProcessData()}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a1f8ab9854c2deaffad41501aa7eca426} 
+uint8\+\_\+t get\+AIOModule\+Process\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{aio\+\_\+device\+\_\+handler}{, }\item[{aiomodule\+\_\+processinfo \texorpdfstring{$\ast$}{*}}]{aiomod\+\_\+processdata}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the process data for a specified AIO module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em aio\+\_\+device\+\_\+handler} & The handler for the AIO device. \\
+\hline
+\mbox{\texttt{ out}}  & {\em aiomod\+\_\+processdata} & Pointer to the {\ttfamily aiomodule\+\_\+processinfo} structure to store process data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an error code indicating the status of the operation. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_a1f8ab9854c2deaffad41501aa7eca426_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_a1f8ab9854c2deaffad41501aa7eca426_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_analog_input_output_api_8c_a4fc906d0b3feeafa0f217d95654b43b3}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!getAnalogInputOutputServiceData@{getAnalogInputOutputServiceData}}
+\index{getAnalogInputOutputServiceData@{getAnalogInputOutputServiceData}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{getAnalogInputOutputServiceData()}{getAnalogInputOutputServiceData()}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a4fc906d0b3feeafa0f217d95654b43b3} 
+uint8\+\_\+t get\+Analog\+Input\+Output\+Service\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{analog\+\_\+inputoutput\+\_\+handler}{, }\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the service parameter data for a specified AIO module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em analog\+\_\+input\+\_\+handler} & The handler for the AIO device. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The name of the parameter to retrieve. \\
+\hline
+\mbox{\texttt{ out}}  & {\em data} & Pointer to the buffer where the retrieved data will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an error code indicating the status of the operation. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_a4fc906d0b3feeafa0f217d95654b43b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_a4fc906d0b3feeafa0f217d95654b43b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_analog_input_output_api_8c_a91f3bb33371373e3e9b48b2290355551}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!getIOProcessDataInstanceAddress@{getIOProcessDataInstanceAddress}}
+\index{getIOProcessDataInstanceAddress@{getIOProcessDataInstanceAddress}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{getIOProcessDataInstanceAddress()}{getIOProcessDataInstanceAddress()}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a91f3bb33371373e3e9b48b2290355551} 
+uint32\+\_\+t get\+IOProcess\+Data\+Instance\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{handler}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+@breif \+: This is to get the address of of the process data instance Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_a91f3bb33371373e3e9b48b2290355551_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_analog_input_output_api_8c_aab64cdfe20fa84db4be92c96380d60a2}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!getIOServiceDataInstanceAddress@{getIOServiceDataInstanceAddress}}
+\index{getIOServiceDataInstanceAddress@{getIOServiceDataInstanceAddress}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{getIOServiceDataInstanceAddress()}{getIOServiceDataInstanceAddress()}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_aab64cdfe20fa84db4be92c96380d60a2} 
+uint32\+\_\+t get\+IOService\+Data\+Instance\+Address (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{handler}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+\+: This is to get the address of the service data instance 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_analog_input_output_api_8c_ae512dcee3f48f317872617e5f4559b19}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!readSharedMemoryData@{readSharedMemoryData}}
+\index{readSharedMemoryData@{readSharedMemoryData}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{readSharedMemoryData()}{readSharedMemoryData()}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_ae512dcee3f48f317872617e5f4559b19} 
+uint8\+\_\+t read\+Shared\+Memory\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_ae512dcee3f48f317872617e5f4559b19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_analog_input_output_api_8c_abe5a30d36357c0fada90ee802aa49d48}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!setAIOModuleProcessData@{setAIOModuleProcessData}}
+\index{setAIOModuleProcessData@{setAIOModuleProcessData}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{setAIOModuleProcessData()}{setAIOModuleProcessData()}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_abe5a30d36357c0fada90ee802aa49d48} 
+uint8\+\_\+t set\+AIOModule\+Process\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{aio\+\_\+device\+\_\+handler}{, }\item[{int16\+\_\+t}]{data}{, }\item[{uint8\+\_\+t}]{channle\+\_\+number}{}\end{DoxyParamCaption})}
+
+
+
+Sets the analog output value for a specified AIO module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em aio\+\_\+device\+\_\+handler} & The handler for the AIO device. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Value of the data to be set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an error code indicating the status of the operation. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_abe5a30d36357c0fada90ee802aa49d48_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_analog_input_output_api_8c_a47f316d2e168adb8b3f0651d7f1642aa}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!setAnalogInputOutputServiceData@{setAnalogInputOutputServiceData}}
+\index{setAnalogInputOutputServiceData@{setAnalogInputOutputServiceData}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{setAnalogInputOutputServiceData()}{setAnalogInputOutputServiceData()}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a47f316d2e168adb8b3f0651d7f1642aa} 
+uint8\+\_\+t set\+Analog\+Input\+Output\+Service\+Data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{analog\+\_\+inputoutput\+\_\+handler}{, }\item[{uint16\+\_\+t}]{parameter\+\_\+name}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Sets the service parameter data for a specified AIO module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em analog\+\_\+inputoutput\+\_\+handler} & The handler for the AIO device. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & The name of the parameter to set. //\+Refer to the enumeration {\ttfamily e\+\_\+io\+\_\+servicedata\+\_\+parameter\+\_\+name}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the buffer containing the data to be set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an error code indicating the status of the operation. Refer to {\ttfamily error\+\_\+code\+\_\+t} for possible error codes. 
+\end{DoxyReturn}
+IOAcyclic\+\_\+\+Inst\+\_\+x-\/\texorpdfstring{$>$}{>}aioserviceobj.\+aiapp\+Upper\+Limitval\mbox{[}1\mbox{]} = \texorpdfstring{$\ast$}{*}(int16\+\_\+t \texorpdfstring{$\ast$}{*})data;Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_a47f316d2e168adb8b3f0651d7f1642aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_a47f316d2e168adb8b3f0651d7f1642aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_analog_input_output_api_8c_a2383a3641c7a989a9d6c99be17bf45c8}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!writeSharedMemoryData@{writeSharedMemoryData}}
+\index{writeSharedMemoryData@{writeSharedMemoryData}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{writeSharedMemoryData()}{writeSharedMemoryData()}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_a2383a3641c7a989a9d6c99be17bf45c8} 
+uint8\+\_\+t write\+Shared\+Memory\+Data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} \texorpdfstring{$\ast$}{*}}]{g\+\_\+shmd\+\_\+buf}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{addr}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_analog_input_output_api_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_analog_input_output_api_8c_ad9088d5017838792bd64e604162503df}\index{AnalogInputOutputApi.c@{AnalogInputOutputApi.c}!gbuf@{gbuf}}
+\index{gbuf@{gbuf}!AnalogInputOutputApi.c@{AnalogInputOutputApi.c}}
+\doxysubsubsection{\texorpdfstring{gbuf}{gbuf}}
+{\footnotesize\ttfamily \label{_analog_input_output_api_8c_ad9088d5017838792bd64e604162503df} 
+struct \mbox{\hyperlink{structlocal__buf}{local\+\_\+buf}} gbuf\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,50 @@
+\doxysection{API\+\_\+\+Source/\+Data\+Server\+Led\+Indication.c File Reference}
+\hypertarget{_data_server_led_indication_8c}{}\label{_data_server_led_indication_8c}\index{API\_Source/DataServerLedIndication.c@{API\_Source/DataServerLedIndication.c}}
+
+
+Source that turns on the led on/off.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$linux/i2c-\/dev.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for Data\+Server\+Led\+Indication.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_led_indication_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_data_server_led_indication_8c_af352e029b1015e3dea14361b83d76445}{I2\+C\+\_\+\+LED\+\_\+\+ON\+\_\+\+OFF}} (int i2c\+\_\+fd, uint16\+\_\+t i2c\+\_\+addr, uint16\+\_\+t fault\+\_\+bit)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that turns on the led on/off. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_data_server_led_indication_8c_af352e029b1015e3dea14361b83d76445}\index{DataServerLedIndication.c@{DataServerLedIndication.c}!I2C\_LED\_ON\_OFF@{I2C\_LED\_ON\_OFF}}
+\index{I2C\_LED\_ON\_OFF@{I2C\_LED\_ON\_OFF}!DataServerLedIndication.c@{DataServerLedIndication.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_LED\_ON\_OFF()}{I2C\_LED\_ON\_OFF()}}
+{\footnotesize\ttfamily \label{_data_server_led_indication_8c_af352e029b1015e3dea14361b83d76445} 
+int I2\+C\+\_\+\+LED\+\_\+\+ON\+\_\+\+OFF (\begin{DoxyParamCaption}\item[{int}]{i2c\+\_\+fd}{, }\item[{uint16\+\_\+t}]{i2c\+\_\+addr}{, }\item[{uint16\+\_\+t}]{fault\+\_\+bit}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_server_led_indication_8c_af352e029b1015e3dea14361b83d76445_icgraph}
+\end{center}
+\end{figure}

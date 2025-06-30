@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_indication_8c" xml:lang="en-US">
+<title>Initializations/Indication/indication.c File Reference</title>
+<indexterm><primary>Initializations/Indication/indication.c</primary></indexterm>
+<para>
+
+<para>Source that initializes and self-test the indication i2c-1. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;AppGlobal.h&gt;<?linebreak?>#include &quot;main.h&quot;<?linebreak?></programlisting>Include dependency graph for indication.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="indication_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_indication_8c_1a8a6c12d0194007da86226886cfce89b4">I2C_DEVICE</link>&#160;&#160;&#160;&quot;/dev/i2c-1&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_indication_8c_1aa6bcdac5119906d2c99dc8331533d28f">I2C_1_ADDR1</link>&#160;&#160;&#160;0x22</para>
+</listitem>
+            <listitem><para>#define <link linkend="_indication_8c_1a594860e1ee49b3c8b145bda07bb0f3e4">I2C_1_ADDR2</link>&#160;&#160;&#160;0x26</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_indication_8c_1ab74f2a3ded48c6ef69bb9007b3a75fa5">indication_self_test</link> (void)</para>
+
+<para>Test to check the I2C read and write functionality. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct i2c_msg <link linkend="_indication_8c_1a26546fa59bb9d376eee575657dab9fe1">i2cmsg</link></para>
+</listitem>
+            <listitem><para>struct i2c_rdwr_ioctl_data <link linkend="_indication_8c_1a8e38fc06f9426ed6e7bad6a4dc5e0980">msg_rdwr</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_indication_8c_1a41b2ae55793685136cd8f87b0ff4b669">i2c_va_led_file</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that initializes and self-test the indication i2c-1. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_indication_8c_1aa6bcdac5119906d2c99dc8331533d28f"/><section>
+    <title>I2C_1_ADDR1</title>
+<indexterm><primary>I2C_1_ADDR1</primary><secondary>indication.c</secondary></indexterm>
+<indexterm><primary>indication.c</primary><secondary>I2C_1_ADDR1</secondary></indexterm>
+<para><computeroutput>#define I2C_1_ADDR1&#160;&#160;&#160;0x22</computeroutput></para></section>
+<anchor xml:id="_indication_8c_1a594860e1ee49b3c8b145bda07bb0f3e4"/><section>
+    <title>I2C_1_ADDR2</title>
+<indexterm><primary>I2C_1_ADDR2</primary><secondary>indication.c</secondary></indexterm>
+<indexterm><primary>indication.c</primary><secondary>I2C_1_ADDR2</secondary></indexterm>
+<para><computeroutput>#define I2C_1_ADDR2&#160;&#160;&#160;0x26</computeroutput></para></section>
+<anchor xml:id="_indication_8c_1a8a6c12d0194007da86226886cfce89b4"/><section>
+    <title>I2C_DEVICE</title>
+<indexterm><primary>I2C_DEVICE</primary><secondary>indication.c</secondary></indexterm>
+<indexterm><primary>indication.c</primary><secondary>I2C_DEVICE</secondary></indexterm>
+<para><computeroutput>#define I2C_DEVICE&#160;&#160;&#160;&quot;/dev/i2c-1&quot;</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_indication_8c_1ab74f2a3ded48c6ef69bb9007b3a75fa5"/><section>
+    <title>indication_self_test()</title>
+<indexterm><primary>indication_self_test</primary><secondary>indication.c</secondary></indexterm>
+<indexterm><primary>indication.c</primary><secondary>indication_self_test</secondary></indexterm>
+<para><computeroutput>int indication_self_test (void )</computeroutput></para><para>
+
+<para>Test to check the I2C read and write functionality. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>API_SUCCESS_test on success, API_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="indication_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="indication_8c_ab74f2a3ded48c6ef69bb9007b3a75fa5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_indication_8c_1a41b2ae55793685136cd8f87b0ff4b669"/><section>
+    <title>i2c_va_led_file</title>
+<indexterm><primary>i2c_va_led_file</primary><secondary>indication.c</secondary></indexterm>
+<indexterm><primary>indication.c</primary><secondary>i2c_va_led_file</secondary></indexterm>
+<para><computeroutput>int i2c_va_led_file</computeroutput></para></section>
+<anchor xml:id="_indication_8c_1a26546fa59bb9d376eee575657dab9fe1"/><section>
+    <title>i2cmsg</title>
+<indexterm><primary>i2cmsg</primary><secondary>indication.c</secondary></indexterm>
+<indexterm><primary>indication.c</primary><secondary>i2cmsg</secondary></indexterm>
+<para><computeroutput>struct i2c_msg i2cmsg</computeroutput></para></section>
+<anchor xml:id="_indication_8c_1a8e38fc06f9426ed6e7bad6a4dc5e0980"/><section>
+    <title>msg_rdwr</title>
+<indexterm><primary>msg_rdwr</primary><secondary>indication.c</secondary></indexterm>
+<indexterm><primary>indication.c</primary><secondary>msg_rdwr</secondary></indexterm>
+<para><computeroutput>struct i2c_rdwr_ioctl_data msg_rdwr</computeroutput></para></section>
+</section>
+</section>

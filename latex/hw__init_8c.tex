@@ -1,0 +1,139 @@
+\doxysection{Initializations/\+Hardware\+\_\+\+Initializations/hw\+\_\+init.c File Reference}
+\hypertarget{hw__init_8c}{}\label{hw__init_8c}\index{Initializations/Hardware\_Initializations/hw\_init.c@{Initializations/Hardware\_Initializations/hw\_init.c}}
+
+
+Source that initializes the hardware components.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for hw\+\_\+init.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{hw__init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hw__init_8c_afdbe206b3c49f019757ab09b3cf52b9c}{gpio\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Function to perform LCD functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__init_8c_ae909944aa85ae98323073c628be541aa}{spi\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{hw__init_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Function to perform LCD functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__init_8c_afe6c733d4bb6ed63271e16052a6bb71e}{HW\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em function that initializes the hardware \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that initializes the hardware components. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{hw__init_8c_afdbe206b3c49f019757ab09b3cf52b9c}\index{hw\_init.c@{hw\_init.c}!gpio\_init@{gpio\_init}}
+\index{gpio\_init@{gpio\_init}!hw\_init.c@{hw\_init.c}}
+\doxysubsubsection{\texorpdfstring{gpio\_init()}{gpio\_init()}}
+{\footnotesize\ttfamily \label{hw__init_8c_afdbe206b3c49f019757ab09b3cf52b9c} 
+void gpio\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function to perform LCD functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hw__init_8c_afdbe206b3c49f019757ab09b3cf52b9c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hw__init_8c_afdbe206b3c49f019757ab09b3cf52b9c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{hw__init_8c_afe6c733d4bb6ed63271e16052a6bb71e}\index{hw\_init.c@{hw\_init.c}!HW\_Init@{HW\_Init}}
+\index{HW\_Init@{HW\_Init}!hw\_init.c@{hw\_init.c}}
+\doxysubsubsection{\texorpdfstring{HW\_Init()}{HW\_Init()}}
+{\footnotesize\ttfamily \label{hw__init_8c_afe6c733d4bb6ed63271e16052a6bb71e} 
+void HW\+\_\+\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+function that initializes the hardware 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hw__init_8c_afe6c733d4bb6ed63271e16052a6bb71e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hw__init_8c_afe6c733d4bb6ed63271e16052a6bb71e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{hw__init_8c_a6842775ba83d166f02b8fef8bb63b1e6}\index{hw\_init.c@{hw\_init.c}!lcd\_init@{lcd\_init}}
+\index{lcd\_init@{lcd\_init}!hw\_init.c@{hw\_init.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_init()}{lcd\_init()}}
+{\footnotesize\ttfamily \label{hw__init_8c_a6842775ba83d166f02b8fef8bb63b1e6} 
+void lcd\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function to perform LCD functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESSS\+\_\+test on success or API\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hw__init_8c_a6842775ba83d166f02b8fef8bb63b1e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hw__init_8c_a6842775ba83d166f02b8fef8bb63b1e6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{hw__init_8c_ae909944aa85ae98323073c628be541aa}\index{hw\_init.c@{hw\_init.c}!spi\_init@{spi\_init}}
+\index{spi\_init@{spi\_init}!hw\_init.c@{hw\_init.c}}
+\doxysubsubsection{\texorpdfstring{spi\_init()}{spi\_init()}}
+{\footnotesize\ttfamily \label{hw__init_8c_ae909944aa85ae98323073c628be541aa} 
+void spi\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{hw__init_8c_ae909944aa85ae98323073c628be541aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hw__init_8c_ae909944aa85ae98323073c628be541aa_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_power__on__self__test_8c" xml:lang="en-US">
+<title>Self_Tests/power_on_self_test.c File Reference</title>
+<indexterm><primary>Self_Tests/power_on_self_test.c</primary></indexterm>
+<para>
+
+<para>Source that contains the self test and voltage monitring files. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;sys/ioctl.h&gt;<?linebreak?>#include &lt;sys/eventfd.h&gt;<?linebreak?>#include &lt;sys/epoll.h&gt;<?linebreak?>#include &lt;sys/time.h&gt;<?linebreak?>#include &lt;linux/gpio.h&gt;<?linebreak?>#include &lt;linux/spi/spidev.h&gt;<?linebreak?>#include &lt;linux/i2c-dev.h&gt;<?linebreak?>#include &lt;fcntl.h&gt;<?linebreak?>#include &lt;errno.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;time.h&gt;<?linebreak?>#include &lt;getopt.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for power_on_self_test.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="power__on__self__test_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="_power__on__self__test_8c_1a2b69d74572d29a70ecb8148fdb6b9f69">poweron_selftest</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="_power__on__self__test_8c_1a7e4bd03d5000eaba98f7880b37979086">ddr_memory_test</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="_power__on__self__test_8c_1a3aac4e89479292ddefe58923976b3103">external_adc_test</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="_power__on__self__test_8c_1a99fb93fc053acbdeac28adb7dd9998dc">internal_adc_test</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="_power__on__self__test_8c_1a0928c556839f0083145f58540674e7a3">led_test</link> (void)</para>
+</listitem>
+            <listitem><para>int <link linkend="_power__on__self__test_8c_1ac15199a45dee6b739fbcfcc1f509e0b5">lcd_init_test</link> (void *args)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_power__on__self__test_8c_1a72ff51e6a0a0544319b3181a0043bdb7">lcd_status</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_power__on__self__test_8c_1adc333f1f8f37a4c72924e5aed1d6e98c">post_error_flag</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that contains the self test and voltage monitring files. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_power__on__self__test_8c_1a7e4bd03d5000eaba98f7880b37979086"/><section>
+    <title>ddr_memory_test()</title>
+<indexterm><primary>ddr_memory_test</primary><secondary>power_on_self_test.c</secondary></indexterm>
+<indexterm><primary>power_on_self_test.c</primary><secondary>ddr_memory_test</secondary></indexterm>
+<para><computeroutput>int ddr_memory_test (void )</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="power__on__self__test_8c_a7e4bd03d5000eaba98f7880b37979086_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_power__on__self__test_8c_1a3aac4e89479292ddefe58923976b3103"/><section>
+    <title>external_adc_test()</title>
+<indexterm><primary>external_adc_test</primary><secondary>power_on_self_test.c</secondary></indexterm>
+<indexterm><primary>power_on_self_test.c</primary><secondary>external_adc_test</secondary></indexterm>
+<para><computeroutput>int external_adc_test (void )</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="power__on__self__test_8c_a3aac4e89479292ddefe58923976b3103_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_power__on__self__test_8c_1a99fb93fc053acbdeac28adb7dd9998dc"/><section>
+    <title>internal_adc_test()</title>
+<indexterm><primary>internal_adc_test</primary><secondary>power_on_self_test.c</secondary></indexterm>
+<indexterm><primary>power_on_self_test.c</primary><secondary>internal_adc_test</secondary></indexterm>
+<para><computeroutput>int internal_adc_test (void )</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="power__on__self__test_8c_a99fb93fc053acbdeac28adb7dd9998dc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_power__on__self__test_8c_1ac15199a45dee6b739fbcfcc1f509e0b5"/><section>
+    <title>lcd_init_test()</title>
+<indexterm><primary>lcd_init_test</primary><secondary>power_on_self_test.c</secondary></indexterm>
+<indexterm><primary>power_on_self_test.c</primary><secondary>lcd_init_test</secondary></indexterm>
+<para><computeroutput>int lcd_init_test (void * args)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="power__on__self__test_8c_ac15199a45dee6b739fbcfcc1f509e0b5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_power__on__self__test_8c_1a0928c556839f0083145f58540674e7a3"/><section>
+    <title>led_test()</title>
+<indexterm><primary>led_test</primary><secondary>power_on_self_test.c</secondary></indexterm>
+<indexterm><primary>power_on_self_test.c</primary><secondary>led_test</secondary></indexterm>
+<para><computeroutput>int led_test (void )</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="power__on__self__test_8c_a0928c556839f0083145f58540674e7a3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_power__on__self__test_8c_1a2b69d74572d29a70ecb8148fdb6b9f69"/><section>
+    <title>poweron_selftest()</title>
+<indexterm><primary>poweron_selftest</primary><secondary>power_on_self_test.c</secondary></indexterm>
+<indexterm><primary>power_on_self_test.c</primary><secondary>poweron_selftest</secondary></indexterm>
+<para><computeroutput>uint32_t poweron_selftest (void )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="power__on__self__test_8c_a2b69d74572d29a70ecb8148fdb6b9f69_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="power__on__self__test_8c_a2b69d74572d29a70ecb8148fdb6b9f69_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_power__on__self__test_8c_1a72ff51e6a0a0544319b3181a0043bdb7"/><section>
+    <title>lcd_status</title>
+<indexterm><primary>lcd_status</primary><secondary>power_on_self_test.c</secondary></indexterm>
+<indexterm><primary>power_on_self_test.c</primary><secondary>lcd_status</secondary></indexterm>
+<para><computeroutput>int lcd_status<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_power__on__self__test_8c_1adc333f1f8f37a4c72924e5aed1d6e98c"/><section>
+    <title>post_error_flag</title>
+<indexterm><primary>post_error_flag</primary><secondary>power_on_self_test.c</secondary></indexterm>
+<indexterm><primary>power_on_self_test.c</primary><secondary>post_error_flag</secondary></indexterm>
+<para><computeroutput>uint32_t post_error_flag</computeroutput></para></section>
+</section>
+</section>

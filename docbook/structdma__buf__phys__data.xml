@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structdma__buf__phys__data" xml:lang="en-US">
+<title>dma_buf_phys_data Struct Reference</title>
+<indexterm><primary>dma_buf_phys_data</primary></indexterm>
+Collaboration diagram for dma_buf_phys_data:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structdma__buf__phys__data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para>__u32 <link linkend="_structdma__buf__phys__data_1a1f789a6dd374f5261175d156f3738771">fd</link></para>
+</listitem>
+            <listitem><para>__u64 <link linkend="_structdma__buf__phys__data_1aaf7fe54bc3880282c5614bf0fe30a481">phys</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_structdma__buf__phys__data_1a1f789a6dd374f5261175d156f3738771"/><section>
+    <title>fd</title>
+<indexterm><primary>fd</primary><secondary>dma_buf_phys_data</secondary></indexterm>
+<indexterm><primary>dma_buf_phys_data</primary><secondary>fd</secondary></indexterm>
+<para><computeroutput>__u32 fd</computeroutput></para></section>
+<anchor xml:id="_structdma__buf__phys__data_1aaf7fe54bc3880282c5614bf0fe30a481"/><section>
+    <title>phys</title>
+<indexterm><primary>phys</primary><secondary>dma_buf_phys_data</secondary></indexterm>
+<indexterm><primary>dma_buf_phys_data</primary><secondary>phys</secondary></indexterm>
+<para><computeroutput>__u64 phys</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+API_Source/<link linkend="__app_data_init_8c">AppDataInit.c</link></section>
+</section>

@@ -1,0 +1,847 @@
+\doxysection{Initializations/\+Hardware\+\_\+\+Initializations/lcd\+\_\+init.c File Reference}
+\hypertarget{lcd__init_8c}{}\label{lcd__init_8c}\index{Initializations/Hardware\_Initializations/lcd\_init.c@{Initializations/Hardware\_Initializations/lcd\_init.c}}
+
+
+source file that has LCD display drivers -\/ ST7291  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$linux/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$linux/spi/spidev.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$sys/eventfd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/epoll.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$linux/types.\+h$>$}\newline
+Include dependency graph for lcd\+\_\+init.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlv__color__t}{lv\+\_\+color\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_afe71c6ee9148504ba9b10d9d0471882e}{ST7291\+\_\+\+SW\+\_\+\+RESET}}~0x01
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a90689f81f9debdc5b68bd744c66502b9}{ST7291\+\_\+\+SLPOUT}}~0x11
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ac04e282ff071644b863b3d6fe91add1a}{ST7291\+\_\+\+FRMCTR1}}~0x\+B1
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a706995cbe87282242495c5551597388c}{ST7291\+\_\+\+FRMCTR2}}~0x\+B2
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ad918bc60bc6e95a508d36bc16bba8f13}{ST7291\+\_\+\+FRMCTR3}}~0x\+B3
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_afd78faa7563ddf0430bd66465a83400d}{ST7291\+\_\+\+INVCTR}}~0x\+B4
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_aee0c305ab6860962b126eb8082984e82}{ST7291\+\_\+\+PWCTR1}}~0x\+C0
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a7c821476eecd542363f366e52a9ed1e0}{ST7291\+\_\+\+PWCTR2}}~0x\+C1
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ad6a5754c453a1e5fea2e7302b9d85025}{ST7291\+\_\+\+PWCTR3}}~0x\+C2
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a567c83cc6fc496c650ca36f6e7b87795}{ST7291\+\_\+\+PWCTR4}}~0x\+C3
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ae51b74eedaca991ffed615099f55266a}{ST7291\+\_\+\+PWCTR5}}~0x\+C4
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a78f0fa7b4d34cce0b968478feb0a924f}{ST7291\+\_\+\+VMCTR1}}~0x\+C5
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a04c0812e507fef41e832a0f6a4ffdb9c}{ST7291\+\_\+\+COLMOD}}~0x3A
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a550509e74750bce5a7df39a3ff4ac5a3}{ST7291\+\_\+\+MADCTL}}~0x36 /\texorpdfstring{$\ast$}{*} Memory Data Access Control \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a7f77a08673908c58312a842f92ad8577}{ST7291\+\_\+\+CASET}}~0x2A
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ac83825a942586c93252cf471a2c8c9dc}{ST7291\+\_\+\+RASET}}~0x2B
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a673256b4bf64fbc59f8ddf26a6512f36}{ST7291\+\_\+\+GMSET}}~0x\+F2 /\texorpdfstring{$\ast$}{*} Gammas Adjustment. \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ad1cc7063d6c6f58a1f4301ebf5b237f6}{ST7291\+\_\+\+GMCTRP1}}~0x\+E0
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a7bfc9b97394630cb0a80ae022dd10fda}{ST7291\+\_\+\+GMCTRN1}}~0x\+E1
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_addad02007c67369bda7ddc289df2a7e4}{ST7291\+\_\+\+DISPOFF}}~0x28
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a3c8d117719ab02504ef45e03a945759f}{ST7291\+\_\+\+DISPON}}~0x29
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ae483a5f6713cdc2a4ddcffc88b974214}{ST7291\+\_\+\+NORON}}~0x13
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a220e2130eb847aadf000811eefd7bf95}{ST7291\+\_\+\+RAMWR}}~0x2C
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_aa32f6c50fe89cc11c61d8571acabaca7}{LCD\+\_\+\+RED}}~0x\+F800
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a93c7d21d563437550a6873fe0cfe3c0b}{LCD\+\_\+\+GREEN}}~0x07\+E0
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a796c66d860ebc83d78b45f2ab697e428}{LCD\+\_\+\+AMBER}}~0x0\+BFC
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ae08bdcd40ed17c40c7ff537b31ae6c20}{LCD\+\_\+\+BLUE}}~0x001F
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a34f95804d4bfa75ef2ab12cc2b65a65c}{LCD\+\_\+\+WHITE}}~0x\+FFFF
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a89194c8cf2691afa77b4f81ad1cde821}{LCD\+\_\+\+BLACK}}~0x0000
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_aba19350e46c7bc94e268c3b6354462a9}{LCD\+\_\+\+SPICS\+\_\+\+GPIO}}~379
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_addda83d3c22042f740b41d54de0e3ea0}{LCD\+\_\+\+RST\+\_\+\+GPIO}}~380
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a6be38b43a4b733e18a5a22fade479555}{LCD\+\_\+\+DATACMD\+\_\+\+GPIO}}~383
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a52d5f135e53ac9a6240ff3086d57f8b9}{LCD\+\_\+\+IO\+\_\+\+CONTROL\+\_\+\+PIN}}~467
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ac3329e12db8417821839a31b3d8a2e60}{ST7735\+\_\+\+SCREEN\+\_\+\+WIDTH}}~160
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_addc34a2ba61cbb02657a700df7fdb9e0}{ST7735\+\_\+\+SCREEN\+\_\+\+HEIGHT}}~132
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_addc34a2ba61cbb02657a700df7fdb9e0}{ST7735\+\_\+\+SCREEN\+\_\+\+HEIGHT}}~132
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\+\_\+\+BUFFER\+\_\+\+SIZE}}~((\mbox{\hyperlink{lcd__init_8c_ac3329e12db8417821839a31b3d8a2e60}{ST7735\+\_\+\+SCREEN\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lcd__init_8c_addc34a2ba61cbb02657a700df7fdb9e0}{ST7735\+\_\+\+SCREEN\+\_\+\+HEIGHT}} \texorpdfstring{$\ast$}{*} 3)  + 16)
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a0797bafdef30c8f6d8a634b29e73b5af}{MAX\+\_\+\+CHUCK\+\_\+\+SIZE}}~1024
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a4e88ae31ea2ceef8a909bf5a41931b8b}{DRAW\+\_\+\+BUFFER\+\_\+\+NUM\+\_\+\+LINESS}}~10
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a3fae95557dba09431f64cc2c370aa64d}{MY\+\_\+\+DISP\+\_\+\+HOR\+\_\+\+RESS}}~132
+\item 
+\#define \mbox{\hyperlink{lcd__init_8c_a69c306e7e1cae1e8842f62c0b0067434}{MY\+\_\+\+DISP\+\_\+\+VER\+\_\+\+RESS}}~132
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lcd__init_8c_a992606101a6d77644f3a2be4afc99324}{GPIO\+\_\+pin\+\_\+\+Set\+Value}} (int GPIONUM, int Value)
+\begin{DoxyCompactList}\small\item\em Gpio set value high or low. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lcd__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d}{LCD\+\_\+\+SPI\+\_\+\+DATAWRITE}} (uint8\+\_\+t data)
+\item 
+int \mbox{\hyperlink{lcd__init_8c_af4441b8eab01e69f1b6222fee0f962ef}{LCD\+\_\+\+SPI\+\_\+\+CMDWRITE}} (uint8\+\_\+t cmd)
+\item 
+int \mbox{\hyperlink{lcd__init_8c_a0f1f48ffd26be40513f42995372dfa1d}{LCD\+\_\+\+SPI\+\_\+\+BUFFDATAWRITE}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t datalen)
+\item 
+int \mbox{\hyperlink{lcd__init_8c_adfb6e366f578e76ce29bbee1b0f1d295}{LCD\+\_\+\+SPI\+\_\+\+BUFFWRITE}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t datalen)
+\item 
+void \mbox{\hyperlink{lcd__init_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Function to perform LCD functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__init_8c_a4e054c44735fef87ab7359d8f6c37683}{LCD\+\_\+\+RST}} (void)
+\begin{DoxyCompactList}\small\item\em LCD reset. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{lcd__init_8c_afb4958a723598cf0433b9251483b3d5e}{ST7291\+\_\+set\+Screen\+Color}} (uint16\+\_\+t screen\+Basecolor, uint32\+\_\+t pixcel\+Num)
+\begin{DoxyCompactList}\small\item\em function to fill the screen color \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{lcd__init_8c_a80262b4fad757ccd0e8a02b55f58801b}{ST7291\+\_\+fill\+Screen\+Color}} (uint16\+\_\+t screen\+Basecolor)
+\begin{DoxyCompactList}\small\item\em Function to fill the screen colour pixel by pixel. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{lcd__init_8c_acea4b86040a91d501a913d67133a693b}{ST7291\+\_\+set\+Screen\+Window}} (uint16\+\_\+t x1, uint16\+\_\+t y1, uint16\+\_\+t x2, uint16\+\_\+t y2)
+\begin{DoxyCompactList}\small\item\em function to setting the window color \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lcd__init_8c_a18e43791216d53f52c3bca5d8b3bf60c}{ST7291\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of the LCD ST7291\+\_\+chip. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lcd__init_8c_a0543bbde4de0576ea0a80e73bac80a4e}{LCD\+\_\+\+SET\+\_\+\+DATACMD}} (char mode)
+\begin{DoxyCompactList}\small\item\em Sets the data/cmd line to receive the data nased on the modes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__init_8c_aad7f10e222fef42f9ca5d002a3e6d436}{lcd\+\_\+refresh}} (\mbox{\hyperlink{structlv__color__t}{lv\+\_\+color\+\_\+t}} \texorpdfstring{$\ast$}{*}framebuf)
+\begin{DoxyCompactList}\small\item\em Refreshes the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17}{lcd\+\_\+send\+\_\+data}} (uint16\+\_\+t x\+\_\+start, uint16\+\_\+t y\+\_\+start, uint16\+\_\+t x\+\_\+end, uint16\+\_\+t y\+\_\+end, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Send data pixelwise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lcd__init_8c_a95df70df16fe9bcb0ab0c6c8388b6dc3}{lcd\+\_\+refreshbuf}} (\mbox{\hyperlink{structlv__color__t}{lv\+\_\+color\+\_\+t}} \texorpdfstring{$\ast$}{*}framebuf)
+\begin{DoxyCompactList}\small\item\em Refreshes the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{lcd__init_8c_a810b845887b60187bd887573eaf75c2c}{colours}} \mbox{[}6\mbox{]} = \{ \mbox{\hyperlink{lcd__init_8c_aa32f6c50fe89cc11c61d8571acabaca7}{LCD\+\_\+\+RED}}, \mbox{\hyperlink{lcd__init_8c_a93c7d21d563437550a6873fe0cfe3c0b}{LCD\+\_\+\+GREEN}}, \mbox{\hyperlink{lcd__init_8c_a796c66d860ebc83d78b45f2ab697e428}{LCD\+\_\+\+AMBER}},\mbox{\hyperlink{lcd__init_8c_ae08bdcd40ed17c40c7ff537b31ae6c20}{LCD\+\_\+\+BLUE}}, \mbox{\hyperlink{lcd__init_8c_a34f95804d4bfa75ef2ab12cc2b65a65c}{LCD\+\_\+\+WHITE}},\mbox{\hyperlink{lcd__init_8c_a89194c8cf2691afa77b4f81ad1cde821}{LCD\+\_\+\+BLACK}}\}
+\item 
+char \mbox{\hyperlink{lcd__init_8c_aab3d3051ab911f66e9afd7745d5ebbb5}{errbuf}} \mbox{[}100\mbox{]} =\{0\}
+\item 
+int \mbox{\hyperlink{lcd__init_8c_a72ff51e6a0a0544319b3181a0043bdb7}{lcd\+\_\+status}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+source file that has LCD display drivers -\/ ST7291 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{lcd__init_8c_a4e88ae31ea2ceef8a909bf5a41931b8b}\index{lcd\_init.c@{lcd\_init.c}!DRAW\_BUFFER\_NUM\_LINESS@{DRAW\_BUFFER\_NUM\_LINESS}}
+\index{DRAW\_BUFFER\_NUM\_LINESS@{DRAW\_BUFFER\_NUM\_LINESS}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{DRAW\_BUFFER\_NUM\_LINESS}{DRAW\_BUFFER\_NUM\_LINESS}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a4e88ae31ea2ceef8a909bf5a41931b8b} 
+\#define DRAW\+\_\+\+BUFFER\+\_\+\+NUM\+\_\+\+LINESS~10}
+
+\Hypertarget{lcd__init_8c_a796c66d860ebc83d78b45f2ab697e428}\index{lcd\_init.c@{lcd\_init.c}!LCD\_AMBER@{LCD\_AMBER}}
+\index{LCD\_AMBER@{LCD\_AMBER}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_AMBER}{LCD\_AMBER}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a796c66d860ebc83d78b45f2ab697e428} 
+\#define LCD\+\_\+\+AMBER~0x0\+BFC}
+
+\Hypertarget{lcd__init_8c_a89194c8cf2691afa77b4f81ad1cde821}\index{lcd\_init.c@{lcd\_init.c}!LCD\_BLACK@{LCD\_BLACK}}
+\index{LCD\_BLACK@{LCD\_BLACK}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_BLACK}{LCD\_BLACK}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a89194c8cf2691afa77b4f81ad1cde821} 
+\#define LCD\+\_\+\+BLACK~0x0000}
+
+\Hypertarget{lcd__init_8c_ae08bdcd40ed17c40c7ff537b31ae6c20}\index{lcd\_init.c@{lcd\_init.c}!LCD\_BLUE@{LCD\_BLUE}}
+\index{LCD\_BLUE@{LCD\_BLUE}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_BLUE}{LCD\_BLUE}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ae08bdcd40ed17c40c7ff537b31ae6c20} 
+\#define LCD\+\_\+\+BLUE~0x001F}
+
+\Hypertarget{lcd__init_8c_a6be38b43a4b733e18a5a22fade479555}\index{lcd\_init.c@{lcd\_init.c}!LCD\_DATACMD\_GPIO@{LCD\_DATACMD\_GPIO}}
+\index{LCD\_DATACMD\_GPIO@{LCD\_DATACMD\_GPIO}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_DATACMD\_GPIO}{LCD\_DATACMD\_GPIO}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a6be38b43a4b733e18a5a22fade479555} 
+\#define LCD\+\_\+\+DATACMD\+\_\+\+GPIO~383}
+
+\Hypertarget{lcd__init_8c_a93c7d21d563437550a6873fe0cfe3c0b}\index{lcd\_init.c@{lcd\_init.c}!LCD\_GREEN@{LCD\_GREEN}}
+\index{LCD\_GREEN@{LCD\_GREEN}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_GREEN}{LCD\_GREEN}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a93c7d21d563437550a6873fe0cfe3c0b} 
+\#define LCD\+\_\+\+GREEN~0x07\+E0}
+
+\Hypertarget{lcd__init_8c_a52d5f135e53ac9a6240ff3086d57f8b9}\index{lcd\_init.c@{lcd\_init.c}!LCD\_IO\_CONTROL\_PIN@{LCD\_IO\_CONTROL\_PIN}}
+\index{LCD\_IO\_CONTROL\_PIN@{LCD\_IO\_CONTROL\_PIN}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_IO\_CONTROL\_PIN}{LCD\_IO\_CONTROL\_PIN}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a52d5f135e53ac9a6240ff3086d57f8b9} 
+\#define LCD\+\_\+\+IO\+\_\+\+CONTROL\+\_\+\+PIN~467}
+
+\Hypertarget{lcd__init_8c_aa32f6c50fe89cc11c61d8571acabaca7}\index{lcd\_init.c@{lcd\_init.c}!LCD\_RED@{LCD\_RED}}
+\index{LCD\_RED@{LCD\_RED}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_RED}{LCD\_RED}}
+{\footnotesize\ttfamily \label{lcd__init_8c_aa32f6c50fe89cc11c61d8571acabaca7} 
+\#define LCD\+\_\+\+RED~0x\+F800}
+
+\Hypertarget{lcd__init_8c_addda83d3c22042f740b41d54de0e3ea0}\index{lcd\_init.c@{lcd\_init.c}!LCD\_RST\_GPIO@{LCD\_RST\_GPIO}}
+\index{LCD\_RST\_GPIO@{LCD\_RST\_GPIO}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_RST\_GPIO}{LCD\_RST\_GPIO}}
+{\footnotesize\ttfamily \label{lcd__init_8c_addda83d3c22042f740b41d54de0e3ea0} 
+\#define LCD\+\_\+\+RST\+\_\+\+GPIO~380}
+
+\Hypertarget{lcd__init_8c_aba19350e46c7bc94e268c3b6354462a9}\index{lcd\_init.c@{lcd\_init.c}!LCD\_SPICS\_GPIO@{LCD\_SPICS\_GPIO}}
+\index{LCD\_SPICS\_GPIO@{LCD\_SPICS\_GPIO}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPICS\_GPIO}{LCD\_SPICS\_GPIO}}
+{\footnotesize\ttfamily \label{lcd__init_8c_aba19350e46c7bc94e268c3b6354462a9} 
+\#define LCD\+\_\+\+SPICS\+\_\+\+GPIO~379}
+
+\Hypertarget{lcd__init_8c_a34f95804d4bfa75ef2ab12cc2b65a65c}\index{lcd\_init.c@{lcd\_init.c}!LCD\_WHITE@{LCD\_WHITE}}
+\index{LCD\_WHITE@{LCD\_WHITE}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_WHITE}{LCD\_WHITE}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a34f95804d4bfa75ef2ab12cc2b65a65c} 
+\#define LCD\+\_\+\+WHITE~0x\+FFFF}
+
+\Hypertarget{lcd__init_8c_ad4d796b98c583d49e83adabd74a63bf6}\index{lcd\_init.c@{lcd\_init.c}!MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}}
+\index{MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_SIZE}{MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ad4d796b98c583d49e83adabd74a63bf6} 
+\#define MAX\+\_\+\+BUFFER\+\_\+\+SIZE~((\mbox{\hyperlink{lcd__init_8c_ac3329e12db8417821839a31b3d8a2e60}{ST7735\+\_\+\+SCREEN\+\_\+\+WIDTH}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lcd__init_8c_addc34a2ba61cbb02657a700df7fdb9e0}{ST7735\+\_\+\+SCREEN\+\_\+\+HEIGHT}} \texorpdfstring{$\ast$}{*} 3)  + 16)}
+
+\Hypertarget{lcd__init_8c_a0797bafdef30c8f6d8a634b29e73b5af}\index{lcd\_init.c@{lcd\_init.c}!MAX\_CHUCK\_SIZE@{MAX\_CHUCK\_SIZE}}
+\index{MAX\_CHUCK\_SIZE@{MAX\_CHUCK\_SIZE}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHUCK\_SIZE}{MAX\_CHUCK\_SIZE}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a0797bafdef30c8f6d8a634b29e73b5af} 
+\#define MAX\+\_\+\+CHUCK\+\_\+\+SIZE~1024}
+
+\Hypertarget{lcd__init_8c_a3fae95557dba09431f64cc2c370aa64d}\index{lcd\_init.c@{lcd\_init.c}!MY\_DISP\_HOR\_RESS@{MY\_DISP\_HOR\_RESS}}
+\index{MY\_DISP\_HOR\_RESS@{MY\_DISP\_HOR\_RESS}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{MY\_DISP\_HOR\_RESS}{MY\_DISP\_HOR\_RESS}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a3fae95557dba09431f64cc2c370aa64d} 
+\#define MY\+\_\+\+DISP\+\_\+\+HOR\+\_\+\+RESS~132}
+
+\Hypertarget{lcd__init_8c_a69c306e7e1cae1e8842f62c0b0067434}\index{lcd\_init.c@{lcd\_init.c}!MY\_DISP\_VER\_RESS@{MY\_DISP\_VER\_RESS}}
+\index{MY\_DISP\_VER\_RESS@{MY\_DISP\_VER\_RESS}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{MY\_DISP\_VER\_RESS}{MY\_DISP\_VER\_RESS}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a69c306e7e1cae1e8842f62c0b0067434} 
+\#define MY\+\_\+\+DISP\+\_\+\+VER\+\_\+\+RESS~132}
+
+\Hypertarget{lcd__init_8c_a7f77a08673908c58312a842f92ad8577}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_CASET@{ST7291\_CASET}}
+\index{ST7291\_CASET@{ST7291\_CASET}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_CASET}{ST7291\_CASET}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a7f77a08673908c58312a842f92ad8577} 
+\#define ST7291\+\_\+\+CASET~0x2A}
+
+\Hypertarget{lcd__init_8c_a04c0812e507fef41e832a0f6a4ffdb9c}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_COLMOD@{ST7291\_COLMOD}}
+\index{ST7291\_COLMOD@{ST7291\_COLMOD}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_COLMOD}{ST7291\_COLMOD}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a04c0812e507fef41e832a0f6a4ffdb9c} 
+\#define ST7291\+\_\+\+COLMOD~0x3A}
+
+\Hypertarget{lcd__init_8c_addad02007c67369bda7ddc289df2a7e4}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_DISPOFF@{ST7291\_DISPOFF}}
+\index{ST7291\_DISPOFF@{ST7291\_DISPOFF}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_DISPOFF}{ST7291\_DISPOFF}}
+{\footnotesize\ttfamily \label{lcd__init_8c_addad02007c67369bda7ddc289df2a7e4} 
+\#define ST7291\+\_\+\+DISPOFF~0x28}
+
+\Hypertarget{lcd__init_8c_a3c8d117719ab02504ef45e03a945759f}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_DISPON@{ST7291\_DISPON}}
+\index{ST7291\_DISPON@{ST7291\_DISPON}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_DISPON}{ST7291\_DISPON}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a3c8d117719ab02504ef45e03a945759f} 
+\#define ST7291\+\_\+\+DISPON~0x29}
+
+\Hypertarget{lcd__init_8c_ac04e282ff071644b863b3d6fe91add1a}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_FRMCTR1@{ST7291\_FRMCTR1}}
+\index{ST7291\_FRMCTR1@{ST7291\_FRMCTR1}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_FRMCTR1}{ST7291\_FRMCTR1}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ac04e282ff071644b863b3d6fe91add1a} 
+\#define ST7291\+\_\+\+FRMCTR1~0x\+B1}
+
+\Hypertarget{lcd__init_8c_a706995cbe87282242495c5551597388c}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_FRMCTR2@{ST7291\_FRMCTR2}}
+\index{ST7291\_FRMCTR2@{ST7291\_FRMCTR2}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_FRMCTR2}{ST7291\_FRMCTR2}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a706995cbe87282242495c5551597388c} 
+\#define ST7291\+\_\+\+FRMCTR2~0x\+B2}
+
+\Hypertarget{lcd__init_8c_ad918bc60bc6e95a508d36bc16bba8f13}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_FRMCTR3@{ST7291\_FRMCTR3}}
+\index{ST7291\_FRMCTR3@{ST7291\_FRMCTR3}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_FRMCTR3}{ST7291\_FRMCTR3}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ad918bc60bc6e95a508d36bc16bba8f13} 
+\#define ST7291\+\_\+\+FRMCTR3~0x\+B3}
+
+\Hypertarget{lcd__init_8c_a7bfc9b97394630cb0a80ae022dd10fda}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_GMCTRN1@{ST7291\_GMCTRN1}}
+\index{ST7291\_GMCTRN1@{ST7291\_GMCTRN1}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_GMCTRN1}{ST7291\_GMCTRN1}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a7bfc9b97394630cb0a80ae022dd10fda} 
+\#define ST7291\+\_\+\+GMCTRN1~0x\+E1}
+
+\Hypertarget{lcd__init_8c_ad1cc7063d6c6f58a1f4301ebf5b237f6}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_GMCTRP1@{ST7291\_GMCTRP1}}
+\index{ST7291\_GMCTRP1@{ST7291\_GMCTRP1}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_GMCTRP1}{ST7291\_GMCTRP1}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ad1cc7063d6c6f58a1f4301ebf5b237f6} 
+\#define ST7291\+\_\+\+GMCTRP1~0x\+E0}
+
+\Hypertarget{lcd__init_8c_a673256b4bf64fbc59f8ddf26a6512f36}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_GMSET@{ST7291\_GMSET}}
+\index{ST7291\_GMSET@{ST7291\_GMSET}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_GMSET}{ST7291\_GMSET}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a673256b4bf64fbc59f8ddf26a6512f36} 
+\#define ST7291\+\_\+\+GMSET~0x\+F2 /\texorpdfstring{$\ast$}{*} Gammas Adjustment. \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{lcd__init_8c_afd78faa7563ddf0430bd66465a83400d}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_INVCTR@{ST7291\_INVCTR}}
+\index{ST7291\_INVCTR@{ST7291\_INVCTR}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_INVCTR}{ST7291\_INVCTR}}
+{\footnotesize\ttfamily \label{lcd__init_8c_afd78faa7563ddf0430bd66465a83400d} 
+\#define ST7291\+\_\+\+INVCTR~0x\+B4}
+
+\Hypertarget{lcd__init_8c_a550509e74750bce5a7df39a3ff4ac5a3}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_MADCTL@{ST7291\_MADCTL}}
+\index{ST7291\_MADCTL@{ST7291\_MADCTL}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_MADCTL}{ST7291\_MADCTL}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a550509e74750bce5a7df39a3ff4ac5a3} 
+\#define ST7291\+\_\+\+MADCTL~0x36 /\texorpdfstring{$\ast$}{*} Memory Data Access Control \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{lcd__init_8c_ae483a5f6713cdc2a4ddcffc88b974214}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_NORON@{ST7291\_NORON}}
+\index{ST7291\_NORON@{ST7291\_NORON}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_NORON}{ST7291\_NORON}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ae483a5f6713cdc2a4ddcffc88b974214} 
+\#define ST7291\+\_\+\+NORON~0x13}
+
+\Hypertarget{lcd__init_8c_aee0c305ab6860962b126eb8082984e82}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_PWCTR1@{ST7291\_PWCTR1}}
+\index{ST7291\_PWCTR1@{ST7291\_PWCTR1}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_PWCTR1}{ST7291\_PWCTR1}}
+{\footnotesize\ttfamily \label{lcd__init_8c_aee0c305ab6860962b126eb8082984e82} 
+\#define ST7291\+\_\+\+PWCTR1~0x\+C0}
+
+\Hypertarget{lcd__init_8c_a7c821476eecd542363f366e52a9ed1e0}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_PWCTR2@{ST7291\_PWCTR2}}
+\index{ST7291\_PWCTR2@{ST7291\_PWCTR2}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_PWCTR2}{ST7291\_PWCTR2}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a7c821476eecd542363f366e52a9ed1e0} 
+\#define ST7291\+\_\+\+PWCTR2~0x\+C1}
+
+\Hypertarget{lcd__init_8c_ad6a5754c453a1e5fea2e7302b9d85025}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_PWCTR3@{ST7291\_PWCTR3}}
+\index{ST7291\_PWCTR3@{ST7291\_PWCTR3}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_PWCTR3}{ST7291\_PWCTR3}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ad6a5754c453a1e5fea2e7302b9d85025} 
+\#define ST7291\+\_\+\+PWCTR3~0x\+C2}
+
+\Hypertarget{lcd__init_8c_a567c83cc6fc496c650ca36f6e7b87795}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_PWCTR4@{ST7291\_PWCTR4}}
+\index{ST7291\_PWCTR4@{ST7291\_PWCTR4}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_PWCTR4}{ST7291\_PWCTR4}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a567c83cc6fc496c650ca36f6e7b87795} 
+\#define ST7291\+\_\+\+PWCTR4~0x\+C3}
+
+\Hypertarget{lcd__init_8c_ae51b74eedaca991ffed615099f55266a}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_PWCTR5@{ST7291\_PWCTR5}}
+\index{ST7291\_PWCTR5@{ST7291\_PWCTR5}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_PWCTR5}{ST7291\_PWCTR5}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ae51b74eedaca991ffed615099f55266a} 
+\#define ST7291\+\_\+\+PWCTR5~0x\+C4}
+
+\Hypertarget{lcd__init_8c_a220e2130eb847aadf000811eefd7bf95}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_RAMWR@{ST7291\_RAMWR}}
+\index{ST7291\_RAMWR@{ST7291\_RAMWR}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_RAMWR}{ST7291\_RAMWR}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a220e2130eb847aadf000811eefd7bf95} 
+\#define ST7291\+\_\+\+RAMWR~0x2C}
+
+\Hypertarget{lcd__init_8c_ac83825a942586c93252cf471a2c8c9dc}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_RASET@{ST7291\_RASET}}
+\index{ST7291\_RASET@{ST7291\_RASET}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_RASET}{ST7291\_RASET}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ac83825a942586c93252cf471a2c8c9dc} 
+\#define ST7291\+\_\+\+RASET~0x2B}
+
+\Hypertarget{lcd__init_8c_a90689f81f9debdc5b68bd744c66502b9}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_SLPOUT@{ST7291\_SLPOUT}}
+\index{ST7291\_SLPOUT@{ST7291\_SLPOUT}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_SLPOUT}{ST7291\_SLPOUT}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a90689f81f9debdc5b68bd744c66502b9} 
+\#define ST7291\+\_\+\+SLPOUT~0x11}
+
+\Hypertarget{lcd__init_8c_afe71c6ee9148504ba9b10d9d0471882e}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_SW\_RESET@{ST7291\_SW\_RESET}}
+\index{ST7291\_SW\_RESET@{ST7291\_SW\_RESET}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_SW\_RESET}{ST7291\_SW\_RESET}}
+{\footnotesize\ttfamily \label{lcd__init_8c_afe71c6ee9148504ba9b10d9d0471882e} 
+\#define ST7291\+\_\+\+SW\+\_\+\+RESET~0x01}
+
+\Hypertarget{lcd__init_8c_a78f0fa7b4d34cce0b968478feb0a924f}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_VMCTR1@{ST7291\_VMCTR1}}
+\index{ST7291\_VMCTR1@{ST7291\_VMCTR1}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_VMCTR1}{ST7291\_VMCTR1}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a78f0fa7b4d34cce0b968478feb0a924f} 
+\#define ST7291\+\_\+\+VMCTR1~0x\+C5}
+
+\Hypertarget{lcd__init_8c_addc34a2ba61cbb02657a700df7fdb9e0}\index{lcd\_init.c@{lcd\_init.c}!ST7735\_SCREEN\_HEIGHT@{ST7735\_SCREEN\_HEIGHT}}
+\index{ST7735\_SCREEN\_HEIGHT@{ST7735\_SCREEN\_HEIGHT}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_SCREEN\_HEIGHT}{ST7735\_SCREEN\_HEIGHT}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{lcd__init_8c_addc34a2ba61cbb02657a700df7fdb9e0} 
+\#define ST7735\+\_\+\+SCREEN\+\_\+\+HEIGHT~132}
+
+\Hypertarget{lcd__init_8c_addc34a2ba61cbb02657a700df7fdb9e0}\index{lcd\_init.c@{lcd\_init.c}!ST7735\_SCREEN\_HEIGHT@{ST7735\_SCREEN\_HEIGHT}}
+\index{ST7735\_SCREEN\_HEIGHT@{ST7735\_SCREEN\_HEIGHT}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_SCREEN\_HEIGHT}{ST7735\_SCREEN\_HEIGHT}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{lcd__init_8c_addc34a2ba61cbb02657a700df7fdb9e0} 
+\#define ST7735\+\_\+\+SCREEN\+\_\+\+HEIGHT~132}
+
+\Hypertarget{lcd__init_8c_ac3329e12db8417821839a31b3d8a2e60}\index{lcd\_init.c@{lcd\_init.c}!ST7735\_SCREEN\_WIDTH@{ST7735\_SCREEN\_WIDTH}}
+\index{ST7735\_SCREEN\_WIDTH@{ST7735\_SCREEN\_WIDTH}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7735\_SCREEN\_WIDTH}{ST7735\_SCREEN\_WIDTH}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ac3329e12db8417821839a31b3d8a2e60} 
+\#define ST7735\+\_\+\+SCREEN\+\_\+\+WIDTH~160}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lcd__init_8c_a992606101a6d77644f3a2be4afc99324}\index{lcd\_init.c@{lcd\_init.c}!GPIO\_pin\_SetValue@{GPIO\_pin\_SetValue}}
+\index{GPIO\_pin\_SetValue@{GPIO\_pin\_SetValue}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_pin\_SetValue()}{GPIO\_pin\_SetValue()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a992606101a6d77644f3a2be4afc99324} 
+int GPIO\+\_\+pin\+\_\+\+Set\+Value (\begin{DoxyParamCaption}\item[{int}]{GPIONUM}{, }\item[{int}]{Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Gpio set value high or low. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIONUM} & gpio pin number \\
+\hline
+{\em Value} & \mbox{[}1-\/ high\mbox{]} \mbox{[}0-\/ low\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESSS\+\_\+test on success or AP\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{lcd__init_8c_a992606101a6d77644f3a2be4afc99324_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a992606101a6d77644f3a2be4afc99324_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_a6842775ba83d166f02b8fef8bb63b1e6}\index{lcd\_init.c@{lcd\_init.c}!lcd\_init@{lcd\_init}}
+\index{lcd\_init@{lcd\_init}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_init()}{lcd\_init()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a6842775ba83d166f02b8fef8bb63b1e6} 
+void lcd\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Function to perform LCD functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NULL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESSS\+\_\+test on success or API\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a6842775ba83d166f02b8fef8bb63b1e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a6842775ba83d166f02b8fef8bb63b1e6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_aad7f10e222fef42f9ca5d002a3e6d436}\index{lcd\_init.c@{lcd\_init.c}!lcd\_refresh@{lcd\_refresh}}
+\index{lcd\_refresh@{lcd\_refresh}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_refresh()}{lcd\_refresh()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_aad7f10e222fef42f9ca5d002a3e6d436} 
+void lcd\+\_\+refresh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlv__color__t}{lv\+\_\+color\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{framebuf}{}\end{DoxyParamCaption})}
+
+
+
+Refreshes the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}framebuf} & pointer to the buffer value \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_aad7f10e222fef42f9ca5d002a3e6d436_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_a95df70df16fe9bcb0ab0c6c8388b6dc3}\index{lcd\_init.c@{lcd\_init.c}!lcd\_refreshbuf@{lcd\_refreshbuf}}
+\index{lcd\_refreshbuf@{lcd\_refreshbuf}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_refreshbuf()}{lcd\_refreshbuf()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a95df70df16fe9bcb0ab0c6c8388b6dc3} 
+void lcd\+\_\+refreshbuf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlv__color__t}{lv\+\_\+color\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{framebuf}{}\end{DoxyParamCaption})}
+
+
+
+Refreshes the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}framebuf} & pointer to the buffer value \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a95df70df16fe9bcb0ab0c6c8388b6dc3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_a4e054c44735fef87ab7359d8f6c37683}\index{lcd\_init.c@{lcd\_init.c}!LCD\_RST@{LCD\_RST}}
+\index{LCD\_RST@{LCD\_RST}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_RST()}{LCD\_RST()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a4e054c44735fef87ab7359d8f6c37683} 
+void LCD\+\_\+\+RST (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+LCD reset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a4e054c44735fef87ab7359d8f6c37683_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a4e054c44735fef87ab7359d8f6c37683_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17}\index{lcd\_init.c@{lcd\_init.c}!lcd\_send\_data@{lcd\_send\_data}}
+\index{lcd\_send\_data@{lcd\_send\_data}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_data()}{lcd\_send\_data()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17} 
+void lcd\+\_\+send\+\_\+data (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x\+\_\+start}{, }\item[{uint16\+\_\+t}]{y\+\_\+start}{, }\item[{uint16\+\_\+t}]{x\+\_\+end}{, }\item[{uint16\+\_\+t}]{y\+\_\+end}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Send data pixelwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+start} & starting address of x axis \\
+\hline
+{\em y\+\_\+start} & starting address of y axis \\
+\hline
+{\em x\+\_\+end} & ending address of the x axis \\
+\hline
+{\em y\+\_\+end} & ending address of the y axis \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}p} & pixel \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_ae55992fae61ed8e00b3bbc6cff04ef17_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_a0543bbde4de0576ea0a80e73bac80a4e}\index{lcd\_init.c@{lcd\_init.c}!LCD\_SET\_DATACMD@{LCD\_SET\_DATACMD}}
+\index{LCD\_SET\_DATACMD@{LCD\_SET\_DATACMD}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SET\_DATACMD()}{LCD\_SET\_DATACMD()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a0543bbde4de0576ea0a80e73bac80a4e} 
+int LCD\+\_\+\+SET\+\_\+\+DATACMD (\begin{DoxyParamCaption}\item[{char}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Sets the data/cmd line to receive the data nased on the modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & \mbox{[}0-\/ command\mbox{]}, \mbox{[}1-\/ data\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+API\+\_\+\+SUCCESSS\+\_\+test on success or AP\+\_\+\+FAILURE\+\_\+test on failure 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a0543bbde4de0576ea0a80e73bac80a4e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a0543bbde4de0576ea0a80e73bac80a4e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_a0f1f48ffd26be40513f42995372dfa1d}\index{lcd\_init.c@{lcd\_init.c}!LCD\_SPI\_BUFFDATAWRITE@{LCD\_SPI\_BUFFDATAWRITE}}
+\index{LCD\_SPI\_BUFFDATAWRITE@{LCD\_SPI\_BUFFDATAWRITE}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_BUFFDATAWRITE()}{LCD\_SPI\_BUFFDATAWRITE()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a0f1f48ffd26be40513f42995372dfa1d} 
+int LCD\+\_\+\+SPI\+\_\+\+BUFFDATAWRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{datalen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a0f1f48ffd26be40513f42995372dfa1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{lcd__init_8c_a0f1f48ffd26be40513f42995372dfa1d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_adfb6e366f578e76ce29bbee1b0f1d295}\index{lcd\_init.c@{lcd\_init.c}!LCD\_SPI\_BUFFWRITE@{LCD\_SPI\_BUFFWRITE}}
+\index{LCD\_SPI\_BUFFWRITE@{LCD\_SPI\_BUFFWRITE}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_BUFFWRITE()}{LCD\_SPI\_BUFFWRITE()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_adfb6e366f578e76ce29bbee1b0f1d295} 
+int LCD\+\_\+\+SPI\+\_\+\+BUFFWRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{datalen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_adfb6e366f578e76ce29bbee1b0f1d295_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_adfb6e366f578e76ce29bbee1b0f1d295_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_af4441b8eab01e69f1b6222fee0f962ef}\index{lcd\_init.c@{lcd\_init.c}!LCD\_SPI\_CMDWRITE@{LCD\_SPI\_CMDWRITE}}
+\index{LCD\_SPI\_CMDWRITE@{LCD\_SPI\_CMDWRITE}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_CMDWRITE()}{LCD\_SPI\_CMDWRITE()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_af4441b8eab01e69f1b6222fee0f962ef} 
+int LCD\+\_\+\+SPI\+\_\+\+CMDWRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_af4441b8eab01e69f1b6222fee0f962ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_af4441b8eab01e69f1b6222fee0f962ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d}\index{lcd\_init.c@{lcd\_init.c}!LCD\_SPI\_DATAWRITE@{LCD\_SPI\_DATAWRITE}}
+\index{LCD\_SPI\_DATAWRITE@{LCD\_SPI\_DATAWRITE}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SPI\_DATAWRITE()}{LCD\_SPI\_DATAWRITE()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d} 
+int LCD\+\_\+\+SPI\+\_\+\+DATAWRITE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a20244be6a13ba66fc8d004cbf92f6e4d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_a80262b4fad757ccd0e8a02b55f58801b}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_fillScreenColor@{ST7291\_fillScreenColor}}
+\index{ST7291\_fillScreenColor@{ST7291\_fillScreenColor}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_fillScreenColor()}{ST7291\_fillScreenColor()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a80262b4fad757ccd0e8a02b55f58801b} 
+uint8\+\_\+t ST7291\+\_\+fill\+Screen\+Color (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{screen\+Basecolor}{}\end{DoxyParamCaption})}
+
+
+
+Function to fill the screen colour pixel by pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen\+Basecolor} & RGB value of the colour to be filled \\
+\hline
+{\em pixcel\+Num} & Total number of pixcel on the LCD screen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on completion 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a80262b4fad757ccd0e8a02b55f58801b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_a18e43791216d53f52c3bca5d8b3bf60c}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_init@{ST7291\_init}}
+\index{ST7291\_init@{ST7291\_init}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_init()}{ST7291\_init()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a18e43791216d53f52c3bca5d8b3bf60c} 
+int ST7291\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialization of the LCD ST7291\+\_\+chip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on completion 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a18e43791216d53f52c3bca5d8b3bf60c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_a18e43791216d53f52c3bca5d8b3bf60c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_afb4958a723598cf0433b9251483b3d5e}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_setScreenColor@{ST7291\_setScreenColor}}
+\index{ST7291\_setScreenColor@{ST7291\_setScreenColor}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_setScreenColor()}{ST7291\_setScreenColor()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_afb4958a723598cf0433b9251483b3d5e} 
+uint8\+\_\+t ST7291\+\_\+set\+Screen\+Color (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{screen\+Basecolor}{, }\item[{uint32\+\_\+t}]{pixcel\+Num}{}\end{DoxyParamCaption})}
+
+
+
+function to fill the screen color 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen\+Basecolor} & -\/ hex value of the color \\
+\hline
+{\em pixcel\+Num} & -\/ pixel number \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_afb4958a723598cf0433b9251483b3d5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_afb4958a723598cf0433b9251483b3d5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lcd__init_8c_acea4b86040a91d501a913d67133a693b}\index{lcd\_init.c@{lcd\_init.c}!ST7291\_setScreenWindow@{ST7291\_setScreenWindow}}
+\index{ST7291\_setScreenWindow@{ST7291\_setScreenWindow}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{ST7291\_setScreenWindow()}{ST7291\_setScreenWindow()}}
+{\footnotesize\ttfamily \label{lcd__init_8c_acea4b86040a91d501a913d67133a693b} 
+uint8\+\_\+t ST7291\+\_\+set\+Screen\+Window (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x1}{, }\item[{uint16\+\_\+t}]{y1}{, }\item[{uint16\+\_\+t}]{x2}{, }\item[{uint16\+\_\+t}]{y2}{}\end{DoxyParamCaption})}
+
+
+
+function to setting the window color 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & -\/ start x position \\
+\hline
+{\em y1} & -\/ start y position \\
+\hline
+{\em x2} & -\/ end x position \\
+\hline
+{\em y2} & -\/ end y position \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_acea4b86040a91d501a913d67133a693b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__init_8c_acea4b86040a91d501a913d67133a693b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{lcd__init_8c_a810b845887b60187bd887573eaf75c2c}\index{lcd\_init.c@{lcd\_init.c}!colours@{colours}}
+\index{colours@{colours}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{colours}{colours}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a810b845887b60187bd887573eaf75c2c} 
+int32\+\_\+t colours\mbox{[}6\mbox{]} = \{ \mbox{\hyperlink{lcd__init_8c_aa32f6c50fe89cc11c61d8571acabaca7}{LCD\+\_\+\+RED}}, \mbox{\hyperlink{lcd__init_8c_a93c7d21d563437550a6873fe0cfe3c0b}{LCD\+\_\+\+GREEN}}, \mbox{\hyperlink{lcd__init_8c_a796c66d860ebc83d78b45f2ab697e428}{LCD\+\_\+\+AMBER}},\mbox{\hyperlink{lcd__init_8c_ae08bdcd40ed17c40c7ff537b31ae6c20}{LCD\+\_\+\+BLUE}}, \mbox{\hyperlink{lcd__init_8c_a34f95804d4bfa75ef2ab12cc2b65a65c}{LCD\+\_\+\+WHITE}},\mbox{\hyperlink{lcd__init_8c_a89194c8cf2691afa77b4f81ad1cde821}{LCD\+\_\+\+BLACK}}\}}
+
+\Hypertarget{lcd__init_8c_aab3d3051ab911f66e9afd7745d5ebbb5}\index{lcd\_init.c@{lcd\_init.c}!errbuf@{errbuf}}
+\index{errbuf@{errbuf}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{errbuf}{errbuf}}
+{\footnotesize\ttfamily \label{lcd__init_8c_aab3d3051ab911f66e9afd7745d5ebbb5} 
+char errbuf\mbox{[}100\mbox{]} =\{0\}}
+
+\Hypertarget{lcd__init_8c_a72ff51e6a0a0544319b3181a0043bdb7}\index{lcd\_init.c@{lcd\_init.c}!lcd\_status@{lcd\_status}}
+\index{lcd\_status@{lcd\_status}!lcd\_init.c@{lcd\_init.c}}
+\doxysubsubsection{\texorpdfstring{lcd\_status}{lcd\_status}}
+{\footnotesize\ttfamily \label{lcd__init_8c_a72ff51e6a0a0544319b3181a0043bdb7} 
+int lcd\+\_\+status = 1}
+

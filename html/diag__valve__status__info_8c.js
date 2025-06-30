@@ -8,6 +8,7 @@ var diag__valve__status__info_8c =
     [ "getModuleNumber", "diag__valve__status__info_8c.html#a744f1cd07a566814b870a1c9c929abe5", null ],
     [ "reset_diag_status", "diag__valve__status__info_8c.html#aac575266636a7dcae8ddc521c7405ded", null ],
     [ "stop_timer", "diag__valve__status__info_8c.html#a58997b988646976eadf522f6b26c9f46", null ],
+    [ "clear_diag_present", "diag__valve__status__info_8c.html#ac39e40400e571e3af868ddb0cbc6f467", null ],
     [ "cur_disp_scr_index", "diag__valve__status__info_8c.html#a49952e1fb0d52f6ef2f6fd0f381ab1b5", null ],
     [ "curr_dv_fault", "diag__valve__status__info_8c.html#a7c1d2a8af224b7df85080535d0b093bd", null ],
     [ "curr_dv_war", "diag__valve__status__info_8c.html#a601731fa6e9ce4d048ff79536ecf9e17", null ],

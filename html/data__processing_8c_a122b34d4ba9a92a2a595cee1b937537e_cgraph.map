@@ -40,7 +40,7 @@
 <area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="606,219,665,219,665,224,606,224"/>
 <area shape="poly" id="edge13_Node000011_Node000006" title=" " alt="" coords="868,197,924,183,926,189,869,202"/>
 <area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="843,241,881,259,948,307,1001,355,998,359,945,311,878,264,841,246"/>
-<area shape="rect" id="Node000013" href="$_main_bus_node_8c.html#ae6ec7a987944307ed8a841f85d0c6f1d" title="Retrieves the identification info of the Main Bus node." alt="" coords="683,419,865,445"/>
+<area shape="rect" id="Node000013" href="$_main_bus_node_8c.html#ac48f2fd7eafd46b2b15b91d5e19c421e" title="Retrieve the identification information of the Main Bus Node (MBN)." alt="" coords="683,419,865,445"/>
 <area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="609,435,668,433,668,438,610,440"/>
 <area shape="poly" id="edge18_Node000012_Node000014" title=" " alt="" coords="609,460,622,472,643,502,655,530,660,557,660,584,659,642,662,674,671,710,692,764,716,817,760,901,755,904,711,820,687,766,666,711,657,675,654,642,655,584,655,558,650,531,639,504,618,475,606,464"/>
 <area shape="poly" id="edge17_Node000013_Node000007" title=" " alt="" coords="843,415,940,396,942,401,844,421"/>
@@ -112,8 +112,8 @@
 <area shape="poly" id="edge50_Node000037_Node000014" title=" " alt="" coords="603,628,622,639,649,679,689,751,762,901,757,903,684,754,645,681,619,643,600,632"/>
 <area shape="poly" id="edge53_Node000038_Node000014" title=" " alt="" coords="584,569,604,577,622,589,645,617,654,645,660,674,671,710,762,901,757,904,666,712,655,676,649,646,640,619,619,593,602,582,582,574"/>
 <area shape="poly" id="edge52_Node000038_Node000027" title=" " alt="" coords="582,557,602,549,619,538,631,522,638,506,641,473,645,439,652,421,667,405,684,393,687,397,670,409,657,424,650,440,647,473,643,508,636,525,622,542,604,554,584,562"/>
-<area shape="rect" id="Node000058" href="$valves__modules__status__info_8c.html#ab161d09da45c6c42b5a903700818aa9b" title="Process diagnostic valve status information across pressure zones." alt="" coords="463,1379,595,1421"/>
+<area shape="rect" id="Node000058" href="$valves__modules__status__info_8c.html#a1fd8df8b25c0dee8a4dc6fcb656ba741" title="Process diagnostic valve status information across pressure zones." alt="" coords="463,1379,595,1421"/>
 <area shape="poly" id="edge66_Node000057_Node000058" title=" " alt="" coords="352,1353,448,1377,446,1382,350,1358"/>
-<area shape="rect" id="Node000064" href="$valves__modules__status__info_8c.html#aa0f3dfc9666e2ed3508827b4b9a1d98a" title="Process ISEM status information across pressure zones." alt="" coords="443,1328,615,1355"/>
-<area shape="poly" id="edge67_Node000057_Node000064" title=" " alt="" coords="386,1339,427,1339,427,1344,386,1344"/>
+<area shape="rect" id="Node000065" href="$valves__modules__status__info_8c.html#a0d810ae77672dd3e21568adc7a42b38c" title="Process ISEM status information across pressure zones." alt="" coords="443,1328,615,1355"/>
+<area shape="poly" id="edge67_Node000057_Node000065" title=" " alt="" coords="386,1339,427,1339,427,1344,386,1344"/>
 </map>

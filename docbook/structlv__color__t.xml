@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structlv__color__t" xml:lang="en-US">
+<title>lv_color_t Struct Reference</title>
+<indexterm><primary>lv_color_t</primary></indexterm>
+Collaboration diagram for lv_color_t:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structlv__color__t__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_structlv__color__t_1aa8cc29818fac4b27d138dcd358833afb">full</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_structlv__color__t_1aa8cc29818fac4b27d138dcd358833afb"/><section>
+    <title>full</title>
+<indexterm><primary>full</primary><secondary>lv_color_t</secondary></indexterm>
+<indexterm><primary>lv_color_t</primary><secondary>full</secondary></indexterm>
+<para><computeroutput>uint16_t full</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Initializations/Hardware_Initializations/<link linkend="_lcd__init_8c">lcd_init.c</link></section>
+</section>

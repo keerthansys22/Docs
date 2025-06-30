@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__data_server_led_indication_8c" xml:lang="en-US">
+<title>API_Source/DataServerLedIndication.c File Reference</title>
+<indexterm><primary>API_Source/DataServerLedIndication.c</primary></indexterm>
+<para>
+
+<para>Source that turns on the led on/off. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;sys/ioctl.h&gt;<?linebreak?>#include &lt;fcntl.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;errno.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;linux/i2c-dev.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for DataServerLedIndication.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_led_indication_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__data_server_led_indication_8c_1af352e029b1015e3dea14361b83d76445">I2C_LED_ON_OFF</link> (int i2c_fd, uint16_t i2c_addr, uint16_t fault_bit)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that turns on the led on/off. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__data_server_led_indication_8c_1af352e029b1015e3dea14361b83d76445"/><section>
+    <title>I2C_LED_ON_OFF()</title>
+<indexterm><primary>I2C_LED_ON_OFF</primary><secondary>DataServerLedIndication.c</secondary></indexterm>
+<indexterm><primary>DataServerLedIndication.c</primary><secondary>I2C_LED_ON_OFF</secondary></indexterm>
+<para><computeroutput>int I2C_LED_ON_OFF (int i2c_fd, uint16_t i2c_addr, uint16_t fault_bit)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_data_server_led_indication_8c_af352e029b1015e3dea14361b83d76445_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

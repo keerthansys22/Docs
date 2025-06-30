@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__internal_prop_8c" xml:lang="en-US">
+<title>API_Source/ValveModulesApiSource/InternalProp.c File Reference</title>
+<indexterm><primary>API_Source/ValveModulesApiSource/InternalProp.c</primary></indexterm>
+<para>
+
+<para>This source file contains the API source related to Internal Prop. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?>#include &quot;../Header/API_Header/pzmapping.h&quot;<?linebreak?></programlisting>Include dependency graph for InternalProp.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="__internal_prop_8c_1a2383a3641c7a989a9d6c99be17bf45c8">writeSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t addr, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__internal_prop_8c_1ae512dcee3f48f317872617e5f4559b19">readSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__internal_prop_8c_1afffe0a8cc543604a9a4c31b71fe442bd">getPressureZoneProcessDataAddress</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__internal_prop_8c_1afa3d041d8597ff5b49a58ec5e13f2ea4">getPresssureZoneServiceDataAddress</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__internal_prop_8c_1ac3a26ed9ef1348d5a405f8c3b8504eca">getIntPropProcessData</link> (uint16_t pressurezone_handler, uint16_t intprop_handler, propvalve_processinfo *intrprop_processdata)</para>
+
+<para>Retrieves diagnostic process data for a specified Internal Prop. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__internal_prop_8c_1a77e91b922fdf4e1fc5956117e751d4cb">setIntPropSetPointPressure</link> (uint16_t pressurezone_handler, uint16_t intprop_handler, void *data)</para>
+
+<para>Sets the PDO (Process Data Output) for a specific Internal Prop within a pressure zone. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__internal_prop_8c_1a239628366d4a00b3223ff6913a59777b">getIntPropServiceParameterData</link> (uint16_t pressurezone_handler, uint16_t intprop_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter of the Internal Prop. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__internal_prop_8c_1ae4131779e2db61d50791c2b8c6e5e2c1">setIntPropServiceParameterData</link> (uint16_t pressurezone_handler, uint16_t intprop_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified Internal Prop. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__internal_prop_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This source file contains the API source related to Internal Prop. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__internal_prop_8c_1ac3a26ed9ef1348d5a405f8c3b8504eca"/><section>
+    <title>getIntPropProcessData()</title>
+<indexterm><primary>getIntPropProcessData</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>getIntPropProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getIntPropProcessData (uint16_t pressurezone_handler, uint16_t intprop_handler, propvalve_processinfo * intrprop_processdata)</computeroutput></para><para>
+
+<para>Retrieves diagnostic process data for a specified Internal Prop. </para>
+</para>
+
+<para>This function fetches the diagnostic process data associated with a given proportional station handler within a specified pressure zone.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>intprop_handler</entry><entry>
+<para>The handler for the Internal Prop. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>propstation_processdata</entry><entry>
+<para>Pointer to a structure where the retrieved process data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint8_t Returns RET_OK on success, or an error code on failure. Refer to e_error_code for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c_ac3a26ed9ef1348d5a405f8c3b8504eca_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__internal_prop_8c_1a239628366d4a00b3223ff6913a59777b"/><section>
+    <title>getIntPropServiceParameterData()</title>
+<indexterm><primary>getIntPropServiceParameterData</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>getIntPropServiceParameterData</secondary></indexterm>
+<para><computeroutput>uint8_t getIntPropServiceParameterData (uint16_t pressurezone_handler, uint16_t intprop_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter of the Internal Prop. </para>
+</para>
+
+<para>This function fetches a specific service parameter of the proportional station within the specified pressure zone.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>intprop_handler</entry><entry>
+<para>The handler for the Internal Prop. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name (ID) of the parameter to be retrieved. Refer to Valve_FeatureParamId for valid parameter names. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the memory where the retrieved parameter value will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint8_t Returns RET_OK on success, or an error code on failure. Refer to e_error_code for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c_a239628366d4a00b3223ff6913a59777b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__internal_prop_8c_1afa3d041d8597ff5b49a58ec5e13f2ea4"/><section>
+    <title>getPresssureZoneServiceDataAddress()</title>
+<indexterm><primary>getPresssureZoneServiceDataAddress</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>getPresssureZoneServiceDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPresssureZoneServiceDataAddress (uint16_t pz_handler)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c_afa3d041d8597ff5b49a58ec5e13f2ea4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__internal_prop_8c_1afffe0a8cc543604a9a4c31b71fe442bd"/><section>
+    <title>getPressureZoneProcessDataAddress()</title>
+<indexterm><primary>getPressureZoneProcessDataAddress</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>getPressureZoneProcessDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPressureZoneProcessDataAddress (uint16_t pz_handler)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c_afffe0a8cc543604a9a4c31b71fe442bd_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__internal_prop_8c_1ae512dcee3f48f317872617e5f4559b19"/><section>
+    <title>readSharedMemoryData()</title>
+<indexterm><primary>readSharedMemoryData</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>readSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c_ae512dcee3f48f317872617e5f4559b19_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__internal_prop_8c_1ae4131779e2db61d50791c2b8c6e5e2c1"/><section>
+    <title>setIntPropServiceParameterData()</title>
+<indexterm><primary>setIntPropServiceParameterData</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>setIntPropServiceParameterData</secondary></indexterm>
+<para><computeroutput>uint8_t setIntPropServiceParameterData (uint16_t pressurezone_handler, uint16_t intprop_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified Internal Prop. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the preesure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>intprop_handler</entry><entry>
+<para>The handler for the Internal Prop. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. Refer to the enumeration <computeroutput>Valve_FeatureParamId</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c_ae4131779e2db61d50791c2b8c6e5e2c1_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__internal_prop_8c_1a77e91b922fdf4e1fc5956117e751d4cb"/><section>
+    <title>setIntPropSetPointPressure()</title>
+<indexterm><primary>setIntPropSetPointPressure</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>setIntPropSetPointPressure</secondary></indexterm>
+<para><computeroutput>uint8_t setIntPropSetPointPressure (uint16_t pressurezone_handler, uint16_t intprop_handler, void * data)</computeroutput></para><para>
+
+<para>Sets the PDO (Process Data Output) for a specific Internal Prop within a pressure zone. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pressurezone_handler</entry><entry>
+<para>Handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>intprop_handler</entry><entry>
+<para>Handler for the Internal Prop within the zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>Pointer to the data to be written. The data should match the expected format for the PDO.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK on success, RET_ERROR on failure.</para>
+</formalpara>
+Sets the Set Point Pressure for a specific Internal Prop in a pressure zone.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pressurezone_handler</entry><entry>
+<para>Handler representing the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>intprop_handler</entry><entry>
+<para>Handler representing the Internal Prop within the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>Pointer to the value to be set as Set Point Pressure. The pointer must reference a valid 16-bit unsigned integer.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK on success, RET_ERROR on failure. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c_a77e91b922fdf4e1fc5956117e751d4cb_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__internal_prop_8c_1a2383a3641c7a989a9d6c99be17bf45c8"/><section>
+    <title>writeSharedMemoryData()</title>
+<indexterm><primary>writeSharedMemoryData</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>writeSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t writeSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t addr, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_internal_prop_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__internal_prop_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>InternalProp.c</secondary></indexterm>
+<indexterm><primary>InternalProp.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

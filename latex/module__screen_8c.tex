@@ -1,0 +1,194 @@
+\doxysection{GUI/\+Screens/module\+\_\+screen.c File Reference}
+\hypertarget{module__screen_8c}{}\label{module__screen_8c}\index{GUI/Screens/module\_screen.c@{GUI/Screens/module\_screen.c}}
+
+
+Source that displays module screen.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for module\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{module__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{module__screen_8c_a8329af7c1c8dac99cc1870fe0992e576}{module\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize the module screen style. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{module__screen_8c_ab60bbdc6121e8f2704bfbbe37f79650a}{disp\+\_\+mod\+\_\+module\+\_\+screen}} (int \mbox{\hyperlink{lvgl__gui_8c_af9a91605decf4619baae281772693f6f}{module\+\_\+index}}, int module\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Function to display module information (identification parameters) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{module__screen_8c_a171bd087fd88267f8df70214d756df4a}{common\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Module\+Details \mbox{\hyperlink{module__screen_8c_a8779a863e7d67f1e3e6e0315e137fba4}{modulesdetails}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}
+\item 
+module\+\_\+screen \mbox{\hyperlink{module__screen_8c_a6d0257fc38db25ed31d6c668c42b37b6}{m\+\_\+module\+\_\+screen}}
+\item 
+PZone\+Details \mbox{\hyperlink{module__screen_8c_a7f5f23f78cf76bec56ebefff8cea7196}{pzonemodulesdetails}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{module__screen_8c_aa4fe13dc0266543c3bda858c6f4d9006}{io\+\_\+module\+\_\+status}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{module__screen_8c_af75d44c0559a3ee5bd192affe42b61fa}{back\+\_\+label\+\_\+module}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{module__screen_8c_ad85ee643d84fc46eb57f364fb1fa7b62}{part\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{module__screen_8c_a0219abe0f25db99de2aad5b1d881650c}{part\+\_\+val\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{module__screen_8c_a514c8c632912f8e99195d5fbf9a7acec}{firm\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{module__screen_8c_a384568a17b52028e2b87dd36acc16fd2}{firm\+\_\+val\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{module__screen_8c_a9194598c3b6bbd8feb5028796f00d8ae}{hard\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{module__screen_8c_a488ab067bfb6fe50a0bb4d04e0402325}{hard\+\_\+val\+\_\+label}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays module screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{module__screen_8c_a171bd087fd88267f8df70214d756df4a}\index{module\_screen.c@{module\_screen.c}!common\_label\_creation@{common\_label\_creation}}
+\index{common\_label\_creation@{common\_label\_creation}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{common\_label\_creation()}{common\_label\_creation()}}
+{\footnotesize\ttfamily \label{module__screen_8c_a171bd087fd88267f8df70214d756df4a} 
+void common\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{module__screen_8c_ab60bbdc6121e8f2704bfbbe37f79650a}\index{module\_screen.c@{module\_screen.c}!disp\_mod\_module\_screen@{disp\_mod\_module\_screen}}
+\index{disp\_mod\_module\_screen@{disp\_mod\_module\_screen}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_module\_screen()}{disp\_mod\_module\_screen()}}
+{\footnotesize\ttfamily \label{module__screen_8c_ab60bbdc6121e8f2704bfbbe37f79650a} 
+void disp\+\_\+mod\+\_\+module\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{module\+\_\+index}{, }\item[{int}]{module\+\_\+number}{}\end{DoxyParamCaption})}
+
+
+
+Function to display module information (identification parameters) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em module\+\_\+index} & \+: represents the line number inside the module screen \\
+\hline
+{\em module\+\_\+number} & \+: represents the module number info to be displayed \\
+\hline
+{\em io\+\_\+module\+\_\+status} & \+: represents the current module type being displayed \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__screen_8c_ab60bbdc6121e8f2704bfbbe37f79650a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__screen_8c_ab60bbdc6121e8f2704bfbbe37f79650a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{module__screen_8c_a8329af7c1c8dac99cc1870fe0992e576}\index{module\_screen.c@{module\_screen.c}!module\_style@{module\_style}}
+\index{module\_style@{module\_style}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{module\_style()}{module\_style()}}
+{\footnotesize\ttfamily \label{module__screen_8c_a8329af7c1c8dac99cc1870fe0992e576} 
+void module\+\_\+style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize the module screen style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{module__screen_8c_a8329af7c1c8dac99cc1870fe0992e576_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{module__screen_8c_af75d44c0559a3ee5bd192affe42b61fa}\index{module\_screen.c@{module\_screen.c}!back\_label\_module@{back\_label\_module}}
+\index{back\_label\_module@{back\_label\_module}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{back\_label\_module}{back\_label\_module}}
+{\footnotesize\ttfamily \label{module__screen_8c_af75d44c0559a3ee5bd192affe42b61fa} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} back\+\_\+label\+\_\+module}
+
+\Hypertarget{module__screen_8c_a514c8c632912f8e99195d5fbf9a7acec}\index{module\_screen.c@{module\_screen.c}!firm\_label@{firm\_label}}
+\index{firm\_label@{firm\_label}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{firm\_label}{firm\_label}}
+{\footnotesize\ttfamily \label{module__screen_8c_a514c8c632912f8e99195d5fbf9a7acec} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} firm\+\_\+label}
+
+\Hypertarget{module__screen_8c_a384568a17b52028e2b87dd36acc16fd2}\index{module\_screen.c@{module\_screen.c}!firm\_val\_label@{firm\_val\_label}}
+\index{firm\_val\_label@{firm\_val\_label}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{firm\_val\_label}{firm\_val\_label}}
+{\footnotesize\ttfamily \label{module__screen_8c_a384568a17b52028e2b87dd36acc16fd2} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} firm\+\_\+val\+\_\+label}
+
+\Hypertarget{module__screen_8c_a9194598c3b6bbd8feb5028796f00d8ae}\index{module\_screen.c@{module\_screen.c}!hard\_label@{hard\_label}}
+\index{hard\_label@{hard\_label}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{hard\_label}{hard\_label}}
+{\footnotesize\ttfamily \label{module__screen_8c_a9194598c3b6bbd8feb5028796f00d8ae} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} hard\+\_\+label}
+
+\Hypertarget{module__screen_8c_a488ab067bfb6fe50a0bb4d04e0402325}\index{module\_screen.c@{module\_screen.c}!hard\_val\_label@{hard\_val\_label}}
+\index{hard\_val\_label@{hard\_val\_label}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{hard\_val\_label}{hard\_val\_label}}
+{\footnotesize\ttfamily \label{module__screen_8c_a488ab067bfb6fe50a0bb4d04e0402325} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} hard\+\_\+val\+\_\+label}
+
+\Hypertarget{module__screen_8c_aa4fe13dc0266543c3bda858c6f4d9006}\index{module\_screen.c@{module\_screen.c}!io\_module\_status@{io\_module\_status}}
+\index{io\_module\_status@{io\_module\_status}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{io\_module\_status}{io\_module\_status}}
+{\footnotesize\ttfamily \label{module__screen_8c_aa4fe13dc0266543c3bda858c6f4d9006} 
+uint8\+\_\+t io\+\_\+module\+\_\+status\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__screen_8c_a6d0257fc38db25ed31d6c668c42b37b6}\index{module\_screen.c@{module\_screen.c}!m\_module\_screen@{m\_module\_screen}}
+\index{m\_module\_screen@{m\_module\_screen}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{m\_module\_screen}{m\_module\_screen}}
+{\footnotesize\ttfamily \label{module__screen_8c_a6d0257fc38db25ed31d6c668c42b37b6} 
+module\+\_\+screen m\+\_\+module\+\_\+screen\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__screen_8c_a8779a863e7d67f1e3e6e0315e137fba4}\index{module\_screen.c@{module\_screen.c}!modulesdetails@{modulesdetails}}
+\index{modulesdetails@{modulesdetails}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{modulesdetails}{modulesdetails}}
+{\footnotesize\ttfamily \label{module__screen_8c_a8779a863e7d67f1e3e6e0315e137fba4} 
+Module\+Details modulesdetails\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{module__screen_8c_ad85ee643d84fc46eb57f364fb1fa7b62}\index{module\_screen.c@{module\_screen.c}!part\_label@{part\_label}}
+\index{part\_label@{part\_label}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{part\_label}{part\_label}}
+{\footnotesize\ttfamily \label{module__screen_8c_ad85ee643d84fc46eb57f364fb1fa7b62} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} part\+\_\+label}
+
+\Hypertarget{module__screen_8c_a0219abe0f25db99de2aad5b1d881650c}\index{module\_screen.c@{module\_screen.c}!part\_val\_label@{part\_val\_label}}
+\index{part\_val\_label@{part\_val\_label}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{part\_val\_label}{part\_val\_label}}
+{\footnotesize\ttfamily \label{module__screen_8c_a0219abe0f25db99de2aad5b1d881650c} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} part\+\_\+val\+\_\+label}
+
+\Hypertarget{module__screen_8c_a7f5f23f78cf76bec56ebefff8cea7196}\index{module\_screen.c@{module\_screen.c}!pzonemodulesdetails@{pzonemodulesdetails}}
+\index{pzonemodulesdetails@{pzonemodulesdetails}!module\_screen.c@{module\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pzonemodulesdetails}{pzonemodulesdetails}}
+{\footnotesize\ttfamily \label{module__screen_8c_a7f5f23f78cf76bec56ebefff8cea7196} 
+PZone\+Details pzonemodulesdetails\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MODULES\+\_\+\+DETAILS\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

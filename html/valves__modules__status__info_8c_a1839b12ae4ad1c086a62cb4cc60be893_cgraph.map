@@ -4,12 +4,14 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,78,202,42,223,34,224,40,204,46,113,83"/>
 <area shape="rect" id="Node000003" href="$diag__valve__status__info_8c.html#a181386d8ac3c39a998bc8b82730dc58c" title=" " alt="" coords="213,56,364,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,83,197,78,197,83,155,88"/>
-<area shape="rect" id="Node000004" href="$_diag_valve_api_8c.html#ac3ec6ff63d65bb052cd01cb6eafd6634" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="203,107,374,133"/>
+<area shape="rect" id="Node000004" href="$_diag_valve_api_8c.html#afc63918903c176d7dd2fb86d4b14106d" title="Retrieves diagnostic process data for a specified diagnostic valve." alt="" coords="203,107,374,133"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="155,101,187,105,187,110,155,106"/>
-<area shape="rect" id="Node000007" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="249,157,328,184"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="113,106,204,143,234,153,233,158,202,148,111,111"/>
-<area shape="rect" id="Node000005" href="$_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="422,69,616,112"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="374,106,406,102,407,108,375,112"/>
-<area shape="rect" id="Node000006" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="439,136,600,163"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="375,128,423,134,423,140,374,134"/>
+<area shape="rect" id="Node000008" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="249,157,328,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="113,106,204,143,234,153,233,158,202,148,111,111"/>
+<area shape="rect" id="Node000005" href="$_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="422,40,616,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="343,104,417,85,418,90,344,109"/>
+<area shape="rect" id="Node000006" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="439,107,600,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="375,117,423,117,423,123,375,123"/>
+<area shape="rect" id="Node000007" href="$_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="438,157,601,184"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="353,131,441,151,440,156,352,137"/>
 </map>

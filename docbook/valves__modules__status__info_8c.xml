@@ -1,0 +1,604 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_valves__modules__status__info_8c" xml:lang="en-US">
+<title>Data_processing/valves_modules_status_info.c File Reference</title>
+<indexterm><primary>Data_processing/valves_modules_status_info.c</primary></indexterm>
+<para>
+
+<para>Source that processes the valves modules status information. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for valves_modules_status_info.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_valves__modules__status__info_8c_1a293e2832c7e56f4cf2f54db9ffd70e66">isem_status_info</link> (uint8_t pz_handler, uint8_t isemdiag_handler, uint8_t mod_num, uint8_t pz_num, isemdiag_processinfo *processdata, uint8_t status_type)</para>
+
+<para>Function that processes the isem modules status information. </para>
+</listitem>
+            <listitem><para>int <link linkend="_valves__modules__status__info_8c_1a1839b12ae4ad1c086a62cb4cc60be893">diag_valve_status_info</link> (uint8_t pz_handler, uint8_t diagvalve_handler, uint8_t mod_num, uint8_t pz_num, uint8_t station_ind, diagvalve_processinfo *processdata, uint8_t status_type)</para>
+
+<para>Function that processes the diag valve modules status information. </para>
+</listitem>
+            <listitem><para>void <link linkend="_valves__modules__status__info_8c_1a3671d63082904cd553ff0e84c91b088e">valves_modules_status_info</link> ()</para>
+
+<para>Function that processes the valves modules status information. </para>
+</listitem>
+            <listitem><para>void <link linkend="_valves__modules__status__info_8c_1aa0f3dfc9666e2ed3508827b4b9a1d98a">process_isem_status_info</link> (void)</para>
+
+<para>Process ISEM status information across pressure zones. </para>
+</listitem>
+            <listitem><para>void <link linkend="_valves__modules__status__info_8c_1ab161d09da45c6c42b5a903700818aa9b">process_diag_valve_status_info</link> (void)</para>
+
+<para>Process diagnostic valve status information across pressure zones. </para>
+</listitem>
+            <listitem><para>int <link linkend="_valves__modules__status__info_8c_1a4c98732ae9f946e8ad3c716bd836320a">clear_individual_status_message</link> (uint8_t module_num)</para>
+
+<para>Function to clear individual status message. </para>
+</listitem>
+            <listitem><para>int <link linkend="_valves__modules__status__info_8c_1aa164888e33feacda7236004c79306b87">clear_all_status_messages</link> (void)</para>
+
+<para>Function to clear all status messages. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>s_discovery_details <link linkend="_valves__modules__status__info_8c_1aecc928609def218c15f7c59447eb5a32">discover_details</link></para>
+</listitem>
+            <listitem><para>s_prszone_device_count_details <link linkend="_valves__modules__status__info_8c_1a639ca1471160314ce61d52506c2a8d0d">pz_count_details</link> [MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>status_screen_struct <link linkend="_valves__modules__status__info_8c_1a01a09ef94e00ab546916776847cc4dc1">screen_status_value</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_valves__modules__status__info_8c_1a8f6252caf33f738fd9f6e6c46db45eb8">pz_handlers</link> [MACRO_MAX_PZ_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_valves__modules__status__info_8c_1aa99741c64ccbcc97a4d63b9364f74eac">prop_zone_handlers</link> [MACRO_MAX_PROP_ZONE_HANDLERS]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_valves__modules__status__info_8c_1abde244b58c27c11e6d996745e398332a">isemdiag_handlers</link> [MACRO_MAX_ISEM_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_valves__modules__status__info_8c_1a674bdb8ef9a107fc2ac0646e0909a4ec">diag_handlers</link> [MACRO_MAX_DIAG_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_valves__modules__status__info_8c_1ae4e2d1b8f9fe83b73ea8e64eb7dc411d">prop_station_handlers</link> [MACRO_MAX_PROP_STATION_PER_ZONE *MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a5a48a03cca514f9b8f3f4f3efde71476">g_status_index</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_valves__modules__status__info_8c_1a302e4e8f28350675e1eb62a4e1481d8c">all_modules_normal</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a27e4047823c653df7bd5f560cd4fa460">g_total_no_of_status_screens</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_valves__modules__status__info_8c_1ac8b7f8ebcabc3a52bcdd9b8109ed77f3">prev_isem_war</link> [MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_valves__modules__status__info_8c_1a10cc7cec515e793daebaef0c2d403b3b">prev_isem_fault</link> [MACRO_MAX_PRESSURE_ZONE]</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_valves__modules__status__info_8c_1a9061ba876473c0485b630e7cd9bcfde1">prev_dv_war</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_valves__modules__status__info_8c_1a7ae06bb4fda271e55df59575c5447073">prev_dv_fault</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a9efa8f5df2c4da78ec903dc160bc96a5">isem_present</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a086543ca17e695c954a70626ac508a5d">diag_present</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a36972212c2938bee4597333076b0d292">curr_war_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1ac219734e0b7bff6a07a53d864b2cde17">prev_war_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a817f4ff27b6d78d7007cb9682fce68fe">normal_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a4109e75cac85b53790c0cc32d788f7bc">fault_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a9e5e7d18c6596629d5f86a5ef0e6f9df">curr_fault_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1a32d7ae5c30054bc52bf84eff8801f89b">prev_fault_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_valves__modules__status__info_8c_1ab0bca095890a1fb58c691bea6aae554a">normal_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that processes the valves modules status information. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_valves__modules__status__info_8c_1aa164888e33feacda7236004c79306b87"/><section>
+    <title>clear_all_status_messages()</title>
+<indexterm><primary>clear_all_status_messages</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>clear_all_status_messages</secondary></indexterm>
+<para><computeroutput>int clear_all_status_messages (void )</computeroutput></para><para>
+
+<para>Function to clear all status messages. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>RET_OK if successful, RET_ERROR otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_aa164888e33feacda7236004c79306b87_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_aa164888e33feacda7236004c79306b87_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_valves__modules__status__info_8c_1a4c98732ae9f946e8ad3c716bd836320a"/><section>
+    <title>clear_individual_status_message()</title>
+<indexterm><primary>clear_individual_status_message</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>clear_individual_status_message</secondary></indexterm>
+<para><computeroutput>int clear_individual_status_message (uint8_t module_num)</computeroutput></para><para>
+
+<para>Function to clear individual status message. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>module_num</entry><entry>
+<para>The module number to clear </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK if successful, RET_ERROR otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_a4c98732ae9f946e8ad3c716bd836320a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_a4c98732ae9f946e8ad3c716bd836320a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_valves__modules__status__info_8c_1a1839b12ae4ad1c086a62cb4cc60be893"/><section>
+    <title>diag_valve_status_info()</title>
+<indexterm><primary>diag_valve_status_info</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>diag_valve_status_info</secondary></indexterm>
+<para><computeroutput>int diag_valve_status_info (uint8_t pz_index, uint8_t diagvalve_index, uint8_t mod_num, uint8_t pz_num, uint8_t station_ind, diagvalve_processinfo * processdata, uint8_t status_type)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that processes the diag valve modules status information. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pz_index</entry><entry>
+<para>The index of the pressure zone </para>
+</entry>
+                            </row>
+                            <row>
+<entry>diagvalve_index</entry><entry>
+<para>The index of the diagnostic valve </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mod_num</entry><entry>
+<para>The module number in the status screen </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pz_num</entry><entry>
+<para>The pressure zone number </para>
+</entry>
+                            </row>
+                            <row>
+<entry>station_ind</entry><entry>
+<para>The station index </para>
+</entry>
+                            </row>
+                            <row>
+<entry>processdata</entry><entry>
+<para>Pointer to already retrieved process data (can be NULL) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK on success, error code otherwise </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_a1839b12ae4ad1c086a62cb4cc60be893_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_a1839b12ae4ad1c086a62cb4cc60be893_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_valves__modules__status__info_8c_1a293e2832c7e56f4cf2f54db9ffd70e66"/><section>
+    <title>isem_status_info()</title>
+<indexterm><primary>isem_status_info</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>isem_status_info</secondary></indexterm>
+<para><computeroutput>int isem_status_info (uint8_t pz_index, uint8_t isemdiag_index, uint8_t mod_num, uint8_t pz_num, isemdiag_processinfo * processdata, uint8_t status_type)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function that processes the isem modules status information. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pz_index</entry><entry>
+<para>The index of the pressure zone </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_a293e2832c7e56f4cf2f54db9ffd70e66_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_a293e2832c7e56f4cf2f54db9ffd70e66_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_valves__modules__status__info_8c_1ab161d09da45c6c42b5a903700818aa9b"/><section>
+    <title>process_diag_valve_status_info()</title>
+<indexterm><primary>process_diag_valve_status_info</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>process_diag_valve_status_info</secondary></indexterm>
+<para><computeroutput>void process_diag_valve_status_info (void )</computeroutput></para><para>
+
+<para>Process diagnostic valve status information across pressure zones. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_ab161d09da45c6c42b5a903700818aa9b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_valves__modules__status__info_8c_1aa0f3dfc9666e2ed3508827b4b9a1d98a"/><section>
+    <title>process_isem_status_info()</title>
+<indexterm><primary>process_isem_status_info</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>process_isem_status_info</secondary></indexterm>
+<para><computeroutput>void process_isem_status_info (void )</computeroutput></para><para>
+
+<para>Process ISEM status information across pressure zones. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_aa0f3dfc9666e2ed3508827b4b9a1d98a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_valves__modules__status__info_8c_1a3671d63082904cd553ff0e84c91b088e"/><section>
+    <title>valves_modules_status_info()</title>
+<indexterm><primary>valves_modules_status_info</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>valves_modules_status_info</secondary></indexterm>
+<para><computeroutput>void valves_modules_status_info ( )</computeroutput></para><para>
+
+<para>Function that processes the valves modules status information. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_a3671d63082904cd553ff0e84c91b088e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="valves__modules__status__info_8c_a3671d63082904cd553ff0e84c91b088e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_valves__modules__status__info_8c_1a302e4e8f28350675e1eb62a4e1481d8c"/><section>
+    <title>all_modules_normal</title>
+<indexterm><primary>all_modules_normal</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>all_modules_normal</secondary></indexterm>
+<para><computeroutput>bool all_modules_normal<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a9e5e7d18c6596629d5f86a5ef0e6f9df"/><section>
+    <title>curr_fault_index</title>
+<indexterm><primary>curr_fault_index</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>curr_fault_index</secondary></indexterm>
+<para><computeroutput>uint8_t curr_fault_index</computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a36972212c2938bee4597333076b0d292"/><section>
+    <title>curr_war_index</title>
+<indexterm><primary>curr_war_index</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>curr_war_index</secondary></indexterm>
+<para><computeroutput>uint8_t curr_war_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a674bdb8ef9a107fc2ac0646e0909a4ec"/><section>
+    <title>diag_handlers</title>
+<indexterm><primary>diag_handlers</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>diag_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t diag_handlers[MACRO_MAX_DIAG_VALVE_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a086543ca17e695c954a70626ac508a5d"/><section>
+    <title>diag_present</title>
+<indexterm><primary>diag_present</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>diag_present</secondary></indexterm>
+<para><computeroutput>uint8_t diag_present = 0</computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1aecc928609def218c15f7c59447eb5a32"/><section>
+    <title>discover_details</title>
+<indexterm><primary>discover_details</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>discover_details</secondary></indexterm>
+<para><computeroutput>s_discovery_details discover_details<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a4109e75cac85b53790c0cc32d788f7bc"/><section>
+    <title>fault_index</title>
+<indexterm><primary>fault_index</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>fault_index</secondary></indexterm>
+<para><computeroutput>uint8_t fault_index</computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a5a48a03cca514f9b8f3f4f3efde71476"/><section>
+    <title>g_status_index</title>
+<indexterm><primary>g_status_index</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>g_status_index</secondary></indexterm>
+<para><computeroutput>uint8_t g_status_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a27e4047823c653df7bd5f560cd4fa460"/><section>
+    <title>g_total_no_of_status_screens</title>
+<indexterm><primary>g_total_no_of_status_screens</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>g_total_no_of_status_screens</secondary></indexterm>
+<para><computeroutput>uint8_t g_total_no_of_status_screens<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a9efa8f5df2c4da78ec903dc160bc96a5"/><section>
+    <title>isem_present</title>
+<indexterm><primary>isem_present</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>isem_present</secondary></indexterm>
+<para><computeroutput>uint8_t isem_present = 0</computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1abde244b58c27c11e6d996745e398332a"/><section>
+    <title>isemdiag_handlers</title>
+<indexterm><primary>isemdiag_handlers</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>isemdiag_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t isemdiag_handlers[MACRO_MAX_ISEM_PER_PZZONE *MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a817f4ff27b6d78d7007cb9682fce68fe"/><section>
+    <title>normal_index</title>
+<indexterm><primary>normal_index</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>normal_index</secondary></indexterm>
+<para><computeroutput>uint8_t normal_index</computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1ab0bca095890a1fb58c691bea6aae554a"/><section>
+    <title>normal_list</title>
+<indexterm><primary>normal_list</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>normal_list</secondary></indexterm>
+<para><computeroutput>uint8_t normal_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a7ae06bb4fda271e55df59575c5447073"/><section>
+    <title>prev_dv_fault</title>
+<indexterm><primary>prev_dv_fault</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>prev_dv_fault</secondary></indexterm>
+<para><computeroutput>uint32_t prev_dv_fault[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a9061ba876473c0485b630e7cd9bcfde1"/><section>
+    <title>prev_dv_war</title>
+<indexterm><primary>prev_dv_war</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>prev_dv_war</secondary></indexterm>
+<para><computeroutput>uint32_t prev_dv_war[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a32d7ae5c30054bc52bf84eff8801f89b"/><section>
+    <title>prev_fault_index</title>
+<indexterm><primary>prev_fault_index</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>prev_fault_index</secondary></indexterm>
+<para><computeroutput>uint8_t prev_fault_index</computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a10cc7cec515e793daebaef0c2d403b3b"/><section>
+    <title>prev_isem_fault</title>
+<indexterm><primary>prev_isem_fault</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>prev_isem_fault</secondary></indexterm>
+<para><computeroutput>uint32_t prev_isem_fault[MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1ac8b7f8ebcabc3a52bcdd9b8109ed77f3"/><section>
+    <title>prev_isem_war</title>
+<indexterm><primary>prev_isem_war</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>prev_isem_war</secondary></indexterm>
+<para><computeroutput>uint32_t prev_isem_war[MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1ac219734e0b7bff6a07a53d864b2cde17"/><section>
+    <title>prev_war_index</title>
+<indexterm><primary>prev_war_index</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>prev_war_index</secondary></indexterm>
+<para><computeroutput>uint8_t prev_war_index</computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1ae4e2d1b8f9fe83b73ea8e64eb7dc411d"/><section>
+    <title>prop_station_handlers</title>
+<indexterm><primary>prop_station_handlers</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>prop_station_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t prop_station_handlers[MACRO_MAX_PROP_STATION_PER_ZONE *MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1aa99741c64ccbcc97a4d63b9364f74eac"/><section>
+    <title>prop_zone_handlers</title>
+<indexterm><primary>prop_zone_handlers</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>prop_zone_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t prop_zone_handlers[MACRO_MAX_PROP_ZONE_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a639ca1471160314ce61d52506c2a8d0d"/><section>
+    <title>pz_count_details</title>
+<indexterm><primary>pz_count_details</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>pz_count_details</secondary></indexterm>
+<para><computeroutput>s_prszone_device_count_details pz_count_details[MACRO_MAX_PRESSURE_ZONE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a8f6252caf33f738fd9f6e6c46db45eb8"/><section>
+    <title>pz_handlers</title>
+<indexterm><primary>pz_handlers</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>pz_handlers</secondary></indexterm>
+<para><computeroutput>uint16_t pz_handlers[MACRO_MAX_PZ_HANDLERS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_valves__modules__status__info_8c_1a01a09ef94e00ab546916776847cc4dc1"/><section>
+    <title>screen_status_value</title>
+<indexterm><primary>screen_status_value</primary><secondary>valves_modules_status_info.c</secondary></indexterm>
+<indexterm><primary>valves_modules_status_info.c</primary><secondary>screen_status_value</secondary></indexterm>
+<para><computeroutput>status_screen_struct screen_status_value[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

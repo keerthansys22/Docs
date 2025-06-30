@@ -5,6 +5,7 @@ var isem__status__info_8c =
     [ "isem_status_info", "isem__status__info_8c.html#ac556b861a63a472eab6b590aac6be953", null ],
     [ "reset_isem_status", "isem__status__info_8c.html#a9a3806a48e474cbce90adb9c92ad4ae9", null ],
     [ "stop_timer", "isem__status__info_8c.html#a58997b988646976eadf522f6b26c9f46", null ],
+    [ "clear_isem_present", "isem__status__info_8c.html#a0617f4dab30b9c966cbd08430cc3d367", null ],
     [ "cur_disp_scr_index", "isem__status__info_8c.html#a49952e1fb0d52f6ef2f6fd0f381ab1b5", null ],
     [ "curr_fault_index", "isem__status__info_8c.html#a9e5e7d18c6596629d5f86a5ef0e6f9df", null ],
     [ "curr_fault_list", "isem__status__info_8c.html#a1d4a7b1a77c7b811d00083d16ba749c4", null ],

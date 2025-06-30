@@ -1,0 +1,113 @@
+\doxysection{Data\+\_\+processing/mbn\+\_\+status\+\_\+info.c File Reference}
+\hypertarget{mbn__status__info_8c}{}\label{mbn__status__info_8c}\index{Data\_processing/mbn\_status\_info.c@{Data\_processing/mbn\_status\_info.c}}
+
+
+Source that processes the MBN status information.  
+
+
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Header/\+API\+\_\+\+Header/\+App\+Data\+Interface.\+h"{}}\newline
+Include dependency graph for mbn\+\_\+status\+\_\+info.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{mbn__status__info_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mbn__status__info_8c_a33e091ca4ad4a808848bae50150d6bef}{mbn\+\_\+status\+\_\+info}} ()
+\begin{DoxyCompactList}\small\item\em function that determines the MBN status information \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+status\+\_\+screen\+\_\+struct \mbox{\hyperlink{mbn__status__info_8c_a01a09ef94e00ab546916776847cc4dc1}{screen\+\_\+status\+\_\+value}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+mbn\+\_\+identification\+\_\+info\+\_\+t \mbox{\hyperlink{mbn__status__info_8c_a5e513538eebc0523aa0dd56964ae2de9}{mbn\+\_\+module\+\_\+info}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mbn__status__info_8c_ab0bca095890a1fb58c691bea6aae554a}{normal\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mbn__status__info_8c_a0f1f761cbda8e6402f65783215e44356}{curr\+\_\+war\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mbn__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4}{curr\+\_\+fault\+\_\+list}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mbn__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476}{g\+\_\+status\+\_\+index}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mbn__status__info_8c_a58cf58672be2b0203fa375321d93b251}{prev\+\_\+mbn\+\_\+status\+\_\+value}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that processes the MBN status information. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mbn__status__info_8c_a33e091ca4ad4a808848bae50150d6bef}\index{mbn\_status\_info.c@{mbn\_status\_info.c}!mbn\_status\_info@{mbn\_status\_info}}
+\index{mbn\_status\_info@{mbn\_status\_info}!mbn\_status\_info.c@{mbn\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{mbn\_status\_info()}{mbn\_status\_info()}}
+{\footnotesize\ttfamily \label{mbn__status__info_8c_a33e091ca4ad4a808848bae50150d6bef} 
+int mbn\+\_\+status\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+function that determines the MBN status information 
+
+
+\begin{DoxyParams}{Parameters}
+{\em module\+\_\+num\+\_\+status} & -\/ indicates the module number \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbn__status__info_8c_a33e091ca4ad4a808848bae50150d6bef_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mbn__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4}\index{mbn\_status\_info.c@{mbn\_status\_info.c}!curr\_fault\_list@{curr\_fault\_list}}
+\index{curr\_fault\_list@{curr\_fault\_list}!mbn\_status\_info.c@{mbn\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_fault\_list}{curr\_fault\_list}}
+{\footnotesize\ttfamily \label{mbn__status__info_8c_a1d4a7b1a77c7b811d00083d16ba749c4} 
+uint8\+\_\+t curr\+\_\+fault\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}}
+
+\Hypertarget{mbn__status__info_8c_a0f1f761cbda8e6402f65783215e44356}\index{mbn\_status\_info.c@{mbn\_status\_info.c}!curr\_war\_list@{curr\_war\_list}}
+\index{curr\_war\_list@{curr\_war\_list}!mbn\_status\_info.c@{mbn\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{curr\_war\_list}{curr\_war\_list}}
+{\footnotesize\ttfamily \label{mbn__status__info_8c_a0f1f761cbda8e6402f65783215e44356} 
+uint8\+\_\+t curr\+\_\+war\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}}
+
+\Hypertarget{mbn__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476}\index{mbn\_status\_info.c@{mbn\_status\_info.c}!g\_status\_index@{g\_status\_index}}
+\index{g\_status\_index@{g\_status\_index}!mbn\_status\_info.c@{mbn\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{g\_status\_index}{g\_status\_index}}
+{\footnotesize\ttfamily \label{mbn__status__info_8c_a5a48a03cca514f9b8f3f4f3efde71476} 
+uint8\+\_\+t g\+\_\+status\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{mbn__status__info_8c_a5e513538eebc0523aa0dd56964ae2de9}\index{mbn\_status\_info.c@{mbn\_status\_info.c}!mbn\_module\_info@{mbn\_module\_info}}
+\index{mbn\_module\_info@{mbn\_module\_info}!mbn\_status\_info.c@{mbn\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{mbn\_module\_info}{mbn\_module\_info}}
+{\footnotesize\ttfamily \label{mbn__status__info_8c_a5e513538eebc0523aa0dd56964ae2de9} 
+mbn\+\_\+identification\+\_\+info\+\_\+t mbn\+\_\+module\+\_\+info\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{mbn__status__info_8c_ab0bca095890a1fb58c691bea6aae554a}\index{mbn\_status\_info.c@{mbn\_status\_info.c}!normal\_list@{normal\_list}}
+\index{normal\_list@{normal\_list}!mbn\_status\_info.c@{mbn\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{normal\_list}{normal\_list}}
+{\footnotesize\ttfamily \label{mbn__status__info_8c_ab0bca095890a1fb58c691bea6aae554a} 
+uint8\+\_\+t normal\+\_\+list\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{mbn__status__info_8c_a58cf58672be2b0203fa375321d93b251}\index{mbn\_status\_info.c@{mbn\_status\_info.c}!prev\_mbn\_status\_value@{prev\_mbn\_status\_value}}
+\index{prev\_mbn\_status\_value@{prev\_mbn\_status\_value}!mbn\_status\_info.c@{mbn\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{prev\_mbn\_status\_value}{prev\_mbn\_status\_value}}
+{\footnotesize\ttfamily \label{mbn__status__info_8c_a58cf58672be2b0203fa375321d93b251} 
+uint8\+\_\+t prev\+\_\+mbn\+\_\+status\+\_\+value = 0}
+
+\Hypertarget{mbn__status__info_8c_a01a09ef94e00ab546916776847cc4dc1}\index{mbn\_status\_info.c@{mbn\_status\_info.c}!screen\_status\_value@{screen\_status\_value}}
+\index{screen\_status\_value@{screen\_status\_value}!mbn\_status\_info.c@{mbn\_status\_info.c}}
+\doxysubsubsection{\texorpdfstring{screen\_status\_value}{screen\_status\_value}}
+{\footnotesize\ttfamily \label{mbn__status__info_8c_a01a09ef94e00ab546916776847cc4dc1} 
+status\+\_\+screen\+\_\+struct screen\+\_\+status\+\_\+value\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+MESSAGE\+\_\+\+QUEUE\+\_\+\+SIZE\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

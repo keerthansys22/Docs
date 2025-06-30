@@ -1,0 +1,75 @@
+\doxysection{csv/dv\+\_\+warning\+\_\+csv.c File Reference}
+\hypertarget{dv__warning__csv_8c}{}\label{dv__warning__csv_8c}\index{csv/dv\_warning\_csv.c@{csv/dv\_warning\_csv.c}}
+
+
+source file that reads the diagnostics valve warning csv file and stores it in a structure  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}App\+Global.\+h"{}}\newline
+Include dependency graph for dv\+\_\+warning\+\_\+csv.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dv__warning__csv_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dv__warning__csv_8c_a35d15dccad6b2b0b8ed17d3792845d34}{read\+\_\+dv\+\_\+warning\+\_\+csv}} ()
+\begin{DoxyCompactList}\small\item\em Function that reads the warning data from CSV file \& stores the same in the structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+warning\+\_\+csv\+\_\+struct \mbox{\hyperlink{dv__warning__csv_8c_ab061281a930269e30a2ebf05c2eb9be6}{warning\+\_\+csv\+\_\+value}} \mbox{[}35\mbox{]} = \{0\}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{dv__warning__csv_8c_a6260511c10d117876e78add9ead521fe}{warning\+\_\+file\+\_\+not\+\_\+exist}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+source file that reads the diagnostics valve warning csv file and stores it in a structure 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dv__warning__csv_8c_a35d15dccad6b2b0b8ed17d3792845d34}\index{dv\_warning\_csv.c@{dv\_warning\_csv.c}!read\_dv\_warning\_csv@{read\_dv\_warning\_csv}}
+\index{read\_dv\_warning\_csv@{read\_dv\_warning\_csv}!dv\_warning\_csv.c@{dv\_warning\_csv.c}}
+\doxysubsubsection{\texorpdfstring{read\_dv\_warning\_csv()}{read\_dv\_warning\_csv()}}
+{\footnotesize\ttfamily \label{dv__warning__csv_8c_a35d15dccad6b2b0b8ed17d3792845d34} 
+void read\+\_\+dv\+\_\+warning\+\_\+csv (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function that reads the warning data from CSV file \& stores the same in the structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dv__warning__csv_8c_a35d15dccad6b2b0b8ed17d3792845d34_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{dv__warning__csv_8c_ab061281a930269e30a2ebf05c2eb9be6}\index{dv\_warning\_csv.c@{dv\_warning\_csv.c}!warning\_csv\_value@{warning\_csv\_value}}
+\index{warning\_csv\_value@{warning\_csv\_value}!dv\_warning\_csv.c@{dv\_warning\_csv.c}}
+\doxysubsubsection{\texorpdfstring{warning\_csv\_value}{warning\_csv\_value}}
+{\footnotesize\ttfamily \label{dv__warning__csv_8c_ab061281a930269e30a2ebf05c2eb9be6} 
+warning\+\_\+csv\+\_\+struct warning\+\_\+csv\+\_\+value\mbox{[}35\mbox{]} = \{0\}}
+
+\Hypertarget{dv__warning__csv_8c_a6260511c10d117876e78add9ead521fe}\index{dv\_warning\_csv.c@{dv\_warning\_csv.c}!warning\_file\_not\_exist@{warning\_file\_not\_exist}}
+\index{warning\_file\_not\_exist@{warning\_file\_not\_exist}!dv\_warning\_csv.c@{dv\_warning\_csv.c}}
+\doxysubsubsection{\texorpdfstring{warning\_file\_not\_exist}{warning\_file\_not\_exist}}
+{\footnotesize\ttfamily \label{dv__warning__csv_8c_a6260511c10d117876e78add9ead521fe} 
+uint8\+\_\+t warning\+\_\+file\+\_\+not\+\_\+exist = 0}
+

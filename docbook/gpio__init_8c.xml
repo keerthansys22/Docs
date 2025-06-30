@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_gpio__init_8c" xml:lang="en-US">
+<title>Initializations/Hardware_Initializations/gpio_init.c File Reference</title>
+<indexterm><primary>Initializations/Hardware_Initializations/gpio_init.c</primary></indexterm>
+<para>
+
+<para>Source that initializes the GPIO pins. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?></programlisting>Include dependency graph for gpio_init.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpio__init_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_gpio__init_8c_1afdbe206b3c49f019757ab09b3cf52b9c">gpio_init</link> (void)</para>
+
+<para>Function to perform LCD functionality. </para>
+</listitem>
+            <listitem><para>int <link linkend="_gpio__init_8c_1a8ddfcc1edc1807598865aced2e871313">configure_GPIO_pins</link> (int GPIONUM, int Direction)</para>
+
+<para>configure the gpio pins </para>
+</listitem>
+            <listitem><para>int <link linkend="_gpio__init_8c_1a992606101a6d77644f3a2be4afc99324">GPIO_pin_SetValue</link> (int GPIONUM, int Value)</para>
+
+<para>Gpio set value high or low. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that initializes the GPIO pins. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_gpio__init_8c_1a8ddfcc1edc1807598865aced2e871313"/><section>
+    <title>configure_GPIO_pins()</title>
+<indexterm><primary>configure_GPIO_pins</primary><secondary>gpio_init.c</secondary></indexterm>
+<indexterm><primary>gpio_init.c</primary><secondary>configure_GPIO_pins</secondary></indexterm>
+<para><computeroutput>int configure_GPIO_pins (int GPIONUM, int Direction)</computeroutput></para><para>
+
+<para>configure the gpio pins </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>GPIONUM</entry><entry>
+<para>gpio pin number </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Direction</entry><entry>
+<para>direction to which the what the gpio pin has to be set [1 - out] [0- in] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESSS_test on success or AP_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpio__init_8c_a8ddfcc1edc1807598865aced2e871313_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpio__init_8c_a8ddfcc1edc1807598865aced2e871313_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_gpio__init_8c_1afdbe206b3c49f019757ab09b3cf52b9c"/><section>
+    <title>gpio_init()</title>
+<indexterm><primary>gpio_init</primary><secondary>gpio_init.c</secondary></indexterm>
+<indexterm><primary>gpio_init.c</primary><secondary>gpio_init</secondary></indexterm>
+<para><computeroutput>void gpio_init (void )</computeroutput></para><para>
+
+<para>Function to perform LCD functionality. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>NULL</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpio__init_8c_afdbe206b3c49f019757ab09b3cf52b9c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpio__init_8c_afdbe206b3c49f019757ab09b3cf52b9c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_gpio__init_8c_1a992606101a6d77644f3a2be4afc99324"/><section>
+    <title>GPIO_pin_SetValue()</title>
+<indexterm><primary>GPIO_pin_SetValue</primary><secondary>gpio_init.c</secondary></indexterm>
+<indexterm><primary>gpio_init.c</primary><secondary>GPIO_pin_SetValue</secondary></indexterm>
+<para><computeroutput>int GPIO_pin_SetValue (int GPIONUM, int Value)</computeroutput></para><para>
+
+<para>Gpio set value high or low. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>GPIONUM</entry><entry>
+<para>gpio pin number </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Value</entry><entry>
+<para>[1- high] [0- low] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>API_SUCCESSS_test on success or AP_FAILURE_test on failure </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpio__init_8c_a992606101a6d77644f3a2be4afc99324_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="gpio__init_8c_a992606101a6d77644f3a2be4afc99324_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

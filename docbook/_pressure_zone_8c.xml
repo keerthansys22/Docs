@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__pressure_zone_8c" xml:lang="en-US">
+<title>API_Source/ValveModulesApiSource/PressureZone.c File Reference</title>
+<indexterm><primary>API_Source/ValveModulesApiSource/PressureZone.c</primary></indexterm>
+<para>
+
+<para>This source file contains the API source related to ISEM diag paramter access(cyclic and acyclic data) </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?>#include &quot;../Header/API_Header/pzmapping.h&quot;<?linebreak?></programlisting>Include dependency graph for PressureZone.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_pressure_zone_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="__pressure_zone_8c_1a545d0e847091e676372549f906f38e0c">getPZID</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__pressure_zone_8c_1afffe0a8cc543604a9a4c31b71fe442bd">getPressureZoneProcessDataAddress</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__pressure_zone_8c_1afa3d041d8597ff5b49a58ec5e13f2ea4">getPresssureZoneServiceDataAddress</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__pressure_zone_8c_1aec053f33602e9220ef123f812ab5bc82">getPressureZoneProcessData</link> (uint16_t pressurezone_handler, pzxmodules_processinfo *pz_processdata)</para>
+
+<para>Get the process data for a specific pressure zone. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__pressure_zone_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__pressure_zone_8c_1ad19c359304948e3d3aea4c3ee826685c">internal_pressure_zone</link> [5]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This source file contains the API source related to ISEM diag paramter access(cyclic and acyclic data) </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__pressure_zone_8c_1afa3d041d8597ff5b49a58ec5e13f2ea4"/><section>
+    <title>getPresssureZoneServiceDataAddress()</title>
+<indexterm><primary>getPresssureZoneServiceDataAddress</primary><secondary>PressureZone.c</secondary></indexterm>
+<indexterm><primary>PressureZone.c</primary><secondary>getPresssureZoneServiceDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPresssureZoneServiceDataAddress (uint16_t pz_handler)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_pressure_zone_8c_afa3d041d8597ff5b49a58ec5e13f2ea4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__pressure_zone_8c_1aec053f33602e9220ef123f812ab5bc82"/><section>
+    <title>getPressureZoneProcessData()</title>
+<indexterm><primary>getPressureZoneProcessData</primary><secondary>PressureZone.c</secondary></indexterm>
+<indexterm><primary>PressureZone.c</primary><secondary>getPressureZoneProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getPressureZoneProcessData (uint16_t pressurezone_handler, pzxmodules_processinfo * pz_processdata)</computeroutput></para><para>
+
+<para>Get the process data for a specific pressure zone. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pressurezone_handler</entry><entry>
+<para>Handler for the pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pz_processdata</entry><entry>
+<para>Pointer to structure where data will be stored. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>RET_OK on success, RET_ERROR on failure. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_pressure_zone_8c_aec053f33602e9220ef123f812ab5bc82_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_pressure_zone_8c_aec053f33602e9220ef123f812ab5bc82_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__pressure_zone_8c_1afffe0a8cc543604a9a4c31b71fe442bd"/><section>
+    <title>getPressureZoneProcessDataAddress()</title>
+<indexterm><primary>getPressureZoneProcessDataAddress</primary><secondary>PressureZone.c</secondary></indexterm>
+<indexterm><primary>PressureZone.c</primary><secondary>getPressureZoneProcessDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPressureZoneProcessDataAddress (uint16_t pz_handler)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_pressure_zone_8c_afffe0a8cc543604a9a4c31b71fe442bd_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__pressure_zone_8c_1a545d0e847091e676372549f906f38e0c"/><section>
+    <title>getPZID()</title>
+<indexterm><primary>getPZID</primary><secondary>PressureZone.c</secondary></indexterm>
+<indexterm><primary>PressureZone.c</primary><secondary>getPZID</secondary></indexterm>
+<para><computeroutput>uint8_t getPZID (uint16_t pz_handler)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_pressure_zone_8c_a545d0e847091e676372549f906f38e0c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__pressure_zone_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>PressureZone.c</secondary></indexterm>
+<indexterm><primary>PressureZone.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__pressure_zone_8c_1ad19c359304948e3d3aea4c3ee826685c"/><section>
+    <title>internal_pressure_zone</title>
+<indexterm><primary>internal_pressure_zone</primary><secondary>PressureZone.c</secondary></indexterm>
+<indexterm><primary>PressureZone.c</primary><secondary>internal_pressure_zone</secondary></indexterm>
+<para><computeroutput>uint8_t internal_pressure_zone[5]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

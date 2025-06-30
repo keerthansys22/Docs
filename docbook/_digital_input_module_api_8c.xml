@@ -1,0 +1,567 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__digital_input_module_api_8c" xml:lang="en-US">
+<title>API_Source/IoModulesApiSource.c/DigitalInputModuleApi.c File Reference</title>
+<indexterm><primary>API_Source/IoModulesApiSource.c/DigitalInputModuleApi.c</primary></indexterm>
+<para>
+
+<para>This file contains the source code of the digital input module API. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for DigitalInputModuleApi.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link>&#160;&#160;&#160;0x00000000</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1aa4c97391cc2f8f5ac3ff8b7cd8ff9e28">DI_MOD_IDENT_DEVICE_TYPE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a67c38473318baba49f84fa5ca164b6b9">DI_MOD_IDENT_VENDOR_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 4)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1ab995b2400bb2e3958a28bc80ce87e9da">DI_MOD_IDENT_DEVICE_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 8)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a413589a195ccc1b04c72d71495ae011a">DI_MOD_IDENT_VENDOR_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 12)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a9e7cf9c7da7b4a0ad97887be7377a820">DI_MOD_IDENT_DEVICE_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 28)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1abaa1786ba58e5735ca88b8ddbceb492f">DI_MOD_IDENT_VARIANT_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 44)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a8626af8573852a32ad235309948dca20">DI_MOD_IDENT_HW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 60)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a15b3bab54d0a5bfdbfa179af9757b024">DI_MOD_IDENT_SERIAL_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 76)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a06887c43b0599a4f94a6dbf905687188">DI_MOD_IDENT_SW_PART_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 92)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1ab09bc14bf75d6c376d95feb281140031">DI_MOD_IDENT_SW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 108)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a980c5068d846efad59e25fcbbdf4bdcb">DI_MOD_DI_DEBOUNCE_DUR_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 124)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a4f20d97a47bb5b085ef0d8651621ba57">DI_MOD_DI_HOLD_DUR_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 132)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1af1cbf4aff88d2f48ce8db503baeea800">DI_MOD_DI_LOGIC_INVERT_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 140)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1abb36a97cd5934423aa66bb8b757a8f64">DI_MOD_DI_FORCE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 141)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1aefc7712e76d4e6fb16524c5a90612150">DI_MOD_DI_FORCE_MODE_STATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 142)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a22aaa426400147ea1447977511ffdcd5">DI_MOD_DI_INT_BOTH_EDGES_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 143)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a02b1bd9a3cf7609c1e45bb9fd979bd31">DI_MOD_DI_INT_RISING_EDGES_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 144)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a546079956990dd8299ad24898d0cdb6d">DI_MOD_DI_INT_FALLING_EDGES_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 145)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a3892ddf342caa35f0502a8a03fcadaec">DI_MOD_DI_INPUT_TYPE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 146)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a029f1e7a8ec43a780ca77a28affcb1da">DI_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 148)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a0a5aaa53bab6735b6c508697e8b2d894">DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 149)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1ac4175c019212abbc4242bab9865d8485">DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_REC_DIAG_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 150)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a89fbc31069a3c04cefa120ba22bb09bc">DI_MOD_DI_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 151)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a14d2092ceb8a869000ef1a34f4795361">DI_MOD_VA_VB_VOLTAGE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 159)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1ad408e2363a548557d8ecf50449241a9a">DI_MOD_POST_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 167)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1aeb38cff29164767da79824a513ac096a">DI_MOD_OPERATION_TIME_HR_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 171)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a0ecac8ab542bf1c8aecf8a6da5d3fcaf">DI_MOD_OPERATION_TIME_MIN_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 175)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a54172bf05ba1a2dfe4a62d8858e58e93">DI_MOD_MIN_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 177)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a5e46506a63e3acaa902ef59e449e0002">DI_MOD_MAX_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 179)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a99dd2dabbb2d0dd634f8977c497e65c4">DI_MOD_MEASURED_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 181)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a228d3c04a42e926b1bda89261f8b493f">DI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 183)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a545ed3b7fd70bc6f9a67a65960c861fd">DI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 184)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a7b18c0f856d335be21b742eac3dc1d90">DI_MOD_MEMORY_LIFE_CYCLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 185)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a6ce17cc157ea48eb270873937db6ebbc">DI_MOD_MODULE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 189)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a64ec4970f1ed4eab9598ec26e1386322">DI_MOD_CHANNELS_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 190)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a34017bee853c488516e31694a9ecc8b5">DI_MOD_EDS_VERSION_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 191)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__digital_input_module_api_8c_1a150e91d59ab64774d0efa612b9ef38e7">DI_MOD_EDS_VERSION_DATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 207)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="__digital_input_module_api_8c_1aab64cdfe20fa84db4be92c96380d60a2">getIOServiceDataInstanceAddress</link> (uint16_t handler)</para>
+
+<para>: This is to get the address of the service data instance </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__digital_input_module_api_8c_1a91f3bb33371373e3e9b48b2290355551">getIOProcessDataInstanceAddress</link> (uint16_t handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__digital_input_module_api_8c_1a8b6583c29a7527bb06e572db885e8145">getDIModuleProcessData</link> (uint16_t di_device_handler, dimodule_processinfo *dimod_processdata)</para>
+
+<para>Retrieves the process data for a specified DI module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__digital_input_module_api_8c_1a046c1082307d620d997ebfbda57d5143">getDigitalInputModuleServiceParam</link> (uint16_t digitalinput_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter data for a specified IO module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__digital_input_module_api_8c_1a1dffd723ee55fedcec3371b78272d282">setDigitalInputModuleServiceParam</link> (uint16_t digitalinput_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified DI module. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__digital_input_module_api_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file contains the source code of the digital input module API. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__digital_input_module_api_8c_1a228d3c04a42e926b1bda89261f8b493f"/><section>
+    <title>DI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</title>
+<indexterm><primary>DI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 183)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a545ed3b7fd70bc6f9a67a65960c861fd"/><section>
+    <title>DI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</title>
+<indexterm><primary>DI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 184)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a64ec4970f1ed4eab9598ec26e1386322"/><section>
+    <title>DI_MOD_CHANNELS_ENABLE_ADDR</title>
+<indexterm><primary>DI_MOD_CHANNELS_ENABLE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_CHANNELS_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_CHANNELS_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 190)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a980c5068d846efad59e25fcbbdf4bdcb"/><section>
+    <title>DI_MOD_DI_DEBOUNCE_DUR_ADDR</title>
+<indexterm><primary>DI_MOD_DI_DEBOUNCE_DUR_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_DEBOUNCE_DUR_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_DEBOUNCE_DUR_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 124)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a89fbc31069a3c04cefa120ba22bb09bc"/><section>
+    <title>DI_MOD_DI_ERR_STATUS_ADDR</title>
+<indexterm><primary>DI_MOD_DI_ERR_STATUS_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 151)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1abb36a97cd5934423aa66bb8b757a8f64"/><section>
+    <title>DI_MOD_DI_FORCE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>DI_MOD_DI_FORCE_MODE_ENABLE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_FORCE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_FORCE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 141)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1aefc7712e76d4e6fb16524c5a90612150"/><section>
+    <title>DI_MOD_DI_FORCE_MODE_STATE_ADDR</title>
+<indexterm><primary>DI_MOD_DI_FORCE_MODE_STATE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_FORCE_MODE_STATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_FORCE_MODE_STATE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 142)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a4f20d97a47bb5b085ef0d8651621ba57"/><section>
+    <title>DI_MOD_DI_HOLD_DUR_ADDR</title>
+<indexterm><primary>DI_MOD_DI_HOLD_DUR_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_HOLD_DUR_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_HOLD_DUR_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 132)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a3892ddf342caa35f0502a8a03fcadaec"/><section>
+    <title>DI_MOD_DI_INPUT_TYPE_ADDR</title>
+<indexterm><primary>DI_MOD_DI_INPUT_TYPE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_INPUT_TYPE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_INPUT_TYPE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 146)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a22aaa426400147ea1447977511ffdcd5"/><section>
+    <title>DI_MOD_DI_INT_BOTH_EDGES_ADDR</title>
+<indexterm><primary>DI_MOD_DI_INT_BOTH_EDGES_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_INT_BOTH_EDGES_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_INT_BOTH_EDGES_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 143)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a546079956990dd8299ad24898d0cdb6d"/><section>
+    <title>DI_MOD_DI_INT_FALLING_EDGES_ADDR</title>
+<indexterm><primary>DI_MOD_DI_INT_FALLING_EDGES_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_INT_FALLING_EDGES_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_INT_FALLING_EDGES_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 145)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a02b1bd9a3cf7609c1e45bb9fd979bd31"/><section>
+    <title>DI_MOD_DI_INT_RISING_EDGES_ADDR</title>
+<indexterm><primary>DI_MOD_DI_INT_RISING_EDGES_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_INT_RISING_EDGES_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_INT_RISING_EDGES_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 144)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1af1cbf4aff88d2f48ce8db503baeea800"/><section>
+    <title>DI_MOD_DI_LOGIC_INVERT_ADDR</title>
+<indexterm><primary>DI_MOD_DI_LOGIC_INVERT_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_LOGIC_INVERT_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_LOGIC_INVERT_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 140)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a029f1e7a8ec43a780ca77a28affcb1da"/><section>
+    <title>DI_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR</title>
+<indexterm><primary>DI_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_SENSOR_SUPPLY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 148)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a0a5aaa53bab6735b6c508697e8b2d894"/><section>
+    <title>DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR</title>
+<indexterm><primary>DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_DIAG_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 149)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1ac4175c019212abbc4242bab9865d8485"/><section>
+    <title>DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_REC_DIAG_ADDR</title>
+<indexterm><primary>DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_REC_DIAG_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_REC_DIAG_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_DI_SENSOR_SUPPLY_SHORT_CKT_REC_DIAG_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 150)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a150e91d59ab64774d0efa612b9ef38e7"/><section>
+    <title>DI_MOD_EDS_VERSION_DATE_ADDR</title>
+<indexterm><primary>DI_MOD_EDS_VERSION_DATE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_EDS_VERSION_DATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_EDS_VERSION_DATE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 207)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a34017bee853c488516e31694a9ecc8b5"/><section>
+    <title>DI_MOD_EDS_VERSION_NO_ADDR</title>
+<indexterm><primary>DI_MOD_EDS_VERSION_NO_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_EDS_VERSION_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_EDS_VERSION_NO_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 191)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1ab995b2400bb2e3958a28bc80ce87e9da"/><section>
+    <title>DI_MOD_IDENT_DEVICE_ID_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_DEVICE_ID_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_DEVICE_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_DEVICE_ID_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 8)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a9e7cf9c7da7b4a0ad97887be7377a820"/><section>
+    <title>DI_MOD_IDENT_DEVICE_NAME_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_DEVICE_NAME_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_DEVICE_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_DEVICE_NAME_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 28)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1aa4c97391cc2f8f5ac3ff8b7cd8ff9e28"/><section>
+    <title>DI_MOD_IDENT_DEVICE_TYPE_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_DEVICE_TYPE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_DEVICE_TYPE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_DEVICE_TYPE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a8626af8573852a32ad235309948dca20"/><section>
+    <title>DI_MOD_IDENT_HW_REV_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_HW_REV_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_HW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_HW_REV_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 60)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f"/><section>
+    <title>DI_MOD_IDENT_INFO_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_INFO_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_INFO_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_INFO_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a15b3bab54d0a5bfdbfa179af9757b024"/><section>
+    <title>DI_MOD_IDENT_SERIAL_NO_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_SERIAL_NO_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_SERIAL_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_SERIAL_NO_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 76)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a06887c43b0599a4f94a6dbf905687188"/><section>
+    <title>DI_MOD_IDENT_SW_PART_NO_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_SW_PART_NO_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_SW_PART_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_SW_PART_NO_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 92)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1ab09bc14bf75d6c376d95feb281140031"/><section>
+    <title>DI_MOD_IDENT_SW_REV_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_SW_REV_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_SW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_SW_REV_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 108)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1abaa1786ba58e5735ca88b8ddbceb492f"/><section>
+    <title>DI_MOD_IDENT_VARIANT_ID_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_VARIANT_ID_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_VARIANT_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_VARIANT_ID_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 44)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a67c38473318baba49f84fa5ca164b6b9"/><section>
+    <title>DI_MOD_IDENT_VENDOR_ID_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_VENDOR_ID_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_VENDOR_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_VENDOR_ID_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 4)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a413589a195ccc1b04c72d71495ae011a"/><section>
+    <title>DI_MOD_IDENT_VENDOR_NAME_ADDR</title>
+<indexterm><primary>DI_MOD_IDENT_VENDOR_NAME_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_IDENT_VENDOR_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_IDENT_VENDOR_NAME_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ab5154e481a95b65275b4235531d8b93f">DI_MOD_IDENT_INFO_ADDR</link> + 12)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a5e46506a63e3acaa902ef59e449e0002"/><section>
+    <title>DI_MOD_MAX_TEMPERATURE_ADDR</title>
+<indexterm><primary>DI_MOD_MAX_TEMPERATURE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_MAX_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_MAX_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 179)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a99dd2dabbb2d0dd634f8977c497e65c4"/><section>
+    <title>DI_MOD_MEASURED_TEMPERATURE_ADDR</title>
+<indexterm><primary>DI_MOD_MEASURED_TEMPERATURE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_MEASURED_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_MEASURED_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 181)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a7b18c0f856d335be21b742eac3dc1d90"/><section>
+    <title>DI_MOD_MEMORY_LIFE_CYCLE_ADDR</title>
+<indexterm><primary>DI_MOD_MEMORY_LIFE_CYCLE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_MEMORY_LIFE_CYCLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_MEMORY_LIFE_CYCLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 185)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a54172bf05ba1a2dfe4a62d8858e58e93"/><section>
+    <title>DI_MOD_MIN_TEMPERATURE_ADDR</title>
+<indexterm><primary>DI_MOD_MIN_TEMPERATURE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_MIN_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_MIN_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 177)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a6ce17cc157ea48eb270873937db6ebbc"/><section>
+    <title>DI_MOD_MODULE_ENABLE_ADDR</title>
+<indexterm><primary>DI_MOD_MODULE_ENABLE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_MODULE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_MODULE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 189)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1aeb38cff29164767da79824a513ac096a"/><section>
+    <title>DI_MOD_OPERATION_TIME_HR_ADDR</title>
+<indexterm><primary>DI_MOD_OPERATION_TIME_HR_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_OPERATION_TIME_HR_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_OPERATION_TIME_HR_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 171)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a0ecac8ab542bf1c8aecf8a6da5d3fcaf"/><section>
+    <title>DI_MOD_OPERATION_TIME_MIN_ADDR</title>
+<indexterm><primary>DI_MOD_OPERATION_TIME_MIN_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_OPERATION_TIME_MIN_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_OPERATION_TIME_MIN_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 175)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1ad408e2363a548557d8ecf50449241a9a"/><section>
+    <title>DI_MOD_POST_ERR_STATUS_ADDR</title>
+<indexterm><primary>DI_MOD_POST_ERR_STATUS_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_POST_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_POST_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 167)</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509"/><section>
+    <title>DI_MOD_SERVICE_DATA_ADDR</title>
+<indexterm><primary>DI_MOD_SERVICE_DATA_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_SERVICE_DATA_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_SERVICE_DATA_ADDR&#160;&#160;&#160;0x00000000</computeroutput></para></section>
+<anchor xml:id="__digital_input_module_api_8c_1a14d2092ceb8a869000ef1a34f4795361"/><section>
+    <title>DI_MOD_VA_VB_VOLTAGE_ADDR</title>
+<indexterm><primary>DI_MOD_VA_VB_VOLTAGE_ADDR</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>DI_MOD_VA_VB_VOLTAGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define DI_MOD_VA_VB_VOLTAGE_ADDR&#160;&#160;&#160;(<link linkend="__digital_input_module_api_8c_1ad44be01645ef056192d7ec4c960e1509">DI_MOD_SERVICE_DATA_ADDR</link> + 159)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__digital_input_module_api_8c_1a046c1082307d620d997ebfbda57d5143"/><section>
+    <title>getDigitalInputModuleServiceParam()</title>
+<indexterm><primary>getDigitalInputModuleServiceParam</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>getDigitalInputModuleServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t getDigitalInputModuleServiceParam (uint16_t digitalinput_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter data for a specified IO module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>digitalinput_handler</entry><entry>
+<para>The handler for the IO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to retrieve. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the buffer where the retrieved data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c_a046c1082307d620d997ebfbda57d5143_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c_a046c1082307d620d997ebfbda57d5143_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_module_api_8c_1a8b6583c29a7527bb06e572db885e8145"/><section>
+    <title>getDIModuleProcessData()</title>
+<indexterm><primary>getDIModuleProcessData</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>getDIModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getDIModuleProcessData (uint16_t di_device_handler, dimodule_processinfo * dimod_processdata)</computeroutput></para><para>
+
+<para>Retrieves the process data for a specified DI module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>di_device_handler</entry><entry>
+<para>The handler for the DI device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>dimod_processdata</entry><entry>
+<para>Pointer to the <computeroutput>dimodule_processinfo</computeroutput> structure to store process data.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c_a8b6583c29a7527bb06e572db885e8145_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c_a8b6583c29a7527bb06e572db885e8145_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_module_api_8c_1a91f3bb33371373e3e9b48b2290355551"/><section>
+    <title>getIOProcessDataInstanceAddress()</title>
+<indexterm><primary>getIOProcessDataInstanceAddress</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>getIOProcessDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOProcessDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para>
+<para>@breif : This is to get the address of of the process data instance </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c_a91f3bb33371373e3e9b48b2290355551_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_module_api_8c_1aab64cdfe20fa84db4be92c96380d60a2"/><section>
+    <title>getIOServiceDataInstanceAddress()</title>
+<indexterm><primary>getIOServiceDataInstanceAddress</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>getIOServiceDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOServiceDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>: This is to get the address of the service data instance </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__digital_input_module_api_8c_1a1dffd723ee55fedcec3371b78272d282"/><section>
+    <title>setDigitalInputModuleServiceParam()</title>
+<indexterm><primary>setDigitalInputModuleServiceParam</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>setDigitalInputModuleServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t setDigitalInputModuleServiceParam (uint16_t digitalinput_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified DI module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>digitalinput_handler</entry><entry>
+<para>The handler for the DI device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. Refer to the enumeration <computeroutput>e_io_servicedata_parameter_name</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c_a1dffd723ee55fedcec3371b78272d282_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_digital_input_module_api_8c_a1dffd723ee55fedcec3371b78272d282_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__digital_input_module_api_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>DigitalInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>DigitalInputModuleApi.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

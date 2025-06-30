@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_isem__status__info_8c" xml:lang="en-US">
+<title>Data_processing/isem_status_info.c File Reference</title>
+<indexterm><primary>Data_processing/isem_status_info.c</primary></indexterm>
+<para>
+
+<para>Source that processes the isem modules status information. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;AppGlobal.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for isem_status_info.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="isem__status__info_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_isem__status__info_8c_1a58997b988646976eadf522f6b26c9f46">stop_timer</link> ()</para>
+
+<para>Function to stop the inactivity timer. </para>
+</listitem>
+            <listitem><para>int <link linkend="_isem__status__info_8c_1ad3e3ba582ba271dd10563b919da8f94f">find_bit_difference_isem</link> (uint32_t data1, uint32_t data2, int mod_num)</para>
+</listitem>
+            <listitem><para>int <link linkend="_isem__status__info_8c_1afa0da081e452bcba9fe88e18aee251fc">find_bit_difference_isem_war</link> (uint32_t data1, uint32_t data2, int mod_num)</para>
+</listitem>
+            <listitem><para>int <link linkend="_isem__status__info_8c_1ac556b861a63a472eab6b590aac6be953">isem_status_info</link> (uint8_t pz_index, uint8_t isemdiag_index, uint8_t mod_num, uint8_t pz_num, isemdiag_processinfo *processdata, uint8_t status_type)</para>
+
+<para>Function that processes the isem modules status information. </para>
+</listitem>
+            <listitem><para>void <link linkend="_isem__status__info_8c_1a9a3806a48e474cbce90adb9c92ad4ae9">reset_isem_status</link> (uint8_t reset_type, uint8_t <link linkend="_lvgl__gui_8c_1af9a91605decf4619baae281772693f6f">module_index</link>)</para>
+
+<para>Reset ISEM warning and fault status. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>status_screen_struct <link linkend="_isem__status__info_8c_1a5a5465a4d5058460b8737c982eebeefb">screen_status_value</link> [20]</para>
+</listitem>
+            <listitem><para>isem_fault_csv_struct <link linkend="_isem__status__info_8c_1a3ac9bbaa8e60426f3dd023239a7363aa">isem_fault_csv_value</link> [35]</para>
+</listitem>
+            <listitem><para>isem_warning_csv_struct <link linkend="_isem__status__info_8c_1a4b34591b3c7ce4a72ae500751937b9f4">isem_warning_csv_value</link> [35]</para>
+</listitem>
+            <listitem><para>int <link linkend="_isem__status__info_8c_1aaa8fd3258b0349c782441c209b83cf5c">G_POP_EVENT</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_isem__status__info_8c_1a41587f5122991b58fb24979bd7d8b6c6">str_isem</link> [8]</para>
+</listitem>
+            <listitem><para>char <link linkend="_isem__status__info_8c_1aaa326b90680283c7b050db8bcf27d0e7">str_war_isem</link> [8]</para>
+</listitem>
+            <listitem><para>char <link linkend="_isem__status__info_8c_1a461894f770c92197002cfab59d68a2c9">merged_isem</link> [141]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a04b37597722e65e65ff856907598662d">isem_fault_file_not_exist</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a2a491c8922b82cf66c8ca809d0b049d7">isem_warning_file_not_exist</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_isem__status__info_8c_1ac8b7f8ebcabc3a52bcdd9b8109ed77f3">prev_isem_war</link> [MACRO_MAX_PRESSURE_ZONE] = {0}</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_isem__status__info_8c_1a10cc7cec515e793daebaef0c2d403b3b">prev_isem_fault</link> [MACRO_MAX_PRESSURE_ZONE] = {0}</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_isem__status__info_8c_1aa8d277cc39a7aab87f50837b5c596c8d">curr_isem_war</link></para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_isem__status__info_8c_1abfe21061ddd1d702919ddabe5116eb8d">curr_isem_fault</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1af2a697b053b917055a6916988d4d6ad0">isem_pop_flag</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="_isem__status__info_8c_1ade31b093a3128d447667c83314429e03">isem_diag_flag_warning</link> =0</para>
+</listitem>
+            <listitem><para>int <link linkend="_isem__status__info_8c_1a8cbde846f33197e06ca1643f356275a0">isem_diag_station_flag_fault</link> =0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a5a48a03cca514f9b8f3f4f3efde71476">g_status_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a36972212c2938bee4597333076b0d292">curr_war_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1ac219734e0b7bff6a07a53d864b2cde17">prev_war_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a9e5e7d18c6596629d5f86a5ef0e6f9df">curr_fault_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a32d7ae5c30054bc52bf84eff8801f89b">prev_fault_index</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a0f1f761cbda8e6402f65783215e44356">curr_war_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a1bb899167b0374eb2c2de90e1de27a2b">prev_war_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a1d4a7b1a77c7b811d00083d16ba749c4">curr_fault_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a4f901871e6da6fa9127c3255f9435aec">prev_fault_list</link> [MACRO_MAX_MESSAGE_QUEUE_SIZE]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_isem__status__info_8c_1a49952e1fb0d52f6ef2f6fd0f381ab1b5">cur_disp_scr_index</link></para>
+</listitem>
+            <listitem><para>isemdiag_processinfo <link linkend="_isem__status__info_8c_1aa7a7f8f97218b67ca175015b6a315f9d">isemdiag_processdata</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_isem__status__info_8c_1ae44ef9829ac44f5b2bb7abdefce34479">g_isemdiag_count</link></para>
+</listitem>
+            <listitem><para>PZoneDetails <link linkend="_isem__status__info_8c_1a7f5f23f78cf76bec56ebefff8cea7196">pzonemodulesdetails</link> [MACRO_MAX_MODULES_DETAILS]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that processes the isem modules status information. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_isem__status__info_8c_1ad3e3ba582ba271dd10563b919da8f94f"/><section>
+    <title>find_bit_difference_isem()</title>
+<indexterm><primary>find_bit_difference_isem</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>find_bit_difference_isem</secondary></indexterm>
+<para><computeroutput>int find_bit_difference_isem (uint32_t data1, uint32_t data2, int mod_num)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="isem__status__info_8c_ad3e3ba582ba271dd10563b919da8f94f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_isem__status__info_8c_1afa0da081e452bcba9fe88e18aee251fc"/><section>
+    <title>find_bit_difference_isem_war()</title>
+<indexterm><primary>find_bit_difference_isem_war</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>find_bit_difference_isem_war</secondary></indexterm>
+<para><computeroutput>int find_bit_difference_isem_war (uint32_t data1, uint32_t data2, int mod_num)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="isem__status__info_8c_afa0da081e452bcba9fe88e18aee251fc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_isem__status__info_8c_1ac556b861a63a472eab6b590aac6be953"/><section>
+    <title>isem_status_info()</title>
+<indexterm><primary>isem_status_info</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isem_status_info</secondary></indexterm>
+<para><computeroutput>int isem_status_info (uint8_t pz_index, uint8_t isemdiag_index, uint8_t mod_num, uint8_t pz_num, isemdiag_processinfo * processdata, uint8_t status_type)</computeroutput></para><para>
+
+<para>Function that processes the isem modules status information. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pz_index</entry><entry>
+<para>The index of the pressure zone </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="isem__status__info_8c_ac556b861a63a472eab6b590aac6be953_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="isem__status__info_8c_ac556b861a63a472eab6b590aac6be953_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_isem__status__info_8c_1a9a3806a48e474cbce90adb9c92ad4ae9"/><section>
+    <title>reset_isem_status()</title>
+<indexterm><primary>reset_isem_status</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>reset_isem_status</secondary></indexterm>
+<para><computeroutput>void reset_isem_status (uint8_t reset_type, uint8_t module_index)</computeroutput></para><para>
+
+<para>Reset ISEM warning and fault status. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>reset_type</entry><entry>
+<para>0 for individual, 1 for all </para>
+</entry>
+                            </row>
+                            <row>
+<entry>module_index</entry><entry>
+<para>specific module index to reset (if reset_type is 0) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="isem__status__info_8c_a9a3806a48e474cbce90adb9c92ad4ae9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_isem__status__info_8c_1a58997b988646976eadf522f6b26c9f46"/><section>
+    <title>stop_timer()</title>
+<indexterm><primary>stop_timer</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>stop_timer</secondary></indexterm>
+<para><computeroutput>void stop_timer ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function to stop the inactivity timer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="isem__status__info_8c_a58997b988646976eadf522f6b26c9f46_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_isem__status__info_8c_1a49952e1fb0d52f6ef2f6fd0f381ab1b5"/><section>
+    <title>cur_disp_scr_index</title>
+<indexterm><primary>cur_disp_scr_index</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>cur_disp_scr_index</secondary></indexterm>
+<para><computeroutput>uint8_t cur_disp_scr_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a9e5e7d18c6596629d5f86a5ef0e6f9df"/><section>
+    <title>curr_fault_index</title>
+<indexterm><primary>curr_fault_index</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>curr_fault_index</secondary></indexterm>
+<para><computeroutput>uint8_t curr_fault_index</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a1d4a7b1a77c7b811d00083d16ba749c4"/><section>
+    <title>curr_fault_list</title>
+<indexterm><primary>curr_fault_list</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>curr_fault_list</secondary></indexterm>
+<para><computeroutput>uint8_t curr_fault_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1abfe21061ddd1d702919ddabe5116eb8d"/><section>
+    <title>curr_isem_fault</title>
+<indexterm><primary>curr_isem_fault</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>curr_isem_fault</secondary></indexterm>
+<para><computeroutput>uint32_t curr_isem_fault</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1aa8d277cc39a7aab87f50837b5c596c8d"/><section>
+    <title>curr_isem_war</title>
+<indexterm><primary>curr_isem_war</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>curr_isem_war</secondary></indexterm>
+<para><computeroutput>uint32_t curr_isem_war</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a36972212c2938bee4597333076b0d292"/><section>
+    <title>curr_war_index</title>
+<indexterm><primary>curr_war_index</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>curr_war_index</secondary></indexterm>
+<para><computeroutput>uint8_t curr_war_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a0f1f761cbda8e6402f65783215e44356"/><section>
+    <title>curr_war_list</title>
+<indexterm><primary>curr_war_list</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>curr_war_list</secondary></indexterm>
+<para><computeroutput>uint8_t curr_war_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1ae44ef9829ac44f5b2bb7abdefce34479"/><section>
+    <title>g_isemdiag_count</title>
+<indexterm><primary>g_isemdiag_count</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>g_isemdiag_count</secondary></indexterm>
+<para><computeroutput>uint16_t g_isemdiag_count<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1aaa8fd3258b0349c782441c209b83cf5c"/><section>
+    <title>G_POP_EVENT</title>
+<indexterm><primary>G_POP_EVENT</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>G_POP_EVENT</secondary></indexterm>
+<para><computeroutput>int G_POP_EVENT<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a5a48a03cca514f9b8f3f4f3efde71476"/><section>
+    <title>g_status_index</title>
+<indexterm><primary>g_status_index</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>g_status_index</secondary></indexterm>
+<para><computeroutput>uint8_t g_status_index<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1ade31b093a3128d447667c83314429e03"/><section>
+    <title>isem_diag_flag_warning</title>
+<indexterm><primary>isem_diag_flag_warning</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isem_diag_flag_warning</secondary></indexterm>
+<para><computeroutput>int isem_diag_flag_warning =0</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a8cbde846f33197e06ca1643f356275a0"/><section>
+    <title>isem_diag_station_flag_fault</title>
+<indexterm><primary>isem_diag_station_flag_fault</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isem_diag_station_flag_fault</secondary></indexterm>
+<para><computeroutput>int isem_diag_station_flag_fault =0</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a3ac9bbaa8e60426f3dd023239a7363aa"/><section>
+    <title>isem_fault_csv_value</title>
+<indexterm><primary>isem_fault_csv_value</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isem_fault_csv_value</secondary></indexterm>
+<para><computeroutput>isem_fault_csv_struct isem_fault_csv_value[35]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a04b37597722e65e65ff856907598662d"/><section>
+    <title>isem_fault_file_not_exist</title>
+<indexterm><primary>isem_fault_file_not_exist</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isem_fault_file_not_exist</secondary></indexterm>
+<para><computeroutput>uint8_t isem_fault_file_not_exist<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1af2a697b053b917055a6916988d4d6ad0"/><section>
+    <title>isem_pop_flag</title>
+<indexterm><primary>isem_pop_flag</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isem_pop_flag</secondary></indexterm>
+<para><computeroutput>uint8_t isem_pop_flag = 0</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a4b34591b3c7ce4a72ae500751937b9f4"/><section>
+    <title>isem_warning_csv_value</title>
+<indexterm><primary>isem_warning_csv_value</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isem_warning_csv_value</secondary></indexterm>
+<para><computeroutput>isem_warning_csv_struct isem_warning_csv_value[35]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a2a491c8922b82cf66c8ca809d0b049d7"/><section>
+    <title>isem_warning_file_not_exist</title>
+<indexterm><primary>isem_warning_file_not_exist</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isem_warning_file_not_exist</secondary></indexterm>
+<para><computeroutput>uint8_t isem_warning_file_not_exist<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1aa7a7f8f97218b67ca175015b6a315f9d"/><section>
+    <title>isemdiag_processdata</title>
+<indexterm><primary>isemdiag_processdata</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>isemdiag_processdata</secondary></indexterm>
+<para><computeroutput>isemdiag_processinfo isemdiag_processdata</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a461894f770c92197002cfab59d68a2c9"/><section>
+    <title>merged_isem</title>
+<indexterm><primary>merged_isem</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>merged_isem</secondary></indexterm>
+<para><computeroutput>char merged_isem[141]</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a32d7ae5c30054bc52bf84eff8801f89b"/><section>
+    <title>prev_fault_index</title>
+<indexterm><primary>prev_fault_index</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>prev_fault_index</secondary></indexterm>
+<para><computeroutput>uint8_t prev_fault_index</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a4f901871e6da6fa9127c3255f9435aec"/><section>
+    <title>prev_fault_list</title>
+<indexterm><primary>prev_fault_list</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>prev_fault_list</secondary></indexterm>
+<para><computeroutput>uint8_t prev_fault_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a10cc7cec515e793daebaef0c2d403b3b"/><section>
+    <title>prev_isem_fault</title>
+<indexterm><primary>prev_isem_fault</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>prev_isem_fault</secondary></indexterm>
+<para><computeroutput>uint32_t prev_isem_fault[MACRO_MAX_PRESSURE_ZONE] = {0}</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1ac8b7f8ebcabc3a52bcdd9b8109ed77f3"/><section>
+    <title>prev_isem_war</title>
+<indexterm><primary>prev_isem_war</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>prev_isem_war</secondary></indexterm>
+<para><computeroutput>uint32_t prev_isem_war[MACRO_MAX_PRESSURE_ZONE] = {0}</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1ac219734e0b7bff6a07a53d864b2cde17"/><section>
+    <title>prev_war_index</title>
+<indexterm><primary>prev_war_index</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>prev_war_index</secondary></indexterm>
+<para><computeroutput>uint8_t prev_war_index</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a1bb899167b0374eb2c2de90e1de27a2b"/><section>
+    <title>prev_war_list</title>
+<indexterm><primary>prev_war_list</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>prev_war_list</secondary></indexterm>
+<para><computeroutput>uint8_t prev_war_list[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a7f5f23f78cf76bec56ebefff8cea7196"/><section>
+    <title>pzonemodulesdetails</title>
+<indexterm><primary>pzonemodulesdetails</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>pzonemodulesdetails</secondary></indexterm>
+<para><computeroutput>PZoneDetails pzonemodulesdetails[MACRO_MAX_MODULES_DETAILS]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a5a5465a4d5058460b8737c982eebeefb"/><section>
+    <title>screen_status_value</title>
+<indexterm><primary>screen_status_value</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>screen_status_value</secondary></indexterm>
+<para><computeroutput>status_screen_struct screen_status_value[MACRO_MAX_MESSAGE_QUEUE_SIZE]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1a41587f5122991b58fb24979bd7d8b6c6"/><section>
+    <title>str_isem</title>
+<indexterm><primary>str_isem</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>str_isem</secondary></indexterm>
+<para><computeroutput>char str_isem[8]</computeroutput></para></section>
+<anchor xml:id="_isem__status__info_8c_1aaa326b90680283c7b050db8bcf27d0e7"/><section>
+    <title>str_war_isem</title>
+<indexterm><primary>str_war_isem</primary><secondary>isem_status_info.c</secondary></indexterm>
+<indexterm><primary>isem_status_info.c</primary><secondary>str_war_isem</secondary></indexterm>
+<para><computeroutput>char str_war_isem[8]</computeroutput></para></section>
+</section>
+</section>

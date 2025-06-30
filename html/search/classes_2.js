@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sample_0',['sample',['../structsample.html',1,'']]],
-  ['spi_5fflash_5fdataxfer_1',['spi_flash_DataXfer',['../structspi__flash___data_xfer.html',1,'']]]
+  ['local_5fbuf_0',['local_buf',['../structlocal__buf.html',1,'']]],
+  ['lv_5fcolor_5ft_1',['lv_color_t',['../structlv__color__t.html',1,'']]]
 ];

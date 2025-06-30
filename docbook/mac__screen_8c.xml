@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mac__screen_8c" xml:lang="en-US">
+<title>GUI/Screens/mac_screen.c File Reference</title>
+<indexterm><primary>GUI/Screens/mac_screen.c</primary></indexterm>
+<para>
+
+<para>Source that displays MAC screen details. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;AppGlobal.h&gt;<?linebreak?></programlisting>Include dependency graph for mac_screen.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__screen_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_mac__screen_8c_1a3d9015730718d0a270a67427feb3eb1e">mac_style</link> ()</para>
+
+<para>Function to initialize the mac screen style. </para>
+</listitem>
+            <listitem><para>void <link linkend="_mac__screen_8c_1a79e2f30f9a212f89c8c943275a637915">disp_mod_mac_screen</link> ()</para>
+
+<para>Function to display MAC screen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_mac__screen_8c_1a171bd087fd88267f8df70214d756df4a">common_label_creation</link> (lv_obj_t *screen_name, char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</para>
+</listitem>
+            <listitem><para>void <link linkend="_mac__screen_8c_1a1c7289e9f8ca482aa0d0ba0c1af96da0">update_mac_screen</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>lv_obj_t * <link linkend="_mac__screen_8c_1aa47aa67d8d0a2d010e29592527f376e1">back_title_mac</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_mac__screen_8c_1a2d59c0bf38ff29a27e5741ae0eaf6e9d">mac_title</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_mac__screen_8c_1ab7092b0694e437071635cf4d6627ee45">mac_value1</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_mac__screen_8c_1a8d486892e514be7106710d8046a35d11">mac_value2</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_mac__screen_8c_1a7270ffa151330cf80bbc4427ab01133e">mac_value3</link></para>
+</listitem>
+            <listitem><para>mac_screen <link linkend="_mac__screen_8c_1a523ead125e7b13b7b55d5a1c68fabe81">m_mac_screen</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that displays MAC screen details. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_mac__screen_8c_1a171bd087fd88267f8df70214d756df4a"/><section>
+    <title>common_label_creation()</title>
+<indexterm><primary>common_label_creation</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>common_label_creation</secondary></indexterm>
+<para><computeroutput>void common_label_creation (lv_obj_t * screen_name, char * text, lv_coord_t x, lv_coord_t y, const lv_font_t * font_name, uint32_t font_colour)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_mac__screen_8c_1a79e2f30f9a212f89c8c943275a637915"/><section>
+    <title>disp_mod_mac_screen()</title>
+<indexterm><primary>disp_mod_mac_screen</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>disp_mod_mac_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_mac_screen ( )</computeroutput></para><para>
+
+<para>Function to display MAC screen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__screen_8c_a79e2f30f9a212f89c8c943275a637915_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__screen_8c_a79e2f30f9a212f89c8c943275a637915_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_mac__screen_8c_1a3d9015730718d0a270a67427feb3eb1e"/><section>
+    <title>mac_style()</title>
+<indexterm><primary>mac_style</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>mac_style</secondary></indexterm>
+<para><computeroutput>void mac_style ( )</computeroutput></para><para>
+
+<para>Function to initialize the mac screen style. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__screen_8c_a3d9015730718d0a270a67427feb3eb1e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_mac__screen_8c_1a1c7289e9f8ca482aa0d0ba0c1af96da0"/><section>
+    <title>update_mac_screen()</title>
+<indexterm><primary>update_mac_screen</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>update_mac_screen</secondary></indexterm>
+<para><computeroutput>void update_mac_screen ( )</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__screen_8c_a1c7289e9f8ca482aa0d0ba0c1af96da0_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="mac__screen_8c_a1c7289e9f8ca482aa0d0ba0c1af96da0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_mac__screen_8c_1aa47aa67d8d0a2d010e29592527f376e1"/><section>
+    <title>back_title_mac</title>
+<indexterm><primary>back_title_mac</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>back_title_mac</secondary></indexterm>
+<para><computeroutput>lv_obj_t* back_title_mac</computeroutput></para></section>
+<anchor xml:id="_mac__screen_8c_1a523ead125e7b13b7b55d5a1c68fabe81"/><section>
+    <title>m_mac_screen</title>
+<indexterm><primary>m_mac_screen</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>m_mac_screen</secondary></indexterm>
+<para><computeroutput>mac_screen m_mac_screen<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_mac__screen_8c_1a2d59c0bf38ff29a27e5741ae0eaf6e9d"/><section>
+    <title>mac_title</title>
+<indexterm><primary>mac_title</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>mac_title</secondary></indexterm>
+<para><computeroutput>lv_obj_t* mac_title</computeroutput></para></section>
+<anchor xml:id="_mac__screen_8c_1ab7092b0694e437071635cf4d6627ee45"/><section>
+    <title>mac_value1</title>
+<indexterm><primary>mac_value1</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>mac_value1</secondary></indexterm>
+<para><computeroutput>lv_obj_t* mac_value1</computeroutput></para></section>
+<anchor xml:id="_mac__screen_8c_1a8d486892e514be7106710d8046a35d11"/><section>
+    <title>mac_value2</title>
+<indexterm><primary>mac_value2</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>mac_value2</secondary></indexterm>
+<para><computeroutput>lv_obj_t* mac_value2</computeroutput></para></section>
+<anchor xml:id="_mac__screen_8c_1a7270ffa151330cf80bbc4427ab01133e"/><section>
+    <title>mac_value3</title>
+<indexterm><primary>mac_value3</primary><secondary>mac_screen.c</secondary></indexterm>
+<indexterm><primary>mac_screen.c</primary><secondary>mac_value3</secondary></indexterm>
+<para><computeroutput>lv_obj_t* mac_value3</computeroutput></para></section>
+</section>
+</section>

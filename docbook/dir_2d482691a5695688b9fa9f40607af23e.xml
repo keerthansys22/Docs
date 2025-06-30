@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_2d482691a5695688b9fa9f40607af23e" xml:lang="en-US">
+<title>Initializations Directory Reference</title>
+<indexterm><primary>Initializations Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_05041d447ccc69ea46a00e90c452973a">Hardware_Initializations</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_b28603d25d5f9d9511a663fa383d64ff">Indication</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

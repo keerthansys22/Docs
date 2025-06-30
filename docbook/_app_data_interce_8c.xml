@@ -1,0 +1,1949 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__app_data_interce_8c" xml:lang="en-US">
+<title>API_Source/AppDataInterce.c File Reference</title>
+<indexterm><primary>API_Source/AppDataInterce.c</primary></indexterm>
+<para>
+
+<para>This contain all the common api of the modules. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;linux/rpmsg.h&quot;<?linebreak?>#include &quot;ti_rpmsg_char.h&quot;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for AppDataInterce.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__app_data_interce_8c_1a440122b4f7aff7e19931863de775cb51">HANDELRS_VERBOSE</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_interce_8c_1af32a2b76bfd84ab81bfd808e1dc427a9">GERNERAL_VERBOSE</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__app_data_interce_8c_1a13b7fb72a90a8488b6e502da0f432be6">API_NAME_VERBOSE</link>&#160;&#160;&#160;1</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="__app_data_interce_8c_1aab64cdfe20fa84db4be92c96380d60a2">getIOServiceDataInstanceAddress</link> (uint16_t handler)</para>
+
+<para>: This is to get the address of the service data instance </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__app_data_interce_8c_1afa3d041d8597ff5b49a58ec5e13f2ea4">getPresssureZoneServiceDataAddress</link> (uint16_t pz_handler)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__app_data_interce_8c_1acf4b478db18710fcdd7868a9aa4e3ec7">getPropZoneServiceDataAddress</link> (uint16_t propzone_handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1ae512dcee3f48f317872617e5f4559b19">readSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>int <link linkend="__app_data_interce_8c_1ac92a673771db92e7156490091aef7135">init</link> (void)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1a510fa21187d2bc7234c063942d17a85f">readDiscoveryInfo</link> (system_discoverystatusinfo *info)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1ad1a2eb9dcf28f6272ba0ba67eb0e802d">getDiscoveryDetails</link> (s_discovery_details *discovery_detail)</para>
+
+<para>Retrieve the discovery details of the modules. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="__app_data_interce_8c_1a1b65dccef5e16451b2ff09b40f8f28ca">getMainBusHandlers</link> (void)</para>
+
+<para>Retrieve the Main Bus Handler. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1aeba633b8bfe717f26b91e9035f01b7f1">getDIDeviceHandler</link> (void)</para>
+
+<para>Retrieve the device handlers for DI (Digital Input) modules. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1a9cc23bdb3b5e1b67530bbcbbef48e339">getDODeviceHandler</link> (void)</para>
+
+<para>Retrieve the device handlers for DO (Digital output) modules. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1a3fa80841f585da80163ab056466b213d">getDIODeviceHandler</link> (void)</para>
+
+<para>Retrieve the device handlers for DIO (Digital input output) modules. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1abf8b757f9f7ffdab556fac4e2820deb9">getAIDeviceHandler</link> (void)</para>
+
+<para>Retrieve the device handlers for AI (Analog Input) modules. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1a523d5536043e2248772f5b5c0c3448ce">getAODeviceHandler</link> (void)</para>
+
+<para>Retrieve the device handlers for AO (Analog Output) modules. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1a89e43b764a633d86b33b7e8fe437f256">getAIODeviceHandler</link> (void)</para>
+
+<para>Retrieve the device handlers for AIO (Analog Input Output) modules. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1ad2985c903d0633288a5f3922334a6bd9">getPressureZoneHandler</link> (void)</para>
+
+<para>Retrieve the pressure zone handlers. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1a0a0d54861042d4ff550ea56a0dd816de">getPressureZoneDeviceCountDetails</link> (uint16_t pressurezone_handler, s_prszone_device_count_details *pressurezone_device_count)</para>
+
+<para>Retrieves the device count from the specified pressure zone. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1a1f7998cf4936f312918dcb757d2344dc">getExternalPropHandler</link> (void)</para>
+
+<para>Retrieve the External Prop handlers. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1abf7ee8a86a9a734763668b9475436291">getIsemDiagHandler</link> (uint16_t pressurezone_handler)</para>
+
+<para>Retrieve the device handlers for ISEM Diag module. </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1a8a191d56670ac7df40f394881b28344f">getStandardValveHandler</link> (uint16_t pressurezone_handler)</para>
+
+<para>Retrieve the device handlers for Standard Valve . </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1aece12e0108637e90d7f9695bc5d8caeb">getDiagValveHandler</link> (uint16_t pressurezone_handler)</para>
+
+<para>Retrieve the device handlers for Diag Valve . </para>
+</listitem>
+            <listitem><para>uint16_t * <link linkend="__app_data_interce_8c_1a5602d1d731ab6db4c1f868ef03e01b51">getInternalPropHandler</link> (uint16_t pressurezone_handler)</para>
+
+<para>Retrieve the device handlers for Internal Prop . </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1ad3af788c60c86efbf57dd019321d2c3f">getIOModIdentificationInfo</link> (uint16_t iodevice_handler, s_io_identification_info *identification_info)</para>
+
+<para>Retrieves the Digital Module Identification Info. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1aab42112e209d3e8af95f537bd7f0dfef">getDigitalModIdentificationInfo</link> (uint16_t digital_module_handler, s_io_identification_info *identification_info)</para>
+
+<para>Retrieves the Digital Module Identification Info. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1a74ddf7a39feee23540341c6521dc6000">getAnalogModIdentificationInfo</link> (uint16_t analog_module_handler, s_io_identification_info *identification_info)</para>
+
+<para>Retrieves the identification info of the requested analog module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1a41267b33c0c393b95c0460209f09b02b">getIsemDiagIdentificationInfo</link> (uint16_t pressurezone_handler, uint16_t isemdiag_handler, isemdiagidentificationinfo *identification_info)</para>
+
+<para>Retrieves the identification info of the ISEM DIAG valve. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1ac71ff25182fc836e00281aa2b64038c5">getDiagValveIdentificationInfo</link> (uint16_t pressurezone_handler, uint16_t diagvalve_handler, diagvalveidentificationinfo *identification_info)</para>
+
+<para>Retrieves the identification info of the diagnostic valve. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1ac638b98825de1fdd9a55f36b77297f55">getIntPropIdentificationInfo</link> (uint16_t pressurezone_handler, uint16_t internal_prop_handler, propidentificationinfo *identification_info)</para>
+
+<para>Retrieves the identification info of the Internal Prop . </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1ad9b02c253eb339a52cfef89977d11b91">getExtPropIdentificationInfo</link> (uint16_t extprop_handler, propidentificationinfo *identification_info)</para>
+
+<para>Retrieves the identification info of the External prop. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1aa97f8415a0ba0596ba9e90c156378a95">getDevicePosition</link> (uint16_t device_handler)</para>
+
+<para>Retrieves the position of a specified device. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1ac6ac24a2c74b160fa3e091b39598ab4c">getIodevicePartNumber</link> (uint16_t device_handler, void *data)</para>
+
+<para>This api is to get the IO device part number. </para>
+</listitem>
+            <listitem><para>void <link linkend="__app_data_interce_8c_1abb1f7159217e65e903f6658d812ccded">getIsemDiagPartNumber</link> (void *data)</para>
+
+<para>This api is to get the IO device part number. </para>
+</listitem>
+            <listitem><para>void <link linkend="__app_data_interce_8c_1a87e83e7a320bbdc787d99f4274b5acd4">getDiagValvePartNumber</link> (void *data)</para>
+</listitem>
+            <listitem><para>void <link linkend="__app_data_interce_8c_1a42fce8bf6559b335d1d32c6f8d043e54">getInternalPropPartNumeber</link> (void *data)</para>
+
+<para>This api is to get the Internal Prop Valve Part number. </para>
+</listitem>
+            <listitem><para>void <link linkend="__app_data_interce_8c_1a46e2d1acaec3ced3fc4301e7c7d42fb2">getExternalPropPartNumber</link> (void *data)</para>
+
+<para>This api is to get the External Prop Valve Part number. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__app_data_interce_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+            <listitem><para>system_discoverystatusinfo <link linkend="__app_data_interce_8c_1a6dad6684cbe35726f4ae5cd7a3584616">system_info</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1ad19c359304948e3d3aea4c3ee826685c">internal_pressure_zone</link> [5]</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__app_data_interce_8c_1a0441d0acf0c675222c4e9a8d4a853348">external_pressurezone</link> [16]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This contain all the common api of the modules. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__app_data_interce_8c_1a13b7fb72a90a8488b6e502da0f432be6"/><section>
+    <title>API_NAME_VERBOSE</title>
+<indexterm><primary>API_NAME_VERBOSE</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>API_NAME_VERBOSE</secondary></indexterm>
+<para><computeroutput>#define API_NAME_VERBOSE&#160;&#160;&#160;1</computeroutput></para></section>
+<anchor xml:id="__app_data_interce_8c_1af32a2b76bfd84ab81bfd808e1dc427a9"/><section>
+    <title>GERNERAL_VERBOSE</title>
+<indexterm><primary>GERNERAL_VERBOSE</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>GERNERAL_VERBOSE</secondary></indexterm>
+<para><computeroutput>#define GERNERAL_VERBOSE&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="__app_data_interce_8c_1a440122b4f7aff7e19931863de775cb51"/><section>
+    <title>HANDELRS_VERBOSE</title>
+<indexterm><primary>HANDELRS_VERBOSE</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>HANDELRS_VERBOSE</secondary></indexterm>
+<para><computeroutput>#define HANDELRS_VERBOSE&#160;&#160;&#160;0</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__app_data_interce_8c_1abf8b757f9f7ffdab556fac4e2820deb9"/><section>
+    <title>getAIDeviceHandler()</title>
+<indexterm><primary>getAIDeviceHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getAIDeviceHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getAIDeviceHandler (void )</computeroutput></para><para>
+
+<para>Retrieve the device handlers for AI (Analog Input) modules. </para>
+</para>
+
+<para>This API returns an array of handlers for AI modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for AI modules.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): DI module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is 9, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_abf8b757f9f7ffdab556fac4e2820deb9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a89e43b764a633d86b33b7e8fe437f256"/><section>
+    <title>getAIODeviceHandler()</title>
+<indexterm><primary>getAIODeviceHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getAIODeviceHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getAIODeviceHandler (void )</computeroutput></para><para>
+
+<para>Retrieve the device handlers for AIO (Analog Input Output) modules. </para>
+</para>
+
+<para>This API returns an array of handlers for DI modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for AIO modules.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): AIO module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is 9, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a89e43b764a633d86b33b7e8fe437f256_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a74ddf7a39feee23540341c6521dc6000"/><section>
+    <title>getAnalogModIdentificationInfo()</title>
+<indexterm><primary>getAnalogModIdentificationInfo</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getAnalogModIdentificationInfo</secondary></indexterm>
+<para><computeroutput>uint8_t getAnalogModIdentificationInfo (uint16_t analog_module_handler, s_io_identification_info * identification_info)</computeroutput></para><para>
+
+<para>Retrieves the identification info of the requested analog module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>analog_module_handler</entry><entry>
+<para>Device handler of the analog module [AI, AO, AIO]. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>identification_info</entry><entry>
+<para>Pointer to the <computeroutput>s_io_identification_info</computeroutput> structure to store identification details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a74ddf7a39feee23540341c6521dc6000_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a74ddf7a39feee23540341c6521dc6000_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a523d5536043e2248772f5b5c0c3448ce"/><section>
+    <title>getAODeviceHandler()</title>
+<indexterm><primary>getAODeviceHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getAODeviceHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getAODeviceHandler (void )</computeroutput></para><para>
+
+<para>Retrieve the device handlers for AO (Analog Output) modules. </para>
+</para>
+
+<para>This API returns an array of handlers for AO modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for AO modules.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): DI module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is 9, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a523d5536043e2248772f5b5c0c3448ce_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1aa97f8415a0ba0596ba9e90c156378a95"/><section>
+    <title>getDevicePosition()</title>
+<indexterm><primary>getDevicePosition</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDevicePosition</secondary></indexterm>
+<para><computeroutput>uint8_t getDevicePosition (uint16_t device_handler)</computeroutput></para><para>
+
+<para>Retrieves the position of a specified device. </para>
+</para>
+
+<para>This function returns the position of the device, which can be one of the following: MBN, IO modules, ISEM_DIAG, DIAG_VALVE, STANDARD_VALVE, Internal Prop and External Prop.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>device_handler</entry><entry>
+<para>The handler for the device whose position is required.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns the position of the device. </para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_aa97f8415a0ba0596ba9e90c156378a95_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1aece12e0108637e90d7f9695bc5d8caeb"/><section>
+    <title>getDiagValveHandler()</title>
+<indexterm><primary>getDiagValveHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDiagValveHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getDiagValveHandler (uint16_t pressurezone_handler)</computeroutput></para><para>
+
+<para>Retrieve the device handlers for Diag Valve . </para>
+</para>
+
+<para>This API returns an array of handlers for Diag Valve. in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for Diag Valve.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): Diag Valve module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is MAX_DIAG_VALVE_PER_PZZONE +1, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_aece12e0108637e90d7f9695bc5d8caeb_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ac71ff25182fc836e00281aa2b64038c5"/><section>
+    <title>getDiagValveIdentificationInfo()</title>
+<indexterm><primary>getDiagValveIdentificationInfo</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDiagValveIdentificationInfo</secondary></indexterm>
+<para><computeroutput>uint8_t getDiagValveIdentificationInfo (uint16_t pressurezone_handler, uint16_t diagvalve_handler, diagvalveidentificationinfo * identification_info)</computeroutput></para><para>
+
+<para>Retrieves the identification info of the diagnostic valve. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>Handler for the specific pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>diagvalve_handler</entry><entry>
+<para>Handler for the diagnostic valve. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>identification_info</entry><entry>
+<para>Pointer to the <computeroutput>diagvalveidentificationinfo</computeroutput> structure to store identification details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ac71ff25182fc836e00281aa2b64038c5_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ac71ff25182fc836e00281aa2b64038c5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a87e83e7a320bbdc787d99f4274b5acd4"/><section>
+    <title>getDiagValvePartNumber()</title>
+<indexterm><primary>getDiagValvePartNumber</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDiagValvePartNumber</secondary></indexterm>
+<para><computeroutput>void getDiagValvePartNumber (void * data)</computeroutput></para></section>
+<anchor xml:id="__app_data_interce_8c_1aeba633b8bfe717f26b91e9035f01b7f1"/><section>
+    <title>getDIDeviceHandler()</title>
+<indexterm><primary>getDIDeviceHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDIDeviceHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getDIDeviceHandler (void )</computeroutput></para><para>
+
+<para>Retrieve the device handlers for DI (Digital Input) modules. </para>
+</para>
+
+<para>This API returns an array of handlers for DI modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for DI modules.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): DI module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is 9, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_aeba633b8bfe717f26b91e9035f01b7f1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1aab42112e209d3e8af95f537bd7f0dfef"/><section>
+    <title>getDigitalModIdentificationInfo()</title>
+<indexterm><primary>getDigitalModIdentificationInfo</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDigitalModIdentificationInfo</secondary></indexterm>
+<para><computeroutput>uint8_t getDigitalModIdentificationInfo (uint16_t digital_module_handler, s_io_identification_info * identification_info)</computeroutput></para><para>
+
+<para>Retrieves the Digital Module Identification Info. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>digital_module_handler</entry><entry>
+<para>Device handler of the digital module [DI, DO, DIO]. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>identification_info</entry><entry>
+<para>Pointer to the <computeroutput>s_io_identification_info</computeroutput> structure to store identification details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_aab42112e209d3e8af95f537bd7f0dfef_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_aab42112e209d3e8af95f537bd7f0dfef_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a3fa80841f585da80163ab056466b213d"/><section>
+    <title>getDIODeviceHandler()</title>
+<indexterm><primary>getDIODeviceHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDIODeviceHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getDIODeviceHandler (void )</computeroutput></para><para>
+
+<para>Retrieve the device handlers for DIO (Digital input output) modules. </para>
+</para>
+
+<para>This API returns an array of handlers for DIO modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for DIO modules.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): DIO module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is 9, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a3fa80841f585da80163ab056466b213d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ad1a2eb9dcf28f6272ba0ba67eb0e802d"/><section>
+    <title>getDiscoveryDetails()</title>
+<indexterm><primary>getDiscoveryDetails</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDiscoveryDetails</secondary></indexterm>
+<para><computeroutput>uint8_t getDiscoveryDetails (s_discovery_details * discovery_detail)</computeroutput></para><para>
+
+<para>Retrieve the discovery details of the modules. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>out</entry><entry>discovery_detail</entry><entry>
+<para>Pointer to a structure where the discovery details will be stored. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para>RET_OK on success.</para>
+</listitem><listitem>
+<para>RET_ERROR on failure</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The <computeroutput>s_discovery_details</computeroutput> structure will include the product name and the counts of various module types (DI, DO, DIO, AI, AO, AIO, Pressure Zones, PropZones). </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ad1a2eb9dcf28f6272ba0ba67eb0e802d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ad1a2eb9dcf28f6272ba0ba67eb0e802d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a9cc23bdb3b5e1b67530bbcbbef48e339"/><section>
+    <title>getDODeviceHandler()</title>
+<indexterm><primary>getDODeviceHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getDODeviceHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getDODeviceHandler (void )</computeroutput></para><para>
+
+<para>Retrieve the device handlers for DO (Digital output) modules. </para>
+</para>
+
+<para>This API returns an array of handlers for DO modules. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for DO modules.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): DO module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is 9, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a9cc23bdb3b5e1b67530bbcbbef48e339_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a1f7998cf4936f312918dcb757d2344dc"/><section>
+    <title>getExternalPropHandler()</title>
+<indexterm><primary>getExternalPropHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getExternalPropHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getExternalPropHandler (void )</computeroutput></para><para>
+
+<para>Retrieve the External Prop handlers. </para>
+</para>
+
+<para>This API returns an array of External Prop handlers. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for the External Prop<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): External Prop handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is MAX_EXTERNAL_PROP_ZONE+1, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a1f7998cf4936f312918dcb757d2344dc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a46e2d1acaec3ced3fc4301e7c7d42fb2"/><section>
+    <title>getExternalPropPartNumber()</title>
+<indexterm><primary>getExternalPropPartNumber</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getExternalPropPartNumber</secondary></indexterm>
+<para><computeroutput>void getExternalPropPartNumber (void * data)</computeroutput></para><para>
+
+<para>This api is to get the External Prop Valve Part number. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer to which the data to be retrived. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a46e2d1acaec3ced3fc4301e7c7d42fb2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ad9b02c253eb339a52cfef89977d11b91"/><section>
+    <title>getExtPropIdentificationInfo()</title>
+<indexterm><primary>getExtPropIdentificationInfo</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getExtPropIdentificationInfo</secondary></indexterm>
+<para><computeroutput>uint8_t getExtPropIdentificationInfo (uint16_t extprop_handler, propidentificationinfo * identification_info)</computeroutput></para><para>
+
+<para>Retrieves the identification info of the External prop. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>extprop_handler</entry><entry>
+<para>for the External prop. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>identification_info</entry><entry>
+<para>Pointer to the <computeroutput>propidentificationinfo</computeroutput> structure to store identification details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ad9b02c253eb339a52cfef89977d11b91_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ad9b02c253eb339a52cfef89977d11b91_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a5602d1d731ab6db4c1f868ef03e01b51"/><section>
+    <title>getInternalPropHandler()</title>
+<indexterm><primary>getInternalPropHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getInternalPropHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getInternalPropHandler (uint16_t pressurezone_handler)</computeroutput></para><para>
+
+<para>Retrieve the device handlers for Internal Prop . </para>
+</para>
+
+<para>This API returns an array of handlers for Internal Prop . in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for Prop Station.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): Prop Station Handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is MAX_PROP_STATION_PER_PZZONE +1, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a5602d1d731ab6db4c1f868ef03e01b51_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a42fce8bf6559b335d1d32c6f8d043e54"/><section>
+    <title>getInternalPropPartNumeber()</title>
+<indexterm><primary>getInternalPropPartNumeber</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getInternalPropPartNumeber</secondary></indexterm>
+<para><computeroutput>void getInternalPropPartNumeber (void * data)</computeroutput></para><para>
+
+<para>This api is to get the Internal Prop Valve Part number. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer to which the data to be retrived. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a42fce8bf6559b335d1d32c6f8d043e54_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ac638b98825de1fdd9a55f36b77297f55"/><section>
+    <title>getIntPropIdentificationInfo()</title>
+<indexterm><primary>getIntPropIdentificationInfo</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getIntPropIdentificationInfo</secondary></indexterm>
+<para><computeroutput>uint8_t getIntPropIdentificationInfo (uint16_t pressurezone_handler, uint16_t internal_prop_handler, propidentificationinfo * identification_info)</computeroutput></para><para>
+
+<para>Retrieves the identification info of the Internal Prop . </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>Handler for the specific pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>internal_prop_handler</entry><entry>
+<para>Handler for the Internal Prop . </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>identification_info</entry><entry>
+<para>Pointer to the <computeroutput>propidentificationinfo</computeroutput> structure to store identification details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ac638b98825de1fdd9a55f36b77297f55_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ac638b98825de1fdd9a55f36b77297f55_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ac6ac24a2c74b160fa3e091b39598ab4c"/><section>
+    <title>getIodevicePartNumber()</title>
+<indexterm><primary>getIodevicePartNumber</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getIodevicePartNumber</secondary></indexterm>
+<para><computeroutput>uint8_t getIodevicePartNumber (uint16_t device_handler, void * data)</computeroutput></para><para>
+
+<para>This api is to get the IO device part number. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>device_handler</entry><entry>
+<para>The handler for the IO device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer to which the data to be retrived. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ac6ac24a2c74b160fa3e091b39598ab4c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ac6ac24a2c74b160fa3e091b39598ab4c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ad3af788c60c86efbf57dd019321d2c3f"/><section>
+    <title>getIOModIdentificationInfo()</title>
+<indexterm><primary>getIOModIdentificationInfo</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getIOModIdentificationInfo</secondary></indexterm>
+<para><computeroutput>uint8_t getIOModIdentificationInfo (uint16_t iodevice_handler, s_io_identification_info * identification_info)</computeroutput></para><para>
+
+<para>Retrieves the Digital Module Identification Info. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>digital_module_handler</entry><entry>
+<para>Device handler of the digital module [DI, DO, DIO]. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>identification_info</entry><entry>
+<para>Pointer to the <computeroutput>s_io_identification_info</computeroutput> structure to store identification details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ad3af788c60c86efbf57dd019321d2c3f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1aab64cdfe20fa84db4be92c96380d60a2"/><section>
+    <title>getIOServiceDataInstanceAddress()</title>
+<indexterm><primary>getIOServiceDataInstanceAddress</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getIOServiceDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOServiceDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>: This is to get the address of the service data instance </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1abf7ee8a86a9a734763668b9475436291"/><section>
+    <title>getIsemDiagHandler()</title>
+<indexterm><primary>getIsemDiagHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getIsemDiagHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getIsemDiagHandler (uint16_t pressurezone_handler)</computeroutput></para><para>
+
+<para>Retrieve the device handlers for ISEM Diag module. </para>
+</para>
+
+<para>This API returns an array of handlers for ISEM Diag Module. in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for ISEM Diag module.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): ISEM Diag module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is MAX_ISEM_PEE_PZZONE +1, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_abf7ee8a86a9a734763668b9475436291_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a41267b33c0c393b95c0460209f09b02b"/><section>
+    <title>getIsemDiagIdentificationInfo()</title>
+<indexterm><primary>getIsemDiagIdentificationInfo</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getIsemDiagIdentificationInfo</secondary></indexterm>
+<para><computeroutput>uint8_t getIsemDiagIdentificationInfo (uint16_t pressurezone_handler, uint16_t isemdiag_handler, isemdiagidentificationinfo * identification_info)</computeroutput></para><para>
+
+<para>Retrieves the identification info of the ISEM DIAG valve. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>Handler for the specific pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>isemdiag_handler</entry><entry>
+<para>Handler for the ISEM DIAG . </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>identification_info</entry><entry>
+<para>Pointer to the <computeroutput>valveidentificationinfo</computeroutput> structure to store identification details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RET_OK</computeroutput> on success.</para>
+</listitem><listitem>
+<para>Error code on failure.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a41267b33c0c393b95c0460209f09b02b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a41267b33c0c393b95c0460209f09b02b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1abb1f7159217e65e903f6658d812ccded"/><section>
+    <title>getIsemDiagPartNumber()</title>
+<indexterm><primary>getIsemDiagPartNumber</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getIsemDiagPartNumber</secondary></indexterm>
+<para><computeroutput>void getIsemDiagPartNumber (void * data)</computeroutput></para><para>
+
+<para>This api is to get the IO device part number. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer to which the data to be retrived. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_abb1f7159217e65e903f6658d812ccded_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a1b65dccef5e16451b2ff09b40f8f28ca"/><section>
+    <title>getMainBusHandlers()</title>
+<indexterm><primary>getMainBusHandlers</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getMainBusHandlers</secondary></indexterm>
+<para><computeroutput>uint16_t getMainBusHandlers (void )</computeroutput></para><para>
+
+<para>Retrieve the Main Bus Handler. </para>
+</para>
+
+<para>This API returns the Main bus handler 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t Main bus handler. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1afa3d041d8597ff5b49a58ec5e13f2ea4"/><section>
+    <title>getPresssureZoneServiceDataAddress()</title>
+<indexterm><primary>getPresssureZoneServiceDataAddress</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getPresssureZoneServiceDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPresssureZoneServiceDataAddress (uint16_t pz_handler)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_afa3d041d8597ff5b49a58ec5e13f2ea4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a0a0d54861042d4ff550ea56a0dd816de"/><section>
+    <title>getPressureZoneDeviceCountDetails()</title>
+<indexterm><primary>getPressureZoneDeviceCountDetails</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getPressureZoneDeviceCountDetails</secondary></indexterm>
+<para><computeroutput>uint8_t getPressureZoneDeviceCountDetails (uint16_t pressurezone_handler, s_prszone_device_count_details * pressurezone_device_count)</computeroutput></para><para>
+
+<para>Retrieves the device count from the specified pressure zone. </para>
+</para>
+
+<para>This function fetches the number of devices present in a given pressure zone, including ISEM DIAG, Standard Valve, Diag Valve, and Internal Prop</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>pressurezone_handler</entry><entry>
+<para>The handler for the specific pressure zone. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>pressurezone_device_count</entry><entry>
+<para>Pointer to a structure where the device count details will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns <computeroutput>RET_OK</computeroutput> on success, or an error code on failure. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a0a0d54861042d4ff550ea56a0dd816de_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ad2985c903d0633288a5f3922334a6bd9"/><section>
+    <title>getPressureZoneHandler()</title>
+<indexterm><primary>getPressureZoneHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getPressureZoneHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getPressureZoneHandler (void )</computeroutput></para><para>
+
+<para>Retrieve the pressure zone handlers. </para>
+</para>
+
+<para>This API returns an array of pressure zone handlers. The first element in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for the pressure zone.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): Pressure Zone handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is 6, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ad2985c903d0633288a5f3922334a6bd9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1acf4b478db18710fcdd7868a9aa4e3ec7"/><section>
+    <title>getPropZoneServiceDataAddress()</title>
+<indexterm><primary>getPropZoneServiceDataAddress</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getPropZoneServiceDataAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getPropZoneServiceDataAddress (uint16_t propzone_handler)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_acf4b478db18710fcdd7868a9aa4e3ec7_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a8a191d56670ac7df40f394881b28344f"/><section>
+    <title>getStandardValveHandler()</title>
+<indexterm><primary>getStandardValveHandler</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>getStandardValveHandler</secondary></indexterm>
+<para><computeroutput>uint16_t * getStandardValveHandler (uint16_t pressurezone_handler)</computeroutput></para><para>
+
+<para>Retrieve the device handlers for Standard Valve . </para>
+</para>
+
+<para>This API returns an array of handlers for Standard Valve. in the array (index 0) contains the total number of handlers. The subsequent elements (index 1 to N) represent the actual handlers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>uint16_t* A pointer to an array of handlers for Standard Valve.<itemizedlist>
+<listitem>
+<para>Index 0: Number of handlers.</para>
+</listitem><listitem>
+<para>Index 1 to Index (N): Standard Valve module handlers.</para>
+</listitem></itemizedlist>
+</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><itemizedlist>
+<listitem>
+<para>The maximum size of the array is MAX_STANDARD_VALVE_PER_PZZONE+1, where index 0 contains the count of handlers. </para>
+</listitem></itemizedlist>
+</para>
+</note>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a8a191d56670ac7df40f394881b28344f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ac92a673771db92e7156490091aef7135"/><section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>init</secondary></indexterm>
+<para><computeroutput>int init (void )<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ac92a673771db92e7156490091aef7135_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ac92a673771db92e7156490091aef7135_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1a510fa21187d2bc7234c063942d17a85f"/><section>
+    <title>readDiscoveryInfo()</title>
+<indexterm><primary>readDiscoveryInfo</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>readDiscoveryInfo</secondary></indexterm>
+<para><computeroutput>uint8_t readDiscoveryInfo (system_discoverystatusinfo * info)</computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a510fa21187d2bc7234c063942d17a85f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_a510fa21187d2bc7234c063942d17a85f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__app_data_interce_8c_1ae512dcee3f48f317872617e5f4559b19"/><section>
+    <title>readSharedMemoryData()</title>
+<indexterm><primary>readSharedMemoryData</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>readSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_app_data_interce_8c_ae512dcee3f48f317872617e5f4559b19_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__app_data_interce_8c_1a0441d0acf0c675222c4e9a8d4a853348"/><section>
+    <title>external_pressurezone</title>
+<indexterm><primary>external_pressurezone</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>external_pressurezone</secondary></indexterm>
+<para><computeroutput>uint8_t external_pressurezone[16]</computeroutput></para></section>
+<anchor xml:id="__app_data_interce_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+<anchor xml:id="__app_data_interce_8c_1ad19c359304948e3d3aea4c3ee826685c"/><section>
+    <title>internal_pressure_zone</title>
+<indexterm><primary>internal_pressure_zone</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>internal_pressure_zone</secondary></indexterm>
+<para><computeroutput>uint8_t internal_pressure_zone[5]</computeroutput></para></section>
+<anchor xml:id="__app_data_interce_8c_1a6dad6684cbe35726f4ae5cd7a3584616"/><section>
+    <title>system_info</title>
+<indexterm><primary>system_info</primary><secondary>AppDataInterce.c</secondary></indexterm>
+<indexterm><primary>AppDataInterce.c</primary><secondary>system_info</secondary></indexterm>
+<para><computeroutput>system_discoverystatusinfo system_info</computeroutput></para></section>
+</section>
+</section>

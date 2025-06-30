@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_io__modules__about__screen_8c" xml:lang="en-US">
+<title>GUI/Screens/io_modules_about_screen.c File Reference</title>
+<indexterm><primary>GUI/Screens/io_modules_about_screen.c</primary></indexterm>
+<para>
+
+<para>Source that displays IO_modules about screen. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;AppGlobal.h&gt;<?linebreak?></programlisting>Include dependency graph for io_modules_about_screen.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="io__modules__about__screen_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_io__modules__about__screen_8c_1a69df5f7d0d00add2d4c66f474bb24ac9">disp_mod_about_io_module_screen</link> (int <link linkend="_lvgl__gui_8c_1ae8dc2bce272a2e5fcd8b50959867d76f">about_index</link>)</para>
+
+<para>Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO) </para>
+</listitem>
+            <listitem><para>void <link linkend="_io__modules__about__screen_8c_1a2d7f84510472783903e3d1713f0c3c5d">about_style_IO_module</link> ()</para>
+
+<para>Function to initialize IO about screen style. </para>
+</listitem>
+            <listitem><para>void <link linkend="_io__modules__about__screen_8c_1a171bd087fd88267f8df70214d756df4a">common_label_creation</link> (lv_obj_t *screen_name, char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>s_about_io_name <link linkend="_io__modules__about__screen_8c_1a4786fc76ac750e2b3f8afdb724fb871e">s_about_screen_io_name</link> [MACRO_MAX_ABOUT_IO_NAMES]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that displays IO_modules about screen. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_io__modules__about__screen_8c_1a2d7f84510472783903e3d1713f0c3c5d"/><section>
+    <title>about_style_IO_module()</title>
+<indexterm><primary>about_style_IO_module</primary><secondary>io_modules_about_screen.c</secondary></indexterm>
+<indexterm><primary>io_modules_about_screen.c</primary><secondary>about_style_IO_module</secondary></indexterm>
+<para><computeroutput>void about_style_IO_module ( )</computeroutput></para><para>
+
+<para>Function to initialize IO about screen style. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="io__modules__about__screen_8c_a2d7f84510472783903e3d1713f0c3c5d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_io__modules__about__screen_8c_1a171bd087fd88267f8df70214d756df4a"/><section>
+    <title>common_label_creation()</title>
+<indexterm><primary>common_label_creation</primary><secondary>io_modules_about_screen.c</secondary></indexterm>
+<indexterm><primary>io_modules_about_screen.c</primary><secondary>common_label_creation</secondary></indexterm>
+<para><computeroutput>void common_label_creation (lv_obj_t * screen_name, char * text, lv_coord_t x, lv_coord_t y, const lv_font_t * font_name, uint32_t font_colour)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="io__modules__about__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_io__modules__about__screen_8c_1a69df5f7d0d00add2d4c66f474bb24ac9"/><section>
+    <title>disp_mod_about_io_module_screen()</title>
+<indexterm><primary>disp_mod_about_io_module_screen</primary><secondary>io_modules_about_screen.c</secondary></indexterm>
+<indexterm><primary>io_modules_about_screen.c</primary><secondary>disp_mod_about_io_module_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_about_io_module_screen (int about_index)</computeroutput></para><para>
+
+<para>Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>about_index</entry><entry>
+<para>- cursor </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="io__modules__about__screen_8c_a69df5f7d0d00add2d4c66f474bb24ac9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="io__modules__about__screen_8c_a69df5f7d0d00add2d4c66f474bb24ac9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_io__modules__about__screen_8c_1a4786fc76ac750e2b3f8afdb724fb871e"/><section>
+    <title>s_about_screen_io_name</title>
+<indexterm><primary>s_about_screen_io_name</primary><secondary>io_modules_about_screen.c</secondary></indexterm>
+<indexterm><primary>io_modules_about_screen.c</primary><secondary>s_about_screen_io_name</secondary></indexterm>
+<para><computeroutput>s_about_io_name s_about_screen_io_name[MACRO_MAX_ABOUT_IO_NAMES]<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

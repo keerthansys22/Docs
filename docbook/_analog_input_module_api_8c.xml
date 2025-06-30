@@ -1,0 +1,655 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__analog_input_module_api_8c" xml:lang="en-US">
+<title>API_Source/IoModulesApiSource.c/AnalogInputModuleApi.c File Reference</title>
+<indexterm><primary>API_Source/IoModulesApiSource.c/AnalogInputModuleApi.c</primary></indexterm>
+<para>
+
+<para>This file contains the source code of the analog input module API. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &quot;../Header/API_Header/AppDataInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for AnalogInputModuleApi.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link>&#160;&#160;&#160;0x00000000</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ab1ea23bc204378524a5393acaf693d76">AI_MOD_IDENT_DEVICE_TYPE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ad0f9311b5bc6677baed57913e9cf6184">AI_MOD_IDENT_VENDOR_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 4)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1aabd5e4936a694e351f4fc1a342854d77">AI_MOD_IDENT_DEVICE_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 8)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a56c0fb3c308c983c1c56014c330f8fc5">AI_MOD_IDENT_VENDOR_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 12)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a143a8a38641716355e89cfcd91df3298">AI_MOD_IDENT_DEVICE_NAME_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 28)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a5edea02e428cc93e71691db5fbdbb942">AI_MOD_IDENT_VARIANT_ID_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 44)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ac0d2499565ecd93967f76a2b12650618">AI_MOD_IDENT_HW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 60)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1adbf7506c39dc9fff6466f5731a686842">AI_MOD_IDENT_SERIAL_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 76)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a475c96ea26e39f41204cddab3b6102d1">AI_MOD_IDENT_SW_PART_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 92)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a58a17a6cb8b0f9977c8d2e3ce76e6279">AI_MOD_IDENT_SW_REV_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 108)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a7fc3e6959a1f5bf3503b965803cc8285">AI_MOD_FORCE_MODE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 124)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a3493723f415b0bcf3b85533832989f2c">AI_MOD_FORCE_MODE_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 125)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ace051fe80db42909a20a670dbed7095c">AI_MOD_ADC_VOLTCUR_INPUT_RANGE</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 133)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ad6b53fe316c024f7f3163967c4aa48dc">AI_MOD_RANGE_OVERRUN_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 137)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a8ed9aaed3e65af8b887326d38924a600">AI_MOD_RANGE_UNDERRUN_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 138)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1af6750fc27d4c8600796637b9b487b5e6">AI_MOD_WIRE_BREAK_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 139)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a15bdac433078a5f28e0273e1abf09546">AI_MOD_AVERAGE_COUNT_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 140)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a2befe40d4fad2f59430a19fcd4c51f7f">AI_MOD_SENSOR_SUPPLY_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 144)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ae5ac86557ec11e687c3f21801eb42651">AI_MOD_SENSOR_SUPPLY_SHORT_CKT_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 145)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ad04c8b985d1e32495f9e9f601d96393d">AI_MOD_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 146)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a24e66fd5dbb24ddf473d3414875df20b">AI_MOD_CHANNEL_RANGE_MODE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 147)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a46ea5ad060a1a42f180eee8b3277a892">AI_MOD_APP_UPPER_LIMIT_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 148)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ae0f2affb889153a337fdf14e0e47bdca">AI_MOD_APP_UPPER_LIMIT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 149)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1af94e1f8632b40f8606a999b403043436">AI_MOD_APP_LOWER_LIMIT_DIAG_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 157)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a1b0491247f7fb421ca0025b1ed1fe15e">AI_MOD_APP_LOWER_LIMIT_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 158)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ae856dbecb78ca180355167f803b9590c">AI_MOD_APP_LIMIT_HYSTERESIS_VALUE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 166)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a3c150d74e510ac0c88b353380eee9da9">AI_MOD_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 174)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a8871a9ae777fc94167e597d9778a195f">AI_MOD_VA_VB_VOLTAGE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 178)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a47ff9ce463f423a897a659af06995379">AI_MOD_POST_ERR_STATUS_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 186)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ad3fe4d618ad6759ffd4ef104ac6d053e">AI_MOD_OPERATION_TIME_HR_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 190)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a6485586b79c3182817a2f81a2a92732f">AI_MOD_OPERATION_TIME_MIN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 194)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ac4487554f3a9482823988c6d2f6aaf57">AI_MOD_MIN_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 196)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ac7bce4382cd4ea307f616233e714c289">AI_MOD_MAX_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 198)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1aae2e2f949da92142b2604d4d5d1823d6">AI_MOD_MEASURED_TEMPERATURE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 200)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1aaa2377627d5c95e58c4653483472cdb7">AI_MOD_MEMORY_LIFE_CYCLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 202)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a2f040988552a03d61195629e2bca7053">AI_MOD_DATA_SEND_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 206)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a0e81000f2fc36bad16aaf96d3087f14a">AI_MOD_DATA_POINT_COUNT_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 207)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a23834c4e43eedaff0314379622a46221">AI_MOD_DATA_POINT_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 208)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1adf9f92f3979f21a24c70d9f3ee6197a0">AI_MOD_SCAN_INTERVAL_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 209)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a6ed64292410242e452391feef8fb1393">AI_MOD_MODULE_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 210)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ae0211c2dc47ae62d5aa6de4117a71973">AI_MOD_CHANNELS_ENABLE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 211)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1aa71a6a9dddb73548ef36fa95487fa3ca">AI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 212)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1aa08f42fe55429d90268ca42ba7643f9f">AI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 213)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1a7480fd22c0505af40298b0fe1c0e5025">AI_MOD_EDS_VERSION_NO_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 214)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__analog_input_module_api_8c_1ab876cbc2415c3aa171981e9da0b259e9">AI_MOD_EDS_VERSION_DATE_ADDR</link>&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 230)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="__analog_input_module_api_8c_1aab64cdfe20fa84db4be92c96380d60a2">getIOServiceDataInstanceAddress</link> (uint16_t handler)</para>
+
+<para>: This is to get the address of the service data instance </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="__analog_input_module_api_8c_1a91f3bb33371373e3e9b48b2290355551">getIOProcessDataInstanceAddress</link> (uint16_t handler)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_module_api_8c_1a2383a3641c7a989a9d6c99be17bf45c8">writeSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t addr, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_module_api_8c_1ae512dcee3f48f317872617e5f4559b19">readSharedMemoryData</link> (struct <link linkend="_structlocal__buf">local_buf</link> *g_shmd_buf, void *data, uint32_t size)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_module_api_8c_1ac7a9214762e7a34eed85a0a46e3a021c">getAIModuleProcessData</link> (uint16_t ai_device_handler, aimodule_processinfo *aimod_processdata)</para>
+
+<para>Retrieves the process data for a specified AI module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_module_api_8c_1ac94c329ed9e371bbfb6d53be15e0ff4f">getAnalogInputModuleServiceParam</link> (uint16_t analog_input_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Retrieves the service parameter data for a specified AI module. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="__analog_input_module_api_8c_1ae6852787292adacfb6bef51376550ea3">setAnalogInputModuleServiceParam</link> (uint16_t analog_input_handler, uint16_t parameter_name, void *data)</para>
+
+<para>Sets the service parameter data for a specified AI module. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structlocal__buf">local_buf</link> <link linkend="__analog_input_module_api_8c_1ad9088d5017838792bd64e604162503df">gbuf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file contains the source code of the analog input module API. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__analog_input_module_api_8c_1ace051fe80db42909a20a670dbed7095c"/><section>
+    <title>AI_MOD_ADC_VOLTCUR_INPUT_RANGE</title>
+<indexterm><primary>AI_MOD_ADC_VOLTCUR_INPUT_RANGE</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_ADC_VOLTCUR_INPUT_RANGE</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_ADC_VOLTCUR_INPUT_RANGE&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 133)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ae856dbecb78ca180355167f803b9590c"/><section>
+    <title>AI_MOD_APP_LIMIT_HYSTERESIS_VALUE_ADDR</title>
+<indexterm><primary>AI_MOD_APP_LIMIT_HYSTERESIS_VALUE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_APP_LIMIT_HYSTERESIS_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_APP_LIMIT_HYSTERESIS_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 166)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1af94e1f8632b40f8606a999b403043436"/><section>
+    <title>AI_MOD_APP_LOWER_LIMIT_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_APP_LOWER_LIMIT_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_APP_LOWER_LIMIT_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_APP_LOWER_LIMIT_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 157)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a1b0491247f7fb421ca0025b1ed1fe15e"/><section>
+    <title>AI_MOD_APP_LOWER_LIMIT_VALUE_ADDR</title>
+<indexterm><primary>AI_MOD_APP_LOWER_LIMIT_VALUE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_APP_LOWER_LIMIT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_APP_LOWER_LIMIT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 158)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a46ea5ad060a1a42f180eee8b3277a892"/><section>
+    <title>AI_MOD_APP_UPPER_LIMIT_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_APP_UPPER_LIMIT_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_APP_UPPER_LIMIT_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_APP_UPPER_LIMIT_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 148)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ae0f2affb889153a337fdf14e0e47bdca"/><section>
+    <title>AI_MOD_APP_UPPER_LIMIT_VALUE_ADDR</title>
+<indexterm><primary>AI_MOD_APP_UPPER_LIMIT_VALUE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_APP_UPPER_LIMIT_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_APP_UPPER_LIMIT_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 149)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1aa71a6a9dddb73548ef36fa95487fa3ca"/><section>
+    <title>AI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</title>
+<indexterm><primary>AI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_AUX_SUPPLY_OVR_VOLT_REC_EN_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 212)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1aa08f42fe55429d90268ca42ba7643f9f"/><section>
+    <title>AI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</title>
+<indexterm><primary>AI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_AUX_SUPPLY_UND_VOLT_REC_EN_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 213)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a15bdac433078a5f28e0273e1abf09546"/><section>
+    <title>AI_MOD_AVERAGE_COUNT_ADDR</title>
+<indexterm><primary>AI_MOD_AVERAGE_COUNT_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_AVERAGE_COUNT_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_AVERAGE_COUNT_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 140)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a24e66fd5dbb24ddf473d3414875df20b"/><section>
+    <title>AI_MOD_CHANNEL_RANGE_MODE_ADDR</title>
+<indexterm><primary>AI_MOD_CHANNEL_RANGE_MODE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_CHANNEL_RANGE_MODE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_CHANNEL_RANGE_MODE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 147)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ae0211c2dc47ae62d5aa6de4117a71973"/><section>
+    <title>AI_MOD_CHANNELS_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_CHANNELS_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_CHANNELS_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_CHANNELS_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 211)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a0e81000f2fc36bad16aaf96d3087f14a"/><section>
+    <title>AI_MOD_DATA_POINT_COUNT_ADDR</title>
+<indexterm><primary>AI_MOD_DATA_POINT_COUNT_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_DATA_POINT_COUNT_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_DATA_POINT_COUNT_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 207)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a23834c4e43eedaff0314379622a46221"/><section>
+    <title>AI_MOD_DATA_POINT_INTERVAL_ADDR</title>
+<indexterm><primary>AI_MOD_DATA_POINT_INTERVAL_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_DATA_POINT_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_DATA_POINT_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 208)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a2f040988552a03d61195629e2bca7053"/><section>
+    <title>AI_MOD_DATA_SEND_INTERVAL_ADDR</title>
+<indexterm><primary>AI_MOD_DATA_SEND_INTERVAL_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_DATA_SEND_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_DATA_SEND_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 206)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ab876cbc2415c3aa171981e9da0b259e9"/><section>
+    <title>AI_MOD_EDS_VERSION_DATE_ADDR</title>
+<indexterm><primary>AI_MOD_EDS_VERSION_DATE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_EDS_VERSION_DATE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_EDS_VERSION_DATE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 230)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a7480fd22c0505af40298b0fe1c0e5025"/><section>
+    <title>AI_MOD_EDS_VERSION_NO_ADDR</title>
+<indexterm><primary>AI_MOD_EDS_VERSION_NO_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_EDS_VERSION_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_EDS_VERSION_NO_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 214)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a3c150d74e510ac0c88b353380eee9da9"/><section>
+    <title>AI_MOD_ERR_STATUS_ADDR</title>
+<indexterm><primary>AI_MOD_ERR_STATUS_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 174)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a7fc3e6959a1f5bf3503b965803cc8285"/><section>
+    <title>AI_MOD_FORCE_MODE_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_FORCE_MODE_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_FORCE_MODE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_FORCE_MODE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 124)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a3493723f415b0bcf3b85533832989f2c"/><section>
+    <title>AI_MOD_FORCE_MODE_VALUE_ADDR</title>
+<indexterm><primary>AI_MOD_FORCE_MODE_VALUE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_FORCE_MODE_VALUE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_FORCE_MODE_VALUE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 125)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1aabd5e4936a694e351f4fc1a342854d77"/><section>
+    <title>AI_MOD_IDENT_DEVICE_ID_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_DEVICE_ID_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_DEVICE_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_DEVICE_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 8)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a143a8a38641716355e89cfcd91df3298"/><section>
+    <title>AI_MOD_IDENT_DEVICE_NAME_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_DEVICE_NAME_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_DEVICE_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_DEVICE_NAME_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 28)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ab1ea23bc204378524a5393acaf693d76"/><section>
+    <title>AI_MOD_IDENT_DEVICE_TYPE_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_DEVICE_TYPE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_DEVICE_TYPE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_DEVICE_TYPE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ac0d2499565ecd93967f76a2b12650618"/><section>
+    <title>AI_MOD_IDENT_HW_REV_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_HW_REV_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_HW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_HW_REV_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 60)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5"/><section>
+    <title>AI_MOD_IDENT_INFO_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_INFO_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_INFO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_INFO_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 0)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1adbf7506c39dc9fff6466f5731a686842"/><section>
+    <title>AI_MOD_IDENT_SERIAL_NO_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_SERIAL_NO_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_SERIAL_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_SERIAL_NO_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 76)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a475c96ea26e39f41204cddab3b6102d1"/><section>
+    <title>AI_MOD_IDENT_SW_PART_NO_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_SW_PART_NO_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_SW_PART_NO_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_SW_PART_NO_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 92)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a58a17a6cb8b0f9977c8d2e3ce76e6279"/><section>
+    <title>AI_MOD_IDENT_SW_REV_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_SW_REV_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_SW_REV_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_SW_REV_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 108)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a5edea02e428cc93e71691db5fbdbb942"/><section>
+    <title>AI_MOD_IDENT_VARIANT_ID_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_VARIANT_ID_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_VARIANT_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_VARIANT_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 44)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ad0f9311b5bc6677baed57913e9cf6184"/><section>
+    <title>AI_MOD_IDENT_VENDOR_ID_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_VENDOR_ID_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_VENDOR_ID_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_VENDOR_ID_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 4)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a56c0fb3c308c983c1c56014c330f8fc5"/><section>
+    <title>AI_MOD_IDENT_VENDOR_NAME_ADDR</title>
+<indexterm><primary>AI_MOD_IDENT_VENDOR_NAME_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_IDENT_VENDOR_NAME_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_IDENT_VENDOR_NAME_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1ac2a6c2e30eab4bce219d848a263801b5">AI_MOD_IDENT_INFO_ADDR</link> + 12)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ac7bce4382cd4ea307f616233e714c289"/><section>
+    <title>AI_MOD_MAX_TEMPERATURE_ADDR</title>
+<indexterm><primary>AI_MOD_MAX_TEMPERATURE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_MAX_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_MAX_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 198)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1aae2e2f949da92142b2604d4d5d1823d6"/><section>
+    <title>AI_MOD_MEASURED_TEMPERATURE_ADDR</title>
+<indexterm><primary>AI_MOD_MEASURED_TEMPERATURE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_MEASURED_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_MEASURED_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 200)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1aaa2377627d5c95e58c4653483472cdb7"/><section>
+    <title>AI_MOD_MEMORY_LIFE_CYCLE_ADDR</title>
+<indexterm><primary>AI_MOD_MEMORY_LIFE_CYCLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_MEMORY_LIFE_CYCLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_MEMORY_LIFE_CYCLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 202)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ac4487554f3a9482823988c6d2f6aaf57"/><section>
+    <title>AI_MOD_MIN_TEMPERATURE_ADDR</title>
+<indexterm><primary>AI_MOD_MIN_TEMPERATURE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_MIN_TEMPERATURE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_MIN_TEMPERATURE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 196)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a6ed64292410242e452391feef8fb1393"/><section>
+    <title>AI_MOD_MODULE_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_MODULE_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_MODULE_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_MODULE_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 210)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ad3fe4d618ad6759ffd4ef104ac6d053e"/><section>
+    <title>AI_MOD_OPERATION_TIME_HR_ADDR</title>
+<indexterm><primary>AI_MOD_OPERATION_TIME_HR_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_OPERATION_TIME_HR_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_OPERATION_TIME_HR_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 190)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a6485586b79c3182817a2f81a2a92732f"/><section>
+    <title>AI_MOD_OPERATION_TIME_MIN_ADDR</title>
+<indexterm><primary>AI_MOD_OPERATION_TIME_MIN_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_OPERATION_TIME_MIN_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_OPERATION_TIME_MIN_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 194)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a47ff9ce463f423a897a659af06995379"/><section>
+    <title>AI_MOD_POST_ERR_STATUS_ADDR</title>
+<indexterm><primary>AI_MOD_POST_ERR_STATUS_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_POST_ERR_STATUS_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_POST_ERR_STATUS_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 186)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ad6b53fe316c024f7f3163967c4aa48dc"/><section>
+    <title>AI_MOD_RANGE_OVERRUN_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_RANGE_OVERRUN_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_RANGE_OVERRUN_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_RANGE_OVERRUN_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 137)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a8ed9aaed3e65af8b887326d38924a600"/><section>
+    <title>AI_MOD_RANGE_UNDERRUN_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_RANGE_UNDERRUN_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_RANGE_UNDERRUN_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_RANGE_UNDERRUN_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 138)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1adf9f92f3979f21a24c70d9f3ee6197a0"/><section>
+    <title>AI_MOD_SCAN_INTERVAL_ADDR</title>
+<indexterm><primary>AI_MOD_SCAN_INTERVAL_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_SCAN_INTERVAL_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_SCAN_INTERVAL_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 209)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a2befe40d4fad2f59430a19fcd4c51f7f"/><section>
+    <title>AI_MOD_SENSOR_SUPPLY_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_SENSOR_SUPPLY_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_SENSOR_SUPPLY_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_SENSOR_SUPPLY_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 144)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ae5ac86557ec11e687c3f21801eb42651"/><section>
+    <title>AI_MOD_SENSOR_SUPPLY_SHORT_CKT_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_SENSOR_SUPPLY_SHORT_CKT_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_SENSOR_SUPPLY_SHORT_CKT_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_SENSOR_SUPPLY_SHORT_CKT_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 145)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1ad04c8b985d1e32495f9e9f601d96393d"/><section>
+    <title>AI_MOD_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</title>
+<indexterm><primary>AI_MOD_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_SENSOR_SUPPLY_SHORT_CKT_RECOVERY_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 146)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7"/><section>
+    <title>AI_MOD_SERVICE_DATA_ADDR</title>
+<indexterm><primary>AI_MOD_SERVICE_DATA_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_SERVICE_DATA_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_SERVICE_DATA_ADDR&#160;&#160;&#160;0x00000000</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1a8871a9ae777fc94167e597d9778a195f"/><section>
+    <title>AI_MOD_VA_VB_VOLTAGE_ADDR</title>
+<indexterm><primary>AI_MOD_VA_VB_VOLTAGE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_VA_VB_VOLTAGE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_VA_VB_VOLTAGE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 178)</computeroutput></para></section>
+<anchor xml:id="__analog_input_module_api_8c_1af6750fc27d4c8600796637b9b487b5e6"/><section>
+    <title>AI_MOD_WIRE_BREAK_DIAG_ENABLE_ADDR</title>
+<indexterm><primary>AI_MOD_WIRE_BREAK_DIAG_ENABLE_ADDR</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>AI_MOD_WIRE_BREAK_DIAG_ENABLE_ADDR</secondary></indexterm>
+<para><computeroutput>#define AI_MOD_WIRE_BREAK_DIAG_ENABLE_ADDR&#160;&#160;&#160;(<link linkend="__analog_input_module_api_8c_1aef9f05433bb687d6a05412b75c4dd3f7">AI_MOD_SERVICE_DATA_ADDR</link> + 139)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__analog_input_module_api_8c_1ac7a9214762e7a34eed85a0a46e3a021c"/><section>
+    <title>getAIModuleProcessData()</title>
+<indexterm><primary>getAIModuleProcessData</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>getAIModuleProcessData</secondary></indexterm>
+<para><computeroutput>uint8_t getAIModuleProcessData (uint16_t ai_device_handler, aimodule_processinfo * aimod_processdata)</computeroutput></para><para>
+
+<para>Retrieves the process data for a specified AI module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>ai_device_handler</entry><entry>
+<para>The handler for the AI device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>aimod_processdata</entry><entry>
+<para>Pointer to the <computeroutput>aimodule_processinfo</computeroutput> structure to store process data.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_ac7a9214762e7a34eed85a0a46e3a021c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_ac7a9214762e7a34eed85a0a46e3a021c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_module_api_8c_1ac94c329ed9e371bbfb6d53be15e0ff4f"/><section>
+    <title>getAnalogInputModuleServiceParam()</title>
+<indexterm><primary>getAnalogInputModuleServiceParam</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>getAnalogInputModuleServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t getAnalogInputModuleServiceParam (uint16_t analog_input_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Retrieves the service parameter data for a specified AI module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>analog_input_handler</entry><entry>
+<para>The handler for the AI device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to retrieve. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>data</entry><entry>
+<para>Pointer to the buffer where the retrieved data will be stored.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_ac94c329ed9e371bbfb6d53be15e0ff4f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_ac94c329ed9e371bbfb6d53be15e0ff4f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_module_api_8c_1a91f3bb33371373e3e9b48b2290355551"/><section>
+    <title>getIOProcessDataInstanceAddress()</title>
+<indexterm><primary>getIOProcessDataInstanceAddress</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>getIOProcessDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOProcessDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para>
+<para>@breif : This is to get the address of of the process data instance </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_a91f3bb33371373e3e9b48b2290355551_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_module_api_8c_1aab64cdfe20fa84db4be92c96380d60a2"/><section>
+    <title>getIOServiceDataInstanceAddress()</title>
+<indexterm><primary>getIOServiceDataInstanceAddress</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>getIOServiceDataInstanceAddress</secondary></indexterm>
+<para><computeroutput>uint32_t getIOServiceDataInstanceAddress (uint16_t handler)<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>: This is to get the address of the service data instance </para>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_aab64cdfe20fa84db4be92c96380d60a2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_module_api_8c_1ae512dcee3f48f317872617e5f4559b19"/><section>
+    <title>readSharedMemoryData()</title>
+<indexterm><primary>readSharedMemoryData</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>readSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t readSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_ae512dcee3f48f317872617e5f4559b19_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_module_api_8c_1ae6852787292adacfb6bef51376550ea3"/><section>
+    <title>setAnalogInputModuleServiceParam()</title>
+<indexterm><primary>setAnalogInputModuleServiceParam</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>setAnalogInputModuleServiceParam</secondary></indexterm>
+<para><computeroutput>uint8_t setAnalogInputModuleServiceParam (uint16_t analog_input_handler, uint16_t parameter_name, void * data)</computeroutput></para><para>
+
+<para>Sets the service parameter data for a specified AI module. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>in</entry><entry>analog_input_handler</entry><entry>
+<para>The handler for the AI device. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>parameter_name</entry><entry>
+<para>The name of the parameter to set. //Refer to the enumeration <computeroutput>e_io_servicedata_parameter_name</computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>in</entry><entry>data</entry><entry>
+<para>Pointer to the buffer containing the data to be set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Returns an error code indicating the status of the operation. Refer to <computeroutput>error_code_t</computeroutput> for possible error codes. </para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_ae6852787292adacfb6bef51376550ea3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_ae6852787292adacfb6bef51376550ea3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__analog_input_module_api_8c_1a2383a3641c7a989a9d6c99be17bf45c8"/><section>
+    <title>writeSharedMemoryData()</title>
+<indexterm><primary>writeSharedMemoryData</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>writeSharedMemoryData</secondary></indexterm>
+<para><computeroutput>uint8_t writeSharedMemoryData (struct <link linkend="_structlocal__buf">local_buf</link> * g_shmd_buf, void * data, uint32_t addr, uint32_t size)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_analog_input_module_api_8c_a2383a3641c7a989a9d6c99be17bf45c8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__analog_input_module_api_8c_1ad9088d5017838792bd64e604162503df"/><section>
+    <title>gbuf</title>
+<indexterm><primary>gbuf</primary><secondary>AnalogInputModuleApi.c</secondary></indexterm>
+<indexterm><primary>AnalogInputModuleApi.c</primary><secondary>gbuf</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_structlocal__buf">local_buf</link> gbuf<computeroutput>[extern]</computeroutput></computeroutput></para></section>
+</section>
+</section>

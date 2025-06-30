@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['local_5fbuf_0',['local_buf',['../structlocal__buf.html',1,'']]],
-  ['lv_5fcolor_5ft_1',['lv_color_t',['../structlv__color__t.html',1,'']]]
+  ['dma_5fbuf_5fphys_5fdata_0',['dma_buf_phys_data',['../structdma__buf__phys__data.html',1,'']]]
 ];

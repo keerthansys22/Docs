@@ -23,7 +23,7 @@ var module__details__processing_8c =
     [ "io_module_info", "module__details__processing_8c.html#a350ae9e33a3016b3334d36d41513c9dc", null ],
     [ "isem_diag_module_info", "module__details__processing_8c.html#afe1cbe48c5f14cbc8409273db880f69e", null ],
     [ "isemdiag_handlers", "module__details__processing_8c.html#a8805f3ed6a9cc57f5be8d3493520d689", null ],
-    [ "mbn_module_info", "module__details__processing_8c.html#a5e513538eebc0523aa0dd56964ae2de9", null ],
+    [ "mbn_module_info", "module__details__processing_8c.html#a5d1c001b6286b9f306909e2d12beb59f", null ],
     [ "modulesdetails", "module__details__processing_8c.html#a8779a863e7d67f1e3e6e0315e137fba4", null ],
     [ "prop_station_handlers", "module__details__processing_8c.html#a8dcd1736f88832ad3a48bcc2d94ba37a", null ],
     [ "prop_station_indices", "module__details__processing_8c.html#ae9ddf52b205881f5c387d7a7f8940af6", null ],

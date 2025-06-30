@@ -1,0 +1,178 @@
+\doxysection{main.\+c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{main.c@{main.c}}
+
+
+main program file (entry point to execute the program)  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a51a0d8444720631af4e4ccd140a6a038}{lvgl\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Function to initialize lvgl drivers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3}{default\+\_\+main}} (void)
+\begin{DoxyCompactList}\small\item\em default function to create threads and events \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_a2b69d74572d29a70ecb8148fdb6b9f69}{poweron\+\_\+selftest}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_afe6c733d4bb6ed63271e16052a6bb71e}{HW\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em function that initializes the hardware \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a9d344487764723c8e590ebaf5341f683}{log\+Message}} (const char \texorpdfstring{$\ast$}{*}data,...)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+main program file (entry point to execute the program) 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3}\index{main.c@{main.c}!default\_main@{default\_main}}
+\index{default\_main@{default\_main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{default\_main()}{default\_main()}}
+{\footnotesize\ttfamily \label{main_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3} 
+void default\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+default function to create threads and events 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{main_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_afe6c733d4bb6ed63271e16052a6bb71e}\index{main.c@{main.c}!HW\_Init@{HW\_Init}}
+\index{HW\_Init@{HW\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HW\_Init()}{HW\_Init()}}
+{\footnotesize\ttfamily \label{main_8c_afe6c733d4bb6ed63271e16052a6bb71e} 
+void HW\+\_\+\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+function that initializes the hardware 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_afe6c733d4bb6ed63271e16052a6bb71e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_afe6c733d4bb6ed63271e16052a6bb71e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a9d344487764723c8e590ebaf5341f683}\index{main.c@{main.c}!logMessage@{logMessage}}
+\index{logMessage@{logMessage}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{logMessage()}{logMessage()}}
+{\footnotesize\ttfamily \label{main_8c_a9d344487764723c8e590ebaf5341f683} 
+void log\+Message (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a9d344487764723c8e590ebaf5341f683_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a51a0d8444720631af4e4ccd140a6a038}\index{main.c@{main.c}!lvgl\_init@{lvgl\_init}}
+\index{lvgl\_init@{lvgl\_init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{lvgl\_init()}{lvgl\_init()}}
+{\footnotesize\ttfamily \label{main_8c_a51a0d8444720631af4e4ccd140a6a038} 
+void lvgl\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function to initialize lvgl drivers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a51a0d8444720631af4e4ccd140a6a038_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Main Function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a840291bc02cba5474a4cb46a9b9566fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a2b69d74572d29a70ecb8148fdb6b9f69}\index{main.c@{main.c}!poweron\_selftest@{poweron\_selftest}}
+\index{poweron\_selftest@{poweron\_selftest}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{poweron\_selftest()}{poweron\_selftest()}}
+{\footnotesize\ttfamily \label{main_8c_a2b69d74572d29a70ecb8148fdb6b9f69} 
+uint32\+\_\+t poweron\+\_\+selftest (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{main_8c_a2b69d74572d29a70ecb8148fdb6b9f69_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a2b69d74572d29a70ecb8148fdb6b9f69_icgraph}
+\end{center}
+\end{figure}

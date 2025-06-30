@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8c" xml:lang="en-US">
+<title>main.c File Reference</title>
+<indexterm><primary>main.c</primary></indexterm>
+<para>
+
+<para>main program file (entry point to execute the program) </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdarg.h&gt;<?linebreak?>#include &lt;unistd.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?></programlisting>Include dependency graph for main.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_main_8c_1a51a0d8444720631af4e4ccd140a6a038">lvgl_init</link> (void)</para>
+
+<para>Function to initialize lvgl drivers. </para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1aac61f6b36d93b0c3a0fd8cc41cbfbdc3">default_main</link> (void)</para>
+
+<para>default function to create threads and events </para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_main_8c_1a2b69d74572d29a70ecb8148fdb6b9f69">poweron_selftest</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1afe6c733d4bb6ed63271e16052a6bb71e">HW_Init</link> ()</para>
+
+<para>function that initializes the hardware </para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1a9d344487764723c8e590ebaf5341f683">logMessage</link> (const char *data,...)</para>
+</listitem>
+            <listitem><para>int <link linkend="_main_8c_1a840291bc02cba5474a4cb46a9b9566fe">main</link> (void)</para>
+
+<para>Main Function. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>main program file (entry point to execute the program) </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_main_8c_1aac61f6b36d93b0c3a0fd8cc41cbfbdc3"/><section>
+    <title>default_main()</title>
+<indexterm><primary>default_main</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>default_main</secondary></indexterm>
+<para><computeroutput>void default_main (void )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>default function to create threads and events </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>none</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_aac61f6b36d93b0c3a0fd8cc41cbfbdc3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_main_8c_1afe6c733d4bb6ed63271e16052a6bb71e"/><section>
+    <title>HW_Init()</title>
+<indexterm><primary>HW_Init</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>HW_Init</secondary></indexterm>
+<para><computeroutput>void HW_Init ( )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>function that initializes the hardware </para>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_afe6c733d4bb6ed63271e16052a6bb71e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_afe6c733d4bb6ed63271e16052a6bb71e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_main_8c_1a9d344487764723c8e590ebaf5341f683"/><section>
+    <title>logMessage()</title>
+<indexterm><primary>logMessage</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>logMessage</secondary></indexterm>
+<para><computeroutput>void logMessage (const char * data,  ...)</computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a9d344487764723c8e590ebaf5341f683_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_main_8c_1a51a0d8444720631af4e4ccd140a6a038"/><section>
+    <title>lvgl_init()</title>
+<indexterm><primary>lvgl_init</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>lvgl_init</secondary></indexterm>
+<para><computeroutput>void lvgl_init (void )<computeroutput>[extern]</computeroutput></computeroutput></para><para>
+
+<para>Function to initialize lvgl drivers. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a51a0d8444720631af4e4ccd140a6a038_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_main_8c_1a840291bc02cba5474a4cb46a9b9566fe"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (void )</computeroutput></para><para>
+
+<para>Main Function. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a840291bc02cba5474a4cb46a9b9566fe_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_main_8c_1a2b69d74572d29a70ecb8148fdb6b9f69"/><section>
+    <title>poweron_selftest()</title>
+<indexterm><primary>poweron_selftest</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>poweron_selftest</secondary></indexterm>
+<para><computeroutput>uint32_t poweron_selftest (void )<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a2b69d74572d29a70ecb8148fdb6b9f69_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a2b69d74572d29a70ecb8148fdb6b9f69_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

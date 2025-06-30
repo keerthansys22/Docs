@@ -1,0 +1,188 @@
+\doxysection{GUI/\+Screens/about\+\_\+screen.c File Reference}
+\hypertarget{about__screen_8c}{}\label{about__screen_8c}\index{GUI/Screens/about\_screen.c@{GUI/Screens/about\_screen.c}}
+
+
+Source that displays about screen.  
+
+
+{\ttfamily \#include $<$App\+Global.\+h$>$}\newline
+Include dependency graph for about\+\_\+screen.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{about__screen_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{about__screen_8c_af5e8d31030626c402468d235638eadb3}{about\+\_\+style}} ()
+\begin{DoxyCompactList}\small\item\em Function to initialize about screen style. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{about__screen_8c_a4da5307d0fa772983cdbd6bde9a52df3}{disp\+\_\+mod\+\_\+about\+\_\+screen}} (int \mbox{\hyperlink{lvgl__gui_8c_ae8dc2bce272a2e5fcd8b50959867d76f}{about\+\_\+index}})
+\begin{DoxyCompactList}\small\item\em Function to display about screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{about__screen_8c_abb6b5ccb659b3407d4e2da6afc0132c5}{disp\+\_\+mod\+\_\+extra\+\_\+about\+\_\+screen}} (int \mbox{\hyperlink{lvgl__gui_8c_ae8dc2bce272a2e5fcd8b50959867d76f}{about\+\_\+index}})
+\item 
+void \mbox{\hyperlink{about__screen_8c_a171bd087fd88267f8df70214d756df4a}{common\+\_\+label\+\_\+creation}} (lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}screen\+\_\+name, char \texorpdfstring{$\ast$}{*}text, lv\+\_\+coord\+\_\+t x, lv\+\_\+coord\+\_\+t y, const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}font\+\_\+name, uint32\+\_\+t font\+\_\+colour)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+s\+\_\+about\+\_\+name \mbox{\hyperlink{about__screen_8c_a124de514f27dfabebdf754d4d9f858ec}{s\+\_\+about\+\_\+screen\+\_\+name}} \mbox{[}MACRO\+\_\+\+MAX\+\_\+\+ABOUT\+\_\+\+NAMES\mbox{]}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{about__screen_8c_aef346b4edbe463b1f6eb71b0193683b9}{back\+\_\+label\+\_\+about}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{about__screen_8c_aa57215cdc9fa410161318539c4be1663}{mod1\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{about__screen_8c_aa03f31cb566c500333345e56c2eb1d25}{mod2\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{about__screen_8c_a8f894db6cf370997a98dcadd30b87017}{mod3\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{about__screen_8c_a043074bdcb858b31159faa220aeca830}{mod4\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{about__screen_8c_a9b796bf7893867cc5e012b2ecc32bd2d}{mod5\+\_\+label}}
+\item 
+lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{about__screen_8c_a4d90aaeb1475053b550b08383ad7d42b}{mod6\+\_\+label}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Source that displays about screen. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{about__screen_8c_af5e8d31030626c402468d235638eadb3}\index{about\_screen.c@{about\_screen.c}!about\_style@{about\_style}}
+\index{about\_style@{about\_style}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{about\_style()}{about\_style()}}
+{\footnotesize\ttfamily \label{about__screen_8c_af5e8d31030626c402468d235638eadb3} 
+void about\+\_\+style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Function to initialize about screen style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__screen_8c_af5e8d31030626c402468d235638eadb3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{about__screen_8c_a171bd087fd88267f8df70214d756df4a}\index{about\_screen.c@{about\_screen.c}!common\_label\_creation@{common\_label\_creation}}
+\index{common\_label\_creation@{common\_label\_creation}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{common\_label\_creation()}{common\_label\_creation()}}
+{\footnotesize\ttfamily \label{about__screen_8c_a171bd087fd88267f8df70214d756df4a} 
+void common\+\_\+label\+\_\+creation (\begin{DoxyParamCaption}\item[{lv\+\_\+obj\+\_\+t \texorpdfstring{$\ast$}{*}}]{screen\+\_\+name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{lv\+\_\+coord\+\_\+t}]{x}{, }\item[{lv\+\_\+coord\+\_\+t}]{y}{, }\item[{const lv\+\_\+font\+\_\+t \texorpdfstring{$\ast$}{*}}]{font\+\_\+name}{, }\item[{uint32\+\_\+t}]{font\+\_\+colour}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{about__screen_8c_a4da5307d0fa772983cdbd6bde9a52df3}\index{about\_screen.c@{about\_screen.c}!disp\_mod\_about\_screen@{disp\_mod\_about\_screen}}
+\index{disp\_mod\_about\_screen@{disp\_mod\_about\_screen}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_about\_screen()}{disp\_mod\_about\_screen()}}
+{\footnotesize\ttfamily \label{about__screen_8c_a4da5307d0fa772983cdbd6bde9a52df3} 
+void disp\+\_\+mod\+\_\+about\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{about\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Function to display about screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em about\+\_\+index} & \+: represents line number inside the extra about screen \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__screen_8c_a4da5307d0fa772983cdbd6bde9a52df3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__screen_8c_a4da5307d0fa772983cdbd6bde9a52df3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{about__screen_8c_abb6b5ccb659b3407d4e2da6afc0132c5}\index{about\_screen.c@{about\_screen.c}!disp\_mod\_extra\_about\_screen@{disp\_mod\_extra\_about\_screen}}
+\index{disp\_mod\_extra\_about\_screen@{disp\_mod\_extra\_about\_screen}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{disp\_mod\_extra\_about\_screen()}{disp\_mod\_extra\_about\_screen()}}
+{\footnotesize\ttfamily \label{about__screen_8c_abb6b5ccb659b3407d4e2da6afc0132c5} 
+void disp\+\_\+mod\+\_\+extra\+\_\+about\+\_\+screen (\begin{DoxyParamCaption}\item[{int}]{about\+\_\+index}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__screen_8c_abb6b5ccb659b3407d4e2da6afc0132c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{about__screen_8c_abb6b5ccb659b3407d4e2da6afc0132c5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{about__screen_8c_aef346b4edbe463b1f6eb71b0193683b9}\index{about\_screen.c@{about\_screen.c}!back\_label\_about@{back\_label\_about}}
+\index{back\_label\_about@{back\_label\_about}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{back\_label\_about}{back\_label\_about}}
+{\footnotesize\ttfamily \label{about__screen_8c_aef346b4edbe463b1f6eb71b0193683b9} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} back\+\_\+label\+\_\+about}
+
+\Hypertarget{about__screen_8c_aa57215cdc9fa410161318539c4be1663}\index{about\_screen.c@{about\_screen.c}!mod1\_label@{mod1\_label}}
+\index{mod1\_label@{mod1\_label}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{mod1\_label}{mod1\_label}}
+{\footnotesize\ttfamily \label{about__screen_8c_aa57215cdc9fa410161318539c4be1663} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} mod1\+\_\+label}
+
+\Hypertarget{about__screen_8c_aa03f31cb566c500333345e56c2eb1d25}\index{about\_screen.c@{about\_screen.c}!mod2\_label@{mod2\_label}}
+\index{mod2\_label@{mod2\_label}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{mod2\_label}{mod2\_label}}
+{\footnotesize\ttfamily \label{about__screen_8c_aa03f31cb566c500333345e56c2eb1d25} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} mod2\+\_\+label}
+
+\Hypertarget{about__screen_8c_a8f894db6cf370997a98dcadd30b87017}\index{about\_screen.c@{about\_screen.c}!mod3\_label@{mod3\_label}}
+\index{mod3\_label@{mod3\_label}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{mod3\_label}{mod3\_label}}
+{\footnotesize\ttfamily \label{about__screen_8c_a8f894db6cf370997a98dcadd30b87017} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} mod3\+\_\+label}
+
+\Hypertarget{about__screen_8c_a043074bdcb858b31159faa220aeca830}\index{about\_screen.c@{about\_screen.c}!mod4\_label@{mod4\_label}}
+\index{mod4\_label@{mod4\_label}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{mod4\_label}{mod4\_label}}
+{\footnotesize\ttfamily \label{about__screen_8c_a043074bdcb858b31159faa220aeca830} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} mod4\+\_\+label}
+
+\Hypertarget{about__screen_8c_a9b796bf7893867cc5e012b2ecc32bd2d}\index{about\_screen.c@{about\_screen.c}!mod5\_label@{mod5\_label}}
+\index{mod5\_label@{mod5\_label}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{mod5\_label}{mod5\_label}}
+{\footnotesize\ttfamily \label{about__screen_8c_a9b796bf7893867cc5e012b2ecc32bd2d} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} mod5\+\_\+label}
+
+\Hypertarget{about__screen_8c_a4d90aaeb1475053b550b08383ad7d42b}\index{about\_screen.c@{about\_screen.c}!mod6\_label@{mod6\_label}}
+\index{mod6\_label@{mod6\_label}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{mod6\_label}{mod6\_label}}
+{\footnotesize\ttfamily \label{about__screen_8c_a4d90aaeb1475053b550b08383ad7d42b} 
+lv\+\_\+obj\+\_\+t\texorpdfstring{$\ast$}{*} mod6\+\_\+label}
+
+\Hypertarget{about__screen_8c_a124de514f27dfabebdf754d4d9f858ec}\index{about\_screen.c@{about\_screen.c}!s\_about\_screen\_name@{s\_about\_screen\_name}}
+\index{s\_about\_screen\_name@{s\_about\_screen\_name}!about\_screen.c@{about\_screen.c}}
+\doxysubsubsection{\texorpdfstring{s\_about\_screen\_name}{s\_about\_screen\_name}}
+{\footnotesize\ttfamily \label{about__screen_8c_a124de514f27dfabebdf754d4d9f858ec} 
+s\+\_\+about\+\_\+name s\+\_\+about\+\_\+screen\+\_\+name\mbox{[}MACRO\+\_\+\+MAX\+\_\+\+ABOUT\+\_\+\+NAMES\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

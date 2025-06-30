@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_menu__screen_8c" xml:lang="en-US">
+<title>GUI/Screens/menu_screen.c File Reference</title>
+<indexterm><primary>GUI/Screens/menu_screen.c</primary></indexterm>
+<para>
+
+<para>Source that displays menu screen. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;AppGlobal.h&gt;<?linebreak?></programlisting>Include dependency graph for menu_screen.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="menu__screen_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_menu__screen_8c_1af5070c63da045701c1e5e00384a01680">menu_style</link> ()</para>
+
+<para>Function to initialize menu screen styles. </para>
+</listitem>
+            <listitem><para>void <link linkend="_menu__screen_8c_1a08de97a32dc97712a77e711afebafca3">disp_mod_menu_screen</link> (int <link linkend="_lvgl__gui_8c_1a4a73346f34aa035bd18ffec354e317be">menu_index</link>)</para>
+
+<para>Function to display menu screen. </para>
+</listitem>
+            <listitem><para>void <link linkend="_menu__screen_8c_1a171bd087fd88267f8df70214d756df4a">common_label_creation</link> (lv_obj_t *screen_name, char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>lv_obj_t * <link linkend="_menu__screen_8c_1a6a33696ab565814986ea70d2093022ff">panel4_title</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_menu__screen_8c_1a49eb1271335e21ac1e4a0974afafe682">panel4_title1</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_menu__screen_8c_1aaa9775c07017376c3661fbe78756162b">panel4_title2</link></para>
+</listitem>
+            <listitem><para>lv_obj_t * <link linkend="_menu__screen_8c_1a7f19127eee2895d32375e39339991947">panel4_title3</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Source that displays menu screen. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_menu__screen_8c_1a171bd087fd88267f8df70214d756df4a"/><section>
+    <title>common_label_creation()</title>
+<indexterm><primary>common_label_creation</primary><secondary>menu_screen.c</secondary></indexterm>
+<indexterm><primary>menu_screen.c</primary><secondary>common_label_creation</secondary></indexterm>
+<para><computeroutput>void common_label_creation (lv_obj_t * screen_name, char * text, lv_coord_t x, lv_coord_t y, const lv_font_t * font_name, uint32_t font_colour)<computeroutput>[extern]</computeroutput></computeroutput></para>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="menu__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_menu__screen_8c_1a08de97a32dc97712a77e711afebafca3"/><section>
+    <title>disp_mod_menu_screen()</title>
+<indexterm><primary>disp_mod_menu_screen</primary><secondary>menu_screen.c</secondary></indexterm>
+<indexterm><primary>menu_screen.c</primary><secondary>disp_mod_menu_screen</secondary></indexterm>
+<para><computeroutput>void disp_mod_menu_screen (int menu_index)</computeroutput></para><para>
+
+<para>Function to display menu screen. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>menu_index</entry><entry>
+<para>: represents line number in the menu screen </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="menu__screen_8c_a08de97a32dc97712a77e711afebafca3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="menu__screen_8c_a08de97a32dc97712a77e711afebafca3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_menu__screen_8c_1af5070c63da045701c1e5e00384a01680"/><section>
+    <title>menu_style()</title>
+<indexterm><primary>menu_style</primary><secondary>menu_screen.c</secondary></indexterm>
+<indexterm><primary>menu_screen.c</primary><secondary>menu_style</secondary></indexterm>
+<para><computeroutput>void menu_style ( )</computeroutput></para><para>
+
+<para>Function to initialize menu screen styles. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="menu__screen_8c_af5070c63da045701c1e5e00384a01680_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_menu__screen_8c_1a6a33696ab565814986ea70d2093022ff"/><section>
+    <title>panel4_title</title>
+<indexterm><primary>panel4_title</primary><secondary>menu_screen.c</secondary></indexterm>
+<indexterm><primary>menu_screen.c</primary><secondary>panel4_title</secondary></indexterm>
+<para><computeroutput>lv_obj_t* panel4_title</computeroutput></para></section>
+<anchor xml:id="_menu__screen_8c_1a49eb1271335e21ac1e4a0974afafe682"/><section>
+    <title>panel4_title1</title>
+<indexterm><primary>panel4_title1</primary><secondary>menu_screen.c</secondary></indexterm>
+<indexterm><primary>menu_screen.c</primary><secondary>panel4_title1</secondary></indexterm>
+<para><computeroutput>lv_obj_t* panel4_title1</computeroutput></para></section>
+<anchor xml:id="_menu__screen_8c_1aaa9775c07017376c3661fbe78756162b"/><section>
+    <title>panel4_title2</title>
+<indexterm><primary>panel4_title2</primary><secondary>menu_screen.c</secondary></indexterm>
+<indexterm><primary>menu_screen.c</primary><secondary>panel4_title2</secondary></indexterm>
+<para><computeroutput>lv_obj_t* panel4_title2</computeroutput></para></section>
+<anchor xml:id="_menu__screen_8c_1a7f19127eee2895d32375e39339991947"/><section>
+    <title>panel4_title3</title>
+<indexterm><primary>panel4_title3</primary><secondary>menu_screen.c</secondary></indexterm>
+<indexterm><primary>menu_screen.c</primary><secondary>panel4_title3</secondary></indexterm>
+<para><computeroutput>lv_obj_t* panel4_title3</computeroutput></para></section>
+</section>
+</section>
