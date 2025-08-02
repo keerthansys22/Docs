@@ -1,0 +1,11 @@
+<map id="clearwarningfault" name="clearwarningfault">
+<area shape="rect" id="Node000001" title="This API is to clear the warning and fault bits of the modules @Note : This API can clear particular ..." alt="" coords="5,23,123,50"/>
+<area shape="rect" id="Node000002" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="364,23,469,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,20,170,9,243,3,316,9,356,16,355,21,316,14,243,8,171,14,113,25"/>
+<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="171,23,316,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,34,155,34,155,39,123,39"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="177,74,310,101"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="115,48,180,67,178,72,113,53"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="317,34,349,34,349,39,317,39"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="291,71,353,52,355,57,293,76"/>
+</map>

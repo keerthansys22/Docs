@@ -10,7 +10,7 @@
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="711,16,783,16,783,21,711,21"/>
 <area shape="rect" id="Node000005" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="801,56,938,83"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="712,25,802,49,801,54,710,30"/>
-<area shape="rect" id="Node000004" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="989,56,1069,83"/>
+<area shape="rect" id="Node000004" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="989,56,1069,83"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="915,30,975,50,974,55,913,35"/>
 <area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="939,67,974,67,974,72,939,72"/>
 <area shape="rect" id="Node000007" href="$lcd__init_8c.html#a18e43791216d53f52c3bca5d8b3bf60c" title="Initialization of the LCD ST7291_chip." alt="" coords="246,81,335,108"/>

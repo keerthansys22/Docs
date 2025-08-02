@@ -9,5 +9,6 @@ var searchData=
   ['lcd_5fred_6',['LCD_RED',['../lcd__init_8c.html#aa32f6c50fe89cc11c61d8571acabaca7',1,'lcd_init.c']]],
   ['lcd_5frst_5fgpio_7',['LCD_RST_GPIO',['../lcd__init_8c.html#addda83d3c22042f740b41d54de0e3ea0',1,'lcd_init.c']]],
   ['lcd_5fspics_5fgpio_8',['LCD_SPICS_GPIO',['../lcd__init_8c.html#aba19350e46c7bc94e268c3b6354462a9',1,'lcd_init.c']]],
-  ['lcd_5fwhite_9',['LCD_WHITE',['../lcd__init_8c.html#a34f95804d4bfa75ef2ab12cc2b65a65c',1,'lcd_init.c']]]
+  ['lcd_5fwhite_9',['LCD_WHITE',['../lcd__init_8c.html#a34f95804d4bfa75ef2ab12cc2b65a65c',1,'lcd_init.c']]],
+  ['lv_5fconf_5finclude_5fsimple_10',['LV_CONF_INCLUDE_SIMPLE',['../lvgl__init_8c.html#af9158a1c8ee5187ec1e1199111d34c92',1,'lvgl_init.c']]]
 ];

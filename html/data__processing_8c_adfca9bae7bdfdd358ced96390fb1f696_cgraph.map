@@ -1,9 +1,12 @@
 <map id="fetch_mbn_identification_parameters" name="fetch_mbn_identification_parameters">
-<area shape="rect" id="Node000001" title="Function that fetches the MBN identification parameters." alt="" coords="5,23,166,65"/>
-<area shape="rect" id="Node000002" href="$_main_bus_node_8c.html#ac48f2fd7eafd46b2b15b91d5e19c421e" title="Retrieve the identification information of the Main Bus Node (MBN)." alt="" coords="214,5,396,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,32,198,28,198,34,167,37"/>
-<area shape="rect" id="Node000004" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="function that displays the initializations error" alt="" coords="265,56,345,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,51,250,60,250,66,166,56"/>
-<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="444,5,605,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="396,16,428,16,428,21,396,21"/>
+<area shape="rect" id="Node000001" title="Function that fetches the MBN identification parameters." alt="" coords="5,48,166,91"/>
+<area shape="rect" id="Node000002" href="$_main_bus_node_8c.html#a4c744d8e866ef4daaecc8f89545b8286" title="Retrieve the identification information of the Main Bus Node (MBN)." alt="" coords="214,5,396,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,48,229,33,230,39,167,53"/>
+<area shape="rect" id="Node000004" href="$_main_bus_node_8c.html#a3432e82ff2d4cbe8184b741f0fe50807" title="This API is to get the MBN part number." alt="" coords="236,56,374,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="166,67,220,67,220,72,166,72"/>
+<area shape="rect" id="Node000005" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="265,107,345,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="167,85,250,105,249,110,166,91"/>
+<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="444,31,605,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,27,429,30,428,36,396,32"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="373,59,429,52,429,58,374,64"/>
 </map>

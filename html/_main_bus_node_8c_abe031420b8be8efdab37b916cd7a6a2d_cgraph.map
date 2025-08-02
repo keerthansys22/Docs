@@ -1,0 +1,5 @@
+<map id="getEthercatIndicationStatus" name="getEthercatIndicationStatus">
+<area shape="rect" id="Node000001" title="Retrieves the EtherCAT run and error status from shared memory." alt="" coords="5,5,187,32"/>
+<area shape="rect" id="Node000002" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="235,5,396,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,16,219,16,219,21,187,21"/>
+</map>

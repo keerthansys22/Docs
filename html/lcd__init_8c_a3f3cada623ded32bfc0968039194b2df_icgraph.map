@@ -1,0 +1,9 @@
+<map id="LCD_SPI_BUFFWRITE" name="LCD_SPI_BUFFWRITE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="397,31,553,57"/>
+<area shape="rect" id="Node000002" href="$lcd__init_8c.html#a012515d8d8d76713cbaf7ec56c17f5ab" title="Refreshes the screen." alt="" coords="203,5,305,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,36,305,27,305,22,382,31"/>
+<area shape="rect" id="Node000003" href="$spi__init_8c.html#a0ed4dd961affce9e732a1c09627c03f7" title=" " alt="" coords="159,56,349,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="382,57,350,61,349,56,382,52"/>
+<area shape="rect" id="Node000004" href="$lcd__init_8c.html#aac6d3245df45242018d496555e14c666" title="Send data pixelwise." alt="" coords="5,56,111,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="143,72,111,72,111,67,143,67"/>
+</map>

@@ -1,9 +1,27 @@
 <map id="getValveModulesErrorStatus" name="getValveModulesErrorStatus">
-<area shape="rect" id="Node000001" title="fetches the valves error status" alt="" coords="5,43,191,69"/>
-<area shape="rect" id="Node000002" href="$_pressure_zone_8c.html#aec053f33602e9220ef123f812ab5bc82" title="Get the process data for a specific pressure zone." alt="" coords="239,43,433,69"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,53,223,53,223,59,191,59"/>
-<area shape="rect" id="Node000003" href="$_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=" " alt="" coords="481,5,675,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,42,465,38,466,43,434,47"/>
-<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="498,72,659,99"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="434,65,482,71,482,76,433,70"/>
+<area shape="rect" id="Node000001" title="fetches the valves error status" alt="" coords="5,81,191,108"/>
+<area shape="rect" id="Node000002" href="$_prop_back_plane_api_8c.html#ac8c97dc69bbd88a4c100cc0efb2d2615" title="Retrieves diagnostic process data for a specified External Prop Backplane." alt="" coords="243,5,445,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,78,238,41,265,34,267,39,239,47,135,83"/>
+<area shape="rect" id="Node000006" href="$_external_prop_8c.html#a12079eb09ed900c5eb316ae357c3c053" title="Retrieves process data for a specified External Prop." alt="" coords="263,56,425,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="191,82,248,77,248,82,192,88"/>
+<area shape="rect" id="Node000007" href="$_isem_back_plane_api_8c.html#a5d9dce0f314d8ae2939664e0e0fbb2e5" title="Retrieves diagnostic process data for a specified ISEM backplane handler." alt="" coords="239,107,449,133"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="192,102,223,105,223,110,191,107"/>
+<area shape="rect" id="Node000009" href="$_pressure_zone_8c.html#a458b307e086c1c4fe91d37a9cd9253ad" title="Get the process data for a specific pressure zone." alt="" coords="247,157,441,184"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="135,106,239,143,267,150,265,156,238,148,134,111"/>
+<area shape="rect" id="Node000003" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="553,56,658,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="417,30,538,54,537,59,416,35"/>
+<area shape="rect" id="Node000004" href="$_external_prop_8c.html#ae2e6a8daa2875bb4fb56a99cc5c0b716" title=" " alt="" coords="497,5,714,32"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="445,16,481,16,481,21,445,21"/>
+<area shape="rect" id="Node000005" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="525,107,686,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="425,30,450,42,466,55,475,68,484,81,498,92,511,99,509,104,496,97,480,84,471,71,462,58,448,46,423,35"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="425,67,537,67,537,72,425,72"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="416,53,518,33,519,38,417,58"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="417,81,519,101,518,106,416,86"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="416,103,537,80,538,85,417,109"/>
+<area shape="poly" id="edge12_Node000007_Node000005" title=" " alt="" coords="449,117,509,117,509,123,449,123"/>
+<area shape="rect" id="Node000008" href="$_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=": This function is to fetch the pressure zone process data address based on the handler" alt="" coords="509,157,703,200"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="407,131,494,151,492,156,406,137"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="423,154,448,143,462,131,471,118,480,105,496,92,536,76,538,81,498,97,484,109,475,121,466,135,450,148,425,159"/>
+<area shape="poly" id="edge16_Node000009_Node000005" title=" " alt="" coords="416,154,518,134,519,139,417,159"/>
+<area shape="poly" id="edge15_Node000009_Node000008" title=" " alt="" coords="441,171,493,173,493,178,441,176"/>
 </map>

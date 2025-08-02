@@ -1,20 +1,13 @@
 var isem__status__info_8c =
 [
-    [ "find_bit_difference_isem", "isem__status__info_8c.html#ad3e3ba582ba271dd10563b919da8f94f", null ],
-    [ "find_bit_difference_isem_war", "isem__status__info_8c.html#afa0da081e452bcba9fe88e18aee251fc", null ],
-    [ "isem_status_info", "isem__status__info_8c.html#ac556b861a63a472eab6b590aac6be953", null ],
+    [ "isem_status_info", "isem__status__info_8c.html#a66a6aa8ff43b8a37773d5c9958d5c799", null ],
     [ "reset_isem_status", "isem__status__info_8c.html#a9a3806a48e474cbce90adb9c92ad4ae9", null ],
-    [ "stop_timer", "isem__status__info_8c.html#a58997b988646976eadf522f6b26c9f46", null ],
     [ "clear_isem_present", "isem__status__info_8c.html#a0617f4dab30b9c966cbd08430cc3d367", null ],
-    [ "cur_disp_scr_index", "isem__status__info_8c.html#a49952e1fb0d52f6ef2f6fd0f381ab1b5", null ],
     [ "curr_fault_index", "isem__status__info_8c.html#a9e5e7d18c6596629d5f86a5ef0e6f9df", null ],
     [ "curr_fault_list", "isem__status__info_8c.html#a1d4a7b1a77c7b811d00083d16ba749c4", null ],
-    [ "curr_isem_fault", "isem__status__info_8c.html#abfe21061ddd1d702919ddabe5116eb8d", null ],
-    [ "curr_isem_war", "isem__status__info_8c.html#aa8d277cc39a7aab87f50837b5c596c8d", null ],
     [ "curr_war_index", "isem__status__info_8c.html#a36972212c2938bee4597333076b0d292", null ],
     [ "curr_war_list", "isem__status__info_8c.html#a0f1f761cbda8e6402f65783215e44356", null ],
     [ "g_isemdiag_count", "isem__status__info_8c.html#ae44ef9829ac44f5b2bb7abdefce34479", null ],
-    [ "G_POP_EVENT", "isem__status__info_8c.html#aaa8fd3258b0349c782441c209b83cf5c", null ],
     [ "g_status_index", "isem__status__info_8c.html#a5a48a03cca514f9b8f3f4f3efde71476", null ],
     [ "isem_diag_flag_warning", "isem__status__info_8c.html#ade31b093a3128d447667c83314429e03", null ],
     [ "isem_diag_station_flag_fault", "isem__status__info_8c.html#a8cbde846f33197e06ca1643f356275a0", null ],
@@ -32,7 +25,7 @@ var isem__status__info_8c =
     [ "prev_war_index", "isem__status__info_8c.html#ac219734e0b7bff6a07a53d864b2cde17", null ],
     [ "prev_war_list", "isem__status__info_8c.html#a1bb899167b0374eb2c2de90e1de27a2b", null ],
     [ "pzonemodulesdetails", "isem__status__info_8c.html#a7f5f23f78cf76bec56ebefff8cea7196", null ],
-    [ "screen_status_value", "isem__status__info_8c.html#a5a5465a4d5058460b8737c982eebeefb", null ],
+    [ "screen_status_value", "isem__status__info_8c.html#a01a09ef94e00ab546916776847cc4dc1", null ],
     [ "str_isem", "isem__status__info_8c.html#a41587f5122991b58fb24979bd7d8b6c6", null ],
     [ "str_war_isem", "isem__status__info_8c.html#aaa326b90680283c7b050db8bcf27d0e7", null ]
 ];

@@ -1,13 +1,27 @@
 <map id="poweron_selftest" name="poweron_selftest">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,124,133"/>
-<area shape="rect" id="Node000002" href="$power__on__self__test_8c.html#a7e4bd03d5000eaba98f7880b37979086" title=" " alt="" coords="173,5,295,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,104,121,74,170,42,180,37,183,41,173,46,124,78,84,108"/>
-<area shape="rect" id="Node000003" href="$power__on__self__test_8c.html#a3aac4e89479292ddefe58923976b3103" title=" " alt="" coords="172,56,296,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,103,172,85,173,90,113,109"/>
-<area shape="rect" id="Node000004" href="$power__on__self__test_8c.html#a99fb93fc053acbdeac28adb7dd9998dc" title=" " alt="" coords="174,107,294,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="124,117,158,117,158,123,124,123"/>
-<area shape="rect" id="Node000005" href="$power__on__self__test_8c.html#ac15199a45dee6b739fbcfcc1f509e0b5" title=" " alt="" coords="188,157,280,184"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="113,131,174,150,173,155,111,137"/>
-<area shape="rect" id="Node000006" href="$power__on__self__test_8c.html#a0928c556839f0083145f58540674e7a3" title=" " alt="" coords="200,208,268,235"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="84,132,124,162,173,194,187,201,185,206,170,198,121,166,81,136"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,157,124,184"/>
+<area shape="rect" id="Node000002" href="$power__on__self__test_8c.html#a7e4bd03d5000eaba98f7880b37979086" title=" " alt="" coords="185,5,307,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,155,112,104,139,75,170,49,189,37,192,41,173,53,143,79,116,108,77,158"/>
+<area shape="rect" id="Node000003" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="401,56,480,83"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="78,155,117,122,143,105,171,92,227,76,284,67,386,64,386,69,285,73,228,82,173,97,145,110,120,127,81,159"/>
+<area shape="rect" id="Node000004" href="$power__on__self__test_8c.html#a3aac4e89479292ddefe58923976b3103" title=" " alt="" coords="184,107,308,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,154,180,135,182,141,116,159"/>
+<area shape="rect" id="Node000005" href="$power__on__self__test_8c.html#a99fb93fc053acbdeac28adb7dd9998dc" title=" " alt="" coords="186,157,306,184"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="124,168,170,168,170,173,124,173"/>
+<area shape="rect" id="Node000006" href="$power__on__self__test_8c.html#a213dbe086bf2daf891e0acb2dbda1285" title=" " alt="" coords="200,208,292,235"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="116,182,186,202,184,207,114,187"/>
+<area shape="rect" id="Node000007" href="$power__on__self__test_8c.html#a0928c556839f0083145f58540674e7a3" title=" " alt="" coords="212,259,280,285"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="84,183,123,213,173,244,198,255,196,260,170,249,120,217,80,187"/>
+<area shape="rect" id="Node000008" href="$_main_bus_node_8c.html#acb6b44f230df55e989249f65d525f987" title="Sets the service parameter of the main bus node (MBN)." alt="" coords="172,309,320,336"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="76,183,114,237,141,268,173,295,181,300,178,304,170,299,138,272,110,241,72,186"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,30,387,53,385,58,300,35"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="300,103,385,81,387,86,301,109"/>
+<area shape="rect" id="Node000009" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="561,309,667,336"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="301,306,368,295,441,289,514,295,554,302,553,308,513,300,441,294,368,300,302,311"/>
+<area shape="rect" id="Node000010" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="368,309,513,336"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="320,320,353,320,353,325,320,325"/>
+<area shape="rect" id="Node000011" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="374,360,507,387"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="301,334,373,353,371,358,300,339"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="514,320,546,320,546,325,514,325"/>
+<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="488,357,550,338,552,343,490,362"/>
 </map>

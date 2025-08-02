@@ -49,11 +49,11 @@ var _digital_input_output_api_8c =
     [ "DIO_MOD_POST_ERR_STATUS_ADDR", "_digital_input_output_api_8c.html#a5a037434e6306ce8d134e9948a02a6df", null ],
     [ "DIO_MOD_SERVICE_DATA_ADDR", "_digital_input_output_api_8c.html#a67a1b6ea4e18aa3b254abf6740e1a142", null ],
     [ "DIO_MOD_VA_VB_VOLTAGE_ADDR", "_digital_input_output_api_8c.html#af3ad9fad44746352f19bc9c1d12f5025", null ],
-    [ "getDigitalInputOutputModuleServiceParam", "_digital_input_output_api_8c.html#a5f9a0d3206f152c993e4ca6cd2e1920a", null ],
-    [ "getDIOModuleProcessData", "_digital_input_output_api_8c.html#a7a8432d00349ffb6c7bddc226122f26c", null ],
+    [ "getDigitalInputOutputModuleServiceParam", "_digital_input_output_api_8c.html#a4c4dbf556362aa3ddb1dcf07f6a33d2c", null ],
+    [ "getDIOModuleProcessData", "_digital_input_output_api_8c.html#a278bb5423bfc8039b183df5c79b6616f", null ],
     [ "getIOProcessDataInstanceAddress", "_digital_input_output_api_8c.html#a91f3bb33371373e3e9b48b2290355551", null ],
     [ "getIOServiceDataInstanceAddress", "_digital_input_output_api_8c.html#aab64cdfe20fa84db4be92c96380d60a2", null ],
-    [ "setDigitalInputOutputModuleServiceParam", "_digital_input_output_api_8c.html#ab545c66f79961369da1e6fc58a817ad7", null ],
-    [ "setDIOModuleProcessData", "_digital_input_output_api_8c.html#a5c4ce5661882b136ac3598f54658eb57", null ],
+    [ "setDigitalInputOutputModuleServiceParam", "_digital_input_output_api_8c.html#aaa2bf71247b1fbabdc650d9192798ad9", null ],
+    [ "setDIOModuleProcessData", "_digital_input_output_api_8c.html#a893035082979cd6682cf3b31f345b829", null ],
     [ "gbuf", "_digital_input_output_api_8c.html#ad9088d5017838792bd64e604162503df", null ]
 ];

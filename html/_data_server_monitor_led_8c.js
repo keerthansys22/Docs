@@ -5,14 +5,7 @@ var _data_server_monitor_led_8c =
     [ "ERRUN_FLICKERING_STATE", "_data_server_monitor_led_8c.html#a2765214f4d4bfdbb700da05dfcaeb96e", null ],
     [ "ERRUN_OFF_STATE", "_data_server_monitor_led_8c.html#a17eed206acd033b4bad7b2937d4bd88b", null ],
     [ "ERRUN_ON_STATE", "_data_server_monitor_led_8c.html#a3fac230fa9331caab37892ab4a706404", null ],
-    [ "blinking_green", "_data_server_monitor_led_8c.html#a63035d42da12201cdaa1082ec0fcbea5", null ],
-    [ "blinking_red", "_data_server_monitor_led_8c.html#ad91ea9caab13cbfe57e3952a1b2cf9db", null ],
-    [ "flashing_red", "_data_server_monitor_led_8c.html#add0a974d654d10a6480310ec47a7c988", null ],
-    [ "flashing_red_green", "_data_server_monitor_led_8c.html#a052c861ff7758d0f6be0fc147b035aa1", null ],
-    [ "flasing_green", "_data_server_monitor_led_8c.html#a4689958847da4eb04b01ee65eb3f2613", null ],
-    [ "flickering_green", "_data_server_monitor_led_8c.html#a553733e5f16326a3049e63307c4bcb49", null ],
-    [ "flickering_red", "_data_server_monitor_led_8c.html#a8632f23360c4570305609236cae8f4d8", null ],
-    [ "flickering_red_green", "_data_server_monitor_led_8c.html#ac453a3ae986d391e5a7c2e9c595ab332", null ],
+    [ "flashing_mbn_firmwareupgrade_flash", "_data_server_monitor_led_8c.html#a6de8ae3d5fdc6c8f6cfc1919aa5fecc3", null ],
     [ "getIoModStatus", "_data_server_monitor_led_8c.html#a355ba4c5f111a60750fb52a4ddb7773b", null ],
     [ "getIOmodulesForceStateEnable", "_data_server_monitor_led_8c.html#ae01aad6066b3904dfbb903803dca64ca", null ],
     [ "getValveModulesErrorStatus", "_data_server_monitor_led_8c.html#a20a4ac1b64ad62bac504668394ddee31", null ],
@@ -32,9 +25,11 @@ var _data_server_monitor_led_8c =
     [ "g_led_error_flag1", "_data_server_monitor_led_8c.html#ae56fe8b25067ad4c0815823ecbe1a028", null ],
     [ "g_led_error_flag2", "_data_server_monitor_led_8c.html#a4c2d8c66ab29de28e84ad3fc97d298db", null ],
     [ "i2cmsgdemo", "_data_server_monitor_led_8c.html#a101a08b09da918500b4e325b8016c408", null ],
+    [ "led_mutex", "_data_server_monitor_led_8c.html#aaf1b0cc8a8ce9e35fc367d736899190e", null ],
     [ "long_flag", "_data_server_monitor_led_8c.html#a7f2797c133895a11557ac19b0d846127", null ],
     [ "longpress_detected", "_data_server_monitor_led_8c.html#a8bd143ed2741955bf62bb2d2bc319386", null ],
     [ "longpress_timer", "_data_server_monitor_led_8c.html#a7b71b5c7a7fbb0d56b514bdfddb301fd", null ],
     [ "msg_rdwrdemo", "_data_server_monitor_led_8c.html#a8c2ae5ee1bb07521123798c2a03f452f", null ],
-    [ "ret", "_data_server_monitor_led_8c.html#a6baa346e44f4c2158d2be4f9b77b8203", null ]
+    [ "ret_value", "_data_server_monitor_led_8c.html#aabe89482a17bf30a40e9c316bc5a2bb9", null ],
+    [ "upgrade_enabled", "_data_server_monitor_led_8c.html#a74a1d3de2adc41e0c25b3ba7971bc116", null ]
 ];

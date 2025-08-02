@@ -1,5 +1,5 @@
 <map id="get_diag_valve_names_by_pz" name="get_diag_valve_names_by_pz">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,156,48"/>
-<area shape="rect" id="Node000002" href="$_app_data_interce_8c.html#aa97f8415a0ba0596ba9e90c156378a95" title="Retrieves the position of a specified device." alt="" coords="204,13,328,40"/>
+<area shape="rect" id="Node000001" title="Function that stores the DIAG valve device names with positions." alt="" coords="5,5,156,48"/>
+<area shape="rect" id="Node000002" href="$_app_data_interface_8c.html#a1855ea1ac2e7d695c215d40448cd0aab" title="Retrieves the position of a specified device." alt="" coords="204,13,328,40"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,24,188,24,188,29,156,29"/>
 </map>

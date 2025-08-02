@@ -1,5 +1,5 @@
 <map id="longpress_callback" name="longpress_callback">
-<area shape="rect" id="Node000001" title=" " alt="" coords="200,5,332,32"/>
-<area shape="rect" id="Node000002" href="$_data_server_monitor_led_8c.html#a4456c0194a45c65f825950c8d477e420" title=" " alt="" coords="5,5,152,32"/>
+<area shape="rect" id="Node000001" title="POSIX timer callback." alt="" coords="200,5,332,32"/>
+<area shape="rect" id="Node000002" href="$_data_server_monitor_led_8c.html#a4456c0194a45c65f825950c8d477e420" title="Function that starts the POSIX timer for long&#45;press." alt="" coords="5,5,152,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,21,152,21,152,16,184,16"/>
 </map>

@@ -1,5 +1,5 @@
-<map id="GUI/Screens/mac_screen.c" name="GUI/Screens/mac_screen.c">
-<area shape="rect" id="Node000001" title="Source that displays MAC screen details." alt="" coords="5,5,187,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="50,80,142,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,33,99,64,93,64,93,33"/>
+<map id="C:/D/GitHub/Valve Island/Main_Bus_Node/Source/Arrow3&#45;MBN&#45;APP_V1.2.0T/Arrow3_MBN_APP_V1.2.0T/Src/GUI/Screens/mac_screen.c" name="C:/D/GitHub/Valve Island/Main_Bus_Node/Source/Arrow3&#45;MBN&#45;APP_V1.2.0T/Arrow3_MBN_APP_V1.2.0T/Src/GUI/Screens/mac_screen.c">
+<area shape="rect" id="Node000001" title="Source that displays MAC screen details." alt="" coords="5,5,223,96"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="68,144,160,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,96,117,128,111,128,111,96"/>
 </map>

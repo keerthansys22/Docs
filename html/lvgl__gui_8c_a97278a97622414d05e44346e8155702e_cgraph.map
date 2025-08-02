@@ -1,8 +1,8 @@
 <map id="initialize_ip_buffers" name="initialize_ip_buffers">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,136,57"/>
-<area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#a3b83c6cea003cb78dcf9bc2712fc9db0" title=" " alt="" coords="184,5,317,32"/>
+<area shape="rect" id="Node000001" title="Function to initialize IP buffers with values from API." alt="" coords="5,31,136,57"/>
+<area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#a3b83c6cea003cb78dcf9bc2712fc9db0" title="Function to convert uint32_t IP address to array format." alt="" coords="184,5,317,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,32,168,28,169,33,137,37"/>
-<area shape="rect" id="Node000003" href="$_main_bus_node_8c.html#a36255dbd4db709691ff068cc0d205230" title="Retrieves the IP address of the specified port." alt="" coords="202,56,299,83"/>
+<area shape="rect" id="Node000003" href="$_main_bus_node_8c.html#a3fad6f3c512bdea33ac525acd4eb029a" title="Retrieves the IP address of the specified port." alt="" coords="202,56,299,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,51,187,58,186,63,136,56"/>
 <area shape="rect" id="Node000004" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="365,56,526,83"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="299,67,349,67,349,72,299,72"/>

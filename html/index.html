@@ -122,7 +122,7 @@ Introduction</h1>
 </ul>
 <h1><a class="anchor" id="install_sec"></a>
 Overview</h1>
-<p>The LCD GUI application operates on a Linux core, communicating with a data server for data exchange. The application includes five threads, each dedicated to specific tasks to ensure modularity, scalability, and performance. </p>
+<p>The LCD GUI application operates on a Linux core, communicating with a data server for data exchange. The application includes six threads, each dedicated to specific tasks to ensure modularity, scalability, and performance. </p>
 <h2><a class="anchor" id="step1"></a>
 <b>Key Features</b></h2>
 <h2><a class="anchor" id="step2"></a>
@@ -159,8 +159,12 @@ Overview</h1>
 <li>Continuously polls for any screen pop-ups indicating warning or fault statuses.</li>
 </ul>
 </li>
-<li><b>Thread 5: Keypress Check</b><ul>
-<li>Monitors keypress events for navigation and user actions. </li>
+<li><b>Thread 5: Key press and LED Check</b><ul>
+<li>Monitors LEDs (VA LEDs, VB LEDs, Force mode LEDs, Module status LEDs and Cloud connected status LEDs) and key press events for navigation and user actions.</li>
+</ul>
+</li>
+<li><b>Thread 6: EtherCAT LED Check</b><ul>
+<li>Monitors EtherCAT LED status. </li>
 </ul>
 </li>
 </ul>

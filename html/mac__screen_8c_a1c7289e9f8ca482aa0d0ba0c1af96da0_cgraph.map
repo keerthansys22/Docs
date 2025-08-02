@@ -4,8 +4,8 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,33,176,28,177,34,144,38"/>
 <area shape="rect" id="Node000003" href="$mac__address_8c.html#a434de6524abf0902881fe890323c1186" title="function that access the MAC details" alt="" coords="201,56,346,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,50,186,56,185,61,144,55"/>
-<area shape="rect" id="Node000004" href="$_main_bus_node_8c.html#a729fd2c0212cb2a3bc4a2e1a7f3ebc3f" title="Retrieves the acyclic data or service parameter of the MBN node." alt="" coords="403,56,551,83"/>
+<area shape="rect" id="Node000004" href="$_main_bus_node_8c.html#a85fdf886ae15f9471a8f9c42fd951f1f" title="Retrieves the MAC address of the specified main bus port." alt="" coords="403,56,566,83"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="346,67,387,67,387,72,346,72"/>
-<area shape="rect" id="Node000005" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="599,56,761,83"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="552,67,584,67,584,72,552,72"/>
+<area shape="rect" id="Node000005" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="614,56,776,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="567,67,598,67,598,72,567,72"/>
 </map>

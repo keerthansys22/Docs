@@ -1,0 +1,47 @@
+<map id="UpgradeFirmware" name="UpgradeFirmware">
+<area shape="rect" id="Node000001" title="Updates the firmware of the specified module." alt="" coords="5,236,128,262"/>
+<area shape="rect" id="Node000002" href="$_firmware___upgrade_8c.html#a28bc829bc230dcbfc7d1c6b6ba229dec" title="This function ensures that the modules are ready for firmware upgrade." alt="" coords="182,134,374,161"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,233,125,205,175,177,208,164,210,169,177,182,128,210,88,237"/>
+<area shape="rect" id="Node000003" href="$_firmware___upgrade_8c.html#a400a8be20c96a5efd37118582c474de8" title=" " alt="" coords="480,185,537,212"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="119,233,175,221,334,204,464,197,464,202,335,209,176,226,120,238"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="436,134,581,161"/>
+<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="69,234,80,199,101,152,131,106,151,86,174,69,228,47,252,43,275,43,323,53,381,69,409,79,435,93,480,122,477,127,433,97,407,84,379,74,322,58,274,49,252,48,229,52,177,74,155,90,136,109,105,155,85,201,74,236"/>
+<area shape="rect" id="Node000005" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="636,134,742,161"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="67,234,77,194,96,139,110,110,127,83,149,59,174,39,205,23,238,12,271,6,306,3,375,8,443,24,508,47,567,74,656,123,653,128,565,78,506,52,442,29,374,14,306,8,272,11,239,17,207,28,177,43,152,62,132,86,115,113,101,141,82,195,73,236"/>
+<area shape="rect" id="Node000006" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="442,236,575,262"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="77,261,91,287,113,319,142,350,177,373,232,396,280,406,303,404,326,399,379,373,391,363,398,352,403,327,408,299,415,286,426,272,431,269,434,273,430,276,419,289,413,301,408,328,402,354,395,367,381,378,328,404,304,410,280,411,231,401,174,378,138,354,109,322,87,290,72,264"/>
+<area shape="rect" id="Node000007" href="$_firmware___upgrade_8c.html#a0bdd14723a2507e6465c44ca5d9dc364" title=" " alt="" coords="251,489,305,516"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="73,262,84,303,103,358,134,417,154,445,177,468,206,485,237,495,235,500,204,490,174,472,150,448,130,420,98,360,78,304,68,263"/>
+<area shape="rect" id="Node000008" href="$_firmware___upgrade_8c.html#af2c561995b4de360357d8e4f51bb0572" title=" " alt="" coords="468,286,549,313"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="74,262,87,295,107,337,137,379,156,396,177,411,231,435,279,444,302,442,325,436,379,411,390,402,396,393,403,370,409,347,415,334,426,323,452,309,454,313,430,327,420,338,414,349,408,372,401,395,394,406,381,415,327,441,303,447,278,449,230,440,174,415,152,401,133,382,103,340,82,297,69,264"/>
+<area shape="rect" id="Node000009" href="$_firmware___upgrade_8c.html#a36d6fe2a8bcf6d6b3841246c8fc9a77e" title="This function aborts the firmware upgrade flash process." alt="" coords="188,236,368,262"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="128,246,172,246,172,252,128,252"/>
+<area shape="rect" id="Node000010" href="$_firmware___upgrade_8c.html#ac8063b75102fb954599174fdd67c4b1a" title="This function aborts the firmware upgrade flash process." alt="" coords="181,286,375,313"/>
+<area shape="poly" id="edge18_Node000001_Node000010" title=" " alt="" coords="126,260,205,280,204,285,125,266"/>
+<area shape="rect" id="Node000011" href="$_firmware___upgrade_8c.html#abd682c58c23c11b69b5c66b63d75b8e2" title="This function is to perform the handshake before starting the firmware uprade with the modules." alt="" coords="187,84,369,110"/>
+<area shape="poly" id="edge23_Node000001_Node000011" title=" " alt="" coords="73,234,112,178,140,147,174,120,184,114,187,119,177,125,144,151,116,182,78,237"/>
+<area shape="rect" id="Node000012" href="$_firmware___upgrade_8c.html#a69bfee6bcd75c90a6315cc180dfd7efc" title=" " alt="" coords="176,337,380,364"/>
+<area shape="poly" id="edge27_Node000001_Node000012" title=" " alt="" coords="85,261,125,292,177,323,193,329,191,334,174,327,122,296,82,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,159,465,186,464,192,341,164"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="374,145,420,145,420,150,374,150"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="305,159,361,189,429,221,446,228,444,233,427,226,358,194,302,164"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="581,145,621,145,621,150,581,150"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="560,233,587,221,627,196,660,169,664,173,630,201,590,226,562,238"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="341,232,464,205,465,210,343,238"/>
+<area shape="poly" id="edge16_Node000009_Node000004" title=" " alt="" coords="302,233,358,203,427,171,444,164,446,169,429,175,361,207,305,238"/>
+<area shape="poly" id="edge17_Node000009_Node000006" title=" " alt="" coords="368,246,426,246,426,252,368,252"/>
+<area shape="poly" id="edge15_Node000009_Node000008" title=" " alt="" coords="343,260,453,285,452,290,341,266"/>
+<area shape="poly" id="edge19_Node000010_Node000003" title=" " alt="" coords="354,283,379,272,393,260,402,248,411,235,427,221,464,205,466,210,429,226,415,238,406,251,397,264,381,277,356,288"/>
+<area shape="poly" id="edge21_Node000010_Node000004" title=" " alt="" coords="360,284,378,272,389,261,396,249,402,224,408,197,415,184,426,171,431,167,434,171,430,175,419,187,413,199,407,225,401,251,394,264,382,276,363,288"/>
+<area shape="poly" id="edge22_Node000010_Node000006" title=" " alt="" coords="341,283,429,264,430,269,343,288"/>
+<area shape="poly" id="edge20_Node000010_Node000008" title=" " alt="" coords="375,297,452,297,452,302,375,302"/>
+<area shape="poly" id="edge24_Node000011_Node000003" title=" " alt="" coords="356,109,381,120,397,133,406,146,415,159,429,171,466,187,464,191,427,175,411,162,402,149,393,136,379,125,354,113"/>
+<area shape="poly" id="edge25_Node000011_Node000004" title=" " alt="" coords="343,108,430,128,429,133,341,114"/>
+<area shape="poly" id="edge26_Node000011_Node000006" title=" " alt="" coords="363,109,382,120,394,133,401,146,407,172,413,198,419,210,430,222,434,225,431,229,426,226,415,213,408,199,402,173,396,148,389,136,378,124,360,113"/>
+<area shape="poly" id="edge29_Node000012_Node000003" title=" " alt="" coords="360,334,378,323,389,311,396,300,402,274,408,248,415,235,426,222,444,210,463,203,465,208,446,215,430,226,419,238,413,250,407,275,401,301,394,315,382,327,363,339"/>
+<area shape="poly" id="edge31_Node000012_Node000004" title=" " alt="" coords="362,334,378,323,393,305,400,287,402,249,404,211,411,191,426,171,429,168,433,172,430,175,416,193,409,212,407,250,405,288,397,308,382,327,365,339"/>
+<area shape="poly" id="edge32_Node000012_Node000006" title=" " alt="" coords="354,334,379,323,393,311,402,298,411,285,426,272,436,267,439,271,430,277,415,289,406,302,397,315,381,327,356,339"/>
+<area shape="poly" id="edge30_Node000012_Node000008" title=" " alt="" coords="341,334,452,309,453,314,343,339"/>
+<area shape="rect" id="Node000013" href="$_firmware___upgrade_8c.html#a1fbfb385ba5ca60f30f473ff2600bed9" title="Get the current firmware upgrade status." alt="" coords="428,337,588,364"/>
+<area shape="poly" id="edge28_Node000012_Node000013" title=" " alt="" coords="380,348,412,348,412,353,380,353"/>
+</map>

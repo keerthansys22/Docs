@@ -1,0 +1,28 @@
+<map id="lcd_send_data" name="lcd_send_data">
+<area shape="rect" id="Node000001" title="Send data pixelwise." alt="" coords="5,81,111,108"/>
+<area shape="rect" id="Node000002" href="$spi__init_8c.html#a0ed4dd961affce9e732a1c09627c03f7" title=" " alt="" coords="384,107,574,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,95,369,111,368,116,111,100"/>
+<area shape="rect" id="Node000008" href="$lcd__init_8c.html#acea4b86040a91d501a913d67133a693b" title="function to setting the window color" alt="" coords="159,56,336,83"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="111,85,143,81,143,86,112,90"/>
+<area shape="rect" id="Node000003" href="$lcd__init_8c.html#a0543bbde4de0576ea0a80e73bac80a4e" title="Sets the data/cmd line to receive the data nased on the modes." alt="" coords="626,56,775,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="540,103,624,84,625,89,541,109"/>
+<area shape="rect" id="Node000006" href="$spi__init_8c.html#a3f3cada623ded32bfc0968039194b2df" title=" " alt="" coords="622,107,779,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="575,117,606,117,606,123,575,123"/>
+<area shape="rect" id="Node000004" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="827,56,964,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="775,67,811,67,811,72,775,72"/>
+<area shape="rect" id="Node000005" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="1012,31,1091,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="964,56,996,50,997,56,965,61"/>
+<area shape="rect" id="Node000007" href="$spi__init_8c.html#ad1975fd8330425459b0ea85c1c5afb05" title=" " alt="" coords="842,5,949,32"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="754,104,777,92,792,80,801,68,810,55,825,42,833,37,836,41,828,46,814,59,805,71,796,84,780,97,757,109"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="950,25,997,33,996,38,949,30"/>
+<area shape="rect" id="Node000009" href="$spi__init_8c.html#af4441b8eab01e69f1b6222fee0f962ef" title=" " alt="" coords="404,56,555,83"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="337,67,388,67,388,72,337,72"/>
+<area shape="rect" id="Node000011" href="$spi__init_8c.html#a20244be6a13ba66fc8d004cbf92f6e4d" title=" " alt="" coords="401,5,557,32"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="311,53,400,33,401,38,312,58"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="555,67,611,67,611,72,555,72"/>
+<area shape="rect" id="Node000010" href="$spi__init_8c.html#a049cd8c34e247abfa2b43cbfac2ca3fb" title=" " alt="" coords="639,5,762,32"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="540,53,624,33,625,39,541,58"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="762,16,826,16,826,21,762,21"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="541,30,625,49,624,55,540,35"/>
+<area shape="poly" id="edge15_Node000011_Node000010" title=" " alt="" coords="558,16,624,16,624,21,558,21"/>
+</map>

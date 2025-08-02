@@ -51,11 +51,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_analog_input_module_api_8c.html",
-"_app_data_interce_8c.html#a9cc23bdb3b5e1b67530bbcbbef48e339",
-"_internal_prop_8c.html#a2383a3641c7a989a9d6c99be17bf45c8",
-"diag__valve__status__info_8c.html#a7ae06bb4fda271e55df59575c5447073",
-"isem__status__info_8c.html#ac556b861a63a472eab6b590aac6be953",
-"mac__screen_8c.html#a523ead125e7b13b7b55d5a1c68fabe81"
+"_app_data_interface_8c.html#ac9c8ae40192cd0d8fc49a401b28849e9",
+"_firmware___upgrade_8c.html#a4da0d901898616097acd1439f7bd9b2a",
+"default__task_8c.html#ac0d18105a979f76f090ea2ad7d58032c",
+"isem__backplane__warning__csv_8c.html#a876f80816b1b42543dfa775032563bab",
+"lvgl__gui_8c.html#ae1bcc600008d06e5c5010545e36edb61",
+"valves__modules__status__info_8c.html#a639ca1471160314ce61d52506c2a8d0d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

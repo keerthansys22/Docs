@@ -8,15 +8,6 @@ var status__screen_8c =
     [ "stop_flashing_timer", "status__screen_8c.html#a9d9732ee883427a96c71ce5b6e1b217d", null ],
     [ "flash_on", "status__screen_8c.html#acf4df21b18b924052d66abac113599bb", null ],
     [ "g_total_no_of_status_screens", "status__screen_8c.html#a27e4047823c653df7bd5f560cd4fa460", null ],
-    [ "label1", "status__screen_8c.html#a659c2822fbcf0630ce20c397c108be6d", null ],
-    [ "label2", "status__screen_8c.html#af49d663f415abf955b2efbe3f53a4c31", null ],
-    [ "label3", "status__screen_8c.html#a914f48210428226902e114735b225766", null ],
-    [ "label4", "status__screen_8c.html#aba55cf84319de41c3ab63e89fcd64bdb", null ],
-    [ "label5", "status__screen_8c.html#a719f94200ba7b54c0f6eeaa77ffb3c18", null ],
-    [ "label6", "status__screen_8c.html#ac0cbf06f8355bdf1ab95d6fea7a52eb9", null ],
-    [ "label7", "status__screen_8c.html#aaf0259e2b24d760482d7c0ef9cda4f2a", null ],
-    [ "label8", "status__screen_8c.html#a1e4d3ce2e258c1af70da182d911a3cba", null ],
     [ "m_status", "status__screen_8c.html#aa70753c1475c299a99fbf946dceb9c1e", null ],
-    [ "screen_status_value", "status__screen_8c.html#a01a09ef94e00ab546916776847cc4dc1", null ],
-    [ "war_icn", "status__screen_8c.html#af185586be2ec40d1479b8616e18c5456", null ]
+    [ "screen_status_value", "status__screen_8c.html#a01a09ef94e00ab546916776847cc4dc1", null ]
 ];

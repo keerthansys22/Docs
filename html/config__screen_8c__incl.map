@@ -1,5 +1,5 @@
-<map id="GUI/Screens/config_screen.c" name="GUI/Screens/config_screen.c">
-<area shape="rect" id="Node000001" title="Source that displays configuration (sub&#45;menu) (ip_address_configuration) screen." alt="" coords="5,5,139,48"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="26,96,118,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,49,75,80,69,80,69,49"/>
+<map id="C:/D/GitHub/Valve Island/Main_Bus_Node/Source/Arrow3&#45;MBN&#45;APP_V1.2.0T/Arrow3_MBN_APP_V1.2.0T/Src/GUI/Screens/config_screen.c" name="C:/D/GitHub/Valve Island/Main_Bus_Node/Source/Arrow3&#45;MBN&#45;APP_V1.2.0T/Arrow3_MBN_APP_V1.2.0T/Src/GUI/Screens/config_screen.c">
+<area shape="rect" id="Node000001" title="Source that displays configuration (sub&#45;menu) (ip_address_configuration) screen." alt="" coords="5,5,223,96"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="68,144,160,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,96,117,128,111,128,111,96"/>
 </map>

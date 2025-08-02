@@ -1,0 +1,11 @@
+<map id="getDiscoveryDetails" name="getDiscoveryDetails">
+<area shape="rect" id="Node000001" title="Retrieves discovery details of the modules." alt="" coords="5,31,141,57"/>
+<area shape="rect" id="Node000002" href="$_app_data_interface_8c.html#afde155105217b10b0c6e274f438be8a0" title=": Reads the discovery information from the shared memory" alt="" coords="189,5,311,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,32,173,27,174,32,142,37"/>
+<area shape="rect" id="Node000004" href="$_main_bus_node_8c.html#a2ff0ea3717aee424b4122935e1578c43" title=" " alt="" coords="201,56,299,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,51,187,58,186,63,141,56"/>
+<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="360,5,521,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,16,344,16,344,21,311,21"/>
+<area shape="rect" id="Node000005" href="$_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="359,56,522,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="299,67,343,67,343,72,299,72"/>
+</map>

@@ -2,8 +2,17 @@ var searchData=
 [
   ['update_5fmac_5fscreen_0',['update_mac_screen',['../mac__screen_8c.html#a1c7289e9f8ca482aa0d0ba0c1af96da0',1,'mac_screen.c']]],
   ['updatecpswportconfiguartion_1',['updateCpswPortConfiguartion',['../_main_bus_node_8c.html#a2acf746b21e600f86d117df8e8107e2b',1,'MainBusNode.c']]],
-  ['updatembnvavolatge_2',['updateMBNVaVolatge',['../_main_bus_node_8c.html#a5f69684ec78d8ed0c94ae6e81080cde9',1,'MainBusNode.c']]],
-  ['updatembnvbvolatge_3',['updateMBNVbVolatge',['../_main_bus_node_8c.html#a7160f3fbd59e634e42b954e101b5e3e4',1,'MainBusNode.c']]],
-  ['upgrade_5findex_4',['upgrade_index',['../lvgl__gui_8c.html#a2a9e882327ae7a22148096d9fe042068',1,'lvgl_gui.c']]],
-  ['upgrade_5ftitle_5',['upgrade_title',['../config__screen_8c.html#af31f7a5b615478ae835b6b73f265c952',1,'config_screen.c']]]
+  ['updated_5fsuccess_5fflag_2',['UPDATED_SUCCESS_FLAG',['../_firmware___upgrade_8c.html#ab5f65710498bdb63c70035e9a36b1168',1,'Firmware_Upgrade.c']]],
+  ['upgrade_5fcontent_5findex_3',['upgrade_content_index',['../lvgl__gui_8c.html#a010ef7f73ab3d09a437cf398fca658e4',1,'lvgl_gui.c']]],
+  ['upgrade_5fdetails_2ec_4',['upgrade_details.c',['../upgrade__details_8c.html',1,'']]],
+  ['upgrade_5fenabled_5',['upgrade_enabled',['../lvgl__gui_8c.html#a74a1d3de2adc41e0c25b3ba7971bc116',1,'upgrade_enabled:&#160;lvgl_gui.c'],['../upgrade__screen_8c.html#a74a1d3de2adc41e0c25b3ba7971bc116',1,'upgrade_enabled:&#160;lvgl_gui.c'],['../_data_server_monitor_led_8c.html#a74a1d3de2adc41e0c25b3ba7971bc116',1,'upgrade_enabled:&#160;lvgl_gui.c']]],
+  ['upgrade_5fhandlers_5fio_6',['upgrade_handlers_IO',['../upgrade__details_8c.html#ad349cd6ecbf9e3793a48844696b9c03b',1,'upgrade_details.c']]],
+  ['upgrade_5fhandlers_5fprop_5fzone_7',['upgrade_handlers_PROP_ZONE',['../upgrade__details_8c.html#a5117fffe259c80733d4ea2aea38e37de',1,'upgrade_details.c']]],
+  ['upgrade_5fhandlers_5fvalves_8',['upgrade_handlers_VALVES',['../upgrade__details_8c.html#af84509ddb0e66bc05dec4e234b87ce12',1,'upgrade_details.c']]],
+  ['upgrade_5findex_9',['upgrade_index',['../lvgl__gui_8c.html#a2a9e882327ae7a22148096d9fe042068',1,'lvgl_gui.c']]],
+  ['upgrade_5fscreen_2ec_10',['upgrade_screen.c',['../upgrade__screen_8c.html',1,'']]],
+  ['upgrade_5fscreen_5fstyle_11',['upgrade_screen_style',['../lvgl__gui_8c.html#acb97d6bc29bfc3a58902ccdac46dad27',1,'upgrade_screen_style():&#160;upgrade_screen.c'],['../upgrade__screen_8c.html#acb97d6bc29bfc3a58902ccdac46dad27',1,'upgrade_screen_style():&#160;upgrade_screen.c']]],
+  ['upgrade_5ftitle_12',['upgrade_title',['../config__screen_8c.html#af31f7a5b615478ae835b6b73f265c952',1,'config_screen.c']]],
+  ['upgradefirmware_13',['UpgradeFirmware',['../_firmware___upgrade_8c.html#ac59fa6e58b636107d2c88f06fdc14cc5',1,'Firmware_Upgrade.c']]],
+  ['upgrades_5fmodule_5fcount_14',['upgrades_module_count',['../upgrade__details_8c.html#a23a7a13027f1eec3d142df57cb9c5c40',1,'upgrade_details.c']]]
 ];

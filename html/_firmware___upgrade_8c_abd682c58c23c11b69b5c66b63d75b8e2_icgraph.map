@@ -1,0 +1,11 @@
+<map id="performFirmwareHandshake" name="performFirmwareHandshake">
+<area shape="rect" id="Node000001" title="This function is to perform the handshake before starting the firmware uprade with the modules." alt="" coords="644,5,826,32"/>
+<area shape="rect" id="Node000002" href="$_firmware___upgrade_8c.html#ac59fa6e58b636107d2c88f06fdc14cc5" title="Updates the firmware of the specified module." alt="" coords="473,5,596,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="628,21,596,21,596,16,628,16"/>
+<area shape="rect" id="Node000003" href="$upgrade__details_8c.html#a0b6bfe90c92e9b6b4399f9255150d9b5" title="Function that starts the upgrade process for all the upgrade enabled modules (IO &amp; ISEM Backplane mod..." alt="" coords="272,5,425,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="458,21,426,21,426,16,458,16"/>
+<area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,5,224,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="257,21,224,21,224,16,257,16"/>
+<area shape="rect" id="Node000005" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,5,69,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="101,21,69,21,69,16,101,16"/>
+</map>

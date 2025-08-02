@@ -1,0 +1,9 @@
+<map id="getPressureZoneProcessData" name="getPressureZoneProcessData">
+<area shape="rect" id="Node000001" title="Get the process data for a specific pressure zone." alt="" coords="5,64,200,91"/>
+<area shape="rect" id="Node000002" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="292,5,398,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,61,276,32,278,38,161,66"/>
+<area shape="rect" id="Node000003" href="$_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=": This function is to fetch the pressure zone process data address based on the handler" alt="" coords="248,56,442,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,75,232,75,232,80,200,80"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="264,123,426,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,89,273,116,271,121,160,94"/>
+</map>

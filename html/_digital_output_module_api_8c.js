@@ -35,12 +35,12 @@ var _digital_output_module_api_8c =
     [ "DO_MOD_POST_ERR_STATUS_ADDR", "_digital_output_module_api_8c.html#a8c49d0e81d3bb9c49c223d3e2e285515", null ],
     [ "DO_MOD_SERVICE_DATA_ADDR", "_digital_output_module_api_8c.html#a326d556d307fe9fa14ba3c89fc1cbf7f", null ],
     [ "DO_MOD_VA_VB_VOLTAGE_ADDR", "_digital_output_module_api_8c.html#a6cd7255c9fb3b5652b03130dc01182ff", null ],
-    [ "getDigitalOutputModuleServiceParam", "_digital_output_module_api_8c.html#ab2e41bda4f6cd57f8bd6f3234be38eee", null ],
-    [ "getDOModuleProcessData", "_digital_output_module_api_8c.html#a8ebd1283a0bc22df56bdcd81f7f6bad7", null ],
+    [ "getDigitalOutputModuleServiceParam", "_digital_output_module_api_8c.html#a48cf0e81babe699595a2cb0b22ebc402", null ],
+    [ "getDOModuleProcessData", "_digital_output_module_api_8c.html#aadf60f91cb1279ce53053aa8f2bb540d", null ],
     [ "getIOProcessDataInstanceAddress", "_digital_output_module_api_8c.html#a91f3bb33371373e3e9b48b2290355551", null ],
     [ "getIOServiceDataInstanceAddress", "_digital_output_module_api_8c.html#aab64cdfe20fa84db4be92c96380d60a2", null ],
     [ "readSharedMemoryData", "_digital_output_module_api_8c.html#ae512dcee3f48f317872617e5f4559b19", null ],
-    [ "setDigitalOutputModuleServiceParam", "_digital_output_module_api_8c.html#a046eb71db4785ad426457417bd2b9e78", null ],
-    [ "setDOModuleProcessData", "_digital_output_module_api_8c.html#aa09f8d3d99f60e963431272555344d83", null ],
+    [ "setDigitalOutputModuleServiceParam", "_digital_output_module_api_8c.html#aae12f612f2acc300514f5a75090e2c73", null ],
+    [ "setDOModuleProcessData", "_digital_output_module_api_8c.html#a504d8f49a4aecfdbad5c4264dc17a9a9", null ],
     [ "gbuf", "_digital_output_module_api_8c.html#ad9088d5017838792bd64e604162503df", null ]
 ];

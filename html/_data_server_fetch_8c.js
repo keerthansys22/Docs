@@ -11,10 +11,14 @@ var _data_server_fetch_8c =
     [ "dio_handlers", "_data_server_fetch_8c.html#a469ccdb9274911410aa03d305dda5343", null ],
     [ "discover_details", "_data_server_fetch_8c.html#aecc928609def218c15f7c59447eb5a32", null ],
     [ "do_handlers", "_data_server_fetch_8c.html#a92e023a01eb6cda34cb71ffb24aac30d", null ],
+    [ "isem_backplane_process_data", "_data_server_fetch_8c.html#abba1be7e543291b566c0c3e336f6cb3f", null ],
+    [ "isemdiag_backplane_handlers", "_data_server_fetch_8c.html#a3670093bdc0a6ac2825d6c71d3448450", null ],
+    [ "prop_zone_backplane_handlers", "_data_server_fetch_8c.html#a82954eeda584cfe43f08e3742c76d4a0", null ],
+    [ "prop_zone_controller_handlers", "_data_server_fetch_8c.html#ab58f3f9d3624cf5a1a289fbe9fa96961", null ],
+    [ "prop_zone_handlers", "_data_server_fetch_8c.html#aa99741c64ccbcc97a4d63b9364f74eac", null ],
     [ "pz_count_details", "_data_server_fetch_8c.html#a639ca1471160314ce61d52506c2a8d0d", null ],
     [ "pz_handlers", "_data_server_fetch_8c.html#a8f6252caf33f738fd9f6e6c46db45eb8", null ],
     [ "pzprocessdata", "_data_server_fetch_8c.html#a644a7122ac98484b70280037d862e9c0", null ],
     [ "standard_valve_handlers", "_data_server_fetch_8c.html#a33c9d8d2ebd58c0dcf868d7c0ab472d1", null ],
-    [ "system_info", "_data_server_fetch_8c.html#a6dad6684cbe35726f4ae5cd7a3584616", null ],
-    [ "task1", "_data_server_fetch_8c.html#ae423b79bc939baf59a8f58f32f547fe0", null ]
+    [ "system_info", "_data_server_fetch_8c.html#a6dad6684cbe35726f4ae5cd7a3584616", null ]
 ];

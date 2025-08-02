@@ -39,10 +39,10 @@ var _digital_input_module_api_8c =
     [ "DI_MOD_POST_ERR_STATUS_ADDR", "_digital_input_module_api_8c.html#ad408e2363a548557d8ecf50449241a9a", null ],
     [ "DI_MOD_SERVICE_DATA_ADDR", "_digital_input_module_api_8c.html#ad44be01645ef056192d7ec4c960e1509", null ],
     [ "DI_MOD_VA_VB_VOLTAGE_ADDR", "_digital_input_module_api_8c.html#a14d2092ceb8a869000ef1a34f4795361", null ],
-    [ "getDigitalInputModuleServiceParam", "_digital_input_module_api_8c.html#a046c1082307d620d997ebfbda57d5143", null ],
-    [ "getDIModuleProcessData", "_digital_input_module_api_8c.html#a8b6583c29a7527bb06e572db885e8145", null ],
+    [ "getDigitalInputModuleServiceParam", "_digital_input_module_api_8c.html#a15dad055bdf3cd7d7bd3f4b85b63186f", null ],
+    [ "getDIModuleProcessData", "_digital_input_module_api_8c.html#a1c01be348fd5a50764267b3bfebb418a", null ],
     [ "getIOProcessDataInstanceAddress", "_digital_input_module_api_8c.html#a91f3bb33371373e3e9b48b2290355551", null ],
     [ "getIOServiceDataInstanceAddress", "_digital_input_module_api_8c.html#aab64cdfe20fa84db4be92c96380d60a2", null ],
-    [ "setDigitalInputModuleServiceParam", "_digital_input_module_api_8c.html#a1dffd723ee55fedcec3371b78272d282", null ],
+    [ "setDigitalInputModuleServiceParam", "_digital_input_module_api_8c.html#aca2aa16b702f01313b6791a82ebf8ada", null ],
     [ "gbuf", "_digital_input_module_api_8c.html#ad9088d5017838792bd64e604162503df", null ]
 ];

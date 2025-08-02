@@ -1,0 +1,14 @@
+<map id="performFirmwareFlashAbort" name="performFirmwareFlashAbort">
+<area shape="rect" id="Node000001" title="This function aborts the firmware upgrade flash process." alt="" coords="5,81,186,108"/>
+<area shape="rect" id="Node000002" href="$_firmware___upgrade_8c.html#a400a8be20c96a5efd37118582c474de8" title=" " alt="" coords="278,5,335,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,78,233,41,262,31,264,36,235,47,135,83"/>
+<area shape="rect" id="Node000003" href="$_firmware___upgrade_8c.html#af2c561995b4de360357d8e4f51bb0572" title=" " alt="" coords="266,56,347,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,81,250,73,251,79,187,86"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="234,107,379,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="187,103,218,107,218,112,186,108"/>
+<area shape="rect" id="Node000006" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="240,157,373,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="135,106,235,143,252,149,250,154,233,148,133,111"/>
+<area shape="rect" id="Node000005" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="427,132,532,159"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="380,128,412,133,411,138,379,133"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="373,158,411,153,412,158,374,164"/>
+</map>

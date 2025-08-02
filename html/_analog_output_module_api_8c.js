@@ -50,11 +50,11 @@ var _analog_output_module_api_8c =
     [ "AO_MOD_UPPER_LIMIT_MONITOR_ENABLE_ADDR", "_analog_output_module_api_8c.html#a2cbaebbe6c34c5a3cb0ea156329dd65b", null ],
     [ "AO_MOD_UPPER_LIMIT_VALUE_ADDR", "_analog_output_module_api_8c.html#a562e0e58254f95033f9236e87382b62e", null ],
     [ "AO_MOD_VA_VB_VOLTAGE_ADDR", "_analog_output_module_api_8c.html#a48dcd103458d1c766173afd6cf4d213a", null ],
-    [ "getAnalogOutputModuleServiceParam", "_analog_output_module_api_8c.html#a2b5385207248a4e6b107803a0d4b350a", null ],
-    [ "getAOModuleProcessData", "_analog_output_module_api_8c.html#a3b00370f3a8bc5ca0b85d10379d1550e", null ],
+    [ "getAnalogOutputModuleServiceParam", "_analog_output_module_api_8c.html#a39b4dc041cb0c9777ac20309b4951c6e", null ],
+    [ "getAOModuleProcessData", "_analog_output_module_api_8c.html#ab50668e530ecd905d3aacd63b7a4b72a", null ],
     [ "getIOProcessDataInstanceAddress", "_analog_output_module_api_8c.html#a91f3bb33371373e3e9b48b2290355551", null ],
     [ "getIOServiceDataInstanceAddress", "_analog_output_module_api_8c.html#aab64cdfe20fa84db4be92c96380d60a2", null ],
-    [ "setAnalogOutputModuleServiceParam", "_analog_output_module_api_8c.html#a9f4beeefd13735079c96473b454b3270", null ],
-    [ "setAOModuleProcessData", "_analog_output_module_api_8c.html#a225a359981b73383fe1810b37467283d", null ],
+    [ "setAnalogOutputModuleServiceParam", "_analog_output_module_api_8c.html#aae1981ccd20def5950bda019fd0c40ae", null ],
+    [ "setAOModuleProcessData", "_analog_output_module_api_8c.html#ab797ee4ee4c9cc2da0f55d9e5099cb19", null ],
     [ "gbuf", "_analog_output_module_api_8c.html#ad9088d5017838792bd64e604162503df", null ]
 ];

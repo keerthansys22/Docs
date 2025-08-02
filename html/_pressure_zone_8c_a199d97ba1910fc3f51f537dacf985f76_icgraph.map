@@ -1,0 +1,12 @@
+<map id="clearwarningfault" name="clearwarningfault">
+<area shape="rect" id="Node000001" title="This API is to clear the warning and fault bits of the modules @Note : This API can clear particular ..." alt="" coords="499,35,617,61"/>
+<area shape="rect" id="Node000002" href="$valves__modules__status__info_8c.html#aa164888e33feacda7236004c79306b87" title="Function to clear all status messages." alt="" coords="272,5,451,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="484,40,452,35,452,29,484,34"/>
+<area shape="rect" id="Node000005" href="$valves__modules__status__info_8c.html#a4c98732ae9f946e8ad3c716bd836320a" title="Function to clear individual status message." alt="" coords="286,56,437,99"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="485,62,438,69,438,63,484,56"/>
+<area shape="rect" id="Node000003" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,35,224,61"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,37,225,42,224,37,256,32"/>
+<area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,35,69,61"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="101,51,69,51,69,45,101,45"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="270,66,224,59,225,54,271,61"/>
+</map>

@@ -71,13 +71,11 @@ var _analog_input_output_api_8c =
     [ "AIO_MOD_POST_ERROR_STATUS_ADDR", "_analog_input_output_api_8c.html#a96ab7376de40fec3a82003da9dbb3509", null ],
     [ "AIO_MOD_SERVICE_DATA_ADDR", "_analog_input_output_api_8c.html#ab2e2cad52b51848018c1f1a70417f50c", null ],
     [ "AIO_MOD_VA_VB_VOLTAGE_ADDR", "_analog_input_output_api_8c.html#a41d76881dd5b4558c0fe4589e41479de", null ],
-    [ "getAIOModuleProcessData", "_analog_input_output_api_8c.html#a1f8ab9854c2deaffad41501aa7eca426", null ],
-    [ "getAnalogInputOutputServiceData", "_analog_input_output_api_8c.html#a4fc906d0b3feeafa0f217d95654b43b3", null ],
+    [ "getAIOModuleProcessData", "_analog_input_output_api_8c.html#a9552c155c5572dc3d5de61a386e2cab4", null ],
+    [ "getAnalogInputOutputServiceData", "_analog_input_output_api_8c.html#aa82a24c0ccf8e52170a0ca66b9cc48e9", null ],
     [ "getIOProcessDataInstanceAddress", "_analog_input_output_api_8c.html#a91f3bb33371373e3e9b48b2290355551", null ],
     [ "getIOServiceDataInstanceAddress", "_analog_input_output_api_8c.html#aab64cdfe20fa84db4be92c96380d60a2", null ],
-    [ "readSharedMemoryData", "_analog_input_output_api_8c.html#ae512dcee3f48f317872617e5f4559b19", null ],
-    [ "setAIOModuleProcessData", "_analog_input_output_api_8c.html#abe5a30d36357c0fada90ee802aa49d48", null ],
-    [ "setAnalogInputOutputServiceData", "_analog_input_output_api_8c.html#a47f316d2e168adb8b3f0651d7f1642aa", null ],
-    [ "writeSharedMemoryData", "_analog_input_output_api_8c.html#a2383a3641c7a989a9d6c99be17bf45c8", null ],
+    [ "setAIOModuleProcessData", "_analog_input_output_api_8c.html#a65327d2f0bec60cade88ced13eb05b58", null ],
+    [ "setAnalogInputOutputServiceData", "_analog_input_output_api_8c.html#a0c8d871f06af6b7b177dc4099ec5e838", null ],
     [ "gbuf", "_analog_input_output_api_8c.html#ad9088d5017838792bd64e604162503df", null ]
 ];

@@ -1,0 +1,11 @@
+<map id="ethercatLedTask" name="ethercatLedTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,123,57"/>
+<area shape="rect" id="Node000002" href="$_data_server_monitor_led_8c.html#af5cb2ba0d32e073daaf90d4aef07dac2" title=" " alt="" coords="171,31,341,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,41,155,41,155,47,123,47"/>
+<area shape="rect" id="Node000003" href="$_main_bus_node_8c.html#abe031420b8be8efdab37b916cd7a6a2d" title="Retrieves the EtherCAT run and error status from shared memory." alt="" coords="389,5,570,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,32,373,28,374,33,342,37"/>
+<area shape="rect" id="Node000005" href="$_data_server_led_indication_8c.html#af352e029b1015e3dea14361b83d76445" title=" " alt="" coords="414,56,545,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="342,51,399,58,398,63,341,56"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="618,5,780,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="570,16,603,16,603,21,570,21"/>
+</map>

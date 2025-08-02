@@ -1,0 +1,5 @@
+<map id="ipc_send_message" name="ipc_send_message">
+<area shape="rect" id="Node000001" title="Send an IPC message through the specified file descriptor." alt="" coords="5,5,139,32"/>
+<area shape="rect" id="Node000002" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="187,5,292,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,16,171,16,171,21,139,21"/>
+</map>

@@ -1,8 +1,8 @@
 <map id="fetch_propzone_identification_parameters" name="fetch_propzone_identification_parameters">
 <area shape="rect" id="Node000001" title="Function that fetches the PropZone identification parameters." alt="" coords="5,23,194,65"/>
-<area shape="rect" id="Node000002" href="$_app_data_interce_8c.html#a46e2d1acaec3ced3fc4301e7c7d42fb2" title="This api is to get the External Prop Valve Part number." alt="" coords="242,5,425,32"/>
+<area shape="rect" id="Node000002" href="$_app_data_interface_8c.html#a46e2d1acaec3ced3fc4301e7c7d42fb2" title="This api is to get the External Prop Valve Part number." alt="" coords="242,5,425,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,31,226,28,227,33,194,36"/>
-<area shape="rect" id="Node000003" href="$_app_data_interce_8c.html#ad9b02c253eb339a52cfef89977d11b91" title="Retrieves the identification info of the External prop." alt="" coords="244,56,423,83"/>
+<area shape="rect" id="Node000003" href="$_app_data_interface_8c.html#ac9c8ae40192cd0d8fc49a401b28849e9" title="Retrieves the identification info of the External prop." alt="" coords="244,56,423,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,52,229,55,228,61,194,57"/>
 <area shape="rect" id="Node000004" href="$_external_prop_8c.html#acf4b478db18710fcdd7868a9aa4e3ec7" title=" " alt="" coords="473,31,684,57"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="423,57,457,54,458,59,423,63"/>
