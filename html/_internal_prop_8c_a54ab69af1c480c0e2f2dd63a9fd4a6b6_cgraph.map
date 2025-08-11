@@ -1,0 +1,9 @@
+<map id="getIntPropProcessData" name="getIntPropProcessData">
+<area shape="rect" id="Node000001" title="Retrieves diagnostic process data for a specified Internal Prop." alt="" coords="5,64,161,91"/>
+<area shape="rect" id="Node000002" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="253,5,359,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,61,208,41,237,34,239,39,209,47,137,66"/>
+<area shape="rect" id="Node000003" href="$_pressure_zone_8c.html#afffe0a8cc543604a9a4c31b71fe442bd" title=": This function is to fetch the pressure zone process data address based on the handler" alt="" coords="209,56,403,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,75,193,75,193,80,161,80"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="225,123,387,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="137,89,209,108,238,116,236,121,208,113,136,94"/>
+</map>

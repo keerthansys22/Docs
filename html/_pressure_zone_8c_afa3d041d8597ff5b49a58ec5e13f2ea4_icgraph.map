@@ -10,7 +10,7 @@
 <area shape="poly" id="edge33_Node000001_Node000023" title=" " alt="" coords="1896,465,1847,498,1791,526,1755,538,1754,533,1789,522,1844,493,1893,461"/>
 <area shape="rect" id="Node000027" href="$_app_data_interface_8c.html#a38b4de8794e3ef11e5ce137f95158207" title="Retrieves the identification info of the Internal Prop ." alt="" coords="1579,317,1751,344"/>
 <area shape="poly" id="edge38_Node000001_Node000027" title=" " alt="" coords="1885,405,1839,380,1789,359,1749,347,1751,342,1791,353,1841,375,1887,400"/>
-<area shape="rect" id="Node000028" href="$_interanl_prop_8c.html#a4c182c9aa73fa1ec8d77e90237bc4fe7" title="Retrieves the service parameter of the Internal Prop." alt="" coords="1560,368,1770,395"/>
+<area shape="rect" id="Node000028" href="$_internal_prop_8c.html#a4c182c9aa73fa1ec8d77e90237bc4fe7" title="Retrieves the service parameter of the Internal Prop." alt="" coords="1560,368,1770,395"/>
 <area shape="poly" id="edge40_Node000001_Node000028" title=" " alt="" coords="1822,414,1740,398,1741,393,1823,408"/>
 <area shape="rect" id="Node000029" href="$_app_data_interface_8c.html#a6035bc300670ceaa8bd6cd0128b758ea" title="Retrieves the identification info of the ISEM DIAG BackPlane valve." alt="" coords="1297,419,1492,445"/>
 <area shape="poly" id="edge41_Node000001_Node000029" title=" " alt="" coords="1822,435,1493,435,1493,429,1822,429"/>
@@ -22,7 +22,7 @@
 <area shape="poly" id="edge47_Node000001_Node000032" title=" " alt="" coords="1912,467,1860,524,1827,553,1791,577,1763,589,1761,584,1788,572,1824,549,1857,521,1908,464"/>
 <area shape="rect" id="Node000033" href="$_diag_valve_api_8c.html#a824a998c32bcd1010e84495447188e36" title="Sets the service parameter data for a specified ." alt="" coords="1552,637,1778,664"/>
 <area shape="poly" id="edge48_Node000001_Node000033" title=" " alt="" coords="1920,469,1899,507,1870,550,1834,592,1791,628,1768,639,1765,634,1788,623,1831,589,1866,547,1895,504,1915,466"/>
-<area shape="rect" id="Node000034" href="$_interanl_prop_8c.html#aeebb300b3826d3b742757f677cc51377" title="Sets the service parameter data for a specified Internal Prop." alt="" coords="1560,688,1770,715"/>
+<area shape="rect" id="Node000034" href="$_internal_prop_8c.html#aeebb300b3826d3b742757f677cc51377" title="Sets the service parameter data for a specified Internal Prop." alt="" coords="1560,688,1770,715"/>
 <area shape="poly" id="edge49_Node000001_Node000034" title=" " alt="" coords="1926,469,1907,517,1879,574,1841,631,1817,656,1791,678,1770,690,1768,685,1788,674,1814,652,1837,628,1875,572,1902,515,1921,467"/>
 <area shape="rect" id="Node000035" href="$_isem_diag_valve_api_8c.html#ab934493a445be879bdf91ee16ffa79a6" title="Sets the service parameter data for a specified ISEM DIAG ." alt="" coords="1554,739,1776,765"/>
 <area shape="poly" id="edge50_Node000001_Node000035" title=" " alt="" coords="1929,470,1914,527,1887,598,1869,634,1847,669,1821,701,1791,729,1772,740,1769,736,1788,725,1817,697,1843,666,1864,632,1882,596,1909,526,1924,468"/>

@@ -38,9 +38,9 @@
 <area shape="poly" id="edge50_Node000001_Node000052" title=" " alt="" coords="656,897,647,959,626,1038,609,1080,588,1121,562,1158,531,1190,500,1207,498,1202,527,1186,558,1154,584,1118,604,1078,621,1037,642,958,651,897"/>
 <area shape="rect" id="Node000053" href="$_prop_back_plane_api_8c.html#ae811811727ce1d5e6c4c0547ac5be835" title="Retrieves the service parameter of the Internal Prop Backplane ." alt="" coords="277,1032,526,1059"/>
 <area shape="poly" id="edge51_Node000001_Node000053" title=" " alt="" coords="644,896,599,961,567,994,530,1022,505,1034,503,1029,528,1018,564,990,595,957,640,893"/>
-<area shape="rect" id="Node000054" href="$_interanl_prop_8c.html#a54ab69af1c480c0e2f2dd63a9fd4a6b6" title="Retrieves diagnostic process data for a specified Internal Prop." alt="" coords="324,1251,479,1277"/>
+<area shape="rect" id="Node000054" href="$_internal_prop_8c.html#a54ab69af1c480c0e2f2dd63a9fd4a6b6" title="Retrieves diagnostic process data for a specified Internal Prop." alt="" coords="324,1251,479,1277"/>
 <area shape="poly" id="edge53_Node000001_Node000054" title=" " alt="" coords="658,897,652,967,633,1060,616,1110,595,1158,566,1202,531,1241,507,1256,480,1264,478,1259,505,1251,527,1237,562,1199,590,1155,612,1108,628,1059,646,966,653,896"/>
-<area shape="rect" id="Node000055" href="$_interanl_prop_8c.html#a4c182c9aa73fa1ec8d77e90237bc4fe7" title="Retrieves the service parameter of the Internal Prop." alt="" coords="297,1301,506,1328"/>
+<area shape="rect" id="Node000055" href="$_internal_prop_8c.html#a4c182c9aa73fa1ec8d77e90237bc4fe7" title="Retrieves the service parameter of the Internal Prop." alt="" coords="297,1301,506,1328"/>
 <area shape="poly" id="edge54_Node000001_Node000055" title=" " alt="" coords="660,897,656,976,650,1027,639,1083,623,1139,601,1195,570,1247,531,1291,508,1306,505,1302,527,1287,566,1244,596,1193,618,1138,634,1081,645,1026,651,975,654,897"/>
 <area shape="rect" id="Node000056" href="$_main_bus_node_8c.html#a3fad6f3c512bdea33ac525acd4eb029a" title="Retrieves the IP address of the specified port." alt="" coords="353,1352,450,1379"/>
 <area shape="poly" id="edge55_Node000001_Node000056" title=" " alt="" coords="655,897,640,997,613,1130,596,1198,577,1258,555,1308,531,1342,513,1355,492,1363,451,1370,450,1365,491,1358,510,1350,527,1338,551,1306,572,1257,591,1196,608,1129,635,996,650,896"/>

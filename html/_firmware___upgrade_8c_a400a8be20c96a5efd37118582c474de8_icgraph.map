@@ -3,15 +3,15 @@
 <area shape="rect" id="Node000002" href="$_firmware___upgrade_8c.html#a28bc829bc230dcbfc7d1c6b6ba229dec" title="This function ensures that the modules are ready for firmware upgrade." alt="" coords="650,5,842,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="906,121,881,85,846,53,809,35,812,30,850,48,885,82,911,117"/>
 <area shape="rect" id="Node000003" href="$_firmware___upgrade_8c.html#ac59fa6e58b636107d2c88f06fdc14cc5" title="Updates the firmware of the specified module." alt="" coords="473,132,596,159"/>
-<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="895,124,873,109,847,97,791,83,747,80,701,85,644,97,598,113,559,134,557,129,596,109,643,92,700,80,746,75,792,78,849,92,875,104,898,120"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="895,124,873,109,847,97,791,83,747,80,701,85,644,97,598,113,559,134,557,129,596,109,643,92,700,80,746,75,792,78,849,92,875,104,898,120"/>
 <area shape="rect" id="Node000007" href="$_firmware___upgrade_8c.html#a36d6fe2a8bcf6d6b3841246c8fc9a77e" title="This function aborts the firmware upgrade flash process." alt="" coords="656,107,836,133"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="880,142,836,135,837,130,881,137"/>
 <area shape="rect" id="Node000008" href="$_firmware___upgrade_8c.html#ac8063b75102fb954599174fdd67c4b1a" title="This function aborts the firmware upgrade flash process." alt="" coords="649,157,843,184"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="881,154,843,160,842,154,880,149"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="881,154,843,160,842,154,880,149"/>
 <area shape="rect" id="Node000009" href="$_firmware___upgrade_8c.html#abd682c58c23c11b69b5c66b63d75b8e2" title="This function is to perform the handshake before starting the firmware uprade with the modules." alt="" coords="655,208,837,235"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="895,171,849,198,817,210,815,205,847,194,893,166"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="895,171,849,198,817,210,815,205,847,194,893,166"/>
 <area shape="rect" id="Node000010" href="$_firmware___upgrade_8c.html#a69bfee6bcd75c90a6315cc180dfd7efc" title=" " alt="" coords="644,259,848,285"/>
-<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="912,174,887,213,870,232,849,249,827,261,824,256,847,244,866,229,883,210,908,171"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="912,174,887,213,870,232,849,249,827,261,824,256,847,244,866,229,883,210,908,171"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="673,40,645,53,616,72,590,94,550,133,546,130,586,90,613,68,642,48,671,35"/>
 <area shape="rect" id="Node000004" href="$upgrade__details_8c.html#a0b6bfe90c92e9b6b4399f9255150d9b5" title="Function that starts the upgrade process for all the upgrade enabled modules (IO &amp; ISEM Backplane mod..." alt="" coords="272,132,425,159"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="458,148,426,148,426,143,458,143"/>
@@ -19,8 +19,6 @@
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="257,148,224,148,224,143,257,143"/>
 <area shape="rect" id="Node000006" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,132,69,159"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="101,148,69,148,69,143,101,143"/>
-<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="641,135,597,141,596,135,640,130"/>
-<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="633,160,596,155,596,150,634,155"/>
-<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="665,206,643,198,561,162,563,157,645,194,667,201"/>
-<area shape="poly" id="edge13_Node000010_Node000003" title=" " alt="" coords="655,255,642,249,612,229,584,204,545,161,548,157,588,201,615,224,645,244,658,250"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="665,206,643,198,561,162,563,157,645,194,667,201"/>
+<area shape="poly" id="edge11_Node000010_Node000003" title=" " alt="" coords="655,255,642,249,612,229,584,204,545,161,548,157,588,201,615,224,645,244,658,250"/>
 </map>

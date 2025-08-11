@@ -56,9 +56,9 @@
 <area shape="poly" id="edge51_Node000001_Node000065" title=" " alt="" coords="647,1242,629,1277,604,1318,571,1359,530,1393,507,1405,505,1400,528,1388,567,1355,599,1315,624,1275,642,1240"/>
 <area shape="rect" id="Node000066" href="$_app_data_interface_8c.html#a38b4de8794e3ef11e5ce137f95158207" title="Retrieves the identification info of the Internal Prop ." alt="" coords="315,1453,488,1480"/>
 <area shape="poly" id="edge52_Node000001_Node000066" title=" " alt="" coords="652,1242,637,1287,612,1342,577,1397,555,1422,531,1444,510,1455,489,1463,487,1458,508,1450,527,1439,552,1418,573,1394,607,1339,632,1285,647,1240"/>
-<area shape="rect" id="Node000067" href="$_interanl_prop_8c.html#a54ab69af1c480c0e2f2dd63a9fd4a6b6" title="Retrieves diagnostic process data for a specified Internal Prop." alt="" coords="324,1504,479,1531"/>
+<area shape="rect" id="Node000067" href="$_internal_prop_8c.html#a54ab69af1c480c0e2f2dd63a9fd4a6b6" title="Retrieves diagnostic process data for a specified Internal Prop." alt="" coords="324,1504,479,1531"/>
 <area shape="poly" id="edge53_Node000001_Node000067" title=" " alt="" coords="655,1243,642,1297,620,1365,603,1401,583,1435,559,1467,531,1494,506,1508,480,1516,478,1511,504,1503,527,1490,555,1463,579,1432,599,1398,615,1363,637,1295,649,1241"/>
-<area shape="rect" id="Node000068" href="$_interanl_prop_8c.html#a4c182c9aa73fa1ec8d77e90237bc4fe7" title="Retrieves the service parameter of the Internal Prop." alt="" coords="297,1555,506,1581"/>
+<area shape="rect" id="Node000068" href="$_internal_prop_8c.html#a4c182c9aa73fa1ec8d77e90237bc4fe7" title="Retrieves the service parameter of the Internal Prop." alt="" coords="297,1555,506,1581"/>
 <area shape="poly" id="edge54_Node000001_Node000068" title=" " alt="" coords="657,1243,648,1306,627,1388,611,1431,590,1473,563,1511,531,1545,507,1559,505,1554,527,1541,559,1508,585,1470,606,1429,622,1386,643,1305,652,1242"/>
 <area shape="rect" id="Node000069" href="$_app_data_interface_8c.html#a98bb7ea7364938d12f45c1ec2935802b" title="Retrieves the Digital Module Identification Info." alt="" coords="317,1605,486,1632"/>
 <area shape="poly" id="edge55_Node000001_Node000069" title=" " alt="" coords="659,1242,653,1314,634,1410,618,1461,596,1510,567,1556,531,1595,510,1609,487,1617,486,1612,508,1604,527,1591,563,1553,591,1508,613,1459,629,1409,647,1314,653,1242"/>

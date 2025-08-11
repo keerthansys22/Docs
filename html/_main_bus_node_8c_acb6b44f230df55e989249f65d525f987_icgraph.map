@@ -1,9 +1,9 @@
 <map id="setMBNServiceParam" name="setMBNServiceParam">
-<area shape="rect" id="Node000001" title="Sets the service parameter of the main bus node (MBN)." alt="" coords="935,368,1084,395"/>
-<area shape="rect" id="Node000002" href="$_data_server_monitor_led_8c.html#a93bd9d13cecd64903edf61230489ef5a" title=" " alt="" coords="774,343,887,369"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="920,371,887,367,888,361,920,366"/>
+<area shape="rect" id="Node000001" title="Sets the service parameter of the main bus node (MBN)." alt="" coords="1004,368,1153,395"/>
+<area shape="rect" id="Node000002" href="$_data_server_monitor_led_8c.html#ac96f62d0c5594b54bd56e85a473b0dd8" title=" " alt="" coords="774,343,956,369"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="989,373,957,370,957,364,990,368"/>
 <area shape="rect" id="Node000019" href="$power__on__self__test_8c.html#a2b69d74572d29a70ecb8148fdb6b9f69" title=" " alt="" coords="608,393,726,420"/>
-<area shape="poly" id="edge29_Node000001_Node000019" title=" " alt="" coords="920,391,726,405,726,400,920,385"/>
+<area shape="poly" id="edge29_Node000001_Node000019" title=" " alt="" coords="989,389,726,406,726,400,989,384"/>
 <area shape="rect" id="Node000003" href="$default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="Default function to create threads and events." alt="" coords="620,343,714,369"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="758,359,714,359,714,353,758,353"/>
 <area shape="rect" id="Node000004" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="510,368,560,395"/>

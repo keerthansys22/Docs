@@ -11,7 +11,7 @@ var _data_server_monitor_led_8c =
     [ "getValveModulesErrorStatus", "_data_server_monitor_led_8c.html#a20a4ac1b64ad62bac504668394ddee31", null ],
     [ "KeyPress_check", "_data_server_monitor_led_8c.html#a57f9e71624bc8b3bef967a3c66814f0a", null ],
     [ "longpress_callback", "_data_server_monitor_led_8c.html#a0ca34427a401d6225f367827b2ba5644", null ],
-    [ "monitorLedTask", "_data_server_monitor_led_8c.html#a93bd9d13cecd64903edf61230489ef5a", null ],
+    [ "monitorLed_Keypress_Task", "_data_server_monitor_led_8c.html#ac96f62d0c5594b54bd56e85a473b0dd8", null ],
     [ "monitorNetworkStatusLed", "_data_server_monitor_led_8c.html#af5cb2ba0d32e073daaf90d4aef07dac2", null ],
     [ "reset_timer", "_data_server_monitor_led_8c.html#aa3ef1744ca7e52c293c49ccef26798e8", null ],
     [ "start_longpress_timer", "_data_server_monitor_led_8c.html#a4456c0194a45c65f825950c8d477e420", null ],

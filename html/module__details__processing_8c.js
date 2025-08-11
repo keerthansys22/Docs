@@ -4,7 +4,6 @@ var module__details__processing_8c =
     [ "fetch_mbn_identification_parameters", "module__details__processing_8c.html#adfca9bae7bdfdd358ced96390fb1f696", null ],
     [ "fetch_propzone_identification_parameters", "module__details__processing_8c.html#aac0c03d78e4b434d9f855c01973071b1", null ],
     [ "fetch_pz_identification_parameters", "module__details__processing_8c.html#ac4306bff4d6d753d0caba597124ddbe3", null ],
-    [ "GetPartNumber", "module__details__processing_8c.html#aab7456a0120c3a3862ba1fbbd79eb424", null ],
     [ "ai_handlers", "module__details__processing_8c.html#a1b52b26f5eaa915de63b353f7186b998", null ],
     [ "aio_handlers", "module__details__processing_8c.html#a02fd0c072e2bbeb279db2b5a5e77879b", null ],
     [ "ao_handlers", "module__details__processing_8c.html#aa42415ce458bf3e4b6111071869ee688", null ],

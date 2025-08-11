@@ -1,0 +1,7 @@
+<map id="clear_all_status_messages" name="clear_all_status_messages">
+<area shape="rect" id="Node000001" title="Function to clear all status messages." alt="" coords="272,5,451,32"/>
+<area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,5,224,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,21,225,21,225,16,256,16"/>
+<area shape="rect" id="Node000003" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,5,69,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,21,69,21,69,16,101,16"/>
+</map>

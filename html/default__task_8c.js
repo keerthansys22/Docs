@@ -10,7 +10,7 @@ var default__task_8c =
     [ "getindexvalue", "default__task_8c.html#aa3a14562de0d1c12332a88b8f0a77c27", null ],
     [ "getModuleNumber", "default__task_8c.html#a744f1cd07a566814b870a1c9c929abe5", null ],
     [ "lvgl_gui", "default__task_8c.html#ae180d7c2955f762dead3989385de847c", null ],
-    [ "monitorLedTask", "default__task_8c.html#ac5ff31485a0894b4b43136d94049c98f", null ],
+    [ "monitorLed_Keypress_Task", "default__task_8c.html#a1edba6991c088b7e30608e5fc196e9a3", null ],
     [ "monitorNetworkStatusLed", "default__task_8c.html#af5cb2ba0d32e073daaf90d4aef07dac2", null ],
     [ "my_perror", "default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36", null ],
     [ "read_dv_fault_csv", "default__task_8c.html#a628e7c7a00aab18227d4e7dc4c8b1742", null ],

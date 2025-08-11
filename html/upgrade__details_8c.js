@@ -1,5 +1,6 @@
 var upgrade__details_8c =
 [
+    [ "ValvePair", "struct_valve_pair.html", "struct_valve_pair" ],
     [ "check_upgrade_available", "upgrade__details_8c.html#acfc223d34d658d2574a53d9bb0c6a7c9", null ],
     [ "fetch_upgrade_details", "upgrade__details_8c.html#a773db2ab78f39e0194c877a57a2eac3f", null ],
     [ "start_upgrade_process", "upgrade__details_8c.html#a0b6bfe90c92e9b6b4399f9255150d9b5", null ],
@@ -27,8 +28,8 @@ var upgrade__details_8c =
     [ "pz_count_details", "upgrade__details_8c.html#a639ca1471160314ce61d52506c2a8d0d", null ],
     [ "pz_handlers", "upgrade__details_8c.html#a8f6252caf33f738fd9f6e6c46db45eb8", null ],
     [ "pzonemodulesdetails_upgrade", "upgrade__details_8c.html#a2de52affd682667ba79ab836f2447aac", null ],
-    [ "upgrade_handlers_IO", "upgrade__details_8c.html#ad349cd6ecbf9e3793a48844696b9c03b", null ],
-    [ "upgrade_handlers_PROP_ZONE", "upgrade__details_8c.html#a5117fffe259c80733d4ea2aea38e37de", null ],
-    [ "upgrade_handlers_VALVES", "upgrade__details_8c.html#af84509ddb0e66bc05dec4e234b87ce12", null ],
+    [ "upgrade_handlers_IO", "upgrade__details_8c.html#aa3e6198cd54eb45f21337f150aa91c6e", null ],
+    [ "upgrade_handlers_PROP_ZONE", "upgrade__details_8c.html#abb4479038aa21cfd806a7e8699f3161f", null ],
+    [ "upgrade_valve_pairs", "upgrade__details_8c.html#a134b9c24f25a34c5a5be18713ca280d8", null ],
     [ "upgrades_module_count", "upgrade__details_8c.html#a23a7a13027f1eec3d142df57cb9c5c40", null ]
 ];

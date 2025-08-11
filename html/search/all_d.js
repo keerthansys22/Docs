@@ -8,9 +8,9 @@ var searchData=
   ['init_5',['init',['../_app_data_init_8c.html#a3497d5b61ed336eae371348205bbe3c9',1,'init(void):&#160;AppDataInit.c'],['../_app_data_interface_8c.html#ac92a673771db92e7156490091aef7135',1,'init(void):&#160;AppDataInit.c']]],
   ['init_5fapi_5fclient_6',['init_api_client',['../_app_data_interface_8c.html#a7c8264f04d96e64e0b1af41e947b6c8b',1,'AppDataInterface.c']]],
   ['initialize_5fip_5fbuffers_7',['initialize_ip_buffers',['../lvgl__gui_8c.html#a97278a97622414d05e44346e8155702e',1,'lvgl_gui.c']]],
-  ['interanlprop_2ec_8',['InteranlProp.c',['../_interanl_prop_8c.html',1,'']]],
-  ['internal_5fadc_5ftest_9',['internal_adc_test',['../power__on__self__test_8c.html#a99fb93fc053acbdeac28adb7dd9998dc',1,'power_on_self_test.c']]],
-  ['internal_5fpressure_5fzone_10',['internal_pressure_zone',['../_app_data_interface_8c.html#ad19c359304948e3d3aea4c3ee826685c',1,'internal_pressure_zone:&#160;AppDataInterface.c'],['../_standard_valve_api_source_8c.html#ad19c359304948e3d3aea4c3ee826685c',1,'internal_pressure_zone:&#160;AppDataInterface.c']]],
+  ['internal_5fadc_5ftest_8',['internal_adc_test',['../power__on__self__test_8c.html#a99fb93fc053acbdeac28adb7dd9998dc',1,'power_on_self_test.c']]],
+  ['internal_5fpressure_5fzone_9',['internal_pressure_zone',['../_app_data_interface_8c.html#ad19c359304948e3d3aea4c3ee826685c',1,'internal_pressure_zone:&#160;AppDataInterface.c'],['../_standard_valve_api_source_8c.html#ad19c359304948e3d3aea4c3ee826685c',1,'internal_pressure_zone:&#160;AppDataInterface.c']]],
+  ['internalprop_2ec_10',['InternalProp.c',['../_internal_prop_8c.html',1,'']]],
   ['introduction_11',['Introduction',['../index.html#intro_sec',1,'']]],
   ['inx_12',['inx',['../lvgl__gui_8c.html#a57236b72e61bc83abff44e17ae84228e',1,'lvgl_gui.c']]],
   ['io_5fmodule_5finfo_13',['io_module_info',['../module__details__processing_8c.html#a350ae9e33a3016b3334d36d41513c9dc',1,'module_details_processing.c']]],
@@ -62,7 +62,8 @@ var searchData=
   ['isembackplaneapi_2ec_59',['IsemBackPlaneApi.c',['../_isem_back_plane_api_8c.html',1,'']]],
   ['isemdiag_5fbackplane_5fhandlers_60',['isemdiag_backplane_handlers',['../_data_server_fetch_8c.html#a3670093bdc0a6ac2825d6c71d3448450',1,'isemdiag_backplane_handlers:&#160;discovery.c'],['../discovery_8c.html#a3670093bdc0a6ac2825d6c71d3448450',1,'isemdiag_backplane_handlers:&#160;discovery.c'],['../upgrade__details_8c.html#a3670093bdc0a6ac2825d6c71d3448450',1,'isemdiag_backplane_handlers:&#160;discovery.c'],['../valves__modules__status__info_8c.html#a3670093bdc0a6ac2825d6c71d3448450',1,'isemdiag_backplane_handlers:&#160;discovery.c']]],
   ['isemdiag_5fbackplane_5fprocessdata_61',['isemdiag_backplane_processdata',['../isem__backplane__status__info_8c.html#aa513b54b8eccbf867fb8e587fa8238f3',1,'isem_backplane_status_info.c']]],
-  ['isemdiag_5fhandlers_62',['isemdiag_handlers',['../discovery_8c.html#abde244b58c27c11e6d996745e398332a',1,'isemdiag_handlers:&#160;discovery.c'],['../module__details__processing_8c.html#a8805f3ed6a9cc57f5be8d3493520d689',1,'isemdiag_handlers:&#160;discovery.c'],['../valves__modules__status__info_8c.html#abde244b58c27c11e6d996745e398332a',1,'isemdiag_handlers:&#160;discovery.c']]],
-  ['isemdiag_5fprocessdata_63',['isemdiag_processdata',['../isem__status__info_8c.html#aa7a7f8f97218b67ca175015b6a315f9d',1,'isem_status_info.c']]],
-  ['isemdiagvalveapi_2ec_64',['IsemDiagValveApi.c',['../_isem_diag_valve_api_8c.html',1,'']]]
+  ['isemdiag_5fhandler_62',['isemdiag_handler',['../struct_valve_pair.html#a7b5f2c1f8a88c8f3490f0099c41c9222',1,'ValvePair']]],
+  ['isemdiag_5fhandlers_63',['isemdiag_handlers',['../discovery_8c.html#abde244b58c27c11e6d996745e398332a',1,'isemdiag_handlers:&#160;discovery.c'],['../module__details__processing_8c.html#a8805f3ed6a9cc57f5be8d3493520d689',1,'isemdiag_handlers:&#160;discovery.c'],['../valves__modules__status__info_8c.html#abde244b58c27c11e6d996745e398332a',1,'isemdiag_handlers:&#160;discovery.c']]],
+  ['isemdiag_5fprocessdata_64',['isemdiag_processdata',['../isem__status__info_8c.html#aa7a7f8f97218b67ca175015b6a315f9d',1,'isem_status_info.c']]],
+  ['isemdiagvalveapi_2ec_65',['IsemDiagValveApi.c',['../_isem_diag_valve_api_8c.html',1,'']]]
 ];
