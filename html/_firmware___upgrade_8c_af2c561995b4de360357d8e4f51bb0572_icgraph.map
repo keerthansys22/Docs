@@ -4,15 +4,16 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="901,75,847,46,813,35,814,30,849,42,904,70"/>
 <area shape="rect" id="Node000003" href="$_firmware___upgrade_8c.html#ac8063b75102fb954599174fdd67c4b1a" title="This function aborts the firmware upgrade flash process." alt="" coords="649,56,843,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="880,90,843,85,844,80,881,85"/>
-<area shape="rect" id="Node000004" href="$_firmware___upgrade_8c.html#a69bfee6bcd75c90a6315cc180dfd7efc" title=" " alt="" coords="644,107,848,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="881,105,849,109,848,104,880,99"/>
-<area shape="rect" id="Node000005" href="$_firmware___upgrade_8c.html#ac59fa6e58b636107d2c88f06fdc14cc5" title="Updates the firmware of the specified module." alt="" coords="473,132,596,159"/>
-<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="907,120,880,136,849,148,782,160,714,164,650,162,596,157,597,152,651,157,714,159,781,155,847,143,877,131,904,115"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="628,137,596,141,596,135,628,131"/>
-<area shape="rect" id="Node000006" href="$upgrade__details_8c.html#a0b6bfe90c92e9b6b4399f9255150d9b5" title="Function that starts the upgrade process for all the upgrade enabled modules (IO &amp; ISEM Backplane mod..." alt="" coords="272,132,425,159"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="458,148,426,148,426,143,458,143"/>
-<area shape="rect" id="Node000007" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,132,224,159"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="257,148,224,148,224,143,257,143"/>
-<area shape="rect" id="Node000008" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,132,69,159"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="101,148,69,148,69,143,101,143"/>
+<area shape="rect" id="Node000004" href="$_firmware___upgrade_8c.html#ac59fa6e58b636107d2c88f06fdc14cc5" title="Updates the firmware of the specified module." alt="" coords="473,107,596,133"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="881,101,596,119,596,114,880,95"/>
+<area shape="rect" id="Node000008" href="$_firmware___upgrade_8c.html#a69bfee6bcd75c90a6315cc180dfd7efc" title=" " alt="" coords="644,157,848,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="898,118,849,141,797,159,796,154,847,136,896,113"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="673,90,594,109,593,103,671,84"/>
+<area shape="rect" id="Node000005" href="$upgrade__details_8c.html#a0b6bfe90c92e9b6b4399f9255150d9b5" title="Function that starts the upgrade process for all the upgrade enabled modules (IO &amp; ISEM Backplane mod..." alt="" coords="272,107,425,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="458,123,426,123,426,117,458,117"/>
+<area shape="rect" id="Node000006" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,107,224,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="257,123,224,123,224,117,257,117"/>
+<area shape="rect" id="Node000007" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,107,69,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="101,123,69,123,69,117,101,117"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="671,156,593,137,594,131,673,150"/>
 </map>
