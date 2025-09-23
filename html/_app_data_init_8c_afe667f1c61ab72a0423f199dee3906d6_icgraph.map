@@ -1,85 +1,94 @@
 <map id="ipc_receive_message" name="ipc_receive_message">
-<area shape="rect" id="Node000001" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="1350,231,1495,258"/>
-<area shape="rect" id="Node000002" href="$_firmware___upgrade_8c.html#a28bc829bc230dcbfc7d1c6b6ba229dec" title="This function ensures that the modules are ready for firmware upgrade." alt="" coords="1104,79,1295,106"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1400,221,1357,173,1330,148,1300,127,1260,109,1262,104,1303,122,1333,144,1361,169,1404,217"/>
-<area shape="rect" id="Node000003" href="$_firmware___upgrade_8c.html#ac59fa6e58b636107d2c88f06fdc14cc5" title="Updates the firmware of the specified module." alt="" coords="897,221,1019,247"/>
-<area shape="poly" id="edge51_Node000001_Node000003" title=" " alt="" coords="1393,224,1351,194,1301,171,1245,158,1200,154,1155,159,1098,171,1065,181,1034,195,982,223,980,218,1031,190,1063,176,1097,166,1154,154,1200,149,1246,153,1303,166,1354,190,1396,219"/>
-<area shape="rect" id="Node000007" href="$_pressure_zone_8c.html#a199d97ba1910fc3f51f537dacf985f76" title="This API is to clear the warning and fault bits of the modules @Note : This API can clear particular ..." alt="" coords="528,71,646,98"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1410,218,1394,182,1371,140,1340,100,1321,83,1300,70,1257,50,1211,34,1164,22,1116,14,1019,8,923,12,832,24,751,40,630,73,628,68,750,35,831,19,922,7,1019,3,1117,9,1165,17,1213,29,1259,45,1303,65,1325,79,1344,97,1376,137,1399,180,1414,216"/>
-<area shape="rect" id="Node000010" href="$_firmware___upgrade_8c.html#a36d6fe2a8bcf6d6b3841246c8fc9a77e" title="This function aborts the firmware upgrade flash process." alt="" coords="1109,181,1290,207"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1345,230,1261,211,1262,205,1346,225"/>
-<area shape="rect" id="Node000011" href="$_firmware___upgrade_8c.html#ac8063b75102fb954599174fdd67c4b1a" title="This function aborts the firmware upgrade flash process." alt="" coords="1103,231,1296,258"/>
-<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1334,247,1297,247,1297,242,1334,242"/>
-<area shape="rect" id="Node000012" href="$_firmware___upgrade_8c.html#abd682c58c23c11b69b5c66b63d75b8e2" title="This function is to perform the handshake before starting the firmware uprade with the modules." alt="" coords="1108,282,1291,309"/>
-<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1346,265,1262,284,1261,279,1345,260"/>
-<area shape="rect" id="Node000013" href="$_firmware___upgrade_8c.html#a69bfee6bcd75c90a6315cc180dfd7efc" title=" " alt="" coords="1097,333,1302,359"/>
-<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="1393,270,1352,297,1303,323,1270,335,1268,330,1301,318,1349,293,1390,265"/>
-<area shape="rect" id="Node000014" href="$_main_bus_node_8c.html#a61e7872ea957ceb6d4a569100681ebeb" title="Sets the IP address for the specified port on the main bus." alt="" coords="1125,383,1274,410"/>
-<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="1405,273,1363,324,1335,351,1303,374,1275,386,1273,381,1300,369,1331,347,1359,321,1401,269"/>
-<area shape="rect" id="Node000016" href="$_main_bus_node_8c.html#acb6b44f230df55e989249f65d525f987" title="Sets the service parameter of the main bus node (MBN)." alt="" coords="1125,549,1274,575"/>
-<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="1406,273,1304,424,1213,550,1209,547,1299,421,1401,270"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1128,114,1099,127,1061,150,1027,176,975,222,971,218,1023,172,1058,146,1096,122,1126,109"/>
-<area shape="rect" id="Node000004" href="$upgrade__details_8c.html#a0b6bfe90c92e9b6b4399f9255150d9b5" title="Function that starts the upgrade process for all the upgrade enabled modules (IO &amp; ISEM Backplane mod..." alt="" coords="510,189,664,215"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="881,230,664,211,664,206,882,225"/>
-<area shape="rect" id="Node000005" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,499,224,526"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="495,190,440,188,382,193,324,208,298,220,274,236,245,265,222,299,205,337,192,375,179,448,175,499,169,499,173,447,187,374,200,335,217,296,241,261,270,232,295,216,323,203,381,188,440,183,495,185"/>
-<area shape="rect" id="Node000006" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,499,69,526"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="101,515,69,515,69,510,101,510"/>
-<area shape="rect" id="Node000008" href="$valves__modules__status__info_8c.html#aa164888e33feacda7236004c79306b87" title="Function to clear all status messages." alt="" coords="278,71,457,98"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="513,87,457,87,457,82,513,82"/>
-<area shape="rect" id="Node000009" href="$valves__modules__status__info_8c.html#a4c98732ae9f946e8ad3c716bd836320a" title="Function to clear individual status message." alt="" coords="292,122,443,165"/>
-<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="520,105,444,126,443,121,519,100"/>
-<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="277,109,274,112,254,142,236,187,207,303,186,420,176,499,171,499,181,419,202,302,231,186,249,140,270,108,273,105"/>
-<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="284,176,274,185,245,224,222,268,205,313,193,359,179,443,175,499,169,499,173,442,187,358,200,312,218,265,241,221,270,182,281,172"/>
-<area shape="poly" id="edge13_Node000011_Node000003" title=" " alt="" coords="1087,243,1020,240,1020,234,1087,237"/>
-<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="1127,280,1097,273,1012,251,1013,246,1098,268,1128,275"/>
-<area shape="poly" id="edge17_Node000013_Node000003" title=" " alt="" coords="1115,330,1096,323,1028,286,976,250,979,246,1031,282,1098,318,1117,325"/>
-<area shape="rect" id="Node000015" href="$lvgl__gui_8c.html#a95afd94f26688620f74c97b97c3c345a" title="Function to getIpAddress and sets the user entered IpAddress." alt="" coords="712,307,819,334"/>
-<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="1110,384,819,333,820,327,1111,379"/>
-<area shape="poly" id="edge20_Node000015_Node000005" title=" " alt="" coords="696,307,589,286,465,267,405,263,350,262,306,268,273,280,247,303,226,330,209,361,197,393,181,454,175,499,170,499,176,453,192,391,205,359,222,327,243,299,271,276,304,263,350,257,405,257,466,262,590,281,697,302"/>
-<area shape="rect" id="Node000017" href="$_data_server_monitor_led_8c.html#ac96f62d0c5594b54bd56e85a473b0dd8" title=" " alt="" coords="867,599,1049,626"/>
-<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="1118,582,1026,601,1025,596,1117,577"/>
-<area shape="rect" id="Node000032" href="$power__on__self__test_8c.html#a2b69d74572d29a70ecb8148fdb6b9f69" title=" " alt="" coords="899,549,1017,575"/>
-<area shape="poly" id="edge49_Node000016_Node000032" title=" " alt="" coords="1110,565,1018,565,1018,559,1110,559"/>
-<area shape="rect" id="Node000018" href="$default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="Default function to create threads and events." alt="" coords="718,599,813,626"/>
-<area shape="poly" id="edge23_Node000017_Node000018" title=" " alt="" coords="851,615,813,615,813,610,851,610"/>
-<area shape="rect" id="Node000019" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="562,599,612,626"/>
-<area shape="poly" id="edge24_Node000018_Node000019" title=" " alt="" coords="703,615,612,615,612,610,703,610"/>
-<area shape="rect" id="Node000020" href="$diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="294,525,441,567"/>
-<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="547,604,439,571,441,565,548,599"/>
-<area shape="rect" id="Node000021" href="$ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="297,591,438,634"/>
-<area shape="poly" id="edge27_Node000019_Node000021" title=" " alt="" coords="547,615,438,615,438,610,547,610"/>
-<area shape="rect" id="Node000022" href="$io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="276,658,458,701"/>
-<area shape="poly" id="edge29_Node000019_Node000022" title=" " alt="" coords="548,627,441,660,439,655,547,622"/>
-<area shape="rect" id="Node000023" href="$pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="281,725,454,767"/>
-<area shape="poly" id="edge31_Node000019_Node000023" title=" " alt="" coords="563,639,518,678,464,715,440,727,437,722,461,710,515,673,559,635"/>
-<area shape="rect" id="Node000024" href="$pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="276,791,458,834"/>
-<area shape="poly" id="edge33_Node000019_Node000024" title=" " alt="" coords="574,641,531,711,500,749,464,782,445,793,442,789,461,777,496,745,527,708,570,639"/>
-<area shape="rect" id="Node000025" href="$about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="286,858,448,885"/>
-<area shape="poly" id="edge35_Node000019_Node000025" title=" " alt="" coords="581,642,567,687,543,743,509,800,488,826,464,848,444,860,442,855,461,844,484,822,505,797,539,740,562,685,576,640"/>
-<area shape="rect" id="Node000026" href="$about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="281,909,454,951"/>
-<area shape="poly" id="edge37_Node000019_Node000026" title=" " alt="" coords="584,642,571,696,549,764,514,836,491,869,464,899,448,910,445,906,461,895,487,866,509,833,544,762,566,694,578,640"/>
-<area shape="rect" id="Node000027" href="$clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="281,975,453,1018"/>
-<area shape="poly" id="edge39_Node000019_Node000027" title=" " alt="" coords="586,642,578,707,558,794,542,840,521,885,496,928,464,965,449,977,446,973,460,962,491,924,517,882,537,838,553,792,572,706,581,641"/>
-<area shape="rect" id="Node000028" href="$about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="291,290,443,333"/>
-<area shape="poly" id="edge41_Node000019_Node000028" title=" " alt="" coords="578,585,564,534,542,470,508,404,486,374,461,347,442,334,445,330,464,343,490,370,512,401,547,468,569,532,583,583"/>
-<area shape="rect" id="Node000029" href="$mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="290,357,445,383"/>
-<area shape="poly" id="edge43_Node000019_Node000029" title=" " alt="" coords="575,586,560,544,536,493,503,441,483,418,461,398,442,386,444,382,464,393,487,414,507,438,541,490,565,541,580,584"/>
-<area shape="rect" id="Node000030" href="$module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="281,407,453,434"/>
-<area shape="poly" id="edge45_Node000019_Node000030" title=" " alt="" coords="571,587,528,517,497,480,461,448,439,437,442,432,464,444,501,476,533,514,575,584"/>
-<area shape="rect" id="Node000031" href="$upgrade__screen_8c.html#a7226fb52a37142065414aeb025410361" title="Function to display upgrade confirmation message screen." alt="" coords="272,458,462,501"/>
-<area shape="poly" id="edge47_Node000019_Node000031" title=" " alt="" coords="559,591,515,552,461,515,437,504,440,499,464,510,518,548,563,586"/>
-<area shape="poly" id="edge26_Node000020_Node000005" title=" " alt="" coords="278,534,224,524,225,519,279,528"/>
-<area shape="poly" id="edge28_Node000021_Node000005" title=" " alt="" coords="283,587,271,582,225,555,188,529,191,525,228,551,273,577,285,583"/>
-<area shape="poly" id="edge30_Node000022_Node000005" title=" " alt="" coords="276,652,270,648,238,619,211,586,176,528,181,525,216,582,242,615,274,644,279,648"/>
-<area shape="poly" id="edge32_Node000023_Node000005" title=" " alt="" coords="274,718,270,715,249,693,230,668,202,614,183,564,172,527,177,526,188,563,207,612,235,665,253,689,274,711,278,714"/>
-<area shape="poly" id="edge34_Node000024_Node000005" title=" " alt="" coords="273,784,270,781,244,751,223,716,206,679,193,642,177,575,170,527,175,526,182,574,198,641,211,677,228,714,248,748,274,778,276,780"/>
-<area shape="poly" id="edge36_Node000025_Node000005" title=" " alt="" coords="274,851,270,848,238,810,214,766,196,719,184,671,171,585,169,527,174,526,176,585,189,670,201,717,219,763,243,807,274,844,277,847"/>
-<area shape="poly" id="edge38_Node000026_Node000005" title=" " alt="" coords="272,901,270,899,236,852,210,800,192,745,180,690,169,592,168,526,174,526,174,591,185,690,197,744,215,798,240,850,274,895,276,897"/>
-<area shape="poly" id="edge40_Node000027_Node000005" title=" " alt="" coords="272,967,270,965,248,929,230,877,213,814,200,746,180,615,170,527,176,526,185,614,205,745,219,813,235,875,253,927,274,962,276,964"/>
-<area shape="poly" id="edge42_Node000028_Node000005" title=" " alt="" coords="279,343,274,347,238,384,211,427,191,468,179,500,174,498,186,466,206,425,234,381,270,343,276,339"/>
-<area shape="poly" id="edge44_Node000029_Node000005" title=" " alt="" coords="283,392,273,398,243,422,217,450,182,500,177,497,213,446,240,418,271,393,280,388"/>
-<area shape="poly" id="edge46_Node000030_Node000005" title=" " alt="" coords="290,442,273,449,227,474,190,501,187,497,224,470,271,444,288,437"/>
-<area shape="poly" id="edge48_Node000031_Node000005" title=" " alt="" coords="257,501,225,506,224,501,256,496"/>
-<area shape="poly" id="edge50_Node000032_Node000019" title=" " alt="" coords="884,570,712,590,613,610,612,605,711,585,883,565"/>
+<area shape="rect" id="Node000001" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="1739,237,1885,263"/>
+<area shape="rect" id="Node000002" href="$_firmware___upgrade_8c.html#a28bc829bc230dcbfc7d1c6b6ba229dec" title="This function ensures that the modules are ready for firmware upgrade." alt="" coords="1494,59,1685,86"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1793,225,1751,165,1723,134,1690,107,1653,89,1655,84,1693,102,1726,130,1755,162,1798,222"/>
+<area shape="rect" id="Node000003" href="$_firmware___upgrade_8c.html#ac59fa6e58b636107d2c88f06fdc14cc5" title="Updates the firmware of the specified module." alt="" coords="1310,201,1433,227"/>
+<area shape="poly" id="edge56_Node000001_Node000003" title=" " alt="" coords="1789,226,1746,185,1720,166,1690,151,1635,135,1590,131,1544,137,1488,151,1460,161,1434,174,1391,202,1389,198,1431,170,1458,156,1486,146,1543,132,1590,125,1636,129,1692,146,1722,161,1750,181,1792,223"/>
+<area shape="rect" id="Node000007" href="$_pressure_zone_8c.html#a199d97ba1910fc3f51f537dacf985f76" title="This API is to clear the warning and fault bits of the modules @Note : This API can clear particular ..." alt="" coords="510,9,628,35"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1801,222,1786,181,1764,133,1732,87,1712,66,1690,49,1648,27,1610,14,1575,9,1540,9,1466,18,1373,25,967,25,628,25,628,19,967,19,1373,19,1465,13,1540,4,1575,3,1611,9,1650,22,1693,45,1716,62,1736,83,1768,131,1791,179,1806,220"/>
+<area shape="rect" id="Node000010" href="$_firmware___upgrade_8c.html#a36d6fe2a8bcf6d6b3841246c8fc9a77e" title="This function aborts the firmware upgrade flash process." alt="" coords="1499,161,1679,187"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1767,232,1690,202,1652,190,1653,185,1692,197,1769,227"/>
+<area shape="rect" id="Node000011" href="$_firmware___upgrade_8c.html#ac8063b75102fb954599174fdd67c4b1a" title="This function aborts the firmware upgrade flash process." alt="" coords="1493,211,1686,238"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1724,243,1686,238,1687,233,1725,237"/>
+<area shape="rect" id="Node000012" href="$_firmware___upgrade_8c.html#abd682c58c23c11b69b5c66b63d75b8e2" title="This function is to perform the handshake before starting the firmware uprade with the modules." alt="" coords="1498,262,1680,289"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1724,262,1681,267,1681,262,1724,257"/>
+<area shape="rect" id="Node000013" href="$_firmware___upgrade_8c.html#a69bfee6bcd75c90a6315cc180dfd7efc" title=" " alt="" coords="1487,313,1691,339"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="1769,272,1692,303,1653,315,1652,309,1690,298,1767,267"/>
+<area shape="rect" id="Node000014" href="$_main_bus_node_8c.html#a61e7872ea957ceb6d4a569100681ebeb" title="Sets the IP address for the specified port on the main bus." alt="" coords="1515,363,1663,390"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="1790,277,1747,316,1693,354,1664,365,1662,360,1690,349,1744,312,1786,273"/>
+<area shape="rect" id="Node000016" href="$_main_bus_node_8c.html#acb6b44f230df55e989249f65d525f987" title="Sets the service parameter of the main bus node (MBN)." alt="" coords="1107,426,1256,453"/>
+<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="1801,278,1784,309,1760,344,1729,378,1693,404,1638,428,1580,445,1520,456,1460,462,1348,463,1256,454,1256,449,1348,457,1460,457,1519,451,1578,440,1636,423,1690,400,1726,374,1755,341,1779,306,1796,276"/>
+<area shape="rect" id="Node000033" href="$_app_data_interface_8c.html#a4c38252d47cb0b06df736dab613508a7" title="This function is to update the mbn information." alt="" coords="1510,501,1668,527"/>
+<area shape="poly" id="edge51_Node000001_Node000033" title=" " alt="" coords="1803,278,1762,364,1731,414,1693,458,1660,484,1626,502,1624,498,1657,479,1689,455,1727,410,1757,362,1798,276"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1516,94,1488,107,1456,129,1428,155,1385,202,1382,198,1424,152,1453,125,1486,102,1513,89"/>
+<area shape="rect" id="Node000004" href="$upgrade__details_8c.html#a0b6bfe90c92e9b6b4399f9255150d9b5" title="Function that starts the upgrade process for all the upgrade enabled modules (IO &amp; ISEM Backplane mod..." alt="" coords="676,135,829,162"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1295,209,829,159,830,154,1295,203"/>
+<area shape="rect" id="Node000005" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,435,224,462"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="682,134,593,120,540,116,485,116,429,121,374,132,321,152,274,180,245,207,222,240,205,276,193,314,179,385,175,435,169,435,173,384,188,313,200,274,218,237,241,204,270,176,319,147,372,127,428,116,485,110,540,111,593,115,683,129"/>
+<area shape="rect" id="Node000006" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,435,69,462"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="101,451,69,451,69,446,101,446"/>
+<area shape="rect" id="Node000008" href="$valves__modules__status__info_8c.html#aa164888e33feacda7236004c79306b87" title="Function to clear all status messages." alt="" coords="278,7,457,34"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="495,24,457,24,457,18,495,19"/>
+<area shape="rect" id="Node000009" href="$valves__modules__status__info_8c.html#a4c98732ae9f946e8ad3c716bd836320a" title="Function to clear individual status message." alt="" coords="292,58,443,101"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="506,42,444,60,443,55,504,37"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="277,45,274,48,254,78,236,123,207,239,186,356,176,435,171,434,181,355,202,238,231,121,249,75,270,44,273,41"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="284,112,274,121,245,160,222,203,205,249,193,295,179,378,175,435,169,434,173,378,187,294,200,248,218,201,241,157,270,117,281,108"/>
+<area shape="poly" id="edge13_Node000011_Node000003" title=" " alt="" coords="1477,222,1433,220,1433,214,1477,216"/>
+<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="1515,260,1486,252,1414,230,1416,225,1488,247,1516,255"/>
+<area shape="poly" id="edge17_Node000013_Node000003" title=" " alt="" coords="1502,310,1486,303,1428,266,1385,230,1389,226,1431,262,1488,298,1504,305"/>
+<area shape="rect" id="Node000015" href="$lvgl__gui_8c.html#a95afd94f26688620f74c97b97c3c345a" title="Function to getIpAddress and sets the user entered IpAddress." alt="" coords="699,307,806,334"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="1499,373,806,327,807,321,1500,368"/>
+<area shape="poly" id="edge20_Node000015_Node000005" title=" " alt="" coords="718,301,635,251,580,225,519,202,456,187,392,181,361,184,331,190,301,201,274,216,247,238,226,266,209,297,197,329,181,390,175,435,170,434,176,389,192,327,205,294,222,263,243,235,270,212,299,196,329,185,360,179,392,176,457,181,521,197,582,220,637,247,721,296"/>
+<area shape="rect" id="Node000017" href="$_data_server_monitor_led_8c.html#ac96f62d0c5594b54bd56e85a473b0dd8" title=" " alt="" coords="877,477,1059,503"/>
+<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="1108,459,1028,479,1027,473,1107,454"/>
+<area shape="rect" id="Node000032" href="$power__on__self__test_8c.html#a2b69d74572d29a70ecb8148fdb6b9f69" title=" " alt="" coords="909,426,1027,453"/>
+<area shape="poly" id="edge49_Node000016_Node000032" title=" " alt="" coords="1092,442,1028,442,1028,437,1092,437"/>
+<area shape="rect" id="Node000018" href="$default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="Default function to create threads and events." alt="" coords="705,527,800,554"/>
+<area shape="poly" id="edge23_Node000017_Node000018" title=" " alt="" coords="894,510,801,532,800,527,893,505"/>
+<area shape="rect" id="Node000019" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Main Function." alt="" coords="544,533,594,559"/>
+<area shape="poly" id="edge24_Node000018_Node000019" title=" " alt="" coords="690,545,594,548,594,543,690,540"/>
+<area shape="rect" id="Node000020" href="$diag__valve__about__screen_8c.html#a1f899de753ff1dd19f9ae7b99f1ae7f6" title=" " alt="" coords="294,461,441,503"/>
+<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="529,536,436,506,438,501,530,531"/>
+<area shape="rect" id="Node000021" href="$ext__propzone__about__screen_8c.html#a3cfe7f0125aec66284276c8cd03033a2" title="Function to display prop_zone count screen." alt="" coords="297,527,438,570"/>
+<area shape="poly" id="edge27_Node000019_Node000021" title=" " alt="" coords="529,549,438,550,438,545,529,544"/>
+<area shape="rect" id="Node000022" href="$io__modules__about__screen_8c.html#a69df5f7d0d00add2d4c66f474bb24ac9" title="Function to display IO count about screen(DIO, DI, DO, AI, AIO, AO)" alt="" coords="276,594,458,637"/>
+<area shape="poly" id="edge29_Node000019_Node000022" title=" " alt="" coords="531,562,432,596,430,591,529,557"/>
+<area shape="rect" id="Node000023" href="$pressure__zone__about__screen_8c.html#a14482d2a1dc4debf9dc529fb2a0365d5" title="function to create the pressure zone&#39;s number screen" alt="" coords="281,661,454,703"/>
+<area shape="poly" id="edge31_Node000019_Node000023" title=" " alt="" coords="549,573,512,613,464,651,441,662,439,658,461,646,508,609,545,569"/>
+<area shape="rect" id="Node000024" href="$pz__details__about__screen_8c.html#adbb2701d2f614e81d8c1d3089fd22fac" title="function to create the pressure zone details screen" alt="" coords="276,727,458,770"/>
+<area shape="poly" id="edge33_Node000019_Node000024" title=" " alt="" coords="560,575,524,645,497,684,464,717,446,729,443,724,461,713,493,680,520,643,555,572"/>
+<area shape="rect" id="Node000025" href="$about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="286,794,448,821"/>
+<area shape="poly" id="edge35_Node000019_Node000025" title=" " alt="" coords="566,575,555,620,536,677,506,734,487,761,464,784,446,796,443,791,461,780,483,757,502,732,531,675,550,619,561,574"/>
+<area shape="rect" id="Node000026" href="$about__standard__valve__screen_8c.html#a7d1566a942eb3c3ace3cd36ad6c7d960" title="Function to display standard about screen." alt="" coords="281,845,454,887"/>
+<area shape="poly" id="edge37_Node000019_Node000026" title=" " alt="" coords="568,575,559,629,541,698,511,771,490,804,464,834,449,846,446,842,460,831,485,801,506,768,536,697,554,628,562,574"/>
+<area shape="rect" id="Node000027" href="$clear__screen_8c.html#a89e2ac3802227b44df4c97947a11fe80" title="function to create clear messages screen" alt="" coords="281,911,453,954"/>
+<area shape="poly" id="edge39_Node000019_Node000027" title=" " alt="" coords="570,575,565,641,550,728,536,774,518,820,494,863,464,901,450,913,447,909,460,897,490,860,513,817,531,772,545,726,560,640,565,575"/>
+<area shape="rect" id="Node000028" href="$about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="291,226,443,269"/>
+<area shape="poly" id="edge41_Node000019_Node000028" title=" " alt="" coords="561,517,552,467,533,404,504,339,484,309,461,283,442,269,445,265,464,279,488,306,508,337,538,402,557,466,567,516"/>
+<area shape="rect" id="Node000029" href="$mac__screen_8c.html#a79e2f30f9a212f89c8c943275a637915" title="Function to display MAC screen." alt="" coords="290,293,445,319"/>
+<area shape="poly" id="edge43_Node000019_Node000029" title=" " alt="" coords="559,518,547,477,528,427,499,376,481,353,461,333,442,322,445,317,464,329,485,350,504,373,533,424,552,475,564,517"/>
+<area shape="rect" id="Node000030" href="$module__screen_8c.html#ab60bbdc6121e8f2704bfbbe37f79650a" title="Function to display module information (identification parameters)" alt="" coords="281,343,453,370"/>
+<area shape="poly" id="edge45_Node000019_Node000030" title=" " alt="" coords="555,519,540,487,520,451,493,415,461,384,440,373,443,368,464,380,497,411,524,448,545,485,560,517"/>
+<area shape="rect" id="Node000031" href="$upgrade__screen_8c.html#a7226fb52a37142065414aeb025410361" title="Function to display upgrade confirmation message screen." alt="" coords="272,394,462,437"/>
+<area shape="poly" id="edge47_Node000019_Node000031" title=" " alt="" coords="544,523,507,486,461,451,439,440,441,435,464,446,511,482,548,519"/>
+<area shape="poly" id="edge26_Node000020_Node000005" title=" " alt="" coords="278,469,224,460,225,455,279,464"/>
+<area shape="poly" id="edge28_Node000021_Node000005" title=" " alt="" coords="283,523,271,518,225,491,188,465,191,460,228,486,273,513,285,518"/>
+<area shape="poly" id="edge30_Node000022_Node000005" title=" " alt="" coords="276,588,270,584,238,555,211,521,176,464,181,461,216,518,242,551,274,580,279,584"/>
+<area shape="poly" id="edge32_Node000023_Node000005" title=" " alt="" coords="274,654,270,650,249,629,230,604,202,550,183,500,172,463,177,462,188,498,207,548,235,601,253,625,274,647,278,650"/>
+<area shape="poly" id="edge34_Node000024_Node000005" title=" " alt="" coords="273,720,270,717,244,686,223,652,206,615,193,578,177,510,170,463,175,462,182,509,198,577,211,613,228,649,248,683,274,713,276,716"/>
+<area shape="poly" id="edge36_Node000025_Node000005" title=" " alt="" coords="274,787,270,784,238,745,214,701,196,655,184,607,171,521,169,462,174,462,176,520,189,606,201,653,219,699,243,742,274,780,277,783"/>
+<area shape="poly" id="edge38_Node000026_Node000005" title=" " alt="" coords="272,836,270,834,236,788,210,736,192,681,180,626,169,527,168,462,174,462,174,527,185,625,197,680,215,734,240,785,274,831,276,833"/>
+<area shape="poly" id="edge40_Node000027_Node000005" title=" " alt="" coords="272,903,270,901,248,865,230,813,213,750,200,681,180,550,170,463,176,462,185,550,205,680,219,749,235,811,253,863,274,898,276,899"/>
+<area shape="poly" id="edge42_Node000028_Node000005" title=" " alt="" coords="279,279,274,283,238,320,211,363,191,404,179,436,174,434,186,402,206,361,234,317,270,279,276,274"/>
+<area shape="poly" id="edge44_Node000029_Node000005" title=" " alt="" coords="283,328,273,333,243,357,217,386,182,436,177,433,213,382,240,353,271,329,280,323"/>
+<area shape="poly" id="edge46_Node000030_Node000005" title=" " alt="" coords="290,378,273,384,227,410,190,437,187,432,224,406,271,379,288,373"/>
+<area shape="poly" id="edge48_Node000031_Node000005" title=" " alt="" coords="257,437,225,442,224,437,256,431"/>
+<area shape="poly" id="edge50_Node000032_Node000019" title=" " alt="" coords="897,460,676,518,595,541,593,536,675,513,896,454"/>
+<area shape="rect" id="Node000034" href="$_app_data_interface_8c.html#ad8522fb41eb5ea484744c372dec788d0" title="Retrieves discovery details of the modules." alt="" coords="1304,509,1439,535"/>
+<area shape="poly" id="edge52_Node000033_Node000034" title=" " alt="" coords="1494,520,1440,522,1439,517,1494,515"/>
+<area shape="rect" id="Node000035" href="$discovery_8c.html#affc9f61bc5cd527c136ab0071a8f41cb" title="Function that processes the discovery details." alt="" coords="1127,521,1236,547"/>
+<area shape="poly" id="edge53_Node000034_Node000035" title=" " alt="" coords="1288,530,1236,533,1236,528,1288,524"/>
+<area shape="rect" id="Node000036" href="$data__processing_8c.html#a0065bcc1cda673c15587b28e8d9584f5" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="895,527,1042,554"/>
+<area shape="poly" id="edge54_Node000035_Node000036" title=" " alt="" coords="1112,539,1042,541,1042,536,1112,533"/>
+<area shape="poly" id="edge55_Node000036_Node000018" title=" " alt="" coords="879,543,800,543,800,538,879,538"/>
 </map>

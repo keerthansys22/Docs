@@ -174,5 +174,6 @@ var lvgl__gui_8c =
     [ "tmp1", "lvgl__gui_8c.html#a9083f0479a0f857391e62c2fb67b6ad4", null ],
     [ "upgrade_content_index", "lvgl__gui_8c.html#a010ef7f73ab3d09a437cf398fca658e4", null ],
     [ "upgrade_enabled", "lvgl__gui_8c.html#a74a1d3de2adc41e0c25b3ba7971bc116", null ],
-    [ "upgrade_index", "lvgl__gui_8c.html#a2a9e882327ae7a22148096d9fe042068", null ]
+    [ "upgrade_index", "lvgl__gui_8c.html#a2a9e882327ae7a22148096d9fe042068", null ],
+    [ "upgrade_status", "lvgl__gui_8c.html#a97b6f98ea6efb7962c717a7f45dc3e23", null ]
 ];

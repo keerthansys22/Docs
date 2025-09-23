@@ -19,6 +19,8 @@ var _data_server_monitor_led_8c =
     [ "volatageva_monitoring", "_data_server_monitor_led_8c.html#a2413b7289e27122d76c2b44d98a56918", null ],
     [ "volatge_vb_monitoring", "_data_server_monitor_led_8c.html#af78e2e405fb1dfada593994ec787e570", null ],
     [ "cur_disp_scr_index", "_data_server_monitor_led_8c.html#a49952e1fb0d52f6ef2f6fd0f381ab1b5", null ],
+    [ "data_processing_thread", "_data_server_monitor_led_8c.html#a38b20330a68d9e059f37c2d125995478", null ],
+    [ "ethercat_led_tid", "_data_server_monitor_led_8c.html#a73284ceff08aa772d1c0d276e38da2b5", null ],
     [ "fd_led", "_data_server_monitor_led_8c.html#ac69e4e922707981e211d8a9791d8b849", null ],
     [ "G_KEY_PRESSED_EVENT", "_data_server_monitor_led_8c.html#aa388bbbd2af08b7f83c6e55667c86270", null ],
     [ "g_keypressed", "_data_server_monitor_led_8c.html#a0d4542cd6083f6c10692818325ab989f", null ],
@@ -31,5 +33,8 @@ var _data_server_monitor_led_8c =
     [ "longpress_timer", "_data_server_monitor_led_8c.html#a7b71b5c7a7fbb0d56b514bdfddb301fd", null ],
     [ "msg_rdwrdemo", "_data_server_monitor_led_8c.html#a8c2ae5ee1bb07521123798c2a03f452f", null ],
     [ "ret_value", "_data_server_monitor_led_8c.html#aabe89482a17bf30a40e9c316bc5a2bb9", null ],
-    [ "upgrade_enabled", "_data_server_monitor_led_8c.html#a74a1d3de2adc41e0c25b3ba7971bc116", null ]
+    [ "screen_pop_up_thread", "_data_server_monitor_led_8c.html#a06fda7de76b4b4fac8b20bb08a2ad1ce", null ],
+    [ "thread_acquire", "_data_server_monitor_led_8c.html#a5d3f042bc74db494e10c9eebd7208734", null ],
+    [ "upgrade_enabled", "_data_server_monitor_led_8c.html#a74a1d3de2adc41e0c25b3ba7971bc116", null ],
+    [ "upgrade_status", "_data_server_monitor_led_8c.html#a97b6f98ea6efb7962c717a7f45dc3e23", null ]
 ];

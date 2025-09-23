@@ -47,8 +47,10 @@ var _app_data_interface_8c =
     [ "init_api_client", "_app_data_interface_8c.html#a7c8264f04d96e64e0b1af41e947b6c8b", null ],
     [ "readDiscoveryInfo", "_app_data_interface_8c.html#afde155105217b10b0c6e274f438be8a0", null ],
     [ "readSharedMemoryData", "_app_data_interface_8c.html#ae512dcee3f48f317872617e5f4559b19", null ],
+    [ "UpdateMBNInfoEEprom", "_app_data_interface_8c.html#a4c38252d47cb0b06df736dab613508a7", null ],
     [ "writeMBNInfo", "_app_data_interface_8c.html#a2ff0ea3717aee424b4122935e1578c43", null ],
     [ "external_pressurezone", "_app_data_interface_8c.html#a0441d0acf0c675222c4e9a8d4a853348", null ],
+    [ "g_remote_rpmsg", "_app_data_interface_8c.html#a274502dbc1ca0716301973df9a2ebb62", null ],
     [ "gbuf", "_app_data_interface_8c.html#ad9088d5017838792bd64e604162503df", null ],
     [ "internal_pressure_zone", "_app_data_interface_8c.html#ad19c359304948e3d3aea4c3ee826685c", null ],
     [ "system_info", "_app_data_interface_8c.html#a6dad6684cbe35726f4ae5cd7a3584616", null ]

@@ -27,5 +27,6 @@ var _firmware___upgrade_8c =
     [ "g_success_packets", "_firmware___upgrade_8c.html#a257579e76d7e27f059fc3562b184fcfa", null ],
     [ "g_total_file_size", "_firmware___upgrade_8c.html#a06e3237ce5522df2712a239f3f53d37b", null ],
     [ "gbuf", "_firmware___upgrade_8c.html#ad9088d5017838792bd64e604162503df", null ],
+    [ "service_mode_flag", "_firmware___upgrade_8c.html#adb9a903ee7f154f9e14bee6dbe0b5171", null ],
     [ "size_var", "_firmware___upgrade_8c.html#a0ca9c85858898854af13051ee71a9167", null ]
 ];

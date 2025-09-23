@@ -1,6 +1,6 @@
 var config__screen_8c =
 [
-    [ "common_label_creation", "config__screen_8c.html#a171bd087fd88267f8df70214d756df4a", null ],
+    [ "common_label_creation", "config__screen_8c.html#a2cf24a7fb496a80ca43515bb265f1ae1", null ],
     [ "config_style", "config__screen_8c.html#a98c37bf58f04cc93e36ff7902151475e", null ],
     [ "config_upgrade_style", "config__screen_8c.html#a951a5e11d0f3bb0dd553cc7a6abaa9f3", null ],
     [ "disp_mod_config_screen", "config__screen_8c.html#aa842831f606b324fb3de80b157c7248d", null ],

@@ -1,25 +1,25 @@
 <map id="data_processing_func" name="data_processing_func">
-<area shape="rect" id="Node000001" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="5,752,153,779"/>
+<area shape="rect" id="Node000001" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="5,739,153,765"/>
 <area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#afc2a01db214bea71598ff4c8dba79574" title="Function that copies from original structure, sort it and store the sorted array module numbers in an..." alt="" coords="240,125,350,152"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,752,79,666,93,527,108,447,129,364,159,284,198,209,223,180,252,158,256,163,227,184,203,212,164,286,134,366,113,448,98,527,84,666,83,752"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,738,80,654,94,518,109,440,130,360,160,282,198,209,224,180,253,158,256,162,227,184,203,212,165,284,135,362,114,441,99,519,85,654,83,738"/>
 <area shape="rect" id="Node000004" href="$module__details__processing_8c.html#a3e9b0f25faad61167968870d14001d3b" title="Function that fetches the IO_module identification parameters." alt="" coords="222,223,368,265"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="84,750,276,279,281,281,89,752"/>
-<area shape="rect" id="Node000018" href="$module__details__processing_8c.html#adfca9bae7bdfdd358ced96390fb1f696" title="Function that fetches the MBN identification parameters." alt="" coords="458,557,618,600"/>
-<area shape="poly" id="edge30_Node000001_Node000018" title=" " alt="" coords="94,749,140,713,199,676,261,650,324,627,442,595,444,600,326,632,263,655,202,681,143,718,98,753"/>
-<area shape="rect" id="Node000021" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="755,1508,835,1535"/>
-<area shape="poly" id="edge54_Node000001_Node000021" title=" " alt="" coords="83,779,84,837,91,930,106,1049,133,1182,153,1251,177,1320,206,1387,240,1452,280,1512,326,1567,378,1615,438,1655,491,1678,536,1683,583,1674,638,1655,680,1633,717,1604,749,1573,773,1545,777,1549,753,1577,721,1608,683,1638,640,1660,584,1680,536,1688,489,1683,436,1660,375,1619,322,1570,275,1515,235,1454,201,1389,172,1322,148,1253,128,1183,101,1050,86,931,79,837,78,779"/>
-<area shape="rect" id="Node000022" href="$module__details__processing_8c.html#aac0c03d78e4b434d9f855c01973071b1" title="Function that fetches the PropZone identification parameters." alt="" coords="201,773,389,816"/>
-<area shape="poly" id="edge36_Node000001_Node000022" title=" " alt="" coords="153,773,186,777,185,782,153,778"/>
-<area shape="rect" id="Node000026" href="$module__details__processing_8c.html#ac4306bff4d6d753d0caba597124ddbe3" title="Function that fetches the PZ identification parameters." alt="" coords="464,656,613,699"/>
-<area shape="poly" id="edge41_Node000001_Node000026" title=" " alt="" coords="103,749,147,727,200,708,264,694,329,684,448,676,449,681,330,690,265,699,201,713,149,732,106,754"/>
-<area shape="rect" id="Node000033" href="$mac__address_8c.html#a434de6524abf0902881fe890323c1186" title="function that access the MAC details" alt="" coords="223,723,367,749"/>
-<area shape="poly" id="edge50_Node000001_Node000033" title=" " alt="" coords="153,753,207,745,208,751,153,758"/>
-<area shape="rect" id="Node000035" href="$mbn__status__info_8c.html#a33e091ca4ad4a808848bae50150d6bef" title="Function that determines the MBN status information." alt="" coords="237,1736,353,1763"/>
-<area shape="poly" id="edge53_Node000001_Node000035" title=" " alt="" coords="83,779,84,949,88,1082,96,1230,110,1381,132,1521,146,1582,162,1637,181,1682,203,1716,224,1733,221,1737,199,1719,177,1684,157,1638,141,1584,127,1522,105,1382,91,1231,82,1082,78,949,77,779"/>
-<area shape="rect" id="Node000036" href="$discovery_8c.html#affc9f61bc5cd527c136ab0071a8f41cb" title="Function that processes the discovery details." alt="" coords="241,1229,349,1256"/>
-<area shape="poly" id="edge55_Node000001_Node000036" title=" " alt="" coords="89,778,284,1214,279,1216,84,780"/>
-<area shape="rect" id="Node000070" href="$valves__modules__status__info_8c.html#ad78d371cdb92718310deea685102f846" title="Function that processes the valves modules status information." alt="" coords="204,1787,386,1813"/>
-<area shape="poly" id="edge74_Node000001_Node000070" title=" " alt="" coords="84,779,95,972,120,1290,137,1455,157,1601,179,1713,191,1751,203,1773,205,1775,201,1779,198,1776,186,1753,174,1714,151,1602,132,1456,115,1291,90,972,78,779"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="84,737,276,278,281,281,88,739"/>
+<area shape="rect" id="Node000018" href="$module__details__processing_8c.html#adfca9bae7bdfdd358ced96390fb1f696" title="Function that fetches the MBN identification parameters." alt="" coords="458,701,618,744"/>
+<area shape="poly" id="edge30_Node000001_Node000018" title=" " alt="" coords="153,745,442,726,442,731,153,750"/>
+<area shape="rect" id="Node000021" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="755,1503,835,1529"/>
+<area shape="poly" id="edge54_Node000001_Node000021" title=" " alt="" coords="83,765,84,824,89,919,104,1041,130,1178,150,1249,174,1320,202,1389,237,1455,277,1517,324,1574,377,1624,438,1666,491,1689,514,1694,536,1695,583,1686,638,1666,682,1640,720,1607,752,1572,775,1540,779,1544,756,1575,724,1611,685,1645,640,1670,584,1691,536,1700,513,1699,489,1694,436,1670,374,1628,320,1578,273,1520,232,1458,198,1391,169,1321,145,1250,125,1179,98,1042,84,920,78,824,77,765"/>
+<area shape="rect" id="Node000022" href="$module__details__processing_8c.html#aac0c03d78e4b434d9f855c01973071b1" title="Function that fetches the PropZone identification parameters." alt="" coords="201,760,389,803"/>
+<area shape="poly" id="edge36_Node000001_Node000022" title=" " alt="" coords="153,759,186,764,185,769,153,765"/>
+<area shape="rect" id="Node000026" href="$module__details__processing_8c.html#ac4306bff4d6d753d0caba597124ddbe3" title="Function that fetches the PZ identification parameters." alt="" coords="464,584,613,627"/>
+<area shape="poly" id="edge41_Node000001_Node000026" title=" " alt="" coords="88,737,132,688,164,661,200,640,262,619,327,606,391,599,448,598,448,603,391,605,328,611,263,624,202,645,167,666,136,692,92,740"/>
+<area shape="rect" id="Node000033" href="$mac__address_8c.html#a434de6524abf0902881fe890323c1186" title="function that access the MAC details" alt="" coords="223,655,367,681"/>
+<area shape="poly" id="edge50_Node000001_Node000033" title=" " alt="" coords="114,736,200,702,242,685,244,690,202,706,116,741"/>
+<area shape="rect" id="Node000035" href="$mbn__status__info_8c.html#a33e091ca4ad4a808848bae50150d6bef" title="Function that determines the MBN status information." alt="" coords="237,1731,353,1757"/>
+<area shape="poly" id="edge53_Node000001_Node000035" title=" " alt="" coords="83,766,84,937,87,1071,96,1221,110,1373,132,1514,146,1576,162,1631,181,1676,203,1710,224,1727,221,1731,199,1714,176,1678,157,1632,140,1577,126,1515,105,1373,90,1221,82,1071,78,937,77,766"/>
+<area shape="rect" id="Node000036" href="$discovery_8c.html#affc9f61bc5cd527c136ab0071a8f41cb" title="Function that processes the discovery details." alt="" coords="241,1224,349,1251"/>
+<area shape="poly" id="edge55_Node000001_Node000036" title=" " alt="" coords="89,764,284,1209,279,1211,84,767"/>
+<area shape="rect" id="Node000073" href="$valves__modules__status__info_8c.html#ad78d371cdb92718310deea685102f846" title="Function that processes the valves modules status information." alt="" coords="204,1781,386,1808"/>
+<area shape="poly" id="edge75_Node000001_Node000073" title=" " alt="" coords="84,766,95,960,120,1281,137,1447,156,1595,179,1707,190,1745,203,1768,205,1770,201,1773,198,1771,186,1747,173,1709,151,1596,131,1448,115,1281,90,961,78,766"/>
 <area shape="rect" id="Node000003" href="$lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="497,79,579,105"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="350,126,481,100,482,105,351,131"/>
 <area shape="rect" id="Node000005" href="$_app_data_interface_8c.html#a5f43d0a7b6a638cd96656403e533a9ec" title="Retrieves the identification info of the requested analog module." alt="" coords="697,5,893,32"/>
@@ -32,95 +32,96 @@
 <area shape="poly" id="edge11_Node000004_Node000010" title=" " alt="" coords="368,256,456,275,455,280,367,262"/>
 <area shape="rect" id="Node000006" href="$_io_modules_8c.html#aab64cdfe20fa84db4be92c96380d60a2" title=": This is to get the address of the service data instance" alt="" coords="971,207,1142,249"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="880,30,904,42,947,75,985,115,1015,156,1038,192,1034,195,1011,159,981,119,944,79,901,46,877,35"/>
-<area shape="rect" id="Node000007" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="976,440,1137,467"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="889,30,905,42,925,68,937,94,942,119,942,144,941,198,944,228,953,260,973,307,997,353,1040,426,1035,428,992,355,968,310,948,262,939,229,936,198,937,144,937,120,932,95,921,71,901,46,886,35"/>
+<area shape="rect" id="Node000007" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="976,432,1137,459"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="889,30,905,42,925,68,937,94,942,119,942,144,941,198,944,228,953,260,973,305,996,348,1039,418,1035,421,991,351,968,307,948,262,939,229,935,198,937,144,936,120,932,96,921,71,901,46,886,35"/>
 <area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="875,81,904,92,940,115,974,141,1029,194,1025,197,971,145,937,119,901,97,873,86"/>
-<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="888,81,904,93,922,113,932,132,939,171,941,212,945,235,953,260,998,352,1040,425,1036,428,993,355,948,262,940,237,936,213,934,172,927,134,917,116,901,97,885,85"/>
-<area shape="rect" id="Node000011" href="$_analog_input_module_api_8c.html#ae71fb8958c03dd5d23e174716ade05a0" title="Retrieves the service parameter data for a specified AI module." alt="" coords="699,373,891,416"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="568,306,688,359,706,365,705,370,686,364,566,311"/>
-<area shape="rect" id="Node000013" href="$_analog_input_output_api_8c.html#aa82a24c0ccf8e52170a0ca66b9cc48e9" title="Retrieves the service parameter data for a specified AIO module." alt="" coords="687,440,903,467"/>
-<area shape="poly" id="edge15_Node000010_Node000013" title=" " alt="" coords="552,307,607,365,646,398,689,426,702,432,700,437,686,430,642,402,603,369,549,310"/>
-<area shape="rect" id="Node000014" href="$_analog_output_module_api_8c.html#a39b4dc041cb0c9777ac20309b4951c6e" title="Retrieves the service parameter data for a specified AO module." alt="" coords="694,107,896,149"/>
-<area shape="poly" id="edge18_Node000010_Node000014" title=" " alt="" coords="607,279,638,261,648,249,655,237,661,211,667,185,674,172,685,159,689,156,693,160,689,163,678,175,672,187,666,213,660,239,653,252,641,265,610,283"/>
-<area shape="rect" id="Node000015" href="$_digital_input_module_api_8c.html#a15dad055bdf3cd7d7bd3f4b85b63186f" title="Retrieves the service parameter data for a specified IO module." alt="" coords="701,173,889,216"/>
-<area shape="poly" id="edge21_Node000010_Node000015" title=" " alt="" coords="593,278,638,260,662,243,686,226,699,220,701,225,689,230,665,247,641,265,595,283"/>
-<area shape="rect" id="Node000016" href="$_digital_input_output_api_8c.html#a4c4dbf556362aa3ddb1dcf07f6a33d2c" title="Sets the service parameter data for a specified DIO module." alt="" coords="703,240,887,283"/>
-<area shape="poly" id="edge24_Node000010_Node000016" title=" " alt="" coords="615,282,687,273,687,278,616,287"/>
-<area shape="rect" id="Node000017" href="$_digital_output_module_api_8c.html#a48cf0e81babe699595a2cb0b22ebc402" title="Retrieves the service parameter data for a specified DO module." alt="" coords="696,307,894,349"/>
-<area shape="poly" id="edge27_Node000010_Node000017" title=" " alt="" coords="616,302,681,310,680,316,615,307"/>
-<area shape="poly" id="edge13_Node000011_Node000006" title=" " alt="" coords="877,370,901,359,936,336,970,310,1024,259,1027,263,973,314,940,341,904,364,880,375"/>
-<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="892,414,979,433,978,439,891,419"/>
-<area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="879,437,901,426,946,389,983,345,1014,300,1036,262,1040,264,1018,303,988,348,949,393,904,430,881,442"/>
-<area shape="poly" id="edge17_Node000013_Node000007" title=" " alt="" coords="903,451,960,451,960,456,903,456"/>
-<area shape="poly" id="edge19_Node000014_Node000006" title=" " alt="" coords="871,147,904,159,996,197,994,202,902,164,869,152"/>
-<area shape="poly" id="edge20_Node000014_Node000007" title=" " alt="" coords="887,148,904,159,925,183,935,206,941,231,953,260,1042,425,1038,428,948,262,936,233,930,208,920,186,901,163,884,152"/>
-<area shape="poly" id="edge22_Node000015_Node000006" title=" " alt="" coords="889,204,956,213,955,218,889,209"/>
-<area shape="poly" id="edge23_Node000015_Node000007" title=" " alt="" coords="885,214,904,226,954,273,994,328,1025,381,1046,425,1041,427,1021,384,990,331,950,276,901,230,882,219"/>
-<area shape="poly" id="edge25_Node000016_Node000006" title=" " alt="" coords="887,247,956,238,956,243,888,252"/>
-<area shape="poly" id="edge26_Node000016_Node000007" title=" " alt="" coords="882,281,904,292,946,323,983,359,1039,426,1035,429,979,363,942,327,901,297,879,286"/>
-<area shape="poly" id="edge28_Node000017_Node000006" title=" " alt="" coords="869,304,902,292,994,254,996,259,904,297,871,309"/>
-<area shape="poly" id="edge29_Node000017_Node000007" title=" " alt="" coords="875,347,904,359,969,394,1025,429,1022,433,967,398,902,364,873,352"/>
-<area shape="rect" id="Node000019" href="$_main_bus_node_8c.html#a4c744d8e866ef4daaecc8f89545b8286" title="Retrieve the identification information of the Main Bus Node (MBN)." alt="" coords="704,491,886,517"/>
-<area shape="poly" id="edge31_Node000018_Node000019" title=" " alt="" coords="601,554,687,527,716,519,717,524,688,532,602,559"/>
-<area shape="rect" id="Node000020" href="$_main_bus_node_8c.html#a3432e82ff2d4cbe8184b741f0fe50807" title="This API is to get the MBN part number." alt="" coords="726,541,864,568"/>
-<area shape="poly" id="edge33_Node000018_Node000020" title=" " alt="" coords="619,569,711,560,711,565,619,574"/>
-<area shape="poly" id="edge35_Node000018_Node000021" title=" " alt="" coords="591,598,618,617,641,642,663,682,676,717,683,750,684,782,683,850,684,889,690,934,791,1492,786,1493,685,935,679,890,678,850,679,782,677,750,671,718,659,684,637,646,615,621,588,603"/>
-<area shape="poly" id="edge32_Node000019_Node000007" title=" " alt="" coords="867,487,969,468,970,473,868,493"/>
-<area shape="poly" id="edge34_Node000020_Node000007" title=" " alt="" coords="863,538,902,527,963,500,1017,472,1019,477,966,505,904,532,865,544"/>
-<area shape="rect" id="Node000023" href="$_app_data_interface_8c.html#a46e2d1acaec3ced3fc4301e7c7d42fb2" title="This api is to get the External Prop Valve Part number." alt="" coords="447,773,630,800"/>
-<area shape="poly" id="edge37_Node000022_Node000023" title=" " alt="" coords="389,789,430,788,431,793,390,794"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="888,81,904,93,922,113,932,132,939,171,941,213,945,235,953,260,997,348,1040,418,1035,420,992,350,948,262,940,237,936,213,934,172,927,134,917,116,901,97,885,85"/>
+<area shape="rect" id="Node000011" href="$_analog_input_module_api_8c.html#ae71fb8958c03dd5d23e174716ade05a0" title="Retrieves the service parameter data for a specified AI module." alt="" coords="699,307,891,349"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="616,302,684,311,684,316,615,307"/>
+<area shape="rect" id="Node000013" href="$_analog_input_output_api_8c.html#aa82a24c0ccf8e52170a0ca66b9cc48e9" title="Retrieves the service parameter data for a specified AIO module." alt="" coords="687,373,903,400"/>
+<area shape="poly" id="edge15_Node000010_Node000013" title=" " alt="" coords="567,306,622,332,688,359,713,366,712,372,686,364,620,337,565,311"/>
+<area shape="rect" id="Node000014" href="$_analog_output_module_api_8c.html#a39b4dc041cb0c9777ac20309b4951c6e" title="Retrieves the service parameter data for a specified AO module." alt="" coords="694,424,896,467"/>
+<area shape="poly" id="edge18_Node000010_Node000014" title=" " alt="" coords="555,307,611,356,648,385,689,410,700,415,698,420,686,414,645,389,607,361,552,311"/>
+<area shape="rect" id="Node000015" href="$_digital_input_module_api_8c.html#a15dad055bdf3cd7d7bd3f4b85b63186f" title="Retrieves the service parameter data for a specified IO module." alt="" coords="701,107,889,149"/>
+<area shape="poly" id="edge21_Node000010_Node000015" title=" " alt="" coords="607,279,638,261,648,249,655,237,661,211,667,185,674,172,685,159,689,156,693,160,689,163,678,175,672,187,666,213,660,239,653,252,641,265,610,283"/>
+<area shape="rect" id="Node000016" href="$_digital_input_output_api_8c.html#a4c4dbf556362aa3ddb1dcf07f6a33d2c" title="Sets the service parameter data for a specified DIO module." alt="" coords="703,173,887,216"/>
+<area shape="poly" id="edge24_Node000010_Node000016" title=" " alt="" coords="593,278,638,260,662,243,686,226,699,220,701,225,689,230,665,247,641,265,595,283"/>
+<area shape="rect" id="Node000017" href="$_digital_output_module_api_8c.html#a48cf0e81babe699595a2cb0b22ebc402" title="Retrieves the service parameter data for a specified DO module." alt="" coords="696,240,894,283"/>
+<area shape="poly" id="edge27_Node000010_Node000017" title=" " alt="" coords="615,282,680,274,681,279,616,287"/>
+<area shape="poly" id="edge13_Node000011_Node000006" title=" " alt="" coords="869,304,902,292,994,254,996,259,904,297,871,309"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="873,347,904,359,967,390,1022,421,1019,426,965,395,902,364,872,352"/>
+<area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="873,370,901,359,937,337,971,311,1025,259,1029,262,974,315,940,341,904,364,875,375"/>
+<area shape="poly" id="edge17_Node000013_Node000007" title=" " alt="" coords="858,398,979,425,978,431,857,403"/>
+<area shape="poly" id="edge19_Node000014_Node000006" title=" " alt="" coords="881,421,901,410,943,376,979,336,1033,261,1037,264,983,340,946,380,904,414,883,426"/>
+<area shape="poly" id="edge20_Node000014_Node000007" title=" " alt="" coords="897,443,960,443,960,448,897,448"/>
+<area shape="poly" id="edge22_Node000015_Node000006" title=" " alt="" coords="871,147,904,159,996,197,994,202,902,164,869,152"/>
+<area shape="poly" id="edge23_Node000015_Node000007" title=" " alt="" coords="887,148,904,159,925,183,935,206,941,231,953,260,1042,417,1037,420,948,262,936,233,930,208,920,186,901,163,884,152"/>
+<area shape="poly" id="edge25_Node000016_Node000006" title=" " alt="" coords="888,204,956,213,956,218,887,209"/>
+<area shape="poly" id="edge26_Node000016_Node000007" title=" " alt="" coords="885,214,904,226,953,271,993,323,1024,375,1046,417,1041,419,1020,378,989,326,949,275,901,230,882,219"/>
+<area shape="poly" id="edge28_Node000017_Node000006" title=" " alt="" coords="894,246,955,238,956,243,895,251"/>
+<area shape="poly" id="edge29_Node000017_Node000007" title=" " alt="" coords="881,281,904,292,945,322,982,355,1038,418,1034,421,978,359,942,326,901,297,879,286"/>
+<area shape="rect" id="Node000019" href="$_main_bus_node_8c.html#a4c744d8e866ef4daaecc8f89545b8286" title="Retrieve the identification information of the Main Bus Node (MBN)." alt="" coords="704,845,886,872"/>
+<area shape="poly" id="edge31_Node000018_Node000019" title=" " alt="" coords="620,741,641,754,658,774,665,794,673,813,689,831,696,836,693,840,686,835,668,816,660,796,653,777,638,758,617,745"/>
+<area shape="rect" id="Node000020" href="$_main_bus_node_8c.html#a3432e82ff2d4cbe8184b741f0fe50807" title="This API is to get the MBN part number." alt="" coords="726,795,864,821"/>
+<area shape="poly" id="edge33_Node000018_Node000020" title=" " alt="" coords="611,742,640,754,664,767,688,780,712,788,710,793,686,785,662,772,638,758,609,747"/>
+<area shape="poly" id="edge35_Node000018_Node000021" title=" " alt="" coords="620,738,641,754,655,789,673,863,717,1081,791,1487,786,1488,712,1082,667,864,649,791,637,758,617,742"/>
+<area shape="poly" id="edge32_Node000019_Node000007" title=" " alt="" coords="884,843,901,831,939,791,970,745,995,695,1014,644,1039,547,1050,474,1055,475,1044,548,1019,645,1000,697,974,748,943,795,904,835,886,847"/>
+<area shape="poly" id="edge34_Node000020_Node000007" title=" " alt="" coords="863,799,883,792,901,781,935,747,964,707,988,665,1007,621,1034,538,1048,473,1053,475,1039,539,1012,623,993,667,968,710,939,750,904,785,886,796,865,804"/>
+<area shape="rect" id="Node000023" href="$_app_data_interface_8c.html#a46e2d1acaec3ced3fc4301e7c7d42fb2" title="This api is to get the External Prop Valve Part number." alt="" coords="447,768,630,795"/>
+<area shape="poly" id="edge37_Node000022_Node000023" title=" " alt="" coords="390,779,431,779,431,784,390,784"/>
 <area shape="rect" id="Node000024" href="$_app_data_interface_8c.html#ac9c8ae40192cd0d8fc49a401b28849e9" title="Retrieves the identification info of the External prop." alt="" coords="706,896,884,923"/>
-<area shape="poly" id="edge38_Node000022_Node000024" title=" " alt="" coords="390,805,510,827,640,860,688,882,713,889,712,894,686,886,638,865,509,832,389,810"/>
-<area shape="poly" id="edge40_Node000024_Node000007" title=" " alt="" coords="883,894,901,882,942,837,975,784,1000,728,1020,670,1034,614,1043,562,1051,482,1056,482,1048,563,1039,615,1025,672,1005,730,980,787,946,840,904,886,886,898"/>
+<area shape="poly" id="edge38_Node000022_Node000024" title=" " alt="" coords="390,796,530,825,640,855,665,868,688,882,709,889,707,894,686,886,662,873,638,860,529,831,389,801"/>
+<area shape="poly" id="edge40_Node000024_Node000007" title=" " alt="" coords="883,894,901,882,943,836,976,782,1002,725,1021,666,1034,608,1043,555,1051,474,1057,474,1049,556,1040,609,1026,667,1007,727,980,785,947,839,904,886,886,898"/>
 <area shape="rect" id="Node000025" href="$_external_prop_8c.html#acf4b478db18710fcdd7868a9aa4e3ec7" title=" " alt="" coords="951,896,1162,923"/>
 <area shape="poly" id="edge39_Node000024_Node000025" title=" " alt="" coords="885,907,935,907,935,912,885,912"/>
-<area shape="rect" id="Node000027" href="$_app_data_interface_8c.html#aa11a27a8303468f3e78181f7cbd108e5" title="Retrieves the identification info of the diagnostic valve." alt="" coords="701,795,889,821"/>
-<area shape="poly" id="edge42_Node000026_Node000027" title=" " alt="" coords="610,697,641,715,657,733,665,750,673,766,689,781,698,786,695,790,686,785,669,769,660,752,652,736,638,719,607,702"/>
-<area shape="rect" id="Node000029" href="$_app_data_interface_8c.html#a42fce8bf6559b335d1d32c6f8d043e54" title="This api is to get the Internal Prop Valve Part number." alt="" coords="703,693,887,720"/>
-<area shape="poly" id="edge44_Node000026_Node000029" title=" " alt="" coords="614,683,688,692,687,697,613,689"/>
-<area shape="rect" id="Node000030" href="$_app_data_interface_8c.html#a38b4de8794e3ef11e5ce137f95158207" title="Retrieves the identification info of the Internal Prop ." alt="" coords="709,592,881,619"/>
-<area shape="poly" id="edge45_Node000026_Node000030" title=" " alt="" coords="605,653,687,628,716,620,717,626,688,633,606,658"/>
-<area shape="rect" id="Node000031" href="$_app_data_interface_8c.html#a4f1705fea69b0128fc8558938fb17f59" title="Retrieves the identification info of the ISEM DIAG valve." alt="" coords="702,643,888,669"/>
-<area shape="poly" id="edge47_Node000026_Node000031" title=" " alt="" coords="613,668,687,662,687,668,614,674"/>
-<area shape="rect" id="Node000032" href="$_app_data_interface_8c.html#abb1f7159217e65e903f6658d812ccded" title="This api is to get the IO device part number." alt="" coords="714,744,876,771"/>
-<area shape="poly" id="edge49_Node000026_Node000032" title=" " alt="" coords="595,697,688,729,716,737,714,742,687,735,593,702"/>
-<area shape="poly" id="edge43_Node000027_Node000007" title=" " alt="" coords="883,792,901,781,935,748,963,710,987,668,1006,626,1033,544,1048,482,1053,483,1038,546,1011,628,991,671,967,713,939,751,904,785,886,796"/>
-<area shape="poly" id="edge46_Node000030_Node000007" title=" " alt="" coords="872,589,901,578,939,555,975,528,1030,476,1034,480,978,532,942,559,904,582,874,594"/>
-<area shape="poly" id="edge48_Node000031_Node000007" title=" " alt="" coords="877,640,901,628,946,594,984,554,1015,513,1038,478,1042,481,1019,516,988,557,949,598,904,633,879,645"/>
-<area shape="rect" id="Node000034" href="$_main_bus_node_8c.html#a85fdf886ae15f9471a8f9c42fd951f1f" title="Retrieves the MAC address of the specified main bus port." alt="" coords="713,845,877,872"/>
-<area shape="poly" id="edge51_Node000033_Node000034" title=" " alt="" coords="367,721,429,717,500,719,573,731,608,743,641,759,659,776,666,795,673,814,689,831,701,838,698,843,686,835,669,817,661,797,654,779,638,764,606,748,571,736,499,724,429,722,368,727"/>
-<area shape="poly" id="edge52_Node000034_Node000007" title=" " alt="" coords="876,846,901,831,938,792,969,747,994,699,1013,648,1038,554,1050,482,1055,483,1043,555,1018,650,998,701,973,750,942,796,904,835,878,851"/>
-<area shape="poly" id="edge73_Node000036_Node000021" title=" " alt="" coords="299,1256,303,1325,310,1374,322,1427,339,1482,363,1535,396,1582,439,1621,465,1636,488,1645,511,1649,533,1649,581,1638,638,1620,675,1605,710,1586,766,1543,769,1548,713,1590,678,1610,640,1625,582,1643,534,1654,511,1655,487,1651,462,1641,435,1625,392,1586,359,1537,334,1484,316,1429,305,1375,298,1326,294,1257"/>
-<area shape="rect" id="Node000037" href="$error__screen_8c.html#a03405ac35adbfb895787e8e34171098c" title="Function that calls the error display screen." alt="" coords="476,1077,600,1104"/>
-<area shape="poly" id="edge56_Node000036_Node000037" title=" " alt="" coords="305,1227,358,1172,395,1140,436,1114,460,1103,462,1108,438,1118,398,1145,361,1176,309,1231"/>
-<area shape="rect" id="Node000038" href="$upgrade__details_8c.html#a773db2ab78f39e0194c877a57a2eac3f" title="Function that fetches whether upgrade available for all the modules (IO &amp; ISEM Backplane modules)" alt="" coords="465,875,612,901"/>
-<area shape="poly" id="edge57_Node000036_Node000038" title=" " alt="" coords="295,1228,305,1170,329,1084,347,1037,370,991,400,948,435,911,449,902,452,906,439,915,404,952,375,994,352,1040,334,1086,310,1171,300,1229"/>
-<area shape="rect" id="Node000046" href="$mac__address_8c.html#a06b108195d85b99abb936fe244fe064d" title=" " alt="" coords="484,1381,592,1408"/>
-<area shape="poly" id="edge59_Node000036_Node000046" title=" " alt="" coords="309,1255,361,1310,398,1341,438,1367,470,1380,468,1385,436,1372,395,1345,358,1313,305,1258"/>
-<area shape="rect" id="Node000048" href="$_app_data_interface_8c.html#abf8b757f9f7ffdab556fac4e2820deb9" title="Retrieve the device handlers for AI (Analog Input) modules." alt="" coords="472,1128,605,1155"/>
-<area shape="poly" id="edge61_Node000036_Node000048" title=" " alt="" coords="316,1226,370,1196,436,1164,457,1157,459,1162,438,1169,372,1200,319,1231"/>
-<area shape="rect" id="Node000049" href="$_app_data_interface_8c.html#a89e43b764a633d86b33b7e8fe437f256" title="Retrieve the device handlers for AIO (Analog Input Output) modules." alt="" coords="467,1179,610,1205"/>
-<area shape="poly" id="edge62_Node000036_Node000049" title=" " alt="" coords="349,1229,455,1206,457,1212,350,1234"/>
-<area shape="rect" id="Node000050" href="$_app_data_interface_8c.html#a523d5536043e2248772f5b5c0c3448ce" title="Retrieve the device handlers for AO (Analog Output) modules." alt="" coords="468,1229,608,1256"/>
-<area shape="poly" id="edge63_Node000036_Node000050" title=" " alt="" coords="350,1240,452,1240,452,1245,350,1245"/>
-<area shape="rect" id="Node000051" href="$_app_data_interface_8c.html#aeba633b8bfe717f26b91e9035f01b7f1" title="Retrieve the device handlers for DI (Digital Input) modules." alt="" coords="472,1280,605,1307"/>
-<area shape="poly" id="edge64_Node000036_Node000051" title=" " alt="" coords="350,1251,457,1274,456,1279,349,1257"/>
-<area shape="rect" id="Node000052" href="$_app_data_interface_8c.html#a3fa80841f585da80163ab056466b213d" title="Retrieve the device handlers for DIO (Digital input output) modules." alt="" coords="467,1331,610,1357"/>
-<area shape="poly" id="edge65_Node000036_Node000052" title=" " alt="" coords="319,1254,372,1285,438,1316,459,1323,457,1328,436,1321,370,1290,316,1259"/>
-<area shape="rect" id="Node000053" href="$_app_data_interface_8c.html#ad8522fb41eb5ea484744c372dec788d0" title="Retrieves discovery details of the modules." alt="" coords="471,1432,606,1459"/>
-<area shape="poly" id="edge66_Node000036_Node000053" title=" " alt="" coords="305,1255,324,1288,353,1333,392,1379,438,1418,457,1427,454,1432,436,1422,388,1383,349,1336,319,1291,301,1258"/>
-<area shape="rect" id="Node000057" href="$_app_data_interface_8c.html#a9cc23bdb3b5e1b67530bbcbbef48e339" title="Retrieve the device handlers for DO (Digital output) modules." alt="" coords="468,1483,608,1509"/>
-<area shape="poly" id="edge67_Node000036_Node000057" title=" " alt="" coords="303,1256,319,1298,347,1356,386,1417,411,1445,439,1468,455,1478,452,1483,435,1473,407,1448,382,1420,342,1358,314,1300,298,1257"/>
-<area shape="rect" id="Node000058" href="$_app_data_interface_8c.html#aecf6ecd133b4eba3299beecb344a315b" title="Retrieve the External Prop Backplane handlers." alt="" coords="438,1533,638,1560"/>
-<area shape="poly" id="edge68_Node000036_Node000058" title=" " alt="" coords="301,1256,314,1306,340,1377,358,1416,381,1454,407,1489,439,1519,444,1523,441,1528,435,1523,403,1493,376,1457,354,1419,335,1379,309,1307,296,1257"/>
-<area shape="rect" id="Node000059" href="$_app_data_interface_8c.html#af1bdea025815c3e92d7ff96be50b903c" title="Retrieve the External Prop Pressure Zone Handlers." alt="" coords="437,1584,639,1611"/>
-<area shape="poly" id="edge69_Node000036_Node000059" title=" " alt="" coords="300,1256,310,1314,334,1399,352,1446,375,1491,404,1534,439,1570,443,1574,440,1578,435,1574,400,1537,370,1494,347,1448,329,1401,305,1315,295,1257"/>
-<area shape="rect" id="Node000060" href="$_app_data_interface_8c.html#a63c224be3097a026c038ac3e627ad76b" title="Retrieve the External Prop Valve handlers." alt="" coords="444,925,633,952"/>
-<area shape="poly" id="edge70_Node000036_Node000060" title=" " alt="" coords="296,1228,309,1178,335,1106,354,1067,376,1028,403,993,435,962,441,958,444,962,439,966,407,996,381,1031,358,1069,340,1108,314,1180,301,1230"/>
-<area shape="rect" id="Node000061" href="$_app_data_interface_8c.html#ad2985c903d0633288a5f3922334a6bd9" title="Retrieve the pressure zone handlers." alt="" coords="457,976,620,1003"/>
-<area shape="poly" id="edge71_Node000036_Node000061" title=" " alt="" coords="298,1228,314,1186,342,1127,382,1065,407,1037,435,1013,443,1008,446,1012,439,1017,411,1041,386,1069,347,1130,319,1188,303,1230"/>
-<area shape="rect" id="Node000062" href="$_app_data_interface_8c.html#a7c8264f04d96e64e0b1af41e947b6c8b" title="Initializes communication with the remote core to fetch data." alt="" coords="488,1027,588,1053"/>
-<area shape="poly" id="edge72_Node000036_Node000062" title=" " alt="" coords="301,1228,319,1194,349,1149,388,1103,436,1063,472,1047,474,1052,438,1068,392,1106,353,1153,324,1197,305,1230"/>
-<area shape="poly" id="edge58_Node000038_Node000024" title=" " alt="" coords="613,891,691,898,690,903,612,897"/>
-<area shape="poly" id="edge60_Node000046_Node000021" title=" " alt="" coords="594,1402,640,1418,710,1456,766,1496,763,1500,707,1460,638,1422,592,1407"/>
+<area shape="rect" id="Node000027" href="$_app_data_interface_8c.html#aa11a27a8303468f3e78181f7cbd108e5" title="Retrieves the identification info of the diagnostic valve." alt="" coords="701,693,889,720"/>
+<area shape="poly" id="edge42_Node000026_Node000027" title=" " alt="" coords="603,625,641,643,665,662,689,679,705,686,703,691,686,684,661,666,638,648,600,630"/>
+<area shape="rect" id="Node000029" href="$_app_data_interface_8c.html#a42fce8bf6559b335d1d32c6f8d043e54" title="This api is to get the Internal Prop Valve Part number." alt="" coords="703,592,887,619"/>
+<area shape="poly" id="edge44_Node000026_Node000029" title=" " alt="" coords="613,603,687,603,687,608,613,608"/>
+<area shape="rect" id="Node000030" href="$_app_data_interface_8c.html#a38b4de8794e3ef11e5ce137f95158207" title="Retrieves the identification info of the Internal Prop ." alt="" coords="709,491,881,517"/>
+<area shape="poly" id="edge45_Node000026_Node000030" title=" " alt="" coords="575,581,627,553,686,527,709,519,710,525,688,532,629,558,577,586"/>
+<area shape="rect" id="Node000031" href="$_app_data_interface_8c.html#a4f1705fea69b0128fc8558938fb17f59" title="Retrieves the identification info of the ISEM DIAG valve." alt="" coords="702,541,888,568"/>
+<area shape="poly" id="edge47_Node000026_Node000031" title=" " alt="" coords="613,588,708,569,709,574,614,593"/>
+<area shape="rect" id="Node000032" href="$_app_data_interface_8c.html#abb1f7159217e65e903f6658d812ccded" title="This api is to get the IO device part number." alt="" coords="714,643,876,669"/>
+<area shape="poly" id="edge49_Node000026_Node000032" title=" " alt="" coords="614,617,709,636,708,642,613,623"/>
+<area shape="poly" id="edge43_Node000027_Node000007" title=" " alt="" coords="880,690,901,679,928,657,952,632,993,575,1023,518,1043,472,1047,474,1028,521,997,577,956,635,932,661,904,684,883,695"/>
+<area shape="poly" id="edge46_Node000030_Node000007" title=" " alt="" coords="857,487,978,460,979,465,858,493"/>
+<area shape="poly" id="edge48_Node000031_Node000007" title=" " alt="" coords="866,538,902,527,966,497,1020,465,1023,470,968,501,904,532,868,543"/>
+<area shape="rect" id="Node000034" href="$_main_bus_node_8c.html#a85fdf886ae15f9471a8f9c42fd951f1f" title="Retrieves the MAC address of the specified main bus port." alt="" coords="713,744,877,771"/>
+<area shape="poly" id="edge51_Node000033_Node000034" title=" " alt="" coords="367,657,428,654,497,656,570,666,640,687,656,697,666,708,675,719,689,730,702,736,700,741,686,734,671,723,662,712,653,701,638,692,569,671,497,661,428,659,368,662"/>
+<area shape="poly" id="edge52_Node000034_Node000007" title=" " alt="" coords="876,744,901,730,932,702,958,670,981,634,1000,598,1029,528,1046,473,1051,474,1034,530,1005,600,986,637,962,673,935,706,904,734,878,748"/>
+<area shape="poly" id="edge74_Node000036_Node000021" title=" " alt="" coords="309,1249,361,1304,398,1335,438,1362,467,1375,492,1382,537,1389,584,1395,640,1412,710,1451,766,1491,763,1495,707,1455,638,1417,583,1400,537,1394,491,1388,465,1380,436,1366,395,1340,358,1308,305,1253"/>
+<area shape="rect" id="Node000037" href="$error__screen_8c.html#a03405ac35adbfb895787e8e34171098c" title="Function that calls the error display screen." alt="" coords="476,1123,600,1149"/>
+<area shape="poly" id="edge56_Node000036_Node000037" title=" " alt="" coords="316,1221,370,1190,436,1159,460,1151,462,1156,438,1164,372,1195,319,1226"/>
+<area shape="rect" id="Node000038" href="$upgrade__details_8c.html#a773db2ab78f39e0194c877a57a2eac3f" title="Function that fetches whether upgrade available for all the modules (IO &amp; ISEM Backplane modules)" alt="" coords="465,1173,612,1200"/>
+<area shape="poly" id="edge57_Node000036_Node000038" title=" " alt="" coords="349,1223,455,1201,457,1206,350,1229"/>
+<area shape="rect" id="Node000046" href="$mac__address_8c.html#a06b108195d85b99abb936fe244fe064d" title=" " alt="" coords="484,1629,592,1656"/>
+<area shape="poly" id="edge59_Node000036_Node000046" title=" " alt="" coords="300,1251,307,1317,328,1415,345,1470,369,1523,400,1572,439,1615,453,1625,470,1632,468,1637,451,1630,435,1619,396,1576,365,1525,340,1471,322,1417,301,1318,294,1252"/>
+<area shape="rect" id="Node000048" href="$_app_data_interface_8c.html#abf8b757f9f7ffdab556fac4e2820deb9" title="Retrieve the device handlers for AI (Analog Input) modules." alt="" coords="472,1224,605,1251"/>
+<area shape="poly" id="edge61_Node000036_Node000048" title=" " alt="" coords="350,1235,456,1235,456,1240,350,1240"/>
+<area shape="rect" id="Node000049" href="$_app_data_interface_8c.html#a89e43b764a633d86b33b7e8fe437f256" title="Retrieve the device handlers for AIO (Analog Input Output) modules." alt="" coords="467,1275,610,1301"/>
+<area shape="poly" id="edge62_Node000036_Node000049" title=" " alt="" coords="350,1246,457,1268,455,1274,349,1251"/>
+<area shape="rect" id="Node000050" href="$_app_data_interface_8c.html#a523d5536043e2248772f5b5c0c3448ce" title="Retrieve the device handlers for AO (Analog Output) modules." alt="" coords="468,1325,608,1352"/>
+<area shape="poly" id="edge63_Node000036_Node000050" title=" " alt="" coords="319,1249,372,1280,438,1311,459,1318,457,1323,436,1316,370,1284,316,1254"/>
+<area shape="rect" id="Node000051" href="$_app_data_interface_8c.html#aeba633b8bfe717f26b91e9035f01b7f1" title="Retrieve the device handlers for DI (Digital Input) modules." alt="" coords="472,1427,605,1453"/>
+<area shape="poly" id="edge64_Node000036_Node000051" title=" " alt="" coords="306,1250,355,1324,394,1368,439,1406,462,1418,459,1423,435,1410,390,1372,351,1327,302,1253"/>
+<area shape="rect" id="Node000052" href="$_app_data_interface_8c.html#a3fa80841f585da80163ab056466b213d" title="Retrieve the device handlers for DIO (Digital input output) modules." alt="" coords="467,1477,610,1504"/>
+<area shape="poly" id="edge65_Node000036_Node000052" title=" " alt="" coords="303,1250,319,1292,347,1350,386,1411,411,1439,439,1463,454,1472,451,1477,435,1467,407,1443,382,1415,342,1353,314,1294,298,1252"/>
+<area shape="rect" id="Node000053" href="$_app_data_interface_8c.html#ad8522fb41eb5ea484744c372dec788d0" title="Retrieves discovery details of the modules." alt="" coords="471,869,606,896"/>
+<area shape="poly" id="edge66_Node000036_Node000053" title=" " alt="" coords="295,1223,305,1165,329,1079,347,1032,370,986,400,943,435,906,454,894,457,898,439,910,404,946,375,989,352,1034,334,1081,310,1166,300,1224"/>
+<area shape="rect" id="Node000060" href="$_app_data_interface_8c.html#a9cc23bdb3b5e1b67530bbcbbef48e339" title="Retrieve the device handlers for DO (Digital output) modules." alt="" coords="468,1528,608,1555"/>
+<area shape="poly" id="edge68_Node000036_Node000060" title=" " alt="" coords="301,1250,314,1300,340,1372,358,1411,381,1449,407,1484,439,1514,455,1524,452,1529,435,1518,403,1487,376,1452,354,1413,335,1374,309,1302,296,1252"/>
+<area shape="rect" id="Node000061" href="$_app_data_interface_8c.html#aecf6ecd133b4eba3299beecb344a315b" title="Retrieve the External Prop Backplane handlers." alt="" coords="438,1579,638,1605"/>
+<area shape="poly" id="edge69_Node000036_Node000061" title=" " alt="" coords="300,1251,310,1309,334,1394,352,1440,375,1486,404,1528,439,1565,443,1568,440,1572,435,1569,400,1532,370,1489,347,1443,329,1396,305,1310,295,1252"/>
+<area shape="rect" id="Node000062" href="$_app_data_interface_8c.html#af1bdea025815c3e92d7ff96be50b903c" title="Retrieve the External Prop Pressure Zone Handlers." alt="" coords="437,920,639,947"/>
+<area shape="poly" id="edge70_Node000036_Node000062" title=" " alt="" coords="296,1223,309,1173,335,1101,354,1061,376,1023,403,987,435,957,441,952,444,957,439,961,407,991,381,1026,358,1064,340,1103,314,1174,301,1224"/>
+<area shape="rect" id="Node000063" href="$_app_data_interface_8c.html#a63c224be3097a026c038ac3e627ad76b" title="Retrieve the External Prop Valve handlers." alt="" coords="444,971,633,997"/>
+<area shape="poly" id="edge71_Node000036_Node000063" title=" " alt="" coords="298,1223,314,1180,342,1122,382,1060,407,1032,435,1007,443,1002,446,1007,439,1011,411,1035,386,1063,347,1124,319,1182,303,1224"/>
+<area shape="rect" id="Node000064" href="$_app_data_interface_8c.html#ad2985c903d0633288a5f3922334a6bd9" title="Retrieve the pressure zone handlers." alt="" coords="457,1021,620,1048"/>
+<area shape="poly" id="edge72_Node000036_Node000064" title=" " alt="" coords="301,1222,319,1189,349,1144,388,1097,435,1058,445,1053,447,1057,439,1062,392,1101,353,1147,324,1192,305,1225"/>
+<area shape="rect" id="Node000065" href="$_app_data_interface_8c.html#a7c8264f04d96e64e0b1af41e947b6c8b" title="Initializes communication with the remote core to fetch data." alt="" coords="488,1072,588,1099"/>
+<area shape="poly" id="edge73_Node000036_Node000065" title=" " alt="" coords="305,1222,358,1167,395,1135,436,1108,472,1094,474,1099,438,1113,398,1139,361,1170,309,1225"/>
+<area shape="poly" id="edge58_Node000038_Node000024" title=" " alt="" coords="611,1173,638,1159,666,1135,691,1107,733,1046,763,985,782,936,787,938,768,987,737,1048,695,1111,670,1139,641,1164,614,1178"/>
+<area shape="poly" id="edge60_Node000046_Node000021" title=" " alt="" coords="592,1630,638,1615,707,1577,763,1537,766,1541,710,1581,640,1620,594,1635"/>
+<area shape="poly" id="edge67_Node000053_Node000019" title=" " alt="" coords="606,874,688,866,688,871,607,879"/>
 </map>

@@ -1,7 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"lvgl__gui_8c.html#ad92527b67b3e54d9d562b484582cf2bb":[2,0,0,0,0,0,0,0,0,0,3,1,7],
-"lvgl__gui_8c.html#ad9b43da1560c6caaf5373a55bc5e8970":[2,0,0,0,0,0,0,0,0,0,3,1,127],
 "lvgl__gui_8c.html#adbb2701d2f614e81d8c1d3089fd22fac":[2,0,0,0,0,0,0,0,0,0,3,1,26],
 "lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c":[2,0,0,0,0,0,0,0,0,0,3,1,54],
 "lvgl__gui_8c.html#ae1bcc600008d06e5c5010545e36edb61":[2,0,0,0,0,0,0,0,0,0,3,1,144],
@@ -249,5 +247,7 @@ var NAVTREEINDEX5 =
 "valves__modules__status__info_8c.html#a0d3ab1988e68b6bef58f6d476e7f16ce":[2,0,0,0,0,0,0,0,0,0,2,11,26],
 "valves__modules__status__info_8c.html#a10cc7cec515e793daebaef0c2d403b3b":[2,0,0,0,0,0,0,0,0,0,2,11,28],
 "valves__modules__status__info_8c.html#a27e4047823c653df7bd5f560cd4fa460":[2,0,0,0,0,0,0,0,0,0,2,11,15],
-"valves__modules__status__info_8c.html#a302e4e8f28350675e1eb62a4e1481d8c":[2,0,0,0,0,0,0,0,0,0,2,11,6]
+"valves__modules__status__info_8c.html#a302e4e8f28350675e1eb62a4e1481d8c":[2,0,0,0,0,0,0,0,0,0,2,11,6],
+"valves__modules__status__info_8c.html#a32d7ae5c30054bc52bf84eff8801f89b":[2,0,0,0,0,0,0,0,0,0,2,11,25],
+"valves__modules__status__info_8c.html#a35543a9dcccf9931226aebbaeb9f109e":[2,0,0,0,0,0,0,0,0,0,2,11,3]
 };

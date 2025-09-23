@@ -33,6 +33,5 @@ var default__task_8c =
     [ "lvgl_state_thread", "default__task_8c.html#aed88a87080777229ab77e1af0285690f", null ],
     [ "mutex", "default__task_8c.html#a4acff8232e4aec9cd5c6dc200ac55ef3", null ],
     [ "screen_pop_up_thread", "default__task_8c.html#a06fda7de76b4b4fac8b20bb08a2ad1ce", null ],
-    [ "thread_acquire", "default__task_8c.html#a5d3f042bc74db494e10c9eebd7208734", null ],
-    [ "thread_led", "default__task_8c.html#a9fbaded7afa706fa64a75084f7097644", null ]
+    [ "thread_acquire", "default__task_8c.html#a5d3f042bc74db494e10c9eebd7208734", null ]
 ];

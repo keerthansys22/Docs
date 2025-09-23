@@ -252,12 +252,22 @@ Variables</h2></td></tr>
 <tr class="separator:aaf1b0cc8a8ce9e35fc367d736899190e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74a1d3de2adc41e0c25b3ba7971bc116" id="r_a74a1d3de2adc41e0c25b3ba7971bc116"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74a1d3de2adc41e0c25b3ba7971bc116">upgrade_enabled</a></td></tr>
 <tr class="separator:a74a1d3de2adc41e0c25b3ba7971bc116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b6f98ea6efb7962c717a7f45dc3e23" id="r_a97b6f98ea6efb7962c717a7f45dc3e23"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97b6f98ea6efb7962c717a7f45dc3e23">upgrade_status</a></td></tr>
+<tr class="separator:a97b6f98ea6efb7962c717a7f45dc3e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b71b5c7a7fbb0d56b514bdfddb301fd" id="r_a7b71b5c7a7fbb0d56b514bdfddb301fd"><td class="memItemLeft" align="right" valign="top">timer_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b71b5c7a7fbb0d56b514bdfddb301fd">longpress_timer</a></td></tr>
 <tr class="separator:a7b71b5c7a7fbb0d56b514bdfddb301fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f2797c133895a11557ac19b0d846127" id="r_a7f2797c133895a11557ac19b0d846127"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f2797c133895a11557ac19b0d846127">long_flag</a> = false</td></tr>
 <tr class="separator:a7f2797c133895a11557ac19b0d846127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bd143ed2741955bf62bb2d2bc319386" id="r_a8bd143ed2741955bf62bb2d2bc319386"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bd143ed2741955bf62bb2d2bc319386">longpress_detected</a> = false</td></tr>
 <tr class="separator:a8bd143ed2741955bf62bb2d2bc319386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b20330a68d9e059f37c2d125995478" id="r_a38b20330a68d9e059f37c2d125995478"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38b20330a68d9e059f37c2d125995478">data_processing_thread</a></td></tr>
+<tr class="separator:a38b20330a68d9e059f37c2d125995478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06fda7de76b4b4fac8b20bb08a2ad1ce" id="r_a06fda7de76b4b4fac8b20bb08a2ad1ce"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06fda7de76b4b4fac8b20bb08a2ad1ce">screen_pop_up_thread</a></td></tr>
+<tr class="separator:a06fda7de76b4b4fac8b20bb08a2ad1ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3f042bc74db494e10c9eebd7208734" id="r_a5d3f042bc74db494e10c9eebd7208734"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d3f042bc74db494e10c9eebd7208734">thread_acquire</a></td></tr>
+<tr class="separator:a5d3f042bc74db494e10c9eebd7208734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73284ceff08aa772d1c0d276e38da2b5" id="r_a73284ceff08aa772d1c0d276e38da2b5"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73284ceff08aa772d1c0d276e38da2b5">ethercat_led_tid</a></td></tr>
+<tr class="separator:a73284ceff08aa772d1c0d276e38da2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Source that monitors LED indications and key press indications. </p>
@@ -1361,6 +1371,42 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a38b20330a68d9e059f37c2d125995478" name="a38b20330a68d9e059f37c2d125995478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b20330a68d9e059f37c2d125995478">&#9670;&#160;</a></span>data_processing_thread</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_t data_processing_thread</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73284ceff08aa772d1c0d276e38da2b5" name="a73284ceff08aa772d1c0d276e38da2b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73284ceff08aa772d1c0d276e38da2b5">&#9670;&#160;</a></span>ethercat_led_tid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_t ethercat_led_tid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac69e4e922707981e211d8a9791d8b849" name="ac69e4e922707981e211d8a9791d8b849"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac69e4e922707981e211d8a9791d8b849">&#9670;&#160;</a></span>fd_led</h2>
 
@@ -1545,6 +1591,42 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a06fda7de76b4b4fac8b20bb08a2ad1ce" name="a06fda7de76b4b4fac8b20bb08a2ad1ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fda7de76b4b4fac8b20bb08a2ad1ce">&#9670;&#160;</a></span>screen_pop_up_thread</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_t screen_pop_up_thread</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d3f042bc74db494e10c9eebd7208734" name="a5d3f042bc74db494e10c9eebd7208734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d3f042bc74db494e10c9eebd7208734">&#9670;&#160;</a></span>thread_acquire</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_t thread_acquire</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a74a1d3de2adc41e0c25b3ba7971bc116" name="a74a1d3de2adc41e0c25b3ba7971bc116"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74a1d3de2adc41e0c25b3ba7971bc116">&#9670;&#160;</a></span>upgrade_enabled</h2>
 
@@ -1556,6 +1638,28 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">bool upgrade_enabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97b6f98ea6efb7962c717a7f45dc3e23" name="a97b6f98ea6efb7962c717a7f45dc3e23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b6f98ea6efb7962c717a7f45dc3e23">&#9670;&#160;</a></span>upgrade_status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool upgrade_status</td>
         </tr>
       </table>
   </td>

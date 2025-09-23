@@ -143,8 +143,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a951a5e11d0f3bb0dd553cc7a6abaa9f3" id="r_a951a5e11d0f3bb0dd553cc7a6abaa9f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a951a5e11d0f3bb0dd553cc7a6abaa9f3">config_upgrade_style</a> ()</td></tr>
 <tr class="memdesc:a951a5e11d0f3bb0dd553cc7a6abaa9f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to initialize config screen upgrade styles.  <br /></td></tr>
 <tr class="separator:a951a5e11d0f3bb0dd553cc7a6abaa9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a171bd087fd88267f8df70214d756df4a" id="r_a171bd087fd88267f8df70214d756df4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a171bd087fd88267f8df70214d756df4a">common_label_creation</a> (lv_obj_t *screen_name, char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</td></tr>
-<tr class="separator:a171bd087fd88267f8df70214d756df4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf24a7fb496a80ca43515bb265f1ae1" id="r_a2cf24a7fb496a80ca43515bb265f1ae1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cf24a7fb496a80ca43515bb265f1ae1">common_label_creation</a> (lv_obj_t *screen_name, const char *text, lv_coord_t x, lv_coord_t y, const lv_font_t *font_name, uint32_t font_colour)</td></tr>
+<tr class="memdesc:a2cf24a7fb496a80ca43515bb265f1ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to create the pin labels  <br /></td></tr>
+<tr class="separator:a2cf24a7fb496a80ca43515bb265f1ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -190,8 +191,8 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Source that displays configuration (sub-menu) (ip_address_configuration) screen. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a171bd087fd88267f8df70214d756df4a" name="a171bd087fd88267f8df70214d756df4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a171bd087fd88267f8df70214d756df4a">&#9670;&#160;</a></span>common_label_creation()</h2>
+<a id="a2cf24a7fb496a80ca43515bb265f1ae1" name="a2cf24a7fb496a80ca43515bb265f1ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf24a7fb496a80ca43515bb265f1ae1">&#9670;&#160;</a></span>common_label_creation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +208,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -236,12 +237,27 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>function to create the pin labels </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">screen_name</td><td>- screen name </td></tr>
+    <tr><td class="paramname">text</td><td>- text to be displayed on the screen </td></tr>
+    <tr><td class="paramname">x</td><td>- x axis alignment of the label </td></tr>
+    <tr><td class="paramname">y</td><td>- y axis alignment of the label </td></tr>
+    <tr><td class="paramname">w</td><td>- width of the label </td></tr>
+    <tr><td class="paramname">h</td><td>- height of the label </td></tr>
+    <tr><td class="paramname">font_name</td><td>- font name (Monospace821 BT) </td></tr>
+    <tr><td class="paramname">font_color</td><td>- font color (white or black) </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="config__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph.png" border="0" usemap="#aconfig__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph" alt=""/></div>
-<map name="aconfig__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph" id="aconfig__screen_8c_a171bd087fd88267f8df70214d756df4a_icgraph">
-<area shape="rect" title=" " alt="" coords="496,81,655,108"/>
+<div class="center"><img src="config__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1_icgraph.png" border="0" usemap="#aconfig__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1_icgraph" alt=""/></div>
+<map name="aconfig__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1_icgraph" id="aconfig__screen_8c_a2cf24a7fb496a80ca43515bb265f1ae1_icgraph">
+<area shape="rect" title="function to create the pin labels" alt="" coords="496,81,655,108"/>
 <area shape="rect" href="config__screen_8c.html#aa842831f606b324fb3de80b157c7248d" title="Function to display config screen." alt="" coords="278,5,442,32"/>
 <area shape="poly" title=" " alt="" coords="528,77,447,47,411,35,413,30,449,41,529,73"/>
 <area shape="rect" href="config__screen_8c.html#a9730ce850a975e6a1cf4712cace1ad88" title="Function to display upgrade screen inside config screen." alt="" coords="272,56,448,83"/>
@@ -374,7 +390,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="config__screen_8c_aa842831f606b324fb3de80b157c7248d_cgraph.png" border="0" usemap="#aconfig__screen_8c_aa842831f606b324fb3de80b157c7248d_cgraph" alt=""/></div>
 <map name="aconfig__screen_8c_aa842831f606b324fb3de80b157c7248d_cgraph" id="aconfig__screen_8c_aa842831f606b324fb3de80b157c7248d_cgraph">
 <area shape="rect" title="Function to display config screen." alt="" coords="5,5,170,32"/>
-<area shape="rect" href="config__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="218,5,376,32"/>
+<area shape="rect" href="common__screen__calls_8c.html#a2cf24a7fb496a80ca43515bb265f1ae1" title="function to create the pin labels" alt="" coords="218,5,376,32"/>
 <area shape="poly" title=" " alt="" coords="170,16,202,16,202,21,170,21"/>
 </map>
 </div>
@@ -432,7 +448,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="config__screen_8c_a9730ce850a975e6a1cf4712cace1ad88_cgraph.png" border="0" usemap="#aconfig__screen_8c_a9730ce850a975e6a1cf4712cace1ad88_cgraph" alt=""/></div>
 <map name="aconfig__screen_8c_a9730ce850a975e6a1cf4712cace1ad88_cgraph" id="aconfig__screen_8c_a9730ce850a975e6a1cf4712cace1ad88_cgraph">
 <area shape="rect" title="Function to display upgrade screen inside config screen." alt="" coords="5,5,182,32"/>
-<area shape="rect" href="config__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="230,5,388,32"/>
+<area shape="rect" href="common__screen__calls_8c.html#a2cf24a7fb496a80ca43515bb265f1ae1" title="function to create the pin labels" alt="" coords="230,5,388,32"/>
 <area shape="poly" title=" " alt="" coords="182,16,214,16,214,21,182,21"/>
 </map>
 </div>
@@ -484,7 +500,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="config__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113_cgraph.png" border="0" usemap="#aconfig__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113_cgraph" alt=""/></div>
 <map name="aconfig__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113_cgraph" id="aconfig__screen_8c_a9f6c0d8474482ff0da5f49dfaf92e113_cgraph">
 <area shape="rect" title="Function to display caret on config screen &#45;&gt; IP Octet1." alt="" coords="5,5,101,32"/>
-<area shape="rect" href="config__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="149,5,307,32"/>
+<area shape="rect" href="common__screen__calls_8c.html#a2cf24a7fb496a80ca43515bb265f1ae1" title="function to create the pin labels" alt="" coords="149,5,307,32"/>
 <area shape="poly" title=" " alt="" coords="101,16,133,16,133,21,101,21"/>
 </map>
 </div>
@@ -536,7 +552,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="config__screen_8c_a0bb5911360ef0cddb25e395831649d96_cgraph.png" border="0" usemap="#aconfig__screen_8c_a0bb5911360ef0cddb25e395831649d96_cgraph" alt=""/></div>
 <map name="aconfig__screen_8c_a0bb5911360ef0cddb25e395831649d96_cgraph" id="aconfig__screen_8c_a0bb5911360ef0cddb25e395831649d96_cgraph">
 <area shape="rect" title="Function to display caret on config screen &#45;&gt; IP Octet2." alt="" coords="5,5,101,32"/>
-<area shape="rect" href="config__screen_8c.html#a171bd087fd88267f8df70214d756df4a" title=" " alt="" coords="149,5,307,32"/>
+<area shape="rect" href="common__screen__calls_8c.html#a2cf24a7fb496a80ca43515bb265f1ae1" title="function to create the pin labels" alt="" coords="149,5,307,32"/>
 <area shape="poly" title=" " alt="" coords="101,16,133,16,133,21,101,21"/>
 </map>
 </div>

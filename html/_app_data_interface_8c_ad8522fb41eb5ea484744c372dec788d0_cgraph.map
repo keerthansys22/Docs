@@ -1,11 +1,23 @@
 <map id="getDiscoveryDetails" name="getDiscoveryDetails">
-<area shape="rect" id="Node000001" title="Retrieves discovery details of the modules." alt="" coords="5,31,141,57"/>
-<area shape="rect" id="Node000002" href="$_app_data_interface_8c.html#afde155105217b10b0c6e274f438be8a0" title=": Reads the discovery information from the shared memory" alt="" coords="189,5,311,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,32,173,27,174,32,142,37"/>
-<area shape="rect" id="Node000004" href="$_main_bus_node_8c.html#a2ff0ea3717aee424b4122935e1578c43" title=" " alt="" coords="201,56,299,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,51,187,58,186,63,141,56"/>
-<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="360,5,521,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,16,344,16,344,21,311,21"/>
-<area shape="rect" id="Node000005" href="$_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="359,56,522,83"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="299,67,343,67,343,72,299,72"/>
+<area shape="rect" id="Node000001" title="Retrieves discovery details of the modules." alt="" coords="5,56,141,83"/>
+<area shape="rect" id="Node000002" href="$_main_bus_node_8c.html#a4c744d8e866ef4daaecc8f89545b8286" title="Retrieve the identification information of the Main Bus Node (MBN)." alt="" coords="189,5,371,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,53,207,34,208,39,131,58"/>
+<area shape="rect" id="Node000004" href="$_app_data_interface_8c.html#afde155105217b10b0c6e274f438be8a0" title=": Reads the discovery information from the shared memory" alt="" coords="219,56,341,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,67,203,67,203,72,141,72"/>
+<area shape="rect" id="Node000005" href="$_app_data_interface_8c.html#a4c38252d47cb0b06df736dab613508a7" title="This function is to update the mbn information." alt="" coords="201,107,359,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="131,81,208,100,207,105,130,86"/>
+<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="419,5,580,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,16,403,16,403,21,371,21"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="340,53,423,33,425,39,342,58"/>
+<area shape="rect" id="Node000006" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="427,56,572,83"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="340,103,423,84,425,89,342,109"/>
+<area shape="rect" id="Node000008" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="433,107,566,133"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="360,117,418,117,418,123,360,123"/>
+<area shape="rect" id="Node000009" href="$_main_bus_node_8c.html#a2ff0ea3717aee424b4122935e1578c43" title=" " alt="" coords="451,157,548,184"/>
+<area shape="poly" id="edge10_Node000005_Node000009" title=" " alt="" coords="342,131,437,154,435,159,340,137"/>
+<area shape="rect" id="Node000007" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="657,81,763,108"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="573,75,642,84,642,89,572,81"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="566,109,642,100,642,105,567,115"/>
+<area shape="rect" id="Node000010" href="$_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="628,157,792,184"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="549,168,613,168,613,173,549,173"/>
 </map>

@@ -2,32 +2,32 @@
 <area shape="rect" id="Node000001" title="Main Function." alt="" coords="5,1621,55,1648"/>
 <area shape="rect" id="Node000002" href="$default__task_8c.html#aac61f6b36d93b0c3a0fd8cc41cbfbdc3" title="Default function to create threads and events." alt="" coords="103,1145,197,1172"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="32,1620,139,1186,144,1188,37,1622"/>
-<area shape="rect" id="Node000106" href="$hw__init_8c.html#afe6c733d4bb6ed63271e16052a6bb71e" title="function that initializes the hardware" alt="" coords="116,1713,184,1740"/>
-<area shape="poly" id="edge48_Node000001_Node000106" title=" " alt="" coords="51,1647,121,1701,117,1706,47,1651"/>
-<area shape="rect" id="Node000120" href="$lvgl__init_8c.html#a51a0d8444720631af4e4ccd140a6a038" title="Function to initialize lvgl drivers." alt="" coords="118,1764,182,1791"/>
-<area shape="poly" id="edge58_Node000001_Node000120" title=" " alt="" coords="39,1647,64,1696,82,1724,105,1750,107,1753,104,1757,101,1754,78,1728,59,1699,35,1650"/>
-<area shape="rect" id="Node000121" href="$power__on__self__test_8c.html#a2b69d74572d29a70ecb8148fdb6b9f69" title=" " alt="" coords="277,1529,395,1556"/>
-<area shape="poly" id="edge59_Node000001_Node000121" title=" " alt="" coords="54,1625,273,1558,275,1564,56,1630"/>
+<area shape="rect" id="Node000107" href="$hw__init_8c.html#afe6c733d4bb6ed63271e16052a6bb71e" title="function that initializes the hardware" alt="" coords="116,1713,184,1740"/>
+<area shape="poly" id="edge48_Node000001_Node000107" title=" " alt="" coords="51,1647,121,1701,117,1706,47,1651"/>
+<area shape="rect" id="Node000121" href="$lvgl__init_8c.html#a51a0d8444720631af4e4ccd140a6a038" title="Function to initialize lvgl drivers." alt="" coords="118,1764,182,1791"/>
+<area shape="poly" id="edge58_Node000001_Node000121" title=" " alt="" coords="39,1647,64,1696,82,1724,105,1750,107,1753,104,1757,101,1754,78,1728,59,1699,35,1650"/>
+<area shape="rect" id="Node000122" href="$power__on__self__test_8c.html#a2b69d74572d29a70ecb8148fdb6b9f69" title=" " alt="" coords="277,1529,395,1556"/>
+<area shape="poly" id="edge59_Node000001_Node000122" title=" " alt="" coords="54,1625,273,1558,275,1564,56,1630"/>
 <area shape="rect" id="Node000003" href="$data__processing_8c.html#a0065bcc1cda673c15587b28e8d9584f5" title="Function that processes all the IO&#45;modules and valves real&#45;time data." alt="" coords="263,905,410,932"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="160,1143,313,943,317,946,164,1146"/>
 <area shape="rect" id="Node000023" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="787,1251,867,1277"/>
 <area shape="poly" id="edge36_Node000002_Node000023" title=" " alt="" coords="198,1170,246,1181,367,1203,462,1216,681,1241,772,1254,772,1259,680,1247,462,1221,366,1209,244,1187,197,1175"/>
-<area shape="rect" id="Node000073" href="$default__task_8c.html#ac0d18105a979f76f090ea2ad7d58032c" title=" " alt="" coords="278,125,395,152"/>
-<area shape="poly" id="edge17_Node000002_Node000073" title=" " alt="" coords="149,1145,158,992,176,741,204,476,222,365,242,283,257,249,275,216,312,163,316,166,280,219,262,251,248,285,227,366,209,476,181,741,163,993,154,1145"/>
-<area shape="rect" id="Node000077" href="$_data_server_monitor_led_8c.html#ac96f62d0c5594b54bd56e85a473b0dd8" title=" " alt="" coords="245,296,427,323"/>
-<area shape="poly" id="edge20_Node000002_Node000077" title=" " alt="" coords="151,1144,242,711,326,337,331,339,248,713,157,1145"/>
-<area shape="rect" id="Node000100" href="$dv__fault__csv_8c.html#a628e7c7a00aab18227d4e7dc4c8b1742" title="Function that reads the fault data from CSV file &amp; stores the same in the structure." alt="" coords="275,1247,397,1273"/>
-<area shape="poly" id="edge37_Node000002_Node000100" title=" " alt="" coords="168,1170,203,1198,246,1226,275,1238,272,1243,244,1230,200,1202,165,1175"/>
-<area shape="rect" id="Node000101" href="$dv__warning__csv_8c.html#a24c10c05ec7a5cc4bf1a9b3b950df902" title="Function that reads the warning data from CSV file &amp; stores the same in the structure." alt="" coords="265,855,407,881"/>
-<area shape="poly" id="edge39_Node000002_Node000101" title=" " alt="" coords="149,1144,154,1097,168,1029,180,992,196,955,217,921,243,891,250,886,253,890,247,895,221,924,201,958,185,994,174,1030,159,1097,154,1145"/>
-<area shape="rect" id="Node000102" href="$isem__backplane__fault__csv_8c.html#aa9eb89c1abd2922252caec78260f54e2" title="Function that reads the ISEM backplane fault data from CSV file &amp; stores the same in the structure." alt="" coords="263,1297,410,1340"/>
-<area shape="poly" id="edge40_Node000002_Node000102" title=" " alt="" coords="160,1171,193,1225,217,1256,247,1283,252,1287,249,1291,243,1287,214,1260,189,1228,156,1174"/>
-<area shape="rect" id="Node000103" href="$isem__backplane__warning__csv_8c.html#acb48f03cfb7a7e6f7b40986879324d67" title="Function that reads the ISEM backplane warning data from CSV file &amp; stores the same in the structure." alt="" coords="263,1364,410,1407"/>
-<area shape="poly" id="edge42_Node000002_Node000103" title=" " alt="" coords="157,1172,166,1207,184,1255,210,1306,227,1329,247,1350,251,1354,248,1358,243,1354,223,1333,206,1309,179,1257,161,1209,152,1173"/>
-<area shape="rect" id="Node000104" href="$isem__diag__fault__csv_8c.html#a7897dd6fbd5132586bf3ed4715533602" title="Function that reads the ISEM DIAG fault data from CSV file &amp; stores the same in the structure." alt="" coords="267,1145,405,1172"/>
-<area shape="poly" id="edge44_Node000002_Node000104" title=" " alt="" coords="198,1156,251,1156,251,1161,198,1161"/>
-<area shape="rect" id="Node000105" href="$isem__diag__warning__csv_8c.html#a0b79e345f9e43dc63e62d0065a61d56a" title="Function that reads the ISEM DIAG warning data from CSV file &amp; stores the same in the structure." alt="" coords="257,724,415,751"/>
-<area shape="poly" id="edge46_Node000002_Node000105" title=" " alt="" coords="150,1145,160,1094,177,1017,204,928,243,841,274,796,307,760,311,764,278,800,247,844,209,930,182,1018,165,1095,156,1146"/>
+<area shape="rect" id="Node000076" href="$default__task_8c.html#ac0d18105a979f76f090ea2ad7d58032c" title=" " alt="" coords="278,125,395,152"/>
+<area shape="poly" id="edge17_Node000002_Node000076" title=" " alt="" coords="149,1145,158,992,176,741,204,476,222,365,242,283,257,249,275,216,312,163,316,166,280,219,262,251,248,285,227,366,209,476,181,741,163,993,154,1145"/>
+<area shape="rect" id="Node000080" href="$_data_server_monitor_led_8c.html#ac96f62d0c5594b54bd56e85a473b0dd8" title=" " alt="" coords="245,296,427,323"/>
+<area shape="poly" id="edge20_Node000002_Node000080" title=" " alt="" coords="151,1144,242,711,326,337,331,339,248,713,157,1145"/>
+<area shape="rect" id="Node000101" href="$dv__fault__csv_8c.html#a628e7c7a00aab18227d4e7dc4c8b1742" title="Function that reads the fault data from CSV file &amp; stores the same in the structure." alt="" coords="275,1247,397,1273"/>
+<area shape="poly" id="edge37_Node000002_Node000101" title=" " alt="" coords="168,1170,203,1198,246,1226,275,1238,272,1243,244,1230,200,1202,165,1175"/>
+<area shape="rect" id="Node000102" href="$dv__warning__csv_8c.html#a24c10c05ec7a5cc4bf1a9b3b950df902" title="Function that reads the warning data from CSV file &amp; stores the same in the structure." alt="" coords="265,855,407,881"/>
+<area shape="poly" id="edge39_Node000002_Node000102" title=" " alt="" coords="149,1144,154,1097,168,1029,180,992,196,955,217,921,243,891,250,886,253,890,247,895,221,924,201,958,185,994,174,1030,159,1097,154,1145"/>
+<area shape="rect" id="Node000103" href="$isem__backplane__fault__csv_8c.html#aa9eb89c1abd2922252caec78260f54e2" title="Function that reads the ISEM backplane fault data from CSV file &amp; stores the same in the structure." alt="" coords="263,1297,410,1340"/>
+<area shape="poly" id="edge40_Node000002_Node000103" title=" " alt="" coords="160,1171,193,1225,217,1256,247,1283,252,1287,249,1291,243,1287,214,1260,189,1228,156,1174"/>
+<area shape="rect" id="Node000104" href="$isem__backplane__warning__csv_8c.html#acb48f03cfb7a7e6f7b40986879324d67" title="Function that reads the ISEM backplane warning data from CSV file &amp; stores the same in the structure." alt="" coords="263,1364,410,1407"/>
+<area shape="poly" id="edge42_Node000002_Node000104" title=" " alt="" coords="157,1172,166,1207,184,1255,210,1306,227,1329,247,1350,251,1354,248,1358,243,1354,223,1333,206,1309,179,1257,161,1209,152,1173"/>
+<area shape="rect" id="Node000105" href="$isem__diag__fault__csv_8c.html#a7897dd6fbd5132586bf3ed4715533602" title="Function that reads the ISEM DIAG fault data from CSV file &amp; stores the same in the structure." alt="" coords="267,1145,405,1172"/>
+<area shape="poly" id="edge44_Node000002_Node000105" title=" " alt="" coords="198,1156,251,1156,251,1161,198,1161"/>
+<area shape="rect" id="Node000106" href="$isem__diag__warning__csv_8c.html#a0b79e345f9e43dc63e62d0065a61d56a" title="Function that reads the ISEM DIAG warning data from CSV file &amp; stores the same in the structure." alt="" coords="257,724,415,751"/>
+<area shape="poly" id="edge46_Node000002_Node000106" title=" " alt="" coords="150,1145,160,1094,177,1017,204,928,243,841,274,796,307,760,311,764,278,800,247,844,209,930,182,1018,165,1095,156,1146"/>
 <area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#afc2a01db214bea71598ff4c8dba79574" title="Function that copies from original structure, sort it and store the sorted array module numbers in an..." alt="" coords="523,427,633,453"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="409,905,425,891,445,865,457,838,464,812,467,785,461,732,448,679,435,626,429,572,432,545,440,518,453,491,473,463,489,451,507,443,509,448,492,455,477,467,458,494,445,520,437,546,435,572,440,625,453,678,466,731,472,785,470,812,462,840,449,867,429,895,412,909"/>
 <area shape="rect" id="Node000006" href="$module__details__processing_8c.html#a3e9b0f25faad61167968870d14001d3b" title="Function that fetches the IO_module identification parameters." alt="" coords="505,477,651,520"/>
@@ -45,76 +45,76 @@
 <area shape="poly" id="edge12_Node000003_Node000037" title=" " alt="" coords="410,908,504,898,504,904,410,914"/>
 <area shape="rect" id="Node000038" href="$discovery_8c.html#affc9f61bc5cd527c136ab0071a8f41cb" title="Function that processes the discovery details." alt="" coords="524,981,632,1008"/>
 <area shape="poly" id="edge14_Node000003_Node000038" title=" " alt="" coords="373,930,476,967,509,976,508,981,475,972,371,935"/>
-<area shape="rect" id="Node000072" href="$valves__modules__status__info_8c.html#ad78d371cdb92718310deea685102f846" title="Function that processes the valves modules status information." alt="" coords="487,931,669,957"/>
-<area shape="poly" id="edge16_Node000003_Node000072" title=" " alt="" coords="410,924,472,930,471,936,410,929"/>
+<area shape="rect" id="Node000075" href="$valves__modules__status__info_8c.html#ad78d371cdb92718310deea685102f846" title="Function that processes the valves modules status information." alt="" coords="487,931,669,957"/>
+<area shape="poly" id="edge16_Node000003_Node000075" title=" " alt="" coords="410,924,472,930,471,936,410,929"/>
 <area shape="rect" id="Node000005" href="$lvgl__gui_8c.html#a58997b988646976eadf522f6b26c9f46" title="Function to stop the inactivity timer." alt="" coords="786,427,868,453"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="633,437,770,437,770,443,633,443"/>
 <area shape="rect" id="Node000007" href="$_app_data_interface_8c.html#a5f43d0a7b6a638cd96656403e533a9ec" title="Retrieves the identification info of the requested analog module." alt="" coords="729,481,925,508"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="651,495,713,494,713,499,651,500"/>
 <area shape="poly" id="edge8_Node000020_Node000023" title=" " alt="" coords="645,1124,682,1142,750,1190,803,1238,799,1242,746,1194,679,1146,643,1128"/>
 <area shape="poly" id="edge15_Node000038_Node000023" title=" " alt="" coords="634,1001,659,1011,682,1025,708,1048,732,1075,771,1133,800,1190,819,1235,814,1237,795,1192,766,1136,728,1078,705,1052,679,1029,657,1015,632,1006"/>
-<area shape="rect" id="Node000074" href="$_data_server_monitor_led_8c.html#af5cb2ba0d32e073daaf90d4aef07dac2" title=" " alt="" coords="493,5,663,32"/>
-<area shape="poly" id="edge18_Node000073_Node000074" title=" " alt="" coords="354,123,407,86,474,48,508,35,510,40,476,53,409,91,357,127"/>
-<area shape="rect" id="Node000076" href="$_data_server_led_indication_8c.html#af352e029b1015e3dea14361b83d76445" title=" " alt="" coords="761,56,893,83"/>
-<area shape="poly" id="edge19_Node000074_Node000076" title=" " alt="" coords="648,30,747,50,745,56,647,35"/>
-<area shape="poly" id="edge27_Node000077_Node000023" title=" " alt="" coords="343,322,356,371,382,440,422,516,447,550,477,581,504,598,530,607,581,611,607,612,632,616,658,628,683,649,698,669,712,696,738,763,760,845,780,935,809,1110,825,1235,820,1236,804,1111,775,936,755,846,733,765,707,698,693,672,679,652,655,632,631,622,606,617,581,616,528,612,501,603,474,585,443,554,417,518,377,443,351,373,338,324"/>
-<area shape="poly" id="edge26_Node000077_Node000076" title=" " alt="" coords="344,294,415,179,474,93,506,76,541,64,613,51,683,49,746,53,746,58,683,54,613,56,542,69,509,81,477,97,420,182,348,297"/>
-<area shape="rect" id="Node000078" href="$_data_server_monitor_led_8c.html#a6de8ae3d5fdc6c8f6cfc1919aa5fecc3" title=" " alt="" coords="479,259,677,301"/>
-<area shape="poly" id="edge21_Node000077_Node000078" title=" " alt="" coords="428,296,463,291,464,297,428,301"/>
-<area shape="rect" id="Node000079" href="$_data_server_fetch_8c.html#a355ba4c5f111a60750fb52a4ddb7773b" title="Gets the IO Modules status (warning or faults)" alt="" coords="522,376,634,403"/>
-<area shape="poly" id="edge23_Node000077_Node000079" title=" " alt="" coords="370,321,476,361,508,371,506,376,474,367,368,326"/>
-<area shape="rect" id="Node000087" href="$_data_server_fetch_8c.html#ae01aad6066b3904dfbb903803dca64ca" title="This function is to check the force state enabled or no." alt="" coords="475,107,681,133"/>
-<area shape="poly" id="edge24_Node000077_Node000087" title=" " alt="" coords="343,294,362,263,391,222,429,179,474,143,484,137,487,142,477,148,433,183,395,225,366,265,347,297"/>
-<area shape="rect" id="Node000088" href="$_data_server_fetch_8c.html#a20a4ac1b64ad62bac504668394ddee31" title="fetches the valves error status" alt="" coords="485,157,671,184"/>
-<area shape="poly" id="edge25_Node000077_Node000088" title=" " alt="" coords="348,294,400,245,435,217,474,194,489,187,491,192,477,198,438,221,403,249,352,297"/>
-<area shape="rect" id="Node000095" href="$_main_bus_node_8c.html#acb6b44f230df55e989249f65d525f987" title="Sets the service parameter of the main bus node (MBN)." alt="" coords="504,544,652,571"/>
-<area shape="poly" id="edge28_Node000077_Node000095" title=" " alt="" coords="344,322,360,363,387,420,426,479,450,507,477,530,491,538,488,543,474,534,446,510,422,483,382,422,355,365,339,324"/>
-<area shape="rect" id="Node000098" href="$_data_server_monitor_led_8c.html#a2413b7289e27122d76c2b44d98a56918" title=" " alt="" coords="504,208,652,235"/>
-<area shape="poly" id="edge34_Node000077_Node000098" title=" " alt="" coords="363,293,414,269,474,244,498,237,500,242,476,249,416,273,366,298"/>
-<area shape="rect" id="Node000099" href="$_data_server_monitor_led_8c.html#af78e2e405fb1dfada593994ec787e570" title=" " alt="" coords="504,325,652,352"/>
-<area shape="poly" id="edge35_Node000077_Node000099" title=" " alt="" coords="428,318,489,325,489,331,428,323"/>
-<area shape="poly" id="edge22_Node000078_Node000076" title=" " alt="" coords="659,256,679,244,721,210,757,169,808,95,813,98,761,172,724,213,682,249,662,260"/>
+<area shape="rect" id="Node000077" href="$_data_server_monitor_led_8c.html#af5cb2ba0d32e073daaf90d4aef07dac2" title=" " alt="" coords="493,5,663,32"/>
+<area shape="poly" id="edge18_Node000076_Node000077" title=" " alt="" coords="354,123,407,86,474,48,508,35,510,40,476,53,409,91,357,127"/>
+<area shape="rect" id="Node000079" href="$_data_server_led_indication_8c.html#af352e029b1015e3dea14361b83d76445" title=" " alt="" coords="761,56,893,83"/>
+<area shape="poly" id="edge19_Node000077_Node000079" title=" " alt="" coords="648,30,747,50,745,56,647,35"/>
+<area shape="poly" id="edge27_Node000080_Node000023" title=" " alt="" coords="343,322,356,371,382,440,422,516,447,550,477,581,504,598,530,607,581,611,607,612,632,616,658,628,683,649,698,669,712,696,738,763,760,845,780,935,809,1110,825,1235,820,1236,804,1111,775,936,755,846,733,765,707,698,693,672,679,652,655,632,631,622,606,617,581,616,528,612,501,603,474,585,443,554,417,518,377,443,351,373,338,324"/>
+<area shape="poly" id="edge26_Node000080_Node000079" title=" " alt="" coords="344,294,415,179,474,93,506,76,541,64,613,51,683,49,746,53,746,58,683,54,613,56,542,69,509,81,477,97,420,182,348,297"/>
+<area shape="rect" id="Node000081" href="$_data_server_monitor_led_8c.html#a6de8ae3d5fdc6c8f6cfc1919aa5fecc3" title=" " alt="" coords="479,259,677,301"/>
+<area shape="poly" id="edge21_Node000080_Node000081" title=" " alt="" coords="428,296,463,291,464,297,428,301"/>
+<area shape="rect" id="Node000082" href="$_data_server_fetch_8c.html#a355ba4c5f111a60750fb52a4ddb7773b" title="Gets the IO Modules status (warning or faults)" alt="" coords="522,376,634,403"/>
+<area shape="poly" id="edge23_Node000080_Node000082" title=" " alt="" coords="370,321,476,361,508,371,506,376,474,367,368,326"/>
+<area shape="rect" id="Node000090" href="$_data_server_fetch_8c.html#ae01aad6066b3904dfbb903803dca64ca" title="This function is to check the force state enabled or no." alt="" coords="475,107,681,133"/>
+<area shape="poly" id="edge24_Node000080_Node000090" title=" " alt="" coords="343,294,362,263,391,222,429,179,474,143,484,137,487,142,477,148,433,183,395,225,366,265,347,297"/>
+<area shape="rect" id="Node000091" href="$_data_server_fetch_8c.html#a20a4ac1b64ad62bac504668394ddee31" title="fetches the valves error status" alt="" coords="485,157,671,184"/>
+<area shape="poly" id="edge25_Node000080_Node000091" title=" " alt="" coords="348,294,400,245,435,217,474,194,489,187,491,192,477,198,438,221,403,249,352,297"/>
+<area shape="rect" id="Node000098" href="$_main_bus_node_8c.html#acb6b44f230df55e989249f65d525f987" title="Sets the service parameter of the main bus node (MBN)." alt="" coords="504,544,652,571"/>
+<area shape="poly" id="edge28_Node000080_Node000098" title=" " alt="" coords="344,322,360,363,387,420,426,479,450,507,477,530,491,538,488,543,474,534,446,510,422,483,382,422,355,365,339,324"/>
+<area shape="rect" id="Node000099" href="$_data_server_monitor_led_8c.html#a2413b7289e27122d76c2b44d98a56918" title=" " alt="" coords="504,208,652,235"/>
+<area shape="poly" id="edge34_Node000080_Node000099" title=" " alt="" coords="363,293,414,269,474,244,498,237,500,242,476,249,416,273,366,298"/>
+<area shape="rect" id="Node000100" href="$_data_server_monitor_led_8c.html#af78e2e405fb1dfada593994ec787e570" title=" " alt="" coords="504,325,652,352"/>
+<area shape="poly" id="edge35_Node000080_Node000100" title=" " alt="" coords="428,318,489,325,489,331,428,323"/>
+<area shape="poly" id="edge22_Node000081_Node000079" title=" " alt="" coords="659,256,679,244,721,210,757,169,808,95,813,98,761,172,724,213,682,249,662,260"/>
 <area shape="rect" id="Node000014" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="973,583,1078,609"/>
-<area shape="poly" id="edge29_Node000095_Node000014" title=" " alt="" coords="634,569,682,587,706,605,715,612,729,619,791,630,854,630,913,622,964,611,966,616,914,627,854,635,790,635,728,624,713,617,703,609,679,592,632,574"/>
-<area shape="rect" id="Node000096" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="754,532,900,559"/>
-<area shape="poly" id="edge30_Node000095_Node000096" title=" " alt="" coords="652,551,738,547,739,552,653,556"/>
-<area shape="rect" id="Node000097" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="760,583,894,609"/>
-<area shape="poly" id="edge32_Node000095_Node000097" title=" " alt="" coords="653,566,745,581,744,586,652,571"/>
-<area shape="poly" id="edge31_Node000096_Node000014" title=" " alt="" coords="883,557,958,576,957,581,882,562"/>
-<area shape="poly" id="edge33_Node000097_Node000014" title=" " alt="" coords="894,593,957,593,957,599,894,599"/>
-<area shape="poly" id="edge38_Node000100_Node000023" title=" " alt="" coords="398,1258,772,1261,772,1266,398,1263"/>
-<area shape="poly" id="edge41_Node000102_Node000023" title=" " alt="" coords="410,1308,772,1267,772,1273,410,1313"/>
-<area shape="poly" id="edge43_Node000103_Node000023" title=" " alt="" coords="410,1368,536,1340,680,1305,772,1279,773,1284,681,1311,537,1346,411,1373"/>
-<area shape="poly" id="edge45_Node000104_Node000023" title=" " alt="" coords="406,1156,535,1165,609,1176,681,1192,740,1214,791,1240,788,1245,738,1219,680,1197,608,1181,535,1170,406,1162"/>
-<area shape="poly" id="edge47_Node000105_Node000023" title=" " alt="" coords="359,721,420,690,461,673,505,660,551,651,598,650,642,660,682,682,699,699,714,722,742,784,765,860,784,945,811,1113,826,1235,820,1236,806,1114,779,946,760,862,737,785,710,725,695,702,679,686,640,665,597,656,552,656,506,665,463,678,422,694,361,726"/>
-<area shape="rect" id="Node000107" href="$gpio__init_8c.html#afdbe206b3c49f019757ab09b3cf52b9c" title="Function to perform LCD functionality." alt="" coords="302,1713,371,1740"/>
-<area shape="poly" id="edge49_Node000106_Node000107" title=" " alt="" coords="184,1724,286,1724,286,1729,184,1729"/>
-<area shape="rect" id="Node000110" href="$lcd__init_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Function to perform LCD functionality." alt="" coords="305,1847,367,1873"/>
-<area shape="poly" id="edge54_Node000106_Node000110" title=" " alt="" coords="183,1738,199,1750,215,1771,223,1790,231,1808,247,1826,268,1839,291,1848,289,1853,265,1844,243,1830,226,1811,218,1792,210,1773,195,1754,180,1743"/>
-<area shape="rect" id="Node000118" href="$spi__init_8c.html#ae909944aa85ae98323073c628be541aa" title=" " alt="" coords="305,1789,367,1816"/>
-<area shape="poly" id="edge56_Node000106_Node000118" title=" " alt="" coords="185,1738,292,1782,290,1787,183,1743"/>
-<area shape="rect" id="Node000108" href="$gpio__init_8c.html#a8ddfcc1edc1807598865aced2e871313" title="configure the gpio pins" alt="" coords="506,1757,650,1784"/>
-<area shape="poly" id="edge50_Node000107_Node000108" title=" " alt="" coords="372,1730,491,1752,490,1757,371,1736"/>
-<area shape="rect" id="Node000109" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="509,1707,647,1733"/>
-<area shape="poly" id="edge52_Node000107_Node000109" title=" " alt="" coords="371,1723,494,1720,494,1725,371,1728"/>
-<area shape="poly" id="edge51_Node000108_Node000023" title=" " alt="" coords="649,1761,665,1753,679,1743,723,1692,757,1632,782,1568,800,1503,812,1439,819,1381,823,1293,829,1293,824,1382,817,1440,805,1504,787,1570,762,1634,727,1695,682,1747,668,1758,651,1765"/>
-<area shape="poly" id="edge53_Node000109_Node000023" title=" " alt="" coords="646,1710,664,1703,679,1693,719,1647,751,1595,776,1538,794,1480,807,1424,815,1372,822,1293,827,1293,820,1373,812,1425,799,1482,781,1540,756,1597,723,1650,682,1697,666,1708,648,1715"/>
-<area shape="rect" id="Node000111" href="$lcd__init_8c.html#a18e43791216d53f52c3bca5d8b3bf60c" title="Initialization of the LCD ST7291_chip." alt="" coords="533,1859,623,1885"/>
-<area shape="poly" id="edge55_Node000110_Node000111" title=" " alt="" coords="368,1859,518,1866,518,1872,368,1864"/>
-<area shape="rect" id="Node000119" href="$spi__init_8c.html#ae58a0f067d31d19d3233434cba5c6139" title=" " alt="" coords="519,1808,637,1835"/>
-<area shape="poly" id="edge57_Node000118_Node000119" title=" " alt="" coords="368,1802,504,1813,503,1818,368,1808"/>
-<area shape="poly" id="edge67_Node000121_Node000023" title=" " alt="" coords="351,1527,404,1485,474,1439,530,1413,577,1399,623,1385,679,1360,742,1322,795,1285,798,1289,745,1327,682,1365,625,1390,578,1404,532,1418,477,1444,407,1489,355,1531"/>
-<area shape="poly" id="edge68_Node000121_Node000095" title=" " alt="" coords="350,1527,389,1481,409,1451,425,1418,442,1362,454,1311,460,1262,462,1217,457,1132,446,1051,435,970,431,884,434,838,441,790,454,738,473,683,488,653,507,624,548,579,552,583,512,628,493,655,478,685,459,740,446,791,439,839,436,884,440,969,451,1050,463,1131,468,1217,465,1263,459,1312,447,1364,430,1420,414,1453,393,1485,354,1531"/>
-<area shape="rect" id="Node000122" href="$power__on__self__test_8c.html#a7e4bd03d5000eaba98f7880b37979086" title=" " alt="" coords="517,1453,639,1480"/>
-<area shape="poly" id="edge60_Node000121_Node000122" title=" " alt="" coords="371,1526,475,1489,501,1482,502,1487,476,1495,373,1531"/>
-<area shape="rect" id="Node000123" href="$power__on__self__test_8c.html#a3aac4e89479292ddefe58923976b3103" title=" " alt="" coords="516,1504,640,1531"/>
-<area shape="poly" id="edge62_Node000121_Node000123" title=" " alt="" coords="395,1534,500,1523,501,1528,396,1539"/>
-<area shape="rect" id="Node000124" href="$power__on__self__test_8c.html#a99fb93fc053acbdeac28adb7dd9998dc" title=" " alt="" coords="518,1555,638,1581"/>
-<area shape="poly" id="edge64_Node000121_Node000124" title=" " alt="" coords="396,1546,503,1557,502,1563,395,1551"/>
-<area shape="rect" id="Node000125" href="$power__on__self__test_8c.html#a213dbe086bf2daf891e0acb2dbda1285" title=" " alt="" coords="532,1605,624,1632"/>
-<area shape="poly" id="edge65_Node000121_Node000125" title=" " alt="" coords="373,1554,476,1591,518,1602,517,1608,475,1596,371,1559"/>
-<area shape="rect" id="Node000126" href="$power__on__self__test_8c.html#a0928c556839f0083145f58540674e7a3" title=" " alt="" coords="544,1656,612,1683"/>
-<area shape="poly" id="edge66_Node000121_Node000126" title=" " alt="" coords="354,1554,406,1597,440,1621,476,1642,530,1659,529,1664,474,1646,437,1626,402,1602,350,1558"/>
-<area shape="poly" id="edge61_Node000122_Node000023" title=" " alt="" coords="639,1451,679,1432,720,1399,756,1361,808,1289,812,1292,760,1364,724,1403,682,1437,641,1456"/>
-<area shape="poly" id="edge63_Node000123_Node000023" title=" " alt="" coords="640,1507,660,1500,679,1490,705,1469,728,1444,766,1389,795,1335,813,1291,818,1293,800,1337,771,1392,732,1447,708,1472,682,1494,663,1505,641,1512"/>
+<area shape="poly" id="edge29_Node000098_Node000014" title=" " alt="" coords="634,569,682,587,706,605,715,612,729,619,791,630,854,630,913,622,964,611,966,616,914,627,854,635,790,635,728,624,713,617,703,609,679,592,632,574"/>
+<area shape="rect" id="Node000058" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="754,532,900,559"/>
+<area shape="poly" id="edge30_Node000098_Node000058" title=" " alt="" coords="652,551,738,547,739,552,653,556"/>
+<area shape="rect" id="Node000059" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="760,583,894,609"/>
+<area shape="poly" id="edge32_Node000098_Node000059" title=" " alt="" coords="653,566,745,581,744,586,652,571"/>
+<area shape="poly" id="edge31_Node000058_Node000014" title=" " alt="" coords="883,557,958,576,957,581,882,562"/>
+<area shape="poly" id="edge33_Node000059_Node000014" title=" " alt="" coords="894,593,957,593,957,599,894,599"/>
+<area shape="poly" id="edge38_Node000101_Node000023" title=" " alt="" coords="398,1258,772,1261,772,1266,398,1263"/>
+<area shape="poly" id="edge41_Node000103_Node000023" title=" " alt="" coords="410,1308,772,1267,772,1273,410,1313"/>
+<area shape="poly" id="edge43_Node000104_Node000023" title=" " alt="" coords="410,1368,536,1340,680,1305,772,1279,773,1284,681,1311,537,1346,411,1373"/>
+<area shape="poly" id="edge45_Node000105_Node000023" title=" " alt="" coords="406,1156,535,1165,609,1176,681,1192,740,1214,791,1240,788,1245,738,1219,680,1197,608,1181,535,1170,406,1162"/>
+<area shape="poly" id="edge47_Node000106_Node000023" title=" " alt="" coords="359,721,420,690,461,673,505,660,551,651,598,650,642,660,682,682,699,699,714,722,742,784,765,860,784,945,811,1113,826,1235,820,1236,806,1114,779,946,760,862,737,785,710,725,695,702,679,686,640,665,597,656,552,656,506,665,463,678,422,694,361,726"/>
+<area shape="rect" id="Node000108" href="$gpio__init_8c.html#afdbe206b3c49f019757ab09b3cf52b9c" title="Function to perform LCD functionality." alt="" coords="302,1713,371,1740"/>
+<area shape="poly" id="edge49_Node000107_Node000108" title=" " alt="" coords="184,1724,286,1724,286,1729,184,1729"/>
+<area shape="rect" id="Node000111" href="$lcd__init_8c.html#a6842775ba83d166f02b8fef8bb63b1e6" title="Function to perform LCD functionality." alt="" coords="305,1847,367,1873"/>
+<area shape="poly" id="edge54_Node000107_Node000111" title=" " alt="" coords="183,1738,199,1750,215,1771,223,1790,231,1808,247,1826,268,1839,291,1848,289,1853,265,1844,243,1830,226,1811,218,1792,210,1773,195,1754,180,1743"/>
+<area shape="rect" id="Node000119" href="$spi__init_8c.html#ae909944aa85ae98323073c628be541aa" title=" " alt="" coords="305,1789,367,1816"/>
+<area shape="poly" id="edge56_Node000107_Node000119" title=" " alt="" coords="185,1738,292,1782,290,1787,183,1743"/>
+<area shape="rect" id="Node000109" href="$gpio__init_8c.html#a8ddfcc1edc1807598865aced2e871313" title="configure the gpio pins" alt="" coords="506,1757,650,1784"/>
+<area shape="poly" id="edge50_Node000108_Node000109" title=" " alt="" coords="372,1730,491,1752,490,1757,371,1736"/>
+<area shape="rect" id="Node000110" href="$gpio__init_8c.html#a992606101a6d77644f3a2be4afc99324" title="Gpio set value high or low." alt="" coords="509,1707,647,1733"/>
+<area shape="poly" id="edge52_Node000108_Node000110" title=" " alt="" coords="371,1723,494,1720,494,1725,371,1728"/>
+<area shape="poly" id="edge51_Node000109_Node000023" title=" " alt="" coords="649,1761,665,1753,679,1743,723,1692,757,1632,782,1568,800,1503,812,1439,819,1381,823,1293,829,1293,824,1382,817,1440,805,1504,787,1570,762,1634,727,1695,682,1747,668,1758,651,1765"/>
+<area shape="poly" id="edge53_Node000110_Node000023" title=" " alt="" coords="646,1710,664,1703,679,1693,719,1647,751,1595,776,1538,794,1480,807,1424,815,1372,822,1293,827,1293,820,1373,812,1425,799,1482,781,1540,756,1597,723,1650,682,1697,666,1708,648,1715"/>
+<area shape="rect" id="Node000112" href="$lcd__init_8c.html#a18e43791216d53f52c3bca5d8b3bf60c" title="Initialization of the LCD ST7291_chip." alt="" coords="533,1859,623,1885"/>
+<area shape="poly" id="edge55_Node000111_Node000112" title=" " alt="" coords="368,1859,518,1866,518,1872,368,1864"/>
+<area shape="rect" id="Node000120" href="$spi__init_8c.html#ae58a0f067d31d19d3233434cba5c6139" title=" " alt="" coords="519,1808,637,1835"/>
+<area shape="poly" id="edge57_Node000119_Node000120" title=" " alt="" coords="368,1802,504,1813,503,1818,368,1808"/>
+<area shape="poly" id="edge67_Node000122_Node000023" title=" " alt="" coords="351,1527,404,1485,474,1439,530,1413,577,1399,623,1385,679,1360,742,1322,795,1285,798,1289,745,1327,682,1365,625,1390,578,1404,532,1418,477,1444,407,1489,355,1531"/>
+<area shape="poly" id="edge68_Node000122_Node000098" title=" " alt="" coords="350,1527,389,1481,409,1451,425,1418,442,1362,454,1311,460,1262,462,1217,457,1132,446,1051,435,970,431,884,434,838,441,790,454,738,473,683,488,653,507,624,548,579,552,583,512,628,493,655,478,685,459,740,446,791,439,839,436,884,440,969,451,1050,463,1131,468,1217,465,1263,459,1312,447,1364,430,1420,414,1453,393,1485,354,1531"/>
+<area shape="rect" id="Node000123" href="$power__on__self__test_8c.html#a7e4bd03d5000eaba98f7880b37979086" title=" " alt="" coords="517,1453,639,1480"/>
+<area shape="poly" id="edge60_Node000122_Node000123" title=" " alt="" coords="371,1526,475,1489,501,1482,502,1487,476,1495,373,1531"/>
+<area shape="rect" id="Node000124" href="$power__on__self__test_8c.html#a3aac4e89479292ddefe58923976b3103" title=" " alt="" coords="516,1504,640,1531"/>
+<area shape="poly" id="edge62_Node000122_Node000124" title=" " alt="" coords="395,1534,500,1523,501,1528,396,1539"/>
+<area shape="rect" id="Node000125" href="$power__on__self__test_8c.html#a99fb93fc053acbdeac28adb7dd9998dc" title=" " alt="" coords="518,1555,638,1581"/>
+<area shape="poly" id="edge64_Node000122_Node000125" title=" " alt="" coords="396,1546,503,1557,502,1563,395,1551"/>
+<area shape="rect" id="Node000126" href="$power__on__self__test_8c.html#a213dbe086bf2daf891e0acb2dbda1285" title=" " alt="" coords="532,1605,624,1632"/>
+<area shape="poly" id="edge65_Node000122_Node000126" title=" " alt="" coords="373,1554,476,1591,518,1602,517,1608,475,1596,371,1559"/>
+<area shape="rect" id="Node000127" href="$power__on__self__test_8c.html#a0928c556839f0083145f58540674e7a3" title=" " alt="" coords="544,1656,612,1683"/>
+<area shape="poly" id="edge66_Node000122_Node000127" title=" " alt="" coords="354,1554,406,1597,440,1621,476,1642,530,1659,529,1664,474,1646,437,1626,402,1602,350,1558"/>
+<area shape="poly" id="edge61_Node000123_Node000023" title=" " alt="" coords="639,1451,679,1432,720,1399,756,1361,808,1289,812,1292,760,1364,724,1403,682,1437,641,1456"/>
+<area shape="poly" id="edge63_Node000124_Node000023" title=" " alt="" coords="640,1507,660,1500,679,1490,705,1469,728,1444,766,1389,795,1335,813,1291,818,1293,800,1337,771,1392,732,1447,708,1472,682,1494,663,1505,641,1512"/>
 </map>
