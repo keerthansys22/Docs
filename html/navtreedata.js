@@ -52,11 +52,11 @@ var NAVTREEINDEX =
 [
 "_analog_input_module_api_8c.html",
 "_app_data_interface_8c.html#abf8b757f9f7ffdab556fac4e2820deb9",
-"_firmware___upgrade_8c.html#a1fbfb385ba5ca60f30f473ff2600bed9",
-"default__task_8c.html#ae180d7c2955f762dead3989385de847c",
-"isem__diag__fault__csv_8c.html",
+"_firmware___upgrade_8c.html#a2383a3641c7a989a9d6c99be17bf45c8",
+"diag__valve__about__screen_8c.html",
+"isem__diag__fault__csv_8c.html#a3ac9bbaa8e60426f3dd023239a7363aa",
 "lvgl__gui_8c.html#adbb2701d2f614e81d8c1d3089fd22fac",
-"valves__modules__status__info_8c.html#a3670093bdc0a6ac2825d6c71d3448450"
+"valves__modules__status__info_8c.html#a27e4047823c653df7bd5f560cd4fa460"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

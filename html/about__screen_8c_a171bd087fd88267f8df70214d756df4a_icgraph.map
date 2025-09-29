@@ -1,12 +1,9 @@
 <map id="common_label_creation" name="common_label_creation">
-<area shape="rect" id="Node000001" title=" " alt="" coords="482,35,641,61"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="482,5,641,32"/>
 <area shape="rect" id="Node000002" href="$about__screen_8c.html#a4da5307d0fa772983cdbd6bde9a52df3" title="Function to display about screen." alt="" coords="272,5,434,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,37,434,33,435,27,467,32"/>
-<area shape="rect" id="Node000005" href="$about__screen_8c.html#abb6b5ccb659b3407d4e2da6afc0132c5" title=" " alt="" coords="277,56,429,99"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="467,64,430,69,430,64,466,59"/>
-<area shape="rect" id="Node000003" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,35,224,61"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,37,225,42,224,37,256,32"/>
-<area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,35,69,61"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="101,51,69,51,69,45,101,45"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="261,65,224,59,225,54,262,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,21,435,21,435,16,467,16"/>
+<area shape="rect" id="Node000003" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,5,224,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,21,225,21,225,16,257,16"/>
+<area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,5,69,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="101,21,69,21,69,16,101,16"/>
 </map>

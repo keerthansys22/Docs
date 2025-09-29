@@ -47,5 +47,7 @@ var searchData=
   ['mbn_5fmodule_5fva_5fvoltage_5faddr_44',['MBN_MODULE_VA_VOLTAGE_ADDR',['../_main_bus_node_8c.html#a3bb474fb171d6a6a6127dc8e1ab7e6fc',1,'MainBusNode.c']]],
   ['mbn_5fmodule_5fvalve_5fisland_5freserved_5faddr_45',['MBN_MODULE_VALVE_ISLAND_RESERVED_ADDR',['../_main_bus_node_8c.html#a45a3df4bef6bf406e6d5035a9e078217',1,'MainBusNode.c']]],
   ['mbn_5fmodule_5fvalve_5fisland_5fvalidation_5fid_5faddr_46',['MBN_MODULE_VALVE_ISLAND_VALIDATION_ID_ADDR',['../_main_bus_node_8c.html#a9f4d1b726b7a9b2b2d9d9447b995ee9f',1,'MainBusNode.c']]],
-  ['mbn_5fmodule_5fvb_5fvoltage_5faddr_47',['MBN_MODULE_VB_VOLTAGE_ADDR',['../_main_bus_node_8c.html#ac973fa73480c2206c386b6254e64d298',1,'MainBusNode.c']]]
+  ['mbn_5fmodule_5fvb_5fvoltage_5faddr_47',['MBN_MODULE_VB_VOLTAGE_ADDR',['../_main_bus_node_8c.html#ac973fa73480c2206c386b6254e64d298',1,'MainBusNode.c']]],
+  ['my_5fdisp_5fhor_5fres_5flcd_48',['MY_DISP_HOR_RES_LCD',['../lcd__init_8c.html#a0f2db5fcf02da7574d939546f64f512f',1,'lcd_init.c']]],
+  ['my_5fdisp_5fver_5fres_5flcd_49',['MY_DISP_VER_RES_LCD',['../lcd__init_8c.html#acddb1024921f45e3a12c1caddef40e10',1,'lcd_init.c']]]
 ];

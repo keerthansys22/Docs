@@ -10,7 +10,7 @@
 <area shape="poly" id="edge28_Node000001_Node000014" title=" " alt="" coords="188,684,220,684,220,689,188,689"/>
 <area shape="rect" id="Node000022" href="$_data_server_fetch_8c.html#a20a4ac1b64ad62bac504668394ddee31" title="fetches the valves error status" alt="" coords="246,828,431,855"/>
 <area shape="poly" id="edge53_Node000001_Node000022" title=" " alt="" coords="121,698,305,817,302,822,118,703"/>
-<area shape="rect" id="Node000029" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="299,879,378,905"/>
+<area shape="rect" id="Node000029" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with err no." alt="" coords="299,879,378,905"/>
 <area shape="poly" id="edge71_Node000001_Node000029" title=" " alt="" coords="107,699,125,733,153,778,191,825,237,864,260,876,285,883,283,888,258,881,234,869,187,829,149,781,120,736,102,702"/>
 <area shape="rect" id="Node000030" href="$_main_bus_node_8c.html#acb6b44f230df55e989249f65d525f987" title="Sets the service parameter of the main bus node (MBN)." alt="" coords="264,139,413,165"/>
 <area shape="poly" id="edge72_Node000001_Node000030" title=" " alt="" coords="100,672,152,540,233,350,320,178,325,180,238,352,157,542,105,674"/>

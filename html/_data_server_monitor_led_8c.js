@@ -34,7 +34,6 @@ var _data_server_monitor_led_8c =
     [ "msg_rdwrdemo", "_data_server_monitor_led_8c.html#a8c2ae5ee1bb07521123798c2a03f452f", null ],
     [ "ret_value", "_data_server_monitor_led_8c.html#aabe89482a17bf30a40e9c316bc5a2bb9", null ],
     [ "screen_pop_up_thread", "_data_server_monitor_led_8c.html#a06fda7de76b4b4fac8b20bb08a2ad1ce", null ],
-    [ "thread_acquire", "_data_server_monitor_led_8c.html#a5d3f042bc74db494e10c9eebd7208734", null ],
     [ "upgrade_enabled", "_data_server_monitor_led_8c.html#a74a1d3de2adc41e0c25b3ba7971bc116", null ],
     [ "upgrade_status", "_data_server_monitor_led_8c.html#a97b6f98ea6efb7962c717a7f45dc3e23", null ]
 ];

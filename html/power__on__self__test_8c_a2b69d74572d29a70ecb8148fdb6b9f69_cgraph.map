@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,157,124,184"/>
 <area shape="rect" id="Node000002" href="$power__on__self__test_8c.html#a7e4bd03d5000eaba98f7880b37979086" title=" " alt="" coords="185,5,307,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,155,112,104,139,75,170,49,189,37,192,41,173,53,143,79,116,108,77,158"/>
-<area shape="rect" id="Node000003" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with errno." alt="" coords="401,56,480,83"/>
+<area shape="rect" id="Node000003" href="$default__task_8c.html#af1be5ef90c04df6c7fcfaaffd2548f36" title="Print error message with err no." alt="" coords="401,56,480,83"/>
 <area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="78,155,117,122,143,105,171,92,227,76,284,67,386,64,386,69,285,73,228,82,173,97,145,110,120,127,81,159"/>
 <area shape="rect" id="Node000004" href="$power__on__self__test_8c.html#a3aac4e89479292ddefe58923976b3103" title=" " alt="" coords="184,107,308,133"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,154,180,135,182,141,116,159"/>

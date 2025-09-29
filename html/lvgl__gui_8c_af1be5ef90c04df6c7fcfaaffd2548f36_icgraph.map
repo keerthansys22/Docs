@@ -1,5 +1,5 @@
 <map id="my_perror" name="my_perror">
-<area shape="rect" id="Node000001" title="Print error message with errno." alt="" coords="459,43,539,69"/>
+<area shape="rect" id="Node000001" title="Print error message with err no." alt="" coords="459,43,539,69"/>
 <area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#a25111f09f762bec36126c8fdd7153078" title="Function that calculates the maximum pressure zone details count for about screen." alt="" coords="272,5,411,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="444,48,411,42,412,37,445,43"/>
 <area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,47,69,73"/>

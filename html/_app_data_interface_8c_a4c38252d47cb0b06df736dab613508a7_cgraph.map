@@ -1,14 +1,18 @@
 <map id="UpdateMBNInfoEEprom" name="UpdateMBNInfoEEprom">
-<area shape="rect" id="Node000001" title="This function is to update the mbn information." alt="" coords="5,56,164,83"/>
-<area shape="rect" id="Node000002" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="212,5,357,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,53,213,34,215,39,141,58"/>
-<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="218,56,351,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,67,202,67,202,72,164,72"/>
-<area shape="rect" id="Node000005" href="$_main_bus_node_8c.html#a2ff0ea3717aee424b4122935e1578c43" title=" " alt="" coords="236,107,333,133"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="141,81,221,101,220,107,140,86"/>
-<area shape="rect" id="Node000003" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="434,31,539,57"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="358,25,419,33,419,38,357,30"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="351,58,418,50,419,55,352,64"/>
-<area shape="rect" id="Node000006" href="$_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="405,107,568,133"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="333,117,390,117,390,123,333,123"/>
+<area shape="rect" id="Node000001" title="This function is to update the mbn information." alt="" coords="5,81,164,108"/>
+<area shape="rect" id="Node000002" href="$_main_bus_node_8c.html#a4c744d8e866ef4daaecc8f89545b8286" title="Retrieve the identification information of the Main Bus Node (MBN)." alt="" coords="212,5,394,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,78,211,41,233,34,235,39,213,47,119,83"/>
+<area shape="rect" id="Node000004" href="$_app_data_init_8c.html#afe667f1c61ab72a0423f199dee3906d6" title="Receive an IPC message from a remote endpoint with timeout support." alt="" coords="230,56,376,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,83,214,77,215,82,165,88"/>
+<area shape="rect" id="Node000006" href="$_app_data_init_8c.html#a1f2d0c6114cf6cd97d18e5b2a15134c3" title="Send an IPC message through the specified file descriptor." alt="" coords="236,107,370,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="165,101,221,108,220,113,164,107"/>
+<area shape="rect" id="Node000007" href="$_main_bus_node_8c.html#a2ff0ea3717aee424b4122935e1578c43" title=" " alt="" coords="254,157,352,184"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="119,106,213,143,240,152,238,157,211,148,117,111"/>
+<area shape="rect" id="Node000003" href="$_app_data_init_8c.html#ae512dcee3f48f317872617e5f4559b19" title=" " alt="" coords="443,5,604,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="394,16,428,16,428,21,394,21"/>
+<area shape="rect" id="Node000005" href="$_app_error_8c.html#a9b902ae1b99fca58c496f3bb659b9800" title="Returns the error status string based on the given error code." alt="" coords="471,81,576,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="376,75,456,84,455,90,375,80"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="369,110,455,100,456,105,370,115"/>
+<area shape="rect" id="Node000008" href="$_app_data_init_8c.html#a2383a3641c7a989a9d6c99be17bf45c8" title=" " alt="" coords="442,157,605,184"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="352,168,427,168,427,173,352,173"/>
 </map>
