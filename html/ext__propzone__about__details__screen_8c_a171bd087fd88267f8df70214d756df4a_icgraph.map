@@ -1,0 +1,9 @@
+<map id="common_label_creation" name="common_label_creation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="461,13,620,40"/>
+<area shape="rect" id="Node000002" href="$ext__propzone__about__details__screen_8c.html#a189cddd2e386267cf0f150eba505aaf4" title="Function to display prop_zone details (backplane and controller details) screen." alt="" coords="272,5,413,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="446,29,413,29,413,24,446,24"/>
+<area shape="rect" id="Node000003" href="$lvgl__gui_8c.html#a7b24eba16314d4269776a619ec97caa8" title="Function that handles the display logic." alt="" coords="117,13,224,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="256,29,224,29,224,24,256,24"/>
+<area shape="rect" id="Node000004" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,13,69,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="101,29,69,29,69,24,101,24"/>
+</map>

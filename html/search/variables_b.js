@@ -27,7 +27,8 @@ var searchData=
   ['module_5fnumber_5fisem_24',['module_number_isem',['../lvgl__gui_8c.html#ad9b43da1560c6caaf5373a55bc5e8970',1,'lvgl_gui.c']]],
   ['module_5fnumber_5fprop_25',['module_number_prop',['../lvgl__gui_8c.html#a8e19f9336bed793be9232685afc3f16c',1,'lvgl_gui.c']]],
   ['module_5fnumber_5fprop_5fzone_26',['module_number_prop_zone',['../lvgl__gui_8c.html#a86c130bbd9c0a719e0679db27bfb275c',1,'lvgl_gui.c']]],
-  ['modulesdetails_27',['modulesdetails',['../module__details__processing_8c.html#a8779a863e7d67f1e3e6e0315e137fba4',1,'modulesdetails:&#160;module_details_processing.c'],['../lvgl__gui_8c.html#a8779a863e7d67f1e3e6e0315e137fba4',1,'modulesdetails:&#160;module_details_processing.c'],['../module__screen_8c.html#a8779a863e7d67f1e3e6e0315e137fba4',1,'modulesdetails:&#160;module_details_processing.c']]],
-  ['msg_5frdwrdemo_28',['msg_rdwrdemo',['../_data_server_monitor_led_8c.html#a8c2ae5ee1bb07521123798c2a03f452f',1,'DataServerMonitorLed.c']]],
-  ['mutex_29',['mutex',['../discovery_8c.html#a4acff8232e4aec9cd5c6dc200ac55ef3',1,'mutex:&#160;default_task.c'],['../default__task_8c.html#a4acff8232e4aec9cd5c6dc200ac55ef3',1,'mutex:&#160;default_task.c'],['../lvgl__gui_8c.html#a4acff8232e4aec9cd5c6dc200ac55ef3',1,'mutex:&#160;default_task.c']]]
+  ['module_5fnumber_5fprop_5fzone_5fbackplane_27',['module_number_prop_zone_backplane',['../lvgl__gui_8c.html#a8f7f5d593e7d8bf3e1ca333443c552d6',1,'lvgl_gui.c']]],
+  ['modulesdetails_28',['modulesdetails',['../module__details__processing_8c.html#a8779a863e7d67f1e3e6e0315e137fba4',1,'modulesdetails:&#160;module_details_processing.c'],['../lvgl__gui_8c.html#a8779a863e7d67f1e3e6e0315e137fba4',1,'modulesdetails:&#160;module_details_processing.c'],['../module__screen_8c.html#a8779a863e7d67f1e3e6e0315e137fba4',1,'modulesdetails:&#160;module_details_processing.c']]],
+  ['msg_5frdwrdemo_29',['msg_rdwrdemo',['../_data_server_monitor_led_8c.html#a8c2ae5ee1bb07521123798c2a03f452f',1,'DataServerMonitorLed.c']]],
+  ['mutex_30',['mutex',['../discovery_8c.html#a4acff8232e4aec9cd5c6dc200ac55ef3',1,'mutex:&#160;default_task.c'],['../default__task_8c.html#a4acff8232e4aec9cd5c6dc200ac55ef3',1,'mutex:&#160;default_task.c'],['../lvgl__gui_8c.html#a4acff8232e4aec9cd5c6dc200ac55ef3',1,'mutex:&#160;default_task.c']]]
 ];

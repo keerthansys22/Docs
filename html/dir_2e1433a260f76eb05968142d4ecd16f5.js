@@ -7,6 +7,7 @@ var dir_2e1433a260f76eb05968142d4ecd16f5 =
     [ "config_screen.c", "config__screen_8c.html", "config__screen_8c" ],
     [ "diag_valve_about_screen.c", "diag__valve__about__screen_8c.html", "diag__valve__about__screen_8c" ],
     [ "error_screen.c", "error__screen_8c.html", "error__screen_8c" ],
+    [ "ext_propzone_about_details_screen.c", "ext__propzone__about__details__screen_8c.html", "ext__propzone__about__details__screen_8c" ],
     [ "ext_propzone_about_screen.c", "ext__propzone__about__screen_8c.html", "ext__propzone__about__screen_8c" ],
     [ "io_modules_about_screen.c", "io__modules__about__screen_8c.html", "io__modules__about__screen_8c" ],
     [ "mac_screen.c", "mac__screen_8c.html", "mac__screen_8c" ],

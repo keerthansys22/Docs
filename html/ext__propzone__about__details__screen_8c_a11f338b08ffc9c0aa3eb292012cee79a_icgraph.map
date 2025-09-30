@@ -1,0 +1,5 @@
+<map id="about_ext_pz_details_style" name="about_ext_pz_details_style">
+<area shape="rect" id="Node000001" title="Function to initialize about pressure screen style." alt="" coords="117,5,261,48"/>
+<area shape="rect" id="Node000002" href="$lvgl__gui_8c.html#ae180d7c2955f762dead3989385de847c" title="Function that waits for key press events &amp; calls handle_display function." alt="" coords="5,13,69,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,29,69,29,69,24,101,24"/>
+</map>

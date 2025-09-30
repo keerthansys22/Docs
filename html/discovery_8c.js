@@ -17,6 +17,8 @@ var discovery_8c =
     [ "g_isemdiag_count", "discovery_8c.html#ae44ef9829ac44f5b2bb7abdefce34479", null ],
     [ "g_propstation_backplane_count", "discovery_8c.html#a679767a075c5c2cb3984d1047d518876", null ],
     [ "g_propstation_count", "discovery_8c.html#ac1b2883704d5fd290aff23571f36d986", null ],
+    [ "g_propzone_backplane_count", "discovery_8c.html#a2023dbde6cd97bd8268c3a4f2c76f224", null ],
+    [ "g_propzone_controller_count", "discovery_8c.html#a01ba459d47e74793e729d044b79d1afa", null ],
     [ "g_standardvalve_count", "discovery_8c.html#a6249503e353816197750f9b9191368be", null ],
     [ "g_start_flag", "discovery_8c.html#aa82d815e011dc2986b6dfc9e2ddfbfaa", null ],
     [ "g_total_analog_count", "discovery_8c.html#ad02cee25b80418d1bfe5049c4acc3725", null ],

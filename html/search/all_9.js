@@ -11,8 +11,9 @@ var searchData=
   ['errun_5fon_5fstate_8',['ERRUN_ON_STATE',['../_data_server_monitor_led_8c.html#a3fac230fa9331caab37892ab4a706404',1,'DataServerMonitorLed.c']]],
   ['ethercat_5fled_5ftid_9',['ethercat_led_tid',['../default__task_8c.html#a73284ceff08aa772d1c0d276e38da2b5',1,'ethercat_led_tid:&#160;default_task.c'],['../_data_server_monitor_led_8c.html#a73284ceff08aa772d1c0d276e38da2b5',1,'ethercat_led_tid:&#160;default_task.c']]],
   ['ethercatledtask_10',['ethercatLedTask',['../default__task_8c.html#ac0d18105a979f76f090ea2ad7d58032c',1,'default_task.c']]],
-  ['ext_5fpropzone_5fabout_5fscreen_2ec_11',['ext_propzone_about_screen.c',['../ext__propzone__about__screen_8c.html',1,'']]],
-  ['external_5fadc_5ftest_12',['external_adc_test',['../power__on__self__test_8c.html#a3aac4e89479292ddefe58923976b3103',1,'power_on_self_test.c']]],
-  ['external_5fpressurezone_13',['external_pressurezone',['../_app_data_interface_8c.html#a0441d0acf0c675222c4e9a8d4a853348',1,'AppDataInterface.c']]],
-  ['externalprop_2ec_14',['ExternalProp.c',['../_external_prop_8c.html',1,'']]]
+  ['ext_5fpropzone_5fabout_5fdetails_5fscreen_2ec_11',['ext_propzone_about_details_screen.c',['../ext__propzone__about__details__screen_8c.html',1,'']]],
+  ['ext_5fpropzone_5fabout_5fscreen_2ec_12',['ext_propzone_about_screen.c',['../ext__propzone__about__screen_8c.html',1,'']]],
+  ['external_5fadc_5ftest_13',['external_adc_test',['../power__on__self__test_8c.html#a3aac4e89479292ddefe58923976b3103',1,'power_on_self_test.c']]],
+  ['external_5fpressurezone_14',['external_pressurezone',['../_app_data_interface_8c.html#a0441d0acf0c675222c4e9a8d4a853348',1,'AppDataInterface.c']]],
+  ['externalprop_2ec_15',['ExternalProp.c',['../_external_prop_8c.html',1,'']]]
 ];
